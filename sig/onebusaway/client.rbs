@@ -1,0 +1,80 @@
+module Onebusaway
+  class Client < Onebusaway::BaseClient
+    DEFAULT_MAX_RETRIES: 2
+
+    DEFAULT_TIMEOUT_IN_SECONDS: Float
+
+    DEFAULT_INITIAL_RETRY_DELAY: Float
+
+    DEFAULT_MAX_RETRY_DELAY: Float
+
+    attr_reader api_key: String
+
+    attr_reader agencies_with_coverage: Onebusaway::Resources::AgenciesWithCoverage
+
+    attr_reader agency: Onebusaway::Resources::Agency
+
+    attr_reader vehicles_for_agency: Onebusaway::Resources::VehiclesForAgency
+
+    attr_reader config: Onebusaway::Resources::Config
+
+    attr_reader current_time: Onebusaway::Resources::CurrentTime
+
+    attr_reader stops_for_location: Onebusaway::Resources::StopsForLocation
+
+    attr_reader stops_for_route: Onebusaway::Resources::StopsForRoute
+
+    attr_reader stops_for_agency: Onebusaway::Resources::StopsForAgency
+
+    attr_reader stop: Onebusaway::Resources::Stop
+
+    attr_reader stop_ids_for_agency: Onebusaway::Resources::StopIDsForAgency
+
+    attr_reader schedule_for_stop: Onebusaway::Resources::ScheduleForStop
+
+    attr_reader route: Onebusaway::Resources::Route
+
+    attr_reader route_ids_for_agency: Onebusaway::Resources::RouteIDsForAgency
+
+    attr_reader routes_for_location: Onebusaway::Resources::RoutesForLocation
+
+    attr_reader routes_for_agency: Onebusaway::Resources::RoutesForAgency
+
+    attr_reader schedule_for_route: Onebusaway::Resources::ScheduleForRoute
+
+    attr_reader arrival_and_departure: Onebusaway::Resources::ArrivalAndDeparture
+
+    attr_reader trip: Onebusaway::Resources::Trip
+
+    attr_reader trips_for_location: Onebusaway::Resources::TripsForLocation
+
+    attr_reader trip_details: Onebusaway::Resources::TripDetails
+
+    attr_reader trip_for_vehicle: Onebusaway::Resources::TripForVehicle
+
+    attr_reader trips_for_route: Onebusaway::Resources::TripsForRoute
+
+    attr_reader report_problem_with_stop: Onebusaway::Resources::ReportProblemWithStop
+
+    attr_reader report_problem_with_trip: Onebusaway::Resources::ReportProblemWithTrip
+
+    attr_reader search_for_stop: Onebusaway::Resources::SearchForStop
+
+    attr_reader search_for_route: Onebusaway::Resources::SearchForRoute
+
+    attr_reader block: Onebusaway::Resources::Block
+
+    attr_reader shape: Onebusaway::Resources::Shape
+
+    private def auth_headers: -> Hash[String, String]
+
+    def initialize: (
+      base_url: String?,
+      api_key: String?,
+      max_retries: Integer,
+      timeout: Float,
+      initial_retry_delay: Float,
+      max_retry_delay: Float
+    ) -> void
+  end
+end

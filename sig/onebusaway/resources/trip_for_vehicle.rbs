@@ -1,0 +1,22 @@
+module Onebusaway
+  module Resources
+    class TripForVehicle
+      def retrieve:
+        (
+          String vehicle_id,
+          ?Onebusaway::Models::TripForVehicleRetrieveParams
+          | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::TripForVehicleRetrieveResponse
+        | (
+          String vehicle_id,
+          include_schedule: bool,
+          include_status: bool,
+          include_trip: bool,
+          time: Integer,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::TripForVehicleRetrieveResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

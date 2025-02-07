@@ -1,0 +1,18 @@
+module Onebusaway
+  module Resources
+    class StopsForAgency
+      def list:
+        (
+          String agency_id,
+          ?Onebusaway::Models::StopsForAgencyListParams
+          | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::StopsForAgencyListResponse
+        | (
+          String agency_id,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::StopsForAgencyListResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

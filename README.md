@@ -7,7 +7,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Documentation
 
-Documentation for the most recent release of this gem can be found [on RubyDoc](https://gemdocs.org/gems/open-transit/latest).
+Documentation for the most recent release of this gem can be found [on RubyDoc](https://gemdocs.org/gems/onebusaway/latest).
 
 The underlying REST API documentation can be found on [developer.onebusaway.org](https://developer.onebusaway.org).
 
@@ -17,7 +17,7 @@ To use this gem during the beta, install directly from GitHub with Bundler by
 adding the following to your application's `Gemfile`:
 
 ```ruby
-gem "open-transit", git: "https://github.com/stainless-sdks/open-transit-ruby", branch: "main"
+gem "onebusaway", git: "https://github.com/stainless-sdks/open-transit-ruby", branch: "main"
 ```
 
 To fetch an initial copy of the gem:
@@ -30,16 +30,16 @@ To update the version used by your application when updates are pushed to
 GitHub:
 
 ```sh
-bundle update open-transit
+bundle update onebusaway
 ```
 
 ## Usage
 
 ```ruby
 require "bundler/setup"
-require "open-transit"
+require "onebusaway"
 
-onebusaway_sdk = OpenTransit::Client.new(
+onebusaway_sdk = Onebusaway::Client.new(
   api_key: "My API Key" # defaults to ENV["ONEBUSAWAY_API_KEY"]
 )
 
@@ -50,12 +50,12 @@ current_time = onebusaway_sdk.current_time.retrieve
 
 When the library is unable to connect to the API, or if the API returns a
 non-success status code (i.e., 4xx or 5xx response), a subclass of
-`OpenTransit::Error` will be thrown:
+`Onebusaway::Error` will be thrown:
 
 ```ruby
 begin
   current_time = onebusaway_sdk.current_time.retrieve
-rescue OpenTransit::Error => e
+rescue Onebusaway::Error => e
   puts(e.status) # 400
 end
 ```
@@ -87,7 +87,7 @@ You can use the `max_retries` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-onebusaway_sdk = OpenTransit::Client.new(
+onebusaway_sdk = Onebusaway::Client.new(
   max_retries: 0 # default is 2
 )
 
@@ -105,7 +105,7 @@ You can use the `timeout` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-onebusaway_sdk = OpenTransit::Client.new(
+onebusaway_sdk = Onebusaway::Client.new(
   timeout: nil # default is 60
 )
 

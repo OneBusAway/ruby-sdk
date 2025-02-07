@@ -1,0 +1,341 @@
+module Onebusaway
+  module Models
+    type schedule_for_route_retrieve_response =
+      { data: Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data }
+
+    class ScheduleForRouteRetrieveResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data
+
+      def initialize:
+        (
+          data: Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data
+        ) -> void
+        | (
+          ?Onebusaway::Models::schedule_for_route_retrieve_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::schedule_for_route_retrieve_response
+
+      type data =
+        {
+          entry: Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor entry: Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry
+
+        def initialize:
+          (
+            entry: Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry
+          ) -> void
+          | (
+            ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::ScheduleForRouteRetrieveResponse::data
+
+        type entry =
+          {
+            route_id: String,
+            schedule_date: Integer,
+            service_ids: Array[String],
+            stops: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
+            stop_trip_groupings: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
+            trips: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
+          }
+
+        class Entry < Onebusaway::BaseModel
+          attr_accessor route_id: String
+
+          attr_accessor schedule_date: Integer
+
+          attr_accessor service_ids: Array[String]
+
+          attr_accessor stops: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop]
+
+          attr_accessor stop_trip_groupings: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping]
+
+          attr_accessor trips: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
+
+          def initialize:
+            (
+              route_id: String,
+              schedule_date: Integer,
+              service_ids: Array[String],
+              stops: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
+              stop_trip_groupings: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
+              trips: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
+            ) -> void
+            | (
+              ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::entry
+              | Onebusaway::BaseModel data
+            ) -> void
+
+          def to_hash: -> Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::entry
+
+          type stop =
+            {
+              id: String,
+              lat: Float,
+              lon: Float,
+              name: String,
+              parent: String,
+              route_ids: Array[String],
+              static_route_ids: Array[String],
+              code: String,
+              direction: String,
+              location_type: Integer,
+              wheelchair_boarding: String
+            }
+
+          class Stop < Onebusaway::BaseModel
+            attr_accessor id: String
+
+            attr_accessor lat: Float
+
+            attr_accessor lon: Float
+
+            attr_accessor name: String
+
+            attr_accessor parent: String
+
+            attr_accessor route_ids: Array[String]
+
+            attr_accessor static_route_ids: Array[String]
+
+            attr_reader code: String?
+
+            def code=: (String) -> void
+
+            attr_reader direction: String?
+
+            def direction=: (String) -> void
+
+            attr_reader location_type: Integer?
+
+            def location_type=: (Integer) -> void
+
+            attr_reader wheelchair_boarding: String?
+
+            def wheelchair_boarding=: (String) -> void
+
+            def initialize:
+              (
+                id: String,
+                lat: Float,
+                lon: Float,
+                name: String,
+                parent: String,
+                route_ids: Array[String],
+                static_route_ids: Array[String],
+                code: String,
+                direction: String,
+                location_type: Integer,
+                wheelchair_boarding: String
+              ) -> void
+              | (
+                ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop
+                | Onebusaway::BaseModel data
+              ) -> void
+
+            def to_hash: -> Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop
+          end
+
+          type stop_trip_grouping =
+            {
+              direction_id: String,
+              stop_ids: Array[String],
+              trip_headsigns: Array[String],
+              trip_ids: Array[String],
+              trips_with_stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+            }
+
+          class StopTripGrouping < Onebusaway::BaseModel
+            attr_accessor direction_id: String
+
+            attr_accessor stop_ids: Array[String]
+
+            attr_accessor trip_headsigns: Array[String]
+
+            attr_accessor trip_ids: Array[String]
+
+            attr_reader trips_with_stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]?
+
+            def trips_with_stop_times=: (
+              Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+            ) -> void
+
+            def initialize:
+              (
+                direction_id: String,
+                stop_ids: Array[String],
+                trip_headsigns: Array[String],
+                trip_ids: Array[String],
+                trips_with_stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+              ) -> void
+              | (
+                ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop_trip_grouping
+                | Onebusaway::BaseModel data
+              ) -> void
+
+            def to_hash: -> Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop_trip_grouping
+
+            type trips_with_stop_time =
+              {
+                stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
+                trip_id: String
+              }
+
+            class TripsWithStopTime < Onebusaway::BaseModel
+              attr_accessor stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime]
+
+              attr_accessor trip_id: String
+
+              def initialize:
+                (
+                  stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
+                  trip_id: String
+                ) -> void
+                | (
+                  ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::trips_with_stop_time
+                  | Onebusaway::BaseModel data
+                ) -> void
+
+              def to_hash: -> Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::trips_with_stop_time
+
+              type stop_time =
+                {
+                  arrival_enabled: bool,
+                  arrival_time: Integer,
+                  departure_enabled: bool,
+                  departure_time: Integer,
+                  stop_id: String,
+                  trip_id: String,
+                  service_id: String,
+                  stop_headsign: String
+                }
+
+              class StopTime < Onebusaway::BaseModel
+                attr_accessor arrival_enabled: bool
+
+                attr_accessor arrival_time: Integer
+
+                attr_accessor departure_enabled: bool
+
+                attr_accessor departure_time: Integer
+
+                attr_accessor stop_id: String
+
+                attr_accessor trip_id: String
+
+                attr_reader service_id: String?
+
+                def service_id=: (String) -> void
+
+                attr_reader stop_headsign: String?
+
+                def stop_headsign=: (String) -> void
+
+                def initialize:
+                  (
+                    arrival_enabled: bool,
+                    arrival_time: Integer,
+                    departure_enabled: bool,
+                    departure_time: Integer,
+                    stop_id: String,
+                    trip_id: String,
+                    service_id: String,
+                    stop_headsign: String
+                  ) -> void
+                  | (
+                    ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::stop_time
+                    | Onebusaway::BaseModel data
+                  ) -> void
+
+                def to_hash: -> Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::stop_time
+              end
+            end
+          end
+
+          type trip =
+            {
+              id: String,
+              route_id: String,
+              service_id: String,
+              block_id: String,
+              direction_id: String,
+              peak_offpeak: Integer,
+              route_short_name: String,
+              shape_id: String,
+              time_zone: String,
+              trip_headsign: String,
+              trip_short_name: String
+            }
+
+          class Trip < Onebusaway::BaseModel
+            attr_accessor id: String
+
+            attr_accessor route_id: String
+
+            attr_accessor service_id: String
+
+            attr_reader block_id: String?
+
+            def block_id=: (String) -> void
+
+            attr_reader direction_id: String?
+
+            def direction_id=: (String) -> void
+
+            attr_reader peak_offpeak: Integer?
+
+            def peak_offpeak=: (Integer) -> void
+
+            attr_reader route_short_name: String?
+
+            def route_short_name=: (String) -> void
+
+            attr_reader shape_id: String?
+
+            def shape_id=: (String) -> void
+
+            attr_reader time_zone: String?
+
+            def time_zone=: (String) -> void
+
+            attr_reader trip_headsign: String?
+
+            def trip_headsign=: (String) -> void
+
+            attr_reader trip_short_name: String?
+
+            def trip_short_name=: (String) -> void
+
+            def initialize:
+              (
+                id: String,
+                route_id: String,
+                service_id: String,
+                block_id: String,
+                direction_id: String,
+                peak_offpeak: Integer,
+                route_short_name: String,
+                shape_id: String,
+                time_zone: String,
+                trip_headsign: String,
+                trip_short_name: String
+              ) -> void
+              | (
+                ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::trip
+                | Onebusaway::BaseModel data
+              ) -> void
+
+            def to_hash: -> Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::trip
+          end
+        end
+      end
+    end
+  end
+end

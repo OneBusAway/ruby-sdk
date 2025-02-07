@@ -1,0 +1,20 @@
+module Onebusaway
+  module Models
+    type agencies_with_coverage_list_params =
+      {  } & Onebusaway::request_parameters
+
+    class AgenciesWithCoverageListParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      def initialize:
+        (request_options: Onebusaway::request_opts) -> void
+        | (
+          ?Onebusaway::Models::agencies_with_coverage_list_params
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::agencies_with_coverage_list_params
+    end
+  end
+end

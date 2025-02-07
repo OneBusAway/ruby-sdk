@@ -1,0 +1,24 @@
+module Onebusaway
+  module Models
+    type schedule_for_stop_retrieve_params =
+      { date: Date } & Onebusaway::request_parameters
+
+    class ScheduleForStopRetrieveParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      attr_reader date: Date?
+
+      def date=: (Date) -> void
+
+      def initialize:
+        (date: Date, request_options: Onebusaway::request_opts) -> void
+        | (
+          ?Onebusaway::Models::schedule_for_stop_retrieve_params
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::schedule_for_stop_retrieve_params
+    end
+  end
+end

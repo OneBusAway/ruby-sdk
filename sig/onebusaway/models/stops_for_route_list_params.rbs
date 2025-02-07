@@ -1,0 +1,32 @@
+module Onebusaway
+  module Models
+    type stops_for_route_list_params =
+      { include_polylines: bool, time: String } & Onebusaway::request_parameters
+
+    class StopsForRouteListParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      attr_reader include_polylines: bool?
+
+      def include_polylines=: (bool) -> void
+
+      attr_reader time: String?
+
+      def time=: (String) -> void
+
+      def initialize:
+        (
+          include_polylines: bool,
+          time: String,
+          request_options: Onebusaway::request_opts
+        ) -> void
+        | (
+          ?Onebusaway::Models::stops_for_route_list_params
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::stops_for_route_list_params
+    end
+  end
+end

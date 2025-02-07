@@ -1,0 +1,24 @@
+module Onebusaway
+  module Models
+    type vehicles_for_agency_list_params =
+      { time: String } & Onebusaway::request_parameters
+
+    class VehiclesForAgencyListParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      attr_reader time: String?
+
+      def time=: (String) -> void
+
+      def initialize:
+        (time: String, request_options: Onebusaway::request_opts) -> void
+        | (
+          ?Onebusaway::Models::vehicles_for_agency_list_params
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::vehicles_for_agency_list_params
+    end
+  end
+end

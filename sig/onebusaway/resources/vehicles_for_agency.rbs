@@ -1,0 +1,19 @@
+module Onebusaway
+  module Resources
+    class VehiclesForAgency
+      def list:
+        (
+          String agency_id,
+          ?Onebusaway::Models::VehiclesForAgencyListParams
+          | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::VehiclesForAgencyListResponse
+        | (
+          String agency_id,
+          time: String,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::VehiclesForAgencyListResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

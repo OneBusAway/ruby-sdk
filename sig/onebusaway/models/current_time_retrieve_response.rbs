@@ -1,0 +1,64 @@
+module Onebusaway
+  module Models
+    type current_time_retrieve_response =
+      { data: Onebusaway::Models::CurrentTimeRetrieveResponse::Data }
+
+    class CurrentTimeRetrieveResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::CurrentTimeRetrieveResponse::Data
+
+      def initialize:
+        (data: Onebusaway::Models::CurrentTimeRetrieveResponse::Data) -> void
+        | (
+          ?Onebusaway::Models::current_time_retrieve_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::current_time_retrieve_response
+
+      type data =
+        {
+          entry: Onebusaway::Models::CurrentTimeRetrieveResponse::Data::Entry,
+          references: Onebusaway::Models::References
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor entry: Onebusaway::Models::CurrentTimeRetrieveResponse::Data::Entry
+
+        attr_accessor references: Onebusaway::Models::References
+
+        def initialize:
+          (
+            entry: Onebusaway::Models::CurrentTimeRetrieveResponse::Data::Entry,
+            references: Onebusaway::Models::References
+          ) -> void
+          | (
+            ?Onebusaway::Models::CurrentTimeRetrieveResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::CurrentTimeRetrieveResponse::data
+
+        type entry = { readable_time: String, time: Integer }
+
+        class Entry < Onebusaway::BaseModel
+          attr_reader readable_time: String?
+
+          def readable_time=: (String) -> void
+
+          attr_reader time: Integer?
+
+          def time=: (Integer) -> void
+
+          def initialize:
+            (readable_time: String, time: Integer) -> void
+            | (
+              ?Onebusaway::Models::CurrentTimeRetrieveResponse::Data::entry
+              | Onebusaway::BaseModel data
+            ) -> void
+
+          def to_hash: -> Onebusaway::Models::CurrentTimeRetrieveResponse::Data::entry
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module Onebusaway
+  module Resources
+    class Trip
+      def retrieve:
+        (
+          String trip_id,
+          ?Onebusaway::Models::TripRetrieveParams | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::TripRetrieveResponse
+        | (
+          String trip_id,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::TripRetrieveResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

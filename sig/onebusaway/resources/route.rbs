@@ -1,0 +1,17 @@
+module Onebusaway
+  module Resources
+    class Route
+      def retrieve:
+        (
+          String route_id,
+          ?Onebusaway::Models::RouteRetrieveParams | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::RouteRetrieveResponse
+        | (
+          String route_id,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::RouteRetrieveResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

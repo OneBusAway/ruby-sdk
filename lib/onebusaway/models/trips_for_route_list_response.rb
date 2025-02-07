@@ -1,0 +1,628 @@
+# frozen_string_literal: true
+
+module Onebusaway
+  module Models
+    class TripsForRouteListResponse < Onebusaway::Models::ResponseWrapper
+      # @!attribute data
+      #
+      #   @return [Onebusaway::Models::TripsForRouteListResponse::Data]
+      required :data, -> { Onebusaway::Models::TripsForRouteListResponse::Data }
+
+      # @!parse
+      #   # @param data [Onebusaway::Models::TripsForRouteListResponse::Data]
+      #   #
+      #   def initialize(data:, **) = super
+
+      # def initialize: (Hash | Onebusaway::BaseModel) -> void
+
+      # @example
+      # ```ruby
+      # data => {
+      #   limit_exceeded: Onebusaway::BooleanModel,
+      #   list: -> { Onebusaway::ArrayOf[Onebusaway::Models::TripsForRouteListResponse::Data::List] === _1 },
+      #   references: Onebusaway::Models::References
+      # }
+      # ```
+      class Data < Onebusaway::BaseModel
+        # @!attribute limit_exceeded
+        #
+        #   @return [Boolean]
+        required :limit_exceeded, Onebusaway::BooleanModel, api_name: :limitExceeded
+
+        # @!attribute list
+        #
+        #   @return [Array<Onebusaway::Models::TripsForRouteListResponse::Data::List>]
+        required :list, -> { Onebusaway::ArrayOf[Onebusaway::Models::TripsForRouteListResponse::Data::List] }
+
+        # @!attribute references
+        #
+        #   @return [Onebusaway::Models::References]
+        required :references, -> { Onebusaway::Models::References }
+
+        # @!parse
+        #   # @param limit_exceeded [Boolean]
+        #   # @param list [Array<Onebusaway::Models::TripsForRouteListResponse::Data::List>]
+        #   # @param references [Onebusaway::Models::References]
+        #   #
+        #   def initialize(limit_exceeded:, list:, references:, **) = super
+
+        # def initialize: (Hash | Onebusaway::BaseModel) -> void
+
+        # @example
+        # ```ruby
+        # list => {
+        #   schedule: Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule,
+        #   status: Onebusaway::Models::TripsForRouteListResponse::Data::List::Status,
+        #   trip_id: String,
+        #   frequency: String,
+        #   service_date: Integer
+        # }
+        # ```
+        class List < Onebusaway::BaseModel
+          # @!attribute schedule
+          #
+          #   @return [Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule]
+          required :schedule, -> { Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule }
+
+          # @!attribute status
+          #
+          #   @return [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status]
+          required :status, -> { Onebusaway::Models::TripsForRouteListResponse::Data::List::Status }
+
+          # @!attribute trip_id
+          #
+          #   @return [String]
+          required :trip_id, String, api_name: :tripId
+
+          # @!attribute frequency
+          #
+          #   @return [String, nil]
+          optional :frequency, String, nil?: true
+
+          # @!attribute [r] service_date
+          #
+          #   @return [Integer, nil]
+          optional :service_date, Integer, api_name: :serviceDate
+
+          # @!parse
+          #   # @return [Integer]
+          #   attr_writer :service_date
+
+          # @!attribute [r] situation_ids
+          #
+          #   @return [Array<String>, nil]
+          optional :situation_ids, Onebusaway::ArrayOf[String], api_name: :situationIds
+
+          # @!parse
+          #   # @return [Array<String>]
+          #   attr_writer :situation_ids
+
+          # @!parse
+          #   # @param schedule [Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule]
+          #   # @param status [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status]
+          #   # @param trip_id [String]
+          #   # @param frequency [String, nil]
+          #   # @param service_date [Integer]
+          #   # @param situation_ids [Array<String>]
+          #   #
+          #   def initialize(schedule:, status:, trip_id:, frequency: nil, service_date: nil, situation_ids: nil, **) = super
+
+          # def initialize: (Hash | Onebusaway::BaseModel) -> void
+
+          # @example
+          # ```ruby
+          # schedule => {
+          #   next_trip_id: String,
+          #   previous_trip_id: String,
+          #   stop_times: -> { Onebusaway::ArrayOf[Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime] === _1 },
+          #   time_zone: String,
+          #   frequency: String
+          # }
+          # ```
+          class Schedule < Onebusaway::BaseModel
+            # @!attribute next_trip_id
+            #
+            #   @return [String]
+            required :next_trip_id, String, api_name: :nextTripId
+
+            # @!attribute previous_trip_id
+            #
+            #   @return [String]
+            required :previous_trip_id, String, api_name: :previousTripId
+
+            # @!attribute stop_times
+            #
+            #   @return [Array<Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime>]
+            required :stop_times,
+                     -> {
+                       Onebusaway::ArrayOf[Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime]
+                     },
+                     api_name: :stopTimes
+
+            # @!attribute time_zone
+            #
+            #   @return [String]
+            required :time_zone, String, api_name: :timeZone
+
+            # @!attribute frequency
+            #
+            #   @return [String, nil]
+            optional :frequency, String, nil?: true
+
+            # @!parse
+            #   # @param next_trip_id [String]
+            #   # @param previous_trip_id [String]
+            #   # @param stop_times [Array<Onebusaway::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime>]
+            #   # @param time_zone [String]
+            #   # @param frequency [String, nil]
+            #   #
+            #   def initialize(next_trip_id:, previous_trip_id:, stop_times:, time_zone:, frequency: nil, **) = super
+
+            # def initialize: (Hash | Onebusaway::BaseModel) -> void
+
+            # @example
+            # ```ruby
+            # stop_time => {
+            #   arrival_time: Integer,
+            #   departure_time: Integer,
+            #   distance_along_trip: Float,
+            #   historical_occupancy: String,
+            #   stop_headsign: String
+            # }
+            # ```
+            class StopTime < Onebusaway::BaseModel
+              # @!attribute [r] arrival_time
+              #
+              #   @return [Integer, nil]
+              optional :arrival_time, Integer, api_name: :arrivalTime
+
+              # @!parse
+              #   # @return [Integer]
+              #   attr_writer :arrival_time
+
+              # @!attribute [r] departure_time
+              #
+              #   @return [Integer, nil]
+              optional :departure_time, Integer, api_name: :departureTime
+
+              # @!parse
+              #   # @return [Integer]
+              #   attr_writer :departure_time
+
+              # @!attribute [r] distance_along_trip
+              #
+              #   @return [Float, nil]
+              optional :distance_along_trip, Float, api_name: :distanceAlongTrip
+
+              # @!parse
+              #   # @return [Float]
+              #   attr_writer :distance_along_trip
+
+              # @!attribute [r] historical_occupancy
+              #
+              #   @return [String, nil]
+              optional :historical_occupancy, String, api_name: :historicalOccupancy
+
+              # @!parse
+              #   # @return [String]
+              #   attr_writer :historical_occupancy
+
+              # @!attribute [r] stop_headsign
+              #
+              #   @return [String, nil]
+              optional :stop_headsign, String, api_name: :stopHeadsign
+
+              # @!parse
+              #   # @return [String]
+              #   attr_writer :stop_headsign
+
+              # @!attribute [r] stop_id
+              #
+              #   @return [String, nil]
+              optional :stop_id, String, api_name: :stopId
+
+              # @!parse
+              #   # @return [String]
+              #   attr_writer :stop_id
+
+              # @!parse
+              #   # @param arrival_time [Integer]
+              #   # @param departure_time [Integer]
+              #   # @param distance_along_trip [Float]
+              #   # @param historical_occupancy [String]
+              #   # @param stop_headsign [String]
+              #   # @param stop_id [String]
+              #   #
+              #   def initialize(
+              #     arrival_time: nil,
+              #     departure_time: nil,
+              #     distance_along_trip: nil,
+              #     historical_occupancy: nil,
+              #     stop_headsign: nil,
+              #     stop_id: nil,
+              #     **
+              #   )
+              #     super
+              #   end
+
+              # def initialize: (Hash | Onebusaway::BaseModel) -> void
+            end
+          end
+
+          # @example
+          # ```ruby
+          # status => {
+          #   active_trip_id: String,
+          #   block_trip_sequence: Integer,
+          #   closest_stop: String,
+          #   distance_along_trip: Float,
+          #   last_known_distance_along_trip: Float,
+          #   **_
+          # }
+          # ```
+          class Status < Onebusaway::BaseModel
+            # @!attribute active_trip_id
+            #   Trip ID of the trip the vehicle is actively serving.
+            #
+            #   @return [String]
+            required :active_trip_id, String, api_name: :activeTripId
+
+            # @!attribute block_trip_sequence
+            #   Index of the active trip into the sequence of trips for the active block.
+            #
+            #   @return [Integer]
+            required :block_trip_sequence, Integer, api_name: :blockTripSequence
+
+            # @!attribute closest_stop
+            #   ID of the closest stop to the current location of the transit vehicle.
+            #
+            #   @return [String]
+            required :closest_stop, String, api_name: :closestStop
+
+            # @!attribute distance_along_trip
+            #   Distance, in meters, the transit vehicle has progressed along the active trip.
+            #
+            #   @return [Float]
+            required :distance_along_trip, Float, api_name: :distanceAlongTrip
+
+            # @!attribute last_known_distance_along_trip
+            #   Last known distance along the trip received in real-time from the transit
+            #     vehicle.
+            #
+            #   @return [Float]
+            required :last_known_distance_along_trip, Float, api_name: :lastKnownDistanceAlongTrip
+
+            # @!attribute last_location_update_time
+            #   Timestamp of the last known real-time location update from the transit vehicle.
+            #
+            #   @return [Integer]
+            required :last_location_update_time, Integer, api_name: :lastLocationUpdateTime
+
+            # @!attribute last_update_time
+            #   Timestamp of the last known real-time update from the transit vehicle.
+            #
+            #   @return [Integer]
+            required :last_update_time, Integer, api_name: :lastUpdateTime
+
+            # @!attribute occupancy_capacity
+            #   Capacity of the transit vehicle in terms of occupancy.
+            #
+            #   @return [Integer]
+            required :occupancy_capacity, Integer, api_name: :occupancyCapacity
+
+            # @!attribute occupancy_count
+            #   Current count of occupants in the transit vehicle.
+            #
+            #   @return [Integer]
+            required :occupancy_count, Integer, api_name: :occupancyCount
+
+            # @!attribute occupancy_status
+            #   Current occupancy status of the transit vehicle.
+            #
+            #   @return [String]
+            required :occupancy_status, String, api_name: :occupancyStatus
+
+            # @!attribute phase
+            #   Current journey phase of the trip.
+            #
+            #   @return [String]
+            required :phase, String
+
+            # @!attribute predicted
+            #   Indicates if real-time arrival info is available for this trip.
+            #
+            #   @return [Boolean]
+            required :predicted, Onebusaway::BooleanModel
+
+            # @!attribute schedule_deviation
+            #   Deviation from the schedule in seconds (positive for late, negative for early).
+            #
+            #   @return [Integer]
+            required :schedule_deviation, Integer, api_name: :scheduleDeviation
+
+            # @!attribute service_date
+            #   Time, in milliseconds since the Unix epoch, of midnight for the start of the
+            #     service date for the trip.
+            #
+            #   @return [Integer]
+            required :service_date, Integer, api_name: :serviceDate
+
+            # @!attribute status
+            #   Current status modifiers for the trip.
+            #
+            #   @return [String]
+            required :status, String
+
+            # @!attribute total_distance_along_trip
+            #   Total length of the trip, in meters.
+            #
+            #   @return [Float]
+            required :total_distance_along_trip, Float, api_name: :totalDistanceAlongTrip
+
+            # @!attribute [r] closest_stop_time_offset
+            #   Time offset from the closest stop to the current position of the transit vehicle
+            #     (in seconds).
+            #
+            #   @return [Integer, nil]
+            optional :closest_stop_time_offset, Integer, api_name: :closestStopTimeOffset
+
+            # @!parse
+            #   # @return [Integer]
+            #   attr_writer :closest_stop_time_offset
+
+            # @!attribute [r] frequency
+            #   Information about frequency-based scheduling, if applicable to the trip.
+            #
+            #   @return [String, nil]
+            optional :frequency, String
+
+            # @!parse
+            #   # @return [String]
+            #   attr_writer :frequency
+
+            # @!attribute [r] last_known_location
+            #   Last known location of the transit vehicle.
+            #
+            #   @return [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation, nil]
+            optional :last_known_location,
+                     -> {
+                       Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation
+                     },
+                     api_name: :lastKnownLocation
+
+            # @!parse
+            #   # @return [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation]
+            #   attr_writer :last_known_location
+
+            # @!attribute [r] last_known_orientation
+            #   Last known orientation value received in real-time from the transit vehicle.
+            #
+            #   @return [Float, nil]
+            optional :last_known_orientation, Float, api_name: :lastKnownOrientation
+
+            # @!parse
+            #   # @return [Float]
+            #   attr_writer :last_known_orientation
+
+            # @!attribute [r] next_stop
+            #   ID of the next stop the transit vehicle is scheduled to arrive at.
+            #
+            #   @return [String, nil]
+            optional :next_stop, String, api_name: :nextStop
+
+            # @!parse
+            #   # @return [String]
+            #   attr_writer :next_stop
+
+            # @!attribute [r] next_stop_time_offset
+            #   Time offset from the next stop to the current position of the transit vehicle
+            #     (in seconds).
+            #
+            #   @return [Integer, nil]
+            optional :next_stop_time_offset, Integer, api_name: :nextStopTimeOffset
+
+            # @!parse
+            #   # @return [Integer]
+            #   attr_writer :next_stop_time_offset
+
+            # @!attribute [r] orientation
+            #   Orientation of the transit vehicle, represented as an angle in degrees.
+            #
+            #   @return [Float, nil]
+            optional :orientation, Float
+
+            # @!parse
+            #   # @return [Float]
+            #   attr_writer :orientation
+
+            # @!attribute [r] position
+            #   Current position of the transit vehicle.
+            #
+            #   @return [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::Position, nil]
+            optional :position,
+                     -> {
+                       Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::Position
+                     }
+
+            # @!parse
+            #   # @return [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::Position]
+            #   attr_writer :position
+
+            # @!attribute [r] scheduled_distance_along_trip
+            #   Distance, in meters, the transit vehicle is scheduled to have progressed along
+            #     the active trip.
+            #
+            #   @return [Float, nil]
+            optional :scheduled_distance_along_trip, Float, api_name: :scheduledDistanceAlongTrip
+
+            # @!parse
+            #   # @return [Float]
+            #   attr_writer :scheduled_distance_along_trip
+
+            # @!attribute [r] situation_ids
+            #   References to situation elements (if any) applicable to this trip.
+            #
+            #   @return [Array<String>, nil]
+            optional :situation_ids, Onebusaway::ArrayOf[String], api_name: :situationIds
+
+            # @!parse
+            #   # @return [Array<String>]
+            #   attr_writer :situation_ids
+
+            # @!attribute [r] vehicle_id
+            #   ID of the transit vehicle currently serving the trip.
+            #
+            #   @return [String, nil]
+            optional :vehicle_id, String, api_name: :vehicleId
+
+            # @!parse
+            #   # @return [String]
+            #   attr_writer :vehicle_id
+
+            # @!parse
+            #   # @param active_trip_id [String]
+            #   # @param block_trip_sequence [Integer]
+            #   # @param closest_stop [String]
+            #   # @param distance_along_trip [Float]
+            #   # @param last_known_distance_along_trip [Float]
+            #   # @param last_location_update_time [Integer]
+            #   # @param last_update_time [Integer]
+            #   # @param occupancy_capacity [Integer]
+            #   # @param occupancy_count [Integer]
+            #   # @param occupancy_status [String]
+            #   # @param phase [String]
+            #   # @param predicted [Boolean]
+            #   # @param schedule_deviation [Integer]
+            #   # @param service_date [Integer]
+            #   # @param status [String]
+            #   # @param total_distance_along_trip [Float]
+            #   # @param closest_stop_time_offset [Integer]
+            #   # @param frequency [String]
+            #   # @param last_known_location [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation]
+            #   # @param last_known_orientation [Float]
+            #   # @param next_stop [String]
+            #   # @param next_stop_time_offset [Integer]
+            #   # @param orientation [Float]
+            #   # @param position [Onebusaway::Models::TripsForRouteListResponse::Data::List::Status::Position]
+            #   # @param scheduled_distance_along_trip [Float]
+            #   # @param situation_ids [Array<String>]
+            #   # @param vehicle_id [String]
+            #   #
+            #   def initialize(
+            #     active_trip_id:,
+            #     block_trip_sequence:,
+            #     closest_stop:,
+            #     distance_along_trip:,
+            #     last_known_distance_along_trip:,
+            #     last_location_update_time:,
+            #     last_update_time:,
+            #     occupancy_capacity:,
+            #     occupancy_count:,
+            #     occupancy_status:,
+            #     phase:,
+            #     predicted:,
+            #     schedule_deviation:,
+            #     service_date:,
+            #     status:,
+            #     total_distance_along_trip:,
+            #     closest_stop_time_offset: nil,
+            #     frequency: nil,
+            #     last_known_location: nil,
+            #     last_known_orientation: nil,
+            #     next_stop: nil,
+            #     next_stop_time_offset: nil,
+            #     orientation: nil,
+            #     position: nil,
+            #     scheduled_distance_along_trip: nil,
+            #     situation_ids: nil,
+            #     vehicle_id: nil,
+            #     **
+            #   )
+            #     super
+            #   end
+
+            # def initialize: (Hash | Onebusaway::BaseModel) -> void
+
+            # @example
+            # ```ruby
+            # last_known_location => {
+            #   lat: Float,
+            #   lon: Float
+            # }
+            # ```
+            class LastKnownLocation < Onebusaway::BaseModel
+              # @!attribute [r] lat
+              #   Latitude of the last known location of the transit vehicle.
+              #
+              #   @return [Float, nil]
+              optional :lat, Float
+
+              # @!parse
+              #   # @return [Float]
+              #   attr_writer :lat
+
+              # @!attribute [r] lon
+              #   Longitude of the last known location of the transit vehicle.
+              #
+              #   @return [Float, nil]
+              optional :lon, Float
+
+              # @!parse
+              #   # @return [Float]
+              #   attr_writer :lon
+
+              # @!parse
+              #   # Last known location of the transit vehicle.
+              #   #
+              #   # @param lat [Float]
+              #   # @param lon [Float]
+              #   #
+              #   def initialize(lat: nil, lon: nil, **) = super
+
+              # def initialize: (Hash | Onebusaway::BaseModel) -> void
+            end
+
+            # @example
+            # ```ruby
+            # position => {
+            #   lat: Float,
+            #   lon: Float
+            # }
+            # ```
+            class Position < Onebusaway::BaseModel
+              # @!attribute [r] lat
+              #   Latitude of the current position of the transit vehicle.
+              #
+              #   @return [Float, nil]
+              optional :lat, Float
+
+              # @!parse
+              #   # @return [Float]
+              #   attr_writer :lat
+
+              # @!attribute [r] lon
+              #   Longitude of the current position of the transit vehicle.
+              #
+              #   @return [Float, nil]
+              optional :lon, Float
+
+              # @!parse
+              #   # @return [Float]
+              #   attr_writer :lon
+
+              # @!parse
+              #   # Current position of the transit vehicle.
+              #   #
+              #   # @param lat [Float]
+              #   # @param lon [Float]
+              #   #
+              #   def initialize(lat: nil, lon: nil, **) = super
+
+              # def initialize: (Hash | Onebusaway::BaseModel) -> void
+            end
+          end
+        end
+      end
+    end
+  end
+end

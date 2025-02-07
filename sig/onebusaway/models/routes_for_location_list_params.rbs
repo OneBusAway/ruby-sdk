@@ -1,0 +1,56 @@
+module Onebusaway
+  module Models
+    type routes_for_location_list_params =
+      {
+        lat: Float,
+        lon: Float,
+        lat_span: Float,
+        lon_span: Float,
+        query: String,
+        radius: Float
+      }
+      & Onebusaway::request_parameters
+
+    class RoutesForLocationListParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      attr_accessor lat: Float
+
+      attr_accessor lon: Float
+
+      attr_reader lat_span: Float?
+
+      def lat_span=: (Float) -> void
+
+      attr_reader lon_span: Float?
+
+      def lon_span=: (Float) -> void
+
+      attr_reader query: String?
+
+      def query=: (String) -> void
+
+      attr_reader radius: Float?
+
+      def radius=: (Float) -> void
+
+      def initialize:
+        (
+          lat: Float,
+          lon: Float,
+          lat_span: Float,
+          lon_span: Float,
+          query: String,
+          radius: Float,
+          request_options: Onebusaway::request_opts
+        ) -> void
+        | (
+          ?Onebusaway::Models::routes_for_location_list_params
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::routes_for_location_list_params
+    end
+  end
+end

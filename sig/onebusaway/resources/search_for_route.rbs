@@ -1,0 +1,18 @@
+module Onebusaway
+  module Resources
+    class SearchForRoute
+      def list:
+        (
+          Onebusaway::Models::SearchForRouteListParams
+          | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::SearchForRouteListResponse
+        | (
+          input: String,
+          max_count: Integer,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::SearchForRouteListResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

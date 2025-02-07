@@ -1,0 +1,29 @@
+module Onebusaway
+  module Models
+    type response_wrapper =
+      { code: Integer, current_time: Integer, text: String, version: Integer }
+
+    class ResponseWrapper < Onebusaway::BaseModel
+      attr_accessor code: Integer
+
+      attr_accessor current_time: Integer
+
+      attr_accessor text: String
+
+      attr_accessor version: Integer
+
+      def initialize:
+        (
+          code: Integer,
+          current_time: Integer,
+          text: String,
+          version: Integer
+        ) -> void
+        | (
+          ?Onebusaway::Models::response_wrapper | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::response_wrapper
+    end
+  end
+end

@@ -1,0 +1,375 @@
+module Onebusaway
+  module Models
+    type trip_for_vehicle_retrieve_response =
+      { data: Onebusaway::Models::TripForVehicleRetrieveResponse::Data }
+
+    class TripForVehicleRetrieveResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::TripForVehicleRetrieveResponse::Data
+
+      def initialize:
+        (data: Onebusaway::Models::TripForVehicleRetrieveResponse::Data) -> void
+        | (
+          ?Onebusaway::Models::trip_for_vehicle_retrieve_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::trip_for_vehicle_retrieve_response
+
+      type data =
+        {
+          entry: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry,
+          references: Onebusaway::Models::References
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor entry: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry
+
+        attr_accessor references: Onebusaway::Models::References
+
+        def initialize:
+          (
+            entry: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry,
+            references: Onebusaway::Models::References
+          ) -> void
+          | (
+            ?Onebusaway::Models::TripForVehicleRetrieveResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::TripForVehicleRetrieveResponse::data
+
+        type entry =
+          {
+            trip_id: String,
+            frequency: String?,
+            schedule: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
+            service_date: Integer,
+            situation_ids: Array[String],
+            status: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status
+          }
+
+        class Entry < Onebusaway::BaseModel
+          attr_accessor trip_id: String
+
+          attr_accessor frequency: String?
+
+          attr_reader schedule: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule?
+
+          def schedule=: (
+            Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule
+          ) -> void
+
+          attr_reader service_date: Integer?
+
+          def service_date=: (Integer) -> void
+
+          attr_reader situation_ids: Array[String]?
+
+          def situation_ids=: (Array[String]) -> void
+
+          attr_reader status: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status?
+
+          def status=: (
+            Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status
+          ) -> void
+
+          def initialize:
+            (
+              trip_id: String,
+              frequency: String?,
+              schedule: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
+              service_date: Integer,
+              situation_ids: Array[String],
+              status: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status
+            ) -> void
+            | (
+              ?Onebusaway::Models::TripForVehicleRetrieveResponse::Data::entry
+              | Onebusaway::BaseModel data
+            ) -> void
+
+          def to_hash: -> Onebusaway::Models::TripForVehicleRetrieveResponse::Data::entry
+
+          type schedule =
+            {
+              next_trip_id: String,
+              previous_trip_id: String,
+              stop_times: Array[Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime],
+              time_zone: String,
+              frequency: String?
+            }
+
+          class Schedule < Onebusaway::BaseModel
+            attr_accessor next_trip_id: String
+
+            attr_accessor previous_trip_id: String
+
+            attr_accessor stop_times: Array[Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime]
+
+            attr_accessor time_zone: String
+
+            attr_accessor frequency: String?
+
+            def initialize:
+              (
+                next_trip_id: String,
+                previous_trip_id: String,
+                stop_times: Array[Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime],
+                time_zone: String,
+                frequency: String?
+              ) -> void
+              | (
+                ?Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::schedule
+                | Onebusaway::BaseModel data
+              ) -> void
+
+            def to_hash: -> Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::schedule
+
+            type stop_time =
+              {
+                arrival_time: Integer,
+                departure_time: Integer,
+                distance_along_trip: Float,
+                historical_occupancy: String,
+                stop_headsign: String,
+                stop_id: String
+              }
+
+            class StopTime < Onebusaway::BaseModel
+              attr_reader arrival_time: Integer?
+
+              def arrival_time=: (Integer) -> void
+
+              attr_reader departure_time: Integer?
+
+              def departure_time=: (Integer) -> void
+
+              attr_reader distance_along_trip: Float?
+
+              def distance_along_trip=: (Float) -> void
+
+              attr_reader historical_occupancy: String?
+
+              def historical_occupancy=: (String) -> void
+
+              attr_reader stop_headsign: String?
+
+              def stop_headsign=: (String) -> void
+
+              attr_reader stop_id: String?
+
+              def stop_id=: (String) -> void
+
+              def initialize:
+                (
+                  arrival_time: Integer,
+                  departure_time: Integer,
+                  distance_along_trip: Float,
+                  historical_occupancy: String,
+                  stop_headsign: String,
+                  stop_id: String
+                ) -> void
+                | (
+                  ?Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::stop_time
+                  | Onebusaway::BaseModel data
+                ) -> void
+
+              def to_hash: -> Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::stop_time
+            end
+          end
+
+          type status =
+            {
+              active_trip_id: String,
+              block_trip_sequence: Integer,
+              closest_stop: String,
+              distance_along_trip: Float,
+              last_known_distance_along_trip: Float,
+              last_location_update_time: Integer,
+              last_update_time: Integer,
+              occupancy_capacity: Integer,
+              occupancy_count: Integer,
+              occupancy_status: String,
+              phase: String,
+              predicted: bool,
+              schedule_deviation: Integer,
+              service_date: Integer,
+              status: String,
+              total_distance_along_trip: Float,
+              closest_stop_time_offset: Integer,
+              frequency: String,
+              last_known_location: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
+              last_known_orientation: Float,
+              next_stop: String,
+              next_stop_time_offset: Integer,
+              orientation: Float,
+              position: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
+              scheduled_distance_along_trip: Float,
+              situation_ids: Array[String],
+              vehicle_id: String
+            }
+
+          class Status < Onebusaway::BaseModel
+            attr_accessor active_trip_id: String
+
+            attr_accessor block_trip_sequence: Integer
+
+            attr_accessor closest_stop: String
+
+            attr_accessor distance_along_trip: Float
+
+            attr_accessor last_known_distance_along_trip: Float
+
+            attr_accessor last_location_update_time: Integer
+
+            attr_accessor last_update_time: Integer
+
+            attr_accessor occupancy_capacity: Integer
+
+            attr_accessor occupancy_count: Integer
+
+            attr_accessor occupancy_status: String
+
+            attr_accessor phase: String
+
+            attr_accessor predicted: bool
+
+            attr_accessor schedule_deviation: Integer
+
+            attr_accessor service_date: Integer
+
+            attr_accessor status: String
+
+            attr_accessor total_distance_along_trip: Float
+
+            attr_reader closest_stop_time_offset: Integer?
+
+            def closest_stop_time_offset=: (Integer) -> void
+
+            attr_reader frequency: String?
+
+            def frequency=: (String) -> void
+
+            attr_reader last_known_location: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation?
+
+            def last_known_location=: (
+              Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation
+            ) -> void
+
+            attr_reader last_known_orientation: Float?
+
+            def last_known_orientation=: (Float) -> void
+
+            attr_reader next_stop: String?
+
+            def next_stop=: (String) -> void
+
+            attr_reader next_stop_time_offset: Integer?
+
+            def next_stop_time_offset=: (Integer) -> void
+
+            attr_reader orientation: Float?
+
+            def orientation=: (Float) -> void
+
+            attr_reader position: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position?
+
+            def position=: (
+              Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position
+            ) -> void
+
+            attr_reader scheduled_distance_along_trip: Float?
+
+            def scheduled_distance_along_trip=: (Float) -> void
+
+            attr_reader situation_ids: Array[String]?
+
+            def situation_ids=: (Array[String]) -> void
+
+            attr_reader vehicle_id: String?
+
+            def vehicle_id=: (String) -> void
+
+            def initialize:
+              (
+                active_trip_id: String,
+                block_trip_sequence: Integer,
+                closest_stop: String,
+                distance_along_trip: Float,
+                last_known_distance_along_trip: Float,
+                last_location_update_time: Integer,
+                last_update_time: Integer,
+                occupancy_capacity: Integer,
+                occupancy_count: Integer,
+                occupancy_status: String,
+                phase: String,
+                predicted: bool,
+                schedule_deviation: Integer,
+                service_date: Integer,
+                status: String,
+                total_distance_along_trip: Float,
+                closest_stop_time_offset: Integer,
+                frequency: String,
+                last_known_location: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
+                last_known_orientation: Float,
+                next_stop: String,
+                next_stop_time_offset: Integer,
+                orientation: Float,
+                position: Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
+                scheduled_distance_along_trip: Float,
+                situation_ids: Array[String],
+                vehicle_id: String
+              ) -> void
+              | (
+                ?Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::status
+                | Onebusaway::BaseModel data
+              ) -> void
+
+            def to_hash: -> Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::status
+
+            type last_known_location = { lat: Float, lon: Float }
+
+            class LastKnownLocation < Onebusaway::BaseModel
+              attr_reader lat: Float?
+
+              def lat=: (Float) -> void
+
+              attr_reader lon: Float?
+
+              def lon=: (Float) -> void
+
+              def initialize:
+                (lat: Float, lon: Float) -> void
+                | (
+                  ?Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::last_known_location
+                  | Onebusaway::BaseModel data
+                ) -> void
+
+              def to_hash: -> Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::last_known_location
+            end
+
+            type position = { lat: Float, lon: Float }
+
+            class Position < Onebusaway::BaseModel
+              attr_reader lat: Float?
+
+              def lat=: (Float) -> void
+
+              attr_reader lon: Float?
+
+              def lon=: (Float) -> void
+
+              def initialize:
+                (lat: Float, lon: Float) -> void
+                | (
+                  ?Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::position
+                  | Onebusaway::BaseModel data
+                ) -> void
+
+              def to_hash: -> Onebusaway::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::position
+            end
+          end
+        end
+      end
+    end
+  end
+end
