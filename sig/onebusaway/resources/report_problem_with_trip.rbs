@@ -1,0 +1,28 @@
+module Onebusaway
+  module Resources
+    class ReportProblemWithTrip
+      def retrieve:
+        (
+          String trip_id,
+          ?Onebusaway::Models::ReportProblemWithTripRetrieveParams
+          | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::ResponseWrapper
+        | (
+          String trip_id,
+          code: Onebusaway::Models::ReportProblemWithTripRetrieveParams::code,
+          service_date: Integer,
+          stop_id: String,
+          user_comment: String,
+          user_lat: Float,
+          user_location_accuracy: Float,
+          user_lon: Float,
+          user_on_vehicle: bool,
+          user_vehicle_number: String,
+          vehicle_id: String,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::ResponseWrapper
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

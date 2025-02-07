@@ -1,0 +1,19 @@
+module Onebusaway
+  module Models
+    type current_time_retrieve_params = {  } & Onebusaway::request_parameters
+
+    class CurrentTimeRetrieveParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      def initialize:
+        (request_options: Onebusaway::request_opts) -> void
+        | (
+          ?Onebusaway::Models::current_time_retrieve_params
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::current_time_retrieve_params
+    end
+  end
+end

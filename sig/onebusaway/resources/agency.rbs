@@ -1,0 +1,17 @@
+module Onebusaway
+  module Resources
+    class Agency
+      def retrieve:
+        (
+          String agency_id,
+          ?Onebusaway::Models::AgencyRetrieveParams | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::AgencyRetrieveResponse
+        | (
+          String agency_id,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::AgencyRetrieveResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end

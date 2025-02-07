@@ -1,0 +1,115 @@
+module Onebusaway
+  module Models
+    type agency_retrieve_response =
+      { data: Onebusaway::Models::AgencyRetrieveResponse::Data }
+
+    class AgencyRetrieveResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::AgencyRetrieveResponse::Data
+
+      def initialize:
+        (data: Onebusaway::Models::AgencyRetrieveResponse::Data) -> void
+        | (
+          ?Onebusaway::Models::agency_retrieve_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::agency_retrieve_response
+
+      type data =
+        {
+          entry: Onebusaway::Models::AgencyRetrieveResponse::Data::Entry,
+          limit_exceeded: bool,
+          references: Onebusaway::Models::References
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor entry: Onebusaway::Models::AgencyRetrieveResponse::Data::Entry
+
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor references: Onebusaway::Models::References
+
+        def initialize:
+          (
+            entry: Onebusaway::Models::AgencyRetrieveResponse::Data::Entry,
+            limit_exceeded: bool,
+            references: Onebusaway::Models::References
+          ) -> void
+          | (
+            ?Onebusaway::Models::AgencyRetrieveResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::AgencyRetrieveResponse::data
+
+        type entry =
+          {
+            id: String,
+            name: String,
+            timezone: String,
+            url: String,
+            disclaimer: String,
+            email: String,
+            fare_url: String,
+            lang: String,
+            phone: String,
+            private_service: bool
+          }
+
+        class Entry < Onebusaway::BaseModel
+          attr_accessor id: String
+
+          attr_accessor name: String
+
+          attr_accessor timezone: String
+
+          attr_accessor url: String
+
+          attr_reader disclaimer: String?
+
+          def disclaimer=: (String) -> void
+
+          attr_reader email: String?
+
+          def email=: (String) -> void
+
+          attr_reader fare_url: String?
+
+          def fare_url=: (String) -> void
+
+          attr_reader lang: String?
+
+          def lang=: (String) -> void
+
+          attr_reader phone: String?
+
+          def phone=: (String) -> void
+
+          attr_reader private_service: bool?
+
+          def private_service=: (bool) -> void
+
+          def initialize:
+            (
+              id: String,
+              name: String,
+              timezone: String,
+              url: String,
+              disclaimer: String,
+              email: String,
+              fare_url: String,
+              lang: String,
+              phone: String,
+              private_service: bool
+            ) -> void
+            | (
+              ?Onebusaway::Models::AgencyRetrieveResponse::Data::entry
+              | Onebusaway::BaseModel data
+            ) -> void
+
+          def to_hash: -> Onebusaway::Models::AgencyRetrieveResponse::Data::entry
+        end
+      end
+    end
+  end
+end

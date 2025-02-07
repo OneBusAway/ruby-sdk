@@ -1,0 +1,18 @@
+module Onebusaway
+  module Models
+    type stop_retrieve_params = {  } & Onebusaway::request_parameters
+
+    class StopRetrieveParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      def initialize:
+        (request_options: Onebusaway::request_opts) -> void
+        | (
+          ?Onebusaway::Models::stop_retrieve_params | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::stop_retrieve_params
+    end
+  end
+end

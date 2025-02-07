@@ -1,0 +1,47 @@
+module Onebusaway
+  module Models
+    type stop_ids_for_agency_list_response =
+      { data: Onebusaway::Models::StopIDsForAgencyListResponse::Data }
+
+    class StopIDsForAgencyListResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::StopIDsForAgencyListResponse::Data
+
+      def initialize:
+        (data: Onebusaway::Models::StopIDsForAgencyListResponse::Data) -> void
+        | (
+          ?Onebusaway::Models::stop_ids_for_agency_list_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::stop_ids_for_agency_list_response
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: Array[String],
+          references: Onebusaway::Models::References
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: Array[String]
+
+        attr_accessor references: Onebusaway::Models::References
+
+        def initialize:
+          (
+            limit_exceeded: bool,
+            list: Array[String],
+            references: Onebusaway::Models::References
+          ) -> void
+          | (
+            ?Onebusaway::Models::StopIDsForAgencyListResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::StopIDsForAgencyListResponse::data
+      end
+    end
+  end
+end

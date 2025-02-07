@@ -1,0 +1,19 @@
+module Onebusaway
+  module Models
+    type config_retrieve_params = {  } & Onebusaway::request_parameters
+
+    class ConfigRetrieveParams < Onebusaway::BaseModel
+      extend Onebusaway::RequestParameters::Converter
+      include Onebusaway::RequestParameters
+
+      def initialize:
+        (request_options: Onebusaway::request_opts) -> void
+        | (
+          ?Onebusaway::Models::config_retrieve_params
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::config_retrieve_params
+    end
+  end
+end

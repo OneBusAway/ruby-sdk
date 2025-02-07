@@ -1,0 +1,85 @@
+module Onebusaway
+  module Models
+    type agencies_with_coverage_list_response =
+      { data: Onebusaway::Models::AgenciesWithCoverageListResponse::Data }
+
+    class AgenciesWithCoverageListResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::AgenciesWithCoverageListResponse::Data
+
+      def initialize:
+        (
+          data: Onebusaway::Models::AgenciesWithCoverageListResponse::Data
+        ) -> void
+        | (
+          ?Onebusaway::Models::agencies_with_coverage_list_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::agencies_with_coverage_list_response
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List],
+          references: Onebusaway::Models::References
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List]
+
+        attr_accessor references: Onebusaway::Models::References
+
+        def initialize:
+          (
+            limit_exceeded: bool,
+            list: Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List],
+            references: Onebusaway::Models::References
+          ) -> void
+          | (
+            ?Onebusaway::Models::AgenciesWithCoverageListResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::AgenciesWithCoverageListResponse::data
+
+        type list =
+          {
+            agency_id: String,
+            lat: Float,
+            lat_span: Float,
+            lon: Float,
+            lon_span: Float
+          }
+
+        class List < Onebusaway::BaseModel
+          attr_accessor agency_id: String
+
+          attr_accessor lat: Float
+
+          attr_accessor lat_span: Float
+
+          attr_accessor lon: Float
+
+          attr_accessor lon_span: Float
+
+          def initialize:
+            (
+              agency_id: String,
+              lat: Float,
+              lat_span: Float,
+              lon: Float,
+              lon_span: Float
+            ) -> void
+            | (
+              ?Onebusaway::Models::AgenciesWithCoverageListResponse::Data::list
+              | Onebusaway::BaseModel data
+            ) -> void
+
+          def to_hash: -> Onebusaway::Models::AgenciesWithCoverageListResponse::Data::list
+        end
+      end
+    end
+  end
+end

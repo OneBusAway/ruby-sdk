@@ -1,0 +1,111 @@
+module Onebusaway
+  module Models
+    type stop_retrieve_response =
+      { data: Onebusaway::Models::StopRetrieveResponse::Data }
+
+    class StopRetrieveResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::StopRetrieveResponse::Data
+
+      def initialize:
+        (data: Onebusaway::Models::StopRetrieveResponse::Data) -> void
+        | (
+          ?Onebusaway::Models::stop_retrieve_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::stop_retrieve_response
+
+      type data =
+        {
+          entry: Onebusaway::Models::StopRetrieveResponse::Data::Entry,
+          references: Onebusaway::Models::References
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor entry: Onebusaway::Models::StopRetrieveResponse::Data::Entry
+
+        attr_accessor references: Onebusaway::Models::References
+
+        def initialize:
+          (
+            entry: Onebusaway::Models::StopRetrieveResponse::Data::Entry,
+            references: Onebusaway::Models::References
+          ) -> void
+          | (
+            ?Onebusaway::Models::StopRetrieveResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::StopRetrieveResponse::data
+
+        type entry =
+          {
+            id: String,
+            lat: Float,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: Array[String],
+            static_route_ids: Array[String],
+            code: String,
+            direction: String,
+            location_type: Integer,
+            wheelchair_boarding: String
+          }
+
+        class Entry < Onebusaway::BaseModel
+          attr_accessor id: String
+
+          attr_accessor lat: Float
+
+          attr_accessor lon: Float
+
+          attr_accessor name: String
+
+          attr_accessor parent: String
+
+          attr_accessor route_ids: Array[String]
+
+          attr_accessor static_route_ids: Array[String]
+
+          attr_reader code: String?
+
+          def code=: (String) -> void
+
+          attr_reader direction: String?
+
+          def direction=: (String) -> void
+
+          attr_reader location_type: Integer?
+
+          def location_type=: (Integer) -> void
+
+          attr_reader wheelchair_boarding: String?
+
+          def wheelchair_boarding=: (String) -> void
+
+          def initialize:
+            (
+              id: String,
+              lat: Float,
+              lon: Float,
+              name: String,
+              parent: String,
+              route_ids: Array[String],
+              static_route_ids: Array[String],
+              code: String,
+              direction: String,
+              location_type: Integer,
+              wheelchair_boarding: String
+            ) -> void
+            | (
+              ?Onebusaway::Models::StopRetrieveResponse::Data::entry
+              | Onebusaway::BaseModel data
+            ) -> void
+
+          def to_hash: -> Onebusaway::Models::StopRetrieveResponse::Data::entry
+        end
+      end
+    end
+  end
+end

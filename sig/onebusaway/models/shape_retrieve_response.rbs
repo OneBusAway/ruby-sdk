@@ -1,0 +1,64 @@
+module Onebusaway
+  module Models
+    type shape_retrieve_response =
+      { data: Onebusaway::Models::ShapeRetrieveResponse::Data }
+
+    class ShapeRetrieveResponse < Onebusaway::Models::ResponseWrapper
+      attr_accessor data: Onebusaway::Models::ShapeRetrieveResponse::Data
+
+      def initialize:
+        (data: Onebusaway::Models::ShapeRetrieveResponse::Data) -> void
+        | (
+          ?Onebusaway::Models::shape_retrieve_response
+          | Onebusaway::BaseModel data
+        ) -> void
+
+      def to_hash: -> Onebusaway::Models::shape_retrieve_response
+
+      type data =
+        {
+          entry: Onebusaway::Models::ShapeRetrieveResponse::Data::Entry,
+          references: Onebusaway::Models::References
+        }
+
+      class Data < Onebusaway::BaseModel
+        attr_accessor entry: Onebusaway::Models::ShapeRetrieveResponse::Data::Entry
+
+        attr_accessor references: Onebusaway::Models::References
+
+        def initialize:
+          (
+            entry: Onebusaway::Models::ShapeRetrieveResponse::Data::Entry,
+            references: Onebusaway::Models::References
+          ) -> void
+          | (
+            ?Onebusaway::Models::ShapeRetrieveResponse::data
+            | Onebusaway::BaseModel data
+          ) -> void
+
+        def to_hash: -> Onebusaway::Models::ShapeRetrieveResponse::data
+
+        type entry = { length: Integer, points: String, levels: String }
+
+        class Entry < Onebusaway::BaseModel
+          attr_accessor length: Integer
+
+          attr_accessor points: String
+
+          attr_reader levels: String?
+
+          def levels=: (String) -> void
+
+          def initialize:
+            (length: Integer, points: String, levels: String) -> void
+            | (
+              ?Onebusaway::Models::ShapeRetrieveResponse::Data::entry
+              | Onebusaway::BaseModel data
+            ) -> void
+
+          def to_hash: -> Onebusaway::Models::ShapeRetrieveResponse::Data::entry
+        end
+      end
+    end
+  end
+end

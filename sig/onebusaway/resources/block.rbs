@@ -1,0 +1,17 @@
+module Onebusaway
+  module Resources
+    class Block
+      def retrieve:
+        (
+          String block_id,
+          ?Onebusaway::Models::BlockRetrieveParams | Hash[Symbol, top] params
+        ) -> Onebusaway::Models::BlockRetrieveResponse
+        | (
+          String block_id,
+          request_options: Onebusaway::request_opts
+        ) -> Onebusaway::Models::BlockRetrieveResponse
+
+      def initialize: (client: Onebusaway::Client) -> void
+    end
+  end
+end
