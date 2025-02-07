@@ -1,0 +1,18 @@
+module OpenTransit
+  module Resources
+    class SearchForStop
+      def list:
+        (
+          OpenTransit::Models::SearchForStopListParams
+          | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::SearchForStopListResponse
+        | (
+          input: String,
+          max_count: Integer,
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::SearchForStopListResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

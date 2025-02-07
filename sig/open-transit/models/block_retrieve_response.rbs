@@ -1,0 +1,201 @@
+module OpenTransit
+  module Models
+    type block_retrieve_response =
+      { data: OpenTransit::Models::BlockRetrieveResponse::Data }
+
+    class BlockRetrieveResponse < OpenTransit::Models::ResponseWrapper
+      attr_accessor data: OpenTransit::Models::BlockRetrieveResponse::Data
+
+      def initialize:
+        (data: OpenTransit::Models::BlockRetrieveResponse::Data) -> void
+        | (
+          ?OpenTransit::Models::block_retrieve_response
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::block_retrieve_response
+
+      type data =
+        {
+          entry: OpenTransit::Models::BlockRetrieveResponse::Data::Entry,
+          references: OpenTransit::Models::References
+        }
+
+      class Data < OpenTransit::BaseModel
+        attr_accessor entry: OpenTransit::Models::BlockRetrieveResponse::Data::Entry
+
+        attr_accessor references: OpenTransit::Models::References
+
+        def initialize:
+          (
+            entry: OpenTransit::Models::BlockRetrieveResponse::Data::Entry,
+            references: OpenTransit::Models::References
+          ) -> void
+          | (
+            ?OpenTransit::Models::BlockRetrieveResponse::data
+            | OpenTransit::BaseModel data
+          ) -> void
+
+        def to_hash: -> OpenTransit::Models::BlockRetrieveResponse::data
+
+        type entry =
+          {
+            id: String,
+            configurations: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+          }
+
+        class Entry < OpenTransit::BaseModel
+          attr_accessor id: String
+
+          attr_accessor configurations: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+
+          def initialize:
+            (
+              id: String,
+              configurations: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+            ) -> void
+            | (
+              ?OpenTransit::Models::BlockRetrieveResponse::Data::entry
+              | OpenTransit::BaseModel data
+            ) -> void
+
+          def to_hash: -> OpenTransit::Models::BlockRetrieveResponse::Data::entry
+
+          type configuration =
+            {
+              active_service_ids: Array[String],
+              trips: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+              inactive_service_ids: Array[String]
+            }
+
+          class Configuration < OpenTransit::BaseModel
+            attr_accessor active_service_ids: Array[String]
+
+            attr_accessor trips: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]
+
+            attr_reader inactive_service_ids: Array[String]?
+
+            def inactive_service_ids=: (Array[String]) -> void
+
+            def initialize:
+              (
+                active_service_ids: Array[String],
+                trips: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+                inactive_service_ids: Array[String]
+              ) -> void
+              | (
+                ?OpenTransit::Models::BlockRetrieveResponse::Data::Entry::configuration
+                | OpenTransit::BaseModel data
+              ) -> void
+
+            def to_hash: -> OpenTransit::Models::BlockRetrieveResponse::Data::Entry::configuration
+
+            type trip =
+              {
+                accumulated_slack_time: Float,
+                block_stop_times: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                distance_along_block: Float,
+                trip_id: String
+              }
+
+            class Trip < OpenTransit::BaseModel
+              attr_accessor accumulated_slack_time: Float
+
+              attr_accessor block_stop_times: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
+
+              attr_accessor distance_along_block: Float
+
+              attr_accessor trip_id: String
+
+              def initialize:
+                (
+                  accumulated_slack_time: Float,
+                  block_stop_times: Array[OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                  distance_along_block: Float,
+                  trip_id: String
+                ) -> void
+                | (
+                  ?OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::trip
+                  | OpenTransit::BaseModel data
+                ) -> void
+
+              def to_hash: -> OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::trip
+
+              type block_stop_time =
+                {
+                  accumulated_slack_time: Float,
+                  block_sequence: Integer,
+                  distance_along_block: Float,
+                  stop_time: OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                }
+
+              class BlockStopTime < OpenTransit::BaseModel
+                attr_accessor accumulated_slack_time: Float
+
+                attr_accessor block_sequence: Integer
+
+                attr_accessor distance_along_block: Float
+
+                attr_accessor stop_time: OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+
+                def initialize:
+                  (
+                    accumulated_slack_time: Float,
+                    block_sequence: Integer,
+                    distance_along_block: Float,
+                    stop_time: OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                  ) -> void
+                  | (
+                    ?OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::block_stop_time
+                    | OpenTransit::BaseModel data
+                  ) -> void
+
+                def to_hash: -> OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::block_stop_time
+
+                type stop_time =
+                  {
+                    arrival_time: Integer,
+                    departure_time: Integer,
+                    stop_id: String,
+                    drop_off_type: Integer,
+                    pickup_type: Integer
+                  }
+
+                class StopTime < OpenTransit::BaseModel
+                  attr_accessor arrival_time: Integer
+
+                  attr_accessor departure_time: Integer
+
+                  attr_accessor stop_id: String
+
+                  attr_reader drop_off_type: Integer?
+
+                  def drop_off_type=: (Integer) -> void
+
+                  attr_reader pickup_type: Integer?
+
+                  def pickup_type=: (Integer) -> void
+
+                  def initialize:
+                    (
+                      arrival_time: Integer,
+                      departure_time: Integer,
+                      stop_id: String,
+                      drop_off_type: Integer,
+                      pickup_type: Integer
+                    ) -> void
+                    | (
+                      ?OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::stop_time
+                      | OpenTransit::BaseModel data
+                    ) -> void
+
+                  def to_hash: -> OpenTransit::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::stop_time
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

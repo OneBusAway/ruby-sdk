@@ -1,0 +1,15 @@
+module OpenTransit
+  module Resources
+    class Config
+      def retrieve:
+        (
+          ?OpenTransit::Models::ConfigRetrieveParams | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::ConfigRetrieveResponse
+        | (
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::ConfigRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

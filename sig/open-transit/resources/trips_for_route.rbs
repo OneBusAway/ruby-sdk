@@ -1,0 +1,21 @@
+module OpenTransit
+  module Resources
+    class TripsForRoute
+      def list:
+        (
+          String route_id,
+          ?OpenTransit::Models::TripsForRouteListParams
+          | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::TripsForRouteListResponse
+        | (
+          String route_id,
+          include_schedule: bool,
+          include_status: bool,
+          time: Integer,
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::TripsForRouteListResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

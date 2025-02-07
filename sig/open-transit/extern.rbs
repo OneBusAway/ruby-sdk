@@ -1,0 +1,4 @@
+module OpenTransit
+  module Extern
+  end
+end

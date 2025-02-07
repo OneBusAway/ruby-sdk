@@ -1,0 +1,23 @@
+module OpenTransit
+  module Resources
+    class TripsForLocation
+      def list:
+        (
+          OpenTransit::Models::TripsForLocationListParams
+          | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::TripsForLocationListResponse
+        | (
+          lat: Float,
+          lat_span: Float,
+          lon: Float,
+          lon_span: Float,
+          include_schedule: bool,
+          include_trip: bool,
+          time: Integer,
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::TripsForLocationListResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

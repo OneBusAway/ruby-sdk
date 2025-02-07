@@ -1,0 +1,18 @@
+module OpenTransit
+  module Resources
+    class RoutesForAgency
+      def list:
+        (
+          String agency_id,
+          ?OpenTransit::Models::RoutesForAgencyListParams
+          | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::RoutesForAgencyListResponse
+        | (
+          String agency_id,
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::RoutesForAgencyListResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

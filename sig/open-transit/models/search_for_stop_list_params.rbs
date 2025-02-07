@@ -1,0 +1,30 @@
+module OpenTransit
+  module Models
+    type search_for_stop_list_params =
+      { input: String, max_count: Integer } & OpenTransit::request_parameters
+
+    class SearchForStopListParams < OpenTransit::BaseModel
+      extend OpenTransit::RequestParameters::Converter
+      include OpenTransit::RequestParameters
+
+      attr_accessor input: String
+
+      attr_reader max_count: Integer?
+
+      def max_count=: (Integer) -> void
+
+      def initialize:
+        (
+          input: String,
+          max_count: Integer,
+          request_options: OpenTransit::request_opts
+        ) -> void
+        | (
+          ?OpenTransit::Models::search_for_stop_list_params
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::search_for_stop_list_params
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module OpenTransit
+  module Resources
+    class Shape
+      def retrieve:
+        (
+          String shape_id,
+          ?OpenTransit::Models::ShapeRetrieveParams | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::ShapeRetrieveResponse
+        | (
+          String shape_id,
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::ShapeRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

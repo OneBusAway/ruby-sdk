@@ -1,0 +1,206 @@
+module OpenTransit
+  module Models
+    type stops_for_route_list_response =
+      { data: OpenTransit::Models::StopsForRouteListResponse::Data }
+
+    class StopsForRouteListResponse < OpenTransit::Models::ResponseWrapper
+      attr_accessor data: OpenTransit::Models::StopsForRouteListResponse::Data
+
+      def initialize:
+        (data: OpenTransit::Models::StopsForRouteListResponse::Data) -> void
+        | (
+          ?OpenTransit::Models::stops_for_route_list_response
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::stops_for_route_list_response
+
+      type data =
+        {
+          entry: OpenTransit::Models::StopsForRouteListResponse::Data::Entry,
+          references: OpenTransit::Models::References
+        }
+
+      class Data < OpenTransit::BaseModel
+        attr_accessor entry: OpenTransit::Models::StopsForRouteListResponse::Data::Entry
+
+        attr_accessor references: OpenTransit::Models::References
+
+        def initialize:
+          (
+            entry: OpenTransit::Models::StopsForRouteListResponse::Data::Entry,
+            references: OpenTransit::Models::References
+          ) -> void
+          | (
+            ?OpenTransit::Models::StopsForRouteListResponse::data
+            | OpenTransit::BaseModel data
+          ) -> void
+
+        def to_hash: -> OpenTransit::Models::StopsForRouteListResponse::data
+
+        type entry =
+          {
+            polylines: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+            route_id: String,
+            stop_groupings: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+            stop_ids: Array[String]
+          }
+
+        class Entry < OpenTransit::BaseModel
+          attr_reader polylines: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline]?
+
+          def polylines=: (
+            Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline]
+          ) -> void
+
+          attr_reader route_id: String?
+
+          def route_id=: (String) -> void
+
+          attr_reader stop_groupings: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]?
+
+          def stop_groupings=: (
+            Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
+          ) -> void
+
+          attr_reader stop_ids: Array[String]?
+
+          def stop_ids=: (Array[String]) -> void
+
+          def initialize:
+            (
+              polylines: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+              route_id: String,
+              stop_groupings: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+              stop_ids: Array[String]
+            ) -> void
+            | (
+              ?OpenTransit::Models::StopsForRouteListResponse::Data::entry
+              | OpenTransit::BaseModel data
+            ) -> void
+
+          def to_hash: -> OpenTransit::Models::StopsForRouteListResponse::Data::entry
+
+          type polyline = { length: Integer, levels: String, points: String }
+
+          class Polyline < OpenTransit::BaseModel
+            attr_reader length: Integer?
+
+            def length=: (Integer) -> void
+
+            attr_reader levels: String?
+
+            def levels=: (String) -> void
+
+            attr_reader points: String?
+
+            def points=: (String) -> void
+
+            def initialize:
+              (length: Integer, levels: String, points: String) -> void
+              | (
+                ?OpenTransit::Models::StopsForRouteListResponse::Data::Entry::polyline
+                | OpenTransit::BaseModel data
+              ) -> void
+
+            def to_hash: -> OpenTransit::Models::StopsForRouteListResponse::Data::Entry::polyline
+          end
+
+          type stop_grouping =
+            {
+              id: String,
+              name: OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+              polylines: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+              stop_ids: Array[String]
+            }
+
+          class StopGrouping < OpenTransit::BaseModel
+            attr_reader id: String?
+
+            def id=: (String) -> void
+
+            attr_reader name: OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name?
+
+            def name=: (
+              OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
+            ) -> void
+
+            attr_reader polylines: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]?
+
+            def polylines=: (
+              Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
+            ) -> void
+
+            attr_reader stop_ids: Array[String]?
+
+            def stop_ids=: (Array[String]) -> void
+
+            def initialize:
+              (
+                id: String,
+                name: OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                polylines: Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+                stop_ids: Array[String]
+              ) -> void
+              | (
+                ?OpenTransit::Models::StopsForRouteListResponse::Data::Entry::stop_grouping
+                | OpenTransit::BaseModel data
+              ) -> void
+
+            def to_hash: -> OpenTransit::Models::StopsForRouteListResponse::Data::Entry::stop_grouping
+
+            type name_ = { name: String, names: Array[String], type: String }
+
+            class Name < OpenTransit::BaseModel
+              attr_reader name: String?
+
+              def name=: (String) -> void
+
+              attr_reader names: Array[String]?
+
+              def names=: (Array[String]) -> void
+
+              attr_reader type: String?
+
+              def type=: (String) -> void
+
+              def initialize:
+                (name: String, names: Array[String], type: String) -> void
+                | (
+                  ?OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::name_
+                  | OpenTransit::BaseModel data
+                ) -> void
+
+              def to_hash: -> OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::name_
+            end
+
+            type polyline = { length: Integer, levels: String, points: String }
+
+            class Polyline < OpenTransit::BaseModel
+              attr_reader length: Integer?
+
+              def length=: (Integer) -> void
+
+              attr_reader levels: String?
+
+              def levels=: (String) -> void
+
+              attr_reader points: String?
+
+              def points=: (String) -> void
+
+              def initialize:
+                (length: Integer, levels: String, points: String) -> void
+                | (
+                  ?OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::polyline
+                  | OpenTransit::BaseModel data
+                ) -> void
+
+              def to_hash: -> OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::polyline
+            end
+          end
+        end
+      end
+    end
+  end
+end
