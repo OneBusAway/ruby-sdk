@@ -1,0 +1,121 @@
+module OpenTransit
+  module Models
+    type routes_for_location_list_response =
+      { data: OpenTransit::Models::RoutesForLocationListResponse::Data }
+
+    class RoutesForLocationListResponse < OpenTransit::Models::ResponseWrapper
+      attr_accessor data: OpenTransit::Models::RoutesForLocationListResponse::Data
+
+      def initialize:
+        (data: OpenTransit::Models::RoutesForLocationListResponse::Data) -> void
+        | (
+          ?OpenTransit::Models::routes_for_location_list_response
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::routes_for_location_list_response
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: Array[OpenTransit::Models::RoutesForLocationListResponse::Data::List],
+          out_of_range: bool,
+          references: OpenTransit::Models::References
+        }
+
+      class Data < OpenTransit::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: Array[OpenTransit::Models::RoutesForLocationListResponse::Data::List]
+
+        attr_accessor out_of_range: bool
+
+        attr_accessor references: OpenTransit::Models::References
+
+        def initialize:
+          (
+            limit_exceeded: bool,
+            list: Array[OpenTransit::Models::RoutesForLocationListResponse::Data::List],
+            out_of_range: bool,
+            references: OpenTransit::Models::References
+          ) -> void
+          | (
+            ?OpenTransit::Models::RoutesForLocationListResponse::data
+            | OpenTransit::BaseModel data
+          ) -> void
+
+        def to_hash: -> OpenTransit::Models::RoutesForLocationListResponse::data
+
+        type list =
+          {
+            id: String,
+            agency_id: String,
+            type: Integer,
+            color: String,
+            description: String,
+            long_name: String,
+            null_safe_short_name: String,
+            short_name: String,
+            text_color: String,
+            url: String
+          }
+
+        class List < OpenTransit::BaseModel
+          attr_accessor id: String
+
+          attr_accessor agency_id: String
+
+          attr_accessor type: Integer
+
+          attr_reader color: String?
+
+          def color=: (String) -> void
+
+          attr_reader description: String?
+
+          def description=: (String) -> void
+
+          attr_reader long_name: String?
+
+          def long_name=: (String) -> void
+
+          attr_reader null_safe_short_name: String?
+
+          def null_safe_short_name=: (String) -> void
+
+          attr_reader short_name: String?
+
+          def short_name=: (String) -> void
+
+          attr_reader text_color: String?
+
+          def text_color=: (String) -> void
+
+          attr_reader url: String?
+
+          def url=: (String) -> void
+
+          def initialize:
+            (
+              id: String,
+              agency_id: String,
+              type: Integer,
+              color: String,
+              description: String,
+              long_name: String,
+              null_safe_short_name: String,
+              short_name: String,
+              text_color: String,
+              url: String
+            ) -> void
+            | (
+              ?OpenTransit::Models::RoutesForLocationListResponse::Data::list
+              | OpenTransit::BaseModel data
+            ) -> void
+
+          def to_hash: -> OpenTransit::Models::RoutesForLocationListResponse::Data::list
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,22 @@
+module OpenTransit
+  module Resources
+    class TripForVehicle
+      def retrieve:
+        (
+          String vehicle_id,
+          ?OpenTransit::Models::TripForVehicleRetrieveParams
+          | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::TripForVehicleRetrieveResponse
+        | (
+          String vehicle_id,
+          include_schedule: bool,
+          include_status: bool,
+          include_trip: bool,
+          time: Integer,
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::TripForVehicleRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,19 @@
+module OpenTransit
+  module Models
+    type stop_retrieve_params = {  } & OpenTransit::request_parameters
+
+    class StopRetrieveParams < OpenTransit::BaseModel
+      extend OpenTransit::RequestParameters::Converter
+      include OpenTransit::RequestParameters
+
+      def initialize:
+        (request_options: OpenTransit::request_opts) -> void
+        | (
+          ?OpenTransit::Models::stop_retrieve_params
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::stop_retrieve_params
+    end
+  end
+end

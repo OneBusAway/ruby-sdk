@@ -1,0 +1,19 @@
+module OpenTransit
+  module Models
+    type stops_for_agency_list_params = {  } & OpenTransit::request_parameters
+
+    class StopsForAgencyListParams < OpenTransit::BaseModel
+      extend OpenTransit::RequestParameters::Converter
+      include OpenTransit::RequestParameters
+
+      def initialize:
+        (request_options: OpenTransit::request_opts) -> void
+        | (
+          ?OpenTransit::Models::stops_for_agency_list_params
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::stops_for_agency_list_params
+    end
+  end
+end

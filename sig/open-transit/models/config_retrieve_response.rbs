@@ -1,0 +1,227 @@
+module OpenTransit
+  module Models
+    type config_retrieve_response =
+      { data: OpenTransit::Models::ConfigRetrieveResponse::Data }
+
+    class ConfigRetrieveResponse < OpenTransit::Models::ResponseWrapper
+      attr_accessor data: OpenTransit::Models::ConfigRetrieveResponse::Data
+
+      def initialize:
+        (data: OpenTransit::Models::ConfigRetrieveResponse::Data) -> void
+        | (
+          ?OpenTransit::Models::config_retrieve_response
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::config_retrieve_response
+
+      type data =
+        {
+          entry: OpenTransit::Models::ConfigRetrieveResponse::Data::Entry,
+          references: OpenTransit::Models::References
+        }
+
+      class Data < OpenTransit::BaseModel
+        attr_accessor entry: OpenTransit::Models::ConfigRetrieveResponse::Data::Entry
+
+        attr_accessor references: OpenTransit::Models::References
+
+        def initialize:
+          (
+            entry: OpenTransit::Models::ConfigRetrieveResponse::Data::Entry,
+            references: OpenTransit::Models::References
+          ) -> void
+          | (
+            ?OpenTransit::Models::ConfigRetrieveResponse::data
+            | OpenTransit::BaseModel data
+          ) -> void
+
+        def to_hash: -> OpenTransit::Models::ConfigRetrieveResponse::data
+
+        type entry =
+          {
+            id: String,
+            git_properties: OpenTransit::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+            name: String,
+            service_date_from: String,
+            service_date_to: String
+          }
+
+        class Entry < OpenTransit::BaseModel
+          attr_reader id: String?
+
+          def id=: (String) -> void
+
+          attr_reader git_properties: OpenTransit::Models::ConfigRetrieveResponse::Data::Entry::GitProperties?
+
+          def git_properties=: (
+            OpenTransit::Models::ConfigRetrieveResponse::Data::Entry::GitProperties
+          ) -> void
+
+          attr_reader name: String?
+
+          def name=: (String) -> void
+
+          attr_reader service_date_from: String?
+
+          def service_date_from=: (String) -> void
+
+          attr_reader service_date_to: String?
+
+          def service_date_to=: (String) -> void
+
+          def initialize:
+            (
+              id: String,
+              git_properties: OpenTransit::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+              name: String,
+              service_date_from: String,
+              service_date_to: String
+            ) -> void
+            | (
+              ?OpenTransit::Models::ConfigRetrieveResponse::Data::entry
+              | OpenTransit::BaseModel data
+            ) -> void
+
+          def to_hash: -> OpenTransit::Models::ConfigRetrieveResponse::Data::entry
+
+          type git_properties =
+            {
+              git_branch: String,
+              git_build_host: String,
+              git_build_time: String,
+              git_build_user_email: String,
+              git_build_user_name: String,
+              git_build_version: String,
+              git_closest_tag_commit_count: String,
+              git_closest_tag_name: String,
+              git_commit_id: String,
+              git_commit_id_abbrev: String,
+              git_commit_id_describe: String,
+              git_commit_id_describe_short: String,
+              git_commit_message_full: String,
+              git_commit_message_short: String,
+              git_commit_time: String,
+              git_commit_user_email: String,
+              git_commit_user_name: String,
+              git_dirty: String,
+              git_remote_origin_url: String,
+              git_tags: String
+            }
+
+          class GitProperties < OpenTransit::BaseModel
+            attr_reader git_branch: String?
+
+            def git_branch=: (String) -> void
+
+            attr_reader git_build_host: String?
+
+            def git_build_host=: (String) -> void
+
+            attr_reader git_build_time: String?
+
+            def git_build_time=: (String) -> void
+
+            attr_reader git_build_user_email: String?
+
+            def git_build_user_email=: (String) -> void
+
+            attr_reader git_build_user_name: String?
+
+            def git_build_user_name=: (String) -> void
+
+            attr_reader git_build_version: String?
+
+            def git_build_version=: (String) -> void
+
+            attr_reader git_closest_tag_commit_count: String?
+
+            def git_closest_tag_commit_count=: (String) -> void
+
+            attr_reader git_closest_tag_name: String?
+
+            def git_closest_tag_name=: (String) -> void
+
+            attr_reader git_commit_id: String?
+
+            def git_commit_id=: (String) -> void
+
+            attr_reader git_commit_id_abbrev: String?
+
+            def git_commit_id_abbrev=: (String) -> void
+
+            attr_reader git_commit_id_describe: String?
+
+            def git_commit_id_describe=: (String) -> void
+
+            attr_reader git_commit_id_describe_short: String?
+
+            def git_commit_id_describe_short=: (String) -> void
+
+            attr_reader git_commit_message_full: String?
+
+            def git_commit_message_full=: (String) -> void
+
+            attr_reader git_commit_message_short: String?
+
+            def git_commit_message_short=: (String) -> void
+
+            attr_reader git_commit_time: String?
+
+            def git_commit_time=: (String) -> void
+
+            attr_reader git_commit_user_email: String?
+
+            def git_commit_user_email=: (String) -> void
+
+            attr_reader git_commit_user_name: String?
+
+            def git_commit_user_name=: (String) -> void
+
+            attr_reader git_dirty: String?
+
+            def git_dirty=: (String) -> void
+
+            attr_reader git_remote_origin_url: String?
+
+            def git_remote_origin_url=: (String) -> void
+
+            attr_reader git_tags: String?
+
+            def git_tags=: (String) -> void
+
+            def initialize:
+              (
+                git_branch: String,
+                git_build_host: String,
+                git_build_time: String,
+                git_build_user_email: String,
+                git_build_user_name: String,
+                git_build_version: String,
+                git_closest_tag_commit_count: String,
+                git_closest_tag_name: String,
+                git_commit_id: String,
+                git_commit_id_abbrev: String,
+                git_commit_id_describe: String,
+                git_commit_id_describe_short: String,
+                git_commit_message_full: String,
+                git_commit_message_short: String,
+                git_commit_time: String,
+                git_commit_user_email: String,
+                git_commit_user_name: String,
+                git_dirty: String,
+                git_remote_origin_url: String,
+                git_tags: String
+              ) -> void
+              | (
+                ?OpenTransit::Models::ConfigRetrieveResponse::Data::Entry::git_properties
+                | OpenTransit::BaseModel data
+              ) -> void
+
+            def to_hash: -> OpenTransit::Models::ConfigRetrieveResponse::Data::Entry::git_properties
+          end
+        end
+      end
+    end
+  end
+end

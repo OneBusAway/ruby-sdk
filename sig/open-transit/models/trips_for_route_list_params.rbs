@@ -1,0 +1,38 @@
+module OpenTransit
+  module Models
+    type trips_for_route_list_params =
+      { include_schedule: bool, include_status: bool, time: Integer }
+      & OpenTransit::request_parameters
+
+    class TripsForRouteListParams < OpenTransit::BaseModel
+      extend OpenTransit::RequestParameters::Converter
+      include OpenTransit::RequestParameters
+
+      attr_reader include_schedule: bool?
+
+      def include_schedule=: (bool) -> void
+
+      attr_reader include_status: bool?
+
+      def include_status=: (bool) -> void
+
+      attr_reader time: Integer?
+
+      def time=: (Integer) -> void
+
+      def initialize:
+        (
+          include_schedule: bool,
+          include_status: bool,
+          time: Integer,
+          request_options: OpenTransit::request_opts
+        ) -> void
+        | (
+          ?OpenTransit::Models::trips_for_route_list_params
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::trips_for_route_list_params
+    end
+  end
+end

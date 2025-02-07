@@ -1,0 +1,24 @@
+module OpenTransit
+  module Models
+    type vehicles_for_agency_list_params =
+      { time: String } & OpenTransit::request_parameters
+
+    class VehiclesForAgencyListParams < OpenTransit::BaseModel
+      extend OpenTransit::RequestParameters::Converter
+      include OpenTransit::RequestParameters
+
+      attr_reader time: String?
+
+      def time=: (String) -> void
+
+      def initialize:
+        (time: String, request_options: OpenTransit::request_opts) -> void
+        | (
+          ?OpenTransit::Models::vehicles_for_agency_list_params
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::vehicles_for_agency_list_params
+    end
+  end
+end

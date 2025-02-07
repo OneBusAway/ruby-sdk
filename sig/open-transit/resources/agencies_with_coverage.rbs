@@ -1,0 +1,16 @@
+module OpenTransit
+  module Resources
+    class AgenciesWithCoverage
+      def list:
+        (
+          ?OpenTransit::Models::AgenciesWithCoverageListParams
+          | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::AgenciesWithCoverageListResponse
+        | (
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::AgenciesWithCoverageListResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

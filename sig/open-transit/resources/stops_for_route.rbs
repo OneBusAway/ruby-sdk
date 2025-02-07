@@ -1,0 +1,20 @@
+module OpenTransit
+  module Resources
+    class StopsForRoute
+      def list:
+        (
+          String route_id,
+          ?OpenTransit::Models::StopsForRouteListParams
+          | Hash[Symbol, top] params
+        ) -> OpenTransit::Models::StopsForRouteListResponse
+        | (
+          String route_id,
+          include_polylines: bool,
+          time: String,
+          request_options: OpenTransit::request_opts
+        ) -> OpenTransit::Models::StopsForRouteListResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

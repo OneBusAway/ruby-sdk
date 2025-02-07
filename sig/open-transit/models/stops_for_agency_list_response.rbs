@@ -1,0 +1,105 @@
+module OpenTransit
+  module Models
+    type stops_for_agency_list_response =
+      {
+        limit_exceeded: bool,
+        list: Array[OpenTransit::Models::StopsForAgencyListResponse::List],
+        references: OpenTransit::Models::References,
+        out_of_range: bool
+      }
+
+    class StopsForAgencyListResponse < OpenTransit::Models::ResponseWrapper
+      attr_accessor limit_exceeded: bool
+
+      attr_accessor list: Array[OpenTransit::Models::StopsForAgencyListResponse::List]
+
+      attr_accessor references: OpenTransit::Models::References
+
+      attr_reader out_of_range: bool?
+
+      def out_of_range=: (bool) -> void
+
+      def initialize:
+        (
+          limit_exceeded: bool,
+          list: Array[OpenTransit::Models::StopsForAgencyListResponse::List],
+          references: OpenTransit::Models::References,
+          out_of_range: bool
+        ) -> void
+        | (
+          ?OpenTransit::Models::stops_for_agency_list_response
+          | OpenTransit::BaseModel data
+        ) -> void
+
+      def to_hash: -> OpenTransit::Models::stops_for_agency_list_response
+
+      type list =
+        {
+          id: String,
+          lat: Float,
+          lon: Float,
+          name: String,
+          parent: String,
+          route_ids: Array[String],
+          static_route_ids: Array[String],
+          code: String,
+          direction: String,
+          location_type: Integer,
+          wheelchair_boarding: String
+        }
+
+      class List < OpenTransit::BaseModel
+        attr_accessor id: String
+
+        attr_accessor lat: Float
+
+        attr_accessor lon: Float
+
+        attr_accessor name: String
+
+        attr_accessor parent: String
+
+        attr_accessor route_ids: Array[String]
+
+        attr_accessor static_route_ids: Array[String]
+
+        attr_reader code: String?
+
+        def code=: (String) -> void
+
+        attr_reader direction: String?
+
+        def direction=: (String) -> void
+
+        attr_reader location_type: Integer?
+
+        def location_type=: (Integer) -> void
+
+        attr_reader wheelchair_boarding: String?
+
+        def wheelchair_boarding=: (String) -> void
+
+        def initialize:
+          (
+            id: String,
+            lat: Float,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: Array[String],
+            static_route_ids: Array[String],
+            code: String,
+            direction: String,
+            location_type: Integer,
+            wheelchair_boarding: String
+          ) -> void
+          | (
+            ?OpenTransit::Models::StopsForAgencyListResponse::list
+            | OpenTransit::BaseModel data
+          ) -> void
+
+        def to_hash: -> OpenTransit::Models::StopsForAgencyListResponse::list
+      end
+    end
+  end
+end
