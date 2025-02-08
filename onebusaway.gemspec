@@ -14,6 +14,6 @@ Gem::Specification.new do |s|
   s.add_dependency "connection_pool"
   s.homepage = "https://gemdocs.org/gems/onebusaway/latest"
   s.metadata["homepage_uri"] = s.homepage
-  s.metadata["source_code_uri"] = "https://github.com/stainless-sdks/open-transit-ruby"
+  s.metadata["source_code_uri"] = "https://github.com/OneBusAway/ruby-sdk"
   s.metadata["rubygems_mfa_required"] = "true"
 end

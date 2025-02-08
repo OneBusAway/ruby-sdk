@@ -17,7 +17,7 @@ To use this gem during the beta, install directly from GitHub with Bundler by
 adding the following to your application's `Gemfile`:
 
 ```ruby
-gem "onebusaway", git: "https://github.com/stainless-sdks/open-transit-ruby", branch: "main"
+gem "onebusaway", git: "https://github.com/OneBusAway/ruby-sdk", branch: "main"
 ```
 
 To fetch an initial copy of the gem:
