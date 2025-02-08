@@ -1,5 +1,5 @@
 # typed: strong
 
 module Onebusaway
-  VERSION = "0.1.0-alpha.44"
+  VERSION = "0.1.0-alpha.45"
 end
