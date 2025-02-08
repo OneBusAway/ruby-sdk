@@ -18,21 +18,21 @@ module Onebusaway
       type data =
         {
           limit_exceeded: bool,
-          list: Array[Onebusaway::Models::VehiclesForAgencyListResponse::Data::List],
+          list: ::Array[Onebusaway::Models::VehiclesForAgencyListResponse::Data::List],
           references: Onebusaway::Models::References
         }
 
       class Data < Onebusaway::BaseModel
         attr_accessor limit_exceeded: bool
 
-        attr_accessor list: Array[Onebusaway::Models::VehiclesForAgencyListResponse::Data::List]
+        attr_accessor list: ::Array[Onebusaway::Models::VehiclesForAgencyListResponse::Data::List]
 
         attr_accessor references: Onebusaway::Models::References
 
         def initialize:
           (
             limit_exceeded: bool,
-            list: Array[Onebusaway::Models::VehiclesForAgencyListResponse::Data::List],
+            list: ::Array[Onebusaway::Models::VehiclesForAgencyListResponse::Data::List],
             references: Onebusaway::Models::References
           ) -> void
           | (
@@ -159,7 +159,7 @@ module Onebusaway
               orientation: Float,
               position: Onebusaway::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position,
               scheduled_distance_along_trip: Float,
-              situation_ids: Array[String],
+              situation_ids: ::Array[String],
               vehicle_id: String
             }
 
@@ -236,9 +236,9 @@ module Onebusaway
 
             def scheduled_distance_along_trip=: (Float) -> void
 
-            attr_reader situation_ids: Array[String]?
+            attr_reader situation_ids: ::Array[String]?
 
-            def situation_ids=: (Array[String]) -> void
+            def situation_ids=: (::Array[String]) -> void
 
             attr_reader vehicle_id: String?
 
@@ -271,7 +271,7 @@ module Onebusaway
                 orientation: Float,
                 position: Onebusaway::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position,
                 scheduled_distance_along_trip: Float,
-                situation_ids: Array[String],
+                situation_ids: ::Array[String],
                 vehicle_id: String
               ) -> void
               | (

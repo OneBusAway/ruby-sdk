@@ -4,7 +4,7 @@ module Onebusaway
       def retrieve:
         (
           String stop_id,
-          ?Onebusaway::Models::StopRetrieveParams | Hash[Symbol, top] params
+          ?Onebusaway::Models::StopRetrieveParams | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::StopRetrieveResponse
         | (
           String stop_id,

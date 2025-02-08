@@ -4,7 +4,7 @@ module Onebusaway
       def retrieve:
         (
           String route_id,
-          ?Onebusaway::Models::RouteRetrieveParams | Hash[Symbol, top] params
+          ?Onebusaway::Models::RouteRetrieveParams | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::RouteRetrieveResponse
         | (
           String route_id,

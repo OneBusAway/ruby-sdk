@@ -5,7 +5,7 @@ module Onebusaway
         (
           String agency_id,
           ?Onebusaway::Models::RoutesForAgencyListParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::RoutesForAgencyListResponse
         | (
           String agency_id,

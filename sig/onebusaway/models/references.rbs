@@ -2,35 +2,35 @@ module Onebusaway
   module Models
     type references =
       {
-        agencies: Array[Onebusaway::Models::References::Agency],
-        routes: Array[Onebusaway::Models::References::Route],
-        situations: Array[Onebusaway::Models::References::Situation],
-        stops: Array[Onebusaway::Models::References::Stop],
-        stop_times: Array[Onebusaway::Models::References::StopTime],
-        trips: Array[Onebusaway::Models::References::Trip]
+        agencies: ::Array[Onebusaway::Models::References::Agency],
+        routes: ::Array[Onebusaway::Models::References::Route],
+        situations: ::Array[Onebusaway::Models::References::Situation],
+        stops: ::Array[Onebusaway::Models::References::Stop],
+        stop_times: ::Array[Onebusaway::Models::References::StopTime],
+        trips: ::Array[Onebusaway::Models::References::Trip]
       }
 
     class References < Onebusaway::BaseModel
-      attr_accessor agencies: Array[Onebusaway::Models::References::Agency]
+      attr_accessor agencies: ::Array[Onebusaway::Models::References::Agency]
 
-      attr_accessor routes: Array[Onebusaway::Models::References::Route]
+      attr_accessor routes: ::Array[Onebusaway::Models::References::Route]
 
-      attr_accessor situations: Array[Onebusaway::Models::References::Situation]
+      attr_accessor situations: ::Array[Onebusaway::Models::References::Situation]
 
-      attr_accessor stops: Array[Onebusaway::Models::References::Stop]
+      attr_accessor stops: ::Array[Onebusaway::Models::References::Stop]
 
-      attr_accessor stop_times: Array[Onebusaway::Models::References::StopTime]
+      attr_accessor stop_times: ::Array[Onebusaway::Models::References::StopTime]
 
-      attr_accessor trips: Array[Onebusaway::Models::References::Trip]
+      attr_accessor trips: ::Array[Onebusaway::Models::References::Trip]
 
       def initialize:
         (
-          agencies: Array[Onebusaway::Models::References::Agency],
-          routes: Array[Onebusaway::Models::References::Route],
-          situations: Array[Onebusaway::Models::References::Situation],
-          stops: Array[Onebusaway::Models::References::Stop],
-          stop_times: Array[Onebusaway::Models::References::StopTime],
-          trips: Array[Onebusaway::Models::References::Trip]
+          agencies: ::Array[Onebusaway::Models::References::Agency],
+          routes: ::Array[Onebusaway::Models::References::Route],
+          situations: ::Array[Onebusaway::Models::References::Situation],
+          stops: ::Array[Onebusaway::Models::References::Stop],
+          stop_times: ::Array[Onebusaway::Models::References::StopTime],
+          trips: ::Array[Onebusaway::Models::References::Trip]
         ) -> void
         | (?Onebusaway::Models::references | Onebusaway::BaseModel data) -> void
 
@@ -176,12 +176,12 @@ module Onebusaway
         {
           id: String,
           creation_time: Integer,
-          active_windows: Array[Onebusaway::Models::References::Situation::ActiveWindow],
-          all_affects: Array[Onebusaway::Models::References::Situation::AllAffect],
+          active_windows: ::Array[Onebusaway::Models::References::Situation::ActiveWindow],
+          all_affects: ::Array[Onebusaway::Models::References::Situation::AllAffect],
           consequence_message: String,
-          consequences: Array[Onebusaway::Models::References::Situation::Consequence],
+          consequences: ::Array[Onebusaway::Models::References::Situation::Consequence],
           description: Onebusaway::Models::References::Situation::Description,
-          publication_windows: Array[Onebusaway::Models::References::Situation::PublicationWindow],
+          publication_windows: ::Array[Onebusaway::Models::References::Situation::PublicationWindow],
           reason: Onebusaway::Models::References::Situation::reason,
           severity: String,
           summary: Onebusaway::Models::References::Situation::Summary,
@@ -193,26 +193,26 @@ module Onebusaway
 
         attr_accessor creation_time: Integer
 
-        attr_reader active_windows: Array[Onebusaway::Models::References::Situation::ActiveWindow]?
+        attr_reader active_windows: ::Array[Onebusaway::Models::References::Situation::ActiveWindow]?
 
         def active_windows=: (
-          Array[Onebusaway::Models::References::Situation::ActiveWindow]
+          ::Array[Onebusaway::Models::References::Situation::ActiveWindow]
         ) -> void
 
-        attr_reader all_affects: Array[Onebusaway::Models::References::Situation::AllAffect]?
+        attr_reader all_affects: ::Array[Onebusaway::Models::References::Situation::AllAffect]?
 
         def all_affects=: (
-          Array[Onebusaway::Models::References::Situation::AllAffect]
+          ::Array[Onebusaway::Models::References::Situation::AllAffect]
         ) -> void
 
         attr_reader consequence_message: String?
 
         def consequence_message=: (String) -> void
 
-        attr_reader consequences: Array[Onebusaway::Models::References::Situation::Consequence]?
+        attr_reader consequences: ::Array[Onebusaway::Models::References::Situation::Consequence]?
 
         def consequences=: (
-          Array[Onebusaway::Models::References::Situation::Consequence]
+          ::Array[Onebusaway::Models::References::Situation::Consequence]
         ) -> void
 
         attr_reader description: Onebusaway::Models::References::Situation::Description?
@@ -221,10 +221,10 @@ module Onebusaway
           Onebusaway::Models::References::Situation::Description
         ) -> void
 
-        attr_reader publication_windows: Array[Onebusaway::Models::References::Situation::PublicationWindow]?
+        attr_reader publication_windows: ::Array[Onebusaway::Models::References::Situation::PublicationWindow]?
 
         def publication_windows=: (
-          Array[Onebusaway::Models::References::Situation::PublicationWindow]
+          ::Array[Onebusaway::Models::References::Situation::PublicationWindow]
         ) -> void
 
         attr_reader reason: Onebusaway::Models::References::Situation::reason?
@@ -249,12 +249,12 @@ module Onebusaway
           (
             id: String,
             creation_time: Integer,
-            active_windows: Array[Onebusaway::Models::References::Situation::ActiveWindow],
-            all_affects: Array[Onebusaway::Models::References::Situation::AllAffect],
+            active_windows: ::Array[Onebusaway::Models::References::Situation::ActiveWindow],
+            all_affects: ::Array[Onebusaway::Models::References::Situation::AllAffect],
             consequence_message: String,
-            consequences: Array[Onebusaway::Models::References::Situation::Consequence],
+            consequences: ::Array[Onebusaway::Models::References::Situation::Consequence],
             description: Onebusaway::Models::References::Situation::Description,
-            publication_windows: Array[Onebusaway::Models::References::Situation::PublicationWindow],
+            publication_windows: ::Array[Onebusaway::Models::References::Situation::PublicationWindow],
             reason: Onebusaway::Models::References::Situation::reason,
             severity: String,
             summary: Onebusaway::Models::References::Situation::Summary,
@@ -372,7 +372,7 @@ module Onebusaway
           type condition_details =
             {
               diversion_path: Onebusaway::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-              diversion_stop_ids: Array[String]
+              diversion_stop_ids: ::Array[String]
             }
 
           class ConditionDetails < Onebusaway::BaseModel
@@ -382,14 +382,14 @@ module Onebusaway
               Onebusaway::Models::References::Situation::Consequence::ConditionDetails::DiversionPath
             ) -> void
 
-            attr_reader diversion_stop_ids: Array[String]?
+            attr_reader diversion_stop_ids: ::Array[String]?
 
-            def diversion_stop_ids=: (Array[String]) -> void
+            def diversion_stop_ids=: (::Array[String]) -> void
 
             def initialize:
               (
                 diversion_path: Onebusaway::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                diversion_stop_ids: Array[String]
+                diversion_stop_ids: ::Array[String]
               ) -> void
               | (
                 ?Onebusaway::Models::References::Situation::Consequence::condition_details
@@ -478,7 +478,7 @@ module Onebusaway
           MISCELLANEOUS_REASON: :miscellaneousReason
           SECURITY_ALERT: :securityAlert
 
-          def self.values: -> Array[Onebusaway::Models::References::Situation::reason]
+          def self.values: -> ::Array[Onebusaway::Models::References::Situation::reason]
         end
 
         type summary = { lang: String, value: String }
@@ -531,8 +531,8 @@ module Onebusaway
           lon: Float,
           name: String,
           parent: String,
-          route_ids: Array[String],
-          static_route_ids: Array[String],
+          route_ids: ::Array[String],
+          static_route_ids: ::Array[String],
           code: String,
           direction: String,
           location_type: Integer,
@@ -550,9 +550,9 @@ module Onebusaway
 
         attr_accessor parent: String
 
-        attr_accessor route_ids: Array[String]
+        attr_accessor route_ids: ::Array[String]
 
-        attr_accessor static_route_ids: Array[String]
+        attr_accessor static_route_ids: ::Array[String]
 
         attr_reader code: String?
 
@@ -577,8 +577,8 @@ module Onebusaway
             lon: Float,
             name: String,
             parent: String,
-            route_ids: Array[String],
-            static_route_ids: Array[String],
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
             code: String,
             direction: String,
             location_type: Integer,

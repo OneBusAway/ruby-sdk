@@ -4,7 +4,7 @@ module Onebusaway
       def list:
         (
           Onebusaway::Models::SearchForRouteListParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::SearchForRouteListResponse
         | (
           input: String,

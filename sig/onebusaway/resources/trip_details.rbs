@@ -5,7 +5,7 @@ module Onebusaway
         (
           String trip_id,
           ?Onebusaway::Models::TripDetailRetrieveParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::TripDetailRetrieveResponse
         | (
           String trip_id,

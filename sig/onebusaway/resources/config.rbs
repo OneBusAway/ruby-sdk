@@ -3,7 +3,7 @@ module Onebusaway
     class Config
       def retrieve:
         (
-          ?Onebusaway::Models::ConfigRetrieveParams | Hash[Symbol, top] params
+          ?Onebusaway::Models::ConfigRetrieveParams | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::ConfigRetrieveResponse
         | (
           request_options: Onebusaway::request_opts

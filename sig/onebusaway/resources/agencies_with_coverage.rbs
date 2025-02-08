@@ -4,7 +4,7 @@ module Onebusaway
       def list:
         (
           ?Onebusaway::Models::AgenciesWithCoverageListParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::AgenciesWithCoverageListResponse
         | (
           request_options: Onebusaway::request_opts

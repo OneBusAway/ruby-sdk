@@ -18,7 +18,7 @@ module Onebusaway
       type data =
         {
           limit_exceeded: bool,
-          list: Array[Onebusaway::Models::TripsForLocationListResponse::Data::List],
+          list: ::Array[Onebusaway::Models::TripsForLocationListResponse::Data::List],
           references: Onebusaway::Models::References,
           out_of_range: bool
         }
@@ -26,7 +26,7 @@ module Onebusaway
       class Data < Onebusaway::BaseModel
         attr_accessor limit_exceeded: bool
 
-        attr_accessor list: Array[Onebusaway::Models::TripsForLocationListResponse::Data::List]
+        attr_accessor list: ::Array[Onebusaway::Models::TripsForLocationListResponse::Data::List]
 
         attr_accessor references: Onebusaway::Models::References
 
@@ -37,7 +37,7 @@ module Onebusaway
         def initialize:
           (
             limit_exceeded: bool,
-            list: Array[Onebusaway::Models::TripsForLocationListResponse::Data::List],
+            list: ::Array[Onebusaway::Models::TripsForLocationListResponse::Data::List],
             references: Onebusaway::Models::References,
             out_of_range: bool
           ) -> void
@@ -55,7 +55,7 @@ module Onebusaway
             trip_id: String,
             frequency: String?,
             service_date: Integer,
-            situation_ids: Array[String]
+            situation_ids: ::Array[String]
           }
 
         class List < Onebusaway::BaseModel
@@ -71,9 +71,9 @@ module Onebusaway
 
           def service_date=: (Integer) -> void
 
-          attr_reader situation_ids: Array[String]?
+          attr_reader situation_ids: ::Array[String]?
 
-          def situation_ids=: (Array[String]) -> void
+          def situation_ids=: (::Array[String]) -> void
 
           def initialize:
             (
@@ -82,7 +82,7 @@ module Onebusaway
               trip_id: String,
               frequency: String?,
               service_date: Integer,
-              situation_ids: Array[String]
+              situation_ids: ::Array[String]
             ) -> void
             | (
               ?Onebusaway::Models::TripsForLocationListResponse::Data::list
@@ -95,7 +95,7 @@ module Onebusaway
             {
               next_trip_id: String,
               previous_trip_id: String,
-              stop_times: Array[Onebusaway::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime],
+              stop_times: ::Array[Onebusaway::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime],
               time_zone: String,
               frequency: String?
             }
@@ -105,7 +105,7 @@ module Onebusaway
 
             attr_accessor previous_trip_id: String
 
-            attr_accessor stop_times: Array[Onebusaway::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime]
+            attr_accessor stop_times: ::Array[Onebusaway::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime]
 
             attr_accessor time_zone: String
 
@@ -115,7 +115,7 @@ module Onebusaway
               (
                 next_trip_id: String,
                 previous_trip_id: String,
-                stop_times: Array[Onebusaway::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime],
+                stop_times: ::Array[Onebusaway::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime],
                 time_zone: String,
                 frequency: String?
               ) -> void
@@ -206,7 +206,7 @@ module Onebusaway
               orientation: Float,
               position: Onebusaway::Models::TripsForLocationListResponse::Data::List::Status::Position,
               scheduled_distance_along_trip: Float,
-              situation_ids: Array[String],
+              situation_ids: ::Array[String],
               vehicle_id: String
             }
 
@@ -283,9 +283,9 @@ module Onebusaway
 
             def scheduled_distance_along_trip=: (Float) -> void
 
-            attr_reader situation_ids: Array[String]?
+            attr_reader situation_ids: ::Array[String]?
 
-            def situation_ids=: (Array[String]) -> void
+            def situation_ids=: (::Array[String]) -> void
 
             attr_reader vehicle_id: String?
 
@@ -318,7 +318,7 @@ module Onebusaway
                 orientation: Float,
                 position: Onebusaway::Models::TripsForLocationListResponse::Data::List::Status::Position,
                 scheduled_distance_along_trip: Float,
-                situation_ids: Array[String],
+                situation_ids: ::Array[String],
                 vehicle_id: String
               ) -> void
               | (
