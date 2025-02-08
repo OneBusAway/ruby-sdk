@@ -41,18 +41,18 @@ module Onebusaway
         type entry =
           {
             id: String,
-            configurations: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+            configurations: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration]
           }
 
         class Entry < Onebusaway::BaseModel
           attr_accessor id: String
 
-          attr_accessor configurations: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+          attr_accessor configurations: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration]
 
           def initialize:
             (
               id: String,
-              configurations: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+              configurations: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration]
             ) -> void
             | (
               ?Onebusaway::Models::BlockRetrieveResponse::Data::entry
@@ -63,25 +63,25 @@ module Onebusaway
 
           type configuration =
             {
-              active_service_ids: Array[String],
-              trips: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
-              inactive_service_ids: Array[String]
+              active_service_ids: ::Array[String],
+              trips: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+              inactive_service_ids: ::Array[String]
             }
 
           class Configuration < Onebusaway::BaseModel
-            attr_accessor active_service_ids: Array[String]
+            attr_accessor active_service_ids: ::Array[String]
 
-            attr_accessor trips: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]
+            attr_accessor trips: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]
 
-            attr_reader inactive_service_ids: Array[String]?
+            attr_reader inactive_service_ids: ::Array[String]?
 
-            def inactive_service_ids=: (Array[String]) -> void
+            def inactive_service_ids=: (::Array[String]) -> void
 
             def initialize:
               (
-                active_service_ids: Array[String],
-                trips: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
-                inactive_service_ids: Array[String]
+                active_service_ids: ::Array[String],
+                trips: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+                inactive_service_ids: ::Array[String]
               ) -> void
               | (
                 ?Onebusaway::Models::BlockRetrieveResponse::Data::Entry::configuration
@@ -93,7 +93,7 @@ module Onebusaway
             type trip =
               {
                 accumulated_slack_time: Float,
-                block_stop_times: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                block_stop_times: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
                 distance_along_block: Float,
                 trip_id: String
               }
@@ -101,7 +101,7 @@ module Onebusaway
             class Trip < Onebusaway::BaseModel
               attr_accessor accumulated_slack_time: Float
 
-              attr_accessor block_stop_times: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
+              attr_accessor block_stop_times: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
 
               attr_accessor distance_along_block: Float
 
@@ -110,7 +110,7 @@ module Onebusaway
               def initialize:
                 (
                   accumulated_slack_time: Float,
-                  block_stop_times: Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                  block_stop_times: ::Array[Onebusaway::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
                   distance_along_block: Float,
                   trip_id: String
                 ) -> void

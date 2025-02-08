@@ -5,7 +5,7 @@ module Onebusaway
         (
           String stop_id,
           Onebusaway::Models::ArrivalAndDepartureRetrieveParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::ArrivalAndDepartureRetrieveResponse
         | (
           String stop_id,
@@ -21,7 +21,7 @@ module Onebusaway
         (
           String stop_id,
           ?Onebusaway::Models::ArrivalAndDepartureListParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::ArrivalAndDepartureListResponse
         | (
           String stop_id,

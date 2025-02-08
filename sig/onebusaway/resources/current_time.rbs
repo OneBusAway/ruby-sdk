@@ -4,7 +4,7 @@ module Onebusaway
       def retrieve:
         (
           ?Onebusaway::Models::CurrentTimeRetrieveParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::CurrentTimeRetrieveResponse
         | (
           request_options: Onebusaway::request_opts

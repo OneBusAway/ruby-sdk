@@ -18,7 +18,7 @@ module Onebusaway
       type data =
         {
           limit_exceeded: bool,
-          list: Array[Onebusaway::Models::StopsForLocationListResponse::Data::List],
+          list: ::Array[Onebusaway::Models::StopsForLocationListResponse::Data::List],
           references: Onebusaway::Models::References,
           out_of_range: bool
         }
@@ -26,7 +26,7 @@ module Onebusaway
       class Data < Onebusaway::BaseModel
         attr_accessor limit_exceeded: bool
 
-        attr_accessor list: Array[Onebusaway::Models::StopsForLocationListResponse::Data::List]
+        attr_accessor list: ::Array[Onebusaway::Models::StopsForLocationListResponse::Data::List]
 
         attr_accessor references: Onebusaway::Models::References
 
@@ -37,7 +37,7 @@ module Onebusaway
         def initialize:
           (
             limit_exceeded: bool,
-            list: Array[Onebusaway::Models::StopsForLocationListResponse::Data::List],
+            list: ::Array[Onebusaway::Models::StopsForLocationListResponse::Data::List],
             references: Onebusaway::Models::References,
             out_of_range: bool
           ) -> void
@@ -55,8 +55,8 @@ module Onebusaway
             lon: Float,
             name: String,
             parent: String,
-            route_ids: Array[String],
-            static_route_ids: Array[String],
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
             code: String,
             direction: String,
             location_type: Integer,
@@ -74,9 +74,9 @@ module Onebusaway
 
           attr_accessor parent: String
 
-          attr_accessor route_ids: Array[String]
+          attr_accessor route_ids: ::Array[String]
 
-          attr_accessor static_route_ids: Array[String]
+          attr_accessor static_route_ids: ::Array[String]
 
           attr_reader code: String?
 
@@ -101,8 +101,8 @@ module Onebusaway
               lon: Float,
               name: String,
               parent: String,
-              route_ids: Array[String],
-              static_route_ids: Array[String],
+              route_ids: ::Array[String],
+              static_route_ids: ::Array[String],
               code: String,
               direction: String,
               location_type: Integer,

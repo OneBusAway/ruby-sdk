@@ -20,21 +20,21 @@ module Onebusaway
       type data =
         {
           limit_exceeded: bool,
-          list: Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List],
+          list: ::Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List],
           references: Onebusaway::Models::References
         }
 
       class Data < Onebusaway::BaseModel
         attr_accessor limit_exceeded: bool
 
-        attr_accessor list: Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List]
+        attr_accessor list: ::Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List]
 
         attr_accessor references: Onebusaway::Models::References
 
         def initialize:
           (
             limit_exceeded: bool,
-            list: Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List],
+            list: ::Array[Onebusaway::Models::AgenciesWithCoverageListResponse::Data::List],
             references: Onebusaway::Models::References
           ) -> void
           | (

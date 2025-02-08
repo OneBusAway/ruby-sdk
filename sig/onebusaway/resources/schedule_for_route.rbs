@@ -5,7 +5,7 @@ module Onebusaway
         (
           String route_id,
           ?Onebusaway::Models::ScheduleForRouteRetrieveParams
-          | Hash[Symbol, top] params
+          | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::ScheduleForRouteRetrieveResponse
         | (
           String route_id,

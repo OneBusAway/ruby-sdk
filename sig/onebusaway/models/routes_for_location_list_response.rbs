@@ -18,7 +18,7 @@ module Onebusaway
       type data =
         {
           limit_exceeded: bool,
-          list: Array[Onebusaway::Models::RoutesForLocationListResponse::Data::List],
+          list: ::Array[Onebusaway::Models::RoutesForLocationListResponse::Data::List],
           out_of_range: bool,
           references: Onebusaway::Models::References
         }
@@ -26,7 +26,7 @@ module Onebusaway
       class Data < Onebusaway::BaseModel
         attr_accessor limit_exceeded: bool
 
-        attr_accessor list: Array[Onebusaway::Models::RoutesForLocationListResponse::Data::List]
+        attr_accessor list: ::Array[Onebusaway::Models::RoutesForLocationListResponse::Data::List]
 
         attr_accessor out_of_range: bool
 
@@ -35,7 +35,7 @@ module Onebusaway
         def initialize:
           (
             limit_exceeded: bool,
-            list: Array[Onebusaway::Models::RoutesForLocationListResponse::Data::List],
+            list: ::Array[Onebusaway::Models::RoutesForLocationListResponse::Data::List],
             out_of_range: bool,
             references: Onebusaway::Models::References
           ) -> void

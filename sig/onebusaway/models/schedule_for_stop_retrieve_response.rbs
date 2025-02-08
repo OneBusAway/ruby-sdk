@@ -44,7 +44,7 @@ module Onebusaway
           {
             date: Integer,
             stop_id: String,
-            stop_route_schedules: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
+            stop_route_schedules: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
           }
 
         class Entry < Onebusaway::BaseModel
@@ -52,13 +52,13 @@ module Onebusaway
 
           attr_accessor stop_id: String
 
-          attr_accessor stop_route_schedules: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
+          attr_accessor stop_route_schedules: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
 
           def initialize:
             (
               date: Integer,
               stop_id: String,
-              stop_route_schedules: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
+              stop_route_schedules: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
             ) -> void
             | (
               ?Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::entry
@@ -70,18 +70,18 @@ module Onebusaway
           type stop_route_schedule =
             {
               route_id: String,
-              stop_route_direction_schedules: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
+              stop_route_direction_schedules: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
             }
 
           class StopRouteSchedule < Onebusaway::BaseModel
             attr_accessor route_id: String
 
-            attr_accessor stop_route_direction_schedules: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
+            attr_accessor stop_route_direction_schedules: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
 
             def initialize:
               (
                 route_id: String,
-                stop_route_direction_schedules: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
+                stop_route_direction_schedules: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
               ) -> void
               | (
                 ?Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::stop_route_schedule
@@ -92,27 +92,27 @@ module Onebusaway
 
             type stop_route_direction_schedule =
               {
-                schedule_stop_times: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime],
+                schedule_stop_times: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime],
                 trip_headsign: String,
-                schedule_frequencies: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
+                schedule_frequencies: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
               }
 
             class StopRouteDirectionSchedule < Onebusaway::BaseModel
-              attr_accessor schedule_stop_times: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime]
+              attr_accessor schedule_stop_times: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime]
 
               attr_accessor trip_headsign: String
 
-              attr_reader schedule_frequencies: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]?
+              attr_reader schedule_frequencies: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]?
 
               def schedule_frequencies=: (
-                Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
+                ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
               ) -> void
 
               def initialize:
                 (
-                  schedule_stop_times: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime],
+                  schedule_stop_times: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime],
                   trip_headsign: String,
-                  schedule_frequencies: Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
+                  schedule_frequencies: ::Array[Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
                 ) -> void
                 | (
                   ?Onebusaway::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::stop_route_direction_schedule

@@ -4,7 +4,7 @@ module Onebusaway
       def retrieve:
         (
           String trip_id,
-          ?Onebusaway::Models::TripRetrieveParams | Hash[Symbol, top] params
+          ?Onebusaway::Models::TripRetrieveParams | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::TripRetrieveResponse
         | (
           String trip_id,

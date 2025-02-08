@@ -42,15 +42,15 @@ module Onebusaway
 
         type entry =
           {
-            arrivals_and_departures: Array[Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
+            arrivals_and_departures: ::Array[Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
           }
 
         class Entry < Onebusaway::BaseModel
-          attr_accessor arrivals_and_departures: Array[Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
+          attr_accessor arrivals_and_departures: ::Array[Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
 
           def initialize:
             (
-              arrivals_and_departures: Array[Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
+              arrivals_and_departures: ::Array[Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
             ) -> void
             | (
               ?Onebusaway::Models::ArrivalAndDepartureListResponse::Data::entry
@@ -92,7 +92,7 @@ module Onebusaway
               scheduled_arrival_interval: String,
               scheduled_departure_interval: String,
               scheduled_track: String,
-              situation_ids: Array[String],
+              situation_ids: ::Array[String],
               status: String,
               trip_status: Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus
             }
@@ -190,9 +190,9 @@ module Onebusaway
 
             def scheduled_track=: (String) -> void
 
-            attr_reader situation_ids: Array[String]?
+            attr_reader situation_ids: ::Array[String]?
 
-            def situation_ids=: (Array[String]) -> void
+            def situation_ids=: (::Array[String]) -> void
 
             attr_reader status: String?
 
@@ -237,7 +237,7 @@ module Onebusaway
                 scheduled_arrival_interval: String,
                 scheduled_departure_interval: String,
                 scheduled_track: String,
-                situation_ids: Array[String],
+                situation_ids: ::Array[String],
                 status: String,
                 trip_status: Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus
               ) -> void
@@ -275,7 +275,7 @@ module Onebusaway
                 orientation: Float,
                 position: Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::Position,
                 scheduled_distance_along_trip: Float,
-                situation_ids: Array[String],
+                situation_ids: ::Array[String],
                 vehicle_id: String
               }
 
@@ -352,9 +352,9 @@ module Onebusaway
 
               def scheduled_distance_along_trip=: (Float) -> void
 
-              attr_reader situation_ids: Array[String]?
+              attr_reader situation_ids: ::Array[String]?
 
-              def situation_ids=: (Array[String]) -> void
+              def situation_ids=: (::Array[String]) -> void
 
               attr_reader vehicle_id: String?
 
@@ -387,7 +387,7 @@ module Onebusaway
                   orientation: Float,
                   position: Onebusaway::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::Position,
                   scheduled_distance_along_trip: Float,
-                  situation_ids: Array[String],
+                  situation_ids: ::Array[String],
                   vehicle_id: String
                 ) -> void
                 | (

@@ -40,10 +40,10 @@ module Onebusaway
           {
             route_id: String,
             schedule_date: Integer,
-            service_ids: Array[String],
-            stops: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
-            stop_trip_groupings: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
-            trips: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
+            service_ids: ::Array[String],
+            stops: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
+            stop_trip_groupings: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
+            trips: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
           }
 
         class Entry < Onebusaway::BaseModel
@@ -51,22 +51,22 @@ module Onebusaway
 
           attr_accessor schedule_date: Integer
 
-          attr_accessor service_ids: Array[String]
+          attr_accessor service_ids: ::Array[String]
 
-          attr_accessor stops: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop]
+          attr_accessor stops: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop]
 
-          attr_accessor stop_trip_groupings: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping]
+          attr_accessor stop_trip_groupings: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping]
 
-          attr_accessor trips: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
+          attr_accessor trips: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
 
           def initialize:
             (
               route_id: String,
               schedule_date: Integer,
-              service_ids: Array[String],
-              stops: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
-              stop_trip_groupings: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
-              trips: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
+              service_ids: ::Array[String],
+              stops: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
+              stop_trip_groupings: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
+              trips: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
             ) -> void
             | (
               ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::entry
@@ -82,8 +82,8 @@ module Onebusaway
               lon: Float,
               name: String,
               parent: String,
-              route_ids: Array[String],
-              static_route_ids: Array[String],
+              route_ids: ::Array[String],
+              static_route_ids: ::Array[String],
               code: String,
               direction: String,
               location_type: Integer,
@@ -101,9 +101,9 @@ module Onebusaway
 
             attr_accessor parent: String
 
-            attr_accessor route_ids: Array[String]
+            attr_accessor route_ids: ::Array[String]
 
-            attr_accessor static_route_ids: Array[String]
+            attr_accessor static_route_ids: ::Array[String]
 
             attr_reader code: String?
 
@@ -128,8 +128,8 @@ module Onebusaway
                 lon: Float,
                 name: String,
                 parent: String,
-                route_ids: Array[String],
-                static_route_ids: Array[String],
+                route_ids: ::Array[String],
+                static_route_ids: ::Array[String],
                 code: String,
                 direction: String,
                 location_type: Integer,
@@ -146,34 +146,34 @@ module Onebusaway
           type stop_trip_grouping =
             {
               direction_id: String,
-              stop_ids: Array[String],
-              trip_headsigns: Array[String],
-              trip_ids: Array[String],
-              trips_with_stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+              stop_ids: ::Array[String],
+              trip_headsigns: ::Array[String],
+              trip_ids: ::Array[String],
+              trips_with_stop_times: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
             }
 
           class StopTripGrouping < Onebusaway::BaseModel
             attr_accessor direction_id: String
 
-            attr_accessor stop_ids: Array[String]
+            attr_accessor stop_ids: ::Array[String]
 
-            attr_accessor trip_headsigns: Array[String]
+            attr_accessor trip_headsigns: ::Array[String]
 
-            attr_accessor trip_ids: Array[String]
+            attr_accessor trip_ids: ::Array[String]
 
-            attr_reader trips_with_stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]?
+            attr_reader trips_with_stop_times: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]?
 
             def trips_with_stop_times=: (
-              Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+              ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
             ) -> void
 
             def initialize:
               (
                 direction_id: String,
-                stop_ids: Array[String],
-                trip_headsigns: Array[String],
-                trip_ids: Array[String],
-                trips_with_stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+                stop_ids: ::Array[String],
+                trip_headsigns: ::Array[String],
+                trip_ids: ::Array[String],
+                trips_with_stop_times: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
               ) -> void
               | (
                 ?Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop_trip_grouping
@@ -184,18 +184,18 @@ module Onebusaway
 
             type trips_with_stop_time =
               {
-                stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
+                stop_times: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
                 trip_id: String
               }
 
             class TripsWithStopTime < Onebusaway::BaseModel
-              attr_accessor stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime]
+              attr_accessor stop_times: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime]
 
               attr_accessor trip_id: String
 
               def initialize:
                 (
-                  stop_times: Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
+                  stop_times: ::Array[Onebusaway::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
                   trip_id: String
                 ) -> void
                 | (

@@ -4,7 +4,7 @@ module Onebusaway
       def retrieve:
         (
           String shape_id,
-          ?Onebusaway::Models::ShapeRetrieveParams | Hash[Symbol, top] params
+          ?Onebusaway::Models::ShapeRetrieveParams | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::ShapeRetrieveResponse
         | (
           String shape_id,

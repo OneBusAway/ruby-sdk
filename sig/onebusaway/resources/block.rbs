@@ -4,7 +4,7 @@ module Onebusaway
       def retrieve:
         (
           String block_id,
-          ?Onebusaway::Models::BlockRetrieveParams | Hash[Symbol, top] params
+          ?Onebusaway::Models::BlockRetrieveParams | ::Hash[Symbol, top] params
         ) -> Onebusaway::Models::BlockRetrieveResponse
         | (
           String block_id,
