@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module Onebusaway
-  VERSION = "0.1.0-alpha.119"
+  VERSION = "0.1.0-alpha.120"
 end
