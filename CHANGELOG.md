@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.152 (2025-02-10)
+
+Full Changelog: [v0.1.0-alpha.151...v0.1.0-alpha.152](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.151...v0.1.0-alpha.152)
+
+### Chores
+
+* **internal:** version bump ([#304](https://github.com/OneBusAway/ruby-sdk/issues/304)) ([77a6146](https://github.com/OneBusAway/ruby-sdk/commit/77a6146f6585d48a85e9f82d6d536b1ba10350e6))
+
 ## 0.1.0-alpha.151 (2025-02-10)
 
 Full Changelog: [v0.1.0-alpha.150...v0.1.0-alpha.151](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.150...v0.1.0-alpha.151)
