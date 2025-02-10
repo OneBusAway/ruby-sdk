@@ -1,0 +1,50 @@
+module OnebusawaySDK
+  module Models
+    type arrival_and_departure_retrieve_params =
+      {
+        service_date: Integer,
+        trip_id: String,
+        stop_sequence: Integer,
+        time: Integer,
+        vehicle_id: String
+      }
+      & OnebusawaySDK::request_parameters
+
+    class ArrivalAndDepartureRetrieveParams < OnebusawaySDK::BaseModel
+      extend OnebusawaySDK::RequestParameters::Converter
+      include OnebusawaySDK::RequestParameters
+
+      attr_accessor service_date: Integer
+
+      attr_accessor trip_id: String
+
+      attr_reader stop_sequence: Integer?
+
+      def stop_sequence=: (Integer) -> void
+
+      attr_reader time: Integer?
+
+      def time=: (Integer) -> void
+
+      attr_reader vehicle_id: String?
+
+      def vehicle_id=: (String) -> void
+
+      def initialize:
+        (
+          service_date: Integer,
+          trip_id: String,
+          stop_sequence: Integer,
+          time: Integer,
+          vehicle_id: String,
+          request_options: OnebusawaySDK::request_opts
+        ) -> void
+        | (
+          ?OnebusawaySDK::Models::arrival_and_departure_retrieve_params
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::arrival_and_departure_retrieve_params
+    end
+  end
+end

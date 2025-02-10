@@ -1,0 +1,19 @@
+module OnebusawaySDK
+  module Models
+    type agency_retrieve_params = {  } & OnebusawaySDK::request_parameters
+
+    class AgencyRetrieveParams < OnebusawaySDK::BaseModel
+      extend OnebusawaySDK::RequestParameters::Converter
+      include OnebusawaySDK::RequestParameters
+
+      def initialize:
+        (request_options: OnebusawaySDK::request_opts) -> void
+        | (
+          ?OnebusawaySDK::Models::agency_retrieve_params
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::agency_retrieve_params
+    end
+  end
+end

@@ -1,0 +1,123 @@
+module OnebusawaySDK
+  module Models
+    type stops_for_location_list_response =
+      { data: OnebusawaySDK::Models::StopsForLocationListResponse::Data }
+
+    class StopsForLocationListResponse < OnebusawaySDK::Models::ResponseWrapper
+      attr_accessor data: OnebusawaySDK::Models::StopsForLocationListResponse::Data
+
+      def initialize:
+        (
+          data: OnebusawaySDK::Models::StopsForLocationListResponse::Data
+        ) -> void
+        | (
+          ?OnebusawaySDK::Models::stops_for_location_list_response
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::stops_for_location_list_response
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
+          references: OnebusawaySDK::Models::References,
+          out_of_range: bool
+        }
+
+      class Data < OnebusawaySDK::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: ::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List]
+
+        attr_accessor references: OnebusawaySDK::Models::References
+
+        attr_reader out_of_range: bool?
+
+        def out_of_range=: (bool) -> void
+
+        def initialize:
+          (
+            limit_exceeded: bool,
+            list: ::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
+            references: OnebusawaySDK::Models::References,
+            out_of_range: bool
+          ) -> void
+          | (
+            ?OnebusawaySDK::Models::StopsForLocationListResponse::data
+            | OnebusawaySDK::BaseModel data
+          ) -> void
+
+        def to_hash: -> OnebusawaySDK::Models::StopsForLocationListResponse::data
+
+        type list =
+          {
+            id: String,
+            lat: Float,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            code: String,
+            direction: String,
+            location_type: Integer,
+            wheelchair_boarding: String
+          }
+
+        class List < OnebusawaySDK::BaseModel
+          attr_accessor id: String
+
+          attr_accessor lat: Float
+
+          attr_accessor lon: Float
+
+          attr_accessor name: String
+
+          attr_accessor parent: String
+
+          attr_accessor route_ids: ::Array[String]
+
+          attr_accessor static_route_ids: ::Array[String]
+
+          attr_reader code: String?
+
+          def code=: (String) -> void
+
+          attr_reader direction: String?
+
+          def direction=: (String) -> void
+
+          attr_reader location_type: Integer?
+
+          def location_type=: (Integer) -> void
+
+          attr_reader wheelchair_boarding: String?
+
+          def wheelchair_boarding=: (String) -> void
+
+          def initialize:
+            (
+              id: String,
+              lat: Float,
+              lon: Float,
+              name: String,
+              parent: String,
+              route_ids: ::Array[String],
+              static_route_ids: ::Array[String],
+              code: String,
+              direction: String,
+              location_type: Integer,
+              wheelchair_boarding: String
+            ) -> void
+            | (
+              ?OnebusawaySDK::Models::StopsForLocationListResponse::Data::list
+              | OnebusawaySDK::BaseModel data
+            ) -> void
+
+          def to_hash: -> OnebusawaySDK::Models::StopsForLocationListResponse::Data::list
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,16 @@
+module OnebusawaySDK
+  module Resources
+    class Config
+      def retrieve:
+        (
+          ?OnebusawaySDK::Models::ConfigRetrieveParams
+          | ::Hash[Symbol, top] params
+        ) -> OnebusawaySDK::Models::ConfigRetrieveResponse
+        | (
+          request_options: OnebusawaySDK::request_opts
+        ) -> OnebusawaySDK::Models::ConfigRetrieveResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

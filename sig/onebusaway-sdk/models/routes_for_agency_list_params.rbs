@@ -1,0 +1,20 @@
+module OnebusawaySDK
+  module Models
+    type routes_for_agency_list_params =
+      {  } & OnebusawaySDK::request_parameters
+
+    class RoutesForAgencyListParams < OnebusawaySDK::BaseModel
+      extend OnebusawaySDK::RequestParameters::Converter
+      include OnebusawaySDK::RequestParameters
+
+      def initialize:
+        (request_options: OnebusawaySDK::request_opts) -> void
+        | (
+          ?OnebusawaySDK::Models::routes_for_agency_list_params
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::routes_for_agency_list_params
+    end
+  end
+end
