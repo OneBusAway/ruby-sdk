@@ -1,0 +1,58 @@
+module OnebusawaySDK
+  module Models
+    type trips_for_location_list_params =
+      {
+        lat: Float,
+        lat_span: Float,
+        lon: Float,
+        lon_span: Float,
+        include_schedule: bool,
+        include_trip: bool,
+        time: Integer
+      }
+      & OnebusawaySDK::request_parameters
+
+    class TripsForLocationListParams < OnebusawaySDK::BaseModel
+      extend OnebusawaySDK::RequestParameters::Converter
+      include OnebusawaySDK::RequestParameters
+
+      attr_accessor lat: Float
+
+      attr_accessor lat_span: Float
+
+      attr_accessor lon: Float
+
+      attr_accessor lon_span: Float
+
+      attr_reader include_schedule: bool?
+
+      def include_schedule=: (bool) -> void
+
+      attr_reader include_trip: bool?
+
+      def include_trip=: (bool) -> void
+
+      attr_reader time: Integer?
+
+      def time=: (Integer) -> void
+
+      def initialize:
+        (
+          lat: Float,
+          lat_span: Float,
+          lon: Float,
+          lon_span: Float,
+          include_schedule: bool,
+          include_trip: bool,
+          time: Integer,
+          request_options: OnebusawaySDK::request_opts
+        ) -> void
+        | (
+          ?OnebusawaySDK::Models::trips_for_location_list_params
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::trips_for_location_list_params
+    end
+  end
+end

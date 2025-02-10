@@ -1,0 +1,125 @@
+module OnebusawaySDK
+  module Models
+    type search_for_route_list_response =
+      { data: OnebusawaySDK::Models::SearchForRouteListResponse::Data }
+
+    class SearchForRouteListResponse < OnebusawaySDK::Models::ResponseWrapper
+      attr_reader data: OnebusawaySDK::Models::SearchForRouteListResponse::Data?
+
+      def data=: (
+        OnebusawaySDK::Models::SearchForRouteListResponse::Data
+      ) -> void
+
+      def initialize:
+        (data: OnebusawaySDK::Models::SearchForRouteListResponse::Data) -> void
+        | (
+          ?OnebusawaySDK::Models::search_for_route_list_response
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::search_for_route_list_response
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::SearchForRouteListResponse::Data::List],
+          out_of_range: bool,
+          references: OnebusawaySDK::Models::References
+        }
+
+      class Data < OnebusawaySDK::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: ::Array[OnebusawaySDK::Models::SearchForRouteListResponse::Data::List]
+
+        attr_accessor out_of_range: bool
+
+        attr_accessor references: OnebusawaySDK::Models::References
+
+        def initialize:
+          (
+            limit_exceeded: bool,
+            list: ::Array[OnebusawaySDK::Models::SearchForRouteListResponse::Data::List],
+            out_of_range: bool,
+            references: OnebusawaySDK::Models::References
+          ) -> void
+          | (
+            ?OnebusawaySDK::Models::SearchForRouteListResponse::data
+            | OnebusawaySDK::BaseModel data
+          ) -> void
+
+        def to_hash: -> OnebusawaySDK::Models::SearchForRouteListResponse::data
+
+        type list =
+          {
+            id: String,
+            agency_id: String,
+            type: Integer,
+            color: String,
+            description: String,
+            long_name: String,
+            null_safe_short_name: String,
+            short_name: String,
+            text_color: String,
+            url: String
+          }
+
+        class List < OnebusawaySDK::BaseModel
+          attr_accessor id: String
+
+          attr_accessor agency_id: String
+
+          attr_accessor type: Integer
+
+          attr_reader color: String?
+
+          def color=: (String) -> void
+
+          attr_reader description: String?
+
+          def description=: (String) -> void
+
+          attr_reader long_name: String?
+
+          def long_name=: (String) -> void
+
+          attr_reader null_safe_short_name: String?
+
+          def null_safe_short_name=: (String) -> void
+
+          attr_reader short_name: String?
+
+          def short_name=: (String) -> void
+
+          attr_reader text_color: String?
+
+          def text_color=: (String) -> void
+
+          attr_reader url: String?
+
+          def url=: (String) -> void
+
+          def initialize:
+            (
+              id: String,
+              agency_id: String,
+              type: Integer,
+              color: String,
+              description: String,
+              long_name: String,
+              null_safe_short_name: String,
+              short_name: String,
+              text_color: String,
+              url: String
+            ) -> void
+            | (
+              ?OnebusawaySDK::Models::SearchForRouteListResponse::Data::list
+              | OnebusawaySDK::BaseModel data
+            ) -> void
+
+          def to_hash: -> OnebusawaySDK::Models::SearchForRouteListResponse::Data::list
+        end
+      end
+    end
+  end
+end

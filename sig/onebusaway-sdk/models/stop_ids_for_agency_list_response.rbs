@@ -1,0 +1,49 @@
+module OnebusawaySDK
+  module Models
+    type stop_ids_for_agency_list_response =
+      { data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data }
+
+    class StopIDsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
+      attr_accessor data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
+
+      def initialize:
+        (
+          data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
+        ) -> void
+        | (
+          ?OnebusawaySDK::Models::stop_ids_for_agency_list_response
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::stop_ids_for_agency_list_response
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: ::Array[String],
+          references: OnebusawaySDK::Models::References
+        }
+
+      class Data < OnebusawaySDK::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: ::Array[String]
+
+        attr_accessor references: OnebusawaySDK::Models::References
+
+        def initialize:
+          (
+            limit_exceeded: bool,
+            list: ::Array[String],
+            references: OnebusawaySDK::Models::References
+          ) -> void
+          | (
+            ?OnebusawaySDK::Models::StopIDsForAgencyListResponse::data
+            | OnebusawaySDK::BaseModel data
+          ) -> void
+
+        def to_hash: -> OnebusawaySDK::Models::StopIDsForAgencyListResponse::data
+      end
+    end
+  end
+end
