@@ -1,0 +1,19 @@
+module OnebusawaySDK
+  module Resources
+    class ScheduleForStop
+      def retrieve:
+        (
+          String stop_id,
+          ?OnebusawaySDK::Models::ScheduleForStopRetrieveParams
+          | ::Hash[Symbol, top] params
+        ) -> OnebusawaySDK::Models::ScheduleForStopRetrieveResponse
+        | (
+          String stop_id,
+          date: Date,
+          request_options: OnebusawaySDK::request_opts
+        ) -> OnebusawaySDK::Models::ScheduleForStopRetrieveResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

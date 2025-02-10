@@ -1,0 +1,18 @@
+module OnebusawaySDK
+  module Resources
+    class Shape
+      def retrieve:
+        (
+          String shape_id,
+          ?OnebusawaySDK::Models::ShapeRetrieveParams
+          | ::Hash[Symbol, top] params
+        ) -> OnebusawaySDK::Models::ShapeRetrieveResponse
+        | (
+          String shape_id,
+          request_options: OnebusawaySDK::request_opts
+        ) -> OnebusawaySDK::Models::ShapeRetrieveResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

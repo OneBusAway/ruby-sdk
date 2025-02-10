@@ -1,0 +1,38 @@
+module OnebusawaySDK
+  module Models
+    type trips_for_route_list_params =
+      { include_schedule: bool, include_status: bool, time: Integer }
+      & OnebusawaySDK::request_parameters
+
+    class TripsForRouteListParams < OnebusawaySDK::BaseModel
+      extend OnebusawaySDK::RequestParameters::Converter
+      include OnebusawaySDK::RequestParameters
+
+      attr_reader include_schedule: bool?
+
+      def include_schedule=: (bool) -> void
+
+      attr_reader include_status: bool?
+
+      def include_status=: (bool) -> void
+
+      attr_reader time: Integer?
+
+      def time=: (Integer) -> void
+
+      def initialize:
+        (
+          include_schedule: bool,
+          include_status: bool,
+          time: Integer,
+          request_options: OnebusawaySDK::request_opts
+        ) -> void
+        | (
+          ?OnebusawaySDK::Models::trips_for_route_list_params
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::trips_for_route_list_params
+    end
+  end
+end

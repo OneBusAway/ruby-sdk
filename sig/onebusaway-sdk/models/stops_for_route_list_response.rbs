@@ -1,0 +1,206 @@
+module OnebusawaySDK
+  module Models
+    type stops_for_route_list_response =
+      { data: OnebusawaySDK::Models::StopsForRouteListResponse::Data }
+
+    class StopsForRouteListResponse < OnebusawaySDK::Models::ResponseWrapper
+      attr_accessor data: OnebusawaySDK::Models::StopsForRouteListResponse::Data
+
+      def initialize:
+        (data: OnebusawaySDK::Models::StopsForRouteListResponse::Data) -> void
+        | (
+          ?OnebusawaySDK::Models::stops_for_route_list_response
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::stops_for_route_list_response
+
+      type data =
+        {
+          entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        }
+
+      class Data < OnebusawaySDK::BaseModel
+        attr_accessor entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry
+
+        attr_accessor references: OnebusawaySDK::Models::References
+
+        def initialize:
+          (
+            entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
+            references: OnebusawaySDK::Models::References
+          ) -> void
+          | (
+            ?OnebusawaySDK::Models::StopsForRouteListResponse::data
+            | OnebusawaySDK::BaseModel data
+          ) -> void
+
+        def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::data
+
+        type entry =
+          {
+            polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+            route_id: String,
+            stop_groupings: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+            stop_ids: ::Array[String]
+          }
+
+        class Entry < OnebusawaySDK::BaseModel
+          attr_reader polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]?
+
+          def polylines=: (
+            ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]
+          ) -> void
+
+          attr_reader route_id: String?
+
+          def route_id=: (String) -> void
+
+          attr_reader stop_groupings: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]?
+
+          def stop_groupings=: (
+            ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
+          ) -> void
+
+          attr_reader stop_ids: ::Array[String]?
+
+          def stop_ids=: (::Array[String]) -> void
+
+          def initialize:
+            (
+              polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+              route_id: String,
+              stop_groupings: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+              stop_ids: ::Array[String]
+            ) -> void
+            | (
+              ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::entry
+              | OnebusawaySDK::BaseModel data
+            ) -> void
+
+          def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::entry
+
+          type polyline = { length: Integer, levels: String, points: String }
+
+          class Polyline < OnebusawaySDK::BaseModel
+            attr_reader length: Integer?
+
+            def length=: (Integer) -> void
+
+            attr_reader levels: String?
+
+            def levels=: (String) -> void
+
+            attr_reader points: String?
+
+            def points=: (String) -> void
+
+            def initialize:
+              (length: Integer, levels: String, points: String) -> void
+              | (
+                ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::polyline
+                | OnebusawaySDK::BaseModel data
+              ) -> void
+
+            def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::polyline
+          end
+
+          type stop_grouping =
+            {
+              id: String,
+              name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+              polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+              stop_ids: ::Array[String]
+            }
+
+          class StopGrouping < OnebusawaySDK::BaseModel
+            attr_reader id: String?
+
+            def id=: (String) -> void
+
+            attr_reader name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name?
+
+            def name=: (
+              OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
+            ) -> void
+
+            attr_reader polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]?
+
+            def polylines=: (
+              ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
+            ) -> void
+
+            attr_reader stop_ids: ::Array[String]?
+
+            def stop_ids=: (::Array[String]) -> void
+
+            def initialize:
+              (
+                id: String,
+                name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+                stop_ids: ::Array[String]
+              ) -> void
+              | (
+                ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::stop_grouping
+                | OnebusawaySDK::BaseModel data
+              ) -> void
+
+            def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::stop_grouping
+
+            type name_ = { name: String, names: ::Array[String], type: String }
+
+            class Name < OnebusawaySDK::BaseModel
+              attr_reader name: String?
+
+              def name=: (String) -> void
+
+              attr_reader names: ::Array[String]?
+
+              def names=: (::Array[String]) -> void
+
+              attr_reader type: String?
+
+              def type=: (String) -> void
+
+              def initialize:
+                (name: String, names: ::Array[String], type: String) -> void
+                | (
+                  ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::name_
+                  | OnebusawaySDK::BaseModel data
+                ) -> void
+
+              def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::name_
+            end
+
+            type polyline = { length: Integer, levels: String, points: String }
+
+            class Polyline < OnebusawaySDK::BaseModel
+              attr_reader length: Integer?
+
+              def length=: (Integer) -> void
+
+              attr_reader levels: String?
+
+              def levels=: (String) -> void
+
+              attr_reader points: String?
+
+              def points=: (String) -> void
+
+              def initialize:
+                (length: Integer, levels: String, points: String) -> void
+                | (
+                  ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::polyline
+                  | OnebusawaySDK::BaseModel data
+                ) -> void
+
+              def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::polyline
+            end
+          end
+        end
+      end
+    end
+  end
+end
