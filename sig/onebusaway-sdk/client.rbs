@@ -1,0 +1,80 @@
+module OnebusawaySDK
+  class Client < OnebusawaySDK::BaseClient
+    DEFAULT_MAX_RETRIES: 2
+
+    DEFAULT_TIMEOUT_IN_SECONDS: Float
+
+    DEFAULT_INITIAL_RETRY_DELAY: Float
+
+    DEFAULT_MAX_RETRY_DELAY: Float
+
+    attr_reader api_key: String
+
+    attr_reader agencies_with_coverage: OnebusawaySDK::Resources::AgenciesWithCoverage
+
+    attr_reader agency: OnebusawaySDK::Resources::Agency
+
+    attr_reader vehicles_for_agency: OnebusawaySDK::Resources::VehiclesForAgency
+
+    attr_reader config: OnebusawaySDK::Resources::Config
+
+    attr_reader current_time: OnebusawaySDK::Resources::CurrentTime
+
+    attr_reader stops_for_location: OnebusawaySDK::Resources::StopsForLocation
+
+    attr_reader stops_for_route: OnebusawaySDK::Resources::StopsForRoute
+
+    attr_reader stops_for_agency: OnebusawaySDK::Resources::StopsForAgency
+
+    attr_reader stop: OnebusawaySDK::Resources::Stop
+
+    attr_reader stop_ids_for_agency: OnebusawaySDK::Resources::StopIDsForAgency
+
+    attr_reader schedule_for_stop: OnebusawaySDK::Resources::ScheduleForStop
+
+    attr_reader route: OnebusawaySDK::Resources::Route
+
+    attr_reader route_ids_for_agency: OnebusawaySDK::Resources::RouteIDsForAgency
+
+    attr_reader routes_for_location: OnebusawaySDK::Resources::RoutesForLocation
+
+    attr_reader routes_for_agency: OnebusawaySDK::Resources::RoutesForAgency
+
+    attr_reader schedule_for_route: OnebusawaySDK::Resources::ScheduleForRoute
+
+    attr_reader arrival_and_departure: OnebusawaySDK::Resources::ArrivalAndDeparture
+
+    attr_reader trip: OnebusawaySDK::Resources::Trip
+
+    attr_reader trips_for_location: OnebusawaySDK::Resources::TripsForLocation
+
+    attr_reader trip_details: OnebusawaySDK::Resources::TripDetails
+
+    attr_reader trip_for_vehicle: OnebusawaySDK::Resources::TripForVehicle
+
+    attr_reader trips_for_route: OnebusawaySDK::Resources::TripsForRoute
+
+    attr_reader report_problem_with_stop: OnebusawaySDK::Resources::ReportProblemWithStop
+
+    attr_reader report_problem_with_trip: OnebusawaySDK::Resources::ReportProblemWithTrip
+
+    attr_reader search_for_stop: OnebusawaySDK::Resources::SearchForStop
+
+    attr_reader search_for_route: OnebusawaySDK::Resources::SearchForRoute
+
+    attr_reader block: OnebusawaySDK::Resources::Block
+
+    attr_reader shape: OnebusawaySDK::Resources::Shape
+
+    private def auth_headers: -> ::Hash[String, String]
+
+    def initialize: (
+      base_url: String?,
+      api_key: String?,
+      max_retries: Integer,
+      timeout: Float,
+      initial_retry_delay: Float,
+      max_retry_delay: Float
+    ) -> void
+  end
+end

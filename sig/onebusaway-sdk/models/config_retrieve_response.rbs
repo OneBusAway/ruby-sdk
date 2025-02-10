@@ -1,0 +1,227 @@
+module OnebusawaySDK
+  module Models
+    type config_retrieve_response =
+      { data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data }
+
+    class ConfigRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      attr_accessor data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data
+
+      def initialize:
+        (data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data) -> void
+        | (
+          ?OnebusawaySDK::Models::config_retrieve_response
+          | OnebusawaySDK::BaseModel data
+        ) -> void
+
+      def to_hash: -> OnebusawaySDK::Models::config_retrieve_response
+
+      type data =
+        {
+          entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        }
+
+      class Data < OnebusawaySDK::BaseModel
+        attr_accessor entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry
+
+        attr_accessor references: OnebusawaySDK::Models::References
+
+        def initialize:
+          (
+            entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
+            references: OnebusawaySDK::Models::References
+          ) -> void
+          | (
+            ?OnebusawaySDK::Models::ConfigRetrieveResponse::data
+            | OnebusawaySDK::BaseModel data
+          ) -> void
+
+        def to_hash: -> OnebusawaySDK::Models::ConfigRetrieveResponse::data
+
+        type entry =
+          {
+            id: String,
+            git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+            name: String,
+            service_date_from: String,
+            service_date_to: String
+          }
+
+        class Entry < OnebusawaySDK::BaseModel
+          attr_reader id: String?
+
+          def id=: (String) -> void
+
+          attr_reader git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties?
+
+          def git_properties=: (
+            OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties
+          ) -> void
+
+          attr_reader name: String?
+
+          def name=: (String) -> void
+
+          attr_reader service_date_from: String?
+
+          def service_date_from=: (String) -> void
+
+          attr_reader service_date_to: String?
+
+          def service_date_to=: (String) -> void
+
+          def initialize:
+            (
+              id: String,
+              git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+              name: String,
+              service_date_from: String,
+              service_date_to: String
+            ) -> void
+            | (
+              ?OnebusawaySDK::Models::ConfigRetrieveResponse::Data::entry
+              | OnebusawaySDK::BaseModel data
+            ) -> void
+
+          def to_hash: -> OnebusawaySDK::Models::ConfigRetrieveResponse::Data::entry
+
+          type git_properties =
+            {
+              git_branch: String,
+              git_build_host: String,
+              git_build_time: String,
+              git_build_user_email: String,
+              git_build_user_name: String,
+              git_build_version: String,
+              git_closest_tag_commit_count: String,
+              git_closest_tag_name: String,
+              git_commit_id: String,
+              git_commit_id_abbrev: String,
+              git_commit_id_describe: String,
+              git_commit_id_describe_short: String,
+              git_commit_message_full: String,
+              git_commit_message_short: String,
+              git_commit_time: String,
+              git_commit_user_email: String,
+              git_commit_user_name: String,
+              git_dirty: String,
+              git_remote_origin_url: String,
+              git_tags: String
+            }
+
+          class GitProperties < OnebusawaySDK::BaseModel
+            attr_reader git_branch: String?
+
+            def git_branch=: (String) -> void
+
+            attr_reader git_build_host: String?
+
+            def git_build_host=: (String) -> void
+
+            attr_reader git_build_time: String?
+
+            def git_build_time=: (String) -> void
+
+            attr_reader git_build_user_email: String?
+
+            def git_build_user_email=: (String) -> void
+
+            attr_reader git_build_user_name: String?
+
+            def git_build_user_name=: (String) -> void
+
+            attr_reader git_build_version: String?
+
+            def git_build_version=: (String) -> void
+
+            attr_reader git_closest_tag_commit_count: String?
+
+            def git_closest_tag_commit_count=: (String) -> void
+
+            attr_reader git_closest_tag_name: String?
+
+            def git_closest_tag_name=: (String) -> void
+
+            attr_reader git_commit_id: String?
+
+            def git_commit_id=: (String) -> void
+
+            attr_reader git_commit_id_abbrev: String?
+
+            def git_commit_id_abbrev=: (String) -> void
+
+            attr_reader git_commit_id_describe: String?
+
+            def git_commit_id_describe=: (String) -> void
+
+            attr_reader git_commit_id_describe_short: String?
+
+            def git_commit_id_describe_short=: (String) -> void
+
+            attr_reader git_commit_message_full: String?
+
+            def git_commit_message_full=: (String) -> void
+
+            attr_reader git_commit_message_short: String?
+
+            def git_commit_message_short=: (String) -> void
+
+            attr_reader git_commit_time: String?
+
+            def git_commit_time=: (String) -> void
+
+            attr_reader git_commit_user_email: String?
+
+            def git_commit_user_email=: (String) -> void
+
+            attr_reader git_commit_user_name: String?
+
+            def git_commit_user_name=: (String) -> void
+
+            attr_reader git_dirty: String?
+
+            def git_dirty=: (String) -> void
+
+            attr_reader git_remote_origin_url: String?
+
+            def git_remote_origin_url=: (String) -> void
+
+            attr_reader git_tags: String?
+
+            def git_tags=: (String) -> void
+
+            def initialize:
+              (
+                git_branch: String,
+                git_build_host: String,
+                git_build_time: String,
+                git_build_user_email: String,
+                git_build_user_name: String,
+                git_build_version: String,
+                git_closest_tag_commit_count: String,
+                git_closest_tag_name: String,
+                git_commit_id: String,
+                git_commit_id_abbrev: String,
+                git_commit_id_describe: String,
+                git_commit_id_describe_short: String,
+                git_commit_message_full: String,
+                git_commit_message_short: String,
+                git_commit_time: String,
+                git_commit_user_email: String,
+                git_commit_user_name: String,
+                git_dirty: String,
+                git_remote_origin_url: String,
+                git_tags: String
+              ) -> void
+              | (
+                ?OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::git_properties
+                | OnebusawaySDK::BaseModel data
+              ) -> void
+
+            def to_hash: -> OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::git_properties
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,23 @@
+module OnebusawaySDK
+  module Resources
+    class TripsForLocation
+      def list:
+        (
+          OnebusawaySDK::Models::TripsForLocationListParams
+          | ::Hash[Symbol, top] params
+        ) -> OnebusawaySDK::Models::TripsForLocationListResponse
+        | (
+          lat: Float,
+          lat_span: Float,
+          lon: Float,
+          lon_span: Float,
+          include_schedule: bool,
+          include_trip: bool,
+          time: Integer,
+          request_options: OnebusawaySDK::request_opts
+        ) -> OnebusawaySDK::Models::TripsForLocationListResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

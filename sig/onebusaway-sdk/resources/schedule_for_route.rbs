@@ -1,0 +1,19 @@
+module OnebusawaySDK
+  module Resources
+    class ScheduleForRoute
+      def retrieve:
+        (
+          String route_id,
+          ?OnebusawaySDK::Models::ScheduleForRouteRetrieveParams
+          | ::Hash[Symbol, top] params
+        ) -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse
+        | (
+          String route_id,
+          date: Date,
+          request_options: OnebusawaySDK::request_opts
+        ) -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end
