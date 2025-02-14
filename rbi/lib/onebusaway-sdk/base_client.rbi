@@ -66,7 +66,7 @@ module OnebusawaySDK
     end
 
     sig { overridable.returns(T::Hash[String, String]) }
-    private def auth_headers
+    private def auth_query
     end
 
     sig { returns(String) }

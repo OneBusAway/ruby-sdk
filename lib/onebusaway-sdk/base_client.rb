@@ -77,7 +77,7 @@ module OnebusawaySDK
     #
     # @return [Hash{String=>String}]
     #
-    private def auth_headers = {}
+    private def auth_query = {}
 
     # @private
     #
@@ -126,10 +126,16 @@ module OnebusawaySDK
 
       path = OnebusawaySDK::Util.interpolate_path(uninterpolated_path)
 
+      query = OnebusawaySDK::Util.deep_merge(
+        auth_query,
+        req[:query].to_h,
+        opts[:extra_query].to_h
+      )
+
       headers = OnebusawaySDK::Util.normalized_headers(
         @headers,
-        auth_headers,
-        *[req[:headers], opts[:extra_headers]].compact
+        req[:headers].to_h,
+        opts[:extra_headers].to_h
       )
 
       if @idempotency_header &&
@@ -157,7 +163,7 @@ module OnebusawaySDK
           OnebusawaySDK::Util.deep_merge(*[req[:body], opts[:extra_body]].compact)
         end
 
-      url = OnebusawaySDK::Util.join_parsed_uri(@base_url, {**req, path: path})
+      url = OnebusawaySDK::Util.join_parsed_uri(@base_url, {**req, path: path, query: query})
       headers, encoded = OnebusawaySDK::Util.encode_content(headers, body)
       max_retries = opts.fetch(:max_retries, @max_retries)
       {method: method, url: url, headers: headers, body: encoded, max_retries: max_retries, timeout: timeout}
@@ -387,12 +393,10 @@ module OnebusawaySDK
       parsed = OnebusawaySDK::Util.decode_content(response)
       unwrapped = OnebusawaySDK::Util.dig(parsed, req[:unwrap])
 
-      page = req[:page]
-      model = req.fetch(:model, OnebusawaySDK::Unknown)
-      case [page, model]
-      in [Class, Class | OnebusawaySDK::Converter | nil]
+      case [req[:page], req.fetch(:model, OnebusawaySDK::Unknown)]
+      in [Class => page, _]
         page.new(client: self, req: req, headers: response, unwrapped: unwrapped)
-      in [nil, Class | OnebusawaySDK::Converter]
+      in [nil, Class | OnebusawaySDK::Converter => model]
         OnebusawaySDK::Converter.coerce(model, unwrapped)
       in [nil, nil]
         unwrapped
