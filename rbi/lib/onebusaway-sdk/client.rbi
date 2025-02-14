@@ -126,8 +126,8 @@ module OnebusawaySDK
     def shape
     end
 
-    sig { returns(T::Hash[String, String]) }
-    private def auth_headers
+    sig { override.returns(T::Hash[String, String]) }
+    private def auth_query
     end
 
     sig do
