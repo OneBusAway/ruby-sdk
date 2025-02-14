@@ -7,13 +7,20 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(String) }
-      attr_accessor :input
+      def input
+      end
+
+      sig { params(_: String).returns(String) }
+      def input=(_)
+      end
 
       sig { returns(T.nilable(Integer)) }
-      attr_reader :max_count
+      def max_count
+      end
 
-      sig { params(max_count: Integer).void }
-      attr_writer :max_count
+      sig { params(_: Integer).returns(Integer) }
+      def max_count=(_)
+      end
 
       sig do
         params(

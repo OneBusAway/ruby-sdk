@@ -35,10 +35,13 @@ module OnebusawaySDK
     def self.validate!(req)
     end
 
-    # @private
-    #
     sig { returns(T.anything) }
-    attr_accessor :requester
+    def requester
+    end
+
+    sig { params(_: T.anything).returns(T.anything) }
+    def requester=(_)
+    end
 
     sig do
       params(
@@ -63,7 +66,7 @@ module OnebusawaySDK
     end
 
     sig { overridable.returns(T::Hash[String, String]) }
-    private def auth_headers
+    private def auth_query
     end
 
     sig { returns(String) }

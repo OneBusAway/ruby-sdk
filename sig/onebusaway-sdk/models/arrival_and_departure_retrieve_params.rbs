@@ -20,15 +20,15 @@ module OnebusawaySDK
 
       attr_reader stop_sequence: Integer?
 
-      def stop_sequence=: (Integer) -> void
+      def stop_sequence=: (Integer) -> Integer
 
       attr_reader time: Integer?
 
-      def time=: (Integer) -> void
+      def time=: (Integer) -> Integer
 
       attr_reader vehicle_id: String?
 
-      def vehicle_id=: (String) -> void
+      def vehicle_id=: (String) -> String
 
       def initialize:
         (

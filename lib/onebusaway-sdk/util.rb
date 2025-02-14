@@ -48,8 +48,8 @@ module OnebusawaySDK
     # @return [Boolean, nil]
     #
     def self.coerce_boolean!(input)
-      case (coerced = coerce_boolean(input))
-      in true | false | nil
+      case coerce_boolean(input)
+      in true | false | nil => coerced
         coerced
       else
         raise ArgumentError.new("Unable to coerce #{input.inspect} into boolean value")
@@ -159,25 +159,20 @@ module OnebusawaySDK
     # @return [Object]
     #
     private_class_method def self.deep_merge_lr(lhs, rhs, concat: false)
-      rhs_cleaned =
-        case rhs
-        in Hash
-          rhs.reject { |_, value| value == OMIT }
-        else
-          rhs
-        end
-
-      case [lhs, rhs_cleaned, concat]
+      case [lhs, rhs, concat]
       in [Hash, Hash, _]
+        # rubocop:disable Style/YodaCondition
+        rhs_cleaned = rhs.reject { |_, val| OMIT == val }
         lhs
-          .reject { |key, _| rhs[key] == OMIT }
+          .reject { |key, _| OMIT == rhs[key] }
           .merge(rhs_cleaned) do |_, old_val, new_val|
             deep_merge_lr(old_val, new_val, concat: concat)
           end
+        # rubocop:enable Style/YodaCondition
       in [Array, Array, true]
-        lhs.concat(rhs_cleaned)
+        lhs.concat(rhs)
       else
-        rhs_cleaned
+        rhs
       end
     end
 
@@ -235,7 +230,7 @@ module OnebusawaySDK
       in []
         ""
       in [String, *interpolations]
-        encoded = interpolations.map { |v| ERB::Util.url_encode(v) }
+        encoded = interpolations.map { ERB::Util.url_encode(_1) }
         path.first % encoded
       end
     end
@@ -297,8 +292,6 @@ module OnebusawaySDK
     #
     #   @option rhs [Hash{String=>Array<String>}] :query
     #
-    #   @option rhs [Hash{String=>Array<String>}] :extra_query
-    #
     # @return [URI::Generic]
     #
     def self.join_parsed_uri(lhs, rhs)
@@ -312,7 +305,7 @@ module OnebusawaySDK
       query = deep_merge(
         joined.path == base_path ? base_query : {},
         parsed_query,
-        *rhs.values_at(:query, :extra_query).compact,
+        rhs[:query].to_h,
         concat: true
       )
 
@@ -332,12 +325,12 @@ module OnebusawaySDK
 
     # @private
     #
-    # @param query [Hash{String=>Array<String>, String, nil}]
+    # @param query [Hash{String=>Array<String>, String, nil}, nil]
     #
     # @return [String, nil]
     #
     def self.encode_query(query)
-      query.empty? ? nil : URI.encode_www_form(query)
+      query.to_h.empty? ? nil : URI.encode_www_form(query)
     end
 
     # @private

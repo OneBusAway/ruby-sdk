@@ -106,7 +106,7 @@ module OnebusawaySDK
 
               def schedule_frequencies=: (
                 ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
-              ) -> void
+              ) -> ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
 
               def initialize:
                 (
@@ -147,7 +147,7 @@ module OnebusawaySDK
 
                 attr_reader stop_headsign: String?
 
-                def stop_headsign=: (String) -> void
+                def stop_headsign=: (String) -> String
 
                 def initialize:
                   (

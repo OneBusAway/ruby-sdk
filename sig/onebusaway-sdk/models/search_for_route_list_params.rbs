@@ -11,7 +11,7 @@ module OnebusawaySDK
 
       attr_reader max_count: Integer?
 
-      def max_count=: (Integer) -> void
+      def max_count=: (Integer) -> Integer
 
       def initialize:
         (

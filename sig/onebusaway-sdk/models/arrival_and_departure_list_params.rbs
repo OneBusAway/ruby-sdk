@@ -10,15 +10,15 @@ module OnebusawaySDK
 
       attr_reader minutes_after: Integer?
 
-      def minutes_after=: (Integer) -> void
+      def minutes_after=: (Integer) -> Integer
 
       attr_reader minutes_before: Integer?
 
-      def minutes_before=: (Integer) -> void
+      def minutes_before=: (Integer) -> Integer
 
       attr_reader time: Time?
 
-      def time=: (Time) -> void
+      def time=: (Time) -> Time
 
       def initialize:
         (

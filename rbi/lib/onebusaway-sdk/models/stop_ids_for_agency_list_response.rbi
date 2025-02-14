@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class StopIDsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data).returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data).void }
       def initialize(data:)
@@ -16,13 +23,28 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(T::Boolean) }
-        attr_accessor :limit_exceeded
+        def limit_exceeded
+        end
+
+        sig { params(_: T::Boolean).returns(T::Boolean) }
+        def limit_exceeded=(_)
+        end
 
         sig { returns(T::Array[String]) }
-        attr_accessor :list
+        def list
+        end
+
+        sig { params(_: T::Array[String]).returns(T::Array[String]) }
+        def list=(_)
+        end
 
         sig { returns(OnebusawaySDK::Models::References) }
-        attr_accessor :references
+        def references
+        end
+
+        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        def references=(_)
+        end
 
         sig do
           params(

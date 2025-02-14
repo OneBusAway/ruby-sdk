@@ -107,8 +107,8 @@ module OnebusawaySDK
     #
     # @return [Hash{String=>String}]
     #
-    private def auth_headers
-      raise NotImplementedError
+    private def auth_query
+      {"key" => @api_key}
     end
 
     # Creates and returns a new client for interacting with the API.

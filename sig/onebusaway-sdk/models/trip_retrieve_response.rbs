@@ -62,35 +62,35 @@ module OnebusawaySDK
 
           attr_reader block_id: String?
 
-          def block_id=: (String) -> void
+          def block_id=: (String) -> String
 
           attr_reader direction_id: String?
 
-          def direction_id=: (String) -> void
+          def direction_id=: (String) -> String
 
           attr_reader peak_offpeak: Integer?
 
-          def peak_offpeak=: (Integer) -> void
+          def peak_offpeak=: (Integer) -> Integer
 
           attr_reader route_short_name: String?
 
-          def route_short_name=: (String) -> void
+          def route_short_name=: (String) -> String
 
           attr_reader shape_id: String?
 
-          def shape_id=: (String) -> void
+          def shape_id=: (String) -> String
 
           attr_reader time_zone: String?
 
-          def time_zone=: (String) -> void
+          def time_zone=: (String) -> String
 
           attr_reader trip_headsign: String?
 
-          def trip_headsign=: (String) -> void
+          def trip_headsign=: (String) -> String
 
           attr_reader trip_short_name: String?
 
-          def trip_short_name=: (String) -> void
+          def trip_short_name=: (String) -> String
 
           def initialize:
             (

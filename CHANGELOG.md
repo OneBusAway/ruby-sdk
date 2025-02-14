@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.197 (2025-02-14)
+
+Full Changelog: [v0.1.0-alpha.196...v0.1.0-alpha.197](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.196...v0.1.0-alpha.197)
+
+### Chores
+
+* **internal:** codegen related update ([#397](https://github.com/OneBusAway/ruby-sdk/issues/397)) ([6a9895e](https://github.com/OneBusAway/ruby-sdk/commit/6a9895e574a483784eadd3b91a1d7c50efd97531))
+* **internal:** codegen related update ([#399](https://github.com/OneBusAway/ruby-sdk/issues/399)) ([7bee1bd](https://github.com/OneBusAway/ruby-sdk/commit/7bee1bdacfe1b209fb7cb82d80bf89420c301c35))
+* **internal:** codegen related update ([#400](https://github.com/OneBusAway/ruby-sdk/issues/400)) ([8885b74](https://github.com/OneBusAway/ruby-sdk/commit/8885b749a4b62f9a5b0500d3fafccfe53c1cc40c))
+* **internal:** codegen related update ([#401](https://github.com/OneBusAway/ruby-sdk/issues/401)) ([6bb05a9](https://github.com/OneBusAway/ruby-sdk/commit/6bb05a9cd46217313e6ee5f209e2c4e93048dae8))
+* **internal:** codegen related update ([#403](https://github.com/OneBusAway/ruby-sdk/issues/403)) ([4f0b98b](https://github.com/OneBusAway/ruby-sdk/commit/4f0b98ba17a7924aa75e04450565fa07b9cc29a8))
+* **internal:** version bump ([#395](https://github.com/OneBusAway/ruby-sdk/issues/395)) ([64bf4e0](https://github.com/OneBusAway/ruby-sdk/commit/64bf4e0510479f3bf3d0fd3c87b528ab994f3cf5))
+* switch away from `attr_accessor` annotations to better match tapioca's compilation ([#402](https://github.com/OneBusAway/ruby-sdk/issues/402)) ([855b153](https://github.com/OneBusAway/ruby-sdk/commit/855b153d602d992b726055985f9e5d00e0e589d1))
+* use concise syntax for pattern matching ([#398](https://github.com/OneBusAway/ruby-sdk/issues/398)) ([52603f4](https://github.com/OneBusAway/ruby-sdk/commit/52603f4dfdfd3d0a9a8560441ee17fb27e29d784))
+
 ## 0.1.0-alpha.196 (2025-02-10)
 
 Full Changelog: [v0.1.0-alpha.195...v0.1.0-alpha.196](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.195...v0.1.0-alpha.196)

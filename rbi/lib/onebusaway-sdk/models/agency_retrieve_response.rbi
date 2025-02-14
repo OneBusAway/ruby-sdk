@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class AgencyRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::AgencyRetrieveResponse::Data).returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data).void }
       def initialize(data:)
@@ -16,13 +23,30 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry) }
-        attr_accessor :entry
+        def entry
+        end
+
+        sig do
+          params(_: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry)
+        end
+        def entry=(_)
+        end
 
         sig { returns(T::Boolean) }
-        attr_accessor :limit_exceeded
+        def limit_exceeded
+        end
+
+        sig { params(_: T::Boolean).returns(T::Boolean) }
+        def limit_exceeded=(_)
+        end
 
         sig { returns(OnebusawaySDK::Models::References) }
-        attr_accessor :references
+        def references
+        end
+
+        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        def references=(_)
+        end
 
         sig do
           params(
@@ -48,52 +72,84 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          attr_accessor :id
+          def id
+          end
+
+          sig { params(_: String).returns(String) }
+          def id=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :name
+          def name
+          end
+
+          sig { params(_: String).returns(String) }
+          def name=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :timezone
+          def timezone
+          end
+
+          sig { params(_: String).returns(String) }
+          def timezone=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :url
+          def url
+          end
+
+          sig { params(_: String).returns(String) }
+          def url=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :disclaimer
+          def disclaimer
+          end
 
-          sig { params(disclaimer: String).void }
-          attr_writer :disclaimer
-
-          sig { returns(T.nilable(String)) }
-          attr_reader :email
-
-          sig { params(email: String).void }
-          attr_writer :email
+          sig { params(_: String).returns(String) }
+          def disclaimer=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :fare_url
+          def email
+          end
 
-          sig { params(fare_url: String).void }
-          attr_writer :fare_url
-
-          sig { returns(T.nilable(String)) }
-          attr_reader :lang
-
-          sig { params(lang: String).void }
-          attr_writer :lang
+          sig { params(_: String).returns(String) }
+          def email=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :phone
+          def fare_url
+          end
 
-          sig { params(phone: String).void }
-          attr_writer :phone
+          sig { params(_: String).returns(String) }
+          def fare_url=(_)
+          end
+
+          sig { returns(T.nilable(String)) }
+          def lang
+          end
+
+          sig { params(_: String).returns(String) }
+          def lang=(_)
+          end
+
+          sig { returns(T.nilable(String)) }
+          def phone
+          end
+
+          sig { params(_: String).returns(String) }
+          def phone=(_)
+          end
 
           sig { returns(T.nilable(T::Boolean)) }
-          attr_reader :private_service
+          def private_service
+          end
 
-          sig { params(private_service: T::Boolean).void }
-          attr_writer :private_service
+          sig { params(_: T::Boolean).returns(T::Boolean) }
+          def private_service=(_)
+          end
 
           sig do
             params(

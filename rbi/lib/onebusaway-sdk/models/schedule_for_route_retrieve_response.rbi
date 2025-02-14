@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class ScheduleForRouteRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data).returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data).void }
       def initialize(data:)
@@ -16,7 +23,14 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry) }
-        attr_accessor :entry
+        def entry
+        end
+
+        sig do
+          params(_: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry)
+        end
+        def entry=(_)
+        end
 
         sig { params(entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry).void }
         def initialize(entry:)
@@ -30,28 +44,66 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          attr_accessor :route_id
+          def route_id
+          end
+
+          sig { params(_: String).returns(String) }
+          def route_id=(_)
+          end
 
           sig { returns(Integer) }
-          attr_accessor :schedule_date
+          def schedule_date
+          end
+
+          sig { params(_: Integer).returns(Integer) }
+          def schedule_date=(_)
+          end
 
           sig { returns(T::Array[String]) }
-          attr_accessor :service_ids
+          def service_ids
+          end
+
+          sig { params(_: T::Array[String]).returns(T::Array[String]) }
+          def service_ids=(_)
+          end
 
           sig do
             returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop])
           end
-          attr_accessor :stops
+          def stops
+          end
+
+          sig do
+            params(_: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop]).returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop])
+          end
+          def stops=(_)
+          end
 
           sig do
             returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping])
           end
-          attr_accessor :stop_trip_groupings
+          def stop_trip_groupings
+          end
+
+          sig do
+            params(
+              _: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping]
+            ).returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping])
+          end
+          def stop_trip_groupings=(_)
+          end
 
           sig do
             returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip])
           end
-          attr_accessor :trips
+          def trips
+          end
+
+          sig do
+            params(_: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]).returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip])
+          end
+          def trips=(_)
+          end
 
           sig do
             params(
@@ -83,49 +135,92 @@ module OnebusawaySDK
 
           class Stop < OnebusawaySDK::BaseModel
             sig { returns(String) }
-            attr_accessor :id
+            def id
+            end
+
+            sig { params(_: String).returns(String) }
+            def id=(_)
+            end
 
             sig { returns(Float) }
-            attr_accessor :lat
+            def lat
+            end
+
+            sig { params(_: Float).returns(Float) }
+            def lat=(_)
+            end
 
             sig { returns(Float) }
-            attr_accessor :lon
+            def lon
+            end
+
+            sig { params(_: Float).returns(Float) }
+            def lon=(_)
+            end
 
             sig { returns(String) }
-            attr_accessor :name
+            def name
+            end
+
+            sig { params(_: String).returns(String) }
+            def name=(_)
+            end
 
             sig { returns(String) }
-            attr_accessor :parent
+            def parent
+            end
+
+            sig { params(_: String).returns(String) }
+            def parent=(_)
+            end
 
             sig { returns(T::Array[String]) }
-            attr_accessor :route_ids
+            def route_ids
+            end
+
+            sig { params(_: T::Array[String]).returns(T::Array[String]) }
+            def route_ids=(_)
+            end
 
             sig { returns(T::Array[String]) }
-            attr_accessor :static_route_ids
+            def static_route_ids
+            end
+
+            sig { params(_: T::Array[String]).returns(T::Array[String]) }
+            def static_route_ids=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :code
+            def code
+            end
 
-            sig { params(code: String).void }
-            attr_writer :code
+            sig { params(_: String).returns(String) }
+            def code=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :direction
+            def direction
+            end
 
-            sig { params(direction: String).void }
-            attr_writer :direction
+            sig { params(_: String).returns(String) }
+            def direction=(_)
+            end
 
             sig { returns(T.nilable(Integer)) }
-            attr_reader :location_type
+            def location_type
+            end
 
-            sig { params(location_type: Integer).void }
-            attr_writer :location_type
+            sig { params(_: Integer).returns(Integer) }
+            def location_type=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :wheelchair_boarding
+            def wheelchair_boarding
+            end
 
-            sig { params(wheelchair_boarding: String).void }
-            attr_writer :wheelchair_boarding
+            sig { params(_: String).returns(String) }
+            def wheelchair_boarding=(_)
+            end
 
             sig do
               params(
@@ -180,28 +275,50 @@ module OnebusawaySDK
 
           class StopTripGrouping < OnebusawaySDK::BaseModel
             sig { returns(String) }
-            attr_accessor :direction_id
+            def direction_id
+            end
+
+            sig { params(_: String).returns(String) }
+            def direction_id=(_)
+            end
 
             sig { returns(T::Array[String]) }
-            attr_accessor :stop_ids
+            def stop_ids
+            end
+
+            sig { params(_: T::Array[String]).returns(T::Array[String]) }
+            def stop_ids=(_)
+            end
 
             sig { returns(T::Array[String]) }
-            attr_accessor :trip_headsigns
+            def trip_headsigns
+            end
+
+            sig { params(_: T::Array[String]).returns(T::Array[String]) }
+            def trip_headsigns=(_)
+            end
 
             sig { returns(T::Array[String]) }
-            attr_accessor :trip_ids
+            def trip_ids
+            end
+
+            sig { params(_: T::Array[String]).returns(T::Array[String]) }
+            def trip_ids=(_)
+            end
 
             sig do
               returns(T.nilable(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]))
             end
-            attr_reader :trips_with_stop_times
+            def trips_with_stop_times
+            end
 
             sig do
               params(
-                trips_with_stop_times: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
-              ).void
+                _: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+              ).returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime])
             end
-            attr_writer :trips_with_stop_times
+            def trips_with_stop_times=(_)
+            end
 
             sig do
               params(
@@ -233,10 +350,24 @@ module OnebusawaySDK
               sig do
                 returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime])
               end
-              attr_accessor :stop_times
+              def stop_times
+              end
+
+              sig do
+                params(
+                  _: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime]
+                ).returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime])
+              end
+              def stop_times=(_)
+              end
 
               sig { returns(String) }
-              attr_accessor :trip_id
+              def trip_id
+              end
+
+              sig { params(_: String).returns(String) }
+              def trip_id=(_)
+              end
 
               sig do
                 params(
@@ -259,34 +390,68 @@ module OnebusawaySDK
 
               class StopTime < OnebusawaySDK::BaseModel
                 sig { returns(T::Boolean) }
-                attr_accessor :arrival_enabled
+                def arrival_enabled
+                end
+
+                sig { params(_: T::Boolean).returns(T::Boolean) }
+                def arrival_enabled=(_)
+                end
 
                 sig { returns(Integer) }
-                attr_accessor :arrival_time
+                def arrival_time
+                end
+
+                sig { params(_: Integer).returns(Integer) }
+                def arrival_time=(_)
+                end
 
                 sig { returns(T::Boolean) }
-                attr_accessor :departure_enabled
+                def departure_enabled
+                end
+
+                sig { params(_: T::Boolean).returns(T::Boolean) }
+                def departure_enabled=(_)
+                end
 
                 sig { returns(Integer) }
-                attr_accessor :departure_time
+                def departure_time
+                end
+
+                sig { params(_: Integer).returns(Integer) }
+                def departure_time=(_)
+                end
 
                 sig { returns(String) }
-                attr_accessor :stop_id
+                def stop_id
+                end
+
+                sig { params(_: String).returns(String) }
+                def stop_id=(_)
+                end
 
                 sig { returns(String) }
-                attr_accessor :trip_id
+                def trip_id
+                end
+
+                sig { params(_: String).returns(String) }
+                def trip_id=(_)
+                end
 
                 sig { returns(T.nilable(String)) }
-                attr_reader :service_id
+                def service_id
+                end
 
-                sig { params(service_id: String).void }
-                attr_writer :service_id
+                sig { params(_: String).returns(String) }
+                def service_id=(_)
+                end
 
                 sig { returns(T.nilable(String)) }
-                attr_reader :stop_headsign
+                def stop_headsign
+                end
 
-                sig { params(stop_headsign: String).void }
-                attr_writer :stop_headsign
+                sig { params(_: String).returns(String) }
+                def stop_headsign=(_)
+                end
 
                 sig do
                   params(
@@ -334,61 +499,92 @@ module OnebusawaySDK
 
           class Trip < OnebusawaySDK::BaseModel
             sig { returns(String) }
-            attr_accessor :id
+            def id
+            end
+
+            sig { params(_: String).returns(String) }
+            def id=(_)
+            end
 
             sig { returns(String) }
-            attr_accessor :route_id
+            def route_id
+            end
+
+            sig { params(_: String).returns(String) }
+            def route_id=(_)
+            end
 
             sig { returns(String) }
-            attr_accessor :service_id
+            def service_id
+            end
+
+            sig { params(_: String).returns(String) }
+            def service_id=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :block_id
+            def block_id
+            end
 
-            sig { params(block_id: String).void }
-            attr_writer :block_id
+            sig { params(_: String).returns(String) }
+            def block_id=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :direction_id
+            def direction_id
+            end
 
-            sig { params(direction_id: String).void }
-            attr_writer :direction_id
+            sig { params(_: String).returns(String) }
+            def direction_id=(_)
+            end
 
             sig { returns(T.nilable(Integer)) }
-            attr_reader :peak_offpeak
+            def peak_offpeak
+            end
 
-            sig { params(peak_offpeak: Integer).void }
-            attr_writer :peak_offpeak
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :route_short_name
-
-            sig { params(route_short_name: String).void }
-            attr_writer :route_short_name
+            sig { params(_: Integer).returns(Integer) }
+            def peak_offpeak=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :shape_id
+            def route_short_name
+            end
 
-            sig { params(shape_id: String).void }
-            attr_writer :shape_id
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :time_zone
-
-            sig { params(time_zone: String).void }
-            attr_writer :time_zone
+            sig { params(_: String).returns(String) }
+            def route_short_name=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :trip_headsign
+            def shape_id
+            end
 
-            sig { params(trip_headsign: String).void }
-            attr_writer :trip_headsign
+            sig { params(_: String).returns(String) }
+            def shape_id=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :trip_short_name
+            def time_zone
+            end
 
-            sig { params(trip_short_name: String).void }
-            attr_writer :trip_short_name
+            sig { params(_: String).returns(String) }
+            def time_zone=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def trip_headsign
+            end
+
+            sig { params(_: String).returns(String) }
+            def trip_headsign=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def trip_short_name
+            end
+
+            sig { params(_: String).returns(String) }
+            def trip_short_name=(_)
+            end
 
             sig do
               params(
