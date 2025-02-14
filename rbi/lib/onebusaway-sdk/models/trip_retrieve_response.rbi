@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class TripRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::TripRetrieveResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::TripRetrieveResponse::Data).returns(OnebusawaySDK::Models::TripRetrieveResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::TripRetrieveResponse::Data).void }
       def initialize(data:)
@@ -16,10 +23,22 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry) }
-        attr_accessor :entry
+        def entry
+        end
+
+        sig do
+          params(_: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry)
+        end
+        def entry=(_)
+        end
 
         sig { returns(OnebusawaySDK::Models::References) }
-        attr_accessor :references
+        def references
+        end
+
+        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        def references=(_)
+        end
 
         sig do
           params(
@@ -43,61 +62,92 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          attr_accessor :id
+          def id
+          end
+
+          sig { params(_: String).returns(String) }
+          def id=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :route_id
+          def route_id
+          end
+
+          sig { params(_: String).returns(String) }
+          def route_id=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :service_id
+          def service_id
+          end
+
+          sig { params(_: String).returns(String) }
+          def service_id=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :block_id
+          def block_id
+          end
 
-          sig { params(block_id: String).void }
-          attr_writer :block_id
+          sig { params(_: String).returns(String) }
+          def block_id=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :direction_id
+          def direction_id
+          end
 
-          sig { params(direction_id: String).void }
-          attr_writer :direction_id
+          sig { params(_: String).returns(String) }
+          def direction_id=(_)
+          end
 
           sig { returns(T.nilable(Integer)) }
-          attr_reader :peak_offpeak
+          def peak_offpeak
+          end
 
-          sig { params(peak_offpeak: Integer).void }
-          attr_writer :peak_offpeak
-
-          sig { returns(T.nilable(String)) }
-          attr_reader :route_short_name
-
-          sig { params(route_short_name: String).void }
-          attr_writer :route_short_name
+          sig { params(_: Integer).returns(Integer) }
+          def peak_offpeak=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :shape_id
+          def route_short_name
+          end
 
-          sig { params(shape_id: String).void }
-          attr_writer :shape_id
-
-          sig { returns(T.nilable(String)) }
-          attr_reader :time_zone
-
-          sig { params(time_zone: String).void }
-          attr_writer :time_zone
+          sig { params(_: String).returns(String) }
+          def route_short_name=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :trip_headsign
+          def shape_id
+          end
 
-          sig { params(trip_headsign: String).void }
-          attr_writer :trip_headsign
+          sig { params(_: String).returns(String) }
+          def shape_id=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :trip_short_name
+          def time_zone
+          end
 
-          sig { params(trip_short_name: String).void }
-          attr_writer :trip_short_name
+          sig { params(_: String).returns(String) }
+          def time_zone=(_)
+          end
+
+          sig { returns(T.nilable(String)) }
+          def trip_headsign
+          end
+
+          sig { params(_: String).returns(String) }
+          def trip_headsign=(_)
+          end
+
+          sig { returns(T.nilable(String)) }
+          def trip_short_name
+          end
+
+          sig { params(_: String).returns(String) }
+          def trip_short_name=(_)
+          end
 
           sig do
             params(

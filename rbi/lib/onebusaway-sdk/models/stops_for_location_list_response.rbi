@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class StopsForLocationListResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::StopsForLocationListResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::StopsForLocationListResponse::Data).returns(OnebusawaySDK::Models::StopsForLocationListResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::StopsForLocationListResponse::Data).void }
       def initialize(data:)
@@ -16,19 +23,38 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(T::Boolean) }
-        attr_accessor :limit_exceeded
+        def limit_exceeded
+        end
+
+        sig { params(_: T::Boolean).returns(T::Boolean) }
+        def limit_exceeded=(_)
+        end
 
         sig { returns(T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List]) }
-        attr_accessor :list
+        def list
+        end
+
+        sig do
+          params(_: T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List]).returns(T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List])
+        end
+        def list=(_)
+        end
 
         sig { returns(OnebusawaySDK::Models::References) }
-        attr_accessor :references
+        def references
+        end
+
+        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        def references=(_)
+        end
 
         sig { returns(T.nilable(T::Boolean)) }
-        attr_reader :out_of_range
+        def out_of_range
+        end
 
-        sig { params(out_of_range: T::Boolean).void }
-        attr_writer :out_of_range
+        sig { params(_: T::Boolean).returns(T::Boolean) }
+        def out_of_range=(_)
+        end
 
         sig do
           params(
@@ -56,49 +82,92 @@ module OnebusawaySDK
 
         class List < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          attr_accessor :id
+          def id
+          end
+
+          sig { params(_: String).returns(String) }
+          def id=(_)
+          end
 
           sig { returns(Float) }
-          attr_accessor :lat
+          def lat
+          end
+
+          sig { params(_: Float).returns(Float) }
+          def lat=(_)
+          end
 
           sig { returns(Float) }
-          attr_accessor :lon
+          def lon
+          end
+
+          sig { params(_: Float).returns(Float) }
+          def lon=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :name
+          def name
+          end
+
+          sig { params(_: String).returns(String) }
+          def name=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :parent
+          def parent
+          end
+
+          sig { params(_: String).returns(String) }
+          def parent=(_)
+          end
 
           sig { returns(T::Array[String]) }
-          attr_accessor :route_ids
+          def route_ids
+          end
+
+          sig { params(_: T::Array[String]).returns(T::Array[String]) }
+          def route_ids=(_)
+          end
 
           sig { returns(T::Array[String]) }
-          attr_accessor :static_route_ids
+          def static_route_ids
+          end
+
+          sig { params(_: T::Array[String]).returns(T::Array[String]) }
+          def static_route_ids=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :code
+          def code
+          end
 
-          sig { params(code: String).void }
-          attr_writer :code
+          sig { params(_: String).returns(String) }
+          def code=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :direction
+          def direction
+          end
 
-          sig { params(direction: String).void }
-          attr_writer :direction
+          sig { params(_: String).returns(String) }
+          def direction=(_)
+          end
 
           sig { returns(T.nilable(Integer)) }
-          attr_reader :location_type
+          def location_type
+          end
 
-          sig { params(location_type: Integer).void }
-          attr_writer :location_type
+          sig { params(_: Integer).returns(Integer) }
+          def location_type=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :wheelchair_boarding
+          def wheelchair_boarding
+          end
 
-          sig { params(wheelchair_boarding: String).void }
-          attr_writer :wheelchair_boarding
+          sig { params(_: String).returns(String) }
+          def wheelchair_boarding=(_)
+          end
 
           sig do
             params(

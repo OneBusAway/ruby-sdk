@@ -7,10 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(T.nilable(String)) }
-      attr_reader :time
+      def time
+      end
 
-      sig { params(time: String).void }
-      attr_writer :time
+      sig { params(_: String).returns(String) }
+      def time=(_)
+      end
 
       sig do
         params(

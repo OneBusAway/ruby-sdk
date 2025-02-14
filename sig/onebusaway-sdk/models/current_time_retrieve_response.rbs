@@ -43,11 +43,11 @@ module OnebusawaySDK
         class Entry < OnebusawaySDK::BaseModel
           attr_reader readable_time: String?
 
-          def readable_time=: (String) -> void
+          def readable_time=: (String) -> String
 
           attr_reader time: Integer?
 
-          def time=: (Integer) -> void
+          def time=: (Integer) -> Integer
 
           def initialize:
             (readable_time: String, time: Integer) -> void

@@ -47,7 +47,7 @@ module OnebusawaySDK
 
           attr_reader levels: String?
 
-          def levels=: (String) -> void
+          def levels=: (String) -> String
 
           def initialize:
             (length: Integer, points: String, levels: String) -> void

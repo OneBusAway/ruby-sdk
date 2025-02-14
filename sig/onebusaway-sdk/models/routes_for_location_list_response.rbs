@@ -71,31 +71,31 @@ module OnebusawaySDK
 
           attr_reader color: String?
 
-          def color=: (String) -> void
+          def color=: (String) -> String
 
           attr_reader description: String?
 
-          def description=: (String) -> void
+          def description=: (String) -> String
 
           attr_reader long_name: String?
 
-          def long_name=: (String) -> void
+          def long_name=: (String) -> String
 
           attr_reader null_safe_short_name: String?
 
-          def null_safe_short_name=: (String) -> void
+          def null_safe_short_name=: (String) -> String
 
           attr_reader short_name: String?
 
-          def short_name=: (String) -> void
+          def short_name=: (String) -> String
 
           attr_reader text_color: String?
 
-          def text_color=: (String) -> void
+          def text_color=: (String) -> String
 
           attr_reader url: String?
 
-          def url=: (String) -> void
+          def url=: (String) -> String
 
           def initialize:
             (

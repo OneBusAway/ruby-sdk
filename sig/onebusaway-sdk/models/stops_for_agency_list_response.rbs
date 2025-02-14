@@ -17,7 +17,7 @@ module OnebusawaySDK
 
       attr_reader out_of_range: bool?
 
-      def out_of_range=: (bool) -> void
+      def out_of_range=: (bool) -> bool
 
       def initialize:
         (
@@ -65,19 +65,19 @@ module OnebusawaySDK
 
         attr_reader code: String?
 
-        def code=: (String) -> void
+        def code=: (String) -> String
 
         attr_reader direction: String?
 
-        def direction=: (String) -> void
+        def direction=: (String) -> String
 
         attr_reader location_type: Integer?
 
-        def location_type=: (Integer) -> void
+        def location_type=: (Integer) -> Integer
 
         attr_reader wheelchair_boarding: String?
 
-        def wheelchair_boarding=: (String) -> void
+        def wheelchair_boarding=: (String) -> String
 
         def initialize:
           (

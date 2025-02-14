@@ -51,21 +51,21 @@ module OnebusawaySDK
 
           def polylines=: (
             ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]
-          ) -> void
+          ) -> ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]
 
           attr_reader route_id: String?
 
-          def route_id=: (String) -> void
+          def route_id=: (String) -> String
 
           attr_reader stop_groupings: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]?
 
           def stop_groupings=: (
             ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
-          ) -> void
+          ) -> ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
 
           attr_reader stop_ids: ::Array[String]?
 
-          def stop_ids=: (::Array[String]) -> void
+          def stop_ids=: (::Array[String]) -> ::Array[String]
 
           def initialize:
             (
@@ -86,15 +86,15 @@ module OnebusawaySDK
           class Polyline < OnebusawaySDK::BaseModel
             attr_reader length: Integer?
 
-            def length=: (Integer) -> void
+            def length=: (Integer) -> Integer
 
             attr_reader levels: String?
 
-            def levels=: (String) -> void
+            def levels=: (String) -> String
 
             attr_reader points: String?
 
-            def points=: (String) -> void
+            def points=: (String) -> String
 
             def initialize:
               (length: Integer, levels: String, points: String) -> void
@@ -117,23 +117,23 @@ module OnebusawaySDK
           class StopGrouping < OnebusawaySDK::BaseModel
             attr_reader id: String?
 
-            def id=: (String) -> void
+            def id=: (String) -> String
 
             attr_reader name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name?
 
             def name=: (
               OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
-            ) -> void
+            ) -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
 
             attr_reader polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]?
 
             def polylines=: (
               ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
-            ) -> void
+            ) -> ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
 
             attr_reader stop_ids: ::Array[String]?
 
-            def stop_ids=: (::Array[String]) -> void
+            def stop_ids=: (::Array[String]) -> ::Array[String]
 
             def initialize:
               (
@@ -154,15 +154,15 @@ module OnebusawaySDK
             class Name < OnebusawaySDK::BaseModel
               attr_reader name: String?
 
-              def name=: (String) -> void
+              def name=: (String) -> String
 
               attr_reader names: ::Array[String]?
 
-              def names=: (::Array[String]) -> void
+              def names=: (::Array[String]) -> ::Array[String]
 
               attr_reader type: String?
 
-              def type=: (String) -> void
+              def type=: (String) -> String
 
               def initialize:
                 (name: String, names: ::Array[String], type: String) -> void
@@ -179,15 +179,15 @@ module OnebusawaySDK
             class Polyline < OnebusawaySDK::BaseModel
               attr_reader length: Integer?
 
-              def length=: (Integer) -> void
+              def length=: (Integer) -> Integer
 
               attr_reader levels: String?
 
-              def levels=: (String) -> void
+              def levels=: (String) -> String
 
               attr_reader points: String?
 
-              def points=: (String) -> void
+              def points=: (String) -> String
 
               def initialize:
                 (length: Integer, levels: String, points: String) -> void

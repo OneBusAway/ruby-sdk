@@ -7,64 +7,84 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(T.nilable(Symbol)) }
-      attr_reader :code
+      def code
+      end
 
-      sig { params(code: Symbol).void }
-      attr_writer :code
+      sig { params(_: Symbol).returns(Symbol) }
+      def code=(_)
+      end
 
       sig { returns(T.nilable(Integer)) }
-      attr_reader :service_date
+      def service_date
+      end
 
-      sig { params(service_date: Integer).void }
-      attr_writer :service_date
-
-      sig { returns(T.nilable(String)) }
-      attr_reader :stop_id
-
-      sig { params(stop_id: String).void }
-      attr_writer :stop_id
+      sig { params(_: Integer).returns(Integer) }
+      def service_date=(_)
+      end
 
       sig { returns(T.nilable(String)) }
-      attr_reader :user_comment
+      def stop_id
+      end
 
-      sig { params(user_comment: String).void }
-      attr_writer :user_comment
+      sig { params(_: String).returns(String) }
+      def stop_id=(_)
+      end
 
-      sig { returns(T.nilable(Float)) }
-      attr_reader :user_lat
+      sig { returns(T.nilable(String)) }
+      def user_comment
+      end
 
-      sig { params(user_lat: Float).void }
-      attr_writer :user_lat
-
-      sig { returns(T.nilable(Float)) }
-      attr_reader :user_location_accuracy
-
-      sig { params(user_location_accuracy: Float).void }
-      attr_writer :user_location_accuracy
+      sig { params(_: String).returns(String) }
+      def user_comment=(_)
+      end
 
       sig { returns(T.nilable(Float)) }
-      attr_reader :user_lon
+      def user_lat
+      end
 
-      sig { params(user_lon: Float).void }
-      attr_writer :user_lon
+      sig { params(_: Float).returns(Float) }
+      def user_lat=(_)
+      end
+
+      sig { returns(T.nilable(Float)) }
+      def user_location_accuracy
+      end
+
+      sig { params(_: Float).returns(Float) }
+      def user_location_accuracy=(_)
+      end
+
+      sig { returns(T.nilable(Float)) }
+      def user_lon
+      end
+
+      sig { params(_: Float).returns(Float) }
+      def user_lon=(_)
+      end
 
       sig { returns(T.nilable(T::Boolean)) }
-      attr_reader :user_on_vehicle
+      def user_on_vehicle
+      end
 
-      sig { params(user_on_vehicle: T::Boolean).void }
-      attr_writer :user_on_vehicle
-
-      sig { returns(T.nilable(String)) }
-      attr_reader :user_vehicle_number
-
-      sig { params(user_vehicle_number: String).void }
-      attr_writer :user_vehicle_number
+      sig { params(_: T::Boolean).returns(T::Boolean) }
+      def user_on_vehicle=(_)
+      end
 
       sig { returns(T.nilable(String)) }
-      attr_reader :vehicle_id
+      def user_vehicle_number
+      end
 
-      sig { params(vehicle_id: String).void }
-      attr_writer :vehicle_id
+      sig { params(_: String).returns(String) }
+      def user_vehicle_number=(_)
+      end
+
+      sig { returns(T.nilable(String)) }
+      def vehicle_id
+      end
+
+      sig { params(_: String).returns(String) }
+      def vehicle_id=(_)
+      end
 
       sig do
         params(

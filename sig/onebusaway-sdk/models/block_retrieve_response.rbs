@@ -75,7 +75,7 @@ module OnebusawaySDK
 
             attr_reader inactive_service_ids: ::Array[String]?
 
-            def inactive_service_ids=: (::Array[String]) -> void
+            def inactive_service_ids=: (::Array[String]) -> ::Array[String]
 
             def initialize:
               (
@@ -170,11 +170,11 @@ module OnebusawaySDK
 
                   attr_reader drop_off_type: Integer?
 
-                  def drop_off_type=: (Integer) -> void
+                  def drop_off_type=: (Integer) -> Integer
 
                   attr_reader pickup_type: Integer?
 
-                  def pickup_type=: (Integer) -> void
+                  def pickup_type=: (Integer) -> Integer
 
                   def initialize:
                     (

@@ -113,77 +113,77 @@ module OnebusawaySDK
 
           attr_reader actual_track: String?
 
-          def actual_track=: (String) -> void
+          def actual_track=: (String) -> String
 
           attr_reader distance_from_stop: Float?
 
-          def distance_from_stop=: (Float) -> void
+          def distance_from_stop=: (Float) -> Float
 
           attr_reader frequency: String?
 
-          def frequency=: (String) -> void
+          def frequency=: (String) -> String
 
           attr_reader historical_occupancy: String?
 
-          def historical_occupancy=: (String) -> void
+          def historical_occupancy=: (String) -> String
 
           attr_reader last_update_time: Integer?
 
-          def last_update_time=: (Integer) -> void
+          def last_update_time=: (Integer) -> Integer
 
           attr_reader occupancy_status: String?
 
-          def occupancy_status=: (String) -> void
+          def occupancy_status=: (String) -> String
 
           attr_reader predicted: bool?
 
-          def predicted=: (bool) -> void
+          def predicted=: (bool) -> bool
 
           attr_reader predicted_arrival_interval: String?
 
-          def predicted_arrival_interval=: (String) -> void
+          def predicted_arrival_interval=: (String) -> String
 
           attr_reader predicted_departure_interval: String?
 
-          def predicted_departure_interval=: (String) -> void
+          def predicted_departure_interval=: (String) -> String
 
           attr_reader predicted_occupancy: String?
 
-          def predicted_occupancy=: (String) -> void
+          def predicted_occupancy=: (String) -> String
 
           attr_reader route_long_name: String?
 
-          def route_long_name=: (String) -> void
+          def route_long_name=: (String) -> String
 
           attr_reader route_short_name: String?
 
-          def route_short_name=: (String) -> void
+          def route_short_name=: (String) -> String
 
           attr_reader scheduled_arrival_interval: String?
 
-          def scheduled_arrival_interval=: (String) -> void
+          def scheduled_arrival_interval=: (String) -> String
 
           attr_reader scheduled_departure_interval: String?
 
-          def scheduled_departure_interval=: (String) -> void
+          def scheduled_departure_interval=: (String) -> String
 
           attr_reader scheduled_track: String?
 
-          def scheduled_track=: (String) -> void
+          def scheduled_track=: (String) -> String
 
           attr_reader situation_ids: ::Array[String]?
 
-          def situation_ids=: (::Array[String]) -> void
+          def situation_ids=: (::Array[String]) -> ::Array[String]
 
           attr_reader status: String?
 
-          def status=: (String) -> void
+          def status=: (String) -> String
 
           attr_reader trip_status: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus?
 
           def trip_status=: (
             OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus
-          ) -> void
+          ) -> OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus
 
           def initialize:
             (
@@ -295,51 +295,51 @@ module OnebusawaySDK
 
             attr_reader closest_stop_time_offset: Integer?
 
-            def closest_stop_time_offset=: (Integer) -> void
+            def closest_stop_time_offset=: (Integer) -> Integer
 
             attr_reader frequency: String?
 
-            def frequency=: (String) -> void
+            def frequency=: (String) -> String
 
             attr_reader last_known_location: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation?
 
             def last_known_location=: (
               OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation
-            ) -> void
+            ) -> OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation
 
             attr_reader last_known_orientation: Float?
 
-            def last_known_orientation=: (Float) -> void
+            def last_known_orientation=: (Float) -> Float
 
             attr_reader next_stop: String?
 
-            def next_stop=: (String) -> void
+            def next_stop=: (String) -> String
 
             attr_reader next_stop_time_offset: Integer?
 
-            def next_stop_time_offset=: (Integer) -> void
+            def next_stop_time_offset=: (Integer) -> Integer
 
             attr_reader orientation: Float?
 
-            def orientation=: (Float) -> void
+            def orientation=: (Float) -> Float
 
             attr_reader position: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position?
 
             def position=: (
               OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position
-            ) -> void
+            ) -> OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position
 
             attr_reader scheduled_distance_along_trip: Float?
 
-            def scheduled_distance_along_trip=: (Float) -> void
+            def scheduled_distance_along_trip=: (Float) -> Float
 
             attr_reader situation_ids: ::Array[String]?
 
-            def situation_ids=: (::Array[String]) -> void
+            def situation_ids=: (::Array[String]) -> ::Array[String]
 
             attr_reader vehicle_id: String?
 
-            def vehicle_id=: (String) -> void
+            def vehicle_id=: (String) -> String
 
             def initialize:
               (
@@ -383,11 +383,11 @@ module OnebusawaySDK
             class LastKnownLocation < OnebusawaySDK::BaseModel
               attr_reader lat: Float?
 
-              def lat=: (Float) -> void
+              def lat=: (Float) -> Float
 
               attr_reader lon: Float?
 
-              def lon=: (Float) -> void
+              def lon=: (Float) -> Float
 
               def initialize:
                 (lat: Float, lon: Float) -> void
@@ -404,11 +404,11 @@ module OnebusawaySDK
             class Position < OnebusawaySDK::BaseModel
               attr_reader lat: Float?
 
-              def lat=: (Float) -> void
+              def lat=: (Float) -> Float
 
               attr_reader lon: Float?
 
-              def lon=: (Float) -> void
+              def lon=: (Float) -> Float
 
               def initialize:
                 (lat: Float, lon: Float) -> void
