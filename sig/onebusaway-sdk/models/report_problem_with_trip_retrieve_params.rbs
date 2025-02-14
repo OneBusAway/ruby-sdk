@@ -23,43 +23,43 @@ module OnebusawaySDK
 
       def code=: (
         OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code
-      ) -> void
+      ) -> OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code
 
       attr_reader service_date: Integer?
 
-      def service_date=: (Integer) -> void
+      def service_date=: (Integer) -> Integer
 
       attr_reader stop_id: String?
 
-      def stop_id=: (String) -> void
+      def stop_id=: (String) -> String
 
       attr_reader user_comment: String?
 
-      def user_comment=: (String) -> void
+      def user_comment=: (String) -> String
 
       attr_reader user_lat: Float?
 
-      def user_lat=: (Float) -> void
+      def user_lat=: (Float) -> Float
 
       attr_reader user_location_accuracy: Float?
 
-      def user_location_accuracy=: (Float) -> void
+      def user_location_accuracy=: (Float) -> Float
 
       attr_reader user_lon: Float?
 
-      def user_lon=: (Float) -> void
+      def user_lon=: (Float) -> Float
 
       attr_reader user_on_vehicle: bool?
 
-      def user_on_vehicle=: (bool) -> void
+      def user_on_vehicle=: (bool) -> bool
 
       attr_reader user_vehicle_number: String?
 
-      def user_vehicle_number=: (String) -> void
+      def user_vehicle_number=: (String) -> String
 
       attr_reader vehicle_id: String?
 
-      def vehicle_id=: (String) -> void
+      def vehicle_id=: (String) -> String
 
       def initialize:
         (

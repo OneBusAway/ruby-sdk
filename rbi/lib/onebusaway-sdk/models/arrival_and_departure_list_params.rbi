@@ -7,22 +7,28 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(T.nilable(Integer)) }
-      attr_reader :minutes_after
+      def minutes_after
+      end
 
-      sig { params(minutes_after: Integer).void }
-      attr_writer :minutes_after
+      sig { params(_: Integer).returns(Integer) }
+      def minutes_after=(_)
+      end
 
       sig { returns(T.nilable(Integer)) }
-      attr_reader :minutes_before
+      def minutes_before
+      end
 
-      sig { params(minutes_before: Integer).void }
-      attr_writer :minutes_before
+      sig { params(_: Integer).returns(Integer) }
+      def minutes_before=(_)
+      end
 
       sig { returns(T.nilable(Time)) }
-      attr_reader :time
+      def time
+      end
 
-      sig { params(time: Time).void }
-      attr_writer :time
+      sig { params(_: Time).returns(Time) }
+      def time=(_)
+      end
 
       sig do
         params(

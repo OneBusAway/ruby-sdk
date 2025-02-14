@@ -7,34 +7,60 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(Float) }
-      attr_accessor :lat
+      def lat
+      end
+
+      sig { params(_: Float).returns(Float) }
+      def lat=(_)
+      end
 
       sig { returns(Float) }
-      attr_accessor :lat_span
+      def lat_span
+      end
+
+      sig { params(_: Float).returns(Float) }
+      def lat_span=(_)
+      end
 
       sig { returns(Float) }
-      attr_accessor :lon
+      def lon
+      end
+
+      sig { params(_: Float).returns(Float) }
+      def lon=(_)
+      end
 
       sig { returns(Float) }
-      attr_accessor :lon_span
+      def lon_span
+      end
+
+      sig { params(_: Float).returns(Float) }
+      def lon_span=(_)
+      end
 
       sig { returns(T.nilable(T::Boolean)) }
-      attr_reader :include_schedule
+      def include_schedule
+      end
 
-      sig { params(include_schedule: T::Boolean).void }
-      attr_writer :include_schedule
+      sig { params(_: T::Boolean).returns(T::Boolean) }
+      def include_schedule=(_)
+      end
 
       sig { returns(T.nilable(T::Boolean)) }
-      attr_reader :include_trip
+      def include_trip
+      end
 
-      sig { params(include_trip: T::Boolean).void }
-      attr_writer :include_trip
+      sig { params(_: T::Boolean).returns(T::Boolean) }
+      def include_trip=(_)
+      end
 
       sig { returns(T.nilable(Integer)) }
-      attr_reader :time
+      def time
+      end
 
-      sig { params(time: Integer).void }
-      attr_writer :time
+      sig { params(_: Integer).returns(Integer) }
+      def time=(_)
+      end
 
       sig do
         params(

@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class ConfigRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data).returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data).void }
       def initialize(data:)
@@ -16,10 +23,22 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry) }
-        attr_accessor :entry
+        def entry
+        end
+
+        sig do
+          params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry)
+        end
+        def entry=(_)
+        end
 
         sig { returns(OnebusawaySDK::Models::References) }
-        attr_accessor :references
+        def references
+        end
+
+        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        def references=(_)
+        end
 
         sig do
           params(
@@ -43,38 +62,48 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(T.nilable(String)) }
-          attr_reader :id
+          def id
+          end
 
-          sig { params(id: String).void }
-          attr_writer :id
+          sig { params(_: String).returns(String) }
+          def id=(_)
+          end
 
           sig do
             returns(T.nilable(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties))
           end
-          attr_reader :git_properties
+          def git_properties
+          end
 
           sig do
-            params(git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties).void
+            params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties).returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties)
           end
-          attr_writer :git_properties
+          def git_properties=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :name
+          def name
+          end
 
-          sig { params(name: String).void }
-          attr_writer :name
-
-          sig { returns(T.nilable(String)) }
-          attr_reader :service_date_from
-
-          sig { params(service_date_from: String).void }
-          attr_writer :service_date_from
+          sig { params(_: String).returns(String) }
+          def name=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :service_date_to
+          def service_date_from
+          end
 
-          sig { params(service_date_to: String).void }
-          attr_writer :service_date_to
+          sig { params(_: String).returns(String) }
+          def service_date_from=(_)
+          end
+
+          sig { returns(T.nilable(String)) }
+          def service_date_to
+          end
+
+          sig { params(_: String).returns(String) }
+          def service_date_to=(_)
+          end
 
           sig do
             params(
@@ -110,124 +139,164 @@ module OnebusawaySDK
 
           class GitProperties < OnebusawaySDK::BaseModel
             sig { returns(T.nilable(String)) }
-            attr_reader :git_branch
+            def git_branch
+            end
 
-            sig { params(git_branch: String).void }
-            attr_writer :git_branch
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_build_host
-
-            sig { params(git_build_host: String).void }
-            attr_writer :git_build_host
+            sig { params(_: String).returns(String) }
+            def git_branch=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_build_time
+            def git_build_host
+            end
 
-            sig { params(git_build_time: String).void }
-            attr_writer :git_build_time
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_build_user_email
-
-            sig { params(git_build_user_email: String).void }
-            attr_writer :git_build_user_email
+            sig { params(_: String).returns(String) }
+            def git_build_host=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_build_user_name
+            def git_build_time
+            end
 
-            sig { params(git_build_user_name: String).void }
-            attr_writer :git_build_user_name
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_build_version
-
-            sig { params(git_build_version: String).void }
-            attr_writer :git_build_version
+            sig { params(_: String).returns(String) }
+            def git_build_time=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_closest_tag_commit_count
+            def git_build_user_email
+            end
 
-            sig { params(git_closest_tag_commit_count: String).void }
-            attr_writer :git_closest_tag_commit_count
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_closest_tag_name
-
-            sig { params(git_closest_tag_name: String).void }
-            attr_writer :git_closest_tag_name
+            sig { params(_: String).returns(String) }
+            def git_build_user_email=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_id
+            def git_build_user_name
+            end
 
-            sig { params(git_commit_id: String).void }
-            attr_writer :git_commit_id
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_id_abbrev
-
-            sig { params(git_commit_id_abbrev: String).void }
-            attr_writer :git_commit_id_abbrev
+            sig { params(_: String).returns(String) }
+            def git_build_user_name=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_id_describe
+            def git_build_version
+            end
 
-            sig { params(git_commit_id_describe: String).void }
-            attr_writer :git_commit_id_describe
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_id_describe_short
-
-            sig { params(git_commit_id_describe_short: String).void }
-            attr_writer :git_commit_id_describe_short
+            sig { params(_: String).returns(String) }
+            def git_build_version=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_message_full
+            def git_closest_tag_commit_count
+            end
 
-            sig { params(git_commit_message_full: String).void }
-            attr_writer :git_commit_message_full
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_message_short
-
-            sig { params(git_commit_message_short: String).void }
-            attr_writer :git_commit_message_short
+            sig { params(_: String).returns(String) }
+            def git_closest_tag_commit_count=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_time
+            def git_closest_tag_name
+            end
 
-            sig { params(git_commit_time: String).void }
-            attr_writer :git_commit_time
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_user_email
-
-            sig { params(git_commit_user_email: String).void }
-            attr_writer :git_commit_user_email
+            sig { params(_: String).returns(String) }
+            def git_closest_tag_name=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_commit_user_name
+            def git_commit_id
+            end
 
-            sig { params(git_commit_user_name: String).void }
-            attr_writer :git_commit_user_name
-
-            sig { returns(T.nilable(String)) }
-            attr_reader :git_dirty
-
-            sig { params(git_dirty: String).void }
-            attr_writer :git_dirty
+            sig { params(_: String).returns(String) }
+            def git_commit_id=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_remote_origin_url
+            def git_commit_id_abbrev
+            end
 
-            sig { params(git_remote_origin_url: String).void }
-            attr_writer :git_remote_origin_url
+            sig { params(_: String).returns(String) }
+            def git_commit_id_abbrev=(_)
+            end
 
             sig { returns(T.nilable(String)) }
-            attr_reader :git_tags
+            def git_commit_id_describe
+            end
 
-            sig { params(git_tags: String).void }
-            attr_writer :git_tags
+            sig { params(_: String).returns(String) }
+            def git_commit_id_describe=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_commit_id_describe_short
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_commit_id_describe_short=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_commit_message_full
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_commit_message_full=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_commit_message_short
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_commit_message_short=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_commit_time
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_commit_time=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_commit_user_email
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_commit_user_email=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_commit_user_name
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_commit_user_name=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_dirty
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_dirty=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_remote_origin_url
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_remote_origin_url=(_)
+            end
+
+            sig { returns(T.nilable(String)) }
+            def git_tags
+            end
+
+            sig { params(_: String).returns(String) }
+            def git_tags=(_)
+            end
 
             sig do
               params(

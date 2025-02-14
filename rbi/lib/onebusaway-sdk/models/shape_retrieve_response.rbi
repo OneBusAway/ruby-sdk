@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class ShapeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::ShapeRetrieveResponse::Data).returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data).void }
       def initialize(data:)
@@ -16,10 +23,22 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry) }
-        attr_accessor :entry
+        def entry
+        end
+
+        sig do
+          params(_: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry)
+        end
+        def entry=(_)
+        end
 
         sig { returns(OnebusawaySDK::Models::References) }
-        attr_accessor :references
+        def references
+        end
+
+        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        def references=(_)
+        end
 
         sig do
           params(
@@ -43,16 +62,28 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(Integer) }
-          attr_accessor :length
+          def length
+          end
+
+          sig { params(_: Integer).returns(Integer) }
+          def length=(_)
+          end
 
           sig { returns(String) }
-          attr_accessor :points
+          def points
+          end
+
+          sig { params(_: String).returns(String) }
+          def points=(_)
+          end
 
           sig { returns(T.nilable(String)) }
-          attr_reader :levels
+          def levels
+          end
 
-          sig { params(levels: String).void }
-          attr_writer :levels
+          sig { params(_: String).returns(String) }
+          def levels=(_)
+          end
 
           sig { params(length: Integer, points: String, levels: String).void }
           def initialize(length:, points:, levels: nil)

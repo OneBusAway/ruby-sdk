@@ -7,16 +7,20 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(T.nilable(T::Boolean)) }
-      attr_reader :include_polylines
+      def include_polylines
+      end
 
-      sig { params(include_polylines: T::Boolean).void }
-      attr_writer :include_polylines
+      sig { params(_: T::Boolean).returns(T::Boolean) }
+      def include_polylines=(_)
+      end
 
       sig { returns(T.nilable(String)) }
-      attr_reader :time
+      def time
+      end
 
-      sig { params(time: String).void }
-      attr_writer :time
+      sig { params(_: String).returns(String) }
+      def time=(_)
+      end
 
       sig do
         params(

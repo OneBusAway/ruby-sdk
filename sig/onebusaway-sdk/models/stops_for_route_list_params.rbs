@@ -10,11 +10,11 @@ module OnebusawaySDK
 
       attr_reader include_polylines: bool?
 
-      def include_polylines=: (bool) -> void
+      def include_polylines=: (bool) -> bool
 
       attr_reader time: String?
 
-      def time=: (String) -> void
+      def time=: (String) -> String
 
       def initialize:
         (
