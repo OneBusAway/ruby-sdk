@@ -21,19 +21,19 @@ module OnebusawaySDK
 
       attr_reader lat_span: Float?
 
-      def lat_span=: (Float) -> void
+      def lat_span=: (Float) -> Float
 
       attr_reader lon_span: Float?
 
-      def lon_span=: (Float) -> void
+      def lon_span=: (Float) -> Float
 
       attr_reader query: String?
 
-      def query=: (String) -> void
+      def query=: (String) -> String
 
       attr_reader radius: Float?
 
-      def radius=: (Float) -> void
+      def radius=: (Float) -> Float
 
       def initialize:
         (

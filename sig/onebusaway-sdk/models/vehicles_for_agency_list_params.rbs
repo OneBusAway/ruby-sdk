@@ -9,7 +9,7 @@ module OnebusawaySDK
 
       attr_reader time: String?
 
-      def time=: (String) -> void
+      def time=: (String) -> String
 
       def initialize:
         (time: String, request_options: OnebusawaySDK::request_opts) -> void

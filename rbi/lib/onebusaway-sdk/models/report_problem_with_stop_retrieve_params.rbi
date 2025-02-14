@@ -7,34 +7,44 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(T.nilable(Symbol)) }
-      attr_reader :code
+      def code
+      end
 
-      sig { params(code: Symbol).void }
-      attr_writer :code
+      sig { params(_: Symbol).returns(Symbol) }
+      def code=(_)
+      end
 
       sig { returns(T.nilable(String)) }
-      attr_reader :user_comment
+      def user_comment
+      end
 
-      sig { params(user_comment: String).void }
-      attr_writer :user_comment
-
-      sig { returns(T.nilable(Float)) }
-      attr_reader :user_lat
-
-      sig { params(user_lat: Float).void }
-      attr_writer :user_lat
+      sig { params(_: String).returns(String) }
+      def user_comment=(_)
+      end
 
       sig { returns(T.nilable(Float)) }
-      attr_reader :user_location_accuracy
+      def user_lat
+      end
 
-      sig { params(user_location_accuracy: Float).void }
-      attr_writer :user_location_accuracy
+      sig { params(_: Float).returns(Float) }
+      def user_lat=(_)
+      end
 
       sig { returns(T.nilable(Float)) }
-      attr_reader :user_lon
+      def user_location_accuracy
+      end
 
-      sig { params(user_lon: Float).void }
-      attr_writer :user_lon
+      sig { params(_: Float).returns(Float) }
+      def user_location_accuracy=(_)
+      end
+
+      sig { returns(T.nilable(Float)) }
+      def user_lon
+      end
+
+      sig { params(_: Float).returns(Float) }
+      def user_lon=(_)
+      end
 
       sig do
         params(

@@ -63,27 +63,27 @@ module OnebusawaySDK
 
         attr_reader disclaimer: String?
 
-        def disclaimer=: (String) -> void
+        def disclaimer=: (String) -> String
 
         attr_reader email: String?
 
-        def email=: (String) -> void
+        def email=: (String) -> String
 
         attr_reader fare_url: String?
 
-        def fare_url=: (String) -> void
+        def fare_url=: (String) -> String
 
         attr_reader lang: String?
 
-        def lang=: (String) -> void
+        def lang=: (String) -> String
 
         attr_reader phone: String?
 
-        def phone=: (String) -> void
+        def phone=: (String) -> String
 
         attr_reader private_service: bool?
 
-        def private_service=: (bool) -> void
+        def private_service=: (bool) -> bool
 
         def initialize:
           (
@@ -129,31 +129,31 @@ module OnebusawaySDK
 
         attr_reader color: String?
 
-        def color=: (String) -> void
+        def color=: (String) -> String
 
         attr_reader description: String?
 
-        def description=: (String) -> void
+        def description=: (String) -> String
 
         attr_reader long_name: String?
 
-        def long_name=: (String) -> void
+        def long_name=: (String) -> String
 
         attr_reader null_safe_short_name: String?
 
-        def null_safe_short_name=: (String) -> void
+        def null_safe_short_name=: (String) -> String
 
         attr_reader short_name: String?
 
-        def short_name=: (String) -> void
+        def short_name=: (String) -> String
 
         attr_reader text_color: String?
 
-        def text_color=: (String) -> void
+        def text_color=: (String) -> String
 
         attr_reader url: String?
 
-        def url=: (String) -> void
+        def url=: (String) -> String
 
         def initialize:
           (
@@ -201,55 +201,57 @@ module OnebusawaySDK
 
         def active_windows=: (
           ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow]
-        ) -> void
+        ) -> ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow]
 
         attr_reader all_affects: ::Array[OnebusawaySDK::Models::References::Situation::AllAffect]?
 
         def all_affects=: (
           ::Array[OnebusawaySDK::Models::References::Situation::AllAffect]
-        ) -> void
+        ) -> ::Array[OnebusawaySDK::Models::References::Situation::AllAffect]
 
         attr_reader consequence_message: String?
 
-        def consequence_message=: (String) -> void
+        def consequence_message=: (String) -> String
 
         attr_reader consequences: ::Array[OnebusawaySDK::Models::References::Situation::Consequence]?
 
         def consequences=: (
           ::Array[OnebusawaySDK::Models::References::Situation::Consequence]
-        ) -> void
+        ) -> ::Array[OnebusawaySDK::Models::References::Situation::Consequence]
 
         attr_reader description: OnebusawaySDK::Models::References::Situation::Description?
 
         def description=: (
           OnebusawaySDK::Models::References::Situation::Description
-        ) -> void
+        ) -> OnebusawaySDK::Models::References::Situation::Description
 
         attr_reader publication_windows: ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow]?
 
         def publication_windows=: (
           ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow]
-        ) -> void
+        ) -> ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow]
 
         attr_reader reason: OnebusawaySDK::Models::References::Situation::reason?
 
         def reason=: (
           OnebusawaySDK::Models::References::Situation::reason
-        ) -> void
+        ) -> OnebusawaySDK::Models::References::Situation::reason
 
         attr_reader severity: String?
 
-        def severity=: (String) -> void
+        def severity=: (String) -> String
 
         attr_reader summary: OnebusawaySDK::Models::References::Situation::Summary?
 
         def summary=: (
           OnebusawaySDK::Models::References::Situation::Summary
-        ) -> void
+        ) -> OnebusawaySDK::Models::References::Situation::Summary
 
         attr_reader url: OnebusawaySDK::Models::References::Situation::URL?
 
-        def url=: (OnebusawaySDK::Models::References::Situation::URL) -> void
+        def url=: (
+          OnebusawaySDK::Models::References::Situation::URL
+        ) -> OnebusawaySDK::Models::References::Situation::URL
 
         def initialize:
           (
@@ -278,11 +280,11 @@ module OnebusawaySDK
         class ActiveWindow < OnebusawaySDK::BaseModel
           attr_reader from: Integer?
 
-          def from=: (Integer) -> void
+          def from=: (Integer) -> Integer
 
           attr_reader to: Integer?
 
-          def to=: (Integer) -> void
+          def to=: (Integer) -> Integer
 
           def initialize:
             (from: Integer, to: Integer) -> void
@@ -307,27 +309,27 @@ module OnebusawaySDK
         class AllAffect < OnebusawaySDK::BaseModel
           attr_reader agency_id: String?
 
-          def agency_id=: (String) -> void
+          def agency_id=: (String) -> String
 
           attr_reader application_id: String?
 
-          def application_id=: (String) -> void
+          def application_id=: (String) -> String
 
           attr_reader direction_id: String?
 
-          def direction_id=: (String) -> void
+          def direction_id=: (String) -> String
 
           attr_reader route_id: String?
 
-          def route_id=: (String) -> void
+          def route_id=: (String) -> String
 
           attr_reader stop_id: String?
 
-          def stop_id=: (String) -> void
+          def stop_id=: (String) -> String
 
           attr_reader trip_id: String?
 
-          def trip_id=: (String) -> void
+          def trip_id=: (String) -> String
 
           def initialize:
             (
@@ -355,13 +357,13 @@ module OnebusawaySDK
         class Consequence < OnebusawaySDK::BaseModel
           attr_reader condition: String?
 
-          def condition=: (String) -> void
+          def condition=: (String) -> String
 
           attr_reader condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails?
 
           def condition_details=: (
             OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
-          ) -> void
+          ) -> OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
 
           def initialize:
             (
@@ -386,11 +388,11 @@ module OnebusawaySDK
 
             def diversion_path=: (
               OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath
-            ) -> void
+            ) -> OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath
 
             attr_reader diversion_stop_ids: ::Array[String]?
 
-            def diversion_stop_ids=: (::Array[String]) -> void
+            def diversion_stop_ids=: (::Array[String]) -> ::Array[String]
 
             def initialize:
               (
@@ -410,15 +412,15 @@ module OnebusawaySDK
             class DiversionPath < OnebusawaySDK::BaseModel
               attr_reader length: Integer?
 
-              def length=: (Integer) -> void
+              def length=: (Integer) -> Integer
 
               attr_reader levels: String?
 
-              def levels=: (String) -> void
+              def levels=: (String) -> String
 
               attr_reader points: String?
 
-              def points=: (String) -> void
+              def points=: (String) -> String
 
               def initialize:
                 (length: Integer, levels: String, points: String) -> void
@@ -437,11 +439,11 @@ module OnebusawaySDK
         class Description < OnebusawaySDK::BaseModel
           attr_reader lang: String?
 
-          def lang=: (String) -> void
+          def lang=: (String) -> String
 
           attr_reader value: String?
 
-          def value=: (String) -> void
+          def value=: (String) -> String
 
           def initialize:
             (lang: String, value: String) -> void
@@ -492,11 +494,11 @@ module OnebusawaySDK
         class Summary < OnebusawaySDK::BaseModel
           attr_reader lang: String?
 
-          def lang=: (String) -> void
+          def lang=: (String) -> String
 
           attr_reader value: String?
 
-          def value=: (String) -> void
+          def value=: (String) -> String
 
           def initialize:
             (lang: String, value: String) -> void
@@ -513,11 +515,11 @@ module OnebusawaySDK
         class URL < OnebusawaySDK::BaseModel
           attr_reader lang: String?
 
-          def lang=: (String) -> void
+          def lang=: (String) -> String
 
           attr_reader value: String?
 
-          def value=: (String) -> void
+          def value=: (String) -> String
 
           def initialize:
             (lang: String, value: String) -> void
@@ -562,19 +564,19 @@ module OnebusawaySDK
 
         attr_reader code: String?
 
-        def code=: (String) -> void
+        def code=: (String) -> String
 
         attr_reader direction: String?
 
-        def direction=: (String) -> void
+        def direction=: (String) -> String
 
         attr_reader location_type: Integer?
 
-        def location_type=: (Integer) -> void
+        def location_type=: (Integer) -> Integer
 
         attr_reader wheelchair_boarding: String?
 
-        def wheelchair_boarding=: (String) -> void
+        def wheelchair_boarding=: (String) -> String
 
         def initialize:
           (
@@ -611,27 +613,27 @@ module OnebusawaySDK
       class StopTime < OnebusawaySDK::BaseModel
         attr_reader arrival_time: Integer?
 
-        def arrival_time=: (Integer) -> void
+        def arrival_time=: (Integer) -> Integer
 
         attr_reader departure_time: Integer?
 
-        def departure_time=: (Integer) -> void
+        def departure_time=: (Integer) -> Integer
 
         attr_reader distance_along_trip: Float?
 
-        def distance_along_trip=: (Float) -> void
+        def distance_along_trip=: (Float) -> Float
 
         attr_reader historical_occupancy: String?
 
-        def historical_occupancy=: (String) -> void
+        def historical_occupancy=: (String) -> String
 
         attr_reader stop_headsign: String?
 
-        def stop_headsign=: (String) -> void
+        def stop_headsign=: (String) -> String
 
         attr_reader stop_id: String?
 
-        def stop_id=: (String) -> void
+        def stop_id=: (String) -> String
 
         def initialize:
           (
@@ -674,35 +676,35 @@ module OnebusawaySDK
 
         attr_reader block_id: String?
 
-        def block_id=: (String) -> void
+        def block_id=: (String) -> String
 
         attr_reader direction_id: String?
 
-        def direction_id=: (String) -> void
+        def direction_id=: (String) -> String
 
         attr_reader peak_offpeak: Integer?
 
-        def peak_offpeak=: (Integer) -> void
+        def peak_offpeak=: (Integer) -> Integer
 
         attr_reader route_short_name: String?
 
-        def route_short_name=: (String) -> void
+        def route_short_name=: (String) -> String
 
         attr_reader shape_id: String?
 
-        def shape_id=: (String) -> void
+        def shape_id=: (String) -> String
 
         attr_reader time_zone: String?
 
-        def time_zone=: (String) -> void
+        def time_zone=: (String) -> String
 
         attr_reader trip_headsign: String?
 
-        def trip_headsign=: (String) -> void
+        def trip_headsign=: (String) -> String
 
         attr_reader trip_short_name: String?
 
-        def trip_short_name=: (String) -> void
+        def trip_short_name=: (String) -> String
 
         def initialize:
           (

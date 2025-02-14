@@ -7,28 +7,44 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(Integer) }
-      attr_accessor :service_date
+      def service_date
+      end
+
+      sig { params(_: Integer).returns(Integer) }
+      def service_date=(_)
+      end
 
       sig { returns(String) }
-      attr_accessor :trip_id
+      def trip_id
+      end
+
+      sig { params(_: String).returns(String) }
+      def trip_id=(_)
+      end
 
       sig { returns(T.nilable(Integer)) }
-      attr_reader :stop_sequence
+      def stop_sequence
+      end
 
-      sig { params(stop_sequence: Integer).void }
-      attr_writer :stop_sequence
+      sig { params(_: Integer).returns(Integer) }
+      def stop_sequence=(_)
+      end
 
       sig { returns(T.nilable(Integer)) }
-      attr_reader :time
+      def time
+      end
 
-      sig { params(time: Integer).void }
-      attr_writer :time
+      sig { params(_: Integer).returns(Integer) }
+      def time=(_)
+      end
 
       sig { returns(T.nilable(String)) }
-      attr_reader :vehicle_id
+      def vehicle_id
+      end
 
-      sig { params(vehicle_id: String).void }
-      attr_writer :vehicle_id
+      sig { params(_: String).returns(String) }
+      def vehicle_id=(_)
+      end
 
       sig do
         params(

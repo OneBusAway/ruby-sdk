@@ -67,27 +67,27 @@ module OnebusawaySDK
 
           attr_reader disclaimer: String?
 
-          def disclaimer=: (String) -> void
+          def disclaimer=: (String) -> String
 
           attr_reader email: String?
 
-          def email=: (String) -> void
+          def email=: (String) -> String
 
           attr_reader fare_url: String?
 
-          def fare_url=: (String) -> void
+          def fare_url=: (String) -> String
 
           attr_reader lang: String?
 
-          def lang=: (String) -> void
+          def lang=: (String) -> String
 
           attr_reader phone: String?
 
-          def phone=: (String) -> void
+          def phone=: (String) -> String
 
           attr_reader private_service: bool?
 
-          def private_service=: (bool) -> void
+          def private_service=: (bool) -> bool
 
           def initialize:
             (

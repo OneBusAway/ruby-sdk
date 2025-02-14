@@ -4,7 +4,14 @@ module OnebusawaySDK
   module Models
     class CurrentTimeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data) }
-      attr_accessor :data
+      def data
+      end
+
+      sig do
+        params(_: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data).returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data)
+      end
+      def data=(_)
+      end
 
       sig { params(data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data).void }
       def initialize(data:)
@@ -16,10 +23,22 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry) }
-        attr_accessor :entry
+        def entry
+        end
+
+        sig do
+          params(_: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry)
+        end
+        def entry=(_)
+        end
 
         sig { returns(OnebusawaySDK::Models::References) }
-        attr_accessor :references
+        def references
+        end
+
+        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        def references=(_)
+        end
 
         sig do
           params(
@@ -43,16 +62,20 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(T.nilable(String)) }
-          attr_reader :readable_time
+          def readable_time
+          end
 
-          sig { params(readable_time: String).void }
-          attr_writer :readable_time
+          sig { params(_: String).returns(String) }
+          def readable_time=(_)
+          end
 
           sig { returns(T.nilable(Integer)) }
-          attr_reader :time
+          def time
+          end
 
-          sig { params(time: Integer).void }
-          attr_writer :time
+          sig { params(_: Integer).returns(Integer) }
+          def time=(_)
+          end
 
           sig { params(readable_time: String, time: Integer).void }
           def initialize(readable_time: nil, time: nil)

@@ -15,19 +15,19 @@ module OnebusawaySDK
 
       attr_reader include_schedule: bool?
 
-      def include_schedule=: (bool) -> void
+      def include_schedule=: (bool) -> bool
 
       attr_reader include_status: bool?
 
-      def include_status=: (bool) -> void
+      def include_status=: (bool) -> bool
 
       attr_reader include_trip: bool?
 
-      def include_trip=: (bool) -> void
+      def include_trip=: (bool) -> bool
 
       attr_reader time: Integer?
 
-      def time=: (Integer) -> void
+      def time=: (Integer) -> Integer
 
       def initialize:
         (
