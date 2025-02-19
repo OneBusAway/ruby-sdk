@@ -207,7 +207,7 @@ class OnebusawaySDKTest < Minitest::Test
       onebusaway_sdk.current_time.retrieve
     end
 
-    retry_count_headers = requester.attempts.map { |a| a[:headers]["x-stainless-retry-count"] }
+    retry_count_headers = requester.attempts.map { _1[:headers]["x-stainless-retry-count"] }
     assert_equal(%w[0 1 2], retry_count_headers)
   end
 
@@ -220,7 +220,7 @@ class OnebusawaySDKTest < Minitest::Test
       onebusaway_sdk.current_time.retrieve(request_options: {extra_headers: {"x-stainless-retry-count" => nil}})
     end
 
-    retry_count_headers = requester.attempts.map { |a| a[:headers]["x-stainless-retry-count"] }
+    retry_count_headers = requester.attempts.map { _1[:headers]["x-stainless-retry-count"] }
     assert_equal([nil, nil, nil], retry_count_headers)
   end
 
@@ -235,7 +235,7 @@ class OnebusawaySDKTest < Minitest::Test
       )
     end
 
-    retry_count_headers = requester.attempts.map { |a| a[:headers]["x-stainless-retry-count"] }
+    retry_count_headers = requester.attempts.map { _1[:headers]["x-stainless-retry-count"] }
     assert_equal(%w[42 42 42], retry_count_headers)
   end
 
