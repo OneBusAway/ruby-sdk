@@ -17,8 +17,12 @@ module OnebusawaySDK
       sig do
         params(
           time: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+          request_options: T.any(
+            OnebusawaySDK::RequestOptions,
+            T::Hash[Symbol, T.anything]
+          )
+        )
+          .void
       end
       def initialize(time: nil, request_options: {})
       end

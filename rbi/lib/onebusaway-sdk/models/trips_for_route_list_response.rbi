@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data).returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data)
+        params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data)
+          .returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data)
       end
       def data=(_)
       end
@@ -35,7 +36,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List]).returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List])
+          params(_: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List])
+            .returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List])
         end
         def list=(_)
         end
@@ -53,19 +55,21 @@ module OnebusawaySDK
             limit_exceeded: T::Boolean,
             list: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(limit_exceeded:, list:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              limit_exceeded: T::Boolean,
-              list: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                limit_exceeded: T::Boolean,
+                list: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -76,7 +80,8 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule).returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule)
+            params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule)
+              .returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule)
           end
           def schedule=(_)
           end
@@ -86,7 +91,8 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status).returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status)
+            params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status)
+              .returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status)
           end
           def status=(_)
           end
@@ -131,22 +137,24 @@ module OnebusawaySDK
               frequency: T.nilable(String),
               service_date: Integer,
               situation_ids: T::Array[String]
-            ).void
+            )
+              .void
           end
           def initialize(schedule:, status:, trip_id:, frequency: nil, service_date: nil, situation_ids: nil)
           end
 
           sig do
-            override.returns(
-              {
-                schedule: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
-                status: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
-                trip_id: String,
-                frequency: T.nilable(String),
-                service_date: Integer,
-                situation_ids: T::Array[String]
-              }
-            )
+            override
+              .returns(
+                {
+                  schedule: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
+                  status: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
+                  trip_id: String,
+                  frequency: T.nilable(String),
+                  service_date: Integer,
+                  situation_ids: T::Array[String]
+                }
+              )
           end
           def to_hash
           end
@@ -168,14 +176,13 @@ module OnebusawaySDK
             def previous_trip_id=(_)
             end
 
-            sig do
-              returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime])
-            end
+            sig { returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime]) }
             def stop_times
             end
 
             sig do
-              params(_: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime]).returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime])
+              params(_: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime])
+                .returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime])
             end
             def stop_times=(_)
             end
@@ -203,21 +210,23 @@ module OnebusawaySDK
                 stop_times: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
                 time_zone: String,
                 frequency: T.nilable(String)
-              ).void
+              )
+                .void
             end
             def initialize(next_trip_id:, previous_trip_id:, stop_times:, time_zone:, frequency: nil)
             end
 
             sig do
-              override.returns(
-                {
-                  next_trip_id: String,
-                  previous_trip_id: String,
-                  stop_times: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
-                  time_zone: String,
-                  frequency: T.nilable(String)
-                }
-              )
+              override
+                .returns(
+                  {
+                    next_trip_id: String,
+                    previous_trip_id: String,
+                    stop_times: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
+                    time_zone: String,
+                    frequency: T.nilable(String)
+                  }
+                )
             end
             def to_hash
             end
@@ -279,7 +288,8 @@ module OnebusawaySDK
                   historical_occupancy: String,
                   stop_headsign: String,
                   stop_id: String
-                ).void
+                )
+                  .void
               end
               def initialize(
                 arrival_time: nil,
@@ -292,16 +302,17 @@ module OnebusawaySDK
               end
 
               sig do
-                override.returns(
-                  {
-                    arrival_time: Integer,
-                    departure_time: Integer,
-                    distance_along_trip: Float,
-                    historical_occupancy: String,
-                    stop_headsign: String,
-                    stop_id: String
-                  }
-                )
+                override
+                  .returns(
+                    {
+                      arrival_time: Integer,
+                      departure_time: Integer,
+                      distance_along_trip: Float,
+                      historical_occupancy: String,
+                      stop_headsign: String,
+                      stop_id: String
+                    }
+                  )
               end
               def to_hash
               end
@@ -454,13 +465,16 @@ module OnebusawaySDK
             end
 
             sig do
-              returns(T.nilable(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation))
+              returns(
+                T.nilable(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation)
+              )
             end
             def last_known_location
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation).returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation)
+              params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation)
+                .returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation)
             end
             def last_known_location=(_)
             end
@@ -497,14 +511,13 @@ module OnebusawaySDK
             def orientation=(_)
             end
 
-            sig do
-              returns(T.nilable(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position))
-            end
+            sig { returns(T.nilable(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position)) }
             def position
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position).returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position)
+              params(_: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position)
+                .returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position)
             end
             def position=(_)
             end
@@ -562,7 +575,8 @@ module OnebusawaySDK
                 scheduled_distance_along_trip: Float,
                 situation_ids: T::Array[String],
                 vehicle_id: String
-              ).void
+              )
+                .void
             end
             def initialize(
               active_trip_id:,
@@ -596,37 +610,38 @@ module OnebusawaySDK
             end
 
             sig do
-              override.returns(
-                {
-                  active_trip_id: String,
-                  block_trip_sequence: Integer,
-                  closest_stop: String,
-                  distance_along_trip: Float,
-                  last_known_distance_along_trip: Float,
-                  last_location_update_time: Integer,
-                  last_update_time: Integer,
-                  occupancy_capacity: Integer,
-                  occupancy_count: Integer,
-                  occupancy_status: String,
-                  phase: String,
-                  predicted: T::Boolean,
-                  schedule_deviation: Integer,
-                  service_date: Integer,
-                  status: String,
-                  total_distance_along_trip: Float,
-                  closest_stop_time_offset: Integer,
-                  frequency: String,
-                  last_known_location: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
-                  last_known_orientation: Float,
-                  next_stop: String,
-                  next_stop_time_offset: Integer,
-                  orientation: Float,
-                  position: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
-                  scheduled_distance_along_trip: Float,
-                  situation_ids: T::Array[String],
-                  vehicle_id: String
-                }
-              )
+              override
+                .returns(
+                  {
+                    active_trip_id: String,
+                    block_trip_sequence: Integer,
+                    closest_stop: String,
+                    distance_along_trip: Float,
+                    last_known_distance_along_trip: Float,
+                    last_location_update_time: Integer,
+                    last_update_time: Integer,
+                    occupancy_capacity: Integer,
+                    occupancy_count: Integer,
+                    occupancy_status: String,
+                    phase: String,
+                    predicted: T::Boolean,
+                    schedule_deviation: Integer,
+                    service_date: Integer,
+                    status: String,
+                    total_distance_along_trip: Float,
+                    closest_stop_time_offset: Integer,
+                    frequency: String,
+                    last_known_location: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
+                    last_known_orientation: Float,
+                    next_stop: String,
+                    next_stop_time_offset: Integer,
+                    orientation: Float,
+                    position: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
+                    scheduled_distance_along_trip: Float,
+                    situation_ids: T::Array[String],
+                    vehicle_id: String
+                  }
+                )
             end
             def to_hash
             end

@@ -72,7 +72,8 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           time: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+        )
+          .void
       end
       def initialize(
         lat:,
@@ -87,18 +88,19 @@ module OnebusawaySDK
       end
 
       sig do
-        override.returns(
-          {
-            lat: Float,
-            lat_span: Float,
-            lon: Float,
-            lon_span: Float,
-            include_schedule: T::Boolean,
-            include_trip: T::Boolean,
-            time: Integer,
-            request_options: OnebusawaySDK::RequestOptions
-          }
-        )
+        override
+          .returns(
+            {
+              lat: Float,
+              lat_span: Float,
+              lon: Float,
+              lon_span: Float,
+              include_schedule: T::Boolean,
+              include_trip: T::Boolean,
+              time: Integer,
+              request_options: OnebusawaySDK::RequestOptions
+            }
+          )
       end
       def to_hash
       end

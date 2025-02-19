@@ -52,9 +52,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture>]
           required :arrivals_and_departures,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
-                   },
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture] },
                    api_name: :arrivalsAndDepartures
 
           # @!parse
@@ -355,9 +353,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus, nil]
             optional :trip_status,
-                     -> {
-                       OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus
-                     },
+                     -> { OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus },
                      api_name: :tripStatus
 
             # @!parse
@@ -578,9 +574,7 @@ module OnebusawaySDK
               #
               #   @return [OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation, nil]
               optional :last_known_location,
-                       -> {
-                         OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation
-                       },
+                       -> { OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation },
                        api_name: :lastKnownLocation
 
               # @!parse

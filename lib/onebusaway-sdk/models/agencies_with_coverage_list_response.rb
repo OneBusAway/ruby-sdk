@@ -33,9 +33,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List>]
         required :list,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List]
-                 }
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List] }
 
         # @!attribute references
         #

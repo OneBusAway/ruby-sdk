@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::StopRetrieveResponse::Data).returns(OnebusawaySDK::Models::StopRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::StopRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::StopRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,18 +46,20 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -162,7 +166,8 @@ module OnebusawaySDK
               direction: String,
               location_type: Integer,
               wheelchair_boarding: String
-            ).void
+            )
+              .void
           end
           def initialize(
             id:,
@@ -180,21 +185,22 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                lat: Float,
-                lon: Float,
-                name: String,
-                parent: String,
-                route_ids: T::Array[String],
-                static_route_ids: T::Array[String],
-                code: String,
-                direction: String,
-                location_type: Integer,
-                wheelchair_boarding: String
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  lat: Float,
+                  lon: Float,
+                  name: String,
+                  parent: String,
+                  route_ids: T::Array[String],
+                  static_route_ids: T::Array[String],
+                  code: String,
+                  direction: String,
+                  location_type: Integer,
+                  wheelchair_boarding: String
+                }
+              )
           end
           def to_hash
           end

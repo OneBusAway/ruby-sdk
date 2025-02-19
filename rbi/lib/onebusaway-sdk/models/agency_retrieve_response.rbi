@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::AgencyRetrieveResponse::Data).returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::AgencyRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -53,19 +55,21 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
             limit_exceeded: T::Boolean,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, limit_exceeded:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
-              limit_exceeded: T::Boolean,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
+                limit_exceeded: T::Boolean,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -163,7 +167,8 @@ module OnebusawaySDK
               lang: String,
               phone: String,
               private_service: T::Boolean
-            ).void
+            )
+              .void
           end
           def initialize(
             id:,
@@ -180,20 +185,21 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                name: String,
-                timezone: String,
-                url: String,
-                disclaimer: String,
-                email: String,
-                fare_url: String,
-                lang: String,
-                phone: String,
-                private_service: T::Boolean
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  name: String,
+                  timezone: String,
+                  url: String,
+                  disclaimer: String,
+                  email: String,
+                  fare_url: String,
+                  lang: String,
+                  phone: String,
+                  private_service: T::Boolean
+                }
+              )
           end
           def to_hash
           end

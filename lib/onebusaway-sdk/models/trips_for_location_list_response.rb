@@ -35,9 +35,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List>]
         required :list,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List]
-                 }
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List] }
 
         # @!attribute references
         #
@@ -150,9 +148,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime>]
             required :stop_times,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime]
-                     },
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime] },
                      api_name: :stopTimes
 
             # @!attribute time_zone
@@ -401,9 +397,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation, nil]
             optional :last_known_location,
-                     -> {
-                       OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation
-                     },
+                     -> { OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation },
                      api_name: :lastKnownLocation
 
             # @!parse

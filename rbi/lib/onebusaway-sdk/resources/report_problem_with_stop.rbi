@@ -12,7 +12,8 @@ module OnebusawaySDK
           user_location_accuracy: Float,
           user_lon: Float,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::ResponseWrapper)
+        )
+          .returns(OnebusawaySDK::Models::ResponseWrapper)
       end
       def retrieve(
         stop_id,

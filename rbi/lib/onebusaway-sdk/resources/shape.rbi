@@ -7,7 +7,8 @@ module OnebusawaySDK
         params(
           shape_id: String,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::ShapeRetrieveResponse)
+        )
+          .returns(OnebusawaySDK::Models::ShapeRetrieveResponse)
       end
       def retrieve(shape_id, request_options: {})
       end

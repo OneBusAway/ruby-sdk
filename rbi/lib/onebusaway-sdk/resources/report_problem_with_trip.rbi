@@ -17,7 +17,8 @@ module OnebusawaySDK
           user_vehicle_number: String,
           vehicle_id: String,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::ResponseWrapper)
+        )
+          .returns(OnebusawaySDK::Models::ResponseWrapper)
       end
       def retrieve(
         trip_id,

@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,18 +46,20 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -77,14 +81,13 @@ module OnebusawaySDK
           def frequency=(_)
           end
 
-          sig do
-            returns(T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule))
-          end
+          sig { returns(T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule)) }
           def schedule
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule)
+            params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule)
+              .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule)
           end
           def schedule=(_)
           end
@@ -105,14 +108,13 @@ module OnebusawaySDK
           def situation_ids=(_)
           end
 
-          sig do
-            returns(T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status))
-          end
+          sig { returns(T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status)) }
           def status
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status)
+            params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status)
+              .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status)
           end
           def status=(_)
           end
@@ -125,7 +127,8 @@ module OnebusawaySDK
               service_date: Integer,
               situation_ids: T::Array[String],
               status: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status
-            ).void
+            )
+              .void
           end
           def initialize(
             trip_id:,
@@ -138,16 +141,17 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                trip_id: String,
-                frequency: T.nilable(String),
-                schedule: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
-                service_date: Integer,
-                situation_ids: T::Array[String],
-                status: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status
-              }
-            )
+            override
+              .returns(
+                {
+                  trip_id: String,
+                  frequency: T.nilable(String),
+                  schedule: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
+                  service_date: Integer,
+                  situation_ids: T::Array[String],
+                  status: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status
+                }
+              )
           end
           def to_hash
           end
@@ -169,16 +173,15 @@ module OnebusawaySDK
             def previous_trip_id=(_)
             end
 
-            sig do
-              returns(T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime])
-            end
+            sig { returns(T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime]) }
             def stop_times
             end
 
             sig do
               params(
                 _: T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime]
-              ).returns(T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime])
+              )
+                .returns(T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime])
             end
             def stop_times=(_)
             end
@@ -206,21 +209,23 @@ module OnebusawaySDK
                 stop_times: T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime],
                 time_zone: String,
                 frequency: T.nilable(String)
-              ).void
+              )
+                .void
             end
             def initialize(next_trip_id:, previous_trip_id:, stop_times:, time_zone:, frequency: nil)
             end
 
             sig do
-              override.returns(
-                {
-                  next_trip_id: String,
-                  previous_trip_id: String,
-                  stop_times: T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime],
-                  time_zone: String,
-                  frequency: T.nilable(String)
-                }
-              )
+              override
+                .returns(
+                  {
+                    next_trip_id: String,
+                    previous_trip_id: String,
+                    stop_times: T::Array[OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime],
+                    time_zone: String,
+                    frequency: T.nilable(String)
+                  }
+                )
             end
             def to_hash
             end
@@ -282,7 +287,8 @@ module OnebusawaySDK
                   historical_occupancy: String,
                   stop_headsign: String,
                   stop_id: String
-                ).void
+                )
+                  .void
               end
               def initialize(
                 arrival_time: nil,
@@ -295,16 +301,17 @@ module OnebusawaySDK
               end
 
               sig do
-                override.returns(
-                  {
-                    arrival_time: Integer,
-                    departure_time: Integer,
-                    distance_along_trip: Float,
-                    historical_occupancy: String,
-                    stop_headsign: String,
-                    stop_id: String
-                  }
-                )
+                override
+                  .returns(
+                    {
+                      arrival_time: Integer,
+                      departure_time: Integer,
+                      distance_along_trip: Float,
+                      historical_occupancy: String,
+                      stop_headsign: String,
+                      stop_id: String
+                    }
+                  )
               end
               def to_hash
               end
@@ -457,13 +464,16 @@ module OnebusawaySDK
             end
 
             sig do
-              returns(T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation))
+              returns(
+                T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation)
+              )
             end
             def last_known_location
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation)
+              params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation)
+                .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation)
             end
             def last_known_location=(_)
             end
@@ -500,14 +510,13 @@ module OnebusawaySDK
             def orientation=(_)
             end
 
-            sig do
-              returns(T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position))
-            end
+            sig { returns(T.nilable(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position)) }
             def position
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position)
+              params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position)
+                .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position)
             end
             def position=(_)
             end
@@ -565,7 +574,8 @@ module OnebusawaySDK
                 scheduled_distance_along_trip: Float,
                 situation_ids: T::Array[String],
                 vehicle_id: String
-              ).void
+              )
+                .void
             end
             def initialize(
               active_trip_id:,
@@ -599,37 +609,38 @@ module OnebusawaySDK
             end
 
             sig do
-              override.returns(
-                {
-                  active_trip_id: String,
-                  block_trip_sequence: Integer,
-                  closest_stop: String,
-                  distance_along_trip: Float,
-                  last_known_distance_along_trip: Float,
-                  last_location_update_time: Integer,
-                  last_update_time: Integer,
-                  occupancy_capacity: Integer,
-                  occupancy_count: Integer,
-                  occupancy_status: String,
-                  phase: String,
-                  predicted: T::Boolean,
-                  schedule_deviation: Integer,
-                  service_date: Integer,
-                  status: String,
-                  total_distance_along_trip: Float,
-                  closest_stop_time_offset: Integer,
-                  frequency: String,
-                  last_known_location: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
-                  last_known_orientation: Float,
-                  next_stop: String,
-                  next_stop_time_offset: Integer,
-                  orientation: Float,
-                  position: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
-                  scheduled_distance_along_trip: Float,
-                  situation_ids: T::Array[String],
-                  vehicle_id: String
-                }
-              )
+              override
+                .returns(
+                  {
+                    active_trip_id: String,
+                    block_trip_sequence: Integer,
+                    closest_stop: String,
+                    distance_along_trip: Float,
+                    last_known_distance_along_trip: Float,
+                    last_location_update_time: Integer,
+                    last_update_time: Integer,
+                    occupancy_capacity: Integer,
+                    occupancy_count: Integer,
+                    occupancy_status: String,
+                    phase: String,
+                    predicted: T::Boolean,
+                    schedule_deviation: Integer,
+                    service_date: Integer,
+                    status: String,
+                    total_distance_along_trip: Float,
+                    closest_stop_time_offset: Integer,
+                    frequency: String,
+                    last_known_location: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
+                    last_known_orientation: Float,
+                    next_stop: String,
+                    next_stop_time_offset: Integer,
+                    orientation: Float,
+                    position: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
+                    scheduled_distance_along_trip: Float,
+                    situation_ids: T::Array[String],
+                    vehicle_id: String
+                  }
+                )
             end
             def to_hash
             end

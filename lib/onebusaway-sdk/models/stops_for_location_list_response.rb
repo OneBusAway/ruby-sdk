@@ -34,9 +34,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::StopsForLocationListResponse::Data::List>]
         required :list,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List]
-                 }
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List] }
 
         # @!attribute references
         #
