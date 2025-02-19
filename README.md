@@ -1,6 +1,6 @@
 # Onebusaway SDK Ruby API library
 
-The Onebusaway SDK Ruby library provides convenient access to the Onebusaway SDK REST API from any Ruby 3.0+
+The Onebusaway SDK Ruby library provides convenient access to the Onebusaway SDK REST API from any Ruby 3.0.0+
 application.
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
