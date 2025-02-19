@@ -12,7 +12,8 @@ module OnebusawaySDK
           time: Integer,
           vehicle_id: String,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse)
+        )
+          .returns(OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse)
       end
       def retrieve(
         stop_id,
@@ -32,7 +33,8 @@ module OnebusawaySDK
           minutes_before: Integer,
           time: Time,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse)
+        )
+          .returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse)
       end
       def list(stop_id, minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
       end

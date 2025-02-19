@@ -135,9 +135,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime>]
             required :stop_times,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime]
-                     },
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime] },
                      api_name: :stopTimes
 
             # @!attribute time_zone
@@ -386,9 +384,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation, nil]
             optional :last_known_location,
-                     -> {
-                       OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation
-                     },
+                     -> { OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation },
                      api_name: :lastKnownLocation
 
             # @!parse
@@ -440,10 +436,7 @@ module OnebusawaySDK
             #   Current position of the transit vehicle.
             #
             #   @return [OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position, nil]
-            optional :position,
-                     -> {
-                       OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position
-                     }
+            optional :position, -> { OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position }
 
             # @!parse
             #   # @return [OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position]

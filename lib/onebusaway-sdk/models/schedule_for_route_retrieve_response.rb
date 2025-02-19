@@ -64,26 +64,20 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop>]
           required :stops,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop]
-                   }
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop] }
 
           # @!attribute stop_trip_groupings
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping>]
           required :stop_trip_groupings,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping]
-                   },
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping] },
                    api_name: :stopTripGroupings
 
           # @!attribute trips
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip>]
           required :trips,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
-                   }
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip] }
 
           # @!parse
           #   # @param route_id [String]
@@ -248,9 +242,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime>, nil]
             optional :trips_with_stop_times,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
-                     },
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime] },
                      api_name: :tripsWithStopTimes
 
             # @!parse
@@ -271,7 +263,11 @@ module OnebusawaySDK
             # @example
             # ```ruby
             # trips_with_stop_time => {
-            #   stop_times: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime] === _1 },
+            #   stop_times: -> do
+            #     OnebusawaySDK::ArrayOf[
+            #     OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime
+            #     ] === _1
+            #   end,
             #   trip_id: String
             # }
             # ```
@@ -280,9 +276,11 @@ module OnebusawaySDK
               #
               #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime>]
               required :stop_times,
-                       -> {
-                         OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime]
-                       },
+                       -> do
+                         OnebusawaySDK::ArrayOf[
+                         OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime
+                         ]
+                       end,
                        api_name: :stopTimes
 
               # @!attribute trip_id

@@ -12,7 +12,8 @@ module OnebusawaySDK
           service_date: Integer,
           time: Integer,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::TripDetailRetrieveResponse)
+        )
+          .returns(OnebusawaySDK::Models::TripDetailRetrieveResponse)
       end
       def retrieve(
         trip_id,

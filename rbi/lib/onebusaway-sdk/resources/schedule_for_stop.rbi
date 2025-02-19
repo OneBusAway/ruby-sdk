@@ -8,7 +8,8 @@ module OnebusawaySDK
           stop_id: String,
           date: Date,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse)
+        )
+          .returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse)
       end
       def retrieve(stop_id, date: nil, request_options: {})
       end

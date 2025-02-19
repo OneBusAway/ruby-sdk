@@ -55,9 +55,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>, nil]
           optional :polylines,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]
-                   }
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline] }
 
           # @!parse
           #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>]
@@ -76,9 +74,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping>, nil]
           optional :stop_groupings,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
-                   },
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping] },
                    api_name: :stopGroupings
 
           # @!parse
@@ -172,10 +168,7 @@ module OnebusawaySDK
             # @!attribute [r] name
             #
             #   @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name, nil]
-            optional :name,
-                     -> {
-                       OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
-                     }
+            optional :name, -> { OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name }
 
             # @!parse
             #   # @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name]
@@ -185,9 +178,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>, nil]
             optional :polylines,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
-                     }
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline] }
 
             # @!parse
             #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>]

@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::BlockRetrieveResponse::Data).returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::BlockRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,18 +46,20 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -74,7 +78,8 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]).returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration])
+            params(_: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration])
+              .returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration])
           end
           def configurations=(_)
           end
@@ -83,18 +88,20 @@ module OnebusawaySDK
             params(
               id: String,
               configurations: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
-            ).void
+            )
+              .void
           end
           def initialize(id:, configurations:)
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                configurations: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  configurations: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+                }
+              )
           end
           def to_hash
           end
@@ -108,14 +115,13 @@ module OnebusawaySDK
             def active_service_ids=(_)
             end
 
-            sig do
-              returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip])
-            end
+            sig { returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]) }
             def trips
             end
 
             sig do
-              params(_: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]).returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip])
+              params(_: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip])
+                .returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip])
             end
             def trips=(_)
             end
@@ -133,19 +139,21 @@ module OnebusawaySDK
                 active_service_ids: T::Array[String],
                 trips: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
                 inactive_service_ids: T::Array[String]
-              ).void
+              )
+                .void
             end
             def initialize(active_service_ids:, trips:, inactive_service_ids: nil)
             end
 
             sig do
-              override.returns(
-                {
-                  active_service_ids: T::Array[String],
-                  trips: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
-                  inactive_service_ids: T::Array[String]
-                }
-              )
+              override
+                .returns(
+                  {
+                    active_service_ids: T::Array[String],
+                    trips: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+                    inactive_service_ids: T::Array[String]
+                  }
+                )
             end
             def to_hash
             end
@@ -160,7 +168,9 @@ module OnebusawaySDK
               end
 
               sig do
-                returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime])
+                returns(
+                  T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
+                )
               end
               def block_stop_times
               end
@@ -168,7 +178,10 @@ module OnebusawaySDK
               sig do
                 params(
                   _: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
-                ).returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime])
+                )
+                  .returns(
+                    T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
+                  )
               end
               def block_stop_times=(_)
               end
@@ -195,20 +208,22 @@ module OnebusawaySDK
                   block_stop_times: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
                   distance_along_block: Float,
                   trip_id: String
-                ).void
+                )
+                  .void
               end
               def initialize(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:)
               end
 
               sig do
-                override.returns(
-                  {
-                    accumulated_slack_time: Float,
-                    block_stop_times: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
-                    distance_along_block: Float,
-                    trip_id: String
-                  }
-                )
+                override
+                  .returns(
+                    {
+                      accumulated_slack_time: Float,
+                      block_stop_times: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                      distance_along_block: Float,
+                      trip_id: String
+                    }
+                  )
               end
               def to_hash
               end
@@ -239,7 +254,9 @@ module OnebusawaySDK
                 end
 
                 sig do
-                  returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime)
+                  returns(
+                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                  )
                 end
                 def stop_time
                 end
@@ -247,7 +264,10 @@ module OnebusawaySDK
                 sig do
                   params(
                     _: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-                  ).returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime)
+                  )
+                    .returns(
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                    )
                 end
                 def stop_time=(_)
                 end
@@ -258,20 +278,22 @@ module OnebusawaySDK
                     block_sequence: Integer,
                     distance_along_block: Float,
                     stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-                  ).void
+                  )
+                    .void
                 end
                 def initialize(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:)
                 end
 
                 sig do
-                  override.returns(
-                    {
-                      accumulated_slack_time: Float,
-                      block_sequence: Integer,
-                      distance_along_block: Float,
-                      stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-                    }
-                  )
+                  override
+                    .returns(
+                      {
+                        accumulated_slack_time: Float,
+                        block_sequence: Integer,
+                        distance_along_block: Float,
+                        stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                      }
+                    )
                 end
                 def to_hash
                 end
@@ -324,7 +346,8 @@ module OnebusawaySDK
                       stop_id: String,
                       drop_off_type: Integer,
                       pickup_type: Integer
-                    ).void
+                    )
+                      .void
                   end
                   def initialize(
                     arrival_time:,
@@ -336,15 +359,16 @@ module OnebusawaySDK
                   end
 
                   sig do
-                    override.returns(
-                      {
-                        arrival_time: Integer,
-                        departure_time: Integer,
-                        stop_id: String,
-                        drop_off_type: Integer,
-                        pickup_type: Integer
-                      }
-                    )
+                    override
+                      .returns(
+                        {
+                          arrival_time: Integer,
+                          departure_time: Integer,
+                          stop_id: String,
+                          drop_off_type: Integer,
+                          pickup_type: Integer
+                        }
+                      )
                   end
                   def to_hash
                   end

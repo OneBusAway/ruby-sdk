@@ -27,7 +27,8 @@ module OnebusawaySDK
           input: String,
           max_count: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+        )
+          .void
       end
       def initialize(input:, max_count: nil, request_options: {})
       end

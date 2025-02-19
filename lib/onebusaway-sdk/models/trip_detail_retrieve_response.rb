@@ -135,9 +135,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime>]
             required :stop_times,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime]
-                     },
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime] },
                      api_name: :stopTimes
 
             # @!attribute time_zone
@@ -386,9 +384,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation, nil]
             optional :last_known_location,
-                     -> {
-                       OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation
-                     },
+                     -> { OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation },
                      api_name: :lastKnownLocation
 
             # @!parse

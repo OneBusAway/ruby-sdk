@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::ShapeRetrieveResponse::Data).returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::ShapeRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,18 +46,20 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end

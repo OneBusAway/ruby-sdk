@@ -11,7 +11,8 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           time: Integer,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse)
+        )
+          .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse)
       end
       def retrieve(
         vehicle_id,

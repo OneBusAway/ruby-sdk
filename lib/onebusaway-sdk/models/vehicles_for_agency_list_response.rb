@@ -33,9 +33,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List>]
         required :list,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List]
-                 }
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List] }
 
         # @!attribute references
         #
@@ -76,10 +74,7 @@ module OnebusawaySDK
           # @!attribute location
           #
           #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location]
-          required :location,
-                   -> {
-                     OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location
-                   }
+          required :location, -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location }
 
           # @!attribute trip_id
           #
@@ -346,9 +341,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation, nil]
             optional :last_known_location,
-                     -> {
-                       OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation
-                     },
+                     -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation },
                      api_name: :lastKnownLocation
 
             # @!parse

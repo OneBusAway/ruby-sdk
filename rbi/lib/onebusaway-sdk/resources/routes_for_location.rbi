@@ -12,7 +12,8 @@ module OnebusawaySDK
           query: String,
           radius: Float,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::RoutesForLocationListResponse)
+        )
+          .returns(OnebusawaySDK::Models::RoutesForLocationListResponse)
       end
       def list(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
       end
