@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data).returns(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data)
+        params(_: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data)
+          .returns(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data)
       end
       def data=(_)
       end
@@ -35,7 +36,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List]).returns(T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List])
+          params(_: T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List])
+            .returns(T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List])
         end
         def list=(_)
         end
@@ -53,19 +55,21 @@ module OnebusawaySDK
             limit_exceeded: T::Boolean,
             list: T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(limit_exceeded:, list:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              limit_exceeded: T::Boolean,
-              list: T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                limit_exceeded: T::Boolean,
+                list: T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end

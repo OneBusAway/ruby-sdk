@@ -58,9 +58,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration>]
           required :configurations,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
-                   }
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration] }
 
           # @!parse
           #   # @param id [String]
@@ -88,9 +86,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip>]
             required :trips,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]
-                     }
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip] }
 
             # @!attribute [r] inactive_service_ids
             #
@@ -129,9 +125,7 @@ module OnebusawaySDK
               #
               #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime>]
               required :block_stop_times,
-                       -> {
-                         OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
-                       },
+                       -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime] },
                        api_name: :blockStopTimes
 
               # @!attribute distance_along_block
@@ -183,9 +177,7 @@ module OnebusawaySDK
                 #
                 #   @return [OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime]
                 required :stop_time,
-                         -> {
-                           OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-                         },
+                         -> { OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime },
                          api_name: :stopTime
 
                 # @!parse

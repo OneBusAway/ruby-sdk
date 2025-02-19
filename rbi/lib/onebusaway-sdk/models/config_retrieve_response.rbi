@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data).returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,18 +46,20 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -69,14 +73,13 @@ module OnebusawaySDK
           def id=(_)
           end
 
-          sig do
-            returns(T.nilable(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties))
-          end
+          sig { returns(T.nilable(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties)) }
           def git_properties
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties).returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties)
+            params(_: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties)
+              .returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties)
           end
           def git_properties=(_)
           end
@@ -112,7 +115,8 @@ module OnebusawaySDK
               name: String,
               service_date_from: String,
               service_date_to: String
-            ).void
+            )
+              .void
           end
           def initialize(
             id: nil,
@@ -124,15 +128,16 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
-                name: String,
-                service_date_from: String,
-                service_date_to: String
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+                  name: String,
+                  service_date_from: String,
+                  service_date_to: String
+                }
+              )
           end
           def to_hash
           end
@@ -320,7 +325,8 @@ module OnebusawaySDK
                 git_dirty: String,
                 git_remote_origin_url: String,
                 git_tags: String
-              ).void
+              )
+                .void
             end
             def initialize(
               git_branch: nil,
@@ -347,30 +353,31 @@ module OnebusawaySDK
             end
 
             sig do
-              override.returns(
-                {
-                  git_branch: String,
-                  git_build_host: String,
-                  git_build_time: String,
-                  git_build_user_email: String,
-                  git_build_user_name: String,
-                  git_build_version: String,
-                  git_closest_tag_commit_count: String,
-                  git_closest_tag_name: String,
-                  git_commit_id: String,
-                  git_commit_id_abbrev: String,
-                  git_commit_id_describe: String,
-                  git_commit_id_describe_short: String,
-                  git_commit_message_full: String,
-                  git_commit_message_short: String,
-                  git_commit_time: String,
-                  git_commit_user_email: String,
-                  git_commit_user_name: String,
-                  git_dirty: String,
-                  git_remote_origin_url: String,
-                  git_tags: String
-                }
-              )
+              override
+                .returns(
+                  {
+                    git_branch: String,
+                    git_build_host: String,
+                    git_build_time: String,
+                    git_build_user_email: String,
+                    git_build_user_name: String,
+                    git_build_version: String,
+                    git_closest_tag_commit_count: String,
+                    git_closest_tag_name: String,
+                    git_commit_id: String,
+                    git_commit_id_abbrev: String,
+                    git_commit_id_describe: String,
+                    git_commit_id_describe_short: String,
+                    git_commit_message_full: String,
+                    git_commit_message_short: String,
+                    git_commit_time: String,
+                    git_commit_user_email: String,
+                    git_commit_user_name: String,
+                    git_dirty: String,
+                    git_remote_origin_url: String,
+                    git_tags: String
+                  }
+                )
             end
             def to_hash
             end

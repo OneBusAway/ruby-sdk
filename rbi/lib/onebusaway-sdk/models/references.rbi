@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Agency]).returns(T::Array[OnebusawaySDK::Models::References::Agency])
+        params(_: T::Array[OnebusawaySDK::Models::References::Agency])
+          .returns(T::Array[OnebusawaySDK::Models::References::Agency])
       end
       def agencies=(_)
       end
@@ -18,7 +19,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Route]).returns(T::Array[OnebusawaySDK::Models::References::Route])
+        params(_: T::Array[OnebusawaySDK::Models::References::Route])
+          .returns(T::Array[OnebusawaySDK::Models::References::Route])
       end
       def routes=(_)
       end
@@ -28,7 +30,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Situation]).returns(T::Array[OnebusawaySDK::Models::References::Situation])
+        params(_: T::Array[OnebusawaySDK::Models::References::Situation])
+          .returns(T::Array[OnebusawaySDK::Models::References::Situation])
       end
       def situations=(_)
       end
@@ -38,7 +41,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Stop]).returns(T::Array[OnebusawaySDK::Models::References::Stop])
+        params(_: T::Array[OnebusawaySDK::Models::References::Stop])
+          .returns(T::Array[OnebusawaySDK::Models::References::Stop])
       end
       def stops=(_)
       end
@@ -48,7 +52,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::StopTime]).returns(T::Array[OnebusawaySDK::Models::References::StopTime])
+        params(_: T::Array[OnebusawaySDK::Models::References::StopTime])
+          .returns(T::Array[OnebusawaySDK::Models::References::StopTime])
       end
       def stop_times=(_)
       end
@@ -58,7 +63,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Trip]).returns(T::Array[OnebusawaySDK::Models::References::Trip])
+        params(_: T::Array[OnebusawaySDK::Models::References::Trip])
+          .returns(T::Array[OnebusawaySDK::Models::References::Trip])
       end
       def trips=(_)
       end
@@ -71,22 +77,24 @@ module OnebusawaySDK
           stops: T::Array[OnebusawaySDK::Models::References::Stop],
           stop_times: T::Array[OnebusawaySDK::Models::References::StopTime],
           trips: T::Array[OnebusawaySDK::Models::References::Trip]
-        ).void
+        )
+          .void
       end
       def initialize(agencies:, routes:, situations:, stops:, stop_times:, trips:)
       end
 
       sig do
-        override.returns(
-          {
-            agencies: T::Array[OnebusawaySDK::Models::References::Agency],
-            routes: T::Array[OnebusawaySDK::Models::References::Route],
-            situations: T::Array[OnebusawaySDK::Models::References::Situation],
-            stops: T::Array[OnebusawaySDK::Models::References::Stop],
-            stop_times: T::Array[OnebusawaySDK::Models::References::StopTime],
-            trips: T::Array[OnebusawaySDK::Models::References::Trip]
-          }
-        )
+        override
+          .returns(
+            {
+              agencies: T::Array[OnebusawaySDK::Models::References::Agency],
+              routes: T::Array[OnebusawaySDK::Models::References::Route],
+              situations: T::Array[OnebusawaySDK::Models::References::Situation],
+              stops: T::Array[OnebusawaySDK::Models::References::Stop],
+              stop_times: T::Array[OnebusawaySDK::Models::References::StopTime],
+              trips: T::Array[OnebusawaySDK::Models::References::Trip]
+            }
+          )
       end
       def to_hash
       end
@@ -184,7 +192,8 @@ module OnebusawaySDK
             lang: String,
             phone: String,
             private_service: T::Boolean
-          ).void
+          )
+            .void
         end
         def initialize(
           id:,
@@ -201,20 +210,21 @@ module OnebusawaySDK
         end
 
         sig do
-          override.returns(
-            {
-              id: String,
-              name: String,
-              timezone: String,
-              url: String,
-              disclaimer: String,
-              email: String,
-              fare_url: String,
-              lang: String,
-              phone: String,
-              private_service: T::Boolean
-            }
-          )
+          override
+            .returns(
+              {
+                id: String,
+                name: String,
+                timezone: String,
+                url: String,
+                disclaimer: String,
+                email: String,
+                fare_url: String,
+                lang: String,
+                phone: String,
+                private_service: T::Boolean
+              }
+            )
         end
         def to_hash
         end
@@ -313,7 +323,8 @@ module OnebusawaySDK
             short_name: String,
             text_color: String,
             url: String
-          ).void
+          )
+            .void
         end
         def initialize(
           id:,
@@ -330,20 +341,21 @@ module OnebusawaySDK
         end
 
         sig do
-          override.returns(
-            {
-              id: String,
-              agency_id: String,
-              type: Integer,
-              color: String,
-              description: String,
-              long_name: String,
-              null_safe_short_name: String,
-              short_name: String,
-              text_color: String,
-              url: String
-            }
-          )
+          override
+            .returns(
+              {
+                id: String,
+                agency_id: String,
+                type: Integer,
+                color: String,
+                description: String,
+                long_name: String,
+                null_safe_short_name: String,
+                short_name: String,
+                text_color: String,
+                url: String
+              }
+            )
         end
         def to_hash
         end
@@ -371,7 +383,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow]).returns(T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow])
+          params(_: T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow])
+            .returns(T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow])
         end
         def active_windows=(_)
         end
@@ -381,7 +394,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect]).returns(T::Array[OnebusawaySDK::Models::References::Situation::AllAffect])
+          params(_: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect])
+            .returns(T::Array[OnebusawaySDK::Models::References::Situation::AllAffect])
         end
         def all_affects=(_)
         end
@@ -399,7 +413,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::Consequence]).returns(T::Array[OnebusawaySDK::Models::References::Situation::Consequence])
+          params(_: T::Array[OnebusawaySDK::Models::References::Situation::Consequence])
+            .returns(T::Array[OnebusawaySDK::Models::References::Situation::Consequence])
         end
         def consequences=(_)
         end
@@ -409,7 +424,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::References::Situation::Description).returns(OnebusawaySDK::Models::References::Situation::Description)
+          params(_: OnebusawaySDK::Models::References::Situation::Description)
+            .returns(OnebusawaySDK::Models::References::Situation::Description)
         end
         def description=(_)
         end
@@ -419,7 +435,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow]).returns(T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])
+          params(_: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])
+            .returns(T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])
         end
         def publication_windows=(_)
         end
@@ -445,7 +462,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::References::Situation::Summary).returns(OnebusawaySDK::Models::References::Situation::Summary)
+          params(_: OnebusawaySDK::Models::References::Situation::Summary)
+            .returns(OnebusawaySDK::Models::References::Situation::Summary)
         end
         def summary=(_)
         end
@@ -455,7 +473,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::References::Situation::URL).returns(OnebusawaySDK::Models::References::Situation::URL)
+          params(_: OnebusawaySDK::Models::References::Situation::URL)
+            .returns(OnebusawaySDK::Models::References::Situation::URL)
         end
         def url=(_)
         end
@@ -474,7 +493,8 @@ module OnebusawaySDK
             severity: String,
             summary: OnebusawaySDK::Models::References::Situation::Summary,
             url: OnebusawaySDK::Models::References::Situation::URL
-          ).void
+          )
+            .void
         end
         def initialize(
           id:,
@@ -493,22 +513,23 @@ module OnebusawaySDK
         end
 
         sig do
-          override.returns(
-            {
-              id: String,
-              creation_time: Integer,
-              active_windows: T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
-              all_affects: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
-              consequence_message: String,
-              consequences: T::Array[OnebusawaySDK::Models::References::Situation::Consequence],
-              description: OnebusawaySDK::Models::References::Situation::Description,
-              publication_windows: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-              reason: Symbol,
-              severity: String,
-              summary: OnebusawaySDK::Models::References::Situation::Summary,
-              url: OnebusawaySDK::Models::References::Situation::URL
-            }
-          )
+          override
+            .returns(
+              {
+                id: String,
+                creation_time: Integer,
+                active_windows: T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
+                all_affects: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
+                consequence_message: String,
+                consequences: T::Array[OnebusawaySDK::Models::References::Situation::Consequence],
+                description: OnebusawaySDK::Models::References::Situation::Description,
+                publication_windows: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
+                reason: Symbol,
+                severity: String,
+                summary: OnebusawaySDK::Models::References::Situation::Summary,
+                url: OnebusawaySDK::Models::References::Situation::URL
+              }
+            )
         end
         def to_hash
         end
@@ -596,7 +617,8 @@ module OnebusawaySDK
               route_id: String,
               stop_id: String,
               trip_id: String
-            ).void
+            )
+              .void
           end
           def initialize(
             agency_id: nil,
@@ -609,16 +631,17 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                agency_id: String,
-                application_id: String,
-                direction_id: String,
-                route_id: String,
-                stop_id: String,
-                trip_id: String
-              }
-            )
+            override
+              .returns(
+                {
+                  agency_id: String,
+                  application_id: String,
+                  direction_id: String,
+                  route_id: String,
+                  stop_id: String,
+                  trip_id: String
+                }
+              )
           end
           def to_hash
           end
@@ -633,14 +656,13 @@ module OnebusawaySDK
           def condition=(_)
           end
 
-          sig do
-            returns(T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails))
-          end
+          sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)) }
           def condition_details
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails).returns(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)
+            params(_: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)
+              .returns(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)
           end
           def condition_details=(_)
           end
@@ -649,31 +671,36 @@ module OnebusawaySDK
             params(
               condition: String,
               condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
-            ).void
+            )
+              .void
           end
           def initialize(condition: nil, condition_details: nil)
           end
 
           sig do
-            override.returns(
-              {
-                condition: String,
-                condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
-              }
-            )
+            override
+              .returns(
+                {
+                  condition: String,
+                  condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
+                }
+              )
           end
           def to_hash
           end
 
           class ConditionDetails < OnebusawaySDK::BaseModel
             sig do
-              returns(T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath))
+              returns(
+                T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
+              )
             end
             def diversion_path
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath).returns(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
+              params(_: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
+                .returns(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
             end
             def diversion_path=(_)
             end
@@ -690,17 +717,20 @@ module OnebusawaySDK
               params(
                 diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
                 diversion_stop_ids: T::Array[String]
-              ).void
+              )
+                .void
             end
             def initialize(diversion_path: nil, diversion_stop_ids: nil)
             end
 
             sig do
-              override.returns(
-                {
-                  diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath, diversion_stop_ids: T::Array[String]
-                }
-              )
+              override
+                .returns(
+                  {
+                    diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                    diversion_stop_ids: T::Array[String]
+                  }
+                )
             end
             def to_hash
             end
@@ -962,7 +992,8 @@ module OnebusawaySDK
             direction: String,
             location_type: Integer,
             wheelchair_boarding: String
-          ).void
+          )
+            .void
         end
         def initialize(
           id:,
@@ -980,21 +1011,22 @@ module OnebusawaySDK
         end
 
         sig do
-          override.returns(
-            {
-              id: String,
-              lat: Float,
-              lon: Float,
-              name: String,
-              parent: String,
-              route_ids: T::Array[String],
-              static_route_ids: T::Array[String],
-              code: String,
-              direction: String,
-              location_type: Integer,
-              wheelchair_boarding: String
-            }
-          )
+          override
+            .returns(
+              {
+                id: String,
+                lat: Float,
+                lon: Float,
+                name: String,
+                parent: String,
+                route_ids: T::Array[String],
+                static_route_ids: T::Array[String],
+                code: String,
+                direction: String,
+                location_type: Integer,
+                wheelchair_boarding: String
+              }
+            )
         end
         def to_hash
         end
@@ -1057,7 +1089,8 @@ module OnebusawaySDK
             historical_occupancy: String,
             stop_headsign: String,
             stop_id: String
-          ).void
+          )
+            .void
         end
         def initialize(
           arrival_time: nil,
@@ -1070,16 +1103,17 @@ module OnebusawaySDK
         end
 
         sig do
-          override.returns(
-            {
-              arrival_time: Integer,
-              departure_time: Integer,
-              distance_along_trip: Float,
-              historical_occupancy: String,
-              stop_headsign: String,
-              stop_id: String
-            }
-          )
+          override
+            .returns(
+              {
+                arrival_time: Integer,
+                departure_time: Integer,
+                distance_along_trip: Float,
+                historical_occupancy: String,
+                stop_headsign: String,
+                stop_id: String
+              }
+            )
         end
         def to_hash
         end
@@ -1187,7 +1221,8 @@ module OnebusawaySDK
             time_zone: String,
             trip_headsign: String,
             trip_short_name: String
-          ).void
+          )
+            .void
         end
         def initialize(
           id:,
@@ -1205,21 +1240,22 @@ module OnebusawaySDK
         end
 
         sig do
-          override.returns(
-            {
-              id: String,
-              route_id: String,
-              service_id: String,
-              block_id: String,
-              direction_id: String,
-              peak_offpeak: Integer,
-              route_short_name: String,
-              shape_id: String,
-              time_zone: String,
-              trip_headsign: String,
-              trip_short_name: String
-            }
-          )
+          override
+            .returns(
+              {
+                id: String,
+                route_id: String,
+                service_id: String,
+                block_id: String,
+                direction_id: String,
+                peak_offpeak: Integer,
+                route_short_name: String,
+                shape_id: String,
+                time_zone: String,
+                trip_headsign: String,
+                trip_short_name: String
+              }
+            )
         end
         def to_hash
         end

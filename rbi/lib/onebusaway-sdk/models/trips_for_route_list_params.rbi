@@ -36,20 +36,22 @@ module OnebusawaySDK
           include_status: T::Boolean,
           time: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+        )
+          .void
       end
       def initialize(include_schedule: nil, include_status: nil, time: nil, request_options: {})
       end
 
       sig do
-        override.returns(
-          {
-            include_schedule: T::Boolean,
-            include_status: T::Boolean,
-            time: Integer,
-            request_options: OnebusawaySDK::RequestOptions
-          }
-        )
+        override
+          .returns(
+            {
+              include_schedule: T::Boolean,
+              include_status: T::Boolean,
+              time: Integer,
+              request_options: OnebusawaySDK::RequestOptions
+            }
+          )
       end
       def to_hash
       end

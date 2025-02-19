@@ -7,7 +7,8 @@ module OnebusawaySDK
         params(
           route_id: String,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::RouteRetrieveResponse)
+        )
+          .returns(OnebusawaySDK::Models::RouteRetrieveResponse)
       end
       def retrieve(route_id, request_options: {})
       end

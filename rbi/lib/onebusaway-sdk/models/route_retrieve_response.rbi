@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::RouteRetrieveResponse::Data).returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::RouteRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,18 +46,20 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -153,7 +157,8 @@ module OnebusawaySDK
               short_name: String,
               text_color: String,
               url: String
-            ).void
+            )
+              .void
           end
           def initialize(
             id:,
@@ -170,20 +175,21 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                agency_id: String,
-                type: Integer,
-                color: String,
-                description: String,
-                long_name: String,
-                null_safe_short_name: String,
-                short_name: String,
-                text_color: String,
-                url: String
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  agency_id: String,
+                  type: Integer,
+                  color: String,
+                  description: String,
+                  long_name: String,
+                  null_safe_short_name: String,
+                  short_name: String,
+                  text_color: String,
+                  url: String
+                }
+              )
           end
           def to_hash
           end

@@ -64,9 +64,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule>]
           required :stop_route_schedules,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
-                   },
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule] },
                    api_name: :stopRouteSchedules
 
           # @!parse
@@ -82,7 +80,11 @@ module OnebusawaySDK
           # ```ruby
           # stop_route_schedule => {
           #   route_id: String,
-          #   stop_route_direction_schedules: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule] === _1 }
+          #   stop_route_direction_schedules: -> do
+          #     OnebusawaySDK::ArrayOf[
+          #     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
+          #     ] === _1
+          #   end
           # }
           # ```
           class StopRouteSchedule < OnebusawaySDK::BaseModel
@@ -95,9 +97,11 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule>]
             required :stop_route_direction_schedules,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
-                     },
+                     -> do
+                       OnebusawaySDK::ArrayOf[
+                       OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
+                       ]
+                     end,
                      api_name: :stopRouteDirectionSchedules
 
             # @!parse
@@ -111,9 +115,17 @@ module OnebusawaySDK
             # @example
             # ```ruby
             # stop_route_direction_schedule => {
-            #   schedule_stop_times: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime] === _1 },
+            #   schedule_stop_times: -> do
+            #     OnebusawaySDK::ArrayOf[
+            #     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
+            #     ] === _1
+            #   end,
             #   trip_headsign: String,
-            #   schedule_frequencies: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency] === _1 }
+            #   schedule_frequencies: -> do
+            #     OnebusawaySDK::ArrayOf[
+            #     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
+            #     ] === _1
+            #   end
             # }
             # ```
             class StopRouteDirectionSchedule < OnebusawaySDK::BaseModel
@@ -121,9 +133,11 @@ module OnebusawaySDK
               #
               #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime>]
               required :schedule_stop_times,
-                       -> {
-                         OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime]
-                       },
+                       -> do
+                         OnebusawaySDK::ArrayOf[
+                         OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
+                         ]
+                       end,
                        api_name: :scheduleStopTimes
 
               # @!attribute trip_headsign
@@ -135,9 +149,11 @@ module OnebusawaySDK
               #
               #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency>, nil]
               optional :schedule_frequencies,
-                       -> {
-                         OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
-                       },
+                       -> do
+                         OnebusawaySDK::ArrayOf[
+                         OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
+                         ]
+                       end,
                        api_name: :scheduleFrequencies
 
               # @!parse

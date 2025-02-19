@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data).returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data)
+        params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data)
+          .returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry).returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,31 +46,32 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
 
         class Entry < OnebusawaySDK::BaseModel
-          sig do
-            returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]))
-          end
+          sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])) }
           def polylines
           end
 
           sig do
-            params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]).returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])
+            params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])
+              .returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])
           end
           def polylines=(_)
           end
@@ -81,14 +84,13 @@ module OnebusawaySDK
           def route_id=(_)
           end
 
-          sig do
-            returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]))
-          end
+          sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping])) }
           def stop_groupings
           end
 
           sig do
-            params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]).returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping])
+            params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping])
+              .returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping])
           end
           def stop_groupings=(_)
           end
@@ -107,17 +109,22 @@ module OnebusawaySDK
               route_id: String,
               stop_groupings: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
               stop_ids: T::Array[String]
-            ).void
+            )
+              .void
           end
           def initialize(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil)
           end
 
           sig do
-            override.returns(
-              {
-                polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline], route_id: String, stop_groupings: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping], stop_ids: T::Array[String]
-              }
-            )
+            override
+              .returns(
+                {
+                  polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+                  route_id: String,
+                  stop_groupings: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+                  stop_ids: T::Array[String]
+                }
+              )
           end
           def to_hash
           end
@@ -165,26 +172,28 @@ module OnebusawaySDK
             def id=(_)
             end
 
-            sig do
-              returns(T.nilable(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name))
-            end
+            sig { returns(T.nilable(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name)) }
             def name
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name).returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name)
+              params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name)
+                .returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name)
             end
             def name=(_)
             end
 
             sig do
-              returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]))
+              returns(
+                T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline])
+              )
             end
             def polylines
             end
 
             sig do
-              params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]).returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline])
+              params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline])
+                .returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline])
             end
             def polylines=(_)
             end
@@ -203,20 +212,22 @@ module OnebusawaySDK
                 name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
                 polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
                 stop_ids: T::Array[String]
-              ).void
+              )
+                .void
             end
             def initialize(id: nil, name: nil, polylines: nil, stop_ids: nil)
             end
 
             sig do
-              override.returns(
-                {
-                  id: String,
-                  name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
-                  polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
-                  stop_ids: T::Array[String]
-                }
-              )
+              override
+                .returns(
+                  {
+                    id: String,
+                    name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                    polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+                    stop_ids: T::Array[String]
+                  }
+                )
             end
             def to_hash
             end

@@ -8,7 +8,8 @@ module OnebusawaySDK
           input: String,
           max_count: Integer,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::SearchForStopListResponse)
+        )
+          .returns(OnebusawaySDK::Models::SearchForStopListResponse)
       end
       def list(input:, max_count: nil, request_options: {})
       end

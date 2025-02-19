@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::StopsForLocationListResponse::Data).returns(OnebusawaySDK::Models::StopsForLocationListResponse::Data)
+        params(_: OnebusawaySDK::Models::StopsForLocationListResponse::Data)
+          .returns(OnebusawaySDK::Models::StopsForLocationListResponse::Data)
       end
       def data=(_)
       end
@@ -35,7 +36,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List]).returns(T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List])
+          params(_: T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List])
+            .returns(T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List])
         end
         def list=(_)
         end
@@ -62,20 +64,22 @@ module OnebusawaySDK
             list: T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
             references: OnebusawaySDK::Models::References,
             out_of_range: T::Boolean
-          ).void
+          )
+            .void
         end
         def initialize(limit_exceeded:, list:, references:, out_of_range: nil)
         end
 
         sig do
-          override.returns(
-            {
-              limit_exceeded: T::Boolean,
-              list: T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
-              references: OnebusawaySDK::Models::References,
-              out_of_range: T::Boolean
-            }
-          )
+          override
+            .returns(
+              {
+                limit_exceeded: T::Boolean,
+                list: T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
+                references: OnebusawaySDK::Models::References,
+                out_of_range: T::Boolean
+              }
+            )
         end
         def to_hash
         end
@@ -182,7 +186,8 @@ module OnebusawaySDK
               direction: String,
               location_type: Integer,
               wheelchair_boarding: String
-            ).void
+            )
+              .void
           end
           def initialize(
             id:,
@@ -200,21 +205,22 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                lat: Float,
-                lon: Float,
-                name: String,
-                parent: String,
-                route_ids: T::Array[String],
-                static_route_ids: T::Array[String],
-                code: String,
-                direction: String,
-                location_type: Integer,
-                wheelchair_boarding: String
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  lat: Float,
+                  lon: Float,
+                  name: String,
+                  parent: String,
+                  route_ids: T::Array[String],
+                  static_route_ids: T::Array[String],
+                  code: String,
+                  direction: String,
+                  location_type: Integer,
+                  wheelchair_boarding: String
+                }
+              )
           end
           def to_hash
           end

@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data).returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data)
+        params(_: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data)
+          .returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data)
       end
       def data=(_)
       end
@@ -47,23 +48,17 @@ module OnebusawaySDK
         end
 
         sig do
-          params(
-            limit_exceeded: T::Boolean,
-            list: T::Array[String],
-            references: OnebusawaySDK::Models::References
-          ).void
+          params(limit_exceeded: T::Boolean, list: T::Array[String], references: OnebusawaySDK::Models::References)
+            .void
         end
         def initialize(limit_exceeded:, list:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              limit_exceeded: T::Boolean,
-              list: T::Array[String],
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {limit_exceeded: T::Boolean, list: T::Array[String], references: OnebusawaySDK::Models::References}
+            )
         end
         def to_hash
         end

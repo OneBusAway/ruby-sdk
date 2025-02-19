@@ -10,7 +10,8 @@ module OnebusawaySDK
           include_status: T::Boolean,
           time: Integer,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::TripsForRouteListResponse)
+        )
+          .returns(OnebusawaySDK::Models::TripsForRouteListResponse)
       end
       def list(route_id, include_schedule: nil, include_status: nil, time: nil, request_options: {})
       end

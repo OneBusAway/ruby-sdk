@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::RoutesForAgencyListResponse::Data).returns(OnebusawaySDK::Models::RoutesForAgencyListResponse::Data)
+        params(_: OnebusawaySDK::Models::RoutesForAgencyListResponse::Data)
+          .returns(OnebusawaySDK::Models::RoutesForAgencyListResponse::Data)
       end
       def data=(_)
       end
@@ -35,7 +36,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List]).returns(T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List])
+          params(_: T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List])
+            .returns(T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List])
         end
         def list=(_)
         end
@@ -53,19 +55,21 @@ module OnebusawaySDK
             limit_exceeded: T::Boolean,
             list: T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List],
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(limit_exceeded:, list:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              limit_exceeded: T::Boolean,
-              list: T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List],
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                limit_exceeded: T::Boolean,
+                list: T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List],
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -163,7 +167,8 @@ module OnebusawaySDK
               short_name: String,
               text_color: String,
               url: String
-            ).void
+            )
+              .void
           end
           def initialize(
             id:,
@@ -180,20 +185,21 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                agency_id: String,
-                type: Integer,
-                color: String,
-                description: String,
-                long_name: String,
-                null_safe_short_name: String,
-                short_name: String,
-                text_color: String,
-                url: String
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  agency_id: String,
+                  type: Integer,
+                  color: String,
+                  description: String,
+                  long_name: String,
+                  null_safe_short_name: String,
+                  short_name: String,
+                  text_color: String,
+                  url: String
+                }
+              )
           end
           def to_hash
           end

@@ -34,9 +34,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::RoutesForLocationListResponse::Data::List>]
         required :list,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::RoutesForLocationListResponse::Data::List]
-                 }
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::RoutesForLocationListResponse::Data::List] }
 
         # @!attribute out_of_range
         #

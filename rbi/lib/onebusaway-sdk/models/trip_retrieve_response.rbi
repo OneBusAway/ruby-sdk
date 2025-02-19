@@ -8,7 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::TripRetrieveResponse::Data).returns(OnebusawaySDK::Models::TripRetrieveResponse::Data)
+        params(_: OnebusawaySDK::Models::TripRetrieveResponse::Data)
+          .returns(OnebusawaySDK::Models::TripRetrieveResponse::Data)
       end
       def data=(_)
       end
@@ -27,7 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry).returns(OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry)
+          params(_: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry)
+            .returns(OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry)
         end
         def entry=(_)
         end
@@ -44,18 +46,20 @@ module OnebusawaySDK
           params(
             entry: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
-          ).void
+          )
+            .void
         end
         def initialize(entry:, references:)
         end
 
         sig do
-          override.returns(
-            {
-              entry: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry,
-              references: OnebusawaySDK::Models::References
-            }
-          )
+          override
+            .returns(
+              {
+                entry: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry,
+                references: OnebusawaySDK::Models::References
+              }
+            )
         end
         def to_hash
         end
@@ -162,7 +166,8 @@ module OnebusawaySDK
               time_zone: String,
               trip_headsign: String,
               trip_short_name: String
-            ).void
+            )
+              .void
           end
           def initialize(
             id:,
@@ -180,21 +185,22 @@ module OnebusawaySDK
           end
 
           sig do
-            override.returns(
-              {
-                id: String,
-                route_id: String,
-                service_id: String,
-                block_id: String,
-                direction_id: String,
-                peak_offpeak: Integer,
-                route_short_name: String,
-                shape_id: String,
-                time_zone: String,
-                trip_headsign: String,
-                trip_short_name: String
-              }
-            )
+            override
+              .returns(
+                {
+                  id: String,
+                  route_id: String,
+                  service_id: String,
+                  block_id: String,
+                  direction_id: String,
+                  peak_offpeak: Integer,
+                  route_short_name: String,
+                  shape_id: String,
+                  time_zone: String,
+                  trip_headsign: String,
+                  trip_short_name: String
+                }
+              )
           end
           def to_hash
           end

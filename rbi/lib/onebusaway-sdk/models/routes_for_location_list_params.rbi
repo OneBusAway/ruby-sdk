@@ -63,23 +63,25 @@ module OnebusawaySDK
           query: String,
           radius: Float,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+        )
+          .void
       end
       def initialize(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
       end
 
       sig do
-        override.returns(
-          {
-            lat: Float,
-            lon: Float,
-            lat_span: Float,
-            lon_span: Float,
-            query: String,
-            radius: Float,
-            request_options: OnebusawaySDK::RequestOptions
-          }
-        )
+        override
+          .returns(
+            {
+              lat: Float,
+              lon: Float,
+              lat_span: Float,
+              lon_span: Float,
+              query: String,
+              radius: Float,
+              request_options: OnebusawaySDK::RequestOptions
+            }
+          )
       end
       def to_hash
       end

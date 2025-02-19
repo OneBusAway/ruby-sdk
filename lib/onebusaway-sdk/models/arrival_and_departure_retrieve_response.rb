@@ -553,9 +553,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation, nil]
             optional :last_known_location,
-                     -> {
-                       OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation
-                     },
+                     -> { OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation },
                      api_name: :lastKnownLocation
 
             # @!parse

@@ -374,9 +374,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>, nil]
         optional :publication_windows,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::PublicationWindow]
-                 },
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::PublicationWindow] },
                  api_name: :publicationWindows
 
         # @!parse
@@ -625,9 +623,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath, nil]
             optional :diversion_path,
-                     -> {
-                       OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath
-                     },
+                     -> { OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath },
                      api_name: :diversionPath
 
             # @!parse
