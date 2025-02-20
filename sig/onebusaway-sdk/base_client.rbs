@@ -1,6 +1,6 @@
 module OnebusawaySDK
   class BaseClient
-    type request =
+    type request_components =
       {
         method: Symbol,
         path: String | ::Array[String],
@@ -10,12 +10,10 @@ module OnebusawaySDK
         unwrap: Symbol?,
         page: Class?,
         model: OnebusawaySDK::Converter::input?,
-        options: (OnebusawaySDK::RequestOptions
-        | OnebusawaySDK::request_options
-        | ::Hash[Symbol, top])?
+        options: OnebusawaySDK::request_opts?
       }
 
-    type normalized_request =
+    type request_input =
       {
         method: Symbol,
         url: URI::Generic,
@@ -27,7 +25,9 @@ module OnebusawaySDK
 
     MAX_REDIRECTS: 20
 
-    def self.validate!: (OnebusawaySDK::BaseClient::request req) -> void
+    def self.validate!: (
+      OnebusawaySDK::BaseClient::request_components req
+    ) -> void
 
     # @private
     attr_accessor requester: top
@@ -47,9 +47,9 @@ module OnebusawaySDK
     private def generate_idempotency_key: -> String
 
     private def build_request: (
-      OnebusawaySDK::BaseClient::request req,
+      OnebusawaySDK::BaseClient::request_components req,
       OnebusawaySDK::request_options opts
-    ) -> OnebusawaySDK::BaseClient::normalized_request
+    ) -> OnebusawaySDK::BaseClient::request_input
 
     private def should_retry?: (
       Integer status,
@@ -62,20 +62,20 @@ module OnebusawaySDK
     ) -> Float
 
     private def follow_redirect: (
-      OnebusawaySDK::BaseClient::normalized_request request,
+      OnebusawaySDK::BaseClient::request_input request,
       status: Integer,
       location_header: String
-    ) -> OnebusawaySDK::BaseClient::normalized_request
+    ) -> OnebusawaySDK::BaseClient::request_input
 
     private def send_request: (
-      OnebusawaySDK::BaseClient::normalized_request request,
+      OnebusawaySDK::BaseClient::request_input request,
       redirect_count: Integer,
       retry_count: Integer,
       send_retry_header: bool
     ) -> top
 
     private def parse_response: (
-      OnebusawaySDK::BaseClient::request req,
+      OnebusawaySDK::BaseClient::request_components req,
       nil response
     ) -> top
 
@@ -89,11 +89,9 @@ module OnebusawaySDK
         unwrap: Symbol?,
         page: Class?,
         model: OnebusawaySDK::Converter::input?,
-        options: (OnebusawaySDK::RequestOptions
-        | OnebusawaySDK::request_options
-        | ::Hash[Symbol, top])?
+        options: OnebusawaySDK::request_opts?
       ) -> top
-      | (OnebusawaySDK::BaseClient::request req) -> top
+      | (OnebusawaySDK::BaseClient::request_components req) -> top
 
     def inspect: -> String
   end
