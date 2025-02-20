@@ -27,7 +27,7 @@ module OnebusawaySDK
     sig do
       params(
         client: OnebusawaySDK::BaseClient,
-        req: OnebusawaySDK::BaseClient::RequestShape,
+        req: OnebusawaySDK::BaseClient::RequestComponentsShape,
         headers: T::Hash[String, String],
         unwrapped: T.anything
       )
