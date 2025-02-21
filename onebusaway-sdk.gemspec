@@ -15,5 +15,5 @@ Gem::Specification.new do |s|
   s.homepage = "https://gemdocs.org/gems/onebusaway-sdk/latest"
   s.metadata["homepage_uri"] = s.homepage
   s.metadata["source_code_uri"] = "https://github.com/OneBusAway/ruby-sdk"
-  s.metadata["rubygems_mfa_required"] = "true"
+  s.metadata["rubygems_mfa_required"] = "false"
 end
