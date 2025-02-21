@@ -2,16 +2,6 @@
 
 module OnebusawaySDK
   module Models
-    # @example
-    # ```ruby
-    # references => {
-    #   agencies: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Agency] === _1 },
-    #   routes: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Route] === _1 },
-    #   situations: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation] === _1 },
-    #   stops: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Stop] === _1 },
-    #   stop_times: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::StopTime] === _1 }
-    # }
-    # ```
     class References < OnebusawaySDK::BaseModel
       # @!attribute agencies
       #
@@ -57,17 +47,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # agency => {
-      #   id: String,
-      #   name: String,
-      #   timezone: String,
-      #   url: String,
-      #   disclaimer: String,
-      #   **_
-      # }
-      # ```
       class Agency < OnebusawaySDK::BaseModel
         # @!attribute id
         #
@@ -174,17 +153,6 @@ module OnebusawaySDK
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
       end
 
-      # @example
-      # ```ruby
-      # route => {
-      #   id: String,
-      #   agency_id: String,
-      #   type: Integer,
-      #   color: String,
-      #   description: String,
-      #   **_
-      # }
-      # ```
       class Route < OnebusawaySDK::BaseModel
         # @!attribute id
         #
@@ -295,17 +263,6 @@ module OnebusawaySDK
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
       end
 
-      # @example
-      # ```ruby
-      # situation => {
-      #   id: String,
-      #   creation_time: Integer,
-      #   active_windows: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::ActiveWindow] === _1 },
-      #   all_affects: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::AllAffect] === _1 },
-      #   consequence_message: String,
-      #   **_
-      # }
-      # ```
       class Situation < OnebusawaySDK::BaseModel
         # @!attribute id
         #   Unique identifier for the situation.
@@ -453,13 +410,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # active_window => {
-        #   from: Integer,
-        #   to: Integer
-        # }
-        # ```
         class ActiveWindow < OnebusawaySDK::BaseModel
           # @!attribute [r] from
           #   Start time of the active window as a Unix timestamp.
@@ -490,16 +440,6 @@ module OnebusawaySDK
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
         end
 
-        # @example
-        # ```ruby
-        # all_affect => {
-        #   agency_id: String,
-        #   application_id: String,
-        #   direction_id: String,
-        #   route_id: String,
-        #   stop_id: String
-        # }
-        # ```
         class AllAffect < OnebusawaySDK::BaseModel
           # @!attribute [r] agency_id
           #   Identifier for the agency.
@@ -574,13 +514,6 @@ module OnebusawaySDK
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
         end
 
-        # @example
-        # ```ruby
-        # consequence => {
-        #   condition: String,
-        #   condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
-        # }
-        # ```
         class Consequence < OnebusawaySDK::BaseModel
           # @!attribute [r] condition
           #   Condition of the consequence.
@@ -611,13 +544,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # condition_details => {
-          #   diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-          #   diversion_stop_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 }
-          # }
-          # ```
           class ConditionDetails < OnebusawaySDK::BaseModel
             # @!attribute [r] diversion_path
             #
@@ -647,14 +573,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # diversion_path => {
-            #   length: Integer,
-            #   levels: String,
-            #   points: String
-            # }
-            # ```
             class DiversionPath < OnebusawaySDK::BaseModel
               # @!attribute [r] length
               #   Length of the diversion path.
@@ -698,13 +616,6 @@ module OnebusawaySDK
           end
         end
 
-        # @example
-        # ```ruby
-        # description => {
-        #   lang: String,
-        #   value: String
-        # }
-        # ```
         class Description < OnebusawaySDK::BaseModel
           # @!attribute [r] lang
           #   Language of the description.
@@ -735,13 +646,6 @@ module OnebusawaySDK
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
         end
 
-        # @example
-        # ```ruby
-        # publication_window => {
-        #   from: Integer,
-        #   to: Integer
-        # }
-        # ```
         class PublicationWindow < OnebusawaySDK::BaseModel
           # @!attribute from
           #   Start time of the time window as a Unix timestamp.
@@ -798,13 +702,6 @@ module OnebusawaySDK
           #   def self.values; end
         end
 
-        # @example
-        # ```ruby
-        # summary => {
-        #   lang: String,
-        #   value: String
-        # }
-        # ```
         class Summary < OnebusawaySDK::BaseModel
           # @!attribute [r] lang
           #   Language of the summary.
@@ -835,13 +732,6 @@ module OnebusawaySDK
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
         end
 
-        # @example
-        # ```ruby
-        # url => {
-        #   lang: String,
-        #   value: String
-        # }
-        # ```
         class URL < OnebusawaySDK::BaseModel
           # @!attribute [r] lang
           #   Language of the URL.
@@ -873,17 +763,6 @@ module OnebusawaySDK
         end
       end
 
-      # @example
-      # ```ruby
-      # stop => {
-      #   id: String,
-      #   lat: Float,
-      #   lon: Float,
-      #   name: String,
-      #   parent: String,
-      #   **_
-      # }
-      # ```
       class Stop < OnebusawaySDK::BaseModel
         # @!attribute id
         #
@@ -989,16 +868,6 @@ module OnebusawaySDK
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
       end
 
-      # @example
-      # ```ruby
-      # stop_time => {
-      #   arrival_time: Integer,
-      #   departure_time: Integer,
-      #   distance_along_trip: Float,
-      #   historical_occupancy: String,
-      #   stop_headsign: String
-      # }
-      # ```
       class StopTime < OnebusawaySDK::BaseModel
         # @!attribute [r] arrival_time
         #
@@ -1077,17 +946,6 @@ module OnebusawaySDK
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
       end
 
-      # @example
-      # ```ruby
-      # trip => {
-      #   id: String,
-      #   route_id: String,
-      #   service_id: String,
-      #   block_id: String,
-      #   direction_id: String,
-      #   **_
-      # }
-      # ```
       class Trip < OnebusawaySDK::BaseModel
         # @!attribute id
         #
