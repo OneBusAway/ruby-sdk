@@ -19,15 +19,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   limit_exceeded: OnebusawaySDK::BooleanModel,
-      #   list: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::SearchForRouteListResponse::Data::List] === _1 },
-      #   out_of_range: OnebusawaySDK::BooleanModel,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute limit_exceeded
         #
@@ -60,17 +51,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # list => {
-        #   id: String,
-        #   agency_id: String,
-        #   type: Integer,
-        #   color: String,
-        #   description: String,
-        #   **_
-        # }
-        # ```
         class List < OnebusawaySDK::BaseModel
           # @!attribute id
           #

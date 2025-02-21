@@ -2,15 +2,6 @@
 
 module OnebusawaySDK
   module Models
-    # @example
-    # ```ruby
-    # response_wrapper => {
-    #   code: Integer,
-    #   current_time: Integer,
-    #   text: String,
-    #   version: Integer
-    # }
-    # ```
     class ResponseWrapper < OnebusawaySDK::BaseModel
       # @!attribute code
       #

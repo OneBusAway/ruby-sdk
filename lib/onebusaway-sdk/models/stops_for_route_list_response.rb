@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,15 +34,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   polylines: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline] === _1 },
-        #   route_id: String,
-        #   stop_groupings: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping] === _1 },
-        #   stop_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 }
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute [r] polylines
           #
@@ -100,14 +84,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # polyline => {
-          #   length: Integer,
-          #   levels: String,
-          #   points: String
-          # }
-          # ```
           class Polyline < OnebusawaySDK::BaseModel
             # @!attribute [r] length
             #
@@ -146,15 +122,6 @@ module OnebusawaySDK
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
           end
 
-          # @example
-          # ```ruby
-          # stop_grouping => {
-          #   id: String,
-          #   name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
-          #   polylines: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline] === _1 },
-          #   stop_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 }
-          # }
-          # ```
           class StopGrouping < OnebusawaySDK::BaseModel
             # @!attribute [r] id
             #
@@ -203,14 +170,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # name => {
-            #   name: String,
-            #   names: -> { OnebusawaySDK::ArrayOf[String] === _1 },
-            #   type: String
-            # }
-            # ```
             class Name < OnebusawaySDK::BaseModel
               # @!attribute [r] name
               #
@@ -249,14 +208,6 @@ module OnebusawaySDK
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
             end
 
-            # @example
-            # ```ruby
-            # polyline => {
-            #   length: Integer,
-            #   levels: String,
-            #   points: String
-            # }
-            # ```
             class Polyline < OnebusawaySDK::BaseModel
               # @!attribute [r] length
               #
