@@ -93,7 +93,8 @@ module OnebusawaySDK
     end
 
     sig do
-      params(req: OnebusawaySDK::BaseClient::RequestComponentsShape, opts: T::Hash[Symbol, T.anything])
+      overridable
+        .params(req: OnebusawaySDK::BaseClient::RequestComponentsShape, opts: T::Hash[Symbol, T.anything])
         .returns(OnebusawaySDK::BaseClient::RequestInputShape)
     end
     private def build_request(req, opts)
