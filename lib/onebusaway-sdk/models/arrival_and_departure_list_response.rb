@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,12 +34,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   arrivals_and_departures: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture] === _1 }
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute arrivals_and_departures
           #
@@ -62,17 +49,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # arrivals_and_departure => {
-          #   arrival_enabled: OnebusawaySDK::BooleanModel,
-          #   block_trip_sequence: Integer,
-          #   departure_enabled: OnebusawaySDK::BooleanModel,
-          #   number_of_stops_away: Integer,
-          #   predicted_arrival_time: Integer,
-          #   **_
-          # }
-          # ```
           class ArrivalsAndDeparture < OnebusawaySDK::BaseModel
             # @!attribute arrival_enabled
             #   Indicates if riders can arrive on this transit vehicle.
@@ -438,17 +414,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # trip_status => {
-            #   active_trip_id: String,
-            #   block_trip_sequence: Integer,
-            #   closest_stop: String,
-            #   distance_along_trip: Float,
-            #   last_known_distance_along_trip: Float,
-            #   **_
-            # }
-            # ```
             class TripStatus < OnebusawaySDK::BaseModel
               # @!attribute active_trip_id
               #   Trip ID of the trip the vehicle is actively serving.
@@ -730,13 +695,6 @@ module OnebusawaySDK
 
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-              # @example
-              # ```ruby
-              # last_known_location => {
-              #   lat: Float,
-              #   lon: Float
-              # }
-              # ```
               class LastKnownLocation < OnebusawaySDK::BaseModel
                 # @!attribute [r] lat
                 #   Latitude of the last known location of the transit vehicle.
@@ -769,13 +727,6 @@ module OnebusawaySDK
                 # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
               end
 
-              # @example
-              # ```ruby
-              # position => {
-              #   lat: Float,
-              #   lon: Float
-              # }
-              # ```
               class Position < OnebusawaySDK::BaseModel
                 # @!attribute [r] lat
                 #   Latitude of the current position of the transit vehicle.

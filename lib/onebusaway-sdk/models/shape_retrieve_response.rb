@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,14 +34,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   length: Integer,
-        #   points: String,
-        #   levels: String
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute length
           #

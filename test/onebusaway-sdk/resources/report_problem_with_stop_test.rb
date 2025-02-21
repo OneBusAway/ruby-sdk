@@ -16,5 +16,14 @@ class OnebusawaySDK::Test::Resources::ReportProblemWithStopTest < Minitest::Test
     assert_pattern do
       response => OnebusawaySDK::Models::ResponseWrapper
     end
+
+    assert_pattern do
+      response => {
+        code: Integer,
+        current_time: Integer,
+        text: String,
+        version: Integer
+      }
+    end
   end
 end

@@ -37,17 +37,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # list => {
-      #   id: String,
-      #   lat: Float,
-      #   lon: Float,
-      #   name: String,
-      #   parent: String,
-      #   **_
-      # }
-      # ```
       class List < OnebusawaySDK::BaseModel
         # @!attribute id
         #

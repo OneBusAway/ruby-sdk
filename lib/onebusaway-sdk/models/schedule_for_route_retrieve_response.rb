@@ -15,12 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -34,16 +28,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   route_id: String,
-        #   schedule_date: Integer,
-        #   service_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 },
-        #   stops: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop] === _1 },
-        #   stop_trip_groupings: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping] === _1 }
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute route_id
           #
@@ -91,17 +75,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # stop => {
-          #   id: String,
-          #   lat: Float,
-          #   lon: Float,
-          #   name: String,
-          #   parent: String,
-          #   **_
-          # }
-          # ```
           class Stop < OnebusawaySDK::BaseModel
             # @!attribute id
             #
@@ -207,16 +180,6 @@ module OnebusawaySDK
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
           end
 
-          # @example
-          # ```ruby
-          # stop_trip_grouping => {
-          #   direction_id: String,
-          #   stop_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 },
-          #   trip_headsigns: -> { OnebusawaySDK::ArrayOf[String] === _1 },
-          #   trip_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 },
-          #   trips_with_stop_times: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime] === _1 }
-          # }
-          # ```
           class StopTripGrouping < OnebusawaySDK::BaseModel
             # @!attribute direction_id
             #
@@ -260,17 +223,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # trips_with_stop_time => {
-            #   stop_times: -> do
-            #     OnebusawaySDK::ArrayOf[
-            #     OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime
-            #     ] === _1
-            #   end,
-            #   trip_id: String
-            # }
-            # ```
             class TripsWithStopTime < OnebusawaySDK::BaseModel
               # @!attribute stop_times
               #
@@ -296,17 +248,6 @@ module OnebusawaySDK
 
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-              # @example
-              # ```ruby
-              # stop_time => {
-              #   arrival_enabled: OnebusawaySDK::BooleanModel,
-              #   arrival_time: Integer,
-              #   departure_enabled: OnebusawaySDK::BooleanModel,
-              #   departure_time: Integer,
-              #   stop_id: String,
-              #   **_
-              # }
-              # ```
               class StopTime < OnebusawaySDK::BaseModel
                 # @!attribute arrival_enabled
                 #
@@ -385,17 +326,6 @@ module OnebusawaySDK
             end
           end
 
-          # @example
-          # ```ruby
-          # trip => {
-          #   id: String,
-          #   route_id: String,
-          #   service_id: String,
-          #   block_id: String,
-          #   direction_id: String,
-          #   **_
-          # }
-          # ```
           class Trip < OnebusawaySDK::BaseModel
             # @!attribute id
             #
