@@ -28,7 +28,7 @@ module OnebusawaySDK
       params(
         client: OnebusawaySDK::BaseClient,
         req: OnebusawaySDK::BaseClient::RequestComponentsShape,
-        headers: T::Hash[String, String],
+        headers: T.any(T::Hash[String, String], Net::HTTPHeader),
         unwrapped: T.anything
       )
         .void
