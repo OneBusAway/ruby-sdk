@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.1.0-alpha.201 (2025-02-22)
+
+Full Changelog: [v0.1.0-alpha.200...v0.1.0-alpha.201](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.200...v0.1.0-alpha.201)
+
+### Features
+
+* make `build_request` overridable ([#422](https://github.com/OneBusAway/ruby-sdk/issues/422)) ([c160038](https://github.com/OneBusAway/ruby-sdk/commit/c1600380ff1405a7d6fbee95541773159b3d9cbd))
+* support overlapping HTTP requests in same Fiber ([#413](https://github.com/OneBusAway/ruby-sdk/issues/413)) ([cf8ac2b](https://github.com/OneBusAway/ruby-sdk/commit/cf8ac2b0a0c68635cd390b657377fadfc8cc3cd2))
+
+
+### Bug Fixes
+
+* ssl timeout not required when TCP socket open timeout specified ([#414](https://github.com/OneBusAway/ruby-sdk/issues/414)) ([d7bffc1](https://github.com/OneBusAway/ruby-sdk/commit/d7bffc12691970483824a9159fa56d30c3f16d02))
+
+
+### Chores
+
+* add type annotations for requester ([#423](https://github.com/OneBusAway/ruby-sdk/issues/423)) ([d96b5e9](https://github.com/OneBusAway/ruby-sdk/commit/d96b5e947d69770d373d7e0883365e0f2568242a))
+* bump lockfile ([#417](https://github.com/OneBusAway/ruby-sdk/issues/417)) ([5a9360a](https://github.com/OneBusAway/ruby-sdk/commit/5a9360a7b1b6480bfc009e3f370c1c1407b7b7dd))
+* clean up client tests ([#415](https://github.com/OneBusAway/ruby-sdk/issues/415)) ([f581d97](https://github.com/OneBusAway/ruby-sdk/commit/f581d973e1c4d0ffd96f6f949aaaac2796f61250))
+* **internal:** formatting ([#416](https://github.com/OneBusAway/ruby-sdk/issues/416)) ([9f3d090](https://github.com/OneBusAway/ruby-sdk/commit/9f3d09045462b6cd5de9026dd04535e94b6b0ad0))
+* **internal:** refactor request stack ([#421](https://github.com/OneBusAway/ruby-sdk/issues/421)) ([eaa4758](https://github.com/OneBusAway/ruby-sdk/commit/eaa4758a7aeec4c4f18746778f7dc495618acf30))
+* **internal:** version bump ([#411](https://github.com/OneBusAway/ruby-sdk/issues/411)) ([85fa16e](https://github.com/OneBusAway/ruby-sdk/commit/85fa16e6e3f21447818219235c232c4f1758e5f3))
+* make MFA optional depending on token ([#419](https://github.com/OneBusAway/ruby-sdk/issues/419)) ([e758ad8](https://github.com/OneBusAway/ruby-sdk/commit/e758ad829c489d9cac864d07853ac9cab357b0c7))
+* move basemodel examples into tests ([#420](https://github.com/OneBusAway/ruby-sdk/issues/420)) ([567a6bd](https://github.com/OneBusAway/ruby-sdk/commit/567a6bd2049bb237a45aceac96619a46e13356d8))
+* rename internal type aliases ([#418](https://github.com/OneBusAway/ruby-sdk/issues/418)) ([a134d0d](https://github.com/OneBusAway/ruby-sdk/commit/a134d0dfde3b2cb65970b1cb777b84eb72547651))
+* reorganize import ordering ([#424](https://github.com/OneBusAway/ruby-sdk/issues/424)) ([0a6cdb1](https://github.com/OneBusAway/ruby-sdk/commit/0a6cdb10c7c1777e881703c933a53f90d2e5ea32))
+* sort imports via topological dependency & file path ([#425](https://github.com/OneBusAway/ruby-sdk/issues/425)) ([2044bbd](https://github.com/OneBusAway/ruby-sdk/commit/2044bbde3edd51ce9997667b91eebf92f0586ef0))
+
 ## 0.1.0-alpha.200 (2025-02-15)
 
 Full Changelog: [v0.1.0-alpha.199...v0.1.0-alpha.200](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.199...v0.1.0-alpha.200)
