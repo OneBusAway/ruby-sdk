@@ -13,7 +13,8 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           time: Integer,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::TripsForLocationListResponse)
+        )
+          .returns(OnebusawaySDK::Models::TripsForLocationListResponse)
       end
       def list(
         lat:,

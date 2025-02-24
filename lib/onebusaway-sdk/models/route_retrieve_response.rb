@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,17 +34,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   id: String,
-        #   agency_id: String,
-        #   type: Integer,
-        #   color: String,
-        #   description: String,
-        #   **_
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute id
           #

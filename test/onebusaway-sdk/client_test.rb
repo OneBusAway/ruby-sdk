@@ -20,23 +20,14 @@ class OnebusawaySDKTest < Minitest::Test
 
   class MockResponse
     # @return [Integer]
-    attr_accessor :code
-
-    # @return [String]
-    attr_accessor :content_type
-
-    # @return [String]
-    attr_accessor :body
+    attr_reader :code
 
     # @param code [Integer]
     # @param headers [Hash{String=>String}]
-    # @param data [Object]
     #
-    def initialize(code, headers, data)
+    def initialize(code, headers)
       @code = code
-      @headers = headers
-      @content_type = "application/json"
-      @body = JSON.generate(data)
+      @headers = {"content-type" => "application/json", **headers}
     end
 
     # @param header [String]
@@ -58,13 +49,13 @@ class OnebusawaySDKTest < Minitest::Test
 
   class MockRequester
     # @return [Integer]
-    attr_accessor :response_code
+    attr_reader :response_code
 
     # @return [Hash{String=>String}]
-    attr_accessor :response_headers
+    attr_reader :response_headers
 
     # @return [Object]
-    attr_accessor :response_data
+    attr_reader :response_data
 
     # @return [Array<Hash{Symbol=>Object}>]
     attr_accessor :attempts
@@ -76,7 +67,7 @@ class OnebusawaySDKTest < Minitest::Test
     def initialize(response_code, response_headers, response_data)
       @response_code = response_code
       @response_headers = response_headers
-      @response_data = response_data
+      @response_data = JSON.fast_generate(response_data)
       @attempts = []
     end
 
@@ -85,7 +76,7 @@ class OnebusawaySDKTest < Minitest::Test
     def execute(req)
       # Deep copy the request because it is mutated on each retry.
       attempts.push(Marshal.load(Marshal.dump(req)))
-      MockResponse.new(response_code, response_headers, response_data)
+      [MockResponse.new(response_code, response_headers), response_data.grapheme_clusters]
     end
   end
 
@@ -207,7 +198,7 @@ class OnebusawaySDKTest < Minitest::Test
       onebusaway_sdk.current_time.retrieve
     end
 
-    retry_count_headers = requester.attempts.map { |a| a[:headers]["x-stainless-retry-count"] }
+    retry_count_headers = requester.attempts.map { _1[:headers]["x-stainless-retry-count"] }
     assert_equal(%w[0 1 2], retry_count_headers)
   end
 
@@ -220,7 +211,7 @@ class OnebusawaySDKTest < Minitest::Test
       onebusaway_sdk.current_time.retrieve(request_options: {extra_headers: {"x-stainless-retry-count" => nil}})
     end
 
-    retry_count_headers = requester.attempts.map { |a| a[:headers]["x-stainless-retry-count"] }
+    retry_count_headers = requester.attempts.map { _1[:headers]["x-stainless-retry-count"] }
     assert_equal([nil, nil, nil], retry_count_headers)
   end
 
@@ -235,7 +226,7 @@ class OnebusawaySDKTest < Minitest::Test
       )
     end
 
-    retry_count_headers = requester.attempts.map { |a| a[:headers]["x-stainless-retry-count"] }
+    retry_count_headers = requester.attempts.map { _1[:headers]["x-stainless-retry-count"] }
     assert_equal(%w[42 42 42], retry_count_headers)
   end
 

@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,16 +34,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   id: String,
-        #   git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
-        #   name: String,
-        #   service_date_from: String,
-        #   service_date_to: String
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute [r] id
           #
@@ -110,17 +93,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # git_properties => {
-          #   git_branch: String,
-          #   git_build_host: String,
-          #   git_build_time: String,
-          #   git_build_user_email: String,
-          #   git_build_user_name: String,
-          #   **_
-          # }
-          # ```
           class GitProperties < OnebusawaySDK::BaseModel
             # @!attribute [r] git_branch
             #

@@ -9,7 +9,8 @@ module OnebusawaySDK
           include_polylines: T::Boolean,
           time: String,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::StopsForRouteListResponse)
+        )
+          .returns(OnebusawaySDK::Models::StopsForRouteListResponse)
       end
       def list(route_id, include_polylines: nil, time: nil, request_options: {})
       end

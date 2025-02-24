@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,13 +34,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   id: String,
-        #   configurations: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration] === _1 }
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute id
           #
@@ -58,9 +44,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration>]
           required :configurations,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
-                   }
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration] }
 
           # @!parse
           #   # @param id [String]
@@ -70,14 +54,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # configuration => {
-          #   active_service_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 },
-          #   trips: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip] === _1 },
-          #   inactive_service_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 }
-          # }
-          # ```
           class Configuration < OnebusawaySDK::BaseModel
             # @!attribute active_service_ids
             #
@@ -88,9 +64,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip>]
             required :trips,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]
-                     }
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip] }
 
             # @!attribute [r] inactive_service_ids
             #
@@ -110,15 +84,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # trip => {
-            #   accumulated_slack_time: Float,
-            #   block_stop_times: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime] === _1 },
-            #   distance_along_block: Float,
-            #   trip_id: String
-            # }
-            # ```
             class Trip < OnebusawaySDK::BaseModel
               # @!attribute accumulated_slack_time
               #
@@ -129,9 +94,7 @@ module OnebusawaySDK
               #
               #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime>]
               required :block_stop_times,
-                       -> {
-                         OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
-                       },
+                       -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime] },
                        api_name: :blockStopTimes
 
               # @!attribute distance_along_block
@@ -154,15 +117,6 @@ module OnebusawaySDK
 
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-              # @example
-              # ```ruby
-              # block_stop_time => {
-              #   accumulated_slack_time: Float,
-              #   block_sequence: Integer,
-              #   distance_along_block: Float,
-              #   stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-              # }
-              # ```
               class BlockStopTime < OnebusawaySDK::BaseModel
                 # @!attribute accumulated_slack_time
                 #
@@ -183,9 +137,7 @@ module OnebusawaySDK
                 #
                 #   @return [OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime]
                 required :stop_time,
-                         -> {
-                           OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-                         },
+                         -> { OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime },
                          api_name: :stopTime
 
                 # @!parse
@@ -198,16 +150,6 @@ module OnebusawaySDK
 
                 # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-                # @example
-                # ```ruby
-                # stop_time => {
-                #   arrival_time: Integer,
-                #   departure_time: Integer,
-                #   stop_id: String,
-                #   drop_off_type: Integer,
-                #   pickup_type: Integer
-                # }
-                # ```
                 class StopTime < OnebusawaySDK::BaseModel
                   # @!attribute arrival_time
                   #

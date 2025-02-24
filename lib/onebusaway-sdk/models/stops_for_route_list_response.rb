@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,23 +34,12 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   polylines: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline] === _1 },
-        #   route_id: String,
-        #   stop_groupings: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping] === _1 },
-        #   stop_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 }
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute [r] polylines
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>, nil]
           optional :polylines,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]
-                   }
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline] }
 
           # @!parse
           #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>]
@@ -76,9 +58,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping>, nil]
           optional :stop_groupings,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
-                   },
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping] },
                    api_name: :stopGroupings
 
           # @!parse
@@ -104,14 +84,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # polyline => {
-          #   length: Integer,
-          #   levels: String,
-          #   points: String
-          # }
-          # ```
           class Polyline < OnebusawaySDK::BaseModel
             # @!attribute [r] length
             #
@@ -150,15 +122,6 @@ module OnebusawaySDK
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
           end
 
-          # @example
-          # ```ruby
-          # stop_grouping => {
-          #   id: String,
-          #   name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
-          #   polylines: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline] === _1 },
-          #   stop_ids: -> { OnebusawaySDK::ArrayOf[String] === _1 }
-          # }
-          # ```
           class StopGrouping < OnebusawaySDK::BaseModel
             # @!attribute [r] id
             #
@@ -172,10 +135,7 @@ module OnebusawaySDK
             # @!attribute [r] name
             #
             #   @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name, nil]
-            optional :name,
-                     -> {
-                       OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
-                     }
+            optional :name, -> { OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name }
 
             # @!parse
             #   # @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name]
@@ -185,9 +145,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>, nil]
             optional :polylines,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
-                     }
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline] }
 
             # @!parse
             #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>]
@@ -212,14 +170,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # name => {
-            #   name: String,
-            #   names: -> { OnebusawaySDK::ArrayOf[String] === _1 },
-            #   type: String
-            # }
-            # ```
             class Name < OnebusawaySDK::BaseModel
               # @!attribute [r] name
               #
@@ -258,14 +208,6 @@ module OnebusawaySDK
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
             end
 
-            # @example
-            # ```ruby
-            # polyline => {
-            #   length: Integer,
-            #   levels: String,
-            #   points: String
-            # }
-            # ```
             class Polyline < OnebusawaySDK::BaseModel
               # @!attribute [r] length
               #

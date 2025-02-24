@@ -4,91 +4,160 @@ module OnebusawaySDK
   # @private
   #
   class PooledNetRequester
-    def initialize
-      @mutex = Mutex.new
-      @pools = {}
-    end
+    class << self
+      # @private
+      #
+      # @param url [URI::Generic]
+      #
+      # @return [Net::HTTP]
+      #
+      def connect(url)
+        port =
+          case [url.port, url.scheme]
+          in [Integer, _]
+            url.port
+          in [nil, "http" | "ws"]
+            Net::HTTP.http_default_port
+          in [nil, "https" | "wss"]
+            Net::HTTP.https_default_port
+          end
 
-    # @private
-    #
-    # @param url [URL::Generic]
-    # @param timeout [Float]
-    #
-    # @return [ConnectionPool]
-    #
-    private def get_pool(url)
-      origin = OnebusawaySDK::Util.uri_origin(url)
-      @mutex.synchronize do
-        @pools[origin] ||= ConnectionPool.new(size: Etc.nprocessors) do
-          port =
-            case [url.port, url.scheme]
-            in [Integer, _]
-              url.port
-            in [nil, "http" | "ws"]
-              Net::HTTP.http_default_port
-            in [nil, "https" | "wss"]
-              Net::HTTP.https_default_port
-            end
+        Net::HTTP.new(url.host, port).tap do
+          _1.use_ssl = %w[https wss].include?(url.scheme)
+          _1.max_retries = 0
+        end
+      end
 
-          session = Net::HTTP.new(url.host, port)
-          session.use_ssl = %w[https wss].include?(url.scheme)
-          session.max_retries = 0
-          session
+      # @private
+      #
+      # @param conn [Net::HTTP]
+      # @param deadline [Float]
+      #
+      private def calibrate_socket_timeout(conn, deadline)
+        timeout = deadline - OnebusawaySDK::Util.monotonic_secs
+        conn.read_timeout = conn.write_timeout = conn.continue_timeout = timeout
+      end
+
+      # @private
+      #
+      # @param conn [Net::HTTP]
+      # @param req [Net::HTTPGenericRequest]
+      # @param deadline [Float]
+      # @param blk [Proc]
+      #
+      def transport(conn, req, deadline, &blk)
+        unless conn.started?
+          conn.open_timeout = deadline - OnebusawaySDK::Util.monotonic_secs
+          conn.start
+        end
+
+        calibrate_socket_timeout(conn, deadline)
+        conn.request(req) do |rsp|
+          blk.call(rsp)
+          rsp.read_body do |bytes|
+            blk.call(bytes)
+            calibrate_socket_timeout(conn, deadline)
+          end
         end
       end
     end
 
     # @private
     #
-    # @param req [Hash{Symbol => Object}]
-    #   @option req [Symbol] :method
-    #   @option req [URI::Generic] :url
-    #   @option req [Hash{String => String}] :headers
-    #   @option req [String, Hash] :body
-    #   @option req [Float] :timeout
+    # @param url [URI::Generic]
+    # @param streaming [Boolean]
+    # @param blk [Proc]
     #
-    # @return [Net::HTTPResponse]
-    #
-    def execute(req)
-      method, url, headers, body, timeout = req.fetch_values(:method, :url, :headers, :body, :timeout)
+    private def with_pool(url, streaming:, &blk)
+      origin = OnebusawaySDK::Util.uri_origin(url)
+      th = Thread.current
+      key = :"#{object_id}-#{self.class.name}-connection_in_use_for_#{origin}"
 
-      request = Net::HTTPGenericRequest.new(
+      if th[key] || streaming
+        return Enumerator.new do |y|
+          conn = self.class.connect(url)
+          blk.call(conn, y)
+        end
+      end
+
+      pool =
+        @mutex.synchronize do
+          @pools[origin] ||= ConnectionPool.new(size: Etc.nprocessors) do
+            self.class.connect(url)
+          end
+        end
+
+      Enumerator.new do |y|
+        pool.with do |conn|
+          th[key] = true
+
+          blk.call(conn, y)
+          # rubocop:disable Lint/RescueException
+        rescue Exception => e
+          # rubocop:enable Lint/RescueException
+          # should close connection on all errors to ensure no invalid state persists
+          conn.finish if conn.started?
+          raise e
+        ensure
+          th[key] = nil
+        end
+      end
+    end
+
+    # @private
+    #
+    # @param request [Hash{Symbol=>Object}] .
+    #
+    #   @option request [Symbol] :method
+    #
+    #   @option request [URI::Generic] :url
+    #
+    #   @option request [Hash{String=>String}] :headers
+    #
+    #   @option request [Object] :body
+    #
+    #   @option request [Boolean] :streaming
+    #
+    #   @option request [Integer] :max_retries
+    #
+    #   @option request [Float] :deadline
+    #
+    # @return [Array(Net::HTTPResponse, Enumerable)]
+    #
+    def execute(request)
+      method, url, headers, body, deadline = request.fetch_values(:method, :url, :headers, :body, :deadline)
+      streaming = request.fetch(:streaming)
+
+      req = Net::HTTPGenericRequest.new(
         method.to_s.upcase,
         !body.nil?,
-        ![:head, :options].include?(method),
+        method != :head,
         url.to_s
       )
 
-      headers.each { |k, v| request[k] = v }
+      headers.each { req[_1] = _2 }
       case body
-      in String | nil
-        request.body = body
+      in nil
+      in String
+        req.body = body
       in IO | StringIO
-        request.body_stream = body
+        body.rewind
+        req.body_stream = body
       end
 
-      # This timeout is for acquiring a connection from the pool
-      # The default 5 seconds seems too short, lets just have a nearly unbounded queue for now
-      #
-      # TODO: revisit this around granular timeout / concurrency control
-      get_pool(url).with(timeout: 600) do |conn|
-        conn.open_timeout = timeout
-        conn.read_timeout = timeout
-        conn.write_timeout = timeout
-        conn.continue_timeout = timeout
+      enum =
+        with_pool(url, streaming: streaming) do |conn, y|
+          self.class.transport(conn, req, deadline, &y)
+        end
 
-        conn.start unless conn.started?
+      enum = streaming ? enum.lazy : enum.to_a
+      response = enum.take(1).first
+      [response, (response.body = enum.drop(1))]
+    end
 
-        conn.request(request)
-        # rubocop:disable Lint/RescueException
-      rescue Exception => e
-        # rubocop:enable Lint/RescueException
-        # should close connection on all errors to ensure no invalid state persists
-        conn.finish if conn.started?
-        raise e
-      end
-    rescue ConnectionPool::TimeoutError
-      raise OnebusawaySDK::APITimeoutError.new(url: url)
+    def initialize
+      @mutex = Mutex.new
+      @pools = {}
     end
   end
 end

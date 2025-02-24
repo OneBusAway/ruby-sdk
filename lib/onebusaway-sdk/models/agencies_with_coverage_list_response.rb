@@ -15,14 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   limit_exceeded: OnebusawaySDK::BooleanModel,
-      #   list: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List] === _1 },
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute limit_exceeded
         #
@@ -33,9 +25,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List>]
         required :list,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List]
-                 }
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List] }
 
         # @!attribute references
         #
@@ -51,16 +41,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # list => {
-        #   agency_id: String,
-        #   lat: Float,
-        #   lat_span: Float,
-        #   lon: Float,
-        #   lon_span: Float
-        # }
-        # ```
         class List < OnebusawaySDK::BaseModel
           # @!attribute agency_id
           #

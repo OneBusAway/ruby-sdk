@@ -15,15 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   limit_exceeded: OnebusawaySDK::BooleanModel,
-      #   list: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List] === _1 },
-      #   references: OnebusawaySDK::Models::References,
-      #   out_of_range: OnebusawaySDK::BooleanModel
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute limit_exceeded
         #   Indicates if the limit of trips has been exceeded
@@ -35,9 +26,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List>]
         required :list,
-                 -> {
-                   OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List]
-                 }
+                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List] }
 
         # @!attribute references
         #
@@ -64,16 +53,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # list => {
-        #   schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule,
-        #   status: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status,
-        #   trip_id: String,
-        #   frequency: String,
-        #   service_date: Integer
-        # }
-        # ```
         class List < OnebusawaySDK::BaseModel
           # @!attribute schedule
           #
@@ -125,16 +104,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # schedule => {
-          #   next_trip_id: String,
-          #   previous_trip_id: String,
-          #   stop_times: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime] === _1 },
-          #   time_zone: String,
-          #   frequency: String
-          # }
-          # ```
           class Schedule < OnebusawaySDK::BaseModel
             # @!attribute next_trip_id
             #
@@ -150,9 +119,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime>]
             required :stop_times,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime]
-                     },
+                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime] },
                      api_name: :stopTimes
 
             # @!attribute time_zone
@@ -176,16 +143,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # stop_time => {
-            #   arrival_time: Integer,
-            #   departure_time: Integer,
-            #   distance_along_trip: Float,
-            #   historical_occupancy: String,
-            #   stop_headsign: String
-            # }
-            # ```
             class StopTime < OnebusawaySDK::BaseModel
               # @!attribute [r] arrival_time
               #
@@ -265,17 +222,6 @@ module OnebusawaySDK
             end
           end
 
-          # @example
-          # ```ruby
-          # status => {
-          #   active_trip_id: String,
-          #   block_trip_sequence: Integer,
-          #   closest_stop: String,
-          #   distance_along_trip: Float,
-          #   last_known_distance_along_trip: Float,
-          #   **_
-          # }
-          # ```
           class Status < OnebusawaySDK::BaseModel
             # @!attribute active_trip_id
             #   Trip ID of the trip the vehicle is actively serving.
@@ -401,9 +347,7 @@ module OnebusawaySDK
             #
             #   @return [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation, nil]
             optional :last_known_location,
-                     -> {
-                       OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation
-                     },
+                     -> { OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation },
                      api_name: :lastKnownLocation
 
             # @!parse
@@ -557,13 +501,6 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # last_known_location => {
-            #   lat: Float,
-            #   lon: Float
-            # }
-            # ```
             class LastKnownLocation < OnebusawaySDK::BaseModel
               # @!attribute [r] lat
               #   Latitude of the last known location of the transit vehicle.
@@ -596,13 +533,6 @@ module OnebusawaySDK
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
             end
 
-            # @example
-            # ```ruby
-            # position => {
-            #   lat: Float,
-            #   lon: Float
-            # }
-            # ```
             class Position < OnebusawaySDK::BaseModel
               # @!attribute [r] lat
               #   Latitude of the current position of the transit vehicle.

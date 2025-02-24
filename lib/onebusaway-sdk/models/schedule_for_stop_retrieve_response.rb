@@ -15,13 +15,6 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @example
-      # ```ruby
-      # data => {
-      #   entry: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
-      #   references: OnebusawaySDK::Models::References
-      # }
-      # ```
       class Data < OnebusawaySDK::BaseModel
         # @!attribute entry
         #
@@ -41,14 +34,6 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-        # @example
-        # ```ruby
-        # entry => {
-        #   date: Integer,
-        #   stop_id: String,
-        #   stop_route_schedules: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule] === _1 }
-        # }
-        # ```
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute date
           #
@@ -64,9 +49,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule>]
           required :stop_route_schedules,
-                   -> {
-                     OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
-                   },
+                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule] },
                    api_name: :stopRouteSchedules
 
           # @!parse
@@ -78,13 +61,6 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-          # @example
-          # ```ruby
-          # stop_route_schedule => {
-          #   route_id: String,
-          #   stop_route_direction_schedules: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule] === _1 }
-          # }
-          # ```
           class StopRouteSchedule < OnebusawaySDK::BaseModel
             # @!attribute route_id
             #
@@ -95,9 +71,11 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule>]
             required :stop_route_direction_schedules,
-                     -> {
-                       OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
-                     },
+                     -> do
+                       OnebusawaySDK::ArrayOf[
+                       OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
+                       ]
+                     end,
                      api_name: :stopRouteDirectionSchedules
 
             # @!parse
@@ -108,22 +86,16 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-            # @example
-            # ```ruby
-            # stop_route_direction_schedule => {
-            #   schedule_stop_times: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime] === _1 },
-            #   trip_headsign: String,
-            #   schedule_frequencies: -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency] === _1 }
-            # }
-            # ```
             class StopRouteDirectionSchedule < OnebusawaySDK::BaseModel
               # @!attribute schedule_stop_times
               #
               #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime>]
               required :schedule_stop_times,
-                       -> {
-                         OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime]
-                       },
+                       -> do
+                         OnebusawaySDK::ArrayOf[
+                         OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
+                         ]
+                       end,
                        api_name: :scheduleStopTimes
 
               # @!attribute trip_headsign
@@ -135,9 +107,11 @@ module OnebusawaySDK
               #
               #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency>, nil]
               optional :schedule_frequencies,
-                       -> {
-                         OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
-                       },
+                       -> do
+                         OnebusawaySDK::ArrayOf[
+                         OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
+                         ]
+                       end,
                        api_name: :scheduleFrequencies
 
               # @!parse
@@ -153,17 +127,6 @@ module OnebusawaySDK
 
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-              # @example
-              # ```ruby
-              # schedule_stop_time => {
-              #   arrival_enabled: OnebusawaySDK::BooleanModel,
-              #   arrival_time: Integer,
-              #   departure_enabled: OnebusawaySDK::BooleanModel,
-              #   departure_time: Integer,
-              #   service_id: String,
-              #   **_
-              # }
-              # ```
               class ScheduleStopTime < OnebusawaySDK::BaseModel
                 # @!attribute arrival_enabled
                 #
@@ -229,16 +192,6 @@ module OnebusawaySDK
                 # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
               end
 
-              # @example
-              # ```ruby
-              # schedule_frequency => {
-              #   end_time: Integer,
-              #   headway: Integer,
-              #   service_date: Integer,
-              #   service_id: String,
-              #   start_time: Integer
-              # }
-              # ```
               class ScheduleFrequency < OnebusawaySDK::BaseModel
                 # @!attribute end_time
                 #

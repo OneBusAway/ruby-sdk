@@ -7,7 +7,8 @@ module OnebusawaySDK
         params(
           agency_id: String,
           request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
-        ).returns(OnebusawaySDK::Models::RoutesForAgencyListResponse)
+        )
+          .returns(OnebusawaySDK::Models::RoutesForAgencyListResponse)
       end
       def list(agency_id, request_options: {})
       end

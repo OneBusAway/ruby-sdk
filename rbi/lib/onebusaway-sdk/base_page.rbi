@@ -27,10 +27,11 @@ module OnebusawaySDK
     sig do
       params(
         client: OnebusawaySDK::BaseClient,
-        req: OnebusawaySDK::BaseClient::RequestShape,
-        headers: T::Hash[String, String],
+        req: OnebusawaySDK::BaseClient::RequestComponentsShape,
+        headers: T.any(T::Hash[String, String], Net::HTTPHeader),
         unwrapped: T.anything
-      ).void
+      )
+        .void
     end
     def initialize(client:, req:, headers:, unwrapped:)
     end

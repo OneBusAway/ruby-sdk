@@ -99,7 +99,8 @@ module OnebusawaySDK
           user_vehicle_number: String,
           vehicle_id: String,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+        )
+          .void
       end
       def initialize(
         code: nil,
@@ -117,21 +118,22 @@ module OnebusawaySDK
       end
 
       sig do
-        override.returns(
-          {
-            code: Symbol,
-            service_date: Integer,
-            stop_id: String,
-            user_comment: String,
-            user_lat: Float,
-            user_location_accuracy: Float,
-            user_lon: Float,
-            user_on_vehicle: T::Boolean,
-            user_vehicle_number: String,
-            vehicle_id: String,
-            request_options: OnebusawaySDK::RequestOptions
-          }
-        )
+        override
+          .returns(
+            {
+              code: Symbol,
+              service_date: Integer,
+              stop_id: String,
+              user_comment: String,
+              user_lat: Float,
+              user_location_accuracy: Float,
+              user_lon: Float,
+              user_on_vehicle: T::Boolean,
+              user_vehicle_number: String,
+              vehicle_id: String,
+              request_options: OnebusawaySDK::RequestOptions
+            }
+          )
       end
       def to_hash
       end

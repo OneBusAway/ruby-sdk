@@ -36,20 +36,22 @@ module OnebusawaySDK
           minutes_before: Integer,
           time: Time,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+        )
+          .void
       end
       def initialize(minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
       end
 
       sig do
-        override.returns(
-          {
-            minutes_after: Integer,
-            minutes_before: Integer,
-            time: Time,
-            request_options: OnebusawaySDK::RequestOptions
-          }
-        )
+        override
+          .returns(
+            {
+              minutes_after: Integer,
+              minutes_before: Integer,
+              time: Time,
+              request_options: OnebusawaySDK::RequestOptions
+            }
+          )
       end
       def to_hash
       end

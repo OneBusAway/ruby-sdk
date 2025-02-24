@@ -27,19 +27,19 @@ module OnebusawaySDK
           include_polylines: T::Boolean,
           time: String,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
-        ).void
+        )
+          .void
       end
       def initialize(include_polylines: nil, time: nil, request_options: {})
       end
 
       sig do
-        override.returns(
-          {
-            include_polylines: T::Boolean,
-            time: String,
-            request_options: OnebusawaySDK::RequestOptions
-          }
-        )
+        override
+          .returns({
+                     include_polylines: T::Boolean,
+                     time: String,
+                     request_options: OnebusawaySDK::RequestOptions
+                   })
       end
       def to_hash
       end
