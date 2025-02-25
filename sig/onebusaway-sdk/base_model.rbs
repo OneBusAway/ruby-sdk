@@ -83,7 +83,6 @@ module OnebusawaySDK
   end
 
   class Union
-    extend OnebusawaySDK::Extern
     extend OnebusawaySDK::Converter
 
     private def self.known_variants: -> ::Array[[Symbol?, Proc]]
@@ -170,7 +169,6 @@ module OnebusawaySDK
   end
 
   class BaseModel
-    extend OnebusawaySDK::Extern
     extend OnebusawaySDK::Converter
 
     type known_field = { mode: (:coerce | :dump)?, required: bool }
