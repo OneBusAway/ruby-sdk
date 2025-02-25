@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.202 (2025-02-25)
+
+Full Changelog: [v0.1.0-alpha.201...v0.1.0-alpha.202](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.201...v0.1.0-alpha.202)
+
+### Chores
+
+* **internal:** prune unused `extern` references ([#428](https://github.com/OneBusAway/ruby-sdk/issues/428)) ([4561974](https://github.com/OneBusAway/ruby-sdk/commit/4561974016b9149dcc8d4a5c7d402edc885da639))
+* **internal:** version bump ([#426](https://github.com/OneBusAway/ruby-sdk/issues/426)) ([c833335](https://github.com/OneBusAway/ruby-sdk/commit/c833335af625ad3c47670459f902e7e57d9acd16))
+
 ## 0.1.0-alpha.201 (2025-02-22)
 
 Full Changelog: [v0.1.0-alpha.200...v0.1.0-alpha.201](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.200...v0.1.0-alpha.201)
