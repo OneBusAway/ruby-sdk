@@ -153,7 +153,6 @@ module OnebusawaySDK
   class Union
     abstract!
 
-    extend OnebusawaySDK::Extern
     extend OnebusawaySDK::Converter
 
     sig { returns(T::Array[[T.nilable(Symbol), Proc]]) }
@@ -331,7 +330,6 @@ module OnebusawaySDK
   class BaseModel
     abstract!
 
-    extend OnebusawaySDK::Extern
     extend OnebusawaySDK::Converter
 
     KnownFieldShape = T.type_alias { {mode: T.nilable(Symbol), required: T::Boolean} }
