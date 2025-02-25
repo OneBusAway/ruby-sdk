@@ -369,7 +369,6 @@ module OnebusawaySDK
   # @abstract
   #
   class Union
-    extend OnebusawaySDK::Extern
     extend OnebusawaySDK::Converter
 
     # @private
@@ -842,7 +841,6 @@ module OnebusawaySDK
   # @abstract
   #
   class BaseModel
-    extend OnebusawaySDK::Extern
     extend OnebusawaySDK::Converter
 
     # @private
