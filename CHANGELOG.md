@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.203 (2025-02-27)
+
+Full Changelog: [v0.1.0-alpha.202...v0.1.0-alpha.203](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.202...v0.1.0-alpha.203)
+
+### Features
+
+* add deprecation notice to enum members and resources ([#431](https://github.com/OneBusAway/ruby-sdk/issues/431)) ([1f8123d](https://github.com/OneBusAway/ruby-sdk/commit/1f8123da74d970f8ace43b228c0c245513bf7663))
+* isolate platform headers ([#432](https://github.com/OneBusAway/ruby-sdk/issues/432)) ([fce949f](https://github.com/OneBusAway/ruby-sdk/commit/fce949f1f3b94ff67a732266bd7c3d7874e88f17))
+
+
+### Chores
+
+* **internal:** group related utils together ([#434](https://github.com/OneBusAway/ruby-sdk/issues/434)) ([3c1c6e8](https://github.com/OneBusAway/ruby-sdk/commit/3c1c6e8ec6ed3df06ab78653ae3e66f3c839bd57))
+* **internal:** version bump ([#429](https://github.com/OneBusAway/ruby-sdk/issues/429)) ([1baefd4](https://github.com/OneBusAway/ruby-sdk/commit/1baefd4fd4ba1182e8306b23b83e530e3f8fa34f))
+* **refactor:** improve requester internals ([#433](https://github.com/OneBusAway/ruby-sdk/issues/433)) ([16a4a12](https://github.com/OneBusAway/ruby-sdk/commit/16a4a121eaddcd07391bcf34218b591fe655f002))
+
 ## 0.1.0-alpha.202 (2025-02-25)
 
 Full Changelog: [v0.1.0-alpha.201...v0.1.0-alpha.202](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.201...v0.1.0-alpha.202)
