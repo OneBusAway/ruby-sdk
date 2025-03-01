@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.204 (2025-03-01)
+
+Full Changelog: [v0.1.0-alpha.203...v0.1.0-alpha.204](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.203...v0.1.0-alpha.204)
+
+### Features
+
+* **internal:** modified tests for thread and fiber safety ([#438](https://github.com/OneBusAway/ruby-sdk/issues/438)) ([b834517](https://github.com/OneBusAway/ruby-sdk/commit/b834517dff0c599fc8c96219a842f0cae4db03fa))
+
+
+### Bug Fixes
+
+* better support header parameters ([#439](https://github.com/OneBusAway/ruby-sdk/issues/439)) ([8b25f6f](https://github.com/OneBusAway/ruby-sdk/commit/8b25f6fd42a5d51c418988772e58be822b3cbba6))
+
+
+### Chores
+
+* **internal:** version bump ([#435](https://github.com/OneBusAway/ruby-sdk/issues/435)) ([d1f9959](https://github.com/OneBusAway/ruby-sdk/commit/d1f9959cab9cfcaccbf8a2ed786c2e0b5de16afc))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#437](https://github.com/OneBusAway/ruby-sdk/issues/437)) ([7cf207f](https://github.com/OneBusAway/ruby-sdk/commit/7cf207f4c0676f24f8d4c6e28e4c6d93c64ed41e))
+
 ## 0.1.0-alpha.203 (2025-02-27)
 
 Full Changelog: [v0.1.0-alpha.202...v0.1.0-alpha.203](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.202...v0.1.0-alpha.203)
