@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.206 (2025-03-05)
+
+Full Changelog: [v0.1.0-alpha.205...v0.1.0-alpha.206](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.205...v0.1.0-alpha.206)
+
+### Chores
+
+* **internal:** add utils methods for parsing SSE ([#444](https://github.com/OneBusAway/ruby-sdk/issues/444)) ([3e8248b](https://github.com/OneBusAway/ruby-sdk/commit/3e8248b68c2e7af53876afd1bd554b8f0e8d6296))
+* **internal:** version bump ([#442](https://github.com/OneBusAway/ruby-sdk/issues/442)) ([cc8bdc5](https://github.com/OneBusAway/ruby-sdk/commit/cc8bdc5cc7885a536bd33dd6450f630452856667))
+
 ## 0.1.0-alpha.205 (2025-03-04)
 
 Full Changelog: [v0.1.0-alpha.204...v0.1.0-alpha.205](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.204...v0.1.0-alpha.205)
