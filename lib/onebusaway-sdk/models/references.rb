@@ -671,22 +671,6 @@ module OnebusawaySDK
         # @abstract
         #
         # Reason for the service alert, taken from TPEG codes.
-        #
-        # @example
-        # ```ruby
-        # case reason
-        # in :equipmentReason
-        #   # ...
-        # in :environmentReason
-        #   # ...
-        # in :personnelReason
-        #   # ...
-        # in :miscellaneousReason
-        #   # ...
-        # in :securityAlert
-        #   # ...
-        # end
-        # ```
         class Reason < OnebusawaySDK::Enum
           EQUIPMENT_REASON = :equipmentReason
           ENVIRONMENT_REASON = :environmentReason

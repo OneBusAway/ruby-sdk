@@ -142,24 +142,6 @@ module OnebusawaySDK
       # @abstract
       #
       # A string code identifying the nature of the problem
-      #
-      # @example
-      # ```ruby
-      # case code
-      # in :vehicle_never_came
-      #   # ...
-      # in :vehicle_came_early
-      #   # ...
-      # in :vehicle_came_late
-      #   # ...
-      # in :wrong_headsign
-      #   # ...
-      # in :vehicle_does_not_stop_here
-      #   # ...
-      # in ...
-      #   #...
-      # end
-      # ```
       class Code < OnebusawaySDK::Enum
         VEHICLE_NEVER_CAME = :vehicle_never_came
         VEHICLE_CAME_EARLY = :vehicle_came_early

@@ -839,6 +839,15 @@ module OnebusawaySDK
   #
   # @abstract
   #
+  # @example
+  # ```ruby
+  # # `references` is a `OnebusawaySDK::Models::References`
+  # references => {
+  #   agencies: agencies,
+  #   routes: routes,
+  #   situations: situations
+  # }
+  # ```
   class BaseModel
     extend OnebusawaySDK::Converter
 
