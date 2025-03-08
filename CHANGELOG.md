@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.207 (2025-03-08)
+
+Full Changelog: [v0.1.0-alpha.206...v0.1.0-alpha.207](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.206...v0.1.0-alpha.207)
+
+### Features
+
+* add jsonl support ([#451](https://github.com/OneBusAway/ruby-sdk/issues/451)) ([25b1850](https://github.com/OneBusAway/ruby-sdk/commit/25b18504fbc9e4d0f18a5092f850e9c9ed7d5ec9))
+
+
+### Chores
+
+* bump lockfile ([#448](https://github.com/OneBusAway/ruby-sdk/issues/448)) ([4e18ee5](https://github.com/OneBusAway/ruby-sdk/commit/4e18ee546dc74ab39f1dc01974c97e539732b108))
+* generate better supported rbi signatures ([#453](https://github.com/OneBusAway/ruby-sdk/issues/453)) ([4da269a](https://github.com/OneBusAway/ruby-sdk/commit/4da269aa981379cc9f5b94b8a0ac3bf040f648b5))
+* **internal:** codegen related update ([#445](https://github.com/OneBusAway/ruby-sdk/issues/445)) ([5246f74](https://github.com/OneBusAway/ruby-sdk/commit/5246f743e6b59c6d8e3af57aae9440418cc90878))
+* modify sorbet initializers to better support auto-completion ([#454](https://github.com/OneBusAway/ruby-sdk/issues/454)) ([921695d](https://github.com/OneBusAway/ruby-sdk/commit/921695d6562234af1a3fe483af6102108d45fe29))
+* move examples into tests ([#450](https://github.com/OneBusAway/ruby-sdk/issues/450)) ([a163039](https://github.com/OneBusAway/ruby-sdk/commit/a1630390cffc694ecab63b64675148b21938f690))
+* rename misleading variable ([#449](https://github.com/OneBusAway/ruby-sdk/issues/449)) ([93f7821](https://github.com/OneBusAway/ruby-sdk/commit/93f7821a5c35e319224d4005e9bde687fa896881))
+* support different EOLs in streaming ([#452](https://github.com/OneBusAway/ruby-sdk/issues/452)) ([c04993e](https://github.com/OneBusAway/ruby-sdk/commit/c04993eaf7db5de217f6b56ee7ad70e57b8996c1))
+* update custom timeout header name ([#447](https://github.com/OneBusAway/ruby-sdk/issues/447)) ([6e9a1a1](https://github.com/OneBusAway/ruby-sdk/commit/6e9a1a1972461f5d74fc337b7fbacc218ce2c4f5))
+
 ## 0.1.0-alpha.206 (2025-03-05)
 
 Full Changelog: [v0.1.0-alpha.205...v0.1.0-alpha.206](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.205...v0.1.0-alpha.206)
