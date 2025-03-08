@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::TripsForRouteListResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::TripsForRouteListResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::TripsForRouteListResponse::Data}) }
@@ -56,9 +56,9 @@ module OnebusawaySDK
             list: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(limit_exceeded:, list:, references:)
+        def self.new(limit_exceeded:, list:, references:)
         end
 
         sig do
@@ -138,9 +138,9 @@ module OnebusawaySDK
               service_date: Integer,
               situation_ids: T::Array[String]
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(schedule:, status:, trip_id:, frequency: nil, service_date: nil, situation_ids: nil)
+          def self.new(schedule:, status:, trip_id:, frequency: nil, service_date: nil, situation_ids: nil)
           end
 
           sig do
@@ -211,9 +211,9 @@ module OnebusawaySDK
                 time_zone: String,
                 frequency: T.nilable(String)
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(next_trip_id:, previous_trip_id:, stop_times:, time_zone:, frequency: nil)
+            def self.new(next_trip_id:, previous_trip_id:, stop_times:, time_zone:, frequency: nil)
             end
 
             sig do
@@ -289,9 +289,9 @@ module OnebusawaySDK
                   stop_headsign: String,
                   stop_id: String
                 )
-                  .void
+                  .returns(T.attached_class)
               end
-              def initialize(
+              def self.new(
                 arrival_time: nil,
                 departure_time: nil,
                 distance_along_trip: nil,
@@ -576,9 +576,9 @@ module OnebusawaySDK
                 situation_ids: T::Array[String],
                 vehicle_id: String
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(
+            def self.new(
               active_trip_id:,
               block_trip_sequence:,
               closest_stop:,
@@ -663,8 +663,8 @@ module OnebusawaySDK
               def lon=(_)
               end
 
-              sig { params(lat: Float, lon: Float).void }
-              def initialize(lat: nil, lon: nil)
+              sig { params(lat: Float, lon: Float).returns(T.attached_class) }
+              def self.new(lat: nil, lon: nil)
               end
 
               sig { override.returns({lat: Float, lon: Float}) }
@@ -689,8 +689,8 @@ module OnebusawaySDK
               def lon=(_)
               end
 
-              sig { params(lat: Float, lon: Float).void }
-              def initialize(lat: nil, lon: nil)
+              sig { params(lat: Float, lon: Float).returns(T.attached_class) }
+              def self.new(lat: nil, lon: nil)
               end
 
               sig { override.returns({lat: Float, lon: Float}) }

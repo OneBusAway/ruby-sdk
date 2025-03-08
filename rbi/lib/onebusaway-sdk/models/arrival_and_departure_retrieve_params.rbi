@@ -55,16 +55,9 @@ module OnebusawaySDK
           vehicle_id: String,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
-        service_date:,
-        trip_id:,
-        stop_sequence: nil,
-        time: nil,
-        vehicle_id: nil,
-        request_options: {}
-      )
+      def self.new(service_date:, trip_id:, stop_sequence: nil, time: nil, vehicle_id: nil, request_options: {})
       end
 
       sig do
