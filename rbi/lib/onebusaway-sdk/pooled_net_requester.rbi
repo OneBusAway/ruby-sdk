@@ -33,8 +33,8 @@ module OnebusawaySDK
     def execute(request)
     end
 
-    sig { void }
-    def initialize
+    sig { returns(T.attached_class) }
+    def self.new
     end
   end
 end

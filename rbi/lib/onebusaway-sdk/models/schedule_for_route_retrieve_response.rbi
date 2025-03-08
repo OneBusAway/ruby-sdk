@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data}) }
@@ -34,8 +34,11 @@ module OnebusawaySDK
         def entry=(_)
         end
 
-        sig { params(entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry).void }
-        def initialize(entry:)
+        sig do
+          params(entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry)
+            .returns(T.attached_class)
+        end
+        def self.new(entry:)
         end
 
         sig { override.returns({entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry}) }
@@ -111,9 +114,9 @@ module OnebusawaySDK
               stop_trip_groupings: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
               trips: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(route_id:, schedule_date:, service_ids:, stops:, stop_trip_groupings:, trips:)
+          def self.new(route_id:, schedule_date:, service_ids:, stops:, stop_trip_groupings:, trips:)
           end
 
           sig do
@@ -235,9 +238,9 @@ module OnebusawaySDK
                 location_type: Integer,
                 wheelchair_boarding: String
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(
+            def self.new(
               id:,
               lat:,
               lon:,
@@ -336,9 +339,9 @@ module OnebusawaySDK
                 trip_ids: T::Array[String],
                 trips_with_stop_times: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(direction_id:, stop_ids:, trip_headsigns:, trip_ids:, trips_with_stop_times: nil)
+            def self.new(direction_id:, stop_ids:, trip_headsigns:, trip_ids:, trips_with_stop_times: nil)
             end
 
             sig do
@@ -397,9 +400,9 @@ module OnebusawaySDK
                   ],
                   trip_id: String
                 )
-                  .void
+                  .returns(T.attached_class)
               end
-              def initialize(stop_times:, trip_id:)
+              def self.new(stop_times:, trip_id:)
               end
 
               sig do
@@ -492,9 +495,9 @@ module OnebusawaySDK
                     service_id: String,
                     stop_headsign: String
                   )
-                    .void
+                    .returns(T.attached_class)
                 end
-                def initialize(
+                def self.new(
                   arrival_enabled:,
                   arrival_time:,
                   departure_enabled:,
@@ -630,9 +633,9 @@ module OnebusawaySDK
                 trip_headsign: String,
                 trip_short_name: String
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(
+            def self.new(
               id:,
               route_id:,
               service_id:,

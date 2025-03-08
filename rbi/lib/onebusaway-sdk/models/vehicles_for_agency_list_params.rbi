@@ -22,9 +22,9 @@ module OnebusawaySDK
             T::Hash[Symbol, T.anything]
           )
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(time: nil, request_options: {})
+      def self.new(time: nil, request_options: {})
       end
 
       sig { override.returns({time: String, request_options: OnebusawaySDK::RequestOptions}) }

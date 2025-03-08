@@ -55,9 +55,9 @@ module OnebusawaySDK
           time: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
+      def self.new(
         include_schedule: nil,
         include_status: nil,
         include_trip: nil,

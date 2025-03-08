@@ -14,8 +14,8 @@ module OnebusawaySDK
       def retrieve(route_id, date: nil, request_options: {})
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end
