@@ -78,9 +78,9 @@ module OnebusawaySDK
           stop_times: T::Array[OnebusawaySDK::Models::References::StopTime],
           trips: T::Array[OnebusawaySDK::Models::References::Trip]
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(agencies:, routes:, situations:, stops:, stop_times:, trips:)
+      def self.new(agencies:, routes:, situations:, stops:, stop_times:, trips:)
       end
 
       sig do
@@ -193,9 +193,9 @@ module OnebusawaySDK
             phone: String,
             private_service: T::Boolean
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           name:,
           timezone:,
@@ -324,9 +324,9 @@ module OnebusawaySDK
             text_color: String,
             url: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           agency_id:,
           type:,
@@ -494,9 +494,9 @@ module OnebusawaySDK
             summary: OnebusawaySDK::Models::References::Situation::Summary,
             url: OnebusawaySDK::Models::References::Situation::URL
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           creation_time:,
           active_windows: nil,
@@ -551,8 +551,8 @@ module OnebusawaySDK
           def to=(_)
           end
 
-          sig { params(from: Integer, to: Integer).void }
-          def initialize(from: nil, to: nil)
+          sig { params(from: Integer, to: Integer).returns(T.attached_class) }
+          def self.new(from: nil, to: nil)
           end
 
           sig { override.returns({from: Integer, to: Integer}) }
@@ -618,16 +618,9 @@ module OnebusawaySDK
               stop_id: String,
               trip_id: String
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(
-            agency_id: nil,
-            application_id: nil,
-            direction_id: nil,
-            route_id: nil,
-            stop_id: nil,
-            trip_id: nil
-          )
+          def self.new(agency_id: nil, application_id: nil, direction_id: nil, route_id: nil, stop_id: nil, trip_id: nil)
           end
 
           sig do
@@ -672,9 +665,9 @@ module OnebusawaySDK
               condition: String,
               condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(condition: nil, condition_details: nil)
+          def self.new(condition: nil, condition_details: nil)
           end
 
           sig do
@@ -718,9 +711,9 @@ module OnebusawaySDK
                 diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
                 diversion_stop_ids: T::Array[String]
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(diversion_path: nil, diversion_stop_ids: nil)
+            def self.new(diversion_path: nil, diversion_stop_ids: nil)
             end
 
             sig do
@@ -760,8 +753,8 @@ module OnebusawaySDK
               def points=(_)
               end
 
-              sig { params(length: Integer, levels: String, points: String).void }
-              def initialize(length: nil, levels: nil, points: nil)
+              sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
+              def self.new(length: nil, levels: nil, points: nil)
               end
 
               sig { override.returns({length: Integer, levels: String, points: String}) }
@@ -788,8 +781,8 @@ module OnebusawaySDK
           def value=(_)
           end
 
-          sig { params(lang: String, value: String).void }
-          def initialize(lang: nil, value: nil)
+          sig { params(lang: String, value: String).returns(T.attached_class) }
+          def self.new(lang: nil, value: nil)
           end
 
           sig { override.returns({lang: String, value: String}) }
@@ -814,8 +807,8 @@ module OnebusawaySDK
           def to=(_)
           end
 
-          sig { params(from: Integer, to: Integer).void }
-          def initialize(from:, to:)
+          sig { params(from: Integer, to: Integer).returns(T.attached_class) }
+          def self.new(from:, to:)
           end
 
           sig { override.returns({from: Integer, to: Integer}) }
@@ -856,8 +849,8 @@ module OnebusawaySDK
           def value=(_)
           end
 
-          sig { params(lang: String, value: String).void }
-          def initialize(lang: nil, value: nil)
+          sig { params(lang: String, value: String).returns(T.attached_class) }
+          def self.new(lang: nil, value: nil)
           end
 
           sig { override.returns({lang: String, value: String}) }
@@ -882,8 +875,8 @@ module OnebusawaySDK
           def value=(_)
           end
 
-          sig { params(lang: String, value: String).void }
-          def initialize(lang: nil, value: nil)
+          sig { params(lang: String, value: String).returns(T.attached_class) }
+          def self.new(lang: nil, value: nil)
           end
 
           sig { override.returns({lang: String, value: String}) }
@@ -995,9 +988,9 @@ module OnebusawaySDK
             location_type: Integer,
             wheelchair_boarding: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           lat:,
           lon:,
@@ -1092,9 +1085,9 @@ module OnebusawaySDK
             stop_headsign: String,
             stop_id: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           arrival_time: nil,
           departure_time: nil,
           distance_along_trip: nil,
@@ -1224,9 +1217,9 @@ module OnebusawaySDK
             trip_headsign: String,
             trip_short_name: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           route_id:,
           service_id:,

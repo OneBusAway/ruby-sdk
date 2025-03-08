@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -100,9 +100,9 @@ module OnebusawaySDK
               stop_id: String,
               stop_route_schedules: T::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(date:, stop_id:, stop_route_schedules:)
+          def self.new(date:, stop_id:, stop_route_schedules:)
           end
 
           sig do
@@ -159,9 +159,9 @@ module OnebusawaySDK
                 OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
                 ]
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(route_id:, stop_route_direction_schedules:)
+            def self.new(route_id:, stop_route_direction_schedules:)
             end
 
             sig do
@@ -249,9 +249,9 @@ module OnebusawaySDK
                   OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
                   ]
                 )
-                  .void
+                  .returns(T.attached_class)
               end
-              def initialize(schedule_stop_times:, trip_headsign:, schedule_frequencies: nil)
+              def self.new(schedule_stop_times:, trip_headsign:, schedule_frequencies: nil)
               end
 
               sig do
@@ -338,9 +338,9 @@ module OnebusawaySDK
                     trip_id: String,
                     stop_headsign: String
                   )
-                    .void
+                    .returns(T.attached_class)
                 end
-                def initialize(
+                def self.new(
                   arrival_enabled:,
                   arrival_time:,
                   departure_enabled:,
@@ -427,9 +427,9 @@ module OnebusawaySDK
                     start_time: Integer,
                     trip_id: String
                   )
-                    .void
+                    .returns(T.attached_class)
                 end
-                def initialize(end_time:, headway:, service_date:, service_id:, start_time:, trip_id:)
+                def self.new(end_time:, headway:, service_date:, service_id:, start_time:, trip_id:)
                 end
 
                 sig do

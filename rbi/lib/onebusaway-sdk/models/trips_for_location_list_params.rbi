@@ -73,18 +73,9 @@ module OnebusawaySDK
           time: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
-        lat:,
-        lat_span:,
-        lon:,
-        lon_span:,
-        include_schedule: nil,
-        include_trip: nil,
-        time: nil,
-        request_options: {}
-      )
+      def self.new(lat:, lat_span:, lon:, lon_span:, include_schedule: nil, include_trip: nil, time: nil, request_options: {})
       end
 
       sig do

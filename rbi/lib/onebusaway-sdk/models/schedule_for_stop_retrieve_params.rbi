@@ -15,15 +15,10 @@ module OnebusawaySDK
       end
 
       sig do
-        params(
-          date: Date,
-          request_options: T.any(
-            OnebusawaySDK::RequestOptions,
-            T::Hash[Symbol, T.anything]
-          )
-        ).void
+        params(date: Date, request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+          .returns(T.attached_class)
       end
-      def initialize(date: nil, request_options: {})
+      def self.new(date: nil, request_options: {})
       end
 
       sig { override.returns({date: Date, request_options: OnebusawaySDK::RequestOptions}) }

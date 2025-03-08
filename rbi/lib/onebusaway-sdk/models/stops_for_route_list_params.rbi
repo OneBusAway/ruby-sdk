@@ -28,9 +28,9 @@ module OnebusawaySDK
           time: String,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(include_polylines: nil, time: nil, request_options: {})
+      def self.new(include_polylines: nil, time: nil, request_options: {})
       end
 
       sig do
