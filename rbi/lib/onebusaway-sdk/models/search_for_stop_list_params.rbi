@@ -28,9 +28,9 @@ module OnebusawaySDK
           max_count: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(input:, max_count: nil, request_options: {})
+      def self.new(input:, max_count: nil, request_options: {})
       end
 
       sig do

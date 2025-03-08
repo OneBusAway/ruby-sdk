@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::StopsForLocationListResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::StopsForLocationListResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::StopsForLocationListResponse::Data}) }
@@ -65,9 +65,9 @@ module OnebusawaySDK
             references: OnebusawaySDK::Models::References,
             out_of_range: T::Boolean
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(limit_exceeded:, list:, references:, out_of_range: nil)
+        def self.new(limit_exceeded:, list:, references:, out_of_range: nil)
         end
 
         sig do
@@ -187,9 +187,9 @@ module OnebusawaySDK
               location_type: Integer,
               wheelchair_boarding: String
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(
+          def self.new(
             id:,
             lat:,
             lon:,

@@ -45,9 +45,9 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References,
           out_of_range: T::Boolean
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(limit_exceeded:, list:, references:, out_of_range: nil)
+      def self.new(limit_exceeded:, list:, references:, out_of_range: nil)
       end
 
       sig do
@@ -167,9 +167,9 @@ module OnebusawaySDK
             location_type: Integer,
             wheelchair_boarding: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           lat:,
           lon:,

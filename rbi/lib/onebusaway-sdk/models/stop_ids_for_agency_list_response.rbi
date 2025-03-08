@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data}) }
@@ -49,9 +49,9 @@ module OnebusawaySDK
 
         sig do
           params(limit_exceeded: T::Boolean, list: T::Array[String], references: OnebusawaySDK::Models::References)
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(limit_exceeded:, list:, references:)
+        def self.new(limit_exceeded:, list:, references:)
         end
 
         sig do

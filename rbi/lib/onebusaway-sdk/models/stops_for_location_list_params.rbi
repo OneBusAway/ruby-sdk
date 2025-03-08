@@ -64,9 +64,9 @@ module OnebusawaySDK
           radius: Float,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
+      def self.new(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
       end
 
       sig do

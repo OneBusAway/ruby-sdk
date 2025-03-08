@@ -100,9 +100,9 @@ module OnebusawaySDK
           vehicle_id: String,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
+      def self.new(
         code: nil,
         service_date: nil,
         stop_id: nil,
@@ -148,8 +148,10 @@ module OnebusawaySDK
         VEHICLE_DOES_NOT_STOP_HERE = :vehicle_does_not_stop_here
         OTHER = :other
 
-        sig { override.returns(T::Array[Symbol]) }
-        def self.values
+        class << self
+          sig { override.returns(T::Array[Symbol]) }
+          def values
+          end
         end
       end
     end

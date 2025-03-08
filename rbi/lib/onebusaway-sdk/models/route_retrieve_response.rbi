@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::RouteRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::RouteRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::RouteRetrieveResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -158,9 +158,9 @@ module OnebusawaySDK
               text_color: String,
               url: String
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(
+          def self.new(
             id:,
             agency_id:,
             type:,

@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data}) }
@@ -56,9 +56,9 @@ module OnebusawaySDK
             list: T::Array[OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List],
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(limit_exceeded:, list:, references:)
+        def self.new(limit_exceeded:, list:, references:)
         end
 
         sig do
@@ -183,9 +183,9 @@ module OnebusawaySDK
               phase: String,
               status: String
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(
+          def self.new(
             last_location_update_time:,
             last_update_time:,
             location:,
@@ -238,8 +238,8 @@ module OnebusawaySDK
             def lon=(_)
             end
 
-            sig { params(lat: Float, lon: Float).void }
-            def initialize(lat: nil, lon: nil)
+            sig { params(lat: Float, lon: Float).returns(T.attached_class) }
+            def self.new(lat: nil, lon: nil)
             end
 
             sig { override.returns({lat: Float, lon: Float}) }
@@ -504,9 +504,9 @@ module OnebusawaySDK
                 situation_ids: T::Array[String],
                 vehicle_id: String
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(
+            def self.new(
               active_trip_id:,
               block_trip_sequence:,
               closest_stop:,
@@ -591,8 +591,8 @@ module OnebusawaySDK
               def lon=(_)
               end
 
-              sig { params(lat: Float, lon: Float).void }
-              def initialize(lat: nil, lon: nil)
+              sig { params(lat: Float, lon: Float).returns(T.attached_class) }
+              def self.new(lat: nil, lon: nil)
               end
 
               sig { override.returns({lat: Float, lon: Float}) }
@@ -617,8 +617,8 @@ module OnebusawaySDK
               def lon=(_)
               end
 
-              sig { params(lat: Float, lon: Float).void }
-              def initialize(lat: nil, lon: nil)
+              sig { params(lat: Float, lon: Float).returns(T.attached_class) }
+              def self.new(lat: nil, lon: nil)
               end
 
               sig { override.returns({lat: Float, lon: Float}) }

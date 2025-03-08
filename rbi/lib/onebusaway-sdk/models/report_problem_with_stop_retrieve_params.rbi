@@ -55,9 +55,9 @@ module OnebusawaySDK
           user_lon: Float,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
+      def self.new(
         code: nil,
         user_comment: nil,
         user_lat: nil,
@@ -92,8 +92,10 @@ module OnebusawaySDK
         ROUTE_OR_TRIP_MISSING = :route_or_trip_missing
         OTHER = :other
 
-        sig { override.returns(T::Array[Symbol]) }
-        def self.values
+        class << self
+          sig { override.returns(T::Array[Symbol]) }
+          def values
+          end
         end
       end
     end

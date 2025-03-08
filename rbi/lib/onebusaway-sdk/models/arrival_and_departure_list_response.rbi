@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -88,9 +88,9 @@ module OnebusawaySDK
             params(
               arrivals_and_departures: T::Array[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(arrivals_and_departures:)
+          def self.new(arrivals_and_departures:)
           end
 
           sig do
@@ -427,9 +427,9 @@ module OnebusawaySDK
                 status: String,
                 trip_status: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(
+            def self.new(
               arrival_enabled:,
               block_trip_sequence:,
               departure_enabled:,
@@ -784,9 +784,9 @@ module OnebusawaySDK
                   situation_ids: T::Array[String],
                   vehicle_id: String
                 )
-                  .void
+                  .returns(T.attached_class)
               end
-              def initialize(
+              def self.new(
                 active_trip_id:,
                 block_trip_sequence:,
                 closest_stop:,
@@ -871,8 +871,8 @@ module OnebusawaySDK
                 def lon=(_)
                 end
 
-                sig { params(lat: Float, lon: Float).void }
-                def initialize(lat: nil, lon: nil)
+                sig { params(lat: Float, lon: Float).returns(T.attached_class) }
+                def self.new(lat: nil, lon: nil)
                 end
 
                 sig { override.returns({lat: Float, lon: Float}) }
@@ -897,8 +897,8 @@ module OnebusawaySDK
                 def lon=(_)
                 end
 
-                sig { params(lat: Float, lon: Float).void }
-                def initialize(lat: nil, lon: nil)
+                sig { params(lat: Float, lon: Float).returns(T.attached_class) }
+                def self.new(lat: nil, lon: nil)
                 end
 
                 sig { override.returns({lat: Float, lon: Float}) }
