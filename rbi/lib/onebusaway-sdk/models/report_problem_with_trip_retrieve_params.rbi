@@ -148,8 +148,10 @@ module OnebusawaySDK
         VEHICLE_DOES_NOT_STOP_HERE = :vehicle_does_not_stop_here
         OTHER = :other
 
-        sig { override.returns(T::Array[Symbol]) }
-        def self.values
+        class << self
+          sig { override.returns(T::Array[Symbol]) }
+          def values
+          end
         end
       end
     end

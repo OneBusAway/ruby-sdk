@@ -832,8 +832,10 @@ module OnebusawaySDK
           MISCELLANEOUS_REASON = :miscellaneousReason
           SECURITY_ALERT = :securityAlert
 
-          sig { override.returns(T::Array[Symbol]) }
-          def self.values
+          class << self
+            sig { override.returns(T::Array[Symbol]) }
+            def values
+            end
           end
         end
 

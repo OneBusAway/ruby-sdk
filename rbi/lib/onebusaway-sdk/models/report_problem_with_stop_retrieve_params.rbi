@@ -92,8 +92,10 @@ module OnebusawaySDK
         ROUTE_OR_TRIP_MISSING = :route_or_trip_missing
         OTHER = :other
 
-        sig { override.returns(T::Array[Symbol]) }
-        def self.values
+        class << self
+          sig { override.returns(T::Array[Symbol]) }
+          def values
+          end
         end
       end
     end
