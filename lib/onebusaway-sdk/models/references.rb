@@ -679,11 +679,6 @@ module OnebusawaySDK
           SECURITY_ALERT = :securityAlert
 
           finalize!
-
-          # @!parse
-          #   # @return [Array<Symbol>]
-          #   #
-          #   def self.values; end
         end
 
         class Summary < OnebusawaySDK::BaseModel
