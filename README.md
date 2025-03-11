@@ -41,6 +41,8 @@ onebusaway_sdk = OnebusawaySDK::Client.new(
 )
 
 current_time = onebusaway_sdk.current_time.retrieve
+
+puts(current_time)
 ```
 
 ### Errors
@@ -109,9 +111,9 @@ onebusaway_sdk.current_time.retrieve(request_options: {timeout: 5})
 
 ## Sorbet Support
 
-This library is written with [Sorbet type definitions](https://sorbet.org/docs/rbi). However, there is no runtime dependency on the Sorbet runtime.
+This library is written with [Sorbet type definitions](https://sorbet.org/docs/rbi). However, there is no runtime dependency on the `sorbet-runtime`.
 
-What this means is that while you can use Sorbet to type check your code statically, and benefit from the [Sorbet Language Server](https://sorbet.org/docs/lsp) in your editor, there is no runtime type checking and execution overhead from Sorbet.
+What this means is that while you can use Sorbet to type check your code statically, and benefit from the [Sorbet Language Server](https://sorbet.org/docs/lsp) in your editor, there is no runtime type checking and execution overhead from Sorbet itself.
 
 Due to limitations with the Sorbet type system, where a method otherwise can take an instance of `OnebusawaySDK::BaseModel` class, you will need to use the `**` splat operator to pass the arguments:
 
