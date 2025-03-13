@@ -5,6 +5,26 @@ module OnebusawaySDK
   #
   # @abstract
   #
+  # @example
+  # ```ruby
+  # if page.has_next?
+  #   page = page.next_page
+  # end
+  # ```
+  #
+  # @example
+  # ```ruby
+  # page.auto_paging_each do |agencies_with_coverage|
+  #   puts(agencies_with_coverage)
+  # end
+  # ```
+  #
+  # @example
+  # ```ruby
+  # agencies_with_coverages = page.to_enum.take(2)
+  #
+  # agencies_with_coverages => Array
+  # ```
   module BasePage
     # @return [Boolean]
     #
