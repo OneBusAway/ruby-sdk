@@ -1,7 +1,6 @@
 # typed: strong
 
 module OnebusawaySDK
-  # @api private
   module BasePage
     abstract!
 

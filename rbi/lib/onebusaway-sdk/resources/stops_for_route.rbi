@@ -13,7 +13,15 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::StopsForRouteListResponse)
       end
-      def list(route_id, include_polylines: nil, time: nil, request_options: {})
+      def list(
+        # ID of the route
+        route_id,
+        # Include polyline elements in the response (default true)
+        include_polylines: nil,
+        # Specify service date (YYYY-MM-DD or epoch) (default today)
+        time: nil,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }

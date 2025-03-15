@@ -11,7 +11,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::ShapeRetrieveResponse)
       end
-      def retrieve(shape_id, request_options: {})
+      def retrieve(
+        # The shape ID, encoded directly in the URL
+        shape_id,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }

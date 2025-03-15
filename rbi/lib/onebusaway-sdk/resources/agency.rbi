@@ -11,7 +11,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::AgencyRetrieveResponse)
       end
-      def retrieve(agency_id, request_options: {})
+      def retrieve(
+        # The ID of the transit agency.
+        agency_id,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
