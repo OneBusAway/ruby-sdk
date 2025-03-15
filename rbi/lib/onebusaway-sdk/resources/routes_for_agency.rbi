@@ -11,7 +11,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::RoutesForAgencyListResponse)
       end
-      def list(agency_id, request_options: {})
+      def list(
+        # The id of the agency
+        agency_id,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }

@@ -11,7 +11,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::RouteRetrieveResponse)
       end
-      def retrieve(route_id, request_options: {})
+      def retrieve(
+        # The ID of the route.
+        route_id,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }

@@ -38,7 +38,16 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse)
       end
-      def list(stop_id, minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
+      def list(
+        stop_id,
+        # Include vehicles arriving or departing in the next n minutes.
+        minutes_after: nil,
+        # Include vehicles having arrived or departed in the previous n minutes.
+        minutes_before: nil,
+        # The specific time for querying the system status.
+        time: nil,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }

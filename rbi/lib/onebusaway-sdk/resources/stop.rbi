@@ -11,7 +11,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::StopRetrieveResponse)
       end
-      def retrieve(stop_id, request_options: {})
+      def retrieve(
+        # ID of the stop
+        stop_id,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
