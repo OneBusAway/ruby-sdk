@@ -6,6 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # Determine whether full schedule elements are included. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
       def include_schedule
       end
@@ -14,6 +15,8 @@ module OnebusawaySDK
       def include_schedule=(_)
       end
 
+      # Determine whether full tripStatus elements with real-time information are
+      #   included. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
       def include_status
       end
@@ -22,6 +25,7 @@ module OnebusawaySDK
       def include_status=(_)
       end
 
+      # Query the system at a specific time. Useful for testing.
       sig { returns(T.nilable(Integer)) }
       def time
       end

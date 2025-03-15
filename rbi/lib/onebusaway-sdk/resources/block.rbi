@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Block
+      # Get details of a specific block by ID
       sig do
         params(
           block_id: String,

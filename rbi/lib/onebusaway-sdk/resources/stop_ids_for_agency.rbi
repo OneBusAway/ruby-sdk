@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class StopIDsForAgency
+      # Get stop IDs for a specific agency
       sig do
         params(
           agency_id: String,

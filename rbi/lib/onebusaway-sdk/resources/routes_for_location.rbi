@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class RoutesForLocation
+      # routes-for-location
       sig do
         params(
           lat: Float,

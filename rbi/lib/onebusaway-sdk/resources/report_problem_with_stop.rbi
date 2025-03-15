@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class ReportProblemWithStop
+      # Submit a user-generated problem report for a stop
       sig do
         params(
           stop_id: String,

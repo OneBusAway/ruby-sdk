@@ -6,6 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # The string to search for.
       sig { returns(String) }
       def input
       end
@@ -14,6 +15,7 @@ module OnebusawaySDK
       def input=(_)
       end
 
+      # The max number of results to return. Defaults to 20.
       sig { returns(T.nilable(Integer)) }
       def max_count
       end

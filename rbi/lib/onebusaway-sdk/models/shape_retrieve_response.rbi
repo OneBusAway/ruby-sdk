@@ -73,6 +73,7 @@ module OnebusawaySDK
           def length=(_)
           end
 
+          # Encoded polyline format representing the shape of the path
           sig { returns(String) }
           def points
           end

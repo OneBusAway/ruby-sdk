@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Stop
+      # Get details of a specific stop
       sig do
         params(
           stop_id: String,

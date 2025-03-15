@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class ScheduleForRoute
+      # Retrieve the full schedule for a route on a particular day
       sig do
         params(
           route_id: String,

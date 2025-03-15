@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class StopsForLocation
+      # stops-for-location
       sig do
         params(
           lat: Float,

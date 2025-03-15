@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class ReportProblemWithTrip
+      # Submit a user-generated problem report for a particular trip.
       sig do
         params(
           trip_id: String,

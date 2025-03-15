@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class TripForVehicle
+      # Retrieve trip for a specific vehicle
       sig do
         params(
           vehicle_id: String,

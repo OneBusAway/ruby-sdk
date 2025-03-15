@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class TripsForLocation
+      # Retrieve trips for a given location
       sig do
         params(
           lat: Float,

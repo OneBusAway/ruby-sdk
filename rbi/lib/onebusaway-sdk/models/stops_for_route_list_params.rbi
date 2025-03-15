@@ -6,6 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # Include polyline elements in the response (default true)
       sig { returns(T.nilable(T::Boolean)) }
       def include_polylines
       end
@@ -14,6 +15,7 @@ module OnebusawaySDK
       def include_polylines=(_)
       end
 
+      # Specify service date (YYYY-MM-DD or epoch) (default today)
       sig { returns(T.nilable(String)) }
       def time
       end
