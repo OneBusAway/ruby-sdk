@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Shape
+      # Retrieve a shape (the path traveled by a transit vehicle) by ID.
       sig do
         params(
           shape_id: String,

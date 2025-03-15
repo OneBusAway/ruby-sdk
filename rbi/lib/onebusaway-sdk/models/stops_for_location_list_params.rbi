@@ -22,6 +22,7 @@ module OnebusawaySDK
       def lon=(_)
       end
 
+      # An alternative to radius to set the search bounding box (optional)
       sig { returns(T.nilable(Float)) }
       def lat_span
       end
@@ -30,6 +31,7 @@ module OnebusawaySDK
       def lat_span=(_)
       end
 
+      # An alternative to radius to set the search bounding box (optional)
       sig { returns(T.nilable(Float)) }
       def lon_span
       end
@@ -38,6 +40,7 @@ module OnebusawaySDK
       def lon_span=(_)
       end
 
+      # A search query string to filter the results
       sig { returns(T.nilable(String)) }
       def query
       end
@@ -46,6 +49,7 @@ module OnebusawaySDK
       def query=(_)
       end
 
+      # The radius in meters to search within
       sig { returns(T.nilable(Float)) }
       def radius
       end

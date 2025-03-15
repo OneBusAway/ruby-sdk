@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class SearchForRoute
+      # Search for a route based on its name.
       sig do
         params(
           input: String,

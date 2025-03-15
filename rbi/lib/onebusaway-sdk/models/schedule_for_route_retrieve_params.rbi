@@ -6,6 +6,8 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # The date for which you want to request a schedule in the format YYYY-MM-DD
+      #   (optional, defaults to current date)
       sig { returns(T.nilable(Date)) }
       def date
       end

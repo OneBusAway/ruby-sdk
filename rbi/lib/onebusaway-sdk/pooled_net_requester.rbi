@@ -7,14 +7,17 @@ module OnebusawaySDK
     end
 
     class << self
+      # @api private
       sig { params(url: URI::Generic).returns(Net::HTTP) }
       def connect(url)
       end
 
+      # @api private
       sig { params(conn: Net::HTTP, deadline: Float).void }
       def calibrate_socket_timeout(conn, deadline)
       end
 
+      # @api private
       sig do
         params(
           request: OnebusawaySDK::PooledNetRequester::RequestShape,
@@ -26,10 +29,12 @@ module OnebusawaySDK
       end
     end
 
+    # @api private
     sig { params(url: URI::Generic, blk: T.proc.params(arg0: Net::HTTP).void).void }
     private def with_pool(url, &blk)
     end
 
+    # @api private
     sig do
       params(request: OnebusawaySDK::PooledNetRequester::RequestShape)
         .returns([Net::HTTPResponse, T::Enumerable[String]])
@@ -37,6 +42,7 @@ module OnebusawaySDK
     def execute(request)
     end
 
+    # @api private
     sig { params(size: Integer).returns(T.attached_class) }
     def self.new(size: Etc.nprocessors)
     end

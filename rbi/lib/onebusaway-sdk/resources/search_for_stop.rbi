@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class SearchForStop
+      # Search for a stop based on its name.
       sig do
         params(
           input: String,

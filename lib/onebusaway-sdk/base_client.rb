@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 module OnebusawaySDK
-  # @private
+  # @api private
   #
   # @abstract
-  #
   class BaseClient
     # from whatwg fetch spec
     MAX_REDIRECTS = 20
@@ -21,12 +20,11 @@ module OnebusawaySDK
     # rubocop:enable Style/MutableConstant
 
     class << self
-      # @private
+      # @api private
       #
       # @param req [Hash{Symbol=>Object}]
       #
       # @raise [ArgumentError]
-      #
       def validate!(req)
         keys = [:method, :path, :query, :headers, :body, :unwrap, :page, :stream, :model, :options]
         case req
@@ -41,13 +39,12 @@ module OnebusawaySDK
         end
       end
 
-      # @private
+      # @api private
       #
       # @param status [Integer]
       # @param headers [Hash{String=>String}, Net::HTTPHeader]
       #
       # @return [Boolean]
-      #
       def should_retry?(status, headers:)
         coerced = OnebusawaySDK::Util.coerce_boolean(headers["x-should-retry"])
         case [coerced, status]
@@ -65,7 +62,7 @@ module OnebusawaySDK
         end
       end
 
-      # @private
+      # @api private
       #
       # @param request [Hash{Symbol=>Object}] .
       #
@@ -86,7 +83,6 @@ module OnebusawaySDK
       # @param response_headers [Hash{String=>String}, Net::HTTPHeader]
       #
       # @return [Hash{Symbol=>Object}]
-      #
       def follow_redirect(request, status:, response_headers:)
         method, url, headers = request.fetch_values(:method, :url, :headers)
         location =
@@ -130,12 +126,11 @@ module OnebusawaySDK
       end
     end
 
-    # @private
-    #
+    # @api private
     # @return [OnebusawaySDK::PooledNetRequester]
     attr_accessor :requester
 
-    # @private
+    # @api private
     #
     # @param base_url [String]
     # @param timeout [Float]
@@ -144,7 +139,6 @@ module OnebusawaySDK
     # @param max_retry_delay [Float]
     # @param headers [Hash{String=>String, Integer, Array<String, Integer, nil>, nil}]
     # @param idempotency_header [String, nil]
-    #
     def initialize(
       base_url:,
       timeout: 0.0,
@@ -171,19 +165,17 @@ module OnebusawaySDK
       @max_retry_delay = max_retry_delay
     end
 
-    # @private
+    # @api private
     #
     # @return [Hash{String=>String}]
-    #
     private def auth_query = {}
 
-    # @private
+    # @api private
     #
     # @return [String]
-    #
     private def generate_idempotency_key = "stainless-ruby-retry-#{SecureRandom.uuid}"
 
-    # @private
+    # @api private
     #
     # @param req [Hash{Symbol=>Object}] .
     #
@@ -220,7 +212,6 @@ module OnebusawaySDK
     #   @option opts [Float, nil] :timeout
     #
     # @return [Hash{Symbol=>Object}]
-    #
     private def build_request(req, opts)
       method, uninterpolated_path = req.fetch_values(:method, :path)
 
@@ -270,13 +261,12 @@ module OnebusawaySDK
       }
     end
 
-    # @private
+    # @api private
     #
     # @param headers [Hash{String=>String}]
     # @param retry_count [Integer]
     #
     # @return [Float]
-    #
     private def retry_delay(headers, retry_count:)
       # Non-standard extension
       span = Float(headers["retry-after-ms"], exception: false)&.then { _1 / 1000 }
@@ -297,7 +287,7 @@ module OnebusawaySDK
       (@initial_retry_delay * scale * jitter).clamp(0, @max_retry_delay)
     end
 
-    # @private
+    # @api private
     #
     # @param request [Hash{Symbol=>Object}] .
     #
@@ -321,7 +311,6 @@ module OnebusawaySDK
     #
     # @raise [OnebusawaySDK::APIError]
     # @return [Array(Integer, Net::HTTPResponse, Enumerable)]
-    #
     private def send_request(request, redirect_count:, retry_count:, send_retry_header:)
       url, headers, max_retries, timeout = request.fetch_values(:url, :headers, :max_retries, :timeout)
       input = {**request.except(:timeout), deadline: OnebusawaySDK::Util.monotonic_secs + timeout}
@@ -423,7 +412,6 @@ module OnebusawaySDK
     #
     # @raise [OnebusawaySDK::APIError]
     # @return [Object]
-    #
     def request(req)
       self.class.validate!(req)
       model = req.fetch(:model) { OnebusawaySDK::Unknown }
@@ -454,7 +442,6 @@ module OnebusawaySDK
     end
 
     # @return [String]
-    #
     def inspect
       # rubocop:disable Layout/LineLength
       base_url = OnebusawaySDK::Util.unparse_uri(@base_url)

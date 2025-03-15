@@ -6,6 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # Include vehicles arriving or departing in the next n minutes.
       sig { returns(T.nilable(Integer)) }
       def minutes_after
       end
@@ -14,6 +15,7 @@ module OnebusawaySDK
       def minutes_after=(_)
       end
 
+      # Include vehicles having arrived or departed in the previous n minutes.
       sig { returns(T.nilable(Integer)) }
       def minutes_before
       end
@@ -22,6 +24,7 @@ module OnebusawaySDK
       def minutes_before=(_)
       end
 
+      # The specific time for querying the system status.
       sig { returns(T.nilable(Time)) }
       def time
       end

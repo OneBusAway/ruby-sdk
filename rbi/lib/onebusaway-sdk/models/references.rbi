@@ -362,6 +362,7 @@ module OnebusawaySDK
       end
 
       class Situation < OnebusawaySDK::BaseModel
+        # Unique identifier for the situation.
         sig { returns(String) }
         def id
         end
@@ -370,6 +371,7 @@ module OnebusawaySDK
         def id=(_)
         end
 
+        # Unix timestamp of when this situation was created.
         sig { returns(Integer) }
         def creation_time
         end
@@ -400,6 +402,7 @@ module OnebusawaySDK
         def all_affects=(_)
         end
 
+        # Message regarding the consequence of the situation.
         sig { returns(T.nilable(String)) }
         def consequence_message
         end
@@ -441,6 +444,7 @@ module OnebusawaySDK
         def publication_windows=(_)
         end
 
+        # Reason for the service alert, taken from TPEG codes.
         sig { returns(T.nilable(Symbol)) }
         def reason
         end
@@ -449,6 +453,7 @@ module OnebusawaySDK
         def reason=(_)
         end
 
+        # Severity of the situation.
         sig { returns(T.nilable(String)) }
         def severity
         end
@@ -535,6 +540,7 @@ module OnebusawaySDK
         end
 
         class ActiveWindow < OnebusawaySDK::BaseModel
+          # Start time of the active window as a Unix timestamp.
           sig { returns(T.nilable(Integer)) }
           def from
           end
@@ -543,6 +549,7 @@ module OnebusawaySDK
           def from=(_)
           end
 
+          # End time of the active window as a Unix timestamp.
           sig { returns(T.nilable(Integer)) }
           def to
           end
@@ -561,6 +568,7 @@ module OnebusawaySDK
         end
 
         class AllAffect < OnebusawaySDK::BaseModel
+          # Identifier for the agency.
           sig { returns(T.nilable(String)) }
           def agency_id
           end
@@ -569,6 +577,7 @@ module OnebusawaySDK
           def agency_id=(_)
           end
 
+          # Identifier for the application.
           sig { returns(T.nilable(String)) }
           def application_id
           end
@@ -577,6 +586,7 @@ module OnebusawaySDK
           def application_id=(_)
           end
 
+          # Identifier for the direction.
           sig { returns(T.nilable(String)) }
           def direction_id
           end
@@ -585,6 +595,7 @@ module OnebusawaySDK
           def direction_id=(_)
           end
 
+          # Identifier for the route.
           sig { returns(T.nilable(String)) }
           def route_id
           end
@@ -593,6 +604,7 @@ module OnebusawaySDK
           def route_id=(_)
           end
 
+          # Identifier for the stop.
           sig { returns(T.nilable(String)) }
           def stop_id
           end
@@ -601,6 +613,7 @@ module OnebusawaySDK
           def stop_id=(_)
           end
 
+          # Identifier for the trip.
           sig { returns(T.nilable(String)) }
           def trip_id
           end
@@ -641,6 +654,7 @@ module OnebusawaySDK
         end
 
         class Consequence < OnebusawaySDK::BaseModel
+          # Condition of the consequence.
           sig { returns(T.nilable(String)) }
           def condition
           end
@@ -729,6 +743,7 @@ module OnebusawaySDK
             end
 
             class DiversionPath < OnebusawaySDK::BaseModel
+              # Length of the diversion path.
               sig { returns(T.nilable(Integer)) }
               def length
               end
@@ -737,6 +752,7 @@ module OnebusawaySDK
               def length=(_)
               end
 
+              # Levels of the diversion path.
               sig { returns(T.nilable(String)) }
               def levels
               end
@@ -745,6 +761,7 @@ module OnebusawaySDK
               def levels=(_)
               end
 
+              # Points of the diversion path.
               sig { returns(T.nilable(String)) }
               def points
               end
@@ -765,6 +782,7 @@ module OnebusawaySDK
         end
 
         class Description < OnebusawaySDK::BaseModel
+          # Language of the description.
           sig { returns(T.nilable(String)) }
           def lang
           end
@@ -773,6 +791,7 @@ module OnebusawaySDK
           def lang=(_)
           end
 
+          # Longer description of the situation.
           sig { returns(T.nilable(String)) }
           def value
           end
@@ -791,6 +810,7 @@ module OnebusawaySDK
         end
 
         class PublicationWindow < OnebusawaySDK::BaseModel
+          # Start time of the time window as a Unix timestamp.
           sig { returns(Integer) }
           def from
           end
@@ -799,6 +819,7 @@ module OnebusawaySDK
           def from=(_)
           end
 
+          # End time of the time window as a Unix timestamp.
           sig { returns(Integer) }
           def to
           end
@@ -816,6 +837,7 @@ module OnebusawaySDK
           end
         end
 
+        # Reason for the service alert, taken from TPEG codes.
         class Reason < OnebusawaySDK::Enum
           abstract!
 
@@ -833,6 +855,7 @@ module OnebusawaySDK
         end
 
         class Summary < OnebusawaySDK::BaseModel
+          # Language of the summary.
           sig { returns(T.nilable(String)) }
           def lang
           end
@@ -841,6 +864,7 @@ module OnebusawaySDK
           def lang=(_)
           end
 
+          # Short summary of the situation.
           sig { returns(T.nilable(String)) }
           def value
           end
@@ -859,6 +883,7 @@ module OnebusawaySDK
         end
 
         class URL < OnebusawaySDK::BaseModel
+          # Language of the URL.
           sig { returns(T.nilable(String)) }
           def lang
           end
@@ -867,6 +892,7 @@ module OnebusawaySDK
           def lang=(_)
           end
 
+          # URL for more information about the situation.
           sig { returns(T.nilable(String)) }
           def value
           end
