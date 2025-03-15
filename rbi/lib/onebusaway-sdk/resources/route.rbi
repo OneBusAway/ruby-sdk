@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Route
+      # Retrieve information for a specific route identified by its unique ID.
       sig do
         params(
           route_id: String,

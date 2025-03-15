@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class RoutesForAgency
+      # Retrieve the list of all routes for a particular agency by id
       sig do
         params(
           agency_id: String,

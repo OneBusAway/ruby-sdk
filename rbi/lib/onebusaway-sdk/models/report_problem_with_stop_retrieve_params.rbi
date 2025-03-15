@@ -6,6 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # A string code identifying the nature of the problem
       sig { returns(T.nilable(Symbol)) }
       def code
       end
@@ -14,6 +15,7 @@ module OnebusawaySDK
       def code=(_)
       end
 
+      # Additional comment text supplied by the user describing the problem
       sig { returns(T.nilable(String)) }
       def user_comment
       end
@@ -22,6 +24,7 @@ module OnebusawaySDK
       def user_comment=(_)
       end
 
+      # The reporting user’s current latitude
       sig { returns(T.nilable(Float)) }
       def user_lat
       end
@@ -30,6 +33,7 @@ module OnebusawaySDK
       def user_lat=(_)
       end
 
+      # The reporting user’s location accuracy, in meters
       sig { returns(T.nilable(Float)) }
       def user_location_accuracy
       end
@@ -38,6 +42,7 @@ module OnebusawaySDK
       def user_location_accuracy=(_)
       end
 
+      # The reporting user’s current longitude
       sig { returns(T.nilable(Float)) }
       def user_lon
       end
@@ -83,6 +88,7 @@ module OnebusawaySDK
       def to_hash
       end
 
+      # A string code identifying the nature of the problem
       class Code < OnebusawaySDK::Enum
         abstract!
 

@@ -23,6 +23,7 @@ module OnebusawaySDK
     def body
     end
 
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -47,6 +48,7 @@ module OnebusawaySDK
     def body
     end
 
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -63,6 +65,7 @@ module OnebusawaySDK
   end
 
   class APITimeoutError < OnebusawaySDK::APIConnectionError
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -79,6 +82,7 @@ module OnebusawaySDK
   end
 
   class APIStatusError < OnebusawaySDK::APIError
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -97,6 +101,7 @@ module OnebusawaySDK
     def status
     end
 
+    # @api private
     sig do
       params(
         url: URI::Generic,

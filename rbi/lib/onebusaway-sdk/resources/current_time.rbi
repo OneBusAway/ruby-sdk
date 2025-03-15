@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class CurrentTime
+      # current-time
       sig do
         params(request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])))
           .returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse)

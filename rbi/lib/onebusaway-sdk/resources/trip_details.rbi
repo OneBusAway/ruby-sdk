@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class TripDetails
+      # Retrieve Trip Details
       sig do
         params(
           trip_id: String,

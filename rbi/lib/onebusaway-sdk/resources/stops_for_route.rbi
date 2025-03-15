@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class StopsForRoute
+      # Get stops for a specific route
       sig do
         params(
           route_id: String,

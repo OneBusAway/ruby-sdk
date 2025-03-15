@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class TripsForRoute
+      # Search for active trips for a specific route.
       sig do
         params(
           route_id: String,

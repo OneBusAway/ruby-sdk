@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class ArrivalAndDeparture
+      # arrival-and-departure-for-stop
       sig do
         params(
           stop_id: String,
@@ -26,6 +27,7 @@ module OnebusawaySDK
       )
       end
 
+      # arrivals-and-departures-for-stop
       sig do
         params(
           stop_id: String,
