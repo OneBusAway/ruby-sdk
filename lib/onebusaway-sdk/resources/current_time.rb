@@ -10,7 +10,6 @@ module OnebusawaySDK
       #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
       #
       # @return [OnebusawaySDK::Models::CurrentTimeRetrieveResponse]
-      #
       def retrieve(params = {})
         @client.request(
           method: :get,
@@ -21,7 +20,6 @@ module OnebusawaySDK
       end
 
       # @param client [OnebusawaySDK::Client]
-      #
       def initialize(client:)
         @client = client
       end

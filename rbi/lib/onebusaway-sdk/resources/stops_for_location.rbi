@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class StopsForLocation
+      # stops-for-location
       sig do
         params(
           lat: Float,
@@ -15,11 +16,23 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::StopsForLocationListResponse)
       end
-      def list(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
+      def list(
+        lat:,
+        lon:,
+        # An alternative to radius to set the search bounding box (optional)
+        lat_span: nil,
+        # An alternative to radius to set the search bounding box (optional)
+        lon_span: nil,
+        # A search query string to filter the results
+        query: nil,
+        # The radius in meters to search within
+        radius: nil,
+        request_options: {}
+      )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

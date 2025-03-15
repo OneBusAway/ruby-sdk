@@ -24,16 +24,17 @@ module OnebusawaySDK
 
     alias_method :enum_for, :to_enum
 
+    # @api private
     sig do
       params(
         client: OnebusawaySDK::BaseClient,
         req: OnebusawaySDK::BaseClient::RequestComponentsShape,
         headers: T.any(T::Hash[String, String], Net::HTTPHeader),
-        unwrapped: T.anything
+        page_data: T.anything
       )
         .void
     end
-    def initialize(client:, req:, headers:, unwrapped:)
+    def initialize(client:, req:, headers:, page_data:)
     end
   end
 end

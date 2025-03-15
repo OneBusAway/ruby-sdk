@@ -102,10 +102,9 @@ module OnebusawaySDK
     # @return [OnebusawaySDK::Resources::Shape]
     attr_reader :shape
 
-    # @private
+    # @api private
     #
     # @return [Hash{String=>String}]
-    #
     private def auth_query
       {"key" => @api_key}
     end
@@ -123,7 +122,6 @@ module OnebusawaySDK
     # @param initial_retry_delay [Float]
     #
     # @param max_retry_delay [Float]
-    #
     def initialize(
       base_url: nil,
       api_key: ENV["ONEBUSAWAY_API_KEY"],

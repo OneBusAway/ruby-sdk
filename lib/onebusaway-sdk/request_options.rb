@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 module OnebusawaySDK
-  # @private
+  # @api private
   #
   # @abstract
-  #
   module RequestParameters
     # @!parse
     #   # Options to specify HTTP behaviour for this request.
@@ -12,7 +11,6 @@ module OnebusawaySDK
     #   attr_accessor :request_options
 
     # @param mod [Module]
-    #
     def self.included(mod)
       return unless mod <= OnebusawaySDK::BaseModel
 
@@ -20,15 +18,13 @@ module OnebusawaySDK
       mod.optional(:request_options, OnebusawaySDK::RequestOptions)
     end
 
-    # @private
-    #
+    # @api private
     module Converter
-      # @private
+      # @api private
       #
       # @param params [Object]
       #
       # @return [Array(Object, Hash{Symbol=>Object})]
-      #
       def dump_request(params)
         case (dumped = dump(params))
         in Hash
@@ -46,12 +42,11 @@ module OnebusawaySDK
   #   When making a request, you can pass an actual {RequestOptions} instance, or
   #   simply pass a Hash with symbol keys matching the attributes on this class.
   class RequestOptions < OnebusawaySDK::BaseModel
-    # @private
+    # @api private
     #
     # @param opts [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     #
     # @raise [ArgumentError]
-    #
     def self.validate!(opts)
       case opts
       in OnebusawaySDK::RequestOptions | Hash

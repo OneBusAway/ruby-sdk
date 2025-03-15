@@ -5,6 +5,10 @@ module OnebusawaySDK
     sig { returns(T.nilable(StandardError)) }
     def cause
     end
+
+    sig { params(_: T.nilable(StandardError)).returns(T.nilable(StandardError)) }
+    def cause=(_)
+    end
   end
 
   class ConversionError < OnebusawaySDK::Error
@@ -15,14 +19,27 @@ module OnebusawaySDK
     def url
     end
 
+    sig { params(_: URI::Generic).returns(URI::Generic) }
+    def url=(_)
+    end
+
     sig { returns(T.nilable(Integer)) }
     def status
+    end
+
+    sig { params(_: T.nilable(Integer)).returns(T.nilable(Integer)) }
+    def status=(_)
     end
 
     sig { returns(T.nilable(T.anything)) }
     def body
     end
 
+    sig { params(_: T.nilable(T.anything)).returns(T.nilable(T.anything)) }
+    def body=(_)
+    end
+
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -32,9 +49,9 @@ module OnebusawaySDK
         response: NilClass,
         message: T.nilable(String)
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(url:, status: nil, body: nil, request: nil, response: nil, message: nil)
+    def self.new(url:, status: nil, body: nil, request: nil, response: nil, message: nil)
     end
   end
 
@@ -43,10 +60,19 @@ module OnebusawaySDK
     def status
     end
 
+    sig { params(_: NilClass).void }
+    def status=(_)
+    end
+
     sig { void }
     def body
     end
 
+    sig { params(_: NilClass).void }
+    def body=(_)
+    end
+
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -56,13 +82,14 @@ module OnebusawaySDK
         response: NilClass,
         message: T.nilable(String)
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(url:, status: nil, body: nil, request: nil, response: nil, message: "Connection error.")
+    def self.new(url:, status: nil, body: nil, request: nil, response: nil, message: "Connection error.")
     end
   end
 
   class APITimeoutError < OnebusawaySDK::APIConnectionError
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -72,13 +99,14 @@ module OnebusawaySDK
         response: NilClass,
         message: T.nilable(String)
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(url:, status: nil, body: nil, request: nil, response: nil, message: "Request timed out.")
+    def self.new(url:, status: nil, body: nil, request: nil, response: nil, message: "Request timed out.")
     end
   end
 
   class APIStatusError < OnebusawaySDK::APIError
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -97,6 +125,11 @@ module OnebusawaySDK
     def status
     end
 
+    sig { params(_: Integer).returns(Integer) }
+    def status=(_)
+    end
+
+    # @api private
     sig do
       params(
         url: URI::Generic,
@@ -106,9 +139,9 @@ module OnebusawaySDK
         response: NilClass,
         message: T.nilable(String)
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(url:, status:, body:, request:, response:, message: nil)
+    def self.new(url:, status:, body:, request:, response:, message: nil)
     end
   end
 

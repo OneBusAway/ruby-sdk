@@ -43,25 +43,30 @@ module OnebusawaySDK
 
     PLATFORM_HEADERS = T::Hash[String, String]
 
-    sig { params(req: OnebusawaySDK::BaseClient::RequestComponentsShape).void }
-    def self.validate!(req)
-    end
+    class << self
+      # @api private
+      sig { params(req: OnebusawaySDK::BaseClient::RequestComponentsShape).void }
+      def validate!(req)
+      end
 
-    sig do
-      params(status: Integer, headers: T.any(T::Hash[String, String], Net::HTTPHeader)).returns(T::Boolean)
-    end
-    def self.should_retry?(status, headers:)
-    end
+      # @api private
+      sig do
+        params(status: Integer, headers: T.any(T::Hash[String, String], Net::HTTPHeader)).returns(T::Boolean)
+      end
+      def should_retry?(status, headers:)
+      end
 
-    sig do
-      params(
-        request: OnebusawaySDK::BaseClient::RequestInputShape,
-        status: Integer,
-        response_headers: T.any(T::Hash[String, String], Net::HTTPHeader)
-      )
-        .returns(OnebusawaySDK::BaseClient::RequestInputShape)
-    end
-    def self.follow_redirect(request, status:, response_headers:)
+      # @api private
+      sig do
+        params(
+          request: OnebusawaySDK::BaseClient::RequestInputShape,
+          status: Integer,
+          response_headers: T.any(T::Hash[String, String], Net::HTTPHeader)
+        )
+          .returns(OnebusawaySDK::BaseClient::RequestInputShape)
+      end
+      def follow_redirect(request, status:, response_headers:)
+      end
     end
 
     sig { returns(T.anything) }
@@ -72,6 +77,7 @@ module OnebusawaySDK
     def requester=(_)
     end
 
+    # @api private
     sig do
       params(
         base_url: String,
@@ -83,9 +89,9 @@ module OnebusawaySDK
                          T.nilable(T.any(String, Integer, T::Array[T.nilable(T.any(String, Integer))]))],
         idempotency_header: T.nilable(String)
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(
+    def self.new(
       base_url:,
       timeout: 0.0,
       max_retries: 0,
@@ -96,14 +102,17 @@ module OnebusawaySDK
     )
     end
 
+    # @api private
     sig { overridable.returns(T::Hash[String, String]) }
     private def auth_query
     end
 
+    # @api private
     sig { returns(String) }
     private def generate_idempotency_key
     end
 
+    # @api private
     sig do
       overridable
         .params(req: OnebusawaySDK::BaseClient::RequestComponentsShape, opts: T::Hash[Symbol, T.anything])
@@ -112,10 +121,12 @@ module OnebusawaySDK
     private def build_request(req, opts)
     end
 
+    # @api private
     sig { params(headers: T::Hash[String, String], retry_count: Integer).returns(Float) }
     private def retry_delay(headers, retry_count:)
     end
 
+    # @api private
     sig do
       params(
         request: OnebusawaySDK::BaseClient::RequestInputShape,
@@ -128,6 +139,8 @@ module OnebusawaySDK
     private def send_request(request, redirect_count:, retry_count:, send_retry_header:)
     end
 
+    # Execute the request specified by `req`. This is the method that all resource
+    #   methods call into.
     sig do
       params(
         method: Symbol,

@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -73,6 +73,7 @@ module OnebusawaySDK
           def length=(_)
           end
 
+          # Encoded polyline format representing the shape of the path
           sig { returns(String) }
           def points
           end
@@ -89,8 +90,8 @@ module OnebusawaySDK
           def levels=(_)
           end
 
-          sig { params(length: Integer, points: String, levels: String).void }
-          def initialize(length:, points:, levels: nil)
+          sig { params(length: Integer, points: String, levels: String).returns(T.attached_class) }
+          def self.new(length:, points:, levels: nil)
           end
 
           sig { override.returns({length: Integer, points: String, levels: String}) }

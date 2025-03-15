@@ -6,6 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # The latitude coordinate of the search center
       sig { returns(Float) }
       def lat
       end
@@ -14,6 +15,7 @@ module OnebusawaySDK
       def lat=(_)
       end
 
+      # Latitude span of the search bounding box
       sig { returns(Float) }
       def lat_span
       end
@@ -22,6 +24,7 @@ module OnebusawaySDK
       def lat_span=(_)
       end
 
+      # The longitude coordinate of the search center
       sig { returns(Float) }
       def lon
       end
@@ -30,6 +33,7 @@ module OnebusawaySDK
       def lon=(_)
       end
 
+      # Longitude span of the search bounding box
       sig { returns(Float) }
       def lon_span
       end
@@ -38,6 +42,8 @@ module OnebusawaySDK
       def lon_span=(_)
       end
 
+      # Whether to include full schedule elements in the tripDetails section. Defaults
+      #   to false.
       sig { returns(T.nilable(T::Boolean)) }
       def include_schedule
       end
@@ -46,6 +52,8 @@ module OnebusawaySDK
       def include_schedule=(_)
       end
 
+      # Whether to include full trip elements in the references section. Defaults to
+      #   false.
       sig { returns(T.nilable(T::Boolean)) }
       def include_trip
       end
@@ -54,6 +62,7 @@ module OnebusawaySDK
       def include_trip=(_)
       end
 
+      # Specific time for the query. Defaults to the current time.
       sig { returns(T.nilable(Integer)) }
       def time
       end
@@ -73,18 +82,9 @@ module OnebusawaySDK
           time: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
-        lat:,
-        lat_span:,
-        lon:,
-        lon_span:,
-        include_schedule: nil,
-        include_trip: nil,
-        time: nil,
-        request_options: {}
-      )
+      def self.new(lat:, lat_span:, lon:, lon_span:, include_schedule: nil, include_trip: nil, time: nil, request_options: {})
       end
 
       sig do

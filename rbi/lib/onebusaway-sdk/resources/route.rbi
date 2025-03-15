@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Route
+      # Retrieve information for a specific route identified by its unique ID.
       sig do
         params(
           route_id: String,
@@ -10,11 +11,15 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::RouteRetrieveResponse)
       end
-      def retrieve(route_id, request_options: {})
+      def retrieve(
+        # The ID of the route.
+        route_id,
+        request_options: {}
+      )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

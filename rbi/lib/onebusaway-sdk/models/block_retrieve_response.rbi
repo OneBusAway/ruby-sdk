@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::BlockRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::BlockRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::BlockRetrieveResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -89,9 +89,9 @@ module OnebusawaySDK
               id: String,
               configurations: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(id:, configurations:)
+          def self.new(id:, configurations:)
           end
 
           sig do
@@ -140,9 +140,9 @@ module OnebusawaySDK
                 trips: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
                 inactive_service_ids: T::Array[String]
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(active_service_ids:, trips:, inactive_service_ids: nil)
+            def self.new(active_service_ids:, trips:, inactive_service_ids: nil)
             end
 
             sig do
@@ -209,9 +209,9 @@ module OnebusawaySDK
                   distance_along_block: Float,
                   trip_id: String
                 )
-                  .void
+                  .returns(T.attached_class)
               end
-              def initialize(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:)
+              def self.new(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:)
               end
 
               sig do
@@ -279,9 +279,9 @@ module OnebusawaySDK
                     distance_along_block: Float,
                     stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
                   )
-                    .void
+                    .returns(T.attached_class)
                 end
-                def initialize(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:)
+                def self.new(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:)
                 end
 
                 sig do
@@ -347,15 +347,9 @@ module OnebusawaySDK
                       drop_off_type: Integer,
                       pickup_type: Integer
                     )
-                      .void
+                      .returns(T.attached_class)
                   end
-                  def initialize(
-                    arrival_time:,
-                    departure_time:,
-                    stop_id:,
-                    drop_off_type: nil,
-                    pickup_type: nil
-                  )
+                  def self.new(arrival_time:, departure_time:, stop_id:, drop_off_type: nil, pickup_type: nil)
                   end
 
                   sig do

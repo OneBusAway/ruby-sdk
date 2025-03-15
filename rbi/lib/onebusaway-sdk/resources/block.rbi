@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Block
+      # Get details of a specific block by ID
       sig do
         params(
           block_id: String,
@@ -10,11 +11,15 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::BlockRetrieveResponse)
       end
-      def retrieve(block_id, request_options: {})
+      def retrieve(
+        # ID of the block
+        block_id,
+        request_options: {}
+      )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

@@ -35,8 +35,10 @@ module OnebusawaySDK
       def version=(_)
       end
 
-      sig { params(code: Integer, current_time: Integer, text: String, version: Integer).void }
-      def initialize(code:, current_time:, text:, version:)
+      sig do
+        params(code: Integer, current_time: Integer, text: String, version: Integer).returns(T.attached_class)
+      end
+      def self.new(code:, current_time:, text:, version:)
       end
 
       sig { override.returns({code: Integer, current_time: Integer, text: String, version: Integer}) }

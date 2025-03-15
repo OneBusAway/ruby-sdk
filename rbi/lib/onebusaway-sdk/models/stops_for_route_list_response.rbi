@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::StopsForRouteListResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::StopsForRouteListResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::StopsForRouteListResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -110,9 +110,9 @@ module OnebusawaySDK
               stop_groupings: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
               stop_ids: T::Array[String]
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil)
+          def self.new(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil)
           end
 
           sig do
@@ -154,8 +154,8 @@ module OnebusawaySDK
             def points=(_)
             end
 
-            sig { params(length: Integer, levels: String, points: String).void }
-            def initialize(length: nil, levels: nil, points: nil)
+            sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
+            def self.new(length: nil, levels: nil, points: nil)
             end
 
             sig { override.returns({length: Integer, levels: String, points: String}) }
@@ -213,9 +213,9 @@ module OnebusawaySDK
                 polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
                 stop_ids: T::Array[String]
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(id: nil, name: nil, polylines: nil, stop_ids: nil)
+            def self.new(id: nil, name: nil, polylines: nil, stop_ids: nil)
             end
 
             sig do
@@ -257,8 +257,8 @@ module OnebusawaySDK
               def type=(_)
               end
 
-              sig { params(name: String, names: T::Array[String], type: String).void }
-              def initialize(name: nil, names: nil, type: nil)
+              sig { params(name: String, names: T::Array[String], type: String).returns(T.attached_class) }
+              def self.new(name: nil, names: nil, type: nil)
               end
 
               sig { override.returns({name: String, names: T::Array[String], type: String}) }
@@ -291,8 +291,8 @@ module OnebusawaySDK
               def points=(_)
               end
 
-              sig { params(length: Integer, levels: String, points: String).void }
-              def initialize(length: nil, levels: nil, points: nil)
+              sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
+              def self.new(length: nil, levels: nil, points: nil)
               end
 
               sig { override.returns({length: Integer, levels: String, points: String}) }

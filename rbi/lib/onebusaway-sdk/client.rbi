@@ -126,10 +126,12 @@ module OnebusawaySDK
     def shape
     end
 
+    # @api private
     sig { override.returns(T::Hash[String, String]) }
     private def auth_query
     end
 
+    # Creates and returns a new client for interacting with the API.
     sig do
       params(
         base_url: T.nilable(String),
@@ -139,11 +141,14 @@ module OnebusawaySDK
         initial_retry_delay: Float,
         max_retry_delay: Float
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(
+    def self.new(
+      # Override the default base URL for the API, e.g., `"https://api.example.com/v2/"`
       base_url: nil,
+      # Defaults to `ENV["ONEBUSAWAY_API_KEY"]`
       api_key: ENV["ONEBUSAWAY_API_KEY"],
+      # Max number of retries to attempt after a failed retryable request.
       max_retries: DEFAULT_MAX_RETRIES,
       timeout: DEFAULT_TIMEOUT_IN_SECONDS,
       initial_retry_delay: DEFAULT_INITIAL_RETRY_DELAY,

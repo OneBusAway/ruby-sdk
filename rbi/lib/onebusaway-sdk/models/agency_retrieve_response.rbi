@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data}) }
@@ -56,9 +56,9 @@ module OnebusawaySDK
             limit_exceeded: T::Boolean,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, limit_exceeded:, references:)
+        def self.new(entry:, limit_exceeded:, references:)
         end
 
         sig do
@@ -168,9 +168,9 @@ module OnebusawaySDK
               phone: String,
               private_service: T::Boolean
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(
+          def self.new(
             id:,
             name:,
             timezone:,

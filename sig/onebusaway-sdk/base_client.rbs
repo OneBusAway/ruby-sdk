@@ -45,7 +45,7 @@ module OnebusawaySDK
       response_headers: ::Hash[String, String]
     ) -> OnebusawaySDK::BaseClient::request_input
 
-    # @private
+    # @api private
     attr_accessor requester: top
 
     def initialize: (

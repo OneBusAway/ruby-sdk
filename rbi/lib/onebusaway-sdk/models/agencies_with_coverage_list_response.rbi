@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data}) }
@@ -56,9 +56,9 @@ module OnebusawaySDK
             list: T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(limit_exceeded:, list:, references:)
+        def self.new(limit_exceeded:, list:, references:)
         end
 
         sig do
@@ -115,8 +115,11 @@ module OnebusawaySDK
           def lon_span=(_)
           end
 
-          sig { params(agency_id: String, lat: Float, lat_span: Float, lon: Float, lon_span: Float).void }
-          def initialize(agency_id:, lat:, lat_span:, lon:, lon_span:)
+          sig do
+            params(agency_id: String, lat: Float, lat_span: Float, lon: Float, lon_span: Float)
+              .returns(T.attached_class)
+          end
+          def self.new(agency_id:, lat:, lat_span:, lon:, lon_span:)
           end
 
           sig do

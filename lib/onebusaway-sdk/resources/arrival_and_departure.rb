@@ -22,7 +22,6 @@ module OnebusawaySDK
       #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
       #
       # @return [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse]
-      #
       def retrieve(stop_id, params)
         parsed, options = OnebusawaySDK::Models::ArrivalAndDepartureRetrieveParams.dump_request(params)
         @client.request(
@@ -49,7 +48,6 @@ module OnebusawaySDK
       #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
       #
       # @return [OnebusawaySDK::Models::ArrivalAndDepartureListResponse]
-      #
       def list(stop_id, params = {})
         parsed, options = OnebusawaySDK::Models::ArrivalAndDepartureListParams.dump_request(params)
         @client.request(
@@ -62,7 +60,6 @@ module OnebusawaySDK
       end
 
       # @param client [OnebusawaySDK::Client]
-      #
       def initialize(client:)
         @client = client
       end
