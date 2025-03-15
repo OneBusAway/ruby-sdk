@@ -17,11 +17,17 @@ module OnebusawaySDK
           .returns(OnebusawaySDK::Models::ResponseWrapper)
       end
       def retrieve(
+        # The ID of the stop
         stop_id,
+        # A string code identifying the nature of the problem
         code: nil,
+        # Additional comment text supplied by the user describing the problem
         user_comment: nil,
+        # The reporting user’s current latitude
         user_lat: nil,
+        # The reporting user’s location accuracy, in meters
         user_location_accuracy: nil,
+        # The reporting user’s current longitude
         user_lon: nil,
         request_options: {}
       )

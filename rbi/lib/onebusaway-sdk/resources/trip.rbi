@@ -11,7 +11,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::TripRetrieveResponse)
       end
-      def retrieve(trip_id, request_options: {})
+      def retrieve(
+        # ID of the trip
+        trip_id,
+        request_options: {}
+      )
       end
 
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
