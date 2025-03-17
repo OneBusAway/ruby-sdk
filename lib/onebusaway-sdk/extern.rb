@@ -2,8 +2,6 @@
 
 module OnebusawaySDK
   # @api private
-  #
-  # @abstract
   module Extern
   end
 end
