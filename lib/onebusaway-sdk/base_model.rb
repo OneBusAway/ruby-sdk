@@ -2,8 +2,6 @@
 
 module OnebusawaySDK
   # @api private
-  #
-  # @abstract
   module Converter
     # rubocop:disable Lint/UnusedMethodArgument
 
