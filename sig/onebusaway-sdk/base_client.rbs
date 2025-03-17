@@ -45,6 +45,11 @@ module OnebusawaySDK
       response_headers: ::Hash[String, String]
     ) -> OnebusawaySDK::BaseClient::request_input
 
+    def self.reap_connection!: (
+      Integer | OnebusawaySDK::APIConnectionError status,
+      stream: Enumerable[String]?
+    ) -> void
+
     # @api private
     attr_accessor requester: top
 
