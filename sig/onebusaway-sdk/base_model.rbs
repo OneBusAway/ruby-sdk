@@ -120,7 +120,7 @@ module OnebusawaySDK
     ) -> ([true, top, nil] | [false, bool, Integer])
   end
 
-  class ArrayOf
+  class ArrayOf[Elem]
     include OnebusawaySDK::Converter
 
     def ===: (top other) -> bool
@@ -135,7 +135,7 @@ module OnebusawaySDK
       top value
     ) -> ([true, top, nil] | [false, bool, Integer])
 
-    def item_type: -> OnebusawaySDK::Converter::input
+    def item_type: -> Elem
 
     def initialize: (
       ::Hash[Symbol, top]
@@ -145,7 +145,7 @@ module OnebusawaySDK
     ) -> void
   end
 
-  class HashOf
+  class HashOf[Elem]
     include OnebusawaySDK::Converter
 
     def ===: (top other) -> bool
@@ -160,7 +160,7 @@ module OnebusawaySDK
       top value
     ) -> ([true, top, nil] | [false, bool, Integer])
 
-    def item_type: -> OnebusawaySDK::Converter::input
+    def item_type: -> Elem
 
     def initialize: (
       ::Hash[Symbol, top]

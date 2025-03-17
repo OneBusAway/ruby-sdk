@@ -841,17 +841,13 @@ module OnebusawaySDK
         class Reason < OnebusawaySDK::Enum
           abstract!
 
+          Value = type_template(:out) { {fixed: Symbol} }
+
           EQUIPMENT_REASON = :equipmentReason
           ENVIRONMENT_REASON = :environmentReason
           PERSONNEL_REASON = :personnelReason
           MISCELLANEOUS_REASON = :miscellaneousReason
           SECURITY_ALERT = :securityAlert
-
-          class << self
-            sig { override.returns(T::Array[Symbol]) }
-            def values
-            end
-          end
         end
 
         class Summary < OnebusawaySDK::BaseModel
