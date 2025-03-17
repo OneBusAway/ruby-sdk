@@ -152,18 +152,14 @@ module OnebusawaySDK
       class Code < OnebusawaySDK::Enum
         abstract!
 
+        Value = type_template(:out) { {fixed: Symbol} }
+
         VEHICLE_NEVER_CAME = :vehicle_never_came
         VEHICLE_CAME_EARLY = :vehicle_came_early
         VEHICLE_CAME_LATE = :vehicle_came_late
         WRONG_HEADSIGN = :wrong_headsign
         VEHICLE_DOES_NOT_STOP_HERE = :vehicle_does_not_stop_here
         OTHER = :other
-
-        class << self
-          sig { override.returns(T::Array[Symbol]) }
-          def values
-          end
-        end
       end
     end
   end
