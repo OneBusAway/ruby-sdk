@@ -92,17 +92,13 @@ module OnebusawaySDK
       class Code < OnebusawaySDK::Enum
         abstract!
 
+        Value = type_template(:out) { {fixed: Symbol} }
+
         STOP_NAME_WRONG = :stop_name_wrong
         STOP_NUMBER_WRONG = :stop_number_wrong
         STOP_LOCATION_WRONG = :stop_location_wrong
         ROUTE_OR_TRIP_MISSING = :route_or_trip_missing
         OTHER = :other
-
-        class << self
-          sig { override.returns(T::Array[Symbol]) }
-          def values
-          end
-        end
       end
     end
   end
