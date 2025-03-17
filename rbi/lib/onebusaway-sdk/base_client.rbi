@@ -1,6 +1,7 @@
 # typed: strong
 
 module OnebusawaySDK
+  # @api private
   class BaseClient
     abstract!
 
