@@ -178,6 +178,8 @@ module OnebusawaySDK
     def self.known_fields: -> ::Hash[Symbol, (OnebusawaySDK::BaseModel::known_field
     & { type_fn: (^-> OnebusawaySDK::Converter::input) })]
 
+    def self.reverse_map: -> ::Hash[Symbol, Symbol]
+
     def self.fields: -> ::Hash[Symbol, (OnebusawaySDK::BaseModel::known_field
     & { type: OnebusawaySDK::Converter::input })]
 
