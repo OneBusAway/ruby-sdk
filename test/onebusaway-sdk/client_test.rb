@@ -63,11 +63,8 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_given_request_default_retry_attempts
-    onebusaway_sdk = OnebusawaySDK::Client.new(
-      base_url: "http://localhost:4010",
-      api_key: "My API Key",
-      max_retries: 3
-    )
+    onebusaway_sdk =
+      OnebusawaySDK::Client.new(base_url: "http://localhost:4010", api_key: "My API Key", max_retries: 3)
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
@@ -91,11 +88,8 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_given_request_given_retry_attempts
-    onebusaway_sdk = OnebusawaySDK::Client.new(
-      base_url: "http://localhost:4010",
-      api_key: "My API Key",
-      max_retries: 3
-    )
+    onebusaway_sdk =
+      OnebusawaySDK::Client.new(base_url: "http://localhost:4010", api_key: "My API Key", max_retries: 3)
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
@@ -107,11 +101,8 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_retry_after_seconds
-    onebusaway_sdk = OnebusawaySDK::Client.new(
-      base_url: "http://localhost:4010",
-      api_key: "My API Key",
-      max_retries: 1
-    )
+    onebusaway_sdk =
+      OnebusawaySDK::Client.new(base_url: "http://localhost:4010", api_key: "My API Key", max_retries: 1)
     requester = MockRequester.new(500, {"retry-after" => "1.3"}, {})
     onebusaway_sdk.requester = requester
 
@@ -124,11 +115,8 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_retry_after_date
-    onebusaway_sdk = OnebusawaySDK::Client.new(
-      base_url: "http://localhost:4010",
-      api_key: "My API Key",
-      max_retries: 1
-    )
+    onebusaway_sdk =
+      OnebusawaySDK::Client.new(base_url: "http://localhost:4010", api_key: "My API Key", max_retries: 1)
     requester = MockRequester.new(500, {"retry-after" => (Time.now + 10).httpdate}, {})
     onebusaway_sdk.requester = requester
 
@@ -143,11 +131,8 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_retry_after_ms
-    onebusaway_sdk = OnebusawaySDK::Client.new(
-      base_url: "http://localhost:4010",
-      api_key: "My API Key",
-      max_retries: 1
-    )
+    onebusaway_sdk =
+      OnebusawaySDK::Client.new(base_url: "http://localhost:4010", api_key: "My API Key", max_retries: 1)
     requester = MockRequester.new(500, {"retry-after-ms" => "1300"}, {})
     onebusaway_sdk.requester = requester
 
