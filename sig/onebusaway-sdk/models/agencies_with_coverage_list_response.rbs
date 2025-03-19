@@ -4,7 +4,11 @@ module OnebusawaySDK
       { data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data }
 
     class AgenciesWithCoverageListResponse < OnebusawaySDK::Models::ResponseWrapper
-      attr_accessor data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
+      def data: -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data _
+      ) -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
 
       def initialize:
         (
