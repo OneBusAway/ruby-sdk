@@ -9,14 +9,15 @@ module OnebusawaySDK
     MAX_REDIRECTS = 20
 
     # rubocop:disable Style/MutableConstant
-    PLATFORM_HEADERS = {
-      "x-stainless-arch" => OnebusawaySDK::Util.arch,
-      "x-stainless-lang" => "ruby",
-      "x-stainless-os" => OnebusawaySDK::Util.os,
-      "x-stainless-package-version" => OnebusawaySDK::VERSION,
-      "x-stainless-runtime" => ::RUBY_ENGINE,
-      "x-stainless-runtime-version" => ::RUBY_ENGINE_VERSION
-    }
+    PLATFORM_HEADERS =
+      {
+        "x-stainless-arch" => OnebusawaySDK::Util.arch,
+        "x-stainless-lang" => "ruby",
+        "x-stainless-os" => OnebusawaySDK::Util.os,
+        "x-stainless-package-version" => OnebusawaySDK::VERSION,
+        "x-stainless-runtime" => ::RUBY_ENGINE,
+        "x-stainless-runtime-version" => ::RUBY_ENGINE_VERSION
+      }
     # rubocop:enable Style/MutableConstant
 
     class << self
