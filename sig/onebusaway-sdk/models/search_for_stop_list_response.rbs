@@ -4,10 +4,10 @@ module OnebusawaySDK
       { data: OnebusawaySDK::Models::SearchForStopListResponse::Data }
 
     class SearchForStopListResponse < OnebusawaySDK::Models::ResponseWrapper
-      attr_reader data: OnebusawaySDK::Models::SearchForStopListResponse::Data?
+      def data: -> OnebusawaySDK::Models::SearchForStopListResponse::Data?
 
       def data=: (
-        OnebusawaySDK::Models::SearchForStopListResponse::Data
+        OnebusawaySDK::Models::SearchForStopListResponse::Data _
       ) -> OnebusawaySDK::Models::SearchForStopListResponse::Data
 
       def initialize:

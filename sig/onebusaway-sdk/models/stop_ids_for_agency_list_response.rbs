@@ -4,7 +4,11 @@ module OnebusawaySDK
       { data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data }
 
     class StopIDsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
-      attr_accessor data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
+      def data: -> OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data _
+      ) -> OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
 
       def initialize:
         (

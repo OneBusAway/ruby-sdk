@@ -4,7 +4,11 @@ module OnebusawaySDK
       { data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data }
 
     class ConfigRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
-      attr_accessor data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data
+      def data: -> OnebusawaySDK::Models::ConfigRetrieveResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::ConfigRetrieveResponse::Data _
+      ) -> OnebusawaySDK::Models::ConfigRetrieveResponse::Data
 
       def initialize:
         (data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data) -> void

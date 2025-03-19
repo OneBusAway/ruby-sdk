@@ -9,15 +9,25 @@ module OnebusawaySDK
       }
 
     class StopsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
-      attr_accessor limit_exceeded: bool
+      def limit_exceeded: -> bool
 
-      attr_accessor list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List]
+      def limit_exceeded=: (bool _) -> bool
 
-      attr_accessor references: OnebusawaySDK::Models::References
+      def list: -> ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List]
 
-      attr_reader out_of_range: bool?
+      def list=: (
+        ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List] _
+      ) -> ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List]
 
-      def out_of_range=: (bool) -> bool
+      def references: -> OnebusawaySDK::Models::References
+
+      def references=: (
+        OnebusawaySDK::Models::References _
+      ) -> OnebusawaySDK::Models::References
+
+      def out_of_range: -> bool?
+
+      def out_of_range=: (bool _) -> bool
 
       def initialize:
         (

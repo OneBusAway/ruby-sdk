@@ -4,7 +4,11 @@ module OnebusawaySDK
       { data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data }
 
     class ScheduleForRouteRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
-      attr_accessor data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data
+      def data: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data _
+      ) -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data
 
       def initialize:
         (
