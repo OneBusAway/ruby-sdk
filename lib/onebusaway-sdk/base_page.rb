@@ -28,6 +28,8 @@ module OnebusawaySDK
   # agencies_with_coverages => Array
   # ```
   module BasePage
+    # rubocop:disable Lint/UnusedMethodArgument
+
     # @return [Boolean]
     def next_page? = (raise NotImplementedError)
 
@@ -56,5 +58,7 @@ module OnebusawaySDK
       @req = req
       super()
     end
+
+    # rubocop:enable Lint/UnusedMethodArgument
   end
 end
