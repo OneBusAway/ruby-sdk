@@ -17,7 +17,8 @@ module OnebusawaySDK
   #
   # @example
   # ```ruby
-  # agencies_with_coverages = page
+  # agencies_with_coverages =
+  #   page
   #   .to_enum
   #   .lazy
   #   .select { _1.object_id.even? }
