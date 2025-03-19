@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class TripForVehicle
+      # Retrieve trip for a specific vehicle
       sig do
         params(
           vehicle_id: String,
@@ -15,17 +16,25 @@ module OnebusawaySDK
           .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse)
       end
       def retrieve(
+        # ID of the vehicle to retrieve trip details for.
         vehicle_id,
+        # Determines whether full <schedule/> element is included in the <tripDetails/>
+        #   section. Defaults to false.
         include_schedule: nil,
+        # Determines whether the full <status/> element is included in the <tripDetails/>
+        #   section. Defaults to true.
         include_status: nil,
+        # Determines whether full <trip/> element is included in the <references/>
+        #   section. Defaults to false.
         include_trip: nil,
+        # Time parameter to query the system at a specific time (optional).
         time: nil,
         request_options: {}
       )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

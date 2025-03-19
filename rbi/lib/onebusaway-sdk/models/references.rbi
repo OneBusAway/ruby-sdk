@@ -78,9 +78,9 @@ module OnebusawaySDK
           stop_times: T::Array[OnebusawaySDK::Models::References::StopTime],
           trips: T::Array[OnebusawaySDK::Models::References::Trip]
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(agencies:, routes:, situations:, stops:, stop_times:, trips:)
+      def self.new(agencies:, routes:, situations:, stops:, stop_times:, trips:)
       end
 
       sig do
@@ -193,9 +193,9 @@ module OnebusawaySDK
             phone: String,
             private_service: T::Boolean
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           name:,
           timezone:,
@@ -324,9 +324,9 @@ module OnebusawaySDK
             text_color: String,
             url: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           agency_id:,
           type:,
@@ -362,6 +362,7 @@ module OnebusawaySDK
       end
 
       class Situation < OnebusawaySDK::BaseModel
+        # Unique identifier for the situation.
         sig { returns(String) }
         def id
         end
@@ -370,6 +371,7 @@ module OnebusawaySDK
         def id=(_)
         end
 
+        # Unix timestamp of when this situation was created.
         sig { returns(Integer) }
         def creation_time
         end
@@ -400,6 +402,7 @@ module OnebusawaySDK
         def all_affects=(_)
         end
 
+        # Message regarding the consequence of the situation.
         sig { returns(T.nilable(String)) }
         def consequence_message
         end
@@ -441,6 +444,7 @@ module OnebusawaySDK
         def publication_windows=(_)
         end
 
+        # Reason for the service alert, taken from TPEG codes.
         sig { returns(T.nilable(Symbol)) }
         def reason
         end
@@ -449,6 +453,7 @@ module OnebusawaySDK
         def reason=(_)
         end
 
+        # Severity of the situation.
         sig { returns(T.nilable(String)) }
         def severity
         end
@@ -494,9 +499,9 @@ module OnebusawaySDK
             summary: OnebusawaySDK::Models::References::Situation::Summary,
             url: OnebusawaySDK::Models::References::Situation::URL
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           creation_time:,
           active_windows: nil,
@@ -535,6 +540,7 @@ module OnebusawaySDK
         end
 
         class ActiveWindow < OnebusawaySDK::BaseModel
+          # Start time of the active window as a Unix timestamp.
           sig { returns(T.nilable(Integer)) }
           def from
           end
@@ -543,6 +549,7 @@ module OnebusawaySDK
           def from=(_)
           end
 
+          # End time of the active window as a Unix timestamp.
           sig { returns(T.nilable(Integer)) }
           def to
           end
@@ -551,8 +558,8 @@ module OnebusawaySDK
           def to=(_)
           end
 
-          sig { params(from: Integer, to: Integer).void }
-          def initialize(from: nil, to: nil)
+          sig { params(from: Integer, to: Integer).returns(T.attached_class) }
+          def self.new(from: nil, to: nil)
           end
 
           sig { override.returns({from: Integer, to: Integer}) }
@@ -561,6 +568,7 @@ module OnebusawaySDK
         end
 
         class AllAffect < OnebusawaySDK::BaseModel
+          # Identifier for the agency.
           sig { returns(T.nilable(String)) }
           def agency_id
           end
@@ -569,6 +577,7 @@ module OnebusawaySDK
           def agency_id=(_)
           end
 
+          # Identifier for the application.
           sig { returns(T.nilable(String)) }
           def application_id
           end
@@ -577,6 +586,7 @@ module OnebusawaySDK
           def application_id=(_)
           end
 
+          # Identifier for the direction.
           sig { returns(T.nilable(String)) }
           def direction_id
           end
@@ -585,6 +595,7 @@ module OnebusawaySDK
           def direction_id=(_)
           end
 
+          # Identifier for the route.
           sig { returns(T.nilable(String)) }
           def route_id
           end
@@ -593,6 +604,7 @@ module OnebusawaySDK
           def route_id=(_)
           end
 
+          # Identifier for the stop.
           sig { returns(T.nilable(String)) }
           def stop_id
           end
@@ -601,6 +613,7 @@ module OnebusawaySDK
           def stop_id=(_)
           end
 
+          # Identifier for the trip.
           sig { returns(T.nilable(String)) }
           def trip_id
           end
@@ -618,16 +631,9 @@ module OnebusawaySDK
               stop_id: String,
               trip_id: String
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(
-            agency_id: nil,
-            application_id: nil,
-            direction_id: nil,
-            route_id: nil,
-            stop_id: nil,
-            trip_id: nil
-          )
+          def self.new(agency_id: nil, application_id: nil, direction_id: nil, route_id: nil, stop_id: nil, trip_id: nil)
           end
 
           sig do
@@ -648,6 +654,7 @@ module OnebusawaySDK
         end
 
         class Consequence < OnebusawaySDK::BaseModel
+          # Condition of the consequence.
           sig { returns(T.nilable(String)) }
           def condition
           end
@@ -672,9 +679,9 @@ module OnebusawaySDK
               condition: String,
               condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(condition: nil, condition_details: nil)
+          def self.new(condition: nil, condition_details: nil)
           end
 
           sig do
@@ -718,9 +725,9 @@ module OnebusawaySDK
                 diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
                 diversion_stop_ids: T::Array[String]
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(diversion_path: nil, diversion_stop_ids: nil)
+            def self.new(diversion_path: nil, diversion_stop_ids: nil)
             end
 
             sig do
@@ -736,6 +743,7 @@ module OnebusawaySDK
             end
 
             class DiversionPath < OnebusawaySDK::BaseModel
+              # Length of the diversion path.
               sig { returns(T.nilable(Integer)) }
               def length
               end
@@ -744,6 +752,7 @@ module OnebusawaySDK
               def length=(_)
               end
 
+              # Levels of the diversion path.
               sig { returns(T.nilable(String)) }
               def levels
               end
@@ -752,6 +761,7 @@ module OnebusawaySDK
               def levels=(_)
               end
 
+              # Points of the diversion path.
               sig { returns(T.nilable(String)) }
               def points
               end
@@ -760,8 +770,8 @@ module OnebusawaySDK
               def points=(_)
               end
 
-              sig { params(length: Integer, levels: String, points: String).void }
-              def initialize(length: nil, levels: nil, points: nil)
+              sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
+              def self.new(length: nil, levels: nil, points: nil)
               end
 
               sig { override.returns({length: Integer, levels: String, points: String}) }
@@ -772,6 +782,7 @@ module OnebusawaySDK
         end
 
         class Description < OnebusawaySDK::BaseModel
+          # Language of the description.
           sig { returns(T.nilable(String)) }
           def lang
           end
@@ -780,6 +791,7 @@ module OnebusawaySDK
           def lang=(_)
           end
 
+          # Longer description of the situation.
           sig { returns(T.nilable(String)) }
           def value
           end
@@ -788,8 +800,8 @@ module OnebusawaySDK
           def value=(_)
           end
 
-          sig { params(lang: String, value: String).void }
-          def initialize(lang: nil, value: nil)
+          sig { params(lang: String, value: String).returns(T.attached_class) }
+          def self.new(lang: nil, value: nil)
           end
 
           sig { override.returns({lang: String, value: String}) }
@@ -798,6 +810,7 @@ module OnebusawaySDK
         end
 
         class PublicationWindow < OnebusawaySDK::BaseModel
+          # Start time of the time window as a Unix timestamp.
           sig { returns(Integer) }
           def from
           end
@@ -806,6 +819,7 @@ module OnebusawaySDK
           def from=(_)
           end
 
+          # End time of the time window as a Unix timestamp.
           sig { returns(Integer) }
           def to
           end
@@ -814,8 +828,8 @@ module OnebusawaySDK
           def to=(_)
           end
 
-          sig { params(from: Integer, to: Integer).void }
-          def initialize(from:, to:)
+          sig { params(from: Integer, to: Integer).returns(T.attached_class) }
+          def self.new(from:, to:)
           end
 
           sig { override.returns({from: Integer, to: Integer}) }
@@ -823,21 +837,21 @@ module OnebusawaySDK
           end
         end
 
+        # Reason for the service alert, taken from TPEG codes.
         class Reason < OnebusawaySDK::Enum
           abstract!
+
+          Value = type_template(:out) { {fixed: Symbol} }
 
           EQUIPMENT_REASON = :equipmentReason
           ENVIRONMENT_REASON = :environmentReason
           PERSONNEL_REASON = :personnelReason
           MISCELLANEOUS_REASON = :miscellaneousReason
           SECURITY_ALERT = :securityAlert
-
-          sig { override.returns(T::Array[Symbol]) }
-          def self.values
-          end
         end
 
         class Summary < OnebusawaySDK::BaseModel
+          # Language of the summary.
           sig { returns(T.nilable(String)) }
           def lang
           end
@@ -846,6 +860,7 @@ module OnebusawaySDK
           def lang=(_)
           end
 
+          # Short summary of the situation.
           sig { returns(T.nilable(String)) }
           def value
           end
@@ -854,8 +869,8 @@ module OnebusawaySDK
           def value=(_)
           end
 
-          sig { params(lang: String, value: String).void }
-          def initialize(lang: nil, value: nil)
+          sig { params(lang: String, value: String).returns(T.attached_class) }
+          def self.new(lang: nil, value: nil)
           end
 
           sig { override.returns({lang: String, value: String}) }
@@ -864,6 +879,7 @@ module OnebusawaySDK
         end
 
         class URL < OnebusawaySDK::BaseModel
+          # Language of the URL.
           sig { returns(T.nilable(String)) }
           def lang
           end
@@ -872,6 +888,7 @@ module OnebusawaySDK
           def lang=(_)
           end
 
+          # URL for more information about the situation.
           sig { returns(T.nilable(String)) }
           def value
           end
@@ -880,8 +897,8 @@ module OnebusawaySDK
           def value=(_)
           end
 
-          sig { params(lang: String, value: String).void }
-          def initialize(lang: nil, value: nil)
+          sig { params(lang: String, value: String).returns(T.attached_class) }
+          def self.new(lang: nil, value: nil)
           end
 
           sig { override.returns({lang: String, value: String}) }
@@ -993,9 +1010,9 @@ module OnebusawaySDK
             location_type: Integer,
             wheelchair_boarding: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           lat:,
           lon:,
@@ -1090,9 +1107,9 @@ module OnebusawaySDK
             stop_headsign: String,
             stop_id: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           arrival_time: nil,
           departure_time: nil,
           distance_along_trip: nil,
@@ -1222,9 +1239,9 @@ module OnebusawaySDK
             trip_headsign: String,
             trip_short_name: String
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(
+        def self.new(
           id:,
           route_id:,
           service_id:,

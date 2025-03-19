@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -81,8 +81,8 @@ module OnebusawaySDK
           def time=(_)
           end
 
-          sig { params(readable_time: String, time: Integer).void }
-          def initialize(readable_time: nil, time: nil)
+          sig { params(readable_time: String, time: Integer).returns(T.attached_class) }
+          def self.new(readable_time: nil, time: nil)
           end
 
           sig { override.returns({readable_time: String, time: Integer}) }

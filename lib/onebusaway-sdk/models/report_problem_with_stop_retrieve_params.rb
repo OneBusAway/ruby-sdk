@@ -82,22 +82,6 @@ module OnebusawaySDK
       # @abstract
       #
       # A string code identifying the nature of the problem
-      #
-      # @example
-      # ```ruby
-      # case code
-      # in :stop_name_wrong
-      #   # ...
-      # in :stop_number_wrong
-      #   # ...
-      # in :stop_location_wrong
-      #   # ...
-      # in :route_or_trip_missing
-      #   # ...
-      # in :other
-      #   # ...
-      # end
-      # ```
       class Code < OnebusawaySDK::Enum
         STOP_NAME_WRONG = :stop_name_wrong
         STOP_NUMBER_WRONG = :stop_number_wrong
@@ -106,11 +90,6 @@ module OnebusawaySDK
         OTHER = :other
 
         finalize!
-
-        # @!parse
-        #   # @return [Array<Symbol>]
-        #   #
-        #   def self.values; end
       end
     end
   end

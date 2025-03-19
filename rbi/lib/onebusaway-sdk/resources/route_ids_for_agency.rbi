@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class RouteIDsForAgency
+      # Get route IDs for a specific agency
       sig do
         params(
           agency_id: String,
@@ -10,11 +11,15 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::RouteIDsForAgencyListResponse)
       end
-      def list(agency_id, request_options: {})
+      def list(
+        # ID of the agency
+        agency_id,
+        request_options: {}
+      )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

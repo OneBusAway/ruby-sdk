@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class TripsForRoute
+      # Search for active trips for a specific route.
       sig do
         params(
           route_id: String,
@@ -13,11 +14,22 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::TripsForRouteListResponse)
       end
-      def list(route_id, include_schedule: nil, include_status: nil, time: nil, request_options: {})
+      def list(
+        # The ID of the route.
+        route_id,
+        # Determine whether full schedule elements are included. Defaults to false.
+        include_schedule: nil,
+        # Determine whether full tripStatus elements with real-time information are
+        #   included. Defaults to false.
+        include_status: nil,
+        # Query the system at a specific time. Useful for testing.
+        time: nil,
+        request_options: {}
+      )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

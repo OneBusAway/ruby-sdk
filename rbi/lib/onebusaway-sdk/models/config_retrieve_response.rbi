@@ -14,8 +14,8 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data).void }
-      def initialize(data:)
+      sig { params(data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data).returns(T.attached_class) }
+      def self.new(data:)
       end
 
       sig { override.returns({data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data}) }
@@ -47,9 +47,9 @@ module OnebusawaySDK
             entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
             references: OnebusawaySDK::Models::References
           )
-            .void
+            .returns(T.attached_class)
         end
-        def initialize(entry:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
@@ -116,15 +116,9 @@ module OnebusawaySDK
               service_date_from: String,
               service_date_to: String
             )
-              .void
+              .returns(T.attached_class)
           end
-          def initialize(
-            id: nil,
-            git_properties: nil,
-            name: nil,
-            service_date_from: nil,
-            service_date_to: nil
-          )
+          def self.new(id: nil, git_properties: nil, name: nil, service_date_from: nil, service_date_to: nil)
           end
 
           sig do
@@ -326,9 +320,9 @@ module OnebusawaySDK
                 git_remote_origin_url: String,
                 git_tags: String
               )
-                .void
+                .returns(T.attached_class)
             end
-            def initialize(
+            def self.new(
               git_branch: nil,
               git_build_host: nil,
               git_build_time: nil,

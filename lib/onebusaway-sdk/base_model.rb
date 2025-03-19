@@ -1,41 +1,35 @@
 # frozen_string_literal: true
 
 module OnebusawaySDK
-  # @private
-  #
-  # @abstract
-  #
+  # @api private
   module Converter
     # rubocop:disable Lint/UnusedMethodArgument
 
-    # @private
+    # @api private
     #
     # @param value [Object]
     #
     # @return [Object]
-    #
     def coerce(value) = value
 
-    # @private
+    # @api private
     #
     # @param value [Object]
     #
     # @return [Object]
-    #
     def dump(value) = value
 
-    # @private
+    # @api private
     #
     # @param value [Object]
     #
     # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
     def try_strict_coerce(value) = (raise NotImplementedError)
 
     # rubocop:enable Lint/UnusedMethodArgument
 
     class << self
-      # @private
+      # @api private
       #
       # @param spec [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class] .
       #
@@ -48,23 +42,22 @@ module OnebusawaySDK
       #   @option spec [Boolean] :"nil?"
       #
       # @return [Proc]
-      #
       def type_info(spec)
         case spec
         in Hash
           type_info(spec.slice(:const, :enum, :union).first&.last)
         in Proc
           spec
-        in OnebusawaySDK::Converter | Class
+        in OnebusawaySDK::Converter | Class | Symbol
           -> { spec }
         in true | false
           -> { OnebusawaySDK::BooleanModel }
-        in NilClass | true | false | Symbol | Integer | Float
+        in NilClass | Integer | Float
           -> { spec.class }
         end
       end
 
-      # @private
+      # @api private
       #
       # Based on `target`, transform `value` into `target`, to the extent possible:
       #
@@ -77,11 +70,17 @@ module OnebusawaySDK
       # @param value [Object]
       #
       # @return [Object]
-      #
       def coerce(target, value)
         case target
         in OnebusawaySDK::Converter
           target.coerce(value)
+        in Symbol
+          case value
+          in Symbol | String if (val = value.to_sym) == target
+            val
+          else
+            value
+          end
         in Class
           case target
           in -> { _1 <= NilClass }
@@ -104,13 +103,12 @@ module OnebusawaySDK
         end
       end
 
-      # @private
+      # @api private
       #
       # @param target [OnebusawaySDK::Converter, Class]
       # @param value [Object]
       #
       # @return [Object]
-      #
       def dump(target, value)
         case target
         in OnebusawaySDK::Converter
@@ -120,7 +118,7 @@ module OnebusawaySDK
         end
       end
 
-      # @private
+      # @api private
       #
       # The underlying algorithm for computing maximal compatibility is subject to
       #   future improvements.
@@ -135,11 +133,17 @@ module OnebusawaySDK
       # @param value [Object]
       #
       # @return [Object]
-      #
       def try_strict_coerce(target, value)
         case target
         in OnebusawaySDK::Converter
           target.try_strict_coerce(value)
+        in Symbol
+          case value
+          in Symbol | String if (val = value.to_sym) == target
+            [true, val, 1]
+          else
+            [false, false, 0]
+          end
         in Class
           case [target, value]
           in [-> { _1 <= NilClass }, _]
@@ -155,7 +159,7 @@ module OnebusawaySDK
           in [-> { _1 <= Date || _1 <= Time }, String]
             Kernel.then do
               [true, target.parse(value), 1]
-            rescue ArgumentError, Date::Error
+            rescue ArgumentError
               [false, false, 0]
             end
           in [_, ^target]
@@ -168,7 +172,7 @@ module OnebusawaySDK
     end
   end
 
-  # @private
+  # @api private
   #
   # @abstract
   #
@@ -183,48 +187,45 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.===(other) = true
 
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.==(other) = other.is_a?(Class) && other <= OnebusawaySDK::Unknown
 
-    # @!parse
-    #   # @private
-    #   #
-    #   # @param value [Object]
-    #   #
-    #   # @return [Object]
-    #   #
-    #   def self.coerce(value) = super
+    class << self
+      # @!parse
+      #   # @api private
+      #   #
+      #   # @param value [Object]
+      #   #
+      #   # @return [Object]
+      #   def coerce(value) = super
 
-    # @!parse
-    #   # @private
-    #   #
-    #   # @param value [Object]
-    #   #
-    #   # @return [Object]
-    #   #
-    #   def self.dump(value) = super
+      # @!parse
+      #   # @api private
+      #   #
+      #   # @param value [Object]
+      #   #
+      #   # @return [Object]
+      #   def dump(value) = super
 
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
-    def self.try_strict_coerce(value)
-      # prevent unknown variant from being chosen during the first coercion pass
-      [false, true, 0]
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
+      def try_strict_coerce(value)
+        # prevent unknown variant from being chosen during the first coercion pass
+        [false, true, 0]
+      end
     end
 
     # rubocop:enable Lint/UnusedMethodArgument
   end
 
-  # @private
+  # @api private
   #
   # @abstract
   #
@@ -237,50 +238,47 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.===(other) = other == true || other == false
 
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.==(other) = other.is_a?(Class) && other <= OnebusawaySDK::BooleanModel
 
-    # @!parse
-    #   # @private
-    #   #
-    #   # @param value [Boolean, Object]
-    #   #
-    #   # @return [Boolean, Object]
-    #   #
-    #   def self.coerce(value) = super
+    class << self
+      # @!parse
+      #   # @api private
+      #   #
+      #   # @param value [Boolean, Object]
+      #   #
+      #   # @return [Boolean, Object]
+      #   def coerce(value) = super
 
-    # @!parse
-    #   # @private
-    #   #
-    #   # @param value [Boolean, Object]
-    #   #
-    #   # @return [Boolean, Object]
-    #   #
-    #   def self.dump(value) = super
+      # @!parse
+      #   # @api private
+      #   #
+      #   # @param value [Boolean, Object]
+      #   #
+      #   # @return [Boolean, Object]
+      #   def dump(value) = super
 
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
-    def self.try_strict_coerce(value)
-      case value
-      in true | false
-        [true, value, 1]
-      else
-        [false, false, 0]
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
+      def try_strict_coerce(value)
+        case value
+        in true | false
+          [true, value, 1]
+        else
+          [false, false, 0]
+        end
       end
     end
   end
 
-  # @private
+  # @api private
   #
   # @abstract
   #
@@ -297,161 +295,164 @@ module OnebusawaySDK
   class Enum
     extend OnebusawaySDK::Converter
 
-    # All of the valid Symbol values for this enum.
-    #
-    # @return [Array<NilClass, Boolean, Integer, Float, Symbol>]
-    #
-    def self.values = (@values ||= constants.map { const_get(_1) })
+    class << self
+      # All of the valid Symbol values for this enum.
+      #
+      # @return [Array<NilClass, Boolean, Integer, Float, Symbol>]
+      def values = (@values ||= constants.map { const_get(_1) })
 
-    # @private
-    #
-    # Guard against thread safety issues by instantiating `@values`.
-    #
-    private_class_method def self.finalize! = values
+      # @api private
+      #
+      # Guard against thread safety issues by instantiating `@values`.
+      private def finalize! = values
+    end
 
     private_class_method :new
 
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.===(other) = values.include?(other)
 
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.==(other)
       other.is_a?(Class) && other <= OnebusawaySDK::Enum && other.values.to_set == values.to_set
     end
 
-    # @private
-    #
-    # @param value [String, Symbol, Object]
-    #
-    # @return [Symbol, Object]
-    #
-    def self.coerce(value) = (value.is_a?(String) ? value.to_sym : value)
-
-    # @!parse
-    #   # @private
-    #   #
-    #   # @param value [Symbol, Object]
-    #   #
-    #   # @return [Symbol, Object]
-    #   #
-    #   def self.dump(value) = super
-
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
-    def self.try_strict_coerce(value)
-      return [true, value, 1] if values.include?(value)
-
-      case value
-      in String if values.include?(val = value.to_sym)
-        [true, val, 1]
-      else
-        case [value, values.first]
-        in [true | false, true | false] | [Integer, Integer] | [Symbol | String, Symbol]
-          [false, true, 0]
+    class << self
+      # @api private
+      #
+      # @param value [String, Symbol, Object]
+      #
+      # @return [Symbol, Object]
+      def coerce(value)
+        case value
+        in Symbol | String if values.include?(val = value.to_sym)
+          val
         else
-          [false, false, 0]
+          value
+        end
+      end
+
+      # @!parse
+      #   # @api private
+      #   #
+      #   # @param value [Symbol, Object]
+      #   #
+      #   # @return [Symbol, Object]
+      #   def dump(value) = super
+
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
+      def try_strict_coerce(value)
+        return [true, value, 1] if values.include?(value)
+
+        case value
+        in Symbol | String if values.include?(val = value.to_sym)
+          [true, val, 1]
+        else
+          case [value, values.first]
+          in [true | false, true | false] | [Integer, Integer] | [Symbol | String, Symbol]
+            [false, true, 0]
+          else
+            [false, false, 0]
+          end
         end
       end
     end
   end
 
-  # @private
+  # @api private
   #
   # @abstract
-  #
   class Union
     extend OnebusawaySDK::Converter
 
-    # @private
-    #
-    # All of the specified variant info for this union.
-    #
-    # @return [Array<Array(Symbol, Proc)>]
-    #
-    private_class_method def self.known_variants = (@known_variants ||= [])
-
     class << self
-      # @private
+      # @api private
       #
-      # All of the specified variants for this union.
+      # All of the specified variant info for this union.
+      #
+      # @return [Array<Array(Symbol, Proc)>]
+      private def known_variants = (@known_variants ||= [])
+
+      # @api private
       #
       # @return [Array<Array(Symbol, Object)>]
-      #
-      protected def variants
+      protected def derefed_variants
         @known_variants.map { |key, variant_fn| [key, variant_fn.call] }
       end
-    end
 
-    # @private
-    #
-    # @param property [Symbol]
-    #
-    private_class_method def self.discriminator(property)
-      case property
-      in Symbol
-        @discriminator = property
+      # All of the specified variants for this union.
+      #
+      # @return [Array<Object>]
+      def variants
+        derefed_variants.map(&:last)
       end
-    end
 
-    # @private
-    #
-    # @param key [Symbol, Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
-    #
-    # @param spec [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class] .
-    #
-    #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
-    #
-    #   @option spec [Proc] :enum
-    #
-    #   @option spec [Proc] :union
-    #
-    #   @option spec [Boolean] :"nil?"
-    #
-    private_class_method def self.variant(key, spec = nil)
-      variant_info =
-        case key
+      # @api private
+      #
+      # @param property [Symbol]
+      private def discriminator(property)
+        case property
         in Symbol
-          [key, OnebusawaySDK::Converter.type_info(spec)]
-        in Proc | OnebusawaySDK::Converter | Class | Hash
-          [nil, OnebusawaySDK::Converter.type_info(key)]
+          @discriminator = property
         end
+      end
 
-      known_variants << variant_info
-    end
-
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [OnebusawaySDK::Converter, Class, nil]
-    #
-    private_class_method def self.resolve_variant(value)
-      case [@discriminator, value]
-      in [_, OnebusawaySDK::BaseModel]
-        value.class
-      in [Symbol, Hash]
-        key =
-          if value.key?(@discriminator)
-            value.fetch(@discriminator)
-          elsif value.key?((discriminator = @discriminator.to_s))
-            value.fetch(discriminator)
+      # @api private
+      #
+      # @param key [Symbol, Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
+      #
+      # @param spec [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class] .
+      #
+      #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
+      #
+      #   @option spec [Proc] :enum
+      #
+      #   @option spec [Proc] :union
+      #
+      #   @option spec [Boolean] :"nil?"
+      private def variant(key, spec = nil)
+        variant_info =
+          case key
+          in Symbol
+            [key, OnebusawaySDK::Converter.type_info(spec)]
+          in Proc | OnebusawaySDK::Converter | Class | Hash
+            [nil, OnebusawaySDK::Converter.type_info(key)]
           end
 
-        key = key.to_sym if key.is_a?(String)
-        _, resolved = known_variants.find { |k,| k == key }
-        resolved.nil? ? OnebusawaySDK::Unknown : resolved.call
-      else
-        nil
+        known_variants << variant_info
+      end
+
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [OnebusawaySDK::Converter, Class, nil]
+      private def resolve_variant(value)
+        case [@discriminator, value]
+        in [_, OnebusawaySDK::BaseModel]
+          value.class
+        in [Symbol, Hash]
+          key =
+            if value.key?(@discriminator)
+              value.fetch(@discriminator)
+            elsif value.key?((discriminator = @discriminator.to_s))
+              value.fetch(discriminator)
+            end
+
+          key = key.to_sym if key.is_a?(String)
+          _, resolved = known_variants.find { |k,| k == key }
+          resolved.nil? ? OnebusawaySDK::Unknown : resolved.call
+        else
+          nil
+        end
       end
     end
 
@@ -463,7 +464,6 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.===(other)
       known_variants.any? do |_, variant_fn|
         variant_fn.call === other
@@ -473,99 +473,97 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def self.==(other)
-      other.is_a?(Class) && other <= OnebusawaySDK::Union && other.variants == variants
+      other.is_a?(Class) && other <= OnebusawaySDK::Union && other.derefed_variants == derefed_variants
     end
 
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [Object]
-    #
-    def self.coerce(value)
-      if (variant = resolve_variant(value))
-        return OnebusawaySDK::Converter.coerce(variant, value)
-      end
-
-      matches = []
-
-      known_variants.each do |_, variant_fn|
-        variant = variant_fn.call
-
-        case OnebusawaySDK::Converter.try_strict_coerce(variant, value)
-        in [true, coerced, _]
-          return coerced
-        in [false, true, score]
-          matches << [score, variant]
-        in [false, false, _]
-          nil
+    class << self
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [Object]
+      def coerce(value)
+        if (variant = resolve_variant(value))
+          return OnebusawaySDK::Converter.coerce(variant, value)
         end
+
+        matches = []
+
+        known_variants.each do |_, variant_fn|
+          variant = variant_fn.call
+
+          case OnebusawaySDK::Converter.try_strict_coerce(variant, value)
+          in [true, coerced, _]
+            return coerced
+          in [false, true, score]
+            matches << [score, variant]
+          in [false, false, _]
+            nil
+          end
+        end
+
+        _, variant = matches.sort! { _2.first <=> _1.first }.find { |score,| !score.zero? }
+        variant.nil? ? value : OnebusawaySDK::Converter.coerce(variant, value)
       end
 
-      _, variant = matches.sort! { _2.first <=> _1.first }.find { |score,| !score.zero? }
-      variant.nil? ? value : OnebusawaySDK::Converter.coerce(variant, value)
-    end
-
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [Object]
-    #
-    def self.dump(value)
-      if (variant = resolve_variant(value))
-        return OnebusawaySDK::Converter.dump(variant, value)
-      end
-
-      known_variants.each do |_, variant_fn|
-        variant = variant_fn.call
-        if variant === value
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [Object]
+      def dump(value)
+        if (variant = resolve_variant(value))
           return OnebusawaySDK::Converter.dump(variant, value)
         end
-      end
-      value
-    end
 
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
-    def self.try_strict_coerce(value)
-      # TODO(ruby) this will result in super linear decoding behaviour for nested unions
-      # follow up with a decoding context that captures current strictness levels
-      if (variant = resolve_variant(value))
-        return Converter.try_strict_coerce(variant, value)
-      end
-
-      coercible = false
-      max_score = 0
-
-      known_variants.each do |_, variant_fn|
-        variant = variant_fn.call
-
-        case OnebusawaySDK::Converter.try_strict_coerce(variant, value)
-        in [true, coerced, score]
-          return [true, coerced, score]
-        in [false, true, score]
-          coercible = true
-          max_score = [max_score, score].max
-        in [false, false, _]
-          nil
+        known_variants.each do |_, variant_fn|
+          variant = variant_fn.call
+          if variant === value
+            return OnebusawaySDK::Converter.dump(variant, value)
+          end
         end
+        value
       end
 
-      [false, coercible, max_score]
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
+      def try_strict_coerce(value)
+        # TODO(ruby) this will result in super linear decoding behaviour for nested unions
+        # follow up with a decoding context that captures current strictness levels
+        if (variant = resolve_variant(value))
+          return Converter.try_strict_coerce(variant, value)
+        end
+
+        coercible = false
+        max_score = 0
+
+        known_variants.each do |_, variant_fn|
+          variant = variant_fn.call
+
+          case OnebusawaySDK::Converter.try_strict_coerce(variant, value)
+          in [true, coerced, score]
+            return [true, coerced, score]
+          in [false, true, score]
+            coercible = true
+            max_score = [max_score, score].max
+          in [false, false, _]
+            nil
+          end
+        end
+
+        [false, coercible, max_score]
+      end
     end
 
     # rubocop:enable Style/CaseEquality
     # rubocop:enable Style/HashEachMethods
   end
 
-  # @private
+  # @api private
   #
   # @abstract
   #
@@ -580,7 +578,6 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def ===(other)
       type = item_type
       case other
@@ -596,15 +593,13 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def ==(other) = other.is_a?(OnebusawaySDK::ArrayOf) && other.item_type == item_type
 
-    # @private
+    # @api private
     #
     # @param value [Enumerable, Object]
     #
     # @return [Array<Object>, Object]
-    #
     def coerce(value)
       type = item_type
       case value
@@ -615,12 +610,11 @@ module OnebusawaySDK
       end
     end
 
-    # @private
+    # @api private
     #
     # @param value [Enumerable, Object]
     #
     # @return [Array<Object>, Object]
-    #
     def dump(value)
       type = item_type
       case value
@@ -631,12 +625,11 @@ module OnebusawaySDK
       end
     end
 
-    # @private
+    # @api private
     #
     # @param value [Object]
     #
     # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
     def try_strict_coerce(value)
       case value
       in Array
@@ -670,13 +663,12 @@ module OnebusawaySDK
       end
     end
 
-    # @private
+    # @api private
     #
     # @return [OnebusawaySDK::Converter, Class]
-    #
     protected def item_type = @item_type_fn.call
 
-    # @private
+    # @api private
     #
     # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
     #
@@ -689,13 +681,12 @@ module OnebusawaySDK
     #   @option spec [Proc] :union
     #
     #   @option spec [Boolean] :"nil?"
-    #
     def initialize(type_info, spec = {})
       @item_type_fn = OnebusawaySDK::Converter.type_info(type_info || spec)
     end
   end
 
-  # @private
+  # @api private
   #
   # @abstract
   #
@@ -710,7 +701,6 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def ===(other)
       type = item_type
       case other
@@ -731,15 +721,13 @@ module OnebusawaySDK
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def ==(other) = other.is_a?(OnebusawaySDK::HashOf) && other.item_type == item_type
 
-    # @private
+    # @api private
     #
     # @param value [Hash{Object=>Object}, Object]
     #
     # @return [Hash{Symbol=>Object}, Object]
-    #
     def coerce(value)
       type = item_type
       case value
@@ -753,12 +741,11 @@ module OnebusawaySDK
       end
     end
 
-    # @private
+    # @api private
     #
     # @param value [Hash{Object=>Object}, Object]
     #
     # @return [Hash{Symbol=>Object}, Object]
-    #
     def dump(value)
       type = item_type
       case value
@@ -771,12 +758,11 @@ module OnebusawaySDK
       end
     end
 
-    # @private
+    # @api private
     #
     # @param value [Object]
     #
     # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
     def try_strict_coerce(value)
       case value
       in Hash
@@ -810,13 +796,12 @@ module OnebusawaySDK
       end
     end
 
-    # @private
+    # @api private
     #
     # @return [OnebusawaySDK::Converter, Class]
-    #
     protected def item_type = @item_type_fn.call
 
-    # @private
+    # @api private
     #
     # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
     #
@@ -829,175 +814,172 @@ module OnebusawaySDK
     #   @option spec [Proc] :union
     #
     #   @option spec [Boolean] :"nil?"
-    #
     def initialize(type_info, spec = {})
       @item_type_fn = OnebusawaySDK::Converter.type_info(type_info || spec)
     end
   end
 
-  # @private
-  #
   # @abstract
   #
+  # @example
+  # ```ruby
+  # # `references` is a `OnebusawaySDK::Models::References`
+  # references => {
+  #   agencies: agencies,
+  #   routes: routes,
+  #   situations: situations
+  # }
+  # ```
   class BaseModel
     extend OnebusawaySDK::Converter
 
-    # @private
-    #
-    # Assumes superclass fields are totally defined before fields are accessed /
-    #   defined on subclasses.
-    #
-    # @return [Hash{Symbol=>Hash{Symbol=>Object}}]
-    #
-    def self.known_fields
-      @known_fields ||= (self < OnebusawaySDK::BaseModel ? superclass.known_fields.dup : {})
-    end
-
     class << self
-      # @private
+      # @api private
+      #
+      # Assumes superclass fields are totally defined before fields are accessed /
+      #   defined on subclasses.
       #
       # @return [Hash{Symbol=>Hash{Symbol=>Object}}]
+      def known_fields
+        @known_fields ||= (self < OnebusawaySDK::BaseModel ? superclass.known_fields.dup : {})
+      end
+
+      # @api private
       #
+      # @return [Hash{Symbol=>Hash{Symbol=>Object}}]
       def fields
         known_fields.transform_values do |field|
           {**field.except(:type_fn), type: field.fetch(:type_fn).call}
         end
       end
-    end
 
-    # @private
-    #
-    # @return [Hash{Symbol=>Proc}]
-    #
-    def self.defaults = (@defaults ||= {})
+      # @api private
+      #
+      # @return [Hash{Symbol=>Proc}]
+      def defaults = (@defaults ||= {})
 
-    # @private
-    #
-    # @param name_sym [Symbol]
-    #
-    # @param required [Boolean]
-    #
-    # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
-    #
-    # @param spec [Hash{Symbol=>Object}] .
-    #
-    #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
-    #
-    #   @option spec [Proc] :enum
-    #
-    #   @option spec [Proc] :union
-    #
-    #   @option spec [Boolean] :"nil?"
-    #
-    private_class_method def self.add_field(name_sym, required:, type_info:, spec:)
-      type_fn, info =
-        case type_info
-        in Proc | Class | OnebusawaySDK::Converter
-          [OnebusawaySDK::Converter.type_info({**spec, union: type_info}), spec]
-        in Hash
-          [OnebusawaySDK::Converter.type_info(type_info), type_info]
+      # @api private
+      #
+      # @param name_sym [Symbol]
+      #
+      # @param required [Boolean]
+      #
+      # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
+      #
+      # @param spec [Hash{Symbol=>Object}] .
+      #
+      #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
+      #
+      #   @option spec [Proc] :enum
+      #
+      #   @option spec [Proc] :union
+      #
+      #   @option spec [Boolean] :"nil?"
+      private def add_field(name_sym, required:, type_info:, spec:)
+        type_fn, info =
+          case type_info
+          in Proc | Class | OnebusawaySDK::Converter
+            [OnebusawaySDK::Converter.type_info({**spec, union: type_info}), spec]
+          in Hash
+            [OnebusawaySDK::Converter.type_info(type_info), type_info]
+          end
+
+        fallback = info[:const]
+        defaults[name_sym] = fallback if required && !info[:nil?] && info.key?(:const)
+
+        key = info.fetch(:api_name, name_sym)
+        setter = "#{name_sym}="
+
+        if known_fields.key?(name_sym)
+          [name_sym, setter].each { undef_method(_1) }
         end
 
-      fallback = info[:const]
-      defaults[name_sym] = fallback if required && !info[:nil?] && info.key?(:const)
+        known_fields[name_sym] = {mode: @mode, key: key, required: required, type_fn: type_fn}
 
-      key = info.fetch(:api_name, name_sym)
-      setter = "#{name_sym}="
+        define_method(setter) do |val|
+          @data[key] = val
+        end
 
-      if known_fields.key?(name_sym)
-        [name_sym, setter].each { undef_method(_1) }
+        define_method(name_sym) do
+          field_type = type_fn.call
+          value = @data.fetch(key) { self.class.defaults[key] }
+          OnebusawaySDK::Converter.coerce(field_type, value)
+        rescue StandardError
+          name = self.class.name.split("::").last
+          raise OnebusawaySDK::ConversionError.new(
+            "Failed to parse #{name}.#{name_sym} as #{field_type.inspect}. " \
+            "To get the unparsed API response, use #{name}[:#{key}]."
+          )
+        end
       end
 
-      known_fields[name_sym] = {mode: @mode, key: key, required: required, type_fn: type_fn}
-
-      define_method(setter) do |val|
-        @data[key] = val
+      # @api private
+      #
+      # @param name_sym [Symbol]
+      #
+      # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
+      #
+      # @param spec [Hash{Symbol=>Object}] .
+      #
+      #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
+      #
+      #   @option spec [Proc] :enum
+      #
+      #   @option spec [Proc] :union
+      #
+      #   @option spec [Boolean] :"nil?"
+      def required(name_sym, type_info, spec = {})
+        add_field(name_sym, required: true, type_info: type_info, spec: spec)
       end
 
-      define_method(name_sym) do
-        field_type = type_fn.call
-        value = @data.fetch(key) { self.class.defaults[key] }
-        OnebusawaySDK::Converter.coerce(field_type, value)
-      rescue StandardError
-        name = self.class.name.split("::").last
-        raise OnebusawaySDK::ConversionError.new(
-          "Failed to parse #{name}.#{name_sym} as #{field_type.inspect}. " \
-          "To get the unparsed API response, use #{name}[:#{key}]."
-        )
+      # @api private
+      #
+      # @param name_sym [Symbol]
+      #
+      # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
+      #
+      # @param spec [Hash{Symbol=>Object}] .
+      #
+      #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
+      #
+      #   @option spec [Proc] :enum
+      #
+      #   @option spec [Proc] :union
+      #
+      #   @option spec [Boolean] :"nil?"
+      def optional(name_sym, type_info, spec = {})
+        add_field(name_sym, required: false, type_info: type_info, spec: spec)
       end
-    end
 
-    # @private
-    #
-    # @param name_sym [Symbol]
-    #
-    # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
-    #
-    # @param spec [Hash{Symbol=>Object}] .
-    #
-    #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
-    #
-    #   @option spec [Proc] :enum
-    #
-    #   @option spec [Proc] :union
-    #
-    #   @option spec [Boolean] :"nil?"
-    #
-    def self.required(name_sym, type_info, spec = {})
-      add_field(name_sym, required: true, type_info: type_info, spec: spec)
-    end
+      # @api private
+      #
+      # `request_only` attributes not excluded from `.#coerce` when receiving responses
+      #   even if well behaved servers should not send them
+      #
+      # @param blk [Proc]
+      private def request_only(&blk)
+        @mode = :dump
+        blk.call
+      ensure
+        @mode = nil
+      end
 
-    # @private
-    #
-    # @param name_sym [Symbol]
-    #
-    # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
-    #
-    # @param spec [Hash{Symbol=>Object}] .
-    #
-    #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
-    #
-    #   @option spec [Proc] :enum
-    #
-    #   @option spec [Proc] :union
-    #
-    #   @option spec [Boolean] :"nil?"
-    #
-    def self.optional(name_sym, type_info, spec = {})
-      add_field(name_sym, required: false, type_info: type_info, spec: spec)
-    end
-
-    # @private
-    #
-    # `request_only` attributes not excluded from `.#coerce` when receiving responses
-    #   even if well behaved servers should not send them
-    #
-    # @param blk [Proc]
-    #
-    private_class_method def self.request_only(&blk)
-      @mode = :dump
-      blk.call
-    ensure
-      @mode = nil
-    end
-
-    # @private
-    #
-    # `response_only` attributes are omitted from `.#dump` when making requests
-    #
-    # @param blk [Proc]
-    #
-    private_class_method def self.response_only(&blk)
-      @mode = :coerce
-      blk.call
-    ensure
-      @mode = nil
+      # @api private
+      #
+      # `response_only` attributes are omitted from `.#dump` when making requests
+      #
+      # @param blk [Proc]
+      private def response_only(&blk)
+        @mode = :coerce
+        blk.call
+      ensure
+        @mode = nil
+      end
     end
 
     # @param other [Object]
     #
     # @return [Boolean]
-    #
     def ==(other)
       case other
       in OnebusawaySDK::BaseModel
@@ -1007,108 +989,107 @@ module OnebusawaySDK
       end
     end
 
-    # @private
-    #
-    # @param value [OnebusawaySDK::BaseModel, Hash{Object=>Object}, Object]
-    #
-    # @return [OnebusawaySDK::BaseModel, Object]
-    #
-    def self.coerce(value)
-      case OnebusawaySDK::Util.coerce_hash(value)
-      in Hash => coerced
-        new(coerced)
-      else
-        value
-      end
-    end
-
-    # @private
-    #
-    # @param value [OnebusawaySDK::BaseModel, Object]
-    #
-    # @return [Hash{Object=>Object}, Object]
-    #
-    def self.dump(value)
-      unless (coerced = OnebusawaySDK::Util.coerce_hash(value)).is_a?(Hash)
-        return value
-      end
-
-      values = coerced.filter_map do |key, val|
-        name = key.to_sym
-        case (field = known_fields[name])
-        in nil
-          [name, val]
+    class << self
+      # @api private
+      #
+      # @param value [OnebusawaySDK::BaseModel, Hash{Object=>Object}, Object]
+      #
+      # @return [OnebusawaySDK::BaseModel, Object]
+      def coerce(value)
+        case OnebusawaySDK::Util.coerce_hash(value)
+        in Hash => coerced
+          new(coerced)
         else
-          mode, type_fn, api_name = field.fetch_values(:mode, :type_fn, :key)
-          case mode
-          in :coerce
-            next
+          value
+        end
+      end
+
+      # @api private
+      #
+      # @param value [OnebusawaySDK::BaseModel, Object]
+      #
+      # @return [Hash{Object=>Object}, Object]
+      def dump(value)
+        unless (coerced = OnebusawaySDK::Util.coerce_hash(value)).is_a?(Hash)
+          return value
+        end
+
+        values = coerced.filter_map do |key, val|
+          name = key.to_sym
+          case (field = known_fields[name])
+          in nil
+            [name, val]
           else
+            mode, type_fn, api_name = field.fetch_values(:mode, :type_fn, :key)
+            case mode
+            in :coerce
+              next
+            else
+              target = type_fn.call
+              [api_name, OnebusawaySDK::Converter.dump(target, val)]
+            end
+          end
+        end.to_h
+
+        defaults.each do |key, val|
+          next if values.key?(key)
+
+          values[key] = val
+        end
+
+        values
+      end
+
+      # @api private
+      #
+      # @param value [Object]
+      #
+      # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
+      def try_strict_coerce(value)
+        case value
+        in Hash | OnebusawaySDK::BaseModel
+          value = value.to_h
+        else
+          return [false, false, 0]
+        end
+
+        keys = value.keys.to_set
+        great_success = true
+        tally = 0
+        acc = {}
+
+        known_fields.each_value do |field|
+          mode, required, type_fn, api_name = field.fetch_values(:mode, :required, :type_fn, :key)
+          keys.delete(api_name)
+
+          case [required && mode != :dump, value.key?(api_name)]
+          in [_, true]
             target = type_fn.call
-            [api_name, OnebusawaySDK::Converter.dump(target, val)]
-          end
-        end
-      end.to_h
-
-      defaults.each do |key, val|
-        next if values.key?(key)
-
-        values[key] = val
-      end
-
-      values
-    end
-
-    # @private
-    #
-    # @param value [Object]
-    #
-    # @return [Array(true, Object, nil), Array(false, Boolean, Integer)]
-    #
-    def self.try_strict_coerce(value)
-      case value
-      in Hash | OnebusawaySDK::BaseModel
-        value = value.to_h
-      else
-        return [false, false, 0]
-      end
-
-      keys = value.keys.to_set
-      great_success = true
-      tally = 0
-      acc = {}
-
-      known_fields.each_value do |field|
-        mode, required, type_fn, api_name = field.fetch_values(:mode, :required, :type_fn, :key)
-        keys.delete(api_name)
-
-        case [required && mode != :dump, value.key?(api_name)]
-        in [_, true]
-          target = type_fn.call
-          item = value.fetch(api_name)
-          case OnebusawaySDK::Converter.try_strict_coerce(target, item)
-          in [true, coerced, score]
-            tally += score
-            acc[api_name] = coerced
-          in [false, true, score]
+            item = value.fetch(api_name)
+            case OnebusawaySDK::Converter.try_strict_coerce(target, item)
+            in [true, coerced, score]
+              tally += score
+              acc[api_name] = coerced
+            in [false, true, score]
+              great_success = false
+              tally += score
+              acc[api_name] = item
+            in [false, false, _]
+              great_success &&= item.nil?
+            end
+          in [true, false]
             great_success = false
-            tally += score
-            acc[api_name] = item
-          in [false, false, _]
-            great_success &&= item.nil?
+          in [false, false]
+            nil
           end
-        in [true, false]
-          great_success = false
-        in [false, false]
-          nil
         end
-      end
 
-      keys.each do |key|
-        acc[key] = value.fetch(key)
-      end
+        keys.each do |key|
+          acc[key] = value.fetch(key)
+        end
 
-      great_success ? [true, new(acc), tally] : [false, true, tally]
+        great_success ? [true, new(acc), tally] : [false, true, tally]
+      end
     end
 
     # Returns the raw value associated with the given key, if found. Otherwise, nil is
@@ -1121,7 +1102,6 @@ module OnebusawaySDK
     # @param key [Symbol]
     #
     # @return [Object, nil]
-    #
     def [](key)
       unless key.instance_of?(Symbol)
         raise ArgumentError.new("Expected symbol key for lookup, got #{key.inspect}")
@@ -1140,7 +1120,6 @@ module OnebusawaySDK
     #   should not be mutated.
     #
     # @return [Hash{Symbol=>Object}]
-    #
     def to_h = @data
 
     alias_method :to_hash, :to_h
@@ -1148,7 +1127,6 @@ module OnebusawaySDK
     # @param keys [Array<Symbol>, nil]
     #
     # @return [Hash{Symbol=>Object}]
-    #
     def deconstruct_keys(keys)
       (keys || self.class.known_fields.keys).filter_map do |k|
         unless self.class.known_fields.key?(k)
@@ -1163,7 +1141,6 @@ module OnebusawaySDK
     # Create a new instance of a model.
     #
     # @param data [Hash{Symbol=>Object}, OnebusawaySDK::BaseModel]
-    #
     def initialize(data = {})
       case OnebusawaySDK::Util.coerce_hash(data)
       in Hash => coerced
@@ -1174,11 +1151,9 @@ module OnebusawaySDK
     end
 
     # @return [String]
-    #
     def to_s = @data.to_s
 
     # @return [String]
-    #
     def inspect
       "#<#{self.class.name}:0x#{object_id.to_s(16)} #{deconstruct_keys(nil).map do |k, v|
         "#{k}=#{v.inspect}"

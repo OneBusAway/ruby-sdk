@@ -6,6 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # A string code identifying the nature of the problem
       sig { returns(T.nilable(Symbol)) }
       def code
       end
@@ -14,6 +15,7 @@ module OnebusawaySDK
       def code=(_)
       end
 
+      # The service date of the trip
       sig { returns(T.nilable(Integer)) }
       def service_date
       end
@@ -22,6 +24,7 @@ module OnebusawaySDK
       def service_date=(_)
       end
 
+      # A stop ID indicating where the user is experiencing the problem
       sig { returns(T.nilable(String)) }
       def stop_id
       end
@@ -30,6 +33,7 @@ module OnebusawaySDK
       def stop_id=(_)
       end
 
+      # Additional comment text supplied by the user describing the problem
       sig { returns(T.nilable(String)) }
       def user_comment
       end
@@ -38,6 +42,7 @@ module OnebusawaySDK
       def user_comment=(_)
       end
 
+      # The reporting user’s current latitude
       sig { returns(T.nilable(Float)) }
       def user_lat
       end
@@ -46,6 +51,7 @@ module OnebusawaySDK
       def user_lat=(_)
       end
 
+      # The reporting user’s location accuracy, in meters
       sig { returns(T.nilable(Float)) }
       def user_location_accuracy
       end
@@ -54,6 +60,7 @@ module OnebusawaySDK
       def user_location_accuracy=(_)
       end
 
+      # The reporting user’s current longitude
       sig { returns(T.nilable(Float)) }
       def user_lon
       end
@@ -62,6 +69,7 @@ module OnebusawaySDK
       def user_lon=(_)
       end
 
+      # Indicator if the user is on the transit vehicle experiencing the problem
       sig { returns(T.nilable(T::Boolean)) }
       def user_on_vehicle
       end
@@ -70,6 +78,7 @@ module OnebusawaySDK
       def user_on_vehicle=(_)
       end
 
+      # The vehicle number, as reported by the user
       sig { returns(T.nilable(String)) }
       def user_vehicle_number
       end
@@ -78,6 +87,7 @@ module OnebusawaySDK
       def user_vehicle_number=(_)
       end
 
+      # The vehicle actively serving the trip
       sig { returns(T.nilable(String)) }
       def vehicle_id
       end
@@ -100,9 +110,9 @@ module OnebusawaySDK
           vehicle_id: String,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
+      def self.new(
         code: nil,
         service_date: nil,
         stop_id: nil,
@@ -138,8 +148,11 @@ module OnebusawaySDK
       def to_hash
       end
 
+      # A string code identifying the nature of the problem
       class Code < OnebusawaySDK::Enum
         abstract!
+
+        Value = type_template(:out) { {fixed: Symbol} }
 
         VEHICLE_NEVER_CAME = :vehicle_never_came
         VEHICLE_CAME_EARLY = :vehicle_came_early
@@ -147,10 +160,6 @@ module OnebusawaySDK
         WRONG_HEADSIGN = :wrong_headsign
         VEHICLE_DOES_NOT_STOP_HERE = :vehicle_does_not_stop_here
         OTHER = :other
-
-        sig { override.returns(T::Array[Symbol]) }
-        def self.values
-        end
       end
     end
   end

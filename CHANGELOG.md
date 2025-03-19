@@ -1,5 +1,54 @@
 # Changelog
 
+## 0.1.0-alpha.207 (2025-03-18)
+
+Full Changelog: [v0.1.0-alpha.206...v0.1.0-alpha.207](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.206...v0.1.0-alpha.207)
+
+### Features
+
+* add jsonl support ([#451](https://github.com/OneBusAway/ruby-sdk/issues/451)) ([25b1850](https://github.com/OneBusAway/ruby-sdk/commit/25b18504fbc9e4d0f18a5092f850e9c9ed7d5ec9))
+* support client level methods ([#458](https://github.com/OneBusAway/ruby-sdk/issues/458)) ([80ae090](https://github.com/OneBusAway/ruby-sdk/commit/80ae090c4416fdc13af63a92e2235da93cd15672))
+* support jsonl uploads ([#468](https://github.com/OneBusAway/ruby-sdk/issues/468)) ([0e1efec](https://github.com/OneBusAway/ruby-sdk/commit/0e1efec0a957d1b38111075b51dfbf082cb41c0b))
+* support streaming uploads ([#462](https://github.com/OneBusAway/ruby-sdk/issues/462)) ([6e5afc3](https://github.com/OneBusAway/ruby-sdk/commit/6e5afc38b62457ae05fbea8c045ec63b6625ea45))
+
+
+### Bug Fixes
+
+* bad documentation url for gemdocs.org ([#479](https://github.com/OneBusAway/ruby-sdk/issues/479)) ([27b42e7](https://github.com/OneBusAway/ruby-sdk/commit/27b42e7f9410fb8dce5dd380d95c5cc428112a12))
+* enums should only coerce matching symbols into strings ([#463](https://github.com/OneBusAway/ruby-sdk/issues/463)) ([cfbe9be](https://github.com/OneBusAway/ruby-sdk/commit/cfbe9be99bcc6852262494f20b4f1dd3b67681a8))
+* rectify a mistake where wrong lines were chosen during rebase ([#459](https://github.com/OneBusAway/ruby-sdk/issues/459)) ([97aaf84](https://github.com/OneBusAway/ruby-sdk/commit/97aaf848e3cff2491a9d8c9633b674be7b1f06c8))
+
+
+### Chores
+
+* add `sorbet` section to README ([#456](https://github.com/OneBusAway/ruby-sdk/issues/456)) ([2344889](https://github.com/OneBusAway/ruby-sdk/commit/234488981d74c432b5ded96f26afec9476c62be9))
+* add more examples to README.md ([#457](https://github.com/OneBusAway/ruby-sdk/issues/457)) ([617ed08](https://github.com/OneBusAway/ruby-sdk/commit/617ed0802182a4d88c285dc4cf68b0f98db7549d))
+* add most doc strings to rbi type definitions ([#469](https://github.com/OneBusAway/ruby-sdk/issues/469)) ([aa9810b](https://github.com/OneBusAway/ruby-sdk/commit/aa9810b04f27775d253b4c2a46d2d0f7af49b3a4))
+* bump lockfile ([#448](https://github.com/OneBusAway/ruby-sdk/issues/448)) ([4e18ee5](https://github.com/OneBusAway/ruby-sdk/commit/4e18ee546dc74ab39f1dc01974c97e539732b108))
+* do not label modules as abstract ([#478](https://github.com/OneBusAway/ruby-sdk/issues/478)) ([1261344](https://github.com/OneBusAway/ruby-sdk/commit/1261344add41d6d1d2e6142f0e26ac34ec948901))
+* document union variants in yard doc ([#473](https://github.com/OneBusAway/ruby-sdk/issues/473)) ([6e217b9](https://github.com/OneBusAway/ruby-sdk/commit/6e217b984fff5adbebe8750788d8649e1da74448))
+* ensure doc strings for rbi method arguments ([#470](https://github.com/OneBusAway/ruby-sdk/issues/470)) ([0496e78](https://github.com/OneBusAway/ruby-sdk/commit/0496e78e8d635afe8f570b152f0d203884153e31))
+* error fields are now mutable in keeping with rest of SDK ([#472](https://github.com/OneBusAway/ruby-sdk/issues/472)) ([c003722](https://github.com/OneBusAway/ruby-sdk/commit/c003722a3c066ebed6d02cc25b3998f20dbae921))
+* fused enum should use faster internal iteration by default ([#460](https://github.com/OneBusAway/ruby-sdk/issues/460)) ([57b8aff](https://github.com/OneBusAway/ruby-sdk/commit/57b8aff20e713aa1096387f84e5f8ab0976b1319))
+* generate better supported rbi signatures ([#453](https://github.com/OneBusAway/ruby-sdk/issues/453)) ([4da269a](https://github.com/OneBusAway/ruby-sdk/commit/4da269aa981379cc9f5b94b8a0ac3bf040f648b5))
+* improve documentation ([#461](https://github.com/OneBusAway/ruby-sdk/issues/461)) ([30c0847](https://github.com/OneBusAway/ruby-sdk/commit/30c08471d899843c9498e29fba15be42140d7666))
+* **internal:** codegen related update ([#445](https://github.com/OneBusAway/ruby-sdk/issues/445)) ([5246f74](https://github.com/OneBusAway/ruby-sdk/commit/5246f743e6b59c6d8e3af57aae9440418cc90878))
+* **internal:** codegen related update ([#455](https://github.com/OneBusAway/ruby-sdk/issues/455)) ([72cf612](https://github.com/OneBusAway/ruby-sdk/commit/72cf6124e4fd364f489d460fdd4f9f139afac642))
+* **internal:** remove extra empty newlines ([#466](https://github.com/OneBusAway/ruby-sdk/issues/466)) ([56e1673](https://github.com/OneBusAway/ruby-sdk/commit/56e167301c000264a3d57f95c234595d57f8416b))
+* mark non-inheritable SDK internal classes as final ([#475](https://github.com/OneBusAway/ruby-sdk/issues/475)) ([c1ebe01](https://github.com/OneBusAway/ruby-sdk/commit/c1ebe018b9948782b8c51fcc548feee0817720df))
+* modify sorbet initializers to better support auto-completion ([#454](https://github.com/OneBusAway/ruby-sdk/issues/454)) ([921695d](https://github.com/OneBusAway/ruby-sdk/commit/921695d6562234af1a3fe483af6102108d45fe29))
+* move examples into tests ([#450](https://github.com/OneBusAway/ruby-sdk/issues/450)) ([a163039](https://github.com/OneBusAway/ruby-sdk/commit/a1630390cffc694ecab63b64675148b21938f690))
+* refactor BasePage to have initializer ([#465](https://github.com/OneBusAway/ruby-sdk/issues/465)) ([0419b24](https://github.com/OneBusAway/ruby-sdk/commit/0419b246d0175d88325ab2a699aeef05d07d8df5))
+* remove stale thread local checks ([#464](https://github.com/OneBusAway/ruby-sdk/issues/464)) ([3360161](https://github.com/OneBusAway/ruby-sdk/commit/33601613edd2b2daaec76b21c00693f86805123a))
+* rename misleading variable ([#449](https://github.com/OneBusAway/ruby-sdk/issues/449)) ([93f7821](https://github.com/OneBusAway/ruby-sdk/commit/93f7821a5c35e319224d4005e9bde687fa896881))
+* sdk client internal refactoring ([#477](https://github.com/OneBusAway/ruby-sdk/issues/477)) ([82bf2d4](https://github.com/OneBusAway/ruby-sdk/commit/82bf2d419e75d9cbb52ebb98e69491fccd7407be))
+* sdk internal updates ([#467](https://github.com/OneBusAway/ruby-sdk/issues/467)) ([4339005](https://github.com/OneBusAway/ruby-sdk/commit/433900592cddb951d380a7990b23a893529f84b3))
+* slightly more consistent type definition layout ([#474](https://github.com/OneBusAway/ruby-sdk/issues/474)) ([89408be](https://github.com/OneBusAway/ruby-sdk/commit/89408be34720b24845902cd2afc2308cceaf2fb0))
+* support different EOLs in streaming ([#452](https://github.com/OneBusAway/ruby-sdk/issues/452)) ([c04993e](https://github.com/OneBusAway/ruby-sdk/commit/c04993eaf7db5de217f6b56ee7ad70e57b8996c1))
+* touch up sdk usage examples ([#471](https://github.com/OneBusAway/ruby-sdk/issues/471)) ([50c7f01](https://github.com/OneBusAway/ruby-sdk/commit/50c7f014ee76b5ef7763b2a861b4c6d627f35bab))
+* update custom timeout header name ([#447](https://github.com/OneBusAway/ruby-sdk/issues/447)) ([6e9a1a1](https://github.com/OneBusAway/ruby-sdk/commit/6e9a1a1972461f5d74fc337b7fbacc218ce2c4f5))
+* use generics instead of overloading for sorbet type definitions ([#476](https://github.com/OneBusAway/ruby-sdk/issues/476)) ([fe3afe1](https://github.com/OneBusAway/ruby-sdk/commit/fe3afe18e524cc777cf4db9aade61fc0b0ad3001))
+
 ## 0.1.0-alpha.206 (2025-03-05)
 
 Full Changelog: [v0.1.0-alpha.205...v0.1.0-alpha.206](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.205...v0.1.0-alpha.206)

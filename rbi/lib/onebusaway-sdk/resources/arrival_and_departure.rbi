@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class ArrivalAndDeparture
+      # arrival-and-departure-for-stop
       sig do
         params(
           stop_id: String,
@@ -26,6 +27,7 @@ module OnebusawaySDK
       )
       end
 
+      # arrivals-and-departures-for-stop
       sig do
         params(
           stop_id: String,
@@ -36,11 +38,20 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse)
       end
-      def list(stop_id, minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
+      def list(
+        stop_id,
+        # Include vehicles arriving or departing in the next n minutes.
+        minutes_after: nil,
+        # Include vehicles having arrived or departed in the previous n minutes.
+        minutes_before: nil,
+        # The specific time for querying the system status.
+        time: nil,
+        request_options: {}
+      )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

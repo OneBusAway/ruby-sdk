@@ -6,6 +6,8 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
+      # Whether to include the full schedule element in the tripDetails section
+      #   (defaults to true).
       sig { returns(T.nilable(T::Boolean)) }
       def include_schedule
       end
@@ -14,6 +16,8 @@ module OnebusawaySDK
       def include_schedule=(_)
       end
 
+      # Whether to include the full status element in the tripDetails section (defaults
+      #   to true).
       sig { returns(T.nilable(T::Boolean)) }
       def include_status
       end
@@ -22,6 +26,8 @@ module OnebusawaySDK
       def include_status=(_)
       end
 
+      # Whether to include the full trip element in the references section (defaults to
+      #   true).
       sig { returns(T.nilable(T::Boolean)) }
       def include_trip
       end
@@ -30,6 +36,7 @@ module OnebusawaySDK
       def include_trip=(_)
       end
 
+      # Service date for the trip as Unix time in milliseconds (optional).
       sig { returns(T.nilable(Integer)) }
       def service_date
       end
@@ -38,6 +45,7 @@ module OnebusawaySDK
       def service_date=(_)
       end
 
+      # Time parameter to query the system at a specific time (optional).
       sig { returns(T.nilable(Integer)) }
       def time
       end
@@ -55,9 +63,9 @@ module OnebusawaySDK
           time: Integer,
           request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
         )
-          .void
+          .returns(T.attached_class)
       end
-      def initialize(
+      def self.new(
         include_schedule: nil,
         include_status: nil,
         include_trip: nil,

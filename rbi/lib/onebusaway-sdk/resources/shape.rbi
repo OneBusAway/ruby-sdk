@@ -3,6 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Shape
+      # Retrieve a shape (the path traveled by a transit vehicle) by ID.
       sig do
         params(
           shape_id: String,
@@ -10,11 +11,15 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::ShapeRetrieveResponse)
       end
-      def retrieve(shape_id, request_options: {})
+      def retrieve(
+        # The shape ID, encoded directly in the URL
+        shape_id,
+        request_options: {}
+      )
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

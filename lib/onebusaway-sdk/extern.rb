@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 module OnebusawaySDK
-  # @private
-  #
-  # @abstract
-  #
+  # @api private
   module Extern
   end
 end

@@ -3,6 +3,8 @@
 module OnebusawaySDK
   module Resources
     class AgenciesWithCoverage
+      # Returns a list of all transit agencies currently supported by OneBusAway along
+      #   with the center of their coverage area.
       sig do
         params(request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])))
           .returns(OnebusawaySDK::Models::AgenciesWithCoverageListResponse)
@@ -10,8 +12,8 @@ module OnebusawaySDK
       def list(request_options: {})
       end
 
-      sig { params(client: OnebusawaySDK::Client).void }
-      def initialize(client:)
+      sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
+      def self.new(client:)
       end
     end
   end

@@ -1,19 +1,21 @@
 # typed: strong
 
 module OnebusawaySDK
+  # @api private
   module Converter
-    abstract!
-
     Input = T.type_alias { T.any(OnebusawaySDK::Converter, T::Class[T.anything]) }
 
+    # @api private
     sig { overridable.params(value: T.anything).returns(T.anything) }
     def coerce(value)
     end
 
+    # @api private
     sig { overridable.params(value: T.anything).returns(T.anything) }
     def dump(value)
     end
 
+    # @api private
     sig do
       overridable
         .params(value: T.anything)
@@ -22,107 +24,171 @@ module OnebusawaySDK
     def try_strict_coerce(value)
     end
 
-    sig do
-      params(
-        spec: T.any(
-          {
-            const: T.nilable(T.any(NilClass, T::Boolean, Integer, Float, Symbol)),
-            enum: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input)),
-            union: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input))
-          },
-          T.proc.returns(OnebusawaySDK::Converter::Input),
-          OnebusawaySDK::Converter::Input
+    class << self
+      # @api private
+      sig do
+        params(
+          spec: T.any(
+            {
+              const: T.nilable(T.any(NilClass, T::Boolean, Integer, Float, Symbol)),
+              enum: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input)),
+              union: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input))
+            },
+            T.proc.returns(OnebusawaySDK::Converter::Input),
+            OnebusawaySDK::Converter::Input
+          )
         )
-      )
-        .returns(T.proc.returns(T.anything).void)
-    end
-    def self.type_info(spec)
-    end
+          .returns(T.proc.returns(T.anything).void)
+      end
+      def self.type_info(spec)
+      end
 
-    sig { params(target: OnebusawaySDK::Converter::Input, value: T.anything).returns(T.anything) }
-    def self.coerce(target, value)
-    end
+      # @api private
+      #
+      # Based on `target`, transform `value` into `target`, to the extent possible:
+      #
+      #   1. if the given `value` conforms to `target` already, return the given `value`
+      #   2. if it's possible and safe to convert the given `value` to `target`, then the
+      #      converted value
+      #   3. otherwise, the given `value` unaltered
+      sig { params(target: OnebusawaySDK::Converter::Input, value: T.anything).returns(T.anything) }
+      def self.coerce(target, value)
+      end
 
-    sig { params(target: OnebusawaySDK::Converter::Input, value: T.anything).returns(T.anything) }
-    def self.dump(target, value)
-    end
+      # @api private
+      sig { params(target: OnebusawaySDK::Converter::Input, value: T.anything).returns(T.anything) }
+      def self.dump(target, value)
+      end
 
-    sig { params(target: OnebusawaySDK::Converter::Input, value: T.anything).returns(T.anything) }
-    def self.try_strict_coerce(target, value)
+      # @api private
+      #
+      # The underlying algorithm for computing maximal compatibility is subject to
+      #   future improvements.
+      #
+      #   Similar to `#.coerce`, used to determine the best union variant to decode into.
+      #
+      #   1. determine if strict-ish coercion is possible
+      #   2. return either result of successful coercion or if loose coercion is possible
+      #   3. return a score for recursively tallied count for fields that can be coerced
+      sig { params(target: OnebusawaySDK::Converter::Input, value: T.anything).returns(T.anything) }
+      def self.try_strict_coerce(target, value)
+      end
     end
   end
 
+  # @api private
+  #
+  # When we don't know what to expect for the value.
   class Unknown
-    abstract!
-
     extend OnebusawaySDK::Converter
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    abstract!
+    final!
+
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def self.===(other)
     end
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def self.==(other)
     end
 
-    sig { override.params(value: T.anything).returns(T.anything) }
-    def self.coerce(value)
-    end
+    class << self
+      # @api private
+      sig(:final) { override.params(value: T.anything).returns(T.anything) }
+      def coerce(value)
+      end
 
-    sig { override.params(value: T.anything).returns(T.anything) }
-    def self.dump(value)
-    end
+      # @api private
+      sig(:final) { override.params(value: T.anything).returns(T.anything) }
+      def dump(value)
+      end
 
-    sig do
-      override
-        .params(value: T.anything)
-        .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
-    end
-    def self.try_strict_coerce(value)
+      # @api private
+      sig(:final) do
+        override
+          .params(value: T.anything)
+          .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
+      end
+      def try_strict_coerce(value)
+      end
     end
   end
 
+  # @api private
+  #
+  # Ruby has no Boolean class; this is something for models to refer to.
   class BooleanModel
-    abstract!
-
     extend OnebusawaySDK::Converter
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    abstract!
+    final!
+
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def self.===(other)
     end
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def self.==(other)
     end
 
-    sig { override.params(value: T.any(T::Boolean, T.anything)).returns(T.any(T::Boolean, T.anything)) }
-    def self.coerce(value)
-    end
+    class << self
+      # @api private
+      sig(:final) do
+        override.params(value: T.any(T::Boolean, T.anything)).returns(T.any(T::Boolean, T.anything))
+      end
+      def coerce(value)
+      end
 
-    sig { override.params(value: T.any(T::Boolean, T.anything)).returns(T.any(T::Boolean, T.anything)) }
-    def self.dump(value)
-    end
+      # @api private
+      sig(:final) do
+        override.params(value: T.any(T::Boolean, T.anything)).returns(T.any(T::Boolean, T.anything))
+      end
+      def dump(value)
+      end
 
-    sig do
-      override
-        .params(value: T.anything)
-        .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
-    end
-    def self.try_strict_coerce(value)
+      # @api private
+      sig(:final) do
+        override
+          .params(value: T.anything)
+          .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
+      end
+      def try_strict_coerce(value)
+      end
     end
   end
 
+  # @api private
+  #
+  # A value from among a specified list of options. OpenAPI enum values map to Ruby
+  #   values in the SDK as follows:
+  #
+  #   1. boolean => true | false
+  #   2. integer => Integer
+  #   3. float => Float
+  #   4. string => Symbol
+  #
+  #   We can therefore convert string values to Symbols, but can't convert other
+  #   values safely.
   class Enum
-    abstract!
-
     extend OnebusawaySDK::Converter
 
-    sig { overridable.returns(T::Array[T.any(NilClass, T::Boolean, Integer, Float, Symbol)]) }
-    def self.values
-    end
+    abstract!
 
-    sig { void }
-    private_class_method def self.finalize!
+    Value = type_template(:out)
+
+    class << self
+      # All of the valid Symbol values for this enum.
+      sig { overridable.returns(T::Array[Value]) }
+      def values
+      end
+
+      # @api private
+      #
+      # Guard against thread safety issues by instantiating `@values`.
+      sig { void }
+      private def finalize!
+      end
     end
 
     sig { params(other: T.anything).returns(T::Boolean) }
@@ -133,61 +199,74 @@ module OnebusawaySDK
     def self.==(other)
     end
 
-    sig { override.params(value: T.any(String, Symbol, T.anything)).returns(T.any(Symbol, T.anything)) }
-    def self.coerce(value)
-    end
+    class << self
+      # @api private
+      sig { override.params(value: T.any(String, Symbol, T.anything)).returns(T.any(Symbol, T.anything)) }
+      def coerce(value)
+      end
 
-    sig { override.params(value: T.any(Symbol, T.anything)).returns(T.any(Symbol, T.anything)) }
-    def self.dump(value)
-    end
+      # @api private
+      sig { override.params(value: T.any(Symbol, T.anything)).returns(T.any(Symbol, T.anything)) }
+      def dump(value)
+      end
 
-    sig do
-      override
-        .params(value: T.anything)
-        .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
-    end
-    def self.try_strict_coerce(value)
+      # @api private
+      sig do
+        override
+          .params(value: T.anything)
+          .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
+      end
+      def try_strict_coerce(value)
+      end
     end
   end
 
+  # @api private
   class Union
-    abstract!
-
     extend OnebusawaySDK::Converter
 
-    sig { returns(T::Array[[T.nilable(Symbol), Proc]]) }
-    private_class_method def self.known_variants
-    end
+    abstract!
 
-    sig { overridable.returns(T::Array[[T.nilable(Symbol), T.anything]]) }
-    private_class_method def self.variants
-    end
+    Variants = type_template(:out)
 
-    sig { params(property: Symbol).void }
-    private_class_method def self.discriminator(property)
-    end
+    class << self
+      # @api private
+      #
+      # All of the specified variant info for this union.
+      sig { returns(T::Array[[T.nilable(Symbol), T.proc.returns(Variants)]]) }
+      private def known_variants
+      end
 
-    sig do
-      params(
-        key: T.any(
-          Symbol,
-          T::Hash[Symbol, T.anything],
-          T.proc.returns(OnebusawaySDK::Converter::Input),
-          OnebusawaySDK::Converter::Input
-        ),
-        spec: T.any(
-          T::Hash[Symbol, T.anything],
-          T.proc.returns(OnebusawaySDK::Converter::Input),
-          OnebusawaySDK::Converter::Input
+      # @api private
+      sig { returns(T::Array[[T.nilable(Symbol), Variants]]) }
+      protected def derefed_variants
+      end
+
+      # All of the specified variants for this union.
+      sig { overridable.returns(T::Array[Variants]) }
+      def variants
+      end
+
+      # @api private
+      sig { params(property: Symbol).void }
+      private def discriminator(property)
+      end
+
+      # @api private
+      sig do
+        params(
+          key: T.any(Symbol, T::Hash[Symbol, T.anything], T.proc.returns(Variants), Variants),
+          spec: T.any(T::Hash[Symbol, T.anything], T.proc.returns(Variants), Variants)
         )
-      )
-        .void
-    end
-    private_class_method def self.variant(key, spec = nil)
-    end
+          .void
+      end
+      private def variant(key, spec = nil)
+      end
 
-    sig { params(value: T.anything).returns(T.nilable(OnebusawaySDK::Converter::Input)) }
-    private_class_method def self.resolve_variant(value)
+      # @api private
+      sig { params(value: T.anything).returns(T.nilable(Variants)) }
+      private def resolve_variant(value)
+      end
     end
 
     sig { params(other: T.anything).returns(T::Boolean) }
@@ -198,37 +277,49 @@ module OnebusawaySDK
     def self.==(other)
     end
 
-    sig { override.params(value: T.anything).returns(T.anything) }
-    def self.coerce(value)
-    end
+    class << self
+      # @api private
+      sig { override.params(value: T.anything).returns(T.anything) }
+      def coerce(value)
+      end
 
-    sig { override.params(value: T.anything).returns(T.anything) }
-    def self.dump(value)
-    end
+      # @api private
+      sig { override.params(value: T.anything).returns(T.anything) }
+      def dump(value)
+      end
 
-    sig do
-      override
-        .params(value: T.anything)
-        .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
-    end
-    def self.try_strict_coerce(value)
+      # @api private
+      sig do
+        override
+          .params(value: T.anything)
+          .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
+      end
+      def try_strict_coerce(value)
+      end
     end
   end
 
+  # @api private
+  #
+  # Array of items of a given type.
   class ArrayOf
-    abstract!
-
     include OnebusawaySDK::Converter
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    abstract!
+    final!
+
+    Elem = type_member(:out)
+
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def ===(other)
     end
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def ==(other)
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       override
         .params(value: T.any(T::Enumerable[T.anything], T.anything))
         .returns(T.any(T::Array[T.anything], T.anything))
@@ -236,7 +327,8 @@ module OnebusawaySDK
     def coerce(value)
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       override
         .params(value: T.any(T::Enumerable[T.anything], T.anything))
         .returns(T.any(T::Array[T.anything], T.anything))
@@ -244,7 +336,8 @@ module OnebusawaySDK
     def dump(value)
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       override
         .params(value: T.anything)
         .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
@@ -252,11 +345,13 @@ module OnebusawaySDK
     def try_strict_coerce(value)
     end
 
-    sig { returns(OnebusawaySDK::Converter::Input) }
+    # @api private
+    sig(:final) { returns(Elem) }
     protected def item_type
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       params(
         type_info: T.any(
           T::Hash[Symbol, T.anything],
@@ -265,26 +360,33 @@ module OnebusawaySDK
         ),
         spec: T::Hash[Symbol, T.anything]
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(type_info, spec = {})
+    def self.new(type_info, spec = {})
     end
   end
 
+  # @api private
+  #
+  # Hash of items of a given type.
   class HashOf
-    abstract!
-
     include OnebusawaySDK::Converter
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    abstract!
+    final!
+
+    Elem = type_member(:out)
+
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def ===(other)
     end
 
-    sig { params(other: T.anything).returns(T::Boolean) }
+    sig(:final) { params(other: T.anything).returns(T::Boolean) }
     def ==(other)
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       override
         .params(value: T.any(T::Hash[T.anything, T.anything], T.anything))
         .returns(T.any(T::Hash[Symbol, T.anything], T.anything))
@@ -292,7 +394,8 @@ module OnebusawaySDK
     def coerce(value)
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       override
         .params(value: T.any(T::Hash[T.anything, T.anything], T.anything))
         .returns(T.any(T::Hash[Symbol, T.anything], T.anything))
@@ -300,7 +403,8 @@ module OnebusawaySDK
     def dump(value)
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       override
         .params(value: T.anything)
         .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
@@ -308,11 +412,13 @@ module OnebusawaySDK
     def try_strict_coerce(value)
     end
 
-    sig { returns(OnebusawaySDK::Converter::Input) }
+    # @api private
+    sig(:final) { returns(Elem) }
     protected def item_type
     end
 
-    sig do
+    # @api private
+    sig(:final) do
       params(
         type_info: T.any(
           T::Hash[Symbol, T.anything],
@@ -321,138 +427,175 @@ module OnebusawaySDK
         ),
         spec: T::Hash[Symbol, T.anything]
       )
-        .void
+        .returns(T.attached_class)
     end
-    def initialize(type_info, spec = {})
+    def self.new(type_info, spec = {})
     end
   end
 
   class BaseModel
-    abstract!
-
     extend OnebusawaySDK::Converter
+
+    abstract!
 
     KnownFieldShape = T.type_alias { {mode: T.nilable(Symbol), required: T::Boolean} }
 
-    sig do
-      returns(
-        T::Hash[
-        Symbol,
-        T.all(
-          OnebusawaySDK::BaseModel::KnownFieldShape,
-          {type_fn: T.proc.returns(OnebusawaySDK::Converter::Input)}
+    class << self
+      # @api private
+      #
+      # Assumes superclass fields are totally defined before fields are accessed /
+      #   defined on subclasses.
+      sig do
+        returns(
+          T::Hash[
+          Symbol,
+          T.all(
+            OnebusawaySDK::BaseModel::KnownFieldShape,
+            {type_fn: T.proc.returns(OnebusawaySDK::Converter::Input)}
+          )
+          ]
         )
-        ]
-      )
-    end
-    def self.known_fields
-    end
+      end
+      def known_fields
+      end
 
-    sig do
-      returns(
-        T::Hash[Symbol,
-                T.all(OnebusawaySDK::BaseModel::KnownFieldShape, {type: OnebusawaySDK::Converter::Input})]
-      )
-    end
-    def self.fields
-    end
+      # @api private
+      sig do
+        returns(
+          T::Hash[Symbol,
+                  T.all(OnebusawaySDK::BaseModel::KnownFieldShape, {type: OnebusawaySDK::Converter::Input})]
+        )
+      end
+      def fields
+      end
 
-    sig { returns(T::Hash[Symbol, T.proc.returns(T::Class[T.anything])]) }
-    def self.defaults
-    end
+      # @api private
+      sig { returns(T::Hash[Symbol, T.proc.returns(T::Class[T.anything])]) }
+      def defaults
+      end
 
-    sig do
-      params(
-        name_sym: Symbol,
-        required: T::Boolean,
-        type_info: T.any(
-          {
-            const: T.nilable(T.any(NilClass, T::Boolean, Integer, Float, Symbol)),
-            enum: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input)),
-            union: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input)),
-            api_name: Symbol,
-            nil?: T::Boolean
-          },
-          T.proc.returns(OnebusawaySDK::Converter::Input),
-          OnebusawaySDK::Converter::Input
-        ),
-        spec: T::Hash[Symbol, T.anything]
-      )
-        .void
-    end
-    private_class_method def self.add_field(name_sym, required:, type_info:, spec:)
-    end
+      # @api private
+      sig do
+        params(
+          name_sym: Symbol,
+          required: T::Boolean,
+          type_info: T.any(
+            {
+              const: T.nilable(T.any(NilClass, T::Boolean, Integer, Float, Symbol)),
+              enum: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input)),
+              union: T.nilable(T.proc.returns(OnebusawaySDK::Converter::Input)),
+              api_name: Symbol,
+              nil?: T::Boolean
+            },
+            T.proc.returns(OnebusawaySDK::Converter::Input),
+            OnebusawaySDK::Converter::Input
+          ),
+          spec: T::Hash[Symbol, T.anything]
+        )
+          .void
+      end
+      private def add_field(name_sym, required:, type_info:, spec:)
+      end
 
-    sig do
-      params(
-        name_sym: Symbol,
-        type_info: T.any(
-          T::Hash[Symbol, T.anything],
-          T.proc.returns(OnebusawaySDK::Converter::Input),
-          OnebusawaySDK::Converter::Input
-        ),
-        spec: T::Hash[Symbol, T.anything]
-      )
-        .void
-    end
-    def self.required(name_sym, type_info, spec = {})
-    end
+      # @api private
+      sig do
+        params(
+          name_sym: Symbol,
+          type_info: T.any(
+            T::Hash[Symbol, T.anything],
+            T.proc.returns(OnebusawaySDK::Converter::Input),
+            OnebusawaySDK::Converter::Input
+          ),
+          spec: T::Hash[Symbol, T.anything]
+        )
+          .void
+      end
+      def required(name_sym, type_info, spec = {})
+      end
 
-    sig do
-      params(
-        name_sym: Symbol,
-        type_info: T.any(
-          T::Hash[Symbol, T.anything],
-          T.proc.returns(OnebusawaySDK::Converter::Input),
-          OnebusawaySDK::Converter::Input
-        ),
-        spec: T::Hash[Symbol, T.anything]
-      )
-        .void
-    end
-    def self.optional(name_sym, type_info, spec = {})
-    end
+      # @api private
+      sig do
+        params(
+          name_sym: Symbol,
+          type_info: T.any(
+            T::Hash[Symbol, T.anything],
+            T.proc.returns(OnebusawaySDK::Converter::Input),
+            OnebusawaySDK::Converter::Input
+          ),
+          spec: T::Hash[Symbol, T.anything]
+        )
+          .void
+      end
+      def optional(name_sym, type_info, spec = {})
+      end
 
-    sig { params(blk: T.proc.void).void }
-    private_class_method def self.request_only(&blk)
-    end
+      # @api private
+      #
+      # `request_only` attributes not excluded from `.#coerce` when receiving responses
+      #   even if well behaved servers should not send them
+      sig { params(blk: T.proc.void).void }
+      private def request_only(&blk)
+      end
 
-    sig { params(blk: T.proc.void).void }
-    private_class_method def self.response_only(&blk)
+      # @api private
+      #
+      # `response_only` attributes are omitted from `.#dump` when making requests
+      sig { params(blk: T.proc.void).void }
+      private def response_only(&blk)
+      end
     end
 
     sig { params(other: T.anything).returns(T::Boolean) }
     def ==(other)
     end
 
-    sig do
-      override
-        .params(value: T.any(OnebusawaySDK::BaseModel, T::Hash[T.anything, T.anything], T.anything))
-        .returns(T.any(T.attached_class, T.anything))
-    end
-    def self.coerce(value)
+    class << self
+      # @api private
+      sig do
+        override
+          .params(value: T.any(OnebusawaySDK::BaseModel, T::Hash[T.anything, T.anything], T.anything))
+          .returns(T.any(T.attached_class, T.anything))
+      end
+      def coerce(value)
+      end
+
+      # @api private
+      sig do
+        override
+          .params(value: T.any(T.attached_class, T.anything))
+          .returns(T.any(T::Hash[T.anything, T.anything], T.anything))
+      end
+      def dump(value)
+      end
+
+      # @api private
+      sig do
+        override
+          .params(value: T.anything)
+          .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
+      end
+      def try_strict_coerce(value)
+      end
     end
 
-    sig do
-      override
-        .params(value: T.any(T.attached_class, T.anything))
-        .returns(T.any(T::Hash[T.anything, T.anything], T.anything))
-    end
-    def self.dump(value)
-    end
-
-    sig do
-      override
-        .params(value: T.anything)
-        .returns(T.any([T::Boolean, T.anything, NilClass], [T::Boolean, T::Boolean, Integer]))
-    end
-    def self.try_strict_coerce(value)
-    end
-
+    # Returns the raw value associated with the given key, if found. Otherwise, nil is
+    #   returned.
+    #
+    #   It is valid to lookup keys that are not in the API spec, for example to access
+    #   undocumented features. This method does not parse response data into
+    #   higher-level types. Lookup by anything other than a Symbol is an ArgumentError.
     sig { params(key: Symbol).returns(T.nilable(T.anything)) }
     def [](key)
     end
 
+    # Returns a Hash of the data underlying this object. O(1)
+    #
+    #   Keys are Symbols and values are the raw values from the response. The return
+    #   value indicates which values were ever set on the object. i.e. there will be a
+    #   key in this hash if they ever were, even if the set value was nil.
+    #
+    #   This method is not recursive. The returned value is shared by the object, so it
+    #   should not be mutated.
     sig { overridable.returns(T::Hash[Symbol, T.anything]) }
     def to_h
     end
@@ -463,8 +606,9 @@ module OnebusawaySDK
     def deconstruct_keys(keys)
     end
 
-    sig { params(data: T.any(T::Hash[Symbol, T.anything], T.self_type)).void }
-    def initialize(data = {})
+    # Create a new instance of a model.
+    sig { params(data: T.any(T::Hash[Symbol, T.anything], T.self_type)).returns(T.attached_class) }
+    def self.new(data = {})
     end
 
     sig { returns(String) }
