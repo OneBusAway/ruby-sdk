@@ -4,7 +4,11 @@ module OnebusawaySDK
       { data: OnebusawaySDK::Models::StopRetrieveResponse::Data }
 
     class StopRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
-      attr_accessor data: OnebusawaySDK::Models::StopRetrieveResponse::Data
+      def data: -> OnebusawaySDK::Models::StopRetrieveResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::StopRetrieveResponse::Data _
+      ) -> OnebusawaySDK::Models::StopRetrieveResponse::Data
 
       def initialize:
         (data: OnebusawaySDK::Models::StopRetrieveResponse::Data) -> void
