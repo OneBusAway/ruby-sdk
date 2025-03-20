@@ -1,14 +1,9 @@
 module OnebusawaySDK
   module Resources
     class AgenciesWithCoverage
-      def list:
-        (
-          ?OnebusawaySDK::Models::AgenciesWithCoverageListParams
-          | ::Hash[Symbol, top] params
-        ) -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse
-        | (
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse
+      def list: (
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

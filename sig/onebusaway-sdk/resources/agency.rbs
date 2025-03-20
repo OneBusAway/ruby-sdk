@@ -1,16 +1,10 @@
 module OnebusawaySDK
   module Resources
     class Agency
-      def retrieve:
-        (
-          String agency_id,
-          ?OnebusawaySDK::Models::AgencyRetrieveParams
-          | ::Hash[Symbol, top] params
-        ) -> OnebusawaySDK::Models::AgencyRetrieveResponse
-        | (
-          String agency_id,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> OnebusawaySDK::Models::AgencyRetrieveResponse
+      def retrieve: (
+        String agency_id,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::AgencyRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

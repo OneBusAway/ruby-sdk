@@ -12,17 +12,12 @@ module OnebusawaySDK
 
       attr_accessor version: Integer
 
-      def initialize:
-        (
-          code: Integer,
-          current_time: Integer,
-          text: String,
-          version: Integer
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::response_wrapper
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        code: Integer,
+        current_time: Integer,
+        text: String,
+        version: Integer
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::response_wrapper
     end

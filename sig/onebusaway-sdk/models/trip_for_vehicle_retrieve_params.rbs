@@ -29,18 +29,13 @@ module OnebusawaySDK
 
       def time=: (Integer) -> Integer
 
-      def initialize:
-        (
-          ?include_schedule: bool,
-          ?include_status: bool,
-          ?include_trip: bool,
-          ?time: Integer,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::trip_for_vehicle_retrieve_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        ?include_schedule: bool,
+        ?include_status: bool,
+        ?include_trip: bool,
+        ?time: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::trip_for_vehicle_retrieve_params
     end

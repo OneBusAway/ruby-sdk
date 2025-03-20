@@ -1,18 +1,12 @@
 module OnebusawaySDK
   module Resources
     class StopsForRoute
-      def list:
-        (
-          String route_id,
-          ?OnebusawaySDK::Models::StopsForRouteListParams
-          | ::Hash[Symbol, top] params
-        ) -> OnebusawaySDK::Models::StopsForRouteListResponse
-        | (
-          String route_id,
-          ?include_polylines: bool,
-          ?time: String,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> OnebusawaySDK::Models::StopsForRouteListResponse
+      def list: (
+        String route_id,
+        ?include_polylines: bool,
+        ?time: String,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::StopsForRouteListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

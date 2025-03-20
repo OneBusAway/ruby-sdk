@@ -13,16 +13,11 @@ module OnebusawaySDK
 
       def max_count=: (Integer) -> Integer
 
-      def initialize:
-        (
-          input: String,
-          ?max_count: Integer,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::search_for_route_list_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        input: String,
+        ?max_count: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::search_for_route_list_params
     end

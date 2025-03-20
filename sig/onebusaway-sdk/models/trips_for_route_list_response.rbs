@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::TripsForRouteListResponse::Data _
       ) -> OnebusawaySDK::Models::TripsForRouteListResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::TripsForRouteListResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::trips_for_route_list_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::TripsForRouteListResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::trips_for_route_list_response
 
@@ -33,16 +30,11 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            limit_exceeded: bool,
-            list: ::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::TripsForRouteListResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::TripsForRouteListResponse::data
 
@@ -73,19 +65,14 @@ module OnebusawaySDK
 
           def situation_ids=: (::Array[String]) -> ::Array[String]
 
-          def initialize:
-            (
-              schedule: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
-              status: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
-              trip_id: String,
-              ?frequency: String?,
-              ?service_date: Integer,
-              ?situation_ids: ::Array[String]
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::TripsForRouteListResponse::Data::list
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            schedule: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
+            status: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
+            trip_id: String,
+            ?frequency: String?,
+            ?service_date: Integer,
+            ?situation_ids: ::Array[String]
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::TripsForRouteListResponse::Data::list
 
@@ -109,18 +96,13 @@ module OnebusawaySDK
 
             attr_accessor frequency: String?
 
-            def initialize:
-              (
-                next_trip_id: String,
-                previous_trip_id: String,
-                stop_times: ::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
-                time_zone: String,
-                ?frequency: String?
-              ) -> void
-              | (
-                ?OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::schedule
-                | OnebusawaySDK::BaseModel data
-              ) -> void
+            def initialize: (
+              next_trip_id: String,
+              previous_trip_id: String,
+              stop_times: ::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
+              time_zone: String,
+              ?frequency: String?
+            ) -> void
 
             def to_hash: -> OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::schedule
 
@@ -159,19 +141,14 @@ module OnebusawaySDK
 
               def stop_id=: (String) -> String
 
-              def initialize:
-                (
-                  ?arrival_time: Integer,
-                  ?departure_time: Integer,
-                  ?distance_along_trip: Float,
-                  ?historical_occupancy: String,
-                  ?stop_headsign: String,
-                  ?stop_id: String
-                ) -> void
-                | (
-                  ?OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::stop_time
-                  | OnebusawaySDK::BaseModel data
-                ) -> void
+              def initialize: (
+                ?arrival_time: Integer,
+                ?departure_time: Integer,
+                ?distance_along_trip: Float,
+                ?historical_occupancy: String,
+                ?stop_headsign: String,
+                ?stop_id: String
+              ) -> void
 
               def to_hash: -> OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::stop_time
             end
@@ -289,40 +266,35 @@ module OnebusawaySDK
 
             def vehicle_id=: (String) -> String
 
-            def initialize:
-              (
-                active_trip_id: String,
-                block_trip_sequence: Integer,
-                closest_stop: String,
-                distance_along_trip: Float,
-                last_known_distance_along_trip: Float,
-                last_location_update_time: Integer,
-                last_update_time: Integer,
-                occupancy_capacity: Integer,
-                occupancy_count: Integer,
-                occupancy_status: String,
-                phase: String,
-                predicted: bool,
-                schedule_deviation: Integer,
-                service_date: Integer,
-                status: String,
-                total_distance_along_trip: Float,
-                ?closest_stop_time_offset: Integer,
-                ?frequency: String,
-                ?last_known_location: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
-                ?last_known_orientation: Float,
-                ?next_stop: String,
-                ?next_stop_time_offset: Integer,
-                ?orientation: Float,
-                ?position: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
-                ?scheduled_distance_along_trip: Float,
-                ?situation_ids: ::Array[String],
-                ?vehicle_id: String
-              ) -> void
-              | (
-                ?OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::status
-                | OnebusawaySDK::BaseModel data
-              ) -> void
+            def initialize: (
+              active_trip_id: String,
+              block_trip_sequence: Integer,
+              closest_stop: String,
+              distance_along_trip: Float,
+              last_known_distance_along_trip: Float,
+              last_location_update_time: Integer,
+              last_update_time: Integer,
+              occupancy_capacity: Integer,
+              occupancy_count: Integer,
+              occupancy_status: String,
+              phase: String,
+              predicted: bool,
+              schedule_deviation: Integer,
+              service_date: Integer,
+              status: String,
+              total_distance_along_trip: Float,
+              ?closest_stop_time_offset: Integer,
+              ?frequency: String,
+              ?last_known_location: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
+              ?last_known_orientation: Float,
+              ?next_stop: String,
+              ?next_stop_time_offset: Integer,
+              ?orientation: Float,
+              ?position: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
+              ?scheduled_distance_along_trip: Float,
+              ?situation_ids: ::Array[String],
+              ?vehicle_id: String
+            ) -> void
 
             def to_hash: -> OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::status
 
@@ -337,12 +309,7 @@ module OnebusawaySDK
 
               def lon=: (Float) -> Float
 
-              def initialize:
-                (?lat: Float, ?lon: Float) -> void
-                | (
-                  ?OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::last_known_location
-                  | OnebusawaySDK::BaseModel data
-                ) -> void
+              def initialize: (?lat: Float, ?lon: Float) -> void
 
               def to_hash: -> OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::last_known_location
             end
@@ -358,12 +325,7 @@ module OnebusawaySDK
 
               def lon=: (Float) -> Float
 
-              def initialize:
-                (?lat: Float, ?lon: Float) -> void
-                | (
-                  ?OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::position
-                  | OnebusawaySDK::BaseModel data
-                ) -> void
+              def initialize: (?lat: Float, ?lon: Float) -> void
 
               def to_hash: -> OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::position
             end
