@@ -99,12 +99,12 @@ module OnebusawaySDK
               name: String,
               timezone: String,
               url: String,
-              disclaimer: String,
-              email: String,
-              fare_url: String,
-              lang: String,
-              phone: String,
-              private_service: bool
+              ?disclaimer: String,
+              ?email: String,
+              ?fare_url: String,
+              ?lang: String,
+              ?phone: String,
+              ?private_service: bool
             ) -> void
             | (
               ?OnebusawaySDK::Models::AgencyRetrieveResponse::Data::entry

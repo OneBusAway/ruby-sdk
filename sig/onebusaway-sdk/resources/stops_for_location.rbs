@@ -9,11 +9,11 @@ module OnebusawaySDK
         | (
           lat: Float,
           lon: Float,
-          lat_span: Float,
-          lon_span: Float,
-          query: String,
-          radius: Float,
-          request_options: OnebusawaySDK::request_opts
+          ?lat_span: Float,
+          ?lon_span: Float,
+          ?query: String,
+          ?radius: Float,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::StopsForLocationListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

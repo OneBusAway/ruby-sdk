@@ -42,10 +42,10 @@ module OnebusawaySDK
           lat_span: Float,
           lon: Float,
           lon_span: Float,
-          include_schedule: bool,
-          include_trip: bool,
-          time: Integer,
-          request_options: OnebusawaySDK::request_opts
+          ?include_schedule: bool,
+          ?include_trip: bool,
+          ?time: Integer,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> void
         | (
           ?OnebusawaySDK::Models::trips_for_location_list_params

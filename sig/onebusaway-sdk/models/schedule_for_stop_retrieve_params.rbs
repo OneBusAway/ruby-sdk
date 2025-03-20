@@ -12,7 +12,7 @@ module OnebusawaySDK
       def date=: (Date) -> Date
 
       def initialize:
-        (date: Date, request_options: OnebusawaySDK::request_opts) -> void
+        (?date: Date, ?request_options: OnebusawaySDK::request_opts) -> void
         | (
           ?OnebusawaySDK::Models::schedule_for_stop_retrieve_params
           | OnebusawaySDK::BaseModel data

@@ -116,7 +116,7 @@ module OnebusawaySDK
                 (
                   schedule_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime],
                   trip_headsign: String,
-                  schedule_frequencies: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
+                  ?schedule_frequencies: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
                 ) -> void
                 | (
                   ?OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::stop_route_direction_schedule
@@ -161,7 +161,7 @@ module OnebusawaySDK
                     departure_time: Integer,
                     service_id: String,
                     trip_id: String,
-                    stop_headsign: String
+                    ?stop_headsign: String
                   ) -> void
                   | (
                     ?OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::schedule_stop_time

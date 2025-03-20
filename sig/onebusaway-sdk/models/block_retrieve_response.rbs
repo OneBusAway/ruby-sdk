@@ -85,7 +85,7 @@ module OnebusawaySDK
               (
                 active_service_ids: ::Array[String],
                 trips: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
-                inactive_service_ids: ::Array[String]
+                ?inactive_service_ids: ::Array[String]
               ) -> void
               | (
                 ?OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::configuration
@@ -185,8 +185,8 @@ module OnebusawaySDK
                       arrival_time: Integer,
                       departure_time: Integer,
                       stop_id: String,
-                      drop_off_type: Integer,
-                      pickup_type: Integer
+                      ?drop_off_type: Integer,
+                      ?pickup_type: Integer
                     ) -> void
                     | (
                       ?OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::stop_time

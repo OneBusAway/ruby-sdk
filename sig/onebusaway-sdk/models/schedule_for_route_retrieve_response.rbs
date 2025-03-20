@@ -134,10 +134,10 @@ module OnebusawaySDK
                 parent: String,
                 route_ids: ::Array[String],
                 static_route_ids: ::Array[String],
-                code: String,
-                direction: String,
-                location_type: Integer,
-                wheelchair_boarding: String
+                ?code: String,
+                ?direction: String,
+                ?location_type: Integer,
+                ?wheelchair_boarding: String
               ) -> void
               | (
                 ?OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop
@@ -177,7 +177,7 @@ module OnebusawaySDK
                 stop_ids: ::Array[String],
                 trip_headsigns: ::Array[String],
                 trip_ids: ::Array[String],
-                trips_with_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+                ?trips_with_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
               ) -> void
               | (
                 ?OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop_trip_grouping
@@ -250,8 +250,8 @@ module OnebusawaySDK
                     departure_time: Integer,
                     stop_id: String,
                     trip_id: String,
-                    service_id: String,
-                    stop_headsign: String
+                    ?service_id: String,
+                    ?stop_headsign: String
                   ) -> void
                   | (
                     ?OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::stop_time
@@ -322,14 +322,14 @@ module OnebusawaySDK
                 id: String,
                 route_id: String,
                 service_id: String,
-                block_id: String,
-                direction_id: String,
-                peak_offpeak: Integer,
-                route_short_name: String,
-                shape_id: String,
-                time_zone: String,
-                trip_headsign: String,
-                trip_short_name: String
+                ?block_id: String,
+                ?direction_id: String,
+                ?peak_offpeak: Integer,
+                ?route_short_name: String,
+                ?shape_id: String,
+                ?time_zone: String,
+                ?trip_headsign: String,
+                ?trip_short_name: String
               ) -> void
               | (
                 ?OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::trip

@@ -8,8 +8,8 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::SearchForStopListResponse
         | (
           input: String,
-          max_count: Integer,
-          request_options: OnebusawaySDK::request_opts
+          ?max_count: Integer,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::SearchForStopListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

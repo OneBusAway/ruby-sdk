@@ -7,7 +7,7 @@ module OnebusawaySDK
           | ::Hash[Symbol, top] params
         ) -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse
         | (
-          request_options: OnebusawaySDK::request_opts
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

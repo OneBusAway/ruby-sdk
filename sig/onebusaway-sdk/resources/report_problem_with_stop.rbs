@@ -9,12 +9,12 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::ResponseWrapper
         | (
           String stop_id,
-          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
-          user_comment: String,
-          user_lat: Float,
-          user_location_accuracy: Float,
-          user_lon: Float,
-          request_options: OnebusawaySDK::request_opts
+          ?code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
+          ?user_comment: String,
+          ?user_lat: Float,
+          ?user_location_accuracy: Float,
+          ?user_lon: Float,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::ResponseWrapper
 
       def initialize: (client: OnebusawaySDK::Client) -> void
