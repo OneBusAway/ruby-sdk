@@ -91,12 +91,12 @@ module OnebusawaySDK
             name: String,
             timezone: String,
             url: String,
-            disclaimer: String,
-            email: String,
-            fare_url: String,
-            lang: String,
-            phone: String,
-            private_service: bool
+            ?disclaimer: String,
+            ?email: String,
+            ?fare_url: String,
+            ?lang: String,
+            ?phone: String,
+            ?private_service: bool
           ) -> void
           | (
             ?OnebusawaySDK::Models::References::agency
@@ -160,13 +160,13 @@ module OnebusawaySDK
             id: String,
             agency_id: String,
             type: Integer,
-            color: String,
-            description: String,
-            long_name: String,
-            null_safe_short_name: String,
-            short_name: String,
-            text_color: String,
-            url: String
+            ?color: String,
+            ?description: String,
+            ?long_name: String,
+            ?null_safe_short_name: String,
+            ?short_name: String,
+            ?text_color: String,
+            ?url: String
           ) -> void
           | (
             ?OnebusawaySDK::Models::References::route
@@ -257,16 +257,16 @@ module OnebusawaySDK
           (
             id: String,
             creation_time: Integer,
-            active_windows: ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
-            all_affects: ::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
-            consequence_message: String,
-            consequences: ::Array[OnebusawaySDK::Models::References::Situation::Consequence],
-            description: OnebusawaySDK::Models::References::Situation::Description,
-            publication_windows: ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-            reason: OnebusawaySDK::Models::References::Situation::reason,
-            severity: String,
-            summary: OnebusawaySDK::Models::References::Situation::Summary,
-            url: OnebusawaySDK::Models::References::Situation::URL
+            ?active_windows: ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
+            ?all_affects: ::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
+            ?consequence_message: String,
+            ?consequences: ::Array[OnebusawaySDK::Models::References::Situation::Consequence],
+            ?description: OnebusawaySDK::Models::References::Situation::Description,
+            ?publication_windows: ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
+            ?reason: OnebusawaySDK::Models::References::Situation::reason,
+            ?severity: String,
+            ?summary: OnebusawaySDK::Models::References::Situation::Summary,
+            ?url: OnebusawaySDK::Models::References::Situation::URL
           ) -> void
           | (
             ?OnebusawaySDK::Models::References::situation
@@ -287,7 +287,7 @@ module OnebusawaySDK
           def to=: (Integer) -> Integer
 
           def initialize:
-            (from: Integer, to: Integer) -> void
+            (?from: Integer, ?to: Integer) -> void
             | (
               ?OnebusawaySDK::Models::References::Situation::active_window
               | OnebusawaySDK::BaseModel data
@@ -333,12 +333,12 @@ module OnebusawaySDK
 
           def initialize:
             (
-              agency_id: String,
-              application_id: String,
-              direction_id: String,
-              route_id: String,
-              stop_id: String,
-              trip_id: String
+              ?agency_id: String,
+              ?application_id: String,
+              ?direction_id: String,
+              ?route_id: String,
+              ?stop_id: String,
+              ?trip_id: String
             ) -> void
             | (
               ?OnebusawaySDK::Models::References::Situation::all_affect
@@ -367,8 +367,8 @@ module OnebusawaySDK
 
           def initialize:
             (
-              condition: String,
-              condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
+              ?condition: String,
+              ?condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
             ) -> void
             | (
               ?OnebusawaySDK::Models::References::Situation::consequence
@@ -396,8 +396,8 @@ module OnebusawaySDK
 
             def initialize:
               (
-                diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                diversion_stop_ids: ::Array[String]
+                ?diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                ?diversion_stop_ids: ::Array[String]
               ) -> void
               | (
                 ?OnebusawaySDK::Models::References::Situation::Consequence::condition_details
@@ -423,7 +423,7 @@ module OnebusawaySDK
               def points=: (String) -> String
 
               def initialize:
-                (length: Integer, levels: String, points: String) -> void
+                (?length: Integer, ?levels: String, ?points: String) -> void
                 | (
                   ?OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::diversion_path
                   | OnebusawaySDK::BaseModel data
@@ -446,7 +446,7 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize:
-            (lang: String, value: String) -> void
+            (?lang: String, ?value: String) -> void
             | (
               ?OnebusawaySDK::Models::References::Situation::description
               | OnebusawaySDK::BaseModel data
@@ -501,7 +501,7 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize:
-            (lang: String, value: String) -> void
+            (?lang: String, ?value: String) -> void
             | (
               ?OnebusawaySDK::Models::References::Situation::summary
               | OnebusawaySDK::BaseModel data
@@ -522,7 +522,7 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize:
-            (lang: String, value: String) -> void
+            (?lang: String, ?value: String) -> void
             | (
               ?OnebusawaySDK::Models::References::Situation::url
               | OnebusawaySDK::BaseModel data
@@ -587,10 +587,10 @@ module OnebusawaySDK
             parent: String,
             route_ids: ::Array[String],
             static_route_ids: ::Array[String],
-            code: String,
-            direction: String,
-            location_type: Integer,
-            wheelchair_boarding: String
+            ?code: String,
+            ?direction: String,
+            ?location_type: Integer,
+            ?wheelchair_boarding: String
           ) -> void
           | (
             ?OnebusawaySDK::Models::References::stop
@@ -637,12 +637,12 @@ module OnebusawaySDK
 
         def initialize:
           (
-            arrival_time: Integer,
-            departure_time: Integer,
-            distance_along_trip: Float,
-            historical_occupancy: String,
-            stop_headsign: String,
-            stop_id: String
+            ?arrival_time: Integer,
+            ?departure_time: Integer,
+            ?distance_along_trip: Float,
+            ?historical_occupancy: String,
+            ?stop_headsign: String,
+            ?stop_id: String
           ) -> void
           | (
             ?OnebusawaySDK::Models::References::stop_time
@@ -711,14 +711,14 @@ module OnebusawaySDK
             id: String,
             route_id: String,
             service_id: String,
-            block_id: String,
-            direction_id: String,
-            peak_offpeak: Integer,
-            route_short_name: String,
-            shape_id: String,
-            time_zone: String,
-            trip_headsign: String,
-            trip_short_name: String
+            ?block_id: String,
+            ?direction_id: String,
+            ?peak_offpeak: Integer,
+            ?route_short_name: String,
+            ?shape_id: String,
+            ?time_zone: String,
+            ?trip_headsign: String,
+            ?trip_short_name: String
           ) -> void
           | (
             ?OnebusawaySDK::Models::References::trip

@@ -100,13 +100,13 @@ module OnebusawaySDK
               id: String,
               agency_id: String,
               type: Integer,
-              color: String,
-              description: String,
-              long_name: String,
-              null_safe_short_name: String,
-              short_name: String,
-              text_color: String,
-              url: String
+              ?color: String,
+              ?description: String,
+              ?long_name: String,
+              ?null_safe_short_name: String,
+              ?short_name: String,
+              ?text_color: String,
+              ?url: String
             ) -> void
             | (
               ?OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::list

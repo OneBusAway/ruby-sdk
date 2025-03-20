@@ -9,8 +9,8 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::ScheduleForStopRetrieveResponse
         | (
           String stop_id,
-          date: Date,
-          request_options: OnebusawaySDK::request_opts
+          ?date: Date,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::ScheduleForStopRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

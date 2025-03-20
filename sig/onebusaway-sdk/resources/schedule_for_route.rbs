@@ -9,8 +9,8 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse
         | (
           String route_id,
-          date: Date,
-          request_options: OnebusawaySDK::request_opts
+          ?date: Date,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

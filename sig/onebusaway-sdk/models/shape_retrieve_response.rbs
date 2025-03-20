@@ -54,7 +54,7 @@ module OnebusawaySDK
           def levels=: (String) -> String
 
           def initialize:
-            (length: Integer, points: String, levels: String) -> void
+            (length: Integer, points: String, ?levels: String) -> void
             | (
               ?OnebusawaySDK::Models::ShapeRetrieveResponse::Data::entry
               | OnebusawaySDK::BaseModel data

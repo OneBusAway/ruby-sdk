@@ -12,7 +12,7 @@ module OnebusawaySDK
       def time=: (String) -> String
 
       def initialize:
-        (time: String, request_options: OnebusawaySDK::request_opts) -> void
+        (?time: String, ?request_options: OnebusawaySDK::request_opts) -> void
         | (
           ?OnebusawaySDK::Models::vehicles_for_agency_list_params
           | OnebusawaySDK::BaseModel data

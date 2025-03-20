@@ -9,10 +9,10 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::TripsForRouteListResponse
         | (
           String route_id,
-          include_schedule: bool,
-          include_status: bool,
-          time: Integer,
-          request_options: OnebusawaySDK::request_opts
+          ?include_schedule: bool,
+          ?include_status: bool,
+          ?time: Integer,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::TripsForRouteListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

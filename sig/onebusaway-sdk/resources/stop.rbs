@@ -9,7 +9,7 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::StopRetrieveResponse
         | (
           String stop_id,
-          request_options: OnebusawaySDK::request_opts
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::StopRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

@@ -54,7 +54,7 @@ module OnebusawaySDK
           def time=: (Integer) -> Integer
 
           def initialize:
-            (readable_time: String, time: Integer) -> void
+            (?readable_time: String, ?time: Integer) -> void
             | (
               ?OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::entry
               | OnebusawaySDK::BaseModel data

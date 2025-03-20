@@ -9,7 +9,7 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::StopIDsForAgencyListResponse
         | (
           String agency_id,
-          request_options: OnebusawaySDK::request_opts
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::StopIDsForAgencyListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

@@ -9,7 +9,7 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::RouteRetrieveResponse
         | (
           String route_id,
-          request_options: OnebusawaySDK::request_opts
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::RouteRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void
