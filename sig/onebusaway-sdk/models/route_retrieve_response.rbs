@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::RouteRetrieveResponse::Data _
       ) -> OnebusawaySDK::Models::RouteRetrieveResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::RouteRetrieveResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::route_retrieve_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::RouteRetrieveResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::route_retrieve_response
 
@@ -30,15 +27,10 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::RouteRetrieveResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::RouteRetrieveResponse::data
 
@@ -91,23 +83,18 @@ module OnebusawaySDK
 
           def url=: (String) -> String
 
-          def initialize:
-            (
-              id: String,
-              agency_id: String,
-              type: Integer,
-              ?color: String,
-              ?description: String,
-              ?long_name: String,
-              ?null_safe_short_name: String,
-              ?short_name: String,
-              ?text_color: String,
-              ?url: String
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::RouteRetrieveResponse::Data::entry
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            id: String,
+            agency_id: String,
+            type: Integer,
+            ?color: String,
+            ?description: String,
+            ?long_name: String,
+            ?null_safe_short_name: String,
+            ?short_name: String,
+            ?text_color: String,
+            ?url: String
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::RouteRetrieveResponse::Data::entry
         end

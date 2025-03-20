@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::TripRetrieveResponse::Data _
       ) -> OnebusawaySDK::Models::TripRetrieveResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::TripRetrieveResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::trip_retrieve_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::TripRetrieveResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::trip_retrieve_response
 
@@ -30,15 +27,10 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            entry: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::TripRetrieveResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          entry: OnebusawaySDK::Models::TripRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::TripRetrieveResponse::data
 
@@ -96,24 +88,19 @@ module OnebusawaySDK
 
           def trip_short_name=: (String) -> String
 
-          def initialize:
-            (
-              id: String,
-              route_id: String,
-              service_id: String,
-              ?block_id: String,
-              ?direction_id: String,
-              ?peak_offpeak: Integer,
-              ?route_short_name: String,
-              ?shape_id: String,
-              ?time_zone: String,
-              ?trip_headsign: String,
-              ?trip_short_name: String
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::TripRetrieveResponse::Data::entry
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            id: String,
+            route_id: String,
+            service_id: String,
+            ?block_id: String,
+            ?direction_id: String,
+            ?peak_offpeak: Integer,
+            ?route_short_name: String,
+            ?shape_id: String,
+            ?time_zone: String,
+            ?trip_headsign: String,
+            ?trip_short_name: String
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::TripRetrieveResponse::Data::entry
         end

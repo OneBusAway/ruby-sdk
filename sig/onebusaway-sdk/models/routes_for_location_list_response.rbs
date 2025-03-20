@@ -10,14 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::RoutesForLocationListResponse::Data _
       ) -> OnebusawaySDK::Models::RoutesForLocationListResponse::Data
 
-      def initialize:
-        (
-          data: OnebusawaySDK::Models::RoutesForLocationListResponse::Data
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::routes_for_location_list_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::RoutesForLocationListResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::routes_for_location_list_response
 
@@ -38,17 +33,12 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            limit_exceeded: bool,
-            list: ::Array[OnebusawaySDK::Models::RoutesForLocationListResponse::Data::List],
-            out_of_range: bool,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::RoutesForLocationListResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::RoutesForLocationListResponse::Data::List],
+          out_of_range: bool,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::RoutesForLocationListResponse::data
 
@@ -101,23 +91,18 @@ module OnebusawaySDK
 
           def url=: (String) -> String
 
-          def initialize:
-            (
-              id: String,
-              agency_id: String,
-              type: Integer,
-              ?color: String,
-              ?description: String,
-              ?long_name: String,
-              ?null_safe_short_name: String,
-              ?short_name: String,
-              ?text_color: String,
-              ?url: String
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::RoutesForLocationListResponse::Data::list
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            id: String,
+            agency_id: String,
+            type: Integer,
+            ?color: String,
+            ?description: String,
+            ?long_name: String,
+            ?null_safe_short_name: String,
+            ?short_name: String,
+            ?text_color: String,
+            ?url: String
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::RoutesForLocationListResponse::Data::list
         end

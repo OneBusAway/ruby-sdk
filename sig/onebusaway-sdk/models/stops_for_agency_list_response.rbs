@@ -29,17 +29,12 @@ module OnebusawaySDK
 
       def out_of_range=: (bool _) -> bool
 
-      def initialize:
-        (
-          limit_exceeded: bool,
-          list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
-          references: OnebusawaySDK::Models::References,
-          ?out_of_range: bool
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::stops_for_agency_list_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        limit_exceeded: bool,
+        list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
+        references: OnebusawaySDK::Models::References,
+        ?out_of_range: bool
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::stops_for_agency_list_response
 
@@ -89,24 +84,19 @@ module OnebusawaySDK
 
         def wheelchair_boarding=: (String) -> String
 
-        def initialize:
-          (
-            id: String,
-            lat: Float,
-            lon: Float,
-            name: String,
-            parent: String,
-            route_ids: ::Array[String],
-            static_route_ids: ::Array[String],
-            ?code: String,
-            ?direction: String,
-            ?location_type: Integer,
-            ?wheelchair_boarding: String
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::StopsForAgencyListResponse::list
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          id: String,
+          lat: Float,
+          lon: Float,
+          name: String,
+          parent: String,
+          route_ids: ::Array[String],
+          static_route_ids: ::Array[String],
+          ?code: String,
+          ?direction: String,
+          ?location_type: Integer,
+          ?wheelchair_boarding: String
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::StopsForAgencyListResponse::list
       end

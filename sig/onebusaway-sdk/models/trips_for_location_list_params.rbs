@@ -36,21 +36,16 @@ module OnebusawaySDK
 
       def time=: (Integer) -> Integer
 
-      def initialize:
-        (
-          lat: Float,
-          lat_span: Float,
-          lon: Float,
-          lon_span: Float,
-          ?include_schedule: bool,
-          ?include_trip: bool,
-          ?time: Integer,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::trips_for_location_list_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        lat: Float,
+        lat_span: Float,
+        lon: Float,
+        lon_span: Float,
+        ?include_schedule: bool,
+        ?include_trip: bool,
+        ?time: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::trips_for_location_list_params
     end

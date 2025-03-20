@@ -10,14 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::StopsForLocationListResponse::Data _
       ) -> OnebusawaySDK::Models::StopsForLocationListResponse::Data
 
-      def initialize:
-        (
-          data: OnebusawaySDK::Models::StopsForLocationListResponse::Data
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::stops_for_location_list_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::StopsForLocationListResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::stops_for_location_list_response
 
@@ -40,17 +35,12 @@ module OnebusawaySDK
 
         def out_of_range=: (bool) -> bool
 
-        def initialize:
-          (
-            limit_exceeded: bool,
-            list: ::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
-            references: OnebusawaySDK::Models::References,
-            ?out_of_range: bool
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::StopsForLocationListResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
+          references: OnebusawaySDK::Models::References,
+          ?out_of_range: bool
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::StopsForLocationListResponse::data
 
@@ -100,24 +90,19 @@ module OnebusawaySDK
 
           def wheelchair_boarding=: (String) -> String
 
-          def initialize:
-            (
-              id: String,
-              lat: Float,
-              lon: Float,
-              name: String,
-              parent: String,
-              route_ids: ::Array[String],
-              static_route_ids: ::Array[String],
-              ?code: String,
-              ?direction: String,
-              ?location_type: Integer,
-              ?wheelchair_boarding: String
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::StopsForLocationListResponse::Data::list
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            id: String,
+            lat: Float,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            ?code: String,
+            ?direction: String,
+            ?location_type: Integer,
+            ?wheelchair_boarding: String
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::StopsForLocationListResponse::Data::list
         end

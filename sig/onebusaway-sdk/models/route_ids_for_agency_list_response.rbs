@@ -10,14 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::RouteIDsForAgencyListResponse::Data _
       ) -> OnebusawaySDK::Models::RouteIDsForAgencyListResponse::Data
 
-      def initialize:
-        (
-          data: OnebusawaySDK::Models::RouteIDsForAgencyListResponse::Data
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::route_ids_for_agency_list_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::RouteIDsForAgencyListResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::route_ids_for_agency_list_response
 
@@ -35,16 +30,11 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            limit_exceeded: bool,
-            list: ::Array[String],
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::RouteIDsForAgencyListResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          limit_exceeded: bool,
+          list: ::Array[String],
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::RouteIDsForAgencyListResponse::data
       end

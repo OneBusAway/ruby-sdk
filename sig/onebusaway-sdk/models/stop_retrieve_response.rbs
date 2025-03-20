@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::StopRetrieveResponse::Data _
       ) -> OnebusawaySDK::Models::StopRetrieveResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::StopRetrieveResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::stop_retrieve_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::StopRetrieveResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::stop_retrieve_response
 
@@ -30,15 +27,10 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::StopRetrieveResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::StopRetrieveResponse::data
 
@@ -88,24 +80,19 @@ module OnebusawaySDK
 
           def wheelchair_boarding=: (String) -> String
 
-          def initialize:
-            (
-              id: String,
-              lat: Float,
-              lon: Float,
-              name: String,
-              parent: String,
-              route_ids: ::Array[String],
-              static_route_ids: ::Array[String],
-              ?code: String,
-              ?direction: String,
-              ?location_type: Integer,
-              ?wheelchair_boarding: String
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::StopRetrieveResponse::Data::entry
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            id: String,
+            lat: Float,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            ?code: String,
+            ?direction: String,
+            ?location_type: Integer,
+            ?wheelchair_boarding: String
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::StopRetrieveResponse::Data::entry
         end

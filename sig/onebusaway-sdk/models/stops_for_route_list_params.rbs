@@ -16,16 +16,11 @@ module OnebusawaySDK
 
       def time=: (String) -> String
 
-      def initialize:
-        (
-          ?include_polylines: bool,
-          ?time: String,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::stops_for_route_list_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        ?include_polylines: bool,
+        ?time: String,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::stops_for_route_list_params
     end

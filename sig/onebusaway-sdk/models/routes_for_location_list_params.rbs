@@ -35,20 +35,15 @@ module OnebusawaySDK
 
       def radius=: (Float) -> Float
 
-      def initialize:
-        (
-          lat: Float,
-          lon: Float,
-          ?lat_span: Float,
-          ?lon_span: Float,
-          ?query: String,
-          ?radius: Float,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::routes_for_location_list_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        lat: Float,
+        lon: Float,
+        ?lat_span: Float,
+        ?lon_span: Float,
+        ?query: String,
+        ?radius: Float,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::routes_for_location_list_params
     end

@@ -1,16 +1,10 @@
 module OnebusawaySDK
   module Resources
     class StopsForAgency
-      def list:
-        (
-          String agency_id,
-          ?OnebusawaySDK::Models::StopsForAgencyListParams
-          | ::Hash[Symbol, top] params
-        ) -> OnebusawaySDK::Models::StopsForAgencyListResponse
-        | (
-          String agency_id,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> OnebusawaySDK::Models::StopsForAgencyListResponse
+      def list: (
+        String agency_id,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::StopsForAgencyListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

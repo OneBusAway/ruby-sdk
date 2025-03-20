@@ -1,16 +1,10 @@
 module OnebusawaySDK
   module Resources
     class Trip
-      def retrieve:
-        (
-          String trip_id,
-          ?OnebusawaySDK::Models::TripRetrieveParams
-          | ::Hash[Symbol, top] params
-        ) -> OnebusawaySDK::Models::TripRetrieveResponse
-        | (
-          String trip_id,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> OnebusawaySDK::Models::TripRetrieveResponse
+      def retrieve: (
+        String trip_id,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::TripRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

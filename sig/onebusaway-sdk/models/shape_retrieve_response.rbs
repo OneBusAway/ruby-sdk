@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::ShapeRetrieveResponse::Data _
       ) -> OnebusawaySDK::Models::ShapeRetrieveResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::shape_retrieve_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::shape_retrieve_response
 
@@ -30,15 +27,10 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::ShapeRetrieveResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::ShapeRetrieveResponse::data
 
@@ -53,12 +45,11 @@ module OnebusawaySDK
 
           def levels=: (String) -> String
 
-          def initialize:
-            (length: Integer, points: String, ?levels: String) -> void
-            | (
-              ?OnebusawaySDK::Models::ShapeRetrieveResponse::Data::entry
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            length: Integer,
+            points: String,
+            ?levels: String
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::ShapeRetrieveResponse::Data::entry
         end

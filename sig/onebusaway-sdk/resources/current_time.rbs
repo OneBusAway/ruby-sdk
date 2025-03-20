@@ -1,14 +1,9 @@
 module OnebusawaySDK
   module Resources
     class CurrentTime
-      def retrieve:
-        (
-          ?OnebusawaySDK::Models::CurrentTimeRetrieveParams
-          | ::Hash[Symbol, top] params
-        ) -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse
-        | (
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse
+      def retrieve: (
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end
