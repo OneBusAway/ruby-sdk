@@ -18,9 +18,9 @@ module OnebusawaySDK
 
       def initialize:
         (
-          include_polylines: bool,
-          time: String,
-          request_options: OnebusawaySDK::request_opts
+          ?include_polylines: bool,
+          ?time: String,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> void
         | (
           ?OnebusawaySDK::Models::stops_for_route_list_params

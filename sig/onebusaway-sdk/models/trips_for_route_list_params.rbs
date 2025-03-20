@@ -22,10 +22,10 @@ module OnebusawaySDK
 
       def initialize:
         (
-          include_schedule: bool,
-          include_status: bool,
-          time: Integer,
-          request_options: OnebusawaySDK::request_opts
+          ?include_schedule: bool,
+          ?include_status: bool,
+          ?time: Integer,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> void
         | (
           ?OnebusawaySDK::Models::trips_for_route_list_params

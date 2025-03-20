@@ -11,10 +11,10 @@ module OnebusawaySDK
           String stop_id,
           service_date: Integer,
           trip_id: String,
-          stop_sequence: Integer,
-          time: Integer,
-          vehicle_id: String,
-          request_options: OnebusawaySDK::request_opts
+          ?stop_sequence: Integer,
+          ?time: Integer,
+          ?vehicle_id: String,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse
 
       def list:
@@ -25,10 +25,10 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse
         | (
           String stop_id,
-          minutes_after: Integer,
-          minutes_before: Integer,
-          time: Time,
-          request_options: OnebusawaySDK::request_opts
+          ?minutes_after: Integer,
+          ?minutes_before: Integer,
+          ?time: Time,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

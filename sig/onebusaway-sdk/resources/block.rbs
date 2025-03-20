@@ -9,7 +9,7 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::BlockRetrieveResponse
         | (
           String block_id,
-          request_options: OnebusawaySDK::request_opts
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::BlockRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

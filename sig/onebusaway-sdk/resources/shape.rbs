@@ -9,7 +9,7 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::ShapeRetrieveResponse
         | (
           String shape_id,
-          request_options: OnebusawaySDK::request_opts
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::ShapeRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

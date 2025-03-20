@@ -73,10 +73,10 @@ module OnebusawaySDK
 
           def initialize:
             (
-              polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline],
-              route_id: String,
-              stop_groupings: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
-              stop_ids: ::Array[String]
+              ?polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+              ?route_id: String,
+              ?stop_groupings: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+              ?stop_ids: ::Array[String]
             ) -> void
             | (
               ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::entry
@@ -101,7 +101,7 @@ module OnebusawaySDK
             def points=: (String) -> String
 
             def initialize:
-              (length: Integer, levels: String, points: String) -> void
+              (?length: Integer, ?levels: String, ?points: String) -> void
               | (
                 ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::polyline
                 | OnebusawaySDK::BaseModel data
@@ -141,10 +141,10 @@ module OnebusawaySDK
 
             def initialize:
               (
-                id: String,
-                name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
-                polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
-                stop_ids: ::Array[String]
+                ?id: String,
+                ?name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                ?polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+                ?stop_ids: ::Array[String]
               ) -> void
               | (
                 ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::stop_grouping
@@ -169,7 +169,7 @@ module OnebusawaySDK
               def type=: (String) -> String
 
               def initialize:
-                (name: String, names: ::Array[String], type: String) -> void
+                (?name: String, ?names: ::Array[String], ?type: String) -> void
                 | (
                   ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::name_
                   | OnebusawaySDK::BaseModel data
@@ -194,7 +194,7 @@ module OnebusawaySDK
               def points=: (String) -> String
 
               def initialize:
-                (length: Integer, levels: String, points: String) -> void
+                (?length: Integer, ?levels: String, ?points: String) -> void
                 | (
                   ?OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::polyline
                   | OnebusawaySDK::BaseModel data

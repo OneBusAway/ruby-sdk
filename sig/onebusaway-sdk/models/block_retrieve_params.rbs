@@ -7,7 +7,7 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       def initialize:
-        (request_options: OnebusawaySDK::request_opts) -> void
+        (?request_options: OnebusawaySDK::request_opts) -> void
         | (
           ?OnebusawaySDK::Models::block_retrieve_params
           | OnebusawaySDK::BaseModel data

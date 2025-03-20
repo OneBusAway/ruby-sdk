@@ -38,12 +38,12 @@ module OnebusawaySDK
 
       def initialize:
         (
-          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
-          user_comment: String,
-          user_lat: Float,
-          user_location_accuracy: Float,
-          user_lon: Float,
-          request_options: OnebusawaySDK::request_opts
+          ?code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
+          ?user_comment: String,
+          ?user_lat: Float,
+          ?user_location_accuracy: Float,
+          ?user_lon: Float,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> void
         | (
           ?OnebusawaySDK::Models::report_problem_with_stop_retrieve_params

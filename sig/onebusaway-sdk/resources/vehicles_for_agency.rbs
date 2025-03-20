@@ -9,8 +9,8 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::VehiclesForAgencyListResponse
         | (
           String agency_id,
-          time: String,
-          request_options: OnebusawaySDK::request_opts
+          ?time: String,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::VehiclesForAgencyListResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

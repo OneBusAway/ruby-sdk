@@ -11,7 +11,7 @@ module OnebusawaySDK
       ) -> OnebusawaySDK::Models::SearchForStopListResponse::Data
 
       def initialize:
-        (data: OnebusawaySDK::Models::SearchForStopListResponse::Data) -> void
+        (?data: OnebusawaySDK::Models::SearchForStopListResponse::Data) -> void
         | (
           ?OnebusawaySDK::Models::search_for_stop_list_response
           | OnebusawaySDK::BaseModel data
@@ -105,10 +105,10 @@ module OnebusawaySDK
               parent: String,
               route_ids: ::Array[String],
               static_route_ids: ::Array[String],
-              code: String,
-              direction: String,
-              location_type: Integer,
-              wheelchair_boarding: String
+              ?code: String,
+              ?direction: String,
+              ?location_type: Integer,
+              ?wheelchair_boarding: String
             ) -> void
             | (
               ?OnebusawaySDK::Models::SearchForStopListResponse::Data::list

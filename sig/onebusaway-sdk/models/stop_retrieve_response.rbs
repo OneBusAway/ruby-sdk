@@ -97,10 +97,10 @@ module OnebusawaySDK
               parent: String,
               route_ids: ::Array[String],
               static_route_ids: ::Array[String],
-              code: String,
-              direction: String,
-              location_type: Integer,
-              wheelchair_boarding: String
+              ?code: String,
+              ?direction: String,
+              ?location_type: Integer,
+              ?wheelchair_boarding: String
             ) -> void
             | (
               ?OnebusawaySDK::Models::StopRetrieveResponse::Data::entry

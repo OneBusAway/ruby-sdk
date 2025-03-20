@@ -7,7 +7,7 @@ module OnebusawaySDK
           | ::Hash[Symbol, top] params
         ) -> OnebusawaySDK::Models::ConfigRetrieveResponse
         | (
-          request_options: OnebusawaySDK::request_opts
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::ConfigRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

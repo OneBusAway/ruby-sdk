@@ -101,14 +101,14 @@ module OnebusawaySDK
               id: String,
               route_id: String,
               service_id: String,
-              block_id: String,
-              direction_id: String,
-              peak_offpeak: Integer,
-              route_short_name: String,
-              shape_id: String,
-              time_zone: String,
-              trip_headsign: String,
-              trip_short_name: String
+              ?block_id: String,
+              ?direction_id: String,
+              ?peak_offpeak: Integer,
+              ?route_short_name: String,
+              ?shape_id: String,
+              ?time_zone: String,
+              ?trip_headsign: String,
+              ?trip_short_name: String
             ) -> void
             | (
               ?OnebusawaySDK::Models::TripRetrieveResponse::Data::entry

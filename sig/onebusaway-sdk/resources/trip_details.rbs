@@ -9,12 +9,12 @@ module OnebusawaySDK
         ) -> OnebusawaySDK::Models::TripDetailRetrieveResponse
         | (
           String trip_id,
-          include_schedule: bool,
-          include_status: bool,
-          include_trip: bool,
-          service_date: Integer,
-          time: Integer,
-          request_options: OnebusawaySDK::request_opts
+          ?include_schedule: bool,
+          ?include_status: bool,
+          ?include_trip: bool,
+          ?service_date: Integer,
+          ?time: Integer,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> OnebusawaySDK::Models::TripDetailRetrieveResponse
 
       def initialize: (client: OnebusawaySDK::Client) -> void

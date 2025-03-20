@@ -31,11 +31,11 @@ module OnebusawaySDK
 
       def initialize:
         (
-          include_schedule: bool,
-          include_status: bool,
-          include_trip: bool,
-          time: Integer,
-          request_options: OnebusawaySDK::request_opts
+          ?include_schedule: bool,
+          ?include_status: bool,
+          ?include_trip: bool,
+          ?time: Integer,
+          ?request_options: OnebusawaySDK::request_opts
         ) -> void
         | (
           ?OnebusawaySDK::Models::trip_for_vehicle_retrieve_params
