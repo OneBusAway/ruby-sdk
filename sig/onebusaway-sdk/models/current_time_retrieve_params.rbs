@@ -6,12 +6,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
-      def initialize:
-        (?request_options: OnebusawaySDK::request_opts) -> void
-        | (
-          ?OnebusawaySDK::Models::current_time_retrieve_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (?request_options: OnebusawaySDK::request_opts) -> void
 
       def to_hash: -> OnebusawaySDK::Models::current_time_retrieve_params
     end

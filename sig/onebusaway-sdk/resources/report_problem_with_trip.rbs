@@ -1,26 +1,20 @@
 module OnebusawaySDK
   module Resources
     class ReportProblemWithTrip
-      def retrieve:
-        (
-          String trip_id,
-          ?OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams
-          | ::Hash[Symbol, top] params
-        ) -> OnebusawaySDK::Models::ResponseWrapper
-        | (
-          String trip_id,
-          ?code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code,
-          ?service_date: Integer,
-          ?stop_id: String,
-          ?user_comment: String,
-          ?user_lat: Float,
-          ?user_location_accuracy: Float,
-          ?user_lon: Float,
-          ?user_on_vehicle: bool,
-          ?user_vehicle_number: String,
-          ?vehicle_id: String,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> OnebusawaySDK::Models::ResponseWrapper
+      def retrieve: (
+        String trip_id,
+        ?code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code,
+        ?service_date: Integer,
+        ?stop_id: String,
+        ?user_comment: String,
+        ?user_lat: Float,
+        ?user_location_accuracy: Float,
+        ?user_lon: Float,
+        ?user_on_vehicle: bool,
+        ?user_vehicle_number: String,
+        ?vehicle_id: String,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::ResponseWrapper
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

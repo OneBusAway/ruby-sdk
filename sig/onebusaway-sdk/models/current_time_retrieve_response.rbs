@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data _
       ) -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::current_time_retrieve_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::current_time_retrieve_response
 
@@ -30,15 +27,10 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::CurrentTimeRetrieveResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse::data
 
@@ -53,12 +45,7 @@ module OnebusawaySDK
 
           def time=: (Integer) -> Integer
 
-          def initialize:
-            (?readable_time: String, ?time: Integer) -> void
-            | (
-              ?OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::entry
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (?readable_time: String, ?time: Integer) -> void
 
           def to_hash: -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::entry
         end

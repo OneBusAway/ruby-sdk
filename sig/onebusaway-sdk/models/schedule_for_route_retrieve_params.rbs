@@ -11,12 +11,10 @@ module OnebusawaySDK
 
       def date=: (Date) -> Date
 
-      def initialize:
-        (?date: Date, ?request_options: OnebusawaySDK::request_opts) -> void
-        | (
-          ?OnebusawaySDK::Models::schedule_for_route_retrieve_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        ?date: Date,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::schedule_for_route_retrieve_params
     end

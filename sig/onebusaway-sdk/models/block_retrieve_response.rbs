@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::BlockRetrieveResponse::Data _
       ) -> OnebusawaySDK::Models::BlockRetrieveResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::BlockRetrieveResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::block_retrieve_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::BlockRetrieveResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::block_retrieve_response
 
@@ -30,15 +27,10 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::BlockRetrieveResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::BlockRetrieveResponse::data
 
@@ -53,15 +45,10 @@ module OnebusawaySDK
 
           attr_accessor configurations: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
 
-          def initialize:
-            (
-              id: String,
-              configurations: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::BlockRetrieveResponse::Data::entry
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            id: String,
+            configurations: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::BlockRetrieveResponse::Data::entry
 
@@ -81,16 +68,11 @@ module OnebusawaySDK
 
             def inactive_service_ids=: (::Array[String]) -> ::Array[String]
 
-            def initialize:
-              (
-                active_service_ids: ::Array[String],
-                trips: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
-                ?inactive_service_ids: ::Array[String]
-              ) -> void
-              | (
-                ?OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::configuration
-                | OnebusawaySDK::BaseModel data
-              ) -> void
+            def initialize: (
+              active_service_ids: ::Array[String],
+              trips: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+              ?inactive_service_ids: ::Array[String]
+            ) -> void
 
             def to_hash: -> OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::configuration
 
@@ -111,17 +93,12 @@ module OnebusawaySDK
 
               attr_accessor trip_id: String
 
-              def initialize:
-                (
-                  accumulated_slack_time: Float,
-                  block_stop_times: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
-                  distance_along_block: Float,
-                  trip_id: String
-                ) -> void
-                | (
-                  ?OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::trip
-                  | OnebusawaySDK::BaseModel data
-                ) -> void
+              def initialize: (
+                accumulated_slack_time: Float,
+                block_stop_times: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                distance_along_block: Float,
+                trip_id: String
+              ) -> void
 
               def to_hash: -> OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::trip
 
@@ -142,17 +119,12 @@ module OnebusawaySDK
 
                 attr_accessor stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
 
-                def initialize:
-                  (
-                    accumulated_slack_time: Float,
-                    block_sequence: Integer,
-                    distance_along_block: Float,
-                    stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-                  ) -> void
-                  | (
-                    ?OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::block_stop_time
-                    | OnebusawaySDK::BaseModel data
-                  ) -> void
+                def initialize: (
+                  accumulated_slack_time: Float,
+                  block_sequence: Integer,
+                  distance_along_block: Float,
+                  stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                ) -> void
 
                 def to_hash: -> OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::block_stop_time
 
@@ -180,18 +152,13 @@ module OnebusawaySDK
 
                   def pickup_type=: (Integer) -> Integer
 
-                  def initialize:
-                    (
-                      arrival_time: Integer,
-                      departure_time: Integer,
-                      stop_id: String,
-                      ?drop_off_type: Integer,
-                      ?pickup_type: Integer
-                    ) -> void
-                    | (
-                      ?OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::stop_time
-                      | OnebusawaySDK::BaseModel data
-                    ) -> void
+                  def initialize: (
+                    arrival_time: Integer,
+                    departure_time: Integer,
+                    stop_id: String,
+                    ?drop_off_type: Integer,
+                    ?pickup_type: Integer
+                  ) -> void
 
                   def to_hash: -> OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::stop_time
                 end

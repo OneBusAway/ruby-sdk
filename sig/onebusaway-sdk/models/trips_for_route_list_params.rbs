@@ -20,17 +20,12 @@ module OnebusawaySDK
 
       def time=: (Integer) -> Integer
 
-      def initialize:
-        (
-          ?include_schedule: bool,
-          ?include_status: bool,
-          ?time: Integer,
-          ?request_options: OnebusawaySDK::request_opts
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::trips_for_route_list_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        ?include_schedule: bool,
+        ?include_status: bool,
+        ?time: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::trips_for_route_list_params
     end

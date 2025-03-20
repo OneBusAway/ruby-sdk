@@ -10,14 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data _
       ) -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
 
-      def initialize:
-        (
-          data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::agencies_with_coverage_list_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::agencies_with_coverage_list_response
 
@@ -35,16 +30,11 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            limit_exceeded: bool,
-            list: ::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::AgenciesWithCoverageListResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse::data
 
@@ -68,18 +58,13 @@ module OnebusawaySDK
 
           attr_accessor lon_span: Float
 
-          def initialize:
-            (
-              agency_id: String,
-              lat: Float,
-              lat_span: Float,
-              lon: Float,
-              lon_span: Float
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::list
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            agency_id: String,
+            lat: Float,
+            lat_span: Float,
+            lon: Float,
+            lon_span: Float
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::list
         end

@@ -10,12 +10,9 @@ module OnebusawaySDK
         OnebusawaySDK::Models::AgencyRetrieveResponse::Data _
       ) -> OnebusawaySDK::Models::AgencyRetrieveResponse::Data
 
-      def initialize:
-        (data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data) -> void
-        | (
-          ?OnebusawaySDK::Models::agency_retrieve_response
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::agency_retrieve_response
 
@@ -33,16 +30,11 @@ module OnebusawaySDK
 
         attr_accessor references: OnebusawaySDK::Models::References
 
-        def initialize:
-          (
-            entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
-            limit_exceeded: bool,
-            references: OnebusawaySDK::Models::References
-          ) -> void
-          | (
-            ?OnebusawaySDK::Models::AgencyRetrieveResponse::data
-            | OnebusawaySDK::BaseModel data
-          ) -> void
+        def initialize: (
+          entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
+          limit_exceeded: bool,
+          references: OnebusawaySDK::Models::References
+        ) -> void
 
         def to_hash: -> OnebusawaySDK::Models::AgencyRetrieveResponse::data
 
@@ -93,23 +85,18 @@ module OnebusawaySDK
 
           def private_service=: (bool) -> bool
 
-          def initialize:
-            (
-              id: String,
-              name: String,
-              timezone: String,
-              url: String,
-              ?disclaimer: String,
-              ?email: String,
-              ?fare_url: String,
-              ?lang: String,
-              ?phone: String,
-              ?private_service: bool
-            ) -> void
-            | (
-              ?OnebusawaySDK::Models::AgencyRetrieveResponse::Data::entry
-              | OnebusawaySDK::BaseModel data
-            ) -> void
+          def initialize: (
+            id: String,
+            name: String,
+            timezone: String,
+            url: String,
+            ?disclaimer: String,
+            ?email: String,
+            ?fare_url: String,
+            ?lang: String,
+            ?phone: String,
+            ?private_service: bool
+          ) -> void
 
           def to_hash: -> OnebusawaySDK::Models::AgencyRetrieveResponse::Data::entry
         end
