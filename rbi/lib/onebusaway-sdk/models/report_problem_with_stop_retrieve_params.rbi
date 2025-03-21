@@ -7,11 +7,14 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       # A string code identifying the nature of the problem
-      sig { returns(T.nilable(Symbol)) }
+      sig { returns(T.nilable(OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)) }
       def code
       end
 
-      sig { params(_: Symbol).returns(Symbol) }
+      sig do
+        params(_: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+          .returns(OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+      end
       def code=(_)
       end
 
@@ -53,7 +56,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          code: Symbol,
+          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
           user_comment: String,
           user_lat: Float,
           user_location_accuracy: Float,
@@ -76,7 +79,7 @@ module OnebusawaySDK
         override
           .returns(
             {
-              code: Symbol,
+              code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
               user_comment: String,
               user_lat: Float,
               user_location_accuracy: Float,
@@ -89,16 +92,23 @@ module OnebusawaySDK
       end
 
       # A string code identifying the nature of the problem
-      class Code < OnebusawaySDK::Enum
-        abstract!
+      module Code
+        extend OnebusawaySDK::Enum
 
-        Value = type_template(:out) { {fixed: Symbol} }
+        TaggedSymbol =
+          T.type_alias { T.all(Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code) }
+        OrSymbol =
+          T.type_alias { T.any(Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol) }
 
-        STOP_NAME_WRONG = :stop_name_wrong
-        STOP_NUMBER_WRONG = :stop_number_wrong
-        STOP_LOCATION_WRONG = :stop_location_wrong
-        ROUTE_OR_TRIP_MISSING = :route_or_trip_missing
-        OTHER = :other
+        STOP_NAME_WRONG =
+          T.let(:stop_name_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+        STOP_NUMBER_WRONG =
+          T.let(:stop_number_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+        STOP_LOCATION_WRONG =
+          T.let(:stop_location_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+        ROUTE_OR_TRIP_MISSING =
+          T.let(:route_or_trip_missing, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+        OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
       end
     end
   end
