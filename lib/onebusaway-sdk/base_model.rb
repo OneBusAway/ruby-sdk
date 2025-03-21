@@ -182,8 +182,6 @@ module OnebusawaySDK
 
     # rubocop:disable Lint/UnusedMethodArgument
 
-    private_class_method :new
-
     # @param other [Object]
     #
     # @return [Boolean]
@@ -232,8 +230,6 @@ module OnebusawaySDK
   # Ruby has no Boolean class; this is something for models to refer to.
   class BooleanModel
     extend OnebusawaySDK::Converter
-
-    private_class_method :new
 
     # @param other [Object]
     #
@@ -306,8 +302,6 @@ module OnebusawaySDK
       # Guard against thread safety issues by instantiating `@values`.
       private def finalize! = values
     end
-
-    private_class_method :new
 
     # @param other [Object]
     #
@@ -459,8 +453,6 @@ module OnebusawaySDK
     # rubocop:disable Style/HashEachMethods
     # rubocop:disable Style/CaseEquality
 
-    private_class_method :new
-
     # @param other [Object]
     #
     # @return [Boolean]
@@ -571,9 +563,18 @@ module OnebusawaySDK
   class ArrayOf
     include OnebusawaySDK::Converter
 
-    private_class_method :new
-
-    def self.[](...) = new(...)
+    # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
+    #
+    # @param spec [Hash{Symbol=>Object}] .
+    #
+    #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
+    #
+    #   @option spec [Proc] :enum
+    #
+    #   @option spec [Proc] :union
+    #
+    #   @option spec [Boolean] :"nil?"
+    def self.[](type_info, spec = {}) = new(type_info, spec)
 
     # @param other [Object]
     #
@@ -694,9 +695,18 @@ module OnebusawaySDK
   class HashOf
     include OnebusawaySDK::Converter
 
-    private_class_method :new
-
-    def self.[](...) = new(...)
+    # @param type_info [Hash{Symbol=>Object}, Proc, OnebusawaySDK::Converter, Class]
+    #
+    # @param spec [Hash{Symbol=>Object}] .
+    #
+    #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
+    #
+    #   @option spec [Proc] :enum
+    #
+    #   @option spec [Proc] :union
+    #
+    #   @option spec [Boolean] :"nil?"
+    def self.[](type_info, spec = {}) = new(type_info, spec)
 
     # @param other [Object]
     #
