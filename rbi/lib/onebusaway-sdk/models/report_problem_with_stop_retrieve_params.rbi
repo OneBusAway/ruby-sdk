@@ -101,14 +101,26 @@ module OnebusawaySDK
           T.type_alias { T.any(Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol) }
 
         STOP_NAME_WRONG =
-          T.let(:stop_name_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+          T.let(:stop_name_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
         STOP_NUMBER_WRONG =
-          T.let(:stop_number_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+          T.let(:stop_number_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
         STOP_LOCATION_WRONG =
-          T.let(:stop_location_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+          T.let(
+            :stop_location_wrong,
+            OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+          )
         ROUTE_OR_TRIP_MISSING =
-          T.let(:route_or_trip_missing, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
-        OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
+          T.let(
+            :route_or_trip_missing,
+            OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+          )
+        OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
+
+        class << self
+          sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol]) }
+          def values
+          end
+        end
       end
     end
   end

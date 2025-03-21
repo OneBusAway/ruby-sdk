@@ -95,7 +95,7 @@ module OnebusawaySDK
         VEHICLE_DOES_NOT_STOP_HERE: :vehicle_does_not_stop_here
         OTHER: :other
 
-        def self.values: -> ::Array[OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code]
+        def self?.values: -> ::Array[OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code]
       end
     end
   end
