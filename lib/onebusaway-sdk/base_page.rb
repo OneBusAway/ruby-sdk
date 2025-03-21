@@ -2,32 +2,26 @@
 
 module OnebusawaySDK
   # @example
-  # ```ruby
-  # if page.has_next?
-  #   page = page.next_page
-  # end
-  # ```
+  #   if page.has_next?
+  #     page = page.next_page
+  #   end
   #
   # @example
-  # ```ruby
-  # page.auto_paging_each do |agencies_with_coverage|
-  #   puts(agencies_with_coverage)
-  # end
-  # ```
+  #   page.auto_paging_each do |agencies_with_coverage|
+  #     puts(agencies_with_coverage)
+  #   end
   #
   # @example
-  # ```ruby
-  # agencies_with_coverages =
-  #   page
-  #   .to_enum
-  #   .lazy
-  #   .select { _1.object_id.even? }
-  #   .map(&:itself)
-  #   .take(2)
-  #   .to_a
+  #   agencies_with_coverages =
+  #     page
+  #     .to_enum
+  #     .lazy
+  #     .select { _1.object_id.even? }
+  #     .map(&:itself)
+  #     .take(2)
+  #     .to_a
   #
-  # agencies_with_coverages => Array
-  # ```
+  #   agencies_with_coverages => Array
   module BasePage
     # rubocop:disable Lint/UnusedMethodArgument
 
