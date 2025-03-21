@@ -8,8 +8,12 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data)
-          .returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data)
+        params(
+          _: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .returns(
+            T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          )
       end
       def data=(_)
       end
@@ -28,8 +32,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry)
+          params(
+            _: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .returns(
+              T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            )
         end
         def entry=(_)
         end
