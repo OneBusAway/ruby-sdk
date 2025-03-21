@@ -8,8 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data)
-          .returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data)
+        params(_: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data, OnebusawaySDK::Util::AnyHash))
       end
       def data=(_)
       end
@@ -28,8 +28,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry)
+          params(
+            _: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .returns(
+              T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            )
         end
         def entry=(_)
         end
@@ -38,7 +42,10 @@ module OnebusawaySDK
         def references
         end
 
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        sig do
+          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+        end
         def references=(_)
         end
 
@@ -177,8 +184,18 @@ module OnebusawaySDK
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name)
-                .returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name)
+              params(
+                _: T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                  OnebusawaySDK::Util::AnyHash
+                )
+              )
+                .returns(
+                  T.any(
+                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                    OnebusawaySDK::Util::AnyHash
+                  )
+                )
             end
             def name=(_)
             end

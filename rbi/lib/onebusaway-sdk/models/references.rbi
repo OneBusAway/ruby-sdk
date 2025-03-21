@@ -427,8 +427,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::References::Situation::Description)
-            .returns(OnebusawaySDK::Models::References::Situation::Description)
+          params(_: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash))
         end
         def description=(_)
         end
@@ -470,8 +470,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::References::Situation::Summary)
-            .returns(OnebusawaySDK::Models::References::Situation::Summary)
+          params(_: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash))
         end
         def summary=(_)
         end
@@ -481,8 +481,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::References::Situation::URL)
-            .returns(OnebusawaySDK::Models::References::Situation::URL)
+          params(_: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash))
         end
         def url=(_)
         end
@@ -671,8 +671,18 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)
-              .returns(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)
+            params(
+              _: T.any(
+                OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
+                OnebusawaySDK::Util::AnyHash
+              )
+            )
+              .returns(
+                T.any(
+                  OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
+                  OnebusawaySDK::Util::AnyHash
+                )
+              )
           end
           def condition_details=(_)
           end
@@ -709,8 +719,18 @@ module OnebusawaySDK
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
-                .returns(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
+              params(
+                _: T.any(
+                  OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                  OnebusawaySDK::Util::AnyHash
+                )
+              )
+                .returns(
+                  T.any(
+                    OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                    OnebusawaySDK::Util::AnyHash
+                  )
+                )
             end
             def diversion_path=(_)
             end

@@ -8,8 +8,10 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data)
-          .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data)
+        params(
+          _: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .returns(T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
       end
       def data=(_)
       end
@@ -28,8 +30,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry)
+          params(
+            _: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .returns(
+              T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            )
         end
         def entry=(_)
         end
@@ -38,7 +44,10 @@ module OnebusawaySDK
         def references
         end
 
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        sig do
+          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+        end
         def references=(_)
         end
 
@@ -86,8 +95,18 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule)
-              .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule)
+            params(
+              _: T.any(
+                OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
+                OnebusawaySDK::Util::AnyHash
+              )
+            )
+              .returns(
+                T.any(
+                  OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
+                  OnebusawaySDK::Util::AnyHash
+                )
+              )
           end
           def schedule=(_)
           end
@@ -113,8 +132,18 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status)
-              .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status)
+            params(
+              _: T.any(
+                OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status,
+                OnebusawaySDK::Util::AnyHash
+              )
+            )
+              .returns(
+                T.any(
+                  OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status,
+                  OnebusawaySDK::Util::AnyHash
+                )
+              )
           end
           def status=(_)
           end
@@ -487,8 +516,18 @@ module OnebusawaySDK
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation)
-                .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation)
+              params(
+                _: T.any(
+                  OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
+                  OnebusawaySDK::Util::AnyHash
+                )
+              )
+                .returns(
+                  T.any(
+                    OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
+                    OnebusawaySDK::Util::AnyHash
+                  )
+                )
             end
             def last_known_location=(_)
             end
@@ -536,8 +575,18 @@ module OnebusawaySDK
             end
 
             sig do
-              params(_: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position)
-                .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position)
+              params(
+                _: T.any(
+                  OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
+                  OnebusawaySDK::Util::AnyHash
+                )
+              )
+                .returns(
+                  T.any(
+                    OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
+                    OnebusawaySDK::Util::AnyHash
+                  )
+                )
             end
             def position=(_)
             end
