@@ -14,7 +14,10 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::StopsForRouteListResponse::Data).returns(T.attached_class) }
+      sig do
+        params(data: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.attached_class)
+      end
       def self.new(data:)
       end
 
@@ -51,8 +54,8 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
+            entry: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -226,7 +229,10 @@ module OnebusawaySDK
             sig do
               params(
                 id: String,
-                name: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                name: T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                  OnebusawaySDK::Util::AnyHash
+                ),
                 polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
                 stop_ids: T::Array[String]
               )

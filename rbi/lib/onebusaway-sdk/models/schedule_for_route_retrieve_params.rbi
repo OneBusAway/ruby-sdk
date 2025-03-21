@@ -17,7 +17,13 @@ module OnebusawaySDK
       end
 
       sig do
-        params(date: Date, request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+        params(
+          date: Date,
+          request_options: T.any(
+            OnebusawaySDK::RequestOptions,
+            OnebusawaySDK::Util::AnyHash
+          )
+        )
           .returns(T.attached_class)
       end
       def self.new(date: nil, request_options: {})
