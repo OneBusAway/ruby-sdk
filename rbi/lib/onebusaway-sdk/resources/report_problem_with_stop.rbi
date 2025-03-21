@@ -7,7 +7,7 @@ module OnebusawaySDK
       sig do
         params(
           stop_id: String,
-          code: Symbol,
+          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
           user_comment: String,
           user_lat: Float,
           user_location_accuracy: Float,

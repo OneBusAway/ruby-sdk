@@ -445,11 +445,14 @@ module OnebusawaySDK
         end
 
         # Reason for the service alert, taken from TPEG codes.
-        sig { returns(T.nilable(Symbol)) }
+        sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)) }
         def reason
         end
 
-        sig { params(_: Symbol).returns(Symbol) }
+        sig do
+          params(_: OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+            .returns(OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+        end
         def reason=(_)
         end
 
@@ -494,7 +497,7 @@ module OnebusawaySDK
             consequences: T::Array[OnebusawaySDK::Models::References::Situation::Consequence],
             description: OnebusawaySDK::Models::References::Situation::Description,
             publication_windows: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-            reason: Symbol,
+            reason: OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol,
             severity: String,
             summary: OnebusawaySDK::Models::References::Situation::Summary,
             url: OnebusawaySDK::Models::References::Situation::URL
@@ -529,7 +532,7 @@ module OnebusawaySDK
                 consequences: T::Array[OnebusawaySDK::Models::References::Situation::Consequence],
                 description: OnebusawaySDK::Models::References::Situation::Description,
                 publication_windows: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-                reason: Symbol,
+                reason: OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol,
                 severity: String,
                 summary: OnebusawaySDK::Models::References::Situation::Summary,
                 url: OnebusawaySDK::Models::References::Situation::URL
@@ -838,16 +841,23 @@ module OnebusawaySDK
         end
 
         # Reason for the service alert, taken from TPEG codes.
-        class Reason < OnebusawaySDK::Enum
-          abstract!
+        module Reason
+          extend OnebusawaySDK::Enum
 
-          Value = type_template(:out) { {fixed: Symbol} }
+          TaggedSymbol = T.type_alias { T.all(Symbol, OnebusawaySDK::Models::References::Situation::Reason) }
+          OrSymbol =
+            T.type_alias { T.any(Symbol, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol) }
 
-          EQUIPMENT_REASON = :equipmentReason
-          ENVIRONMENT_REASON = :environmentReason
-          PERSONNEL_REASON = :personnelReason
-          MISCELLANEOUS_REASON = :miscellaneousReason
-          SECURITY_ALERT = :securityAlert
+          EQUIPMENT_REASON =
+            T.let(:equipmentReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+          ENVIRONMENT_REASON =
+            T.let(:environmentReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+          PERSONNEL_REASON =
+            T.let(:personnelReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+          MISCELLANEOUS_REASON =
+            T.let(:miscellaneousReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+          SECURITY_ALERT =
+            T.let(:securityAlert, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
         end
 
         class Summary < OnebusawaySDK::BaseModel

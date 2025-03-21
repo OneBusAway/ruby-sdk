@@ -429,7 +429,9 @@ module OnebusawaySDK
           | :miscellaneousReason
           | :securityAlert
 
-        class Reason < OnebusawaySDK::Enum
+        module Reason
+          extend OnebusawaySDK::Enum
+
           EQUIPMENT_REASON: :equipmentReason
           ENVIRONMENT_REASON: :environmentReason
           PERSONNEL_REASON: :personnelReason

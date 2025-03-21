@@ -54,7 +54,9 @@ module OnebusawaySDK
         | :route_or_trip_missing
         | :other
 
-      class Code < OnebusawaySDK::Enum
+      module Code
+        extend OnebusawaySDK::Enum
+
         STOP_NAME_WRONG: :stop_name_wrong
         STOP_NUMBER_WRONG: :stop_number_wrong
         STOP_LOCATION_WRONG: :stop_location_wrong
