@@ -8,8 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data)
-          .returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data)
+        params(_: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
       end
       def data=(_)
       end
@@ -28,8 +28,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry)
+          params(
+            _: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .returns(
+              T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            )
         end
         def entry=(_)
         end
@@ -38,7 +42,10 @@ module OnebusawaySDK
         def references
         end
 
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        sig do
+          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+        end
         def references=(_)
         end
 

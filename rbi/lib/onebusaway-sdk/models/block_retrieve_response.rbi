@@ -8,8 +8,8 @@ module OnebusawaySDK
       end
 
       sig do
-        params(_: OnebusawaySDK::Models::BlockRetrieveResponse::Data)
-          .returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data)
+        params(_: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
       end
       def data=(_)
       end
@@ -28,8 +28,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry)
+          params(_: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash))
         end
         def entry=(_)
         end
@@ -38,7 +38,10 @@ module OnebusawaySDK
         def references
         end
 
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
+        sig do
+          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
+        end
         def references=(_)
         end
 
@@ -263,10 +266,16 @@ module OnebusawaySDK
 
                 sig do
                   params(
-                    _: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                    _: T.any(
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
+                      OnebusawaySDK::Util::AnyHash
+                    )
                   )
                     .returns(
-                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                      T.any(
+                        OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
+                        OnebusawaySDK::Util::AnyHash
+                      )
                     )
                 end
                 def stop_time=(_)
