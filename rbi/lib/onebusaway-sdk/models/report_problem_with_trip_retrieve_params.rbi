@@ -161,19 +161,25 @@ module OnebusawaySDK
           T.type_alias { T.any(Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol) }
 
         VEHICLE_NEVER_CAME =
-          T.let(:vehicle_never_came, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)
+          T.let(:vehicle_never_came, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
         VEHICLE_CAME_EARLY =
-          T.let(:vehicle_came_early, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)
+          T.let(:vehicle_came_early, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
         VEHICLE_CAME_LATE =
-          T.let(:vehicle_came_late, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)
+          T.let(:vehicle_came_late, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
         WRONG_HEADSIGN =
-          T.let(:wrong_headsign, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)
+          T.let(:wrong_headsign, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
         VEHICLE_DOES_NOT_STOP_HERE =
           T.let(
             :vehicle_does_not_stop_here,
-            OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol
+            OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
           )
-        OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)
+        OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
+
+        class << self
+          sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol]) }
+          def values
+          end
+        end
       end
     end
   end

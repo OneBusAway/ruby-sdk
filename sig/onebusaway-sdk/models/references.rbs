@@ -438,7 +438,7 @@ module OnebusawaySDK
           MISCELLANEOUS_REASON: :miscellaneousReason
           SECURITY_ALERT: :securityAlert
 
-          def self.values: -> ::Array[OnebusawaySDK::Models::References::Situation::reason]
+          def self?.values: -> ::Array[OnebusawaySDK::Models::References::Situation::reason]
         end
 
         type summary = { lang: String, value: String }

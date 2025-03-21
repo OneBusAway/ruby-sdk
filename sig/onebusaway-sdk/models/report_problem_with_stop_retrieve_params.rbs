@@ -63,7 +63,7 @@ module OnebusawaySDK
         ROUTE_OR_TRIP_MISSING: :route_or_trip_missing
         OTHER: :other
 
-        def self.values: -> ::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code]
+        def self?.values: -> ::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code]
       end
     end
   end
