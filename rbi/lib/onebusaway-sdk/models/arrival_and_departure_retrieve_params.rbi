@@ -53,7 +53,7 @@ module OnebusawaySDK
           stop_sequence: Integer,
           time: Integer,
           vehicle_id: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

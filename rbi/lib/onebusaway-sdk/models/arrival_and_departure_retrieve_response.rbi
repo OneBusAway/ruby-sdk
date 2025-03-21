@@ -18,7 +18,12 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data).returns(T.attached_class) }
+      sig do
+        params(
+          data: T.any(OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .returns(T.attached_class)
+      end
       def self.new(data:)
       end
 
@@ -61,8 +66,11 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
+            entry: T.any(
+              OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Util::AnyHash
+            ),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -444,7 +452,10 @@ module OnebusawaySDK
               scheduled_track: String,
               situation_ids: T::Array[String],
               status: String,
-              trip_status: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus
+              trip_status: T.any(
+                OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus,
+                OnebusawaySDK::Util::AnyHash
+              )
             )
               .returns(T.attached_class)
           end
@@ -836,12 +847,18 @@ module OnebusawaySDK
                 total_distance_along_trip: Float,
                 closest_stop_time_offset: Integer,
                 frequency: String,
-                last_known_location: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation,
+                last_known_location: T.any(
+                  OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation,
+                  OnebusawaySDK::Util::AnyHash
+                ),
                 last_known_orientation: Float,
                 next_stop: String,
                 next_stop_time_offset: Integer,
                 orientation: Float,
-                position: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position,
+                position: T.any(
+                  OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position,
+                  OnebusawaySDK::Util::AnyHash
+                ),
                 scheduled_distance_along_trip: Float,
                 situation_ids: T::Array[String],
                 vehicle_id: String

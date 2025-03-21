@@ -26,7 +26,7 @@ module OnebusawaySDK
           page: T.nilable(T::Class[OnebusawaySDK::BasePage[OnebusawaySDK::BaseModel]]),
           stream: T.nilable(T::Class[T.anything]),
           model: T.nilable(OnebusawaySDK::Converter::Input),
-          options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+          options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
         }
       end
 
@@ -130,7 +130,7 @@ module OnebusawaySDK
     # @api private
     sig do
       overridable
-        .params(req: OnebusawaySDK::BaseClient::RequestComponentsShape, opts: T::Hash[Symbol, T.anything])
+        .params(req: OnebusawaySDK::BaseClient::RequestComponentsShape, opts: OnebusawaySDK::Util::AnyHash)
         .returns(OnebusawaySDK::BaseClient::RequestInputShape)
     end
     private def build_request(req, opts)
@@ -176,7 +176,7 @@ module OnebusawaySDK
         page: T.nilable(T::Class[OnebusawaySDK::BasePage[OnebusawaySDK::BaseModel]]),
         stream: T.nilable(T::Class[T.anything]),
         model: T.nilable(OnebusawaySDK::Converter::Input),
-        options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+        options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
       )
         .returns(T.anything)
     end

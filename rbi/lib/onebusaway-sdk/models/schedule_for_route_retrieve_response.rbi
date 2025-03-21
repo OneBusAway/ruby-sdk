@@ -18,7 +18,12 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data).returns(T.attached_class) }
+      sig do
+        params(
+          data: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .returns(T.attached_class)
+      end
       def self.new(data:)
       end
 
@@ -43,7 +48,9 @@ module OnebusawaySDK
         end
 
         sig do
-          params(entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry)
+          params(
+            entry: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
             .returns(T.attached_class)
         end
         def self.new(entry:)

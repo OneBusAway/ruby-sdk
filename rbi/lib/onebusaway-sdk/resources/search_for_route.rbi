@@ -8,7 +8,7 @@ module OnebusawaySDK
         params(
           input: String,
           max_count: Integer,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
         )
           .returns(OnebusawaySDK::Models::SearchForRouteListResponse)
       end

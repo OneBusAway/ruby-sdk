@@ -61,7 +61,7 @@ module OnebusawaySDK
           user_lat: Float,
           user_location_accuracy: Float,
           user_lon: Float,
-          request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

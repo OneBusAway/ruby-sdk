@@ -61,7 +61,7 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           service_date: Integer,
           time: Integer,
-          request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

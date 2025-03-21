@@ -14,7 +14,10 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data).returns(T.attached_class) }
+      sig do
+        params(data: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.attached_class)
+      end
       def self.new(data:)
       end
 
@@ -47,8 +50,8 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
+            entry: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -124,7 +127,10 @@ module OnebusawaySDK
           sig do
             params(
               id: String,
-              git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+              git_properties: T.any(
+                OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+                OnebusawaySDK::Util::AnyHash
+              ),
               name: String,
               service_date_from: String,
               service_date_to: String
