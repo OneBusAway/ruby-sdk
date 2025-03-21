@@ -28,7 +28,7 @@ module OnebusawaySDK
         params(
           include_polylines: T::Boolean,
           time: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

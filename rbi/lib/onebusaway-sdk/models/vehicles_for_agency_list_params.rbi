@@ -20,7 +20,7 @@ module OnebusawaySDK
           time: String,
           request_options: T.any(
             OnebusawaySDK::RequestOptions,
-            T::Hash[Symbol, T.anything]
+            OnebusawaySDK::Util::AnyHash
           )
         )
           .returns(T.attached_class)

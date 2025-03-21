@@ -39,7 +39,7 @@ module OnebusawaySDK
           include_schedule: T::Boolean,
           include_status: T::Boolean,
           time: Integer,
-          request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

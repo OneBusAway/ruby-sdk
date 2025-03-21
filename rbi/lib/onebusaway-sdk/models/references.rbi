@@ -495,12 +495,12 @@ module OnebusawaySDK
             all_affects: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
             consequence_message: String,
             consequences: T::Array[OnebusawaySDK::Models::References::Situation::Consequence],
-            description: OnebusawaySDK::Models::References::Situation::Description,
+            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash),
             publication_windows: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
             reason: OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol,
             severity: String,
-            summary: OnebusawaySDK::Models::References::Situation::Summary,
-            url: OnebusawaySDK::Models::References::Situation::URL
+            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash),
+            url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -690,7 +690,10 @@ module OnebusawaySDK
           sig do
             params(
               condition: String,
-              condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
+              condition_details: T.any(
+                OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
+                OnebusawaySDK::Util::AnyHash
+              )
             )
               .returns(T.attached_class)
           end
@@ -745,7 +748,10 @@ module OnebusawaySDK
 
             sig do
               params(
-                diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                diversion_path: T.any(
+                  OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                  OnebusawaySDK::Util::AnyHash
+                ),
                 diversion_stop_ids: T::Array[String]
               )
                 .returns(T.attached_class)

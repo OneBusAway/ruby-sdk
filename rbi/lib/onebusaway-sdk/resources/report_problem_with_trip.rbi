@@ -17,7 +17,7 @@ module OnebusawaySDK
           user_on_vehicle: T::Boolean,
           user_vehicle_number: String,
           vehicle_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
         )
           .returns(OnebusawaySDK::Models::ResponseWrapper)
       end

@@ -7,7 +7,7 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig do
-        params(request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+        params(request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
           .returns(T.attached_class)
       end
       def self.new(request_options: {})

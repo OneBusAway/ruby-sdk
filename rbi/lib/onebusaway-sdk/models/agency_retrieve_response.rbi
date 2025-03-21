@@ -14,7 +14,10 @@ module OnebusawaySDK
       def data=(_)
       end
 
-      sig { params(data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data).returns(T.attached_class) }
+      sig do
+        params(data: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.attached_class)
+      end
       def self.new(data:)
       end
 
@@ -55,9 +58,9 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
+            entry: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
             limit_exceeded: T::Boolean,
-            references: OnebusawaySDK::Models::References
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end

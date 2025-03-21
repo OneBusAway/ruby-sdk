@@ -45,7 +45,7 @@ module OnebusawaySDK
         params(
           limit_exceeded: T::Boolean,
           list: T::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
-          references: OnebusawaySDK::Models::References,
+          references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash),
           out_of_range: T::Boolean
         )
           .returns(T.attached_class)

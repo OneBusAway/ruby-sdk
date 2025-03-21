@@ -38,7 +38,7 @@ module OnebusawaySDK
           minutes_after: Integer,
           minutes_before: Integer,
           time: Time,
-          request_options: T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything])
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
         )
           .returns(T.attached_class)
       end
