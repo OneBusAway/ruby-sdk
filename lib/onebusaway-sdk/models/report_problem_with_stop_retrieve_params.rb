@@ -79,10 +79,10 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @abstract
-      #
       # A string code identifying the nature of the problem
-      class Code < OnebusawaySDK::Enum
+      module Code
+        extend OnebusawaySDK::Enum
+
         STOP_NAME_WRONG = :stop_name_wrong
         STOP_NUMBER_WRONG = :stop_number_wrong
         STOP_LOCATION_WRONG = :stop_location_wrong

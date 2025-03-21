@@ -7,7 +7,7 @@ module OnebusawaySDK
       sig do
         params(
           trip_id: String,
-          code: Symbol,
+          code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
           service_date: Integer,
           stop_id: String,
           user_comment: String,
