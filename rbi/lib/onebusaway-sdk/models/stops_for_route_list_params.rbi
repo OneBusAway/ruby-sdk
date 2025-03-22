@@ -8,21 +8,17 @@ module OnebusawaySDK
 
       # Include polyline elements in the response (default true)
       sig { returns(T.nilable(T::Boolean)) }
-      def include_polylines
-      end
+      attr_reader :include_polylines
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_polylines=(_)
-      end
+      sig { params(include_polylines: T::Boolean).void }
+      attr_writer :include_polylines
 
       # Specify service date (YYYY-MM-DD or epoch) (default today)
       sig { returns(T.nilable(String)) }
-      def time
-      end
+      attr_reader :time
 
-      sig { params(_: String).returns(String) }
-      def time=(_)
-      end
+      sig { params(time: String).void }
+      attr_writer :time
 
       sig do
         params(

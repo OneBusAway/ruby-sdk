@@ -11,120 +11,91 @@ module OnebusawaySDK
     DEFAULT_MAX_RETRY_DELAY = T.let(8.0, Float)
 
     sig { returns(String) }
-    def api_key
-    end
+    attr_reader :api_key
 
     sig { returns(OnebusawaySDK::Resources::AgenciesWithCoverage) }
-    def agencies_with_coverage
-    end
+    attr_reader :agencies_with_coverage
 
     sig { returns(OnebusawaySDK::Resources::Agency) }
-    def agency
-    end
+    attr_reader :agency
 
     sig { returns(OnebusawaySDK::Resources::VehiclesForAgency) }
-    def vehicles_for_agency
-    end
+    attr_reader :vehicles_for_agency
 
     sig { returns(OnebusawaySDK::Resources::Config) }
-    def config
-    end
+    attr_reader :config
 
     sig { returns(OnebusawaySDK::Resources::CurrentTime) }
-    def current_time
-    end
+    attr_reader :current_time
 
     sig { returns(OnebusawaySDK::Resources::StopsForLocation) }
-    def stops_for_location
-    end
+    attr_reader :stops_for_location
 
     sig { returns(OnebusawaySDK::Resources::StopsForRoute) }
-    def stops_for_route
-    end
+    attr_reader :stops_for_route
 
     sig { returns(OnebusawaySDK::Resources::StopsForAgency) }
-    def stops_for_agency
-    end
+    attr_reader :stops_for_agency
 
     sig { returns(OnebusawaySDK::Resources::Stop) }
-    def stop
-    end
+    attr_reader :stop
 
     sig { returns(OnebusawaySDK::Resources::StopIDsForAgency) }
-    def stop_ids_for_agency
-    end
+    attr_reader :stop_ids_for_agency
 
     sig { returns(OnebusawaySDK::Resources::ScheduleForStop) }
-    def schedule_for_stop
-    end
+    attr_reader :schedule_for_stop
 
     sig { returns(OnebusawaySDK::Resources::Route) }
-    def route
-    end
+    attr_reader :route
 
     sig { returns(OnebusawaySDK::Resources::RouteIDsForAgency) }
-    def route_ids_for_agency
-    end
+    attr_reader :route_ids_for_agency
 
     sig { returns(OnebusawaySDK::Resources::RoutesForLocation) }
-    def routes_for_location
-    end
+    attr_reader :routes_for_location
 
     sig { returns(OnebusawaySDK::Resources::RoutesForAgency) }
-    def routes_for_agency
-    end
+    attr_reader :routes_for_agency
 
     sig { returns(OnebusawaySDK::Resources::ScheduleForRoute) }
-    def schedule_for_route
-    end
+    attr_reader :schedule_for_route
 
     sig { returns(OnebusawaySDK::Resources::ArrivalAndDeparture) }
-    def arrival_and_departure
-    end
+    attr_reader :arrival_and_departure
 
     sig { returns(OnebusawaySDK::Resources::Trip) }
-    def trip
-    end
+    attr_reader :trip
 
     sig { returns(OnebusawaySDK::Resources::TripsForLocation) }
-    def trips_for_location
-    end
+    attr_reader :trips_for_location
 
     sig { returns(OnebusawaySDK::Resources::TripDetails) }
-    def trip_details
-    end
+    attr_reader :trip_details
 
     sig { returns(OnebusawaySDK::Resources::TripForVehicle) }
-    def trip_for_vehicle
-    end
+    attr_reader :trip_for_vehicle
 
     sig { returns(OnebusawaySDK::Resources::TripsForRoute) }
-    def trips_for_route
-    end
+    attr_reader :trips_for_route
 
     sig { returns(OnebusawaySDK::Resources::ReportProblemWithStop) }
-    def report_problem_with_stop
-    end
+    attr_reader :report_problem_with_stop
 
     sig { returns(OnebusawaySDK::Resources::ReportProblemWithTrip) }
-    def report_problem_with_trip
-    end
+    attr_reader :report_problem_with_trip
 
     sig { returns(OnebusawaySDK::Resources::SearchForStop) }
-    def search_for_stop
-    end
+    attr_reader :search_for_stop
 
     sig { returns(OnebusawaySDK::Resources::SearchForRoute) }
-    def search_for_route
-    end
+    attr_reader :search_for_route
 
     sig { returns(OnebusawaySDK::Resources::Block) }
-    def block
-    end
+    attr_reader :block
 
     sig { returns(OnebusawaySDK::Resources::Shape) }
-    def shape
-    end
+    attr_reader :shape
 
     # @api private
     sig { override.returns(T::Hash[String, String]) }

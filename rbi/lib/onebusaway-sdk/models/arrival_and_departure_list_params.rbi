@@ -8,30 +8,24 @@ module OnebusawaySDK
 
       # Include vehicles arriving or departing in the next n minutes.
       sig { returns(T.nilable(Integer)) }
-      def minutes_after
-      end
+      attr_reader :minutes_after
 
-      sig { params(_: Integer).returns(Integer) }
-      def minutes_after=(_)
-      end
+      sig { params(minutes_after: Integer).void }
+      attr_writer :minutes_after
 
       # Include vehicles having arrived or departed in the previous n minutes.
       sig { returns(T.nilable(Integer)) }
-      def minutes_before
-      end
+      attr_reader :minutes_before
 
-      sig { params(_: Integer).returns(Integer) }
-      def minutes_before=(_)
-      end
+      sig { params(minutes_before: Integer).void }
+      attr_writer :minutes_before
 
       # The specific time for querying the system status.
       sig { returns(T.nilable(Time)) }
-      def time
-      end
+      attr_reader :time
 
-      sig { params(_: Time).returns(Time) }
-      def time=(_)
-      end
+      sig { params(time: Time).void }
+      attr_writer :time
 
       sig do
         params(

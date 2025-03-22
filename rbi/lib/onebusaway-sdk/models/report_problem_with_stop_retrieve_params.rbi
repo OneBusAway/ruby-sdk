@@ -8,51 +8,38 @@ module OnebusawaySDK
 
       # A string code identifying the nature of the problem
       sig { returns(T.nilable(OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)) }
-      def code
-      end
+      attr_reader :code
 
-      sig do
-        params(_: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
-          .returns(OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)
-      end
-      def code=(_)
-      end
+      sig { params(code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol).void }
+      attr_writer :code
 
       # Additional comment text supplied by the user describing the problem
       sig { returns(T.nilable(String)) }
-      def user_comment
-      end
+      attr_reader :user_comment
 
-      sig { params(_: String).returns(String) }
-      def user_comment=(_)
-      end
+      sig { params(user_comment: String).void }
+      attr_writer :user_comment
 
       # The reporting user’s current latitude
       sig { returns(T.nilable(Float)) }
-      def user_lat
-      end
+      attr_reader :user_lat
 
-      sig { params(_: Float).returns(Float) }
-      def user_lat=(_)
-      end
+      sig { params(user_lat: Float).void }
+      attr_writer :user_lat
 
       # The reporting user’s location accuracy, in meters
       sig { returns(T.nilable(Float)) }
-      def user_location_accuracy
-      end
+      attr_reader :user_location_accuracy
 
-      sig { params(_: Float).returns(Float) }
-      def user_location_accuracy=(_)
-      end
+      sig { params(user_location_accuracy: Float).void }
+      attr_writer :user_location_accuracy
 
       # The reporting user’s current longitude
       sig { returns(T.nilable(Float)) }
-      def user_lon
-      end
+      attr_reader :user_lon
 
-      sig { params(_: Float).returns(Float) }
-      def user_lon=(_)
-      end
+      sig { params(user_lon: Float).void }
+      attr_writer :user_lon
 
       sig do
         params(

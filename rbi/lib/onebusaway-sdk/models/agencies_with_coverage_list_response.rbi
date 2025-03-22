@@ -4,19 +4,15 @@ module OnebusawaySDK
   module Models
     class AgenciesWithCoverageListResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
       sig do
         params(
-          _: T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data, OnebusawaySDK::Util::AnyHash)
         )
-          .returns(
-            T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data, OnebusawaySDK::Util::AnyHash)
-          )
+          .void
       end
-      def data=(_)
-      end
+      attr_writer :data
 
       sig do
         params(
@@ -33,34 +29,16 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(T::Boolean) }
-        def limit_exceeded
-        end
-
-        sig { params(_: T::Boolean).returns(T::Boolean) }
-        def limit_exceeded=(_)
-        end
+        attr_accessor :limit_exceeded
 
         sig { returns(T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List]) }
-        def list
-        end
-
-        sig do
-          params(_: T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List])
-            .returns(T::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List])
-        end
-        def list=(_)
-        end
+        attr_accessor :list
 
         sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
+        attr_reader :references
 
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-        end
-        def references=(_)
-        end
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
 
         sig do
           params(
@@ -88,44 +66,19 @@ module OnebusawaySDK
 
         class List < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          def agency_id
-          end
-
-          sig { params(_: String).returns(String) }
-          def agency_id=(_)
-          end
+          attr_accessor :agency_id
 
           sig { returns(Float) }
-          def lat
-          end
-
-          sig { params(_: Float).returns(Float) }
-          def lat=(_)
-          end
+          attr_accessor :lat
 
           sig { returns(Float) }
-          def lat_span
-          end
-
-          sig { params(_: Float).returns(Float) }
-          def lat_span=(_)
-          end
+          attr_accessor :lat_span
 
           sig { returns(Float) }
-          def lon
-          end
-
-          sig { params(_: Float).returns(Float) }
-          def lon=(_)
-          end
+          attr_accessor :lon
 
           sig { returns(Float) }
-          def lon_span
-          end
-
-          sig { params(_: Float).returns(Float) }
-          def lon_span=(_)
-          end
+          attr_accessor :lon_span
 
           sig do
             params(agency_id: String, lat: Float, lat_span: Float, lon: Float, lon_span: Float)

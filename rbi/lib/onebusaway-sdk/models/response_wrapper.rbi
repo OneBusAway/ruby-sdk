@@ -4,36 +4,16 @@ module OnebusawaySDK
   module Models
     class ResponseWrapper < OnebusawaySDK::BaseModel
       sig { returns(Integer) }
-      def code
-      end
-
-      sig { params(_: Integer).returns(Integer) }
-      def code=(_)
-      end
+      attr_accessor :code
 
       sig { returns(Integer) }
-      def current_time
-      end
-
-      sig { params(_: Integer).returns(Integer) }
-      def current_time=(_)
-      end
+      attr_accessor :current_time
 
       sig { returns(String) }
-      def text
-      end
-
-      sig { params(_: String).returns(String) }
-      def text=(_)
-      end
+      attr_accessor :text
 
       sig { returns(Integer) }
-      def version
-      end
-
-      sig { params(_: Integer).returns(Integer) }
-      def version=(_)
-      end
+      attr_accessor :version
 
       sig do
         params(code: Integer, current_time: Integer, text: String, version: Integer).returns(T.attached_class)
