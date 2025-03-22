@@ -4,15 +4,10 @@ module OnebusawaySDK
   module Models
     class BlockRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
-      sig do
-        params(_: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
-          .returns(T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
-      end
-      def data=(_)
-      end
+      sig { params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)).void }
+      attr_writer :data
 
       sig do
         params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
@@ -27,26 +22,21 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry) }
-        def entry
-        end
+        attr_reader :entry
 
         sig do
-          params(_: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash))
+          params(
+            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .void
         end
-        def entry=(_)
-        end
+        attr_writer :entry
 
         sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
+        attr_reader :references
 
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-        end
-        def references=(_)
-        end
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
 
         sig do
           params(
@@ -72,23 +62,10 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          def id
-          end
-
-          sig { params(_: String).returns(String) }
-          def id=(_)
-          end
+          attr_accessor :id
 
           sig { returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]) }
-          def configurations
-          end
-
-          sig do
-            params(_: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration])
-              .returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration])
-          end
-          def configurations=(_)
-          end
+          attr_accessor :configurations
 
           sig do
             params(
@@ -119,31 +96,16 @@ module OnebusawaySDK
 
           class Configuration < OnebusawaySDK::BaseModel
             sig { returns(T::Array[String]) }
-            def active_service_ids
-            end
-
-            sig { params(_: T::Array[String]).returns(T::Array[String]) }
-            def active_service_ids=(_)
-            end
+            attr_accessor :active_service_ids
 
             sig { returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]) }
-            def trips
-            end
-
-            sig do
-              params(_: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip])
-                .returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip])
-            end
-            def trips=(_)
-            end
+            attr_accessor :trips
 
             sig { returns(T.nilable(T::Array[String])) }
-            def inactive_service_ids
-            end
+            attr_reader :inactive_service_ids
 
-            sig { params(_: T::Array[String]).returns(T::Array[String]) }
-            def inactive_service_ids=(_)
-            end
+            sig { params(inactive_service_ids: T::Array[String]).void }
+            attr_writer :inactive_service_ids
 
             sig do
               params(
@@ -176,47 +138,20 @@ module OnebusawaySDK
 
             class Trip < OnebusawaySDK::BaseModel
               sig { returns(Float) }
-              def accumulated_slack_time
-              end
-
-              sig { params(_: Float).returns(Float) }
-              def accumulated_slack_time=(_)
-              end
+              attr_accessor :accumulated_slack_time
 
               sig do
                 returns(
                   T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
                 )
               end
-              def block_stop_times
-              end
-
-              sig do
-                params(
-                  _: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
-                )
-                  .returns(
-                    T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
-                  )
-              end
-              def block_stop_times=(_)
-              end
+              attr_accessor :block_stop_times
 
               sig { returns(Float) }
-              def distance_along_block
-              end
-
-              sig { params(_: Float).returns(Float) }
-              def distance_along_block=(_)
-              end
+              attr_accessor :distance_along_block
 
               sig { returns(String) }
-              def trip_id
-              end
-
-              sig { params(_: String).returns(String) }
-              def trip_id=(_)
-              end
+              attr_accessor :trip_id
 
               sig do
                 params(
@@ -251,53 +186,31 @@ module OnebusawaySDK
 
               class BlockStopTime < OnebusawaySDK::BaseModel
                 sig { returns(Float) }
-                def accumulated_slack_time
-                end
-
-                sig { params(_: Float).returns(Float) }
-                def accumulated_slack_time=(_)
-                end
+                attr_accessor :accumulated_slack_time
 
                 sig { returns(Integer) }
-                def block_sequence
-                end
-
-                sig { params(_: Integer).returns(Integer) }
-                def block_sequence=(_)
-                end
+                attr_accessor :block_sequence
 
                 sig { returns(Float) }
-                def distance_along_block
-                end
-
-                sig { params(_: Float).returns(Float) }
-                def distance_along_block=(_)
-                end
+                attr_accessor :distance_along_block
 
                 sig do
                   returns(
                     OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
                   )
                 end
-                def stop_time
-                end
+                attr_reader :stop_time
 
                 sig do
                   params(
-                    _: T.any(
+                    stop_time: T.any(
                       OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
                       OnebusawaySDK::Util::AnyHash
                     )
                   )
-                    .returns(
-                      T.any(
-                        OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
-                        OnebusawaySDK::Util::AnyHash
-                      )
-                    )
+                    .void
                 end
-                def stop_time=(_)
-                end
+                attr_writer :stop_time
 
                 sig do
                   params(
@@ -330,44 +243,25 @@ module OnebusawaySDK
 
                 class StopTime < OnebusawaySDK::BaseModel
                   sig { returns(Integer) }
-                  def arrival_time
-                  end
-
-                  sig { params(_: Integer).returns(Integer) }
-                  def arrival_time=(_)
-                  end
+                  attr_accessor :arrival_time
 
                   sig { returns(Integer) }
-                  def departure_time
-                  end
-
-                  sig { params(_: Integer).returns(Integer) }
-                  def departure_time=(_)
-                  end
+                  attr_accessor :departure_time
 
                   sig { returns(String) }
-                  def stop_id
-                  end
-
-                  sig { params(_: String).returns(String) }
-                  def stop_id=(_)
-                  end
+                  attr_accessor :stop_id
 
                   sig { returns(T.nilable(Integer)) }
-                  def drop_off_type
-                  end
+                  attr_reader :drop_off_type
 
-                  sig { params(_: Integer).returns(Integer) }
-                  def drop_off_type=(_)
-                  end
+                  sig { params(drop_off_type: Integer).void }
+                  attr_writer :drop_off_type
 
                   sig { returns(T.nilable(Integer)) }
-                  def pickup_type
-                  end
+                  attr_reader :pickup_type
 
-                  sig { params(_: Integer).returns(Integer) }
-                  def pickup_type=(_)
-                  end
+                  sig { params(pickup_type: Integer).void }
+                  attr_writer :pickup_type
 
                   sig do
                     params(

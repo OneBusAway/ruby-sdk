@@ -4,17 +4,15 @@ module OnebusawaySDK
   module Models
     class ScheduleForStopRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
       sig do
         params(
-          _: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
         )
-          .returns(T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .void
       end
-      def data=(_)
-      end
+      attr_writer :data
 
       sig do
         params(
@@ -31,30 +29,21 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry) }
-        def entry
-        end
+        attr_reader :entry
 
         sig do
           params(
-            _: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
           )
-            .returns(
-              T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
-            )
+            .void
         end
-        def entry=(_)
-        end
+        attr_writer :entry
 
         sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
+        attr_reader :references
 
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-        end
-        def references=(_)
-        end
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
 
         sig do
           params(
@@ -80,33 +69,13 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(Integer) }
-          def date
-          end
-
-          sig { params(_: Integer).returns(Integer) }
-          def date=(_)
-          end
+          attr_accessor :date
 
           sig { returns(String) }
-          def stop_id
-          end
-
-          sig { params(_: String).returns(String) }
-          def stop_id=(_)
-          end
+          attr_accessor :stop_id
 
           sig { returns(T::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]) }
-          def stop_route_schedules
-          end
-
-          sig do
-            params(
-              _: T::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
-            )
-              .returns(T::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule])
-          end
-          def stop_route_schedules=(_)
-          end
+          attr_accessor :stop_route_schedules
 
           sig do
             params(
@@ -139,12 +108,7 @@ module OnebusawaySDK
 
           class StopRouteSchedule < OnebusawaySDK::BaseModel
             sig { returns(String) }
-            def route_id
-            end
-
-            sig { params(_: String).returns(String) }
-            def route_id=(_)
-            end
+            attr_accessor :route_id
 
             sig do
               returns(
@@ -153,23 +117,7 @@ module OnebusawaySDK
                 ]
               )
             end
-            def stop_route_direction_schedules
-            end
-
-            sig do
-              params(
-                _: T::Array[
-                OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
-                ]
-              )
-                .returns(
-                  T::Array[
-                  OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
-                  ]
-                )
-            end
-            def stop_route_direction_schedules=(_)
-            end
+            attr_accessor :stop_route_direction_schedules
 
             sig do
               params(
@@ -208,31 +156,10 @@ module OnebusawaySDK
                   ]
                 )
               end
-              def schedule_stop_times
-              end
-
-              sig do
-                params(
-                  _: T::Array[
-                  OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
-                  ]
-                )
-                  .returns(
-                    T::Array[
-                    OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
-                    ]
-                  )
-              end
-              def schedule_stop_times=(_)
-              end
+              attr_accessor :schedule_stop_times
 
               sig { returns(String) }
-              def trip_headsign
-              end
-
-              sig { params(_: String).returns(String) }
-              def trip_headsign=(_)
-              end
+              attr_accessor :trip_headsign
 
               sig do
                 returns(
@@ -243,29 +170,20 @@ module OnebusawaySDK
                   )
                 )
               end
-              def schedule_frequencies
-              end
+              attr_reader :schedule_frequencies
 
               sig do
                 params(
-                  _: T::Array[
+                  schedule_frequencies: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
                     OnebusawaySDK::Util::AnyHash
                   )
                   ]
                 )
-                  .returns(
-                    T::Array[
-                    T.any(
-                      OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
-                      OnebusawaySDK::Util::AnyHash
-                    )
-                    ]
-                  )
+                  .void
               end
-              def schedule_frequencies=(_)
-              end
+              attr_writer :schedule_frequencies
 
               sig do
                 params(
@@ -307,60 +225,28 @@ module OnebusawaySDK
 
               class ScheduleStopTime < OnebusawaySDK::BaseModel
                 sig { returns(T::Boolean) }
-                def arrival_enabled
-                end
-
-                sig { params(_: T::Boolean).returns(T::Boolean) }
-                def arrival_enabled=(_)
-                end
+                attr_accessor :arrival_enabled
 
                 sig { returns(Integer) }
-                def arrival_time
-                end
-
-                sig { params(_: Integer).returns(Integer) }
-                def arrival_time=(_)
-                end
+                attr_accessor :arrival_time
 
                 sig { returns(T::Boolean) }
-                def departure_enabled
-                end
-
-                sig { params(_: T::Boolean).returns(T::Boolean) }
-                def departure_enabled=(_)
-                end
+                attr_accessor :departure_enabled
 
                 sig { returns(Integer) }
-                def departure_time
-                end
-
-                sig { params(_: Integer).returns(Integer) }
-                def departure_time=(_)
-                end
+                attr_accessor :departure_time
 
                 sig { returns(String) }
-                def service_id
-                end
-
-                sig { params(_: String).returns(String) }
-                def service_id=(_)
-                end
+                attr_accessor :service_id
 
                 sig { returns(String) }
-                def trip_id
-                end
-
-                sig { params(_: String).returns(String) }
-                def trip_id=(_)
-                end
+                attr_accessor :trip_id
 
                 sig { returns(T.nilable(String)) }
-                def stop_headsign
-                end
+                attr_reader :stop_headsign
 
-                sig { params(_: String).returns(String) }
-                def stop_headsign=(_)
-                end
+                sig { params(stop_headsign: String).void }
+                attr_writer :stop_headsign
 
                 sig do
                   params(
@@ -405,52 +291,22 @@ module OnebusawaySDK
 
               class ScheduleFrequency < OnebusawaySDK::BaseModel
                 sig { returns(Integer) }
-                def end_time
-                end
-
-                sig { params(_: Integer).returns(Integer) }
-                def end_time=(_)
-                end
+                attr_accessor :end_time
 
                 sig { returns(Integer) }
-                def headway
-                end
-
-                sig { params(_: Integer).returns(Integer) }
-                def headway=(_)
-                end
+                attr_accessor :headway
 
                 sig { returns(Integer) }
-                def service_date
-                end
-
-                sig { params(_: Integer).returns(Integer) }
-                def service_date=(_)
-                end
+                attr_accessor :service_date
 
                 sig { returns(String) }
-                def service_id
-                end
-
-                sig { params(_: String).returns(String) }
-                def service_id=(_)
-                end
+                attr_accessor :service_id
 
                 sig { returns(Integer) }
-                def start_time
-                end
-
-                sig { params(_: Integer).returns(Integer) }
-                def start_time=(_)
-                end
+                attr_accessor :start_time
 
                 sig { returns(String) }
-                def trip_id
-                end
-
-                sig { params(_: String).returns(String) }
-                def trip_id=(_)
-                end
+                attr_accessor :trip_id
 
                 sig do
                   params(

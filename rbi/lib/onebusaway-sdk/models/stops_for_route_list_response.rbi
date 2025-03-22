@@ -4,15 +4,13 @@ module OnebusawaySDK
   module Models
     class StopsForRouteListResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
       sig do
-        params(_: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data, OnebusawaySDK::Util::AnyHash))
-          .returns(T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data, OnebusawaySDK::Util::AnyHash))
+        params(data: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .void
       end
-      def data=(_)
-      end
+      attr_writer :data
 
       sig do
         params(data: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data, OnebusawaySDK::Util::AnyHash))
@@ -27,30 +25,21 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry) }
-        def entry
-        end
+        attr_reader :entry
 
         sig do
           params(
-            _: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
           )
-            .returns(
-              T.any(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
-            )
+            .void
         end
-        def entry=(_)
-        end
+        attr_writer :entry
 
         sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
+        attr_reader :references
 
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-        end
-        def references=(_)
-        end
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
 
         sig do
           params(
@@ -76,70 +65,48 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])) }
-          def polylines
-          end
+          attr_reader :polylines
 
           sig do
             params(
-              _: T::Array[
+              polylines: T::Array[
               T.any(
                 OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
                 OnebusawaySDK::Util::AnyHash
               )
               ]
             )
-              .returns(
-                T::Array[
-                T.any(
-                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
-                  OnebusawaySDK::Util::AnyHash
-                )
-                ]
-              )
+              .void
           end
-          def polylines=(_)
-          end
+          attr_writer :polylines
 
           sig { returns(T.nilable(String)) }
-          def route_id
-          end
+          attr_reader :route_id
 
-          sig { params(_: String).returns(String) }
-          def route_id=(_)
-          end
+          sig { params(route_id: String).void }
+          attr_writer :route_id
 
           sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping])) }
-          def stop_groupings
-          end
+          attr_reader :stop_groupings
 
           sig do
             params(
-              _: T::Array[
+              stop_groupings: T::Array[
               T.any(
                 OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
                 OnebusawaySDK::Util::AnyHash
               )
               ]
             )
-              .returns(
-                T::Array[
-                T.any(
-                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
-                  OnebusawaySDK::Util::AnyHash
-                )
-                ]
-              )
+              .void
           end
-          def stop_groupings=(_)
-          end
+          attr_writer :stop_groupings
 
           sig { returns(T.nilable(T::Array[String])) }
-          def stop_ids
-          end
+          attr_reader :stop_ids
 
-          sig { params(_: T::Array[String]).returns(T::Array[String]) }
-          def stop_ids=(_)
-          end
+          sig { params(stop_ids: T::Array[String]).void }
+          attr_writer :stop_ids
 
           sig do
             params(
@@ -179,28 +146,22 @@ module OnebusawaySDK
 
           class Polyline < OnebusawaySDK::BaseModel
             sig { returns(T.nilable(Integer)) }
-            def length
-            end
+            attr_reader :length
 
-            sig { params(_: Integer).returns(Integer) }
-            def length=(_)
-            end
+            sig { params(length: Integer).void }
+            attr_writer :length
 
             sig { returns(T.nilable(String)) }
-            def levels
-            end
+            attr_reader :levels
 
-            sig { params(_: String).returns(String) }
-            def levels=(_)
-            end
+            sig { params(levels: String).void }
+            attr_writer :levels
 
             sig { returns(T.nilable(String)) }
-            def points
-            end
+            attr_reader :points
 
-            sig { params(_: String).returns(String) }
-            def points=(_)
-            end
+            sig { params(points: String).void }
+            attr_writer :points
 
             sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
             def self.new(length: nil, levels: nil, points: nil)
@@ -213,70 +174,50 @@ module OnebusawaySDK
 
           class StopGrouping < OnebusawaySDK::BaseModel
             sig { returns(T.nilable(String)) }
-            def id
-            end
+            attr_reader :id
 
-            sig { params(_: String).returns(String) }
-            def id=(_)
-            end
+            sig { params(id: String).void }
+            attr_writer :id
 
             sig { returns(T.nilable(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name)) }
-            def name
-            end
+            attr_reader :name
 
             sig do
               params(
-                _: T.any(
+                name: T.any(
                   OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
                   OnebusawaySDK::Util::AnyHash
                 )
               )
-                .returns(
-                  T.any(
-                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
-                    OnebusawaySDK::Util::AnyHash
-                  )
-                )
+                .void
             end
-            def name=(_)
-            end
+            attr_writer :name
 
             sig do
               returns(
                 T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline])
               )
             end
-            def polylines
-            end
+            attr_reader :polylines
 
             sig do
               params(
-                _: T::Array[
+                polylines: T::Array[
                 T.any(
                   OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
                   OnebusawaySDK::Util::AnyHash
                 )
                 ]
               )
-                .returns(
-                  T::Array[
-                  T.any(
-                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
-                    OnebusawaySDK::Util::AnyHash
-                  )
-                  ]
-                )
+                .void
             end
-            def polylines=(_)
-            end
+            attr_writer :polylines
 
             sig { returns(T.nilable(T::Array[String])) }
-            def stop_ids
-            end
+            attr_reader :stop_ids
 
-            sig { params(_: T::Array[String]).returns(T::Array[String]) }
-            def stop_ids=(_)
-            end
+            sig { params(stop_ids: T::Array[String]).void }
+            attr_writer :stop_ids
 
             sig do
               params(
@@ -314,28 +255,22 @@ module OnebusawaySDK
 
             class Name < OnebusawaySDK::BaseModel
               sig { returns(T.nilable(String)) }
-              def name
-              end
+              attr_reader :name
 
-              sig { params(_: String).returns(String) }
-              def name=(_)
-              end
+              sig { params(name: String).void }
+              attr_writer :name
 
               sig { returns(T.nilable(T::Array[String])) }
-              def names
-              end
+              attr_reader :names
 
-              sig { params(_: T::Array[String]).returns(T::Array[String]) }
-              def names=(_)
-              end
+              sig { params(names: T::Array[String]).void }
+              attr_writer :names
 
               sig { returns(T.nilable(String)) }
-              def type
-              end
+              attr_reader :type
 
-              sig { params(_: String).returns(String) }
-              def type=(_)
-              end
+              sig { params(type: String).void }
+              attr_writer :type
 
               sig { params(name: String, names: T::Array[String], type: String).returns(T.attached_class) }
               def self.new(name: nil, names: nil, type: nil)
@@ -348,28 +283,22 @@ module OnebusawaySDK
 
             class Polyline < OnebusawaySDK::BaseModel
               sig { returns(T.nilable(Integer)) }
-              def length
-              end
+              attr_reader :length
 
-              sig { params(_: Integer).returns(Integer) }
-              def length=(_)
-              end
+              sig { params(length: Integer).void }
+              attr_writer :length
 
               sig { returns(T.nilable(String)) }
-              def levels
-              end
+              attr_reader :levels
 
-              sig { params(_: String).returns(String) }
-              def levels=(_)
-              end
+              sig { params(levels: String).void }
+              attr_writer :levels
 
               sig { returns(T.nilable(String)) }
-              def points
-              end
+              attr_reader :points
 
-              sig { params(_: String).returns(String) }
-              def points=(_)
-              end
+              sig { params(points: String).void }
+              attr_writer :points
 
               sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
               def self.new(length: nil, levels: nil, points: nil)

@@ -7,52 +7,34 @@ module OnebusawaySDK
       include OnebusawaySDK::RequestParameters
 
       sig { returns(Float) }
-      def lat
-      end
-
-      sig { params(_: Float).returns(Float) }
-      def lat=(_)
-      end
+      attr_accessor :lat
 
       sig { returns(Float) }
-      def lon
-      end
-
-      sig { params(_: Float).returns(Float) }
-      def lon=(_)
-      end
+      attr_accessor :lon
 
       sig { returns(T.nilable(Float)) }
-      def lat_span
-      end
+      attr_reader :lat_span
 
-      sig { params(_: Float).returns(Float) }
-      def lat_span=(_)
-      end
+      sig { params(lat_span: Float).void }
+      attr_writer :lat_span
 
       sig { returns(T.nilable(Float)) }
-      def lon_span
-      end
+      attr_reader :lon_span
 
-      sig { params(_: Float).returns(Float) }
-      def lon_span=(_)
-      end
+      sig { params(lon_span: Float).void }
+      attr_writer :lon_span
 
       sig { returns(T.nilable(String)) }
-      def query
-      end
+      attr_reader :query
 
-      sig { params(_: String).returns(String) }
-      def query=(_)
-      end
+      sig { params(query: String).void }
+      attr_writer :query
 
       sig { returns(T.nilable(Float)) }
-      def radius
-      end
+      attr_reader :radius
 
-      sig { params(_: Float).returns(Float) }
-      def radius=(_)
-      end
+      sig { params(radius: Float).void }
+      attr_writer :radius
 
       sig do
         params(

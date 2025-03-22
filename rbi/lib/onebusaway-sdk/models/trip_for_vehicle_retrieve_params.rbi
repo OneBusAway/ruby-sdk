@@ -9,41 +9,33 @@ module OnebusawaySDK
       # Determines whether full <schedule/> element is included in the <tripDetails/>
       #   section. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
-      def include_schedule
-      end
+      attr_reader :include_schedule
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_schedule=(_)
-      end
+      sig { params(include_schedule: T::Boolean).void }
+      attr_writer :include_schedule
 
       # Determines whether the full <status/> element is included in the <tripDetails/>
       #   section. Defaults to true.
       sig { returns(T.nilable(T::Boolean)) }
-      def include_status
-      end
+      attr_reader :include_status
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_status=(_)
-      end
+      sig { params(include_status: T::Boolean).void }
+      attr_writer :include_status
 
       # Determines whether full <trip/> element is included in the <references/>
       #   section. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
-      def include_trip
-      end
+      attr_reader :include_trip
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_trip=(_)
-      end
+      sig { params(include_trip: T::Boolean).void }
+      attr_writer :include_trip
 
       # Time parameter to query the system at a specific time (optional).
       sig { returns(T.nilable(Integer)) }
-      def time
-      end
+      attr_reader :time
 
-      sig { params(_: Integer).returns(Integer) }
-      def time=(_)
-      end
+      sig { params(time: Integer).void }
+      attr_writer :time
 
       sig do
         params(

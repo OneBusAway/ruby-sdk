@@ -9,12 +9,10 @@ module OnebusawaySDK
       # The date for which you want to request a schedule in the format YYYY-MM-DD
       #   (optional, defaults to the current date)
       sig { returns(T.nilable(Date)) }
-      def date
-      end
+      attr_reader :date
 
-      sig { params(_: Date).returns(Date) }
-      def date=(_)
-      end
+      sig { params(date: Date).void }
+      attr_writer :date
 
       sig do
         params(

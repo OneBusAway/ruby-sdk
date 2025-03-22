@@ -4,70 +4,22 @@ module OnebusawaySDK
   module Models
     class References < OnebusawaySDK::BaseModel
       sig { returns(T::Array[OnebusawaySDK::Models::References::Agency]) }
-      def agencies
-      end
-
-      sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Agency])
-          .returns(T::Array[OnebusawaySDK::Models::References::Agency])
-      end
-      def agencies=(_)
-      end
+      attr_accessor :agencies
 
       sig { returns(T::Array[OnebusawaySDK::Models::References::Route]) }
-      def routes
-      end
-
-      sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Route])
-          .returns(T::Array[OnebusawaySDK::Models::References::Route])
-      end
-      def routes=(_)
-      end
+      attr_accessor :routes
 
       sig { returns(T::Array[OnebusawaySDK::Models::References::Situation]) }
-      def situations
-      end
-
-      sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Situation])
-          .returns(T::Array[OnebusawaySDK::Models::References::Situation])
-      end
-      def situations=(_)
-      end
+      attr_accessor :situations
 
       sig { returns(T::Array[OnebusawaySDK::Models::References::Stop]) }
-      def stops
-      end
-
-      sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Stop])
-          .returns(T::Array[OnebusawaySDK::Models::References::Stop])
-      end
-      def stops=(_)
-      end
+      attr_accessor :stops
 
       sig { returns(T::Array[OnebusawaySDK::Models::References::StopTime]) }
-      def stop_times
-      end
-
-      sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::StopTime])
-          .returns(T::Array[OnebusawaySDK::Models::References::StopTime])
-      end
-      def stop_times=(_)
-      end
+      attr_accessor :stop_times
 
       sig { returns(T::Array[OnebusawaySDK::Models::References::Trip]) }
-      def trips
-      end
-
-      sig do
-        params(_: T::Array[OnebusawaySDK::Models::References::Trip])
-          .returns(T::Array[OnebusawaySDK::Models::References::Trip])
-      end
-      def trips=(_)
-      end
+      attr_accessor :trips
 
       sig do
         params(
@@ -101,84 +53,52 @@ module OnebusawaySDK
 
       class Agency < OnebusawaySDK::BaseModel
         sig { returns(String) }
-        def id
-        end
-
-        sig { params(_: String).returns(String) }
-        def id=(_)
-        end
+        attr_accessor :id
 
         sig { returns(String) }
-        def name
-        end
-
-        sig { params(_: String).returns(String) }
-        def name=(_)
-        end
+        attr_accessor :name
 
         sig { returns(String) }
-        def timezone
-        end
-
-        sig { params(_: String).returns(String) }
-        def timezone=(_)
-        end
+        attr_accessor :timezone
 
         sig { returns(String) }
-        def url
-        end
-
-        sig { params(_: String).returns(String) }
-        def url=(_)
-        end
+        attr_accessor :url
 
         sig { returns(T.nilable(String)) }
-        def disclaimer
-        end
+        attr_reader :disclaimer
 
-        sig { params(_: String).returns(String) }
-        def disclaimer=(_)
-        end
+        sig { params(disclaimer: String).void }
+        attr_writer :disclaimer
 
         sig { returns(T.nilable(String)) }
-        def email
-        end
+        attr_reader :email
 
-        sig { params(_: String).returns(String) }
-        def email=(_)
-        end
+        sig { params(email: String).void }
+        attr_writer :email
 
         sig { returns(T.nilable(String)) }
-        def fare_url
-        end
+        attr_reader :fare_url
 
-        sig { params(_: String).returns(String) }
-        def fare_url=(_)
-        end
+        sig { params(fare_url: String).void }
+        attr_writer :fare_url
 
         sig { returns(T.nilable(String)) }
-        def lang
-        end
+        attr_reader :lang
 
-        sig { params(_: String).returns(String) }
-        def lang=(_)
-        end
+        sig { params(lang: String).void }
+        attr_writer :lang
 
         sig { returns(T.nilable(String)) }
-        def phone
-        end
+        attr_reader :phone
 
-        sig { params(_: String).returns(String) }
-        def phone=(_)
-        end
+        sig { params(phone: String).void }
+        attr_writer :phone
 
         sig { returns(T.nilable(T::Boolean)) }
-        def private_service
-        end
+        attr_reader :private_service
 
-        sig { params(_: T::Boolean).returns(T::Boolean) }
-        def private_service=(_)
-        end
+        sig { params(private_service: T::Boolean).void }
+        attr_writer :private_service
 
         sig do
           params(
@@ -232,84 +152,55 @@ module OnebusawaySDK
 
       class Route < OnebusawaySDK::BaseModel
         sig { returns(String) }
-        def id
-        end
-
-        sig { params(_: String).returns(String) }
-        def id=(_)
-        end
+        attr_accessor :id
 
         sig { returns(String) }
-        def agency_id
-        end
-
-        sig { params(_: String).returns(String) }
-        def agency_id=(_)
-        end
+        attr_accessor :agency_id
 
         sig { returns(Integer) }
-        def type
-        end
-
-        sig { params(_: Integer).returns(Integer) }
-        def type=(_)
-        end
+        attr_accessor :type
 
         sig { returns(T.nilable(String)) }
-        def color
-        end
+        attr_reader :color
 
-        sig { params(_: String).returns(String) }
-        def color=(_)
-        end
+        sig { params(color: String).void }
+        attr_writer :color
 
         sig { returns(T.nilable(String)) }
-        def description
-        end
+        attr_reader :description
 
-        sig { params(_: String).returns(String) }
-        def description=(_)
-        end
+        sig { params(description: String).void }
+        attr_writer :description
 
         sig { returns(T.nilable(String)) }
-        def long_name
-        end
+        attr_reader :long_name
 
-        sig { params(_: String).returns(String) }
-        def long_name=(_)
-        end
+        sig { params(long_name: String).void }
+        attr_writer :long_name
 
         sig { returns(T.nilable(String)) }
-        def null_safe_short_name
-        end
+        attr_reader :null_safe_short_name
 
-        sig { params(_: String).returns(String) }
-        def null_safe_short_name=(_)
-        end
+        sig { params(null_safe_short_name: String).void }
+        attr_writer :null_safe_short_name
 
         sig { returns(T.nilable(String)) }
-        def short_name
-        end
+        attr_reader :short_name
 
-        sig { params(_: String).returns(String) }
-        def short_name=(_)
-        end
+        sig { params(short_name: String).void }
+        attr_writer :short_name
 
         sig { returns(T.nilable(String)) }
-        def text_color
-        end
+        attr_reader :text_color
 
-        sig { params(_: String).returns(String) }
-        def text_color=(_)
-        end
+        sig { params(text_color: String).void }
+        attr_writer :text_color
 
         sig { returns(T.nilable(String)) }
-        def url
-        end
+        attr_reader :url
 
-        sig { params(_: String).returns(String) }
-        def url=(_)
-        end
+        sig { params(url: String).void }
+        attr_writer :url
 
         sig do
           params(
@@ -364,144 +255,104 @@ module OnebusawaySDK
       class Situation < OnebusawaySDK::BaseModel
         # Unique identifier for the situation.
         sig { returns(String) }
-        def id
-        end
-
-        sig { params(_: String).returns(String) }
-        def id=(_)
-        end
+        attr_accessor :id
 
         # Unix timestamp of when this situation was created.
         sig { returns(Integer) }
-        def creation_time
-        end
-
-        sig { params(_: Integer).returns(Integer) }
-        def creation_time=(_)
-        end
+        attr_accessor :creation_time
 
         sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow])) }
-        def active_windows
-        end
+        attr_reader :active_windows
 
         sig do
           params(
-            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)]
+            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)]
           )
-            .returns(
-              T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)]
-            )
+            .void
         end
-        def active_windows=(_)
-        end
+        attr_writer :active_windows
 
         sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::AllAffect])) }
-        def all_affects
-        end
+        attr_reader :all_affects
 
         sig do
           params(
-            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)]
+            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)]
           )
-            .returns(
-              T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)]
-            )
+            .void
         end
-        def all_affects=(_)
-        end
+        attr_writer :all_affects
 
         # Message regarding the consequence of the situation.
         sig { returns(T.nilable(String)) }
-        def consequence_message
-        end
+        attr_reader :consequence_message
 
-        sig { params(_: String).returns(String) }
-        def consequence_message=(_)
-        end
+        sig { params(consequence_message: String).void }
+        attr_writer :consequence_message
 
         sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::Consequence])) }
-        def consequences
-        end
+        attr_reader :consequences
 
         sig do
           params(
-            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)]
+            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)]
           )
-            .returns(
-              T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)]
-            )
+            .void
         end
-        def consequences=(_)
-        end
+        attr_writer :consequences
 
         sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Description)) }
-        def description
-        end
-
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash))
-        end
-        def description=(_)
-        end
-
-        sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])) }
-        def publication_windows
-        end
+        attr_reader :description
 
         sig do
           params(
-            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)]
+            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash)
           )
-            .returns(
-              T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)]
-            )
+            .void
         end
-        def publication_windows=(_)
+        attr_writer :description
+
+        sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])) }
+        attr_reader :publication_windows
+
+        sig do
+          params(
+            publication_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)]
+          )
+            .void
         end
+        attr_writer :publication_windows
 
         # Reason for the service alert, taken from TPEG codes.
         sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)) }
-        def reason
-        end
+        attr_reader :reason
 
-        sig do
-          params(_: OnebusawaySDK::Models::References::Situation::Reason::OrSymbol)
-            .returns(OnebusawaySDK::Models::References::Situation::Reason::OrSymbol)
-        end
-        def reason=(_)
-        end
+        sig { params(reason: OnebusawaySDK::Models::References::Situation::Reason::OrSymbol).void }
+        attr_writer :reason
 
         # Severity of the situation.
         sig { returns(T.nilable(String)) }
-        def severity
-        end
+        attr_reader :severity
 
-        sig { params(_: String).returns(String) }
-        def severity=(_)
-        end
+        sig { params(severity: String).void }
+        attr_writer :severity
 
         sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Summary)) }
-        def summary
-        end
+        attr_reader :summary
 
         sig do
-          params(_: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash))
+          params(
+            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash)
+          )
+            .void
         end
-        def summary=(_)
-        end
+        attr_writer :summary
 
         sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::URL)) }
-        def url
-        end
+        attr_reader :url
 
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash))
-        end
-        def url=(_)
-        end
+        sig { params(url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :url
 
         sig do
           params(
@@ -561,21 +412,17 @@ module OnebusawaySDK
         class ActiveWindow < OnebusawaySDK::BaseModel
           # Start time of the active window as a Unix timestamp.
           sig { returns(T.nilable(Integer)) }
-          def from
-          end
+          attr_reader :from
 
-          sig { params(_: Integer).returns(Integer) }
-          def from=(_)
-          end
+          sig { params(from: Integer).void }
+          attr_writer :from
 
           # End time of the active window as a Unix timestamp.
           sig { returns(T.nilable(Integer)) }
-          def to
-          end
+          attr_reader :to
 
-          sig { params(_: Integer).returns(Integer) }
-          def to=(_)
-          end
+          sig { params(to: Integer).void }
+          attr_writer :to
 
           sig { params(from: Integer, to: Integer).returns(T.attached_class) }
           def self.new(from: nil, to: nil)
@@ -589,57 +436,45 @@ module OnebusawaySDK
         class AllAffect < OnebusawaySDK::BaseModel
           # Identifier for the agency.
           sig { returns(T.nilable(String)) }
-          def agency_id
-          end
+          attr_reader :agency_id
 
-          sig { params(_: String).returns(String) }
-          def agency_id=(_)
-          end
+          sig { params(agency_id: String).void }
+          attr_writer :agency_id
 
           # Identifier for the application.
           sig { returns(T.nilable(String)) }
-          def application_id
-          end
+          attr_reader :application_id
 
-          sig { params(_: String).returns(String) }
-          def application_id=(_)
-          end
+          sig { params(application_id: String).void }
+          attr_writer :application_id
 
           # Identifier for the direction.
           sig { returns(T.nilable(String)) }
-          def direction_id
-          end
+          attr_reader :direction_id
 
-          sig { params(_: String).returns(String) }
-          def direction_id=(_)
-          end
+          sig { params(direction_id: String).void }
+          attr_writer :direction_id
 
           # Identifier for the route.
           sig { returns(T.nilable(String)) }
-          def route_id
-          end
+          attr_reader :route_id
 
-          sig { params(_: String).returns(String) }
-          def route_id=(_)
-          end
+          sig { params(route_id: String).void }
+          attr_writer :route_id
 
           # Identifier for the stop.
           sig { returns(T.nilable(String)) }
-          def stop_id
-          end
+          attr_reader :stop_id
 
-          sig { params(_: String).returns(String) }
-          def stop_id=(_)
-          end
+          sig { params(stop_id: String).void }
+          attr_writer :stop_id
 
           # Identifier for the trip.
           sig { returns(T.nilable(String)) }
-          def trip_id
-          end
+          attr_reader :trip_id
 
-          sig { params(_: String).returns(String) }
-          def trip_id=(_)
-          end
+          sig { params(trip_id: String).void }
+          attr_writer :trip_id
 
           sig do
             params(
@@ -675,33 +510,24 @@ module OnebusawaySDK
         class Consequence < OnebusawaySDK::BaseModel
           # Condition of the consequence.
           sig { returns(T.nilable(String)) }
-          def condition
-          end
+          attr_reader :condition
 
-          sig { params(_: String).returns(String) }
-          def condition=(_)
-          end
+          sig { params(condition: String).void }
+          attr_writer :condition
 
           sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)) }
-          def condition_details
-          end
+          attr_reader :condition_details
 
           sig do
             params(
-              _: T.any(
+              condition_details: T.any(
                 OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
                 OnebusawaySDK::Util::AnyHash
               )
             )
-              .returns(
-                T.any(
-                  OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
-                  OnebusawaySDK::Util::AnyHash
-                )
-              )
+              .void
           end
-          def condition_details=(_)
-          end
+          attr_writer :condition_details
 
           sig do
             params(
@@ -734,33 +560,24 @@ module OnebusawaySDK
                 T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
               )
             end
-            def diversion_path
-            end
+            attr_reader :diversion_path
 
             sig do
               params(
-                _: T.any(
+                diversion_path: T.any(
                   OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
                   OnebusawaySDK::Util::AnyHash
                 )
               )
-                .returns(
-                  T.any(
-                    OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                    OnebusawaySDK::Util::AnyHash
-                  )
-                )
+                .void
             end
-            def diversion_path=(_)
-            end
+            attr_writer :diversion_path
 
             sig { returns(T.nilable(T::Array[String])) }
-            def diversion_stop_ids
-            end
+            attr_reader :diversion_stop_ids
 
-            sig { params(_: T::Array[String]).returns(T::Array[String]) }
-            def diversion_stop_ids=(_)
-            end
+            sig { params(diversion_stop_ids: T::Array[String]).void }
+            attr_writer :diversion_stop_ids
 
             sig do
               params(
@@ -790,30 +607,24 @@ module OnebusawaySDK
             class DiversionPath < OnebusawaySDK::BaseModel
               # Length of the diversion path.
               sig { returns(T.nilable(Integer)) }
-              def length
-              end
+              attr_reader :length
 
-              sig { params(_: Integer).returns(Integer) }
-              def length=(_)
-              end
+              sig { params(length: Integer).void }
+              attr_writer :length
 
               # Levels of the diversion path.
               sig { returns(T.nilable(String)) }
-              def levels
-              end
+              attr_reader :levels
 
-              sig { params(_: String).returns(String) }
-              def levels=(_)
-              end
+              sig { params(levels: String).void }
+              attr_writer :levels
 
               # Points of the diversion path.
               sig { returns(T.nilable(String)) }
-              def points
-              end
+              attr_reader :points
 
-              sig { params(_: String).returns(String) }
-              def points=(_)
-              end
+              sig { params(points: String).void }
+              attr_writer :points
 
               sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
               def self.new(length: nil, levels: nil, points: nil)
@@ -829,21 +640,17 @@ module OnebusawaySDK
         class Description < OnebusawaySDK::BaseModel
           # Language of the description.
           sig { returns(T.nilable(String)) }
-          def lang
-          end
+          attr_reader :lang
 
-          sig { params(_: String).returns(String) }
-          def lang=(_)
-          end
+          sig { params(lang: String).void }
+          attr_writer :lang
 
           # Longer description of the situation.
           sig { returns(T.nilable(String)) }
-          def value
-          end
+          attr_reader :value
 
-          sig { params(_: String).returns(String) }
-          def value=(_)
-          end
+          sig { params(value: String).void }
+          attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
           def self.new(lang: nil, value: nil)
@@ -857,21 +664,11 @@ module OnebusawaySDK
         class PublicationWindow < OnebusawaySDK::BaseModel
           # Start time of the time window as a Unix timestamp.
           sig { returns(Integer) }
-          def from
-          end
-
-          sig { params(_: Integer).returns(Integer) }
-          def from=(_)
-          end
+          attr_accessor :from
 
           # End time of the time window as a Unix timestamp.
           sig { returns(Integer) }
-          def to
-          end
-
-          sig { params(_: Integer).returns(Integer) }
-          def to=(_)
-          end
+          attr_accessor :to
 
           sig { params(from: Integer, to: Integer).returns(T.attached_class) }
           def self.new(from:, to:)
@@ -911,21 +708,17 @@ module OnebusawaySDK
         class Summary < OnebusawaySDK::BaseModel
           # Language of the summary.
           sig { returns(T.nilable(String)) }
-          def lang
-          end
+          attr_reader :lang
 
-          sig { params(_: String).returns(String) }
-          def lang=(_)
-          end
+          sig { params(lang: String).void }
+          attr_writer :lang
 
           # Short summary of the situation.
           sig { returns(T.nilable(String)) }
-          def value
-          end
+          attr_reader :value
 
-          sig { params(_: String).returns(String) }
-          def value=(_)
-          end
+          sig { params(value: String).void }
+          attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
           def self.new(lang: nil, value: nil)
@@ -939,21 +732,17 @@ module OnebusawaySDK
         class URL < OnebusawaySDK::BaseModel
           # Language of the URL.
           sig { returns(T.nilable(String)) }
-          def lang
-          end
+          attr_reader :lang
 
-          sig { params(_: String).returns(String) }
-          def lang=(_)
-          end
+          sig { params(lang: String).void }
+          attr_writer :lang
 
           # URL for more information about the situation.
           sig { returns(T.nilable(String)) }
-          def value
-          end
+          attr_reader :value
 
-          sig { params(_: String).returns(String) }
-          def value=(_)
-          end
+          sig { params(value: String).void }
+          attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
           def self.new(lang: nil, value: nil)
@@ -967,92 +756,49 @@ module OnebusawaySDK
 
       class Stop < OnebusawaySDK::BaseModel
         sig { returns(String) }
-        def id
-        end
-
-        sig { params(_: String).returns(String) }
-        def id=(_)
-        end
+        attr_accessor :id
 
         sig { returns(Float) }
-        def lat
-        end
-
-        sig { params(_: Float).returns(Float) }
-        def lat=(_)
-        end
+        attr_accessor :lat
 
         sig { returns(Float) }
-        def lon
-        end
-
-        sig { params(_: Float).returns(Float) }
-        def lon=(_)
-        end
+        attr_accessor :lon
 
         sig { returns(String) }
-        def name
-        end
-
-        sig { params(_: String).returns(String) }
-        def name=(_)
-        end
+        attr_accessor :name
 
         sig { returns(String) }
-        def parent
-        end
-
-        sig { params(_: String).returns(String) }
-        def parent=(_)
-        end
+        attr_accessor :parent
 
         sig { returns(T::Array[String]) }
-        def route_ids
-        end
-
-        sig { params(_: T::Array[String]).returns(T::Array[String]) }
-        def route_ids=(_)
-        end
+        attr_accessor :route_ids
 
         sig { returns(T::Array[String]) }
-        def static_route_ids
-        end
-
-        sig { params(_: T::Array[String]).returns(T::Array[String]) }
-        def static_route_ids=(_)
-        end
+        attr_accessor :static_route_ids
 
         sig { returns(T.nilable(String)) }
-        def code
-        end
+        attr_reader :code
 
-        sig { params(_: String).returns(String) }
-        def code=(_)
-        end
+        sig { params(code: String).void }
+        attr_writer :code
 
         sig { returns(T.nilable(String)) }
-        def direction
-        end
+        attr_reader :direction
 
-        sig { params(_: String).returns(String) }
-        def direction=(_)
-        end
+        sig { params(direction: String).void }
+        attr_writer :direction
 
         sig { returns(T.nilable(Integer)) }
-        def location_type
-        end
+        attr_reader :location_type
 
-        sig { params(_: Integer).returns(Integer) }
-        def location_type=(_)
-        end
+        sig { params(location_type: Integer).void }
+        attr_writer :location_type
 
         sig { returns(T.nilable(String)) }
-        def wheelchair_boarding
-        end
+        attr_reader :wheelchair_boarding
 
-        sig { params(_: String).returns(String) }
-        def wheelchair_boarding=(_)
-        end
+        sig { params(wheelchair_boarding: String).void }
+        attr_writer :wheelchair_boarding
 
         sig do
           params(
@@ -1109,52 +855,40 @@ module OnebusawaySDK
 
       class StopTime < OnebusawaySDK::BaseModel
         sig { returns(T.nilable(Integer)) }
-        def arrival_time
-        end
+        attr_reader :arrival_time
 
-        sig { params(_: Integer).returns(Integer) }
-        def arrival_time=(_)
-        end
+        sig { params(arrival_time: Integer).void }
+        attr_writer :arrival_time
 
         sig { returns(T.nilable(Integer)) }
-        def departure_time
-        end
+        attr_reader :departure_time
 
-        sig { params(_: Integer).returns(Integer) }
-        def departure_time=(_)
-        end
+        sig { params(departure_time: Integer).void }
+        attr_writer :departure_time
 
         sig { returns(T.nilable(Float)) }
-        def distance_along_trip
-        end
+        attr_reader :distance_along_trip
 
-        sig { params(_: Float).returns(Float) }
-        def distance_along_trip=(_)
-        end
+        sig { params(distance_along_trip: Float).void }
+        attr_writer :distance_along_trip
 
         sig { returns(T.nilable(String)) }
-        def historical_occupancy
-        end
+        attr_reader :historical_occupancy
 
-        sig { params(_: String).returns(String) }
-        def historical_occupancy=(_)
-        end
+        sig { params(historical_occupancy: String).void }
+        attr_writer :historical_occupancy
 
         sig { returns(T.nilable(String)) }
-        def stop_headsign
-        end
+        attr_reader :stop_headsign
 
-        sig { params(_: String).returns(String) }
-        def stop_headsign=(_)
-        end
+        sig { params(stop_headsign: String).void }
+        attr_writer :stop_headsign
 
         sig { returns(T.nilable(String)) }
-        def stop_id
-        end
+        attr_reader :stop_id
 
-        sig { params(_: String).returns(String) }
-        def stop_id=(_)
-        end
+        sig { params(stop_id: String).void }
+        attr_writer :stop_id
 
         sig do
           params(
@@ -1196,92 +930,61 @@ module OnebusawaySDK
 
       class Trip < OnebusawaySDK::BaseModel
         sig { returns(String) }
-        def id
-        end
-
-        sig { params(_: String).returns(String) }
-        def id=(_)
-        end
+        attr_accessor :id
 
         sig { returns(String) }
-        def route_id
-        end
-
-        sig { params(_: String).returns(String) }
-        def route_id=(_)
-        end
+        attr_accessor :route_id
 
         sig { returns(String) }
-        def service_id
-        end
-
-        sig { params(_: String).returns(String) }
-        def service_id=(_)
-        end
+        attr_accessor :service_id
 
         sig { returns(T.nilable(String)) }
-        def block_id
-        end
+        attr_reader :block_id
 
-        sig { params(_: String).returns(String) }
-        def block_id=(_)
-        end
+        sig { params(block_id: String).void }
+        attr_writer :block_id
 
         sig { returns(T.nilable(String)) }
-        def direction_id
-        end
+        attr_reader :direction_id
 
-        sig { params(_: String).returns(String) }
-        def direction_id=(_)
-        end
+        sig { params(direction_id: String).void }
+        attr_writer :direction_id
 
         sig { returns(T.nilable(Integer)) }
-        def peak_offpeak
-        end
+        attr_reader :peak_offpeak
 
-        sig { params(_: Integer).returns(Integer) }
-        def peak_offpeak=(_)
-        end
+        sig { params(peak_offpeak: Integer).void }
+        attr_writer :peak_offpeak
 
         sig { returns(T.nilable(String)) }
-        def route_short_name
-        end
+        attr_reader :route_short_name
 
-        sig { params(_: String).returns(String) }
-        def route_short_name=(_)
-        end
+        sig { params(route_short_name: String).void }
+        attr_writer :route_short_name
 
         sig { returns(T.nilable(String)) }
-        def shape_id
-        end
+        attr_reader :shape_id
 
-        sig { params(_: String).returns(String) }
-        def shape_id=(_)
-        end
+        sig { params(shape_id: String).void }
+        attr_writer :shape_id
 
         sig { returns(T.nilable(String)) }
-        def time_zone
-        end
+        attr_reader :time_zone
 
-        sig { params(_: String).returns(String) }
-        def time_zone=(_)
-        end
+        sig { params(time_zone: String).void }
+        attr_writer :time_zone
 
         sig { returns(T.nilable(String)) }
-        def trip_headsign
-        end
+        attr_reader :trip_headsign
 
-        sig { params(_: String).returns(String) }
-        def trip_headsign=(_)
-        end
+        sig { params(trip_headsign: String).void }
+        attr_writer :trip_headsign
 
         sig { returns(T.nilable(String)) }
-        def trip_short_name
-        end
+        attr_reader :trip_short_name
 
-        sig { params(_: String).returns(String) }
-        def trip_short_name=(_)
-        end
+        sig { params(trip_short_name: String).void }
+        attr_writer :trip_short_name
 
         sig do
           params(

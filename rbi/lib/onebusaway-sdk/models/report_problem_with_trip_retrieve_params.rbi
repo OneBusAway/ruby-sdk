@@ -8,96 +8,73 @@ module OnebusawaySDK
 
       # A string code identifying the nature of the problem
       sig { returns(T.nilable(OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)) }
-      def code
-      end
+      attr_reader :code
 
-      sig do
-        params(_: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)
-          .returns(OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)
-      end
-      def code=(_)
-      end
+      sig { params(code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol).void }
+      attr_writer :code
 
       # The service date of the trip
       sig { returns(T.nilable(Integer)) }
-      def service_date
-      end
+      attr_reader :service_date
 
-      sig { params(_: Integer).returns(Integer) }
-      def service_date=(_)
-      end
+      sig { params(service_date: Integer).void }
+      attr_writer :service_date
 
       # A stop ID indicating where the user is experiencing the problem
       sig { returns(T.nilable(String)) }
-      def stop_id
-      end
+      attr_reader :stop_id
 
-      sig { params(_: String).returns(String) }
-      def stop_id=(_)
-      end
+      sig { params(stop_id: String).void }
+      attr_writer :stop_id
 
       # Additional comment text supplied by the user describing the problem
       sig { returns(T.nilable(String)) }
-      def user_comment
-      end
+      attr_reader :user_comment
 
-      sig { params(_: String).returns(String) }
-      def user_comment=(_)
-      end
+      sig { params(user_comment: String).void }
+      attr_writer :user_comment
 
       # The reporting user’s current latitude
       sig { returns(T.nilable(Float)) }
-      def user_lat
-      end
+      attr_reader :user_lat
 
-      sig { params(_: Float).returns(Float) }
-      def user_lat=(_)
-      end
+      sig { params(user_lat: Float).void }
+      attr_writer :user_lat
 
       # The reporting user’s location accuracy, in meters
       sig { returns(T.nilable(Float)) }
-      def user_location_accuracy
-      end
+      attr_reader :user_location_accuracy
 
-      sig { params(_: Float).returns(Float) }
-      def user_location_accuracy=(_)
-      end
+      sig { params(user_location_accuracy: Float).void }
+      attr_writer :user_location_accuracy
 
       # The reporting user’s current longitude
       sig { returns(T.nilable(Float)) }
-      def user_lon
-      end
+      attr_reader :user_lon
 
-      sig { params(_: Float).returns(Float) }
-      def user_lon=(_)
-      end
+      sig { params(user_lon: Float).void }
+      attr_writer :user_lon
 
       # Indicator if the user is on the transit vehicle experiencing the problem
       sig { returns(T.nilable(T::Boolean)) }
-      def user_on_vehicle
-      end
+      attr_reader :user_on_vehicle
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def user_on_vehicle=(_)
-      end
+      sig { params(user_on_vehicle: T::Boolean).void }
+      attr_writer :user_on_vehicle
 
       # The vehicle number, as reported by the user
       sig { returns(T.nilable(String)) }
-      def user_vehicle_number
-      end
+      attr_reader :user_vehicle_number
 
-      sig { params(_: String).returns(String) }
-      def user_vehicle_number=(_)
-      end
+      sig { params(user_vehicle_number: String).void }
+      attr_writer :user_vehicle_number
 
       # The vehicle actively serving the trip
       sig { returns(T.nilable(String)) }
-      def vehicle_id
-      end
+      attr_reader :vehicle_id
 
-      sig { params(_: String).returns(String) }
-      def vehicle_id=(_)
-      end
+      sig { params(vehicle_id: String).void }
+      attr_writer :vehicle_id
 
       sig do
         params(

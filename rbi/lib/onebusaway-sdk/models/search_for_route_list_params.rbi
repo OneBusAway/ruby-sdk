@@ -8,21 +8,14 @@ module OnebusawaySDK
 
       # The string to search for.
       sig { returns(String) }
-      def input
-      end
-
-      sig { params(_: String).returns(String) }
-      def input=(_)
-      end
+      attr_accessor :input
 
       # The max number of results to return. Defaults to 20.
       sig { returns(T.nilable(Integer)) }
-      def max_count
-      end
+      attr_reader :max_count
 
-      sig { params(_: Integer).returns(Integer) }
-      def max_count=(_)
-      end
+      sig { params(max_count: Integer).void }
+      attr_writer :max_count
 
       sig do
         params(

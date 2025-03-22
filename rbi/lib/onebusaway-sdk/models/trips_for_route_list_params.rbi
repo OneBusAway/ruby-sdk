@@ -8,31 +8,25 @@ module OnebusawaySDK
 
       # Determine whether full schedule elements are included. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
-      def include_schedule
-      end
+      attr_reader :include_schedule
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_schedule=(_)
-      end
+      sig { params(include_schedule: T::Boolean).void }
+      attr_writer :include_schedule
 
       # Determine whether full tripStatus elements with real-time information are
       #   included. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
-      def include_status
-      end
+      attr_reader :include_status
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_status=(_)
-      end
+      sig { params(include_status: T::Boolean).void }
+      attr_writer :include_status
 
       # Query the system at a specific time. Useful for testing.
       sig { returns(T.nilable(Integer)) }
-      def time
-      end
+      attr_reader :time
 
-      sig { params(_: Integer).returns(Integer) }
-      def time=(_)
-      end
+      sig { params(time: Integer).void }
+      attr_writer :time
 
       sig do
         params(

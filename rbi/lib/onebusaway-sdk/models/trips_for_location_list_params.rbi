@@ -8,68 +8,42 @@ module OnebusawaySDK
 
       # The latitude coordinate of the search center
       sig { returns(Float) }
-      def lat
-      end
-
-      sig { params(_: Float).returns(Float) }
-      def lat=(_)
-      end
+      attr_accessor :lat
 
       # Latitude span of the search bounding box
       sig { returns(Float) }
-      def lat_span
-      end
-
-      sig { params(_: Float).returns(Float) }
-      def lat_span=(_)
-      end
+      attr_accessor :lat_span
 
       # The longitude coordinate of the search center
       sig { returns(Float) }
-      def lon
-      end
-
-      sig { params(_: Float).returns(Float) }
-      def lon=(_)
-      end
+      attr_accessor :lon
 
       # Longitude span of the search bounding box
       sig { returns(Float) }
-      def lon_span
-      end
-
-      sig { params(_: Float).returns(Float) }
-      def lon_span=(_)
-      end
+      attr_accessor :lon_span
 
       # Whether to include full schedule elements in the tripDetails section. Defaults
       #   to false.
       sig { returns(T.nilable(T::Boolean)) }
-      def include_schedule
-      end
+      attr_reader :include_schedule
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_schedule=(_)
-      end
+      sig { params(include_schedule: T::Boolean).void }
+      attr_writer :include_schedule
 
       # Whether to include full trip elements in the references section. Defaults to
       #   false.
       sig { returns(T.nilable(T::Boolean)) }
-      def include_trip
-      end
+      attr_reader :include_trip
 
-      sig { params(_: T::Boolean).returns(T::Boolean) }
-      def include_trip=(_)
-      end
+      sig { params(include_trip: T::Boolean).void }
+      attr_writer :include_trip
 
       # Specific time for the query. Defaults to the current time.
       sig { returns(T.nilable(Integer)) }
-      def time
-      end
+      attr_reader :time
 
-      sig { params(_: Integer).returns(Integer) }
-      def time=(_)
-      end
+      sig { params(time: Integer).void }
+      attr_writer :time
 
       sig do
         params(
