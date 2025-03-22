@@ -93,7 +93,12 @@ module OnebusawaySDK
           sig do
             params(
               id: String,
-              configurations: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+              configurations: T::Array[
+              T.any(
+                OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration,
+                OnebusawaySDK::Util::AnyHash
+              )
+              ]
             )
               .returns(T.attached_class)
           end
@@ -143,7 +148,12 @@ module OnebusawaySDK
             sig do
               params(
                 active_service_ids: T::Array[String],
-                trips: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+                trips: T::Array[
+                T.any(
+                  OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip,
+                  OnebusawaySDK::Util::AnyHash
+                )
+                ],
                 inactive_service_ids: T::Array[String]
               )
                 .returns(T.attached_class)
@@ -211,7 +221,12 @@ module OnebusawaySDK
               sig do
                 params(
                   accumulated_slack_time: Float,
-                  block_stop_times: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                  block_stop_times: T::Array[
+                  T.any(
+                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime,
+                    OnebusawaySDK::Util::AnyHash
+                  )
+                  ],
                   distance_along_block: Float,
                   trip_id: String
                 )

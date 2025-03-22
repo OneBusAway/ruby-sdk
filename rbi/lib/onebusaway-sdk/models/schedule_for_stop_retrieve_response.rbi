@@ -112,7 +112,12 @@ module OnebusawaySDK
             params(
               date: Integer,
               stop_id: String,
-              stop_route_schedules: T::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
+              stop_route_schedules: T::Array[
+              T.any(
+                OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule,
+                OnebusawaySDK::Util::AnyHash
+              )
+              ]
             )
               .returns(T.attached_class)
           end
@@ -170,7 +175,10 @@ module OnebusawaySDK
               params(
                 route_id: String,
                 stop_route_direction_schedules: T::Array[
-                OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
+                T.any(
+                  OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule,
+                  OnebusawaySDK::Util::AnyHash
+                )
                 ]
               )
                 .returns(T.attached_class)
@@ -241,12 +249,18 @@ module OnebusawaySDK
               sig do
                 params(
                   _: T::Array[
-                  OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
+                  T.any(
+                    OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
+                    OnebusawaySDK::Util::AnyHash
+                  )
                   ]
                 )
                   .returns(
                     T::Array[
-                    OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
+                    T.any(
+                      OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
+                      OnebusawaySDK::Util::AnyHash
+                    )
                     ]
                   )
               end
@@ -256,11 +270,17 @@ module OnebusawaySDK
               sig do
                 params(
                   schedule_stop_times: T::Array[
-                  OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
+                  T.any(
+                    OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime,
+                    OnebusawaySDK::Util::AnyHash
+                  )
                   ],
                   trip_headsign: String,
                   schedule_frequencies: T::Array[
-                  OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
+                  T.any(
+                    OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
+                    OnebusawaySDK::Util::AnyHash
+                  )
                   ]
                 )
                   .returns(T.attached_class)

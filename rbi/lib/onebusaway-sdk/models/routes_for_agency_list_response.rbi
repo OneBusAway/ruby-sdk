@@ -61,7 +61,7 @@ module OnebusawaySDK
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List],
+            list: T::Array[T.any(OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List, OnebusawaySDK::Util::AnyHash)],
             references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
