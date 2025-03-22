@@ -698,10 +698,8 @@ module OnebusawaySDK
           SECURITY_ALERT =
             T.let(:securityAlert, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
 
-          class << self
-            sig { override.returns(T::Array[OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol]) }
-            def values
-            end
+          sig { override.returns(T::Array[OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol]) }
+          def self.values
           end
         end
 
