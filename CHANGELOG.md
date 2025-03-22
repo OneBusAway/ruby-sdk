@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.1.0-alpha.208 (2025-03-22)
+
+Full Changelog: [v0.1.0-alpha.207...v0.1.0-alpha.208](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.207...v0.1.0-alpha.208)
+
+### ⚠ BREAKING CHANGES
+
+* use tagged enums in sorbet type definitions ([#494](https://github.com/OneBusAway/ruby-sdk/issues/494))
+* support `for item in stream` style iteration on `Stream`s ([#492](https://github.com/OneBusAway/ruby-sdk/issues/492))
+* **model:** base model should recursively store coerced base models ([#482](https://github.com/OneBusAway/ruby-sdk/issues/482))
+
+### Features
+
+* consistently accept `AnyHash` types in parameter positions in sorbet ([#499](https://github.com/OneBusAway/ruby-sdk/issues/499)) ([43ca062](https://github.com/OneBusAway/ruby-sdk/commit/43ca0621be2c7a1476dae866b44c3cd7914b272b))
+* prevent tapioca from introspecting the gem internals ([#498](https://github.com/OneBusAway/ruby-sdk/issues/498)) ([e4bf820](https://github.com/OneBusAway/ruby-sdk/commit/e4bf82056d2a7c12e99215bc3704b618e4227802))
+* support `for item in stream` style iteration on `Stream`s ([#492](https://github.com/OneBusAway/ruby-sdk/issues/492)) ([4b96909](https://github.com/OneBusAway/ruby-sdk/commit/4b9690939887dabfb6910a003bf5dbf104f22219))
+* use tagged enums in sorbet type definitions ([#494](https://github.com/OneBusAway/ruby-sdk/issues/494)) ([574ea71](https://github.com/OneBusAway/ruby-sdk/commit/574ea7136c40905e50b79e4901a340a6c1b60d3e))
+
+
+### Bug Fixes
+
+* label optional keyword arguments in *.rbs type definitions ([#490](https://github.com/OneBusAway/ruby-sdk/issues/490)) ([062194e](https://github.com/OneBusAway/ruby-sdk/commit/062194ef3452b24d6c62fed88221b7176c2b2d94))
+* **model:** base model should recursively store coerced base models ([#482](https://github.com/OneBusAway/ruby-sdk/issues/482)) ([3c85e01](https://github.com/OneBusAway/ruby-sdk/commit/3c85e0107c80c25855950906872a56c63f16284b))
+* resolve tapioca derived sorbet errors ([#493](https://github.com/OneBusAway/ruby-sdk/issues/493)) ([22031f6](https://github.com/OneBusAway/ruby-sdk/commit/22031f6225728cbeb96814909ad9fb9791cab184))
+* yard example tag formatting ([#496](https://github.com/OneBusAway/ruby-sdk/issues/496)) ([c15e2cd](https://github.com/OneBusAway/ruby-sdk/commit/c15e2cd2c617d92788eadd2b12628f79129cd22c))
+
+
+### Chores
+
+* `BaseModel` fields that are `BaseModel` typed should also accept `Hash` ([#495](https://github.com/OneBusAway/ruby-sdk/issues/495)) ([a2a7572](https://github.com/OneBusAway/ruby-sdk/commit/a2a757293f413d3c9ed5974eb49a325e0db99d63))
+* add `[@yieldparam](https://github.com/yieldparam)` to yard doc ([#486](https://github.com/OneBusAway/ruby-sdk/issues/486)) ([4e9370f](https://github.com/OneBusAway/ruby-sdk/commit/4e9370f48739854768bb71c9ff4d9213c8e90eb6))
+* add example directory ([#489](https://github.com/OneBusAway/ruby-sdk/issues/489)) ([022b5a3](https://github.com/OneBusAway/ruby-sdk/commit/022b5a37fb849793527de510d1d4602256c688db))
+* add type annotations for enum and union member listing methods ([#497](https://github.com/OneBusAway/ruby-sdk/issues/497)) ([dfb89e4](https://github.com/OneBusAway/ruby-sdk/commit/dfb89e46b659d0ec0af86e3a3186a543aba4190d))
+* disable dangerous rubocop auto correct rule ([#503](https://github.com/OneBusAway/ruby-sdk/issues/503)) ([9a036ef](https://github.com/OneBusAway/ruby-sdk/commit/9a036efd6d9bc280bd882494b3faa8a540f7f9e1))
+* disable overloads in `*.rbs` definitions for readable LSP errors ([#491](https://github.com/OneBusAway/ruby-sdk/issues/491)) ([7035d1b](https://github.com/OneBusAway/ruby-sdk/commit/7035d1b5a8094fd392fe427cc1d1d82aa31328d4))
+* disable unnecessary linter rules for sorbet manifests ([#485](https://github.com/OneBusAway/ruby-sdk/issues/485)) ([5b024ef](https://github.com/OneBusAway/ruby-sdk/commit/5b024ef4ee4f54000d45fc11d70b1dd6d156694c))
+* document Client's concurrency capability ([#484](https://github.com/OneBusAway/ruby-sdk/issues/484)) ([ade9ed3](https://github.com/OneBusAway/ruby-sdk/commit/ade9ed3350323f8c51a59f562e8a1f42e149eeb6))
+* ignore some spurious linter warnings and formatting changes ([#483](https://github.com/OneBusAway/ruby-sdk/issues/483)) ([e4f04fa](https://github.com/OneBusAway/ruby-sdk/commit/e4f04fa4b7460cc9c9a18d2bd67363921cc61035))
+* **internal:** add sorbet config for SDK local development ([#488](https://github.com/OneBusAway/ruby-sdk/issues/488)) ([9424516](https://github.com/OneBusAway/ruby-sdk/commit/9424516aeefd41dc829bc9f8734598e4544da16a))
+* **internal:** version bump ([#480](https://github.com/OneBusAway/ruby-sdk/issues/480)) ([0c194b3](https://github.com/OneBusAway/ruby-sdk/commit/0c194b32e4aa8a86d26d87d8e33b2b1e37002d5c))
+* recursively accept `AnyHash` for `BaseModel`s in arrays and hashes ([#500](https://github.com/OneBusAway/ruby-sdk/issues/500)) ([59c4115](https://github.com/OneBusAway/ruby-sdk/commit/59c4115318c8f7ae280176864462c9a07d123619))
+* reduce verbosity in type declarations ([#502](https://github.com/OneBusAway/ruby-sdk/issues/502)) ([e18347c](https://github.com/OneBusAway/ruby-sdk/commit/e18347c4e219341c13131e261ea68de43c4b25e1))
+* switch to prettier looking sorbet annotations ([#501](https://github.com/OneBusAway/ruby-sdk/issues/501)) ([55d4753](https://github.com/OneBusAway/ruby-sdk/commit/55d4753dd6d0fe735e1b94c86c8f41d2c39cdf39))
+* use multi-line formatting style for really long lines ([#487](https://github.com/OneBusAway/ruby-sdk/issues/487)) ([a1391f4](https://github.com/OneBusAway/ruby-sdk/commit/a1391f458fe0ea28707c5e89e802245382f86a5c))
+
 ## 0.1.0-alpha.207 (2025-03-18)
 
 Full Changelog: [v0.1.0-alpha.206...v0.1.0-alpha.207](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.206...v0.1.0-alpha.207)

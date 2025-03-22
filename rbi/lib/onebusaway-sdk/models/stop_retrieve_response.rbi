@@ -4,17 +4,15 @@ module OnebusawaySDK
   module Models
     class StopRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::StopRetrieveResponse::Data) }
-      def data
-      end
+      attr_reader :data
+
+      sig { params(data: T.any(OnebusawaySDK::Models::StopRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)).void }
+      attr_writer :data
 
       sig do
-        params(_: OnebusawaySDK::Models::StopRetrieveResponse::Data)
-          .returns(OnebusawaySDK::Models::StopRetrieveResponse::Data)
+        params(data: T.any(OnebusawaySDK::Models::StopRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.attached_class)
       end
-      def data=(_)
-      end
-
-      sig { params(data: OnebusawaySDK::Models::StopRetrieveResponse::Data).returns(T.attached_class) }
       def self.new(data:)
       end
 
@@ -24,28 +22,26 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry) }
-        def entry
-        end
-
-        sig do
-          params(_: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry)
-        end
-        def entry=(_)
-        end
-
-        sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
-
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
-        def references=(_)
-        end
+        attr_reader :entry
 
         sig do
           params(
-            entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
+            entry: T.any(OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .void
+        end
+        attr_writer :entry
+
+        sig { returns(OnebusawaySDK::Models::References) }
+        attr_reader :references
+
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
+
+        sig do
+          params(
+            entry: T.any(OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -66,92 +62,49 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          def id
-          end
-
-          sig { params(_: String).returns(String) }
-          def id=(_)
-          end
+          attr_accessor :id
 
           sig { returns(Float) }
-          def lat
-          end
-
-          sig { params(_: Float).returns(Float) }
-          def lat=(_)
-          end
+          attr_accessor :lat
 
           sig { returns(Float) }
-          def lon
-          end
-
-          sig { params(_: Float).returns(Float) }
-          def lon=(_)
-          end
+          attr_accessor :lon
 
           sig { returns(String) }
-          def name
-          end
-
-          sig { params(_: String).returns(String) }
-          def name=(_)
-          end
+          attr_accessor :name
 
           sig { returns(String) }
-          def parent
-          end
-
-          sig { params(_: String).returns(String) }
-          def parent=(_)
-          end
+          attr_accessor :parent
 
           sig { returns(T::Array[String]) }
-          def route_ids
-          end
-
-          sig { params(_: T::Array[String]).returns(T::Array[String]) }
-          def route_ids=(_)
-          end
+          attr_accessor :route_ids
 
           sig { returns(T::Array[String]) }
-          def static_route_ids
-          end
-
-          sig { params(_: T::Array[String]).returns(T::Array[String]) }
-          def static_route_ids=(_)
-          end
+          attr_accessor :static_route_ids
 
           sig { returns(T.nilable(String)) }
-          def code
-          end
+          attr_reader :code
 
-          sig { params(_: String).returns(String) }
-          def code=(_)
-          end
+          sig { params(code: String).void }
+          attr_writer :code
 
           sig { returns(T.nilable(String)) }
-          def direction
-          end
+          attr_reader :direction
 
-          sig { params(_: String).returns(String) }
-          def direction=(_)
-          end
+          sig { params(direction: String).void }
+          attr_writer :direction
 
           sig { returns(T.nilable(Integer)) }
-          def location_type
-          end
+          attr_reader :location_type
 
-          sig { params(_: Integer).returns(Integer) }
-          def location_type=(_)
-          end
+          sig { params(location_type: Integer).void }
+          attr_writer :location_type
 
           sig { returns(T.nilable(String)) }
-          def wheelchair_boarding
-          end
+          attr_reader :wheelchair_boarding
 
-          sig { params(_: String).returns(String) }
-          def wheelchair_boarding=(_)
-          end
+          sig { params(wheelchair_boarding: String).void }
+          attr_writer :wheelchair_boarding
 
           sig do
             params(

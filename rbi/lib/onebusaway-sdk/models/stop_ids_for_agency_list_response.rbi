@@ -4,17 +4,22 @@ module OnebusawaySDK
   module Models
     class StopIDsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
       sig do
-        params(_: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data)
-          .returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data)
+        params(
+          data: T.any(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .void
       end
-      def data=(_)
-      end
+      attr_writer :data
 
-      sig { params(data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data).returns(T.attached_class) }
+      sig do
+        params(
+          data: T.any(OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .returns(T.attached_class)
+      end
       def self.new(data:)
       end
 
@@ -24,31 +29,23 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(T::Boolean) }
-        def limit_exceeded
-        end
-
-        sig { params(_: T::Boolean).returns(T::Boolean) }
-        def limit_exceeded=(_)
-        end
+        attr_accessor :limit_exceeded
 
         sig { returns(T::Array[String]) }
-        def list
-        end
-
-        sig { params(_: T::Array[String]).returns(T::Array[String]) }
-        def list=(_)
-        end
+        attr_accessor :list
 
         sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
+        attr_reader :references
 
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
-        def references=(_)
-        end
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
 
         sig do
-          params(limit_exceeded: T::Boolean, list: T::Array[String], references: OnebusawaySDK::Models::References)
+          params(
+            limit_exceeded: T::Boolean,
+            list: T::Array[String],
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
+          )
             .returns(T.attached_class)
         end
         def self.new(limit_exceeded:, list:, references:)

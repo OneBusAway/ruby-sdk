@@ -83,7 +83,7 @@ module OnebusawaySDK
     #   Extra data to send with the request. These are deep merged into any data
     #     generated as part of the normal request.
     #
-    #   @return [Hash{Symbol=>Object}, nil]
+    #   @return [Object, nil]
     optional :extra_body, OnebusawaySDK::HashOf[OnebusawaySDK::Unknown]
 
     # @!attribute max_retries

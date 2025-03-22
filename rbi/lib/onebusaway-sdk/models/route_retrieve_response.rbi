@@ -4,17 +4,15 @@ module OnebusawaySDK
   module Models
     class RouteRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data) }
-      def data
-      end
+      attr_reader :data
+
+      sig { params(data: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)).void }
+      attr_writer :data
 
       sig do
-        params(_: OnebusawaySDK::Models::RouteRetrieveResponse::Data)
-          .returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data)
+        params(data: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .returns(T.attached_class)
       end
-      def data=(_)
-      end
-
-      sig { params(data: OnebusawaySDK::Models::RouteRetrieveResponse::Data).returns(T.attached_class) }
       def self.new(data:)
       end
 
@@ -24,28 +22,26 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry) }
-        def entry
-        end
-
-        sig do
-          params(_: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry)
-        end
-        def entry=(_)
-        end
-
-        sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
-
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
-        def references=(_)
-        end
+        attr_reader :entry
 
         sig do
           params(
-            entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
+            entry: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .void
+        end
+        attr_writer :entry
+
+        sig { returns(OnebusawaySDK::Models::References) }
+        attr_reader :references
+
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
+
+        sig do
+          params(
+            entry: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -66,84 +62,55 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(String) }
-          def id
-          end
-
-          sig { params(_: String).returns(String) }
-          def id=(_)
-          end
+          attr_accessor :id
 
           sig { returns(String) }
-          def agency_id
-          end
-
-          sig { params(_: String).returns(String) }
-          def agency_id=(_)
-          end
+          attr_accessor :agency_id
 
           sig { returns(Integer) }
-          def type
-          end
-
-          sig { params(_: Integer).returns(Integer) }
-          def type=(_)
-          end
+          attr_accessor :type
 
           sig { returns(T.nilable(String)) }
-          def color
-          end
+          attr_reader :color
 
-          sig { params(_: String).returns(String) }
-          def color=(_)
-          end
+          sig { params(color: String).void }
+          attr_writer :color
 
           sig { returns(T.nilable(String)) }
-          def description
-          end
+          attr_reader :description
 
-          sig { params(_: String).returns(String) }
-          def description=(_)
-          end
+          sig { params(description: String).void }
+          attr_writer :description
 
           sig { returns(T.nilable(String)) }
-          def long_name
-          end
+          attr_reader :long_name
 
-          sig { params(_: String).returns(String) }
-          def long_name=(_)
-          end
+          sig { params(long_name: String).void }
+          attr_writer :long_name
 
           sig { returns(T.nilable(String)) }
-          def null_safe_short_name
-          end
+          attr_reader :null_safe_short_name
 
-          sig { params(_: String).returns(String) }
-          def null_safe_short_name=(_)
-          end
+          sig { params(null_safe_short_name: String).void }
+          attr_writer :null_safe_short_name
 
           sig { returns(T.nilable(String)) }
-          def short_name
-          end
+          attr_reader :short_name
 
-          sig { params(_: String).returns(String) }
-          def short_name=(_)
-          end
+          sig { params(short_name: String).void }
+          attr_writer :short_name
 
           sig { returns(T.nilable(String)) }
-          def text_color
-          end
+          attr_reader :text_color
 
-          sig { params(_: String).returns(String) }
-          def text_color=(_)
-          end
+          sig { params(text_color: String).void }
+          attr_writer :text_color
 
           sig { returns(T.nilable(String)) }
-          def url
-          end
+          attr_reader :url
 
-          sig { params(_: String).returns(String) }
-          def url=(_)
-          end
+          sig { params(url: String).void }
+          attr_writer :url
 
           sig do
             params(

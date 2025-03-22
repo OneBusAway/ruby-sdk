@@ -3,7 +3,9 @@
 require_relative "test_helper"
 
 class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
-  class E1 < OnebusawaySDK::Enum
+  module E1
+    extend OnebusawaySDK::Enum
+
     A = :a
     B = :b
   end
@@ -222,19 +224,37 @@ class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
     end
   end
 
+  class M4 < M2
+    required :c, M1
+    required :d, OnebusawaySDK::ArrayOf[M4]
+    required :e, M2, api_name: :f
+  end
+
+  def test_model_to_h
+    model = M4.new(a: "wow", c: {}, d: [{}, 2, {c: {}}], f: {})
+    assert_pattern do
+      model.to_h => {a: "wow", c: M1, d: [M4, 2, M4 => child], f: M2}
+      assert_equal({c: M1.new}, child.to_h)
+    end
+  end
+
   A3 = OnebusawaySDK::ArrayOf[A1]
 
   class M3 < M1
     optional :b, E1, api_name: :renamed_again
   end
 
-  class U1 < OnebusawaySDK::Union
+  module U1
+    extend OnebusawaySDK::Union
+
     discriminator :type
     variant :a, M1
     variant :b, M3
   end
 
-  class U2 < OnebusawaySDK::Union
+  module U2
+    extend OnebusawaySDK::Union
+
     variant A1
     variant A3
   end
@@ -316,12 +336,16 @@ class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
     end
   end
 
-  class E2 < OnebusawaySDK::Enum
+  module E2
+    extend OnebusawaySDK::Enum
+
     A = :a
     B = :b
   end
 
-  class U3 < OnebusawaySDK::Union
+  module U3
+    extend OnebusawaySDK::Union
+
     discriminator :type
     variant :a, M1
     variant :b, M3
@@ -339,7 +363,9 @@ class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
     assert_equal(U1, U3)
   end
 
-  class U4 < OnebusawaySDK::Union
+  module U4
+    extend OnebusawaySDK::Union
+
     variant :a, const: :a
     variant :b, const: :b
   end

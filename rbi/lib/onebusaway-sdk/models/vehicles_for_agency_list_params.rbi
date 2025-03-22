@@ -8,19 +8,17 @@ module OnebusawaySDK
 
       # Specific time for querying the status (timestamp format)
       sig { returns(T.nilable(String)) }
-      def time
-      end
+      attr_reader :time
 
-      sig { params(_: String).returns(String) }
-      def time=(_)
-      end
+      sig { params(time: String).void }
+      attr_writer :time
 
       sig do
         params(
           time: String,
           request_options: T.any(
             OnebusawaySDK::RequestOptions,
-            T::Hash[Symbol, T.anything]
+            OnebusawaySDK::Util::AnyHash
           )
         )
           .returns(T.attached_class)

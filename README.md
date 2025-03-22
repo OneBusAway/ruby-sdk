@@ -111,6 +111,8 @@ onebusaway_sdk.current_time.retrieve(request_options: {timeout: 5})
 
 ## Sorbet Support
 
+**This library emits an intentional warning under the [`tapioca` toolchain](https://github.com/Shopify/tapioca)**. This is normal, and does not impact functionality.
+
 This library is written with [Sorbet type definitions](https://sorbet.org/docs/rbi). However, there is no runtime dependency on the `sorbet-runtime`.
 
 What this means is that while you can use Sorbet to type check your code statically, and benefit from the [Sorbet Language Server](https://sorbet.org/docs/lsp) in your editor, there is no runtime type checking and execution overhead from Sorbet itself.
@@ -124,6 +126,18 @@ model = CurrentTimeRetrieveParams.new
 
 onebusaway_sdk.current_time.retrieve(**model)
 ```
+
+## Advanced
+
+### Concurrency & Connection Pooling
+
+The `OnebusawaySDK::Client` instances are thread-safe, and should be re-used across multiple threads. By default, each `Client` have their own HTTP connection pool, with a maximum number of connections equal to thread count.
+
+When the maximum number of connections has been checked out from the connection pool, the `Client` will wait for an in use connection to become available. The queue time for this mechanism is accounted for by the per-request timeout.
+
+Unless otherwise specified, other classes in the SDK do not have locks protecting their underlying data structure.
+
+Currently, `OnebusawaySDK::Client` instances are only fork-safe if there are no in-flight HTTP requests.
 
 ## Versioning
 

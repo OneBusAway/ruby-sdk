@@ -36,19 +36,14 @@ module OnebusawaySDK
 
       def user_lon=: (Float) -> Float
 
-      def initialize:
-        (
-          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
-          user_comment: String,
-          user_lat: Float,
-          user_location_accuracy: Float,
-          user_lon: Float,
-          request_options: OnebusawaySDK::request_opts
-        ) -> void
-        | (
-          ?OnebusawaySDK::Models::report_problem_with_stop_retrieve_params
-          | OnebusawaySDK::BaseModel data
-        ) -> void
+      def initialize: (
+        ?code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
+        ?user_comment: String,
+        ?user_lat: Float,
+        ?user_location_accuracy: Float,
+        ?user_lon: Float,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
 
       def to_hash: -> OnebusawaySDK::Models::report_problem_with_stop_retrieve_params
 
@@ -59,14 +54,16 @@ module OnebusawaySDK
         | :route_or_trip_missing
         | :other
 
-      class Code < OnebusawaySDK::Enum
+      module Code
+        extend OnebusawaySDK::Enum
+
         STOP_NAME_WRONG: :stop_name_wrong
         STOP_NUMBER_WRONG: :stop_number_wrong
         STOP_LOCATION_WRONG: :stop_location_wrong
         ROUTE_OR_TRIP_MISSING: :route_or_trip_missing
         OTHER: :other
 
-        def self.values: -> ::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code]
+        def self?.values: -> ::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code]
       end
     end
   end

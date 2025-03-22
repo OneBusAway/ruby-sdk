@@ -668,10 +668,10 @@ module OnebusawaySDK
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
         end
 
-        # @abstract
-        #
         # Reason for the service alert, taken from TPEG codes.
-        class Reason < OnebusawaySDK::Enum
+        module Reason
+          extend OnebusawaySDK::Enum
+
           EQUIPMENT_REASON = :equipmentReason
           ENVIRONMENT_REASON = :environmentReason
           PERSONNEL_REASON = :personnelReason
@@ -679,6 +679,10 @@ module OnebusawaySDK
           SECURITY_ALERT = :securityAlert
 
           finalize!
+
+          # @!parse
+          #   # @return [Array<Symbol>]
+          #   def self.values; end
         end
 
         class Summary < OnebusawaySDK::BaseModel

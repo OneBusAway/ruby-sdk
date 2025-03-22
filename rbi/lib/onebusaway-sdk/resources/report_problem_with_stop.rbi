@@ -7,12 +7,12 @@ module OnebusawaySDK
       sig do
         params(
           stop_id: String,
-          code: Symbol,
+          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
           user_comment: String,
           user_lat: Float,
           user_location_accuracy: Float,
           user_lon: Float,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, T::Hash[Symbol, T.anything]))
+          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
         )
           .returns(OnebusawaySDK::Models::ResponseWrapper)
       end

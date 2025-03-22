@@ -4,17 +4,22 @@ module OnebusawaySDK
   module Models
     class CurrentTimeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
       sig do
-        params(_: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data)
-          .returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data)
+        params(
+          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .void
       end
-      def data=(_)
-      end
+      attr_writer :data
 
-      sig { params(data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data).returns(T.attached_class) }
+      sig do
+        params(
+          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+        )
+          .returns(T.attached_class)
+      end
       def self.new(data:)
       end
 
@@ -24,28 +29,26 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry) }
-        def entry
-        end
-
-        sig do
-          params(_: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry)
-            .returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry)
-        end
-        def entry=(_)
-        end
-
-        sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
-
-        sig { params(_: OnebusawaySDK::Models::References).returns(OnebusawaySDK::Models::References) }
-        def references=(_)
-        end
+        attr_reader :entry
 
         sig do
           params(
-            entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
-            references: OnebusawaySDK::Models::References
+            entry: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .void
+        end
+        attr_writer :entry
+
+        sig { returns(OnebusawaySDK::Models::References) }
+        attr_reader :references
+
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
+
+        sig do
+          params(
+            entry: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -66,20 +69,16 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(T.nilable(String)) }
-          def readable_time
-          end
+          attr_reader :readable_time
 
-          sig { params(_: String).returns(String) }
-          def readable_time=(_)
-          end
+          sig { params(readable_time: String).void }
+          attr_writer :readable_time
 
           sig { returns(T.nilable(Integer)) }
-          def time
-          end
+          attr_reader :time
 
-          sig { params(_: Integer).returns(Integer) }
-          def time=(_)
-          end
+          sig { params(time: Integer).void }
+          attr_writer :time
 
           sig { params(readable_time: String, time: Integer).returns(T.attached_class) }
           def self.new(readable_time: nil, time: nil)

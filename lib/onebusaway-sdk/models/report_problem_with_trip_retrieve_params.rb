@@ -139,10 +139,10 @@ module OnebusawaySDK
 
       # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
-      # @abstract
-      #
       # A string code identifying the nature of the problem
-      class Code < OnebusawaySDK::Enum
+      module Code
+        extend OnebusawaySDK::Enum
+
         VEHICLE_NEVER_CAME = :vehicle_never_came
         VEHICLE_CAME_EARLY = :vehicle_came_early
         VEHICLE_CAME_LATE = :vehicle_came_late
@@ -151,6 +151,10 @@ module OnebusawaySDK
         OTHER = :other
 
         finalize!
+
+        # @!parse
+        #   # @return [Array<Symbol>]
+        #   def self.values; end
       end
     end
   end
