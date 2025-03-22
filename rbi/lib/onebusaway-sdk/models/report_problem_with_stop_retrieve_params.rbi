@@ -103,10 +103,8 @@ module OnebusawaySDK
           )
         OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
 
-        class << self
-          sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol]) }
-          def values
-          end
+        sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol]) }
+        def self.values
         end
       end
     end
