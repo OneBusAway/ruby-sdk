@@ -100,7 +100,12 @@ module OnebusawaySDK
 
           sig do
             params(
-              arrivals_and_departures: T::Array[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
+              arrivals_and_departures: T::Array[
+              T.any(
+                OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture,
+                OnebusawaySDK::Util::AnyHash
+              )
+              ]
             )
               .returns(T.attached_class)
           end

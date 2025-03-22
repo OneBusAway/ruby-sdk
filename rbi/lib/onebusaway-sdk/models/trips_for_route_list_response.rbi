@@ -59,7 +59,7 @@ module OnebusawaySDK
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
+            list: T::Array[T.any(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List, OnebusawaySDK::Util::AnyHash)],
             references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
           )
             .returns(T.attached_class)
@@ -230,7 +230,12 @@ module OnebusawaySDK
               params(
                 next_trip_id: String,
                 previous_trip_id: String,
-                stop_times: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
+                stop_times: T::Array[
+                T.any(
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime,
+                  OnebusawaySDK::Util::AnyHash
+                )
+                ],
                 time_zone: String,
                 frequency: T.nilable(String)
               )
