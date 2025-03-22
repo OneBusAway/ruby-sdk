@@ -71,12 +71,12 @@ module OnebusawaySDK
 
       sig do
         params(
-          agencies: T::Array[OnebusawaySDK::Models::References::Agency],
-          routes: T::Array[OnebusawaySDK::Models::References::Route],
-          situations: T::Array[OnebusawaySDK::Models::References::Situation],
-          stops: T::Array[OnebusawaySDK::Models::References::Stop],
-          stop_times: T::Array[OnebusawaySDK::Models::References::StopTime],
-          trips: T::Array[OnebusawaySDK::Models::References::Trip]
+          agencies: T::Array[T.any(OnebusawaySDK::Models::References::Agency, OnebusawaySDK::Util::AnyHash)],
+          routes: T::Array[T.any(OnebusawaySDK::Models::References::Route, OnebusawaySDK::Util::AnyHash)],
+          situations: T::Array[T.any(OnebusawaySDK::Models::References::Situation, OnebusawaySDK::Util::AnyHash)],
+          stops: T::Array[T.any(OnebusawaySDK::Models::References::Stop, OnebusawaySDK::Util::AnyHash)],
+          stop_times: T::Array[T.any(OnebusawaySDK::Models::References::StopTime, OnebusawaySDK::Util::AnyHash)],
+          trips: T::Array[T.any(OnebusawaySDK::Models::References::Trip, OnebusawaySDK::Util::AnyHash)]
         )
           .returns(T.attached_class)
       end
@@ -385,8 +385,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow])
-            .returns(T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow])
+          params(
+            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)]
+          )
+            .returns(
+              T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)]
+            )
         end
         def active_windows=(_)
         end
@@ -396,8 +400,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect])
-            .returns(T::Array[OnebusawaySDK::Models::References::Situation::AllAffect])
+          params(
+            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)]
+          )
+            .returns(
+              T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)]
+            )
         end
         def all_affects=(_)
         end
@@ -416,8 +424,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::Consequence])
-            .returns(T::Array[OnebusawaySDK::Models::References::Situation::Consequence])
+          params(
+            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)]
+          )
+            .returns(
+              T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)]
+            )
         end
         def consequences=(_)
         end
@@ -438,8 +450,12 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])
-            .returns(T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])
+          params(
+            _: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)]
+          )
+            .returns(
+              T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)]
+            )
         end
         def publication_windows=(_)
         end
@@ -450,8 +466,8 @@ module OnebusawaySDK
         end
 
         sig do
-          params(_: OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
-            .returns(OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+          params(_: OnebusawaySDK::Models::References::Situation::Reason::OrSymbol)
+            .returns(OnebusawaySDK::Models::References::Situation::Reason::OrSymbol)
         end
         def reason=(_)
         end
@@ -491,13 +507,13 @@ module OnebusawaySDK
           params(
             id: String,
             creation_time: Integer,
-            active_windows: T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
-            all_affects: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
+            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)],
+            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)],
             consequence_message: String,
-            consequences: T::Array[OnebusawaySDK::Models::References::Situation::Consequence],
+            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)],
             description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash),
-            publication_windows: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-            reason: OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol,
+            publication_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)],
+            reason: OnebusawaySDK::Models::References::Situation::Reason::OrSymbol,
             severity: String,
             summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash),
             url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash)

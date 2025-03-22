@@ -80,8 +80,22 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])
-              .returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])
+            params(
+              _: T::Array[
+              T.any(
+                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
+                OnebusawaySDK::Util::AnyHash
+              )
+              ]
+            )
+              .returns(
+                T::Array[
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
+                  OnebusawaySDK::Util::AnyHash
+                )
+                ]
+              )
           end
           def polylines=(_)
           end
@@ -99,8 +113,22 @@ module OnebusawaySDK
           end
 
           sig do
-            params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping])
-              .returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping])
+            params(
+              _: T::Array[
+              T.any(
+                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
+                OnebusawaySDK::Util::AnyHash
+              )
+              ]
+            )
+              .returns(
+                T::Array[
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
+                  OnebusawaySDK::Util::AnyHash
+                )
+                ]
+              )
           end
           def stop_groupings=(_)
           end
@@ -115,9 +143,19 @@ module OnebusawaySDK
 
           sig do
             params(
-              polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+              polylines: T::Array[
+              T.any(
+                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
+                OnebusawaySDK::Util::AnyHash
+              )
+              ],
               route_id: String,
-              stop_groupings: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+              stop_groupings: T::Array[
+              T.any(
+                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
+                OnebusawaySDK::Util::AnyHash
+              )
+              ],
               stop_ids: T::Array[String]
             )
               .returns(T.attached_class)
@@ -212,8 +250,22 @@ module OnebusawaySDK
             end
 
             sig do
-              params(_: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline])
-                .returns(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline])
+              params(
+                _: T::Array[
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
+                  OnebusawaySDK::Util::AnyHash
+                )
+                ]
+              )
+                .returns(
+                  T::Array[
+                  T.any(
+                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
+                    OnebusawaySDK::Util::AnyHash
+                  )
+                  ]
+                )
             end
             def polylines=(_)
             end
@@ -233,7 +285,12 @@ module OnebusawaySDK
                   OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
                   OnebusawaySDK::Util::AnyHash
                 ),
-                polylines: T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+                polylines: T::Array[
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
+                  OnebusawaySDK::Util::AnyHash
+                )
+                ],
                 stop_ids: T::Array[String]
               )
                 .returns(T.attached_class)

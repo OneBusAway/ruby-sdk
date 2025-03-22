@@ -233,7 +233,12 @@ module OnebusawaySDK
               params(
                 next_trip_id: String,
                 previous_trip_id: String,
-                stop_times: T::Array[OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime],
+                stop_times: T::Array[
+                T.any(
+                  OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime,
+                  OnebusawaySDK::Util::AnyHash
+                )
+                ],
                 time_zone: String,
                 frequency: T.nilable(String)
               )
