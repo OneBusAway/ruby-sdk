@@ -4,17 +4,15 @@ module OnebusawaySDK
   module Models
     class ArrivalAndDepartureListResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
       sig do
         params(
-          _: T.any(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data, OnebusawaySDK::Util::AnyHash)
         )
-          .returns(T.any(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data, OnebusawaySDK::Util::AnyHash))
+          .void
       end
-      def data=(_)
-      end
+      attr_writer :data
 
       sig do
         params(
@@ -31,30 +29,21 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry) }
-        def entry
-        end
+        attr_reader :entry
 
         sig do
           params(
-            _: T.any(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
           )
-            .returns(
-              T.any(OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
-            )
+            .void
         end
-        def entry=(_)
-        end
+        attr_writer :entry
 
         sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
+        attr_reader :references
 
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-        end
-        def references=(_)
-        end
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
 
         sig do
           params(
@@ -84,19 +73,7 @@ module OnebusawaySDK
               T::Array[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
             )
           end
-          def arrivals_and_departures
-          end
-
-          sig do
-            params(
-              _: T::Array[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
-            )
-              .returns(
-                T::Array[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
-              )
-          end
-          def arrivals_and_departures=(_)
-          end
+          attr_accessor :arrivals_and_departures
 
           sig do
             params(
@@ -126,308 +103,194 @@ module OnebusawaySDK
           class ArrivalsAndDeparture < OnebusawaySDK::BaseModel
             # Indicates if riders can arrive on this transit vehicle.
             sig { returns(T::Boolean) }
-            def arrival_enabled
-            end
-
-            sig { params(_: T::Boolean).returns(T::Boolean) }
-            def arrival_enabled=(_)
-            end
+            attr_accessor :arrival_enabled
 
             # Index of this arrival’s trip into the sequence of trips for the active block.
             sig { returns(Integer) }
-            def block_trip_sequence
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def block_trip_sequence=(_)
-            end
+            attr_accessor :block_trip_sequence
 
             # Indicates if riders can depart from this transit vehicle.
             sig { returns(T::Boolean) }
-            def departure_enabled
-            end
-
-            sig { params(_: T::Boolean).returns(T::Boolean) }
-            def departure_enabled=(_)
-            end
+            attr_accessor :departure_enabled
 
             # Number of stops between the arriving transit vehicle and the current stop
             #   (excluding the current stop).
             sig { returns(Integer) }
-            def number_of_stops_away
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def number_of_stops_away=(_)
-            end
+            attr_accessor :number_of_stops_away
 
             # Predicted arrival time, in milliseconds since Unix epoch (zero if no real-time
             #   available).
             sig { returns(Integer) }
-            def predicted_arrival_time
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def predicted_arrival_time=(_)
-            end
+            attr_accessor :predicted_arrival_time
 
             # Predicted departure time, in milliseconds since Unix epoch (zero if no real-time
             #   available).
             sig { returns(Integer) }
-            def predicted_departure_time
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def predicted_departure_time=(_)
-            end
+            attr_accessor :predicted_departure_time
 
             # The ID of the route for the arriving vehicle.
             sig { returns(String) }
-            def route_id
-            end
-
-            sig { params(_: String).returns(String) }
-            def route_id=(_)
-            end
+            attr_accessor :route_id
 
             # Scheduled arrival time, in milliseconds since Unix epoch.
             sig { returns(Integer) }
-            def scheduled_arrival_time
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def scheduled_arrival_time=(_)
-            end
+            attr_accessor :scheduled_arrival_time
 
             # Scheduled departure time, in milliseconds since Unix epoch.
             sig { returns(Integer) }
-            def scheduled_departure_time
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def scheduled_departure_time=(_)
-            end
+            attr_accessor :scheduled_departure_time
 
             # Time, in milliseconds since the Unix epoch, of midnight for the start of the
             #   service date for the trip.
             sig { returns(Integer) }
-            def service_date
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def service_date=(_)
-            end
+            attr_accessor :service_date
 
             # The ID of the stop the vehicle is arriving at.
             sig { returns(String) }
-            def stop_id
-            end
-
-            sig { params(_: String).returns(String) }
-            def stop_id=(_)
-            end
+            attr_accessor :stop_id
 
             # Index of the stop into the sequence of stops that make up the trip for this
             #   arrival.
             sig { returns(Integer) }
-            def stop_sequence
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def stop_sequence=(_)
-            end
+            attr_accessor :stop_sequence
 
             # Total number of stops visited on the trip for this arrival.
             sig { returns(Integer) }
-            def total_stops_in_trip
-            end
-
-            sig { params(_: Integer).returns(Integer) }
-            def total_stops_in_trip=(_)
-            end
+            attr_accessor :total_stops_in_trip
 
             # Optional trip headsign that potentially overrides the trip headsign in the
             #   referenced trip element.
             sig { returns(String) }
-            def trip_headsign
-            end
-
-            sig { params(_: String).returns(String) }
-            def trip_headsign=(_)
-            end
+            attr_accessor :trip_headsign
 
             # The ID of the trip for the arriving vehicle.
             sig { returns(String) }
-            def trip_id
-            end
-
-            sig { params(_: String).returns(String) }
-            def trip_id=(_)
-            end
+            attr_accessor :trip_id
 
             # ID of the transit vehicle serving this trip.
             sig { returns(String) }
-            def vehicle_id
-            end
-
-            sig { params(_: String).returns(String) }
-            def vehicle_id=(_)
-            end
+            attr_accessor :vehicle_id
 
             # The actual track information of the arriving transit vehicle.
             sig { returns(T.nilable(String)) }
-            def actual_track
-            end
+            attr_reader :actual_track
 
-            sig { params(_: String).returns(String) }
-            def actual_track=(_)
-            end
+            sig { params(actual_track: String).void }
+            attr_writer :actual_track
 
             # Distance of the arriving transit vehicle from the stop, in meters.
             sig { returns(T.nilable(Float)) }
-            def distance_from_stop
-            end
+            attr_reader :distance_from_stop
 
-            sig { params(_: Float).returns(Float) }
-            def distance_from_stop=(_)
-            end
+            sig { params(distance_from_stop: Float).void }
+            attr_writer :distance_from_stop
 
             # Information about frequency-based scheduling, if applicable to the trip.
             sig { returns(T.nilable(String)) }
-            def frequency
-            end
+            attr_reader :frequency
 
-            sig { params(_: String).returns(String) }
-            def frequency=(_)
-            end
+            sig { params(frequency: String).void }
+            attr_writer :frequency
 
             # Historical occupancy information of the transit vehicle.
             sig { returns(T.nilable(String)) }
-            def historical_occupancy
-            end
+            attr_reader :historical_occupancy
 
-            sig { params(_: String).returns(String) }
-            def historical_occupancy=(_)
-            end
+            sig { params(historical_occupancy: String).void }
+            attr_writer :historical_occupancy
 
             # Timestamp of the last update time for this arrival.
             sig { returns(T.nilable(Integer)) }
-            def last_update_time
-            end
+            attr_reader :last_update_time
 
-            sig { params(_: Integer).returns(Integer) }
-            def last_update_time=(_)
-            end
+            sig { params(last_update_time: Integer).void }
+            attr_writer :last_update_time
 
             # Current occupancy status of the transit vehicle.
             sig { returns(T.nilable(String)) }
-            def occupancy_status
-            end
+            attr_reader :occupancy_status
 
-            sig { params(_: String).returns(String) }
-            def occupancy_status=(_)
-            end
+            sig { params(occupancy_status: String).void }
+            attr_writer :occupancy_status
 
             # Indicates if real-time arrival info is available for this trip.
             sig { returns(T.nilable(T::Boolean)) }
-            def predicted
-            end
+            attr_reader :predicted
 
-            sig { params(_: T::Boolean).returns(T::Boolean) }
-            def predicted=(_)
-            end
+            sig { params(predicted: T::Boolean).void }
+            attr_writer :predicted
 
             # Interval for predicted arrival time, if available.
             sig { returns(T.nilable(String)) }
-            def predicted_arrival_interval
-            end
+            attr_reader :predicted_arrival_interval
 
-            sig { params(_: String).returns(String) }
-            def predicted_arrival_interval=(_)
-            end
+            sig { params(predicted_arrival_interval: String).void }
+            attr_writer :predicted_arrival_interval
 
             # Interval for predicted departure time, if available.
             sig { returns(T.nilable(String)) }
-            def predicted_departure_interval
-            end
+            attr_reader :predicted_departure_interval
 
-            sig { params(_: String).returns(String) }
-            def predicted_departure_interval=(_)
-            end
+            sig { params(predicted_departure_interval: String).void }
+            attr_writer :predicted_departure_interval
 
             # Predicted occupancy status of the transit vehicle.
             sig { returns(T.nilable(String)) }
-            def predicted_occupancy
-            end
+            attr_reader :predicted_occupancy
 
-            sig { params(_: String).returns(String) }
-            def predicted_occupancy=(_)
-            end
+            sig { params(predicted_occupancy: String).void }
+            attr_writer :predicted_occupancy
 
             # Optional route long name that potentially overrides the route long name in the
             #   referenced route element.
             sig { returns(T.nilable(String)) }
-            def route_long_name
-            end
+            attr_reader :route_long_name
 
-            sig { params(_: String).returns(String) }
-            def route_long_name=(_)
-            end
+            sig { params(route_long_name: String).void }
+            attr_writer :route_long_name
 
             # Optional route short name that potentially overrides the route short name in the
             #   referenced route element.
             sig { returns(T.nilable(String)) }
-            def route_short_name
-            end
+            attr_reader :route_short_name
 
-            sig { params(_: String).returns(String) }
-            def route_short_name=(_)
-            end
+            sig { params(route_short_name: String).void }
+            attr_writer :route_short_name
 
             # Interval for scheduled arrival time.
             sig { returns(T.nilable(String)) }
-            def scheduled_arrival_interval
-            end
+            attr_reader :scheduled_arrival_interval
 
-            sig { params(_: String).returns(String) }
-            def scheduled_arrival_interval=(_)
-            end
+            sig { params(scheduled_arrival_interval: String).void }
+            attr_writer :scheduled_arrival_interval
 
             # Interval for scheduled departure time.
             sig { returns(T.nilable(String)) }
-            def scheduled_departure_interval
-            end
+            attr_reader :scheduled_departure_interval
 
-            sig { params(_: String).returns(String) }
-            def scheduled_departure_interval=(_)
-            end
+            sig { params(scheduled_departure_interval: String).void }
+            attr_writer :scheduled_departure_interval
 
             # Scheduled track information of the arriving transit vehicle.
             sig { returns(T.nilable(String)) }
-            def scheduled_track
-            end
+            attr_reader :scheduled_track
 
-            sig { params(_: String).returns(String) }
-            def scheduled_track=(_)
-            end
+            sig { params(scheduled_track: String).void }
+            attr_writer :scheduled_track
 
             # References to situation elements (if any) applicable to this arrival.
             sig { returns(T.nilable(T::Array[String])) }
-            def situation_ids
-            end
+            attr_reader :situation_ids
 
-            sig { params(_: T::Array[String]).returns(T::Array[String]) }
-            def situation_ids=(_)
-            end
+            sig { params(situation_ids: T::Array[String]).void }
+            attr_writer :situation_ids
 
             # Current status of the arrival.
             sig { returns(T.nilable(String)) }
-            def status
-            end
+            attr_reader :status
 
-            sig { params(_: String).returns(String) }
-            def status=(_)
-            end
+            sig { params(status: String).void }
+            attr_writer :status
 
             # Trip-specific status for the arriving transit vehicle.
             sig do
@@ -437,25 +300,18 @@ module OnebusawaySDK
                 )
               )
             end
-            def trip_status
-            end
+            attr_reader :trip_status
 
             sig do
               params(
-                _: T.any(
+                trip_status: T.any(
                   OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus,
                   OnebusawaySDK::Util::AnyHash
                 )
               )
-                .returns(
-                  T.any(
-                    OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus,
-                    OnebusawaySDK::Util::AnyHash
-                  )
-                )
+                .void
             end
-            def trip_status=(_)
-            end
+            attr_writer :trip_status
 
             sig do
               params(
@@ -584,168 +440,84 @@ module OnebusawaySDK
             class TripStatus < OnebusawaySDK::BaseModel
               # Trip ID of the trip the vehicle is actively serving.
               sig { returns(String) }
-              def active_trip_id
-              end
-
-              sig { params(_: String).returns(String) }
-              def active_trip_id=(_)
-              end
+              attr_accessor :active_trip_id
 
               # Index of the active trip into the sequence of trips for the active block.
               sig { returns(Integer) }
-              def block_trip_sequence
-              end
-
-              sig { params(_: Integer).returns(Integer) }
-              def block_trip_sequence=(_)
-              end
+              attr_accessor :block_trip_sequence
 
               # ID of the closest stop to the current location of the transit vehicle.
               sig { returns(String) }
-              def closest_stop
-              end
-
-              sig { params(_: String).returns(String) }
-              def closest_stop=(_)
-              end
+              attr_accessor :closest_stop
 
               # Distance, in meters, the transit vehicle has progressed along the active trip.
               sig { returns(Float) }
-              def distance_along_trip
-              end
-
-              sig { params(_: Float).returns(Float) }
-              def distance_along_trip=(_)
-              end
+              attr_accessor :distance_along_trip
 
               # Last known distance along the trip received in real-time from the transit
               #   vehicle.
               sig { returns(Float) }
-              def last_known_distance_along_trip
-              end
-
-              sig { params(_: Float).returns(Float) }
-              def last_known_distance_along_trip=(_)
-              end
+              attr_accessor :last_known_distance_along_trip
 
               # Timestamp of the last known real-time location update from the transit vehicle.
               sig { returns(Integer) }
-              def last_location_update_time
-              end
-
-              sig { params(_: Integer).returns(Integer) }
-              def last_location_update_time=(_)
-              end
+              attr_accessor :last_location_update_time
 
               # Timestamp of the last known real-time update from the transit vehicle.
               sig { returns(Integer) }
-              def last_update_time
-              end
-
-              sig { params(_: Integer).returns(Integer) }
-              def last_update_time=(_)
-              end
+              attr_accessor :last_update_time
 
               # Capacity of the transit vehicle in terms of occupancy.
               sig { returns(Integer) }
-              def occupancy_capacity
-              end
-
-              sig { params(_: Integer).returns(Integer) }
-              def occupancy_capacity=(_)
-              end
+              attr_accessor :occupancy_capacity
 
               # Current count of occupants in the transit vehicle.
               sig { returns(Integer) }
-              def occupancy_count
-              end
-
-              sig { params(_: Integer).returns(Integer) }
-              def occupancy_count=(_)
-              end
+              attr_accessor :occupancy_count
 
               # Current occupancy status of the transit vehicle.
               sig { returns(String) }
-              def occupancy_status
-              end
-
-              sig { params(_: String).returns(String) }
-              def occupancy_status=(_)
-              end
+              attr_accessor :occupancy_status
 
               # Current journey phase of the trip.
               sig { returns(String) }
-              def phase
-              end
-
-              sig { params(_: String).returns(String) }
-              def phase=(_)
-              end
+              attr_accessor :phase
 
               # Indicates if real-time arrival info is available for this trip.
               sig { returns(T::Boolean) }
-              def predicted
-              end
-
-              sig { params(_: T::Boolean).returns(T::Boolean) }
-              def predicted=(_)
-              end
+              attr_accessor :predicted
 
               # Deviation from the schedule in seconds (positive for late, negative for early).
               sig { returns(Integer) }
-              def schedule_deviation
-              end
-
-              sig { params(_: Integer).returns(Integer) }
-              def schedule_deviation=(_)
-              end
+              attr_accessor :schedule_deviation
 
               # Time, in milliseconds since the Unix epoch, of midnight for the start of the
               #   service date for the trip.
               sig { returns(Integer) }
-              def service_date
-              end
-
-              sig { params(_: Integer).returns(Integer) }
-              def service_date=(_)
-              end
+              attr_accessor :service_date
 
               # Current status modifiers for the trip.
               sig { returns(String) }
-              def status
-              end
-
-              sig { params(_: String).returns(String) }
-              def status=(_)
-              end
+              attr_accessor :status
 
               # Total length of the trip, in meters.
               sig { returns(Float) }
-              def total_distance_along_trip
-              end
-
-              sig { params(_: Float).returns(Float) }
-              def total_distance_along_trip=(_)
-              end
+              attr_accessor :total_distance_along_trip
 
               # Time offset from the closest stop to the current position of the transit vehicle
               #   (in seconds).
               sig { returns(T.nilable(Integer)) }
-              def closest_stop_time_offset
-              end
+              attr_reader :closest_stop_time_offset
 
-              sig { params(_: Integer).returns(Integer) }
-              def closest_stop_time_offset=(_)
-              end
+              sig { params(closest_stop_time_offset: Integer).void }
+              attr_writer :closest_stop_time_offset
 
               # Information about frequency-based scheduling, if applicable to the trip.
               sig { returns(T.nilable(String)) }
-              def frequency
-              end
+              attr_reader :frequency
 
-              sig { params(_: String).returns(String) }
-              def frequency=(_)
-              end
+              sig { params(frequency: String).void }
+              attr_writer :frequency
 
               # Last known location of the transit vehicle.
               sig do
@@ -755,62 +527,47 @@ module OnebusawaySDK
                   )
                 )
               end
-              def last_known_location
-              end
+              attr_reader :last_known_location
 
               sig do
                 params(
-                  _: T.any(
+                  last_known_location: T.any(
                     OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation,
                     OnebusawaySDK::Util::AnyHash
                   )
                 )
-                  .returns(
-                    T.any(
-                      OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation,
-                      OnebusawaySDK::Util::AnyHash
-                    )
-                  )
+                  .void
               end
-              def last_known_location=(_)
-              end
+              attr_writer :last_known_location
 
               # Last known orientation value received in real-time from the transit vehicle.
               sig { returns(T.nilable(Float)) }
-              def last_known_orientation
-              end
+              attr_reader :last_known_orientation
 
-              sig { params(_: Float).returns(Float) }
-              def last_known_orientation=(_)
-              end
+              sig { params(last_known_orientation: Float).void }
+              attr_writer :last_known_orientation
 
               # ID of the next stop the transit vehicle is scheduled to arrive at.
               sig { returns(T.nilable(String)) }
-              def next_stop
-              end
+              attr_reader :next_stop
 
-              sig { params(_: String).returns(String) }
-              def next_stop=(_)
-              end
+              sig { params(next_stop: String).void }
+              attr_writer :next_stop
 
               # Time offset from the next stop to the current position of the transit vehicle
               #   (in seconds).
               sig { returns(T.nilable(Integer)) }
-              def next_stop_time_offset
-              end
+              attr_reader :next_stop_time_offset
 
-              sig { params(_: Integer).returns(Integer) }
-              def next_stop_time_offset=(_)
-              end
+              sig { params(next_stop_time_offset: Integer).void }
+              attr_writer :next_stop_time_offset
 
               # Orientation of the transit vehicle, represented as an angle in degrees.
               sig { returns(T.nilable(Float)) }
-              def orientation
-              end
+              attr_reader :orientation
 
-              sig { params(_: Float).returns(Float) }
-              def orientation=(_)
-              end
+              sig { params(orientation: Float).void }
+              attr_writer :orientation
 
               # Current position of the transit vehicle.
               sig do
@@ -820,53 +577,40 @@ module OnebusawaySDK
                   )
                 )
               end
-              def position
-              end
+              attr_reader :position
 
               sig do
                 params(
-                  _: T.any(
+                  position: T.any(
                     OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::Position,
                     OnebusawaySDK::Util::AnyHash
                   )
                 )
-                  .returns(
-                    T.any(
-                      OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::Position,
-                      OnebusawaySDK::Util::AnyHash
-                    )
-                  )
+                  .void
               end
-              def position=(_)
-              end
+              attr_writer :position
 
               # Distance, in meters, the transit vehicle is scheduled to have progressed along
               #   the active trip.
               sig { returns(T.nilable(Float)) }
-              def scheduled_distance_along_trip
-              end
+              attr_reader :scheduled_distance_along_trip
 
-              sig { params(_: Float).returns(Float) }
-              def scheduled_distance_along_trip=(_)
-              end
+              sig { params(scheduled_distance_along_trip: Float).void }
+              attr_writer :scheduled_distance_along_trip
 
               # References to situation elements (if any) applicable to this trip.
               sig { returns(T.nilable(T::Array[String])) }
-              def situation_ids
-              end
+              attr_reader :situation_ids
 
-              sig { params(_: T::Array[String]).returns(T::Array[String]) }
-              def situation_ids=(_)
-              end
+              sig { params(situation_ids: T::Array[String]).void }
+              attr_writer :situation_ids
 
               # ID of the transit vehicle currently serving the trip.
               sig { returns(T.nilable(String)) }
-              def vehicle_id
-              end
+              attr_reader :vehicle_id
 
-              sig { params(_: String).returns(String) }
-              def vehicle_id=(_)
-              end
+              sig { params(vehicle_id: String).void }
+              attr_writer :vehicle_id
 
               # Trip-specific status for the arriving transit vehicle.
               sig do
@@ -978,21 +722,17 @@ module OnebusawaySDK
               class LastKnownLocation < OnebusawaySDK::BaseModel
                 # Latitude of the last known location of the transit vehicle.
                 sig { returns(T.nilable(Float)) }
-                def lat
-                end
+                attr_reader :lat
 
-                sig { params(_: Float).returns(Float) }
-                def lat=(_)
-                end
+                sig { params(lat: Float).void }
+                attr_writer :lat
 
                 # Longitude of the last known location of the transit vehicle.
                 sig { returns(T.nilable(Float)) }
-                def lon
-                end
+                attr_reader :lon
 
-                sig { params(_: Float).returns(Float) }
-                def lon=(_)
-                end
+                sig { params(lon: Float).void }
+                attr_writer :lon
 
                 # Last known location of the transit vehicle.
                 sig { params(lat: Float, lon: Float).returns(T.attached_class) }
@@ -1007,21 +747,17 @@ module OnebusawaySDK
               class Position < OnebusawaySDK::BaseModel
                 # Latitude of the current position of the transit vehicle.
                 sig { returns(T.nilable(Float)) }
-                def lat
-                end
+                attr_reader :lat
 
-                sig { params(_: Float).returns(Float) }
-                def lat=(_)
-                end
+                sig { params(lat: Float).void }
+                attr_writer :lat
 
                 # Longitude of the current position of the transit vehicle.
                 sig { returns(T.nilable(Float)) }
-                def lon
-                end
+                attr_reader :lon
 
-                sig { params(_: Float).returns(Float) }
-                def lon=(_)
-                end
+                sig { params(lon: Float).void }
+                attr_writer :lon
 
                 # Current position of the transit vehicle.
                 sig { params(lat: Float, lon: Float).returns(T.attached_class) }

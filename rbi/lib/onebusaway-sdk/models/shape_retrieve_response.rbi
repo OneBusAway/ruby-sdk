@@ -4,15 +4,10 @@ module OnebusawaySDK
   module Models
     class ShapeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       sig { returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data) }
-      def data
-      end
+      attr_reader :data
 
-      sig do
-        params(_: T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
-          .returns(T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
-      end
-      def data=(_)
-      end
+      sig { params(data: T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)).void }
+      attr_writer :data
 
       sig do
         params(data: T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
@@ -27,26 +22,21 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::BaseModel
         sig { returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry) }
-        def entry
-        end
+        attr_reader :entry
 
         sig do
-          params(_: T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash))
+          params(
+            entry: T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+          )
+            .void
         end
-        def entry=(_)
-        end
+        attr_writer :entry
 
         sig { returns(OnebusawaySDK::Models::References) }
-        def references
-        end
+        attr_reader :references
 
-        sig do
-          params(_: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-            .returns(T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash))
-        end
-        def references=(_)
-        end
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        attr_writer :references
 
         sig do
           params(
@@ -72,29 +62,17 @@ module OnebusawaySDK
 
         class Entry < OnebusawaySDK::BaseModel
           sig { returns(Integer) }
-          def length
-          end
-
-          sig { params(_: Integer).returns(Integer) }
-          def length=(_)
-          end
+          attr_accessor :length
 
           # Encoded polyline format representing the shape of the path
           sig { returns(String) }
-          def points
-          end
-
-          sig { params(_: String).returns(String) }
-          def points=(_)
-          end
+          attr_accessor :points
 
           sig { returns(T.nilable(String)) }
-          def levels
-          end
+          attr_reader :levels
 
-          sig { params(_: String).returns(String) }
-          def levels=(_)
-          end
+          sig { params(levels: String).void }
+          attr_writer :levels
 
           sig { params(length: Integer, points: String, levels: String).returns(T.attached_class) }
           def self.new(length:, points:, levels: nil)
