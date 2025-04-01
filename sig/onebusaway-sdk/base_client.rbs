@@ -51,7 +51,7 @@ module OnebusawaySDK
     ) -> void
 
     # @api private
-    attr_accessor requester: top
+    attr_accessor requester: OnebusawaySDK::PooledNetRequester
 
     def initialize: (
       base_url: String,

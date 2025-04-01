@@ -85,7 +85,7 @@ module OnebusawaySDK
     end
 
     # @api private
-    sig { returns(T.anything) }
+    sig { returns(OnebusawaySDK::PooledNetRequester) }
     attr_accessor :requester
 
     # @api private
