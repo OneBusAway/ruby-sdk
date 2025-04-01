@@ -127,7 +127,14 @@ module OnebusawaySDK
             )
               .returns(T.attached_class)
           end
-          def self.new(trip_id:, frequency: nil, schedule: nil, service_date: nil, situation_ids: nil, status: nil)
+          def self.new(
+            trip_id:,
+            frequency: nil,
+            schedule: nil,
+            service_date: nil,
+            situation_ids: nil,
+            status: nil
+          )
           end
 
           sig do
