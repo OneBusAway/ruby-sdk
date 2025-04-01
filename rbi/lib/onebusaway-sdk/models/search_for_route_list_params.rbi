@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class SearchForRouteListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # The string to search for.

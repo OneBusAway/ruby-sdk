@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class RoutesForLocationListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       sig { returns(Float) }

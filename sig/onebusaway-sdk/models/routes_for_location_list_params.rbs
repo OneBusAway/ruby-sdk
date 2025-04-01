@@ -12,7 +12,7 @@ module OnebusawaySDK
       & OnebusawaySDK::request_parameters
 
     class RoutesForLocationListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       attr_accessor lat: Float

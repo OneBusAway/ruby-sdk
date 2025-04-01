@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class ArrivalAndDepartureListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # Include vehicles arriving or departing in the next n minutes.

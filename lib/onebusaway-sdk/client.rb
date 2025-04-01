@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module OnebusawaySDK
-  class Client < OnebusawaySDK::BaseClient
+  class Client < OnebusawaySDK::Transport::BaseClient
     # Default max number of retries to attempt after a failed retryable request.
     DEFAULT_MAX_RETRIES = 2
 

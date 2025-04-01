@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class TripsForLocationListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # The latitude coordinate of the search center
