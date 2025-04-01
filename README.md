@@ -12,22 +12,16 @@ The underlying REST API documentation can be found on [developer.onebusaway.org]
 
 ## Installation
 
-To use this gem during the beta, install directly from GitHub with Bundler by adding the following to your application's `Gemfile`:
+To use this gem, install via Bundler by adding the following to your application's `Gemfile`:
 
 ```ruby
-gem "onebusaway-sdk", git: "https://github.com/OneBusAway/ruby-sdk", branch: "main"
+gem "onebusaway-sdk", "~> 0.1.0.pre.alpha.207"
 ```
 
 To fetch an initial copy of the gem:
 
 ```sh
 bundle install
-```
-
-To update the version used by your application when updates are pushed to GitHub:
-
-```sh
-bundle update onebusaway-sdk
 ```
 
 ## Usage
