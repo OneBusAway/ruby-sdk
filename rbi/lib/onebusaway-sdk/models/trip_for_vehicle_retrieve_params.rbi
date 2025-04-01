@@ -47,7 +47,13 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(include_schedule: nil, include_status: nil, include_trip: nil, time: nil, request_options: {})
+      def self.new(
+        include_schedule: nil,
+        include_status: nil,
+        include_trip: nil,
+        time: nil,
+        request_options: {}
+      )
       end
 
       sig do
