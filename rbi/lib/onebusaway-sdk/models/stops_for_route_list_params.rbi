@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class StopsForRouteListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # Include polyline elements in the response (default true)

@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class TripDetailRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # Whether to include the full schedule element in the tripDetails section

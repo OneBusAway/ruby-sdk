@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class ScheduleForStopRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # The date for which you want to request a schedule in the format YYYY-MM-DD

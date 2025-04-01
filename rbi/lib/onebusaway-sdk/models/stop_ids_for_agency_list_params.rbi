@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class StopIDsForAgencyListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       sig do

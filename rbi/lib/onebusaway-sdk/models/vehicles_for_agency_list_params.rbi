@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class VehiclesForAgencyListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # Specific time for querying the status (timestamp format)
