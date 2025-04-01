@@ -36,7 +36,6 @@ require "connection_pool"
 # Package files.
 require_relative "onebusaway-sdk/version"
 require_relative "onebusaway-sdk/util"
-require_relative "onebusaway-sdk/extern"
 require_relative "onebusaway-sdk/base_model"
 require_relative "onebusaway-sdk/base_page"
 require_relative "onebusaway-sdk/request_options"
