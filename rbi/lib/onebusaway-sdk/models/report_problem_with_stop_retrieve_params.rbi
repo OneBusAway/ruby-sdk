@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class ReportProblemWithStopRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # A string code identifying the nature of the problem

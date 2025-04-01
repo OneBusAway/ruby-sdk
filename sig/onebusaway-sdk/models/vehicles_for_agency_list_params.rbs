@@ -4,7 +4,7 @@ module OnebusawaySDK
       { time: String } & OnebusawaySDK::request_parameters
 
     class VehiclesForAgencyListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       attr_reader time: String?

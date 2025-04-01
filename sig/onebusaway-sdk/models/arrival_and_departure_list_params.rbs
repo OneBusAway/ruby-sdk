@@ -5,7 +5,7 @@ module OnebusawaySDK
       & OnebusawaySDK::request_parameters
 
     class ArrivalAndDepartureListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       attr_reader minutes_after: Integer?

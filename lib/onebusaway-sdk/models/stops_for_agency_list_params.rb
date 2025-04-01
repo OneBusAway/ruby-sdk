@@ -4,7 +4,7 @@ module OnebusawaySDK
   module Models
     class StopsForAgencyListParams < OnebusawaySDK::BaseModel
       # @!parse
-      #   extend OnebusawaySDK::RequestParameters::Converter
+      #   extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       # @!parse

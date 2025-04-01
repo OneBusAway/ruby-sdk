@@ -1,0 +1,22 @@
+module OnebusawaySDK
+  class Unknown = OnebusawaySDK::Type::Unknown
+
+  class BooleanModel = OnebusawaySDK::Type::BooleanModel
+
+  module Enum = OnebusawaySDK::Type::Enum
+
+  module Union = OnebusawaySDK::Type::Union
+
+  class ArrayOf = OnebusawaySDK::Type::ArrayOf
+
+  class HashOf = OnebusawaySDK::Type::HashOf
+
+  class BaseModel = OnebusawaySDK::Type::BaseModel
+
+  type request_parameters = OnebusawaySDK::Type::request_parameters
+
+  module RequestParameters = OnebusawaySDK::Type::RequestParameters
+
+  module Type
+  end
+end

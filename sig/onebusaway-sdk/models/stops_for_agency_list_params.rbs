@@ -3,7 +3,7 @@ module OnebusawaySDK
     type stops_for_agency_list_params = {  } & OnebusawaySDK::request_parameters
 
     class StopsForAgencyListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       def initialize: (?request_options: OnebusawaySDK::request_opts) -> void

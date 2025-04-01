@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     class ArrivalAndDepartureRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       sig { returns(Integer) }

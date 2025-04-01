@@ -16,7 +16,7 @@ module OnebusawaySDK
       & OnebusawaySDK::request_parameters
 
     class ReportProblemWithTripRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::RequestParameters::Converter
+      extend OnebusawaySDK::Type::RequestParameters::Converter
       include OnebusawaySDK::RequestParameters
 
       attr_reader code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code?
