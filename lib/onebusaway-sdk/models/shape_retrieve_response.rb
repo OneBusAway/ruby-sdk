@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::Shape#retrieve
     class ShapeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

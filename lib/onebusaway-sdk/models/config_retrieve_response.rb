@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::Config#retrieve
     class ConfigRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

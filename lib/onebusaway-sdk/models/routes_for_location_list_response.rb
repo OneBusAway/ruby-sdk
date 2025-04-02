@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::RoutesForLocation#list
     class RoutesForLocationListResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #
