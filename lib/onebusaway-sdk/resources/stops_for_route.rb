@@ -20,7 +20,7 @@ module OnebusawaySDK
         parsed, options = OnebusawaySDK::Models::StopsForRouteListParams.dump_request(params)
         @client.request(
           method: :get,
-          path: ["api/where/stops-for-route/%0s.json", route_id],
+          path: ["api/where/stops-for-route/%1$s.json", route_id],
           query: parsed,
           model: OnebusawaySDK::Models::StopsForRouteListResponse,
           options: options

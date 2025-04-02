@@ -15,7 +15,7 @@ module OnebusawaySDK
       def retrieve(route_id, params = {})
         @client.request(
           method: :get,
-          path: ["api/where/route/%0s.json", route_id],
+          path: ["api/where/route/%1$s.json", route_id],
           model: OnebusawaySDK::Models::RouteRetrieveResponse,
           options: params[:request_options]
         )

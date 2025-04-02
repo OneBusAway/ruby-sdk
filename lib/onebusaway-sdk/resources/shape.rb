@@ -15,7 +15,7 @@ module OnebusawaySDK
       def retrieve(shape_id, params = {})
         @client.request(
           method: :get,
-          path: ["api/where/shape/%0s.json", shape_id],
+          path: ["api/where/shape/%1$s.json", shape_id],
           model: OnebusawaySDK::Models::ShapeRetrieveResponse,
           options: params[:request_options]
         )

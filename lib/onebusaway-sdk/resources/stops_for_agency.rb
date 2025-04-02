@@ -15,7 +15,7 @@ module OnebusawaySDK
       def list(agency_id, params = {})
         @client.request(
           method: :get,
-          path: ["api/where/stops-for-agency/%0s.json", agency_id],
+          path: ["api/where/stops-for-agency/%1$s.json", agency_id],
           model: OnebusawaySDK::Models::StopsForAgencyListResponse,
           options: params[:request_options]
         )
