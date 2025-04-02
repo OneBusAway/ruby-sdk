@@ -5,21 +5,15 @@ module OnebusawaySDK
     class StopsForLocation
       # stops-for-location
       #
-      # @param params [OnebusawaySDK::Models::StopsForLocationListParams, Hash{Symbol=>Object}] .
+      # @overload list(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
       #
-      #   @option params [Float] :lat
-      #
-      #   @option params [Float] :lon
-      #
-      #   @option params [Float] :lat_span An alternative to radius to set the search bounding box (optional)
-      #
-      #   @option params [Float] :lon_span An alternative to radius to set the search bounding box (optional)
-      #
-      #   @option params [String] :query A search query string to filter the results
-      #
-      #   @option params [Float] :radius The radius in meters to search within
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param lat [Float]
+      # @param lon [Float]
+      # @param lat_span [Float]
+      # @param lon_span [Float]
+      # @param query [String]
+      # @param radius [Float]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::StopsForLocationListResponse]
       #

@@ -5,25 +5,16 @@ module OnebusawaySDK
     class TripsForLocation
       # Retrieve trips for a given location
       #
-      # @param params [OnebusawaySDK::Models::TripsForLocationListParams, Hash{Symbol=>Object}] .
+      # @overload list(lat:, lat_span:, lon:, lon_span:, include_schedule: nil, include_trip: nil, time: nil, request_options: {})
       #
-      #   @option params [Float] :lat The latitude coordinate of the search center
-      #
-      #   @option params [Float] :lat_span Latitude span of the search bounding box
-      #
-      #   @option params [Float] :lon The longitude coordinate of the search center
-      #
-      #   @option params [Float] :lon_span Longitude span of the search bounding box
-      #
-      #   @option params [Boolean] :include_schedule Whether to include full schedule elements in the tripDetails section. Defaults
-      #     to false.
-      #
-      #   @option params [Boolean] :include_trip Whether to include full trip elements in the references section. Defaults to
-      #     false.
-      #
-      #   @option params [Integer] :time Specific time for the query. Defaults to the current time.
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param lat [Float]
+      # @param lat_span [Float]
+      # @param lon [Float]
+      # @param lon_span [Float]
+      # @param include_schedule [Boolean]
+      # @param include_trip [Boolean]
+      # @param time [Integer]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::TripsForLocationListResponse]
       #

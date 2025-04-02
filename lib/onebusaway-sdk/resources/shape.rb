@@ -5,11 +5,10 @@ module OnebusawaySDK
     class Shape
       # Retrieve a shape (the path traveled by a transit vehicle) by ID.
       #
-      # @param shape_id [String] The shape ID, encoded directly in the URL
+      # @overload retrieve(shape_id, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::ShapeRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param shape_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ShapeRetrieveResponse]
       #

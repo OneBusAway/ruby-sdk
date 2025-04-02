@@ -5,21 +5,15 @@ module OnebusawaySDK
     class ReportProblemWithStop
       # Submit a user-generated problem report for a stop
       #
-      # @param stop_id [String] The ID of the stop
+      # @overload retrieve(stop_id, code: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code] :code A string code identifying the nature of the problem
-      #
-      #   @option params [String] :user_comment Additional comment text supplied by the user describing the problem
-      #
-      #   @option params [Float] :user_lat The reporting user’s current latitude
-      #
-      #   @option params [Float] :user_location_accuracy The reporting user’s location accuracy, in meters
-      #
-      #   @option params [Float] :user_lon The reporting user’s current longitude
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param stop_id [String]
+      # @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code]
+      # @param user_comment [String]
+      # @param user_lat [Float]
+      # @param user_location_accuracy [Float]
+      # @param user_lon [Float]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ResponseWrapper]
       #

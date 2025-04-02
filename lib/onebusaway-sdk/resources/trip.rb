@@ -5,11 +5,10 @@ module OnebusawaySDK
     class Trip
       # Get details of a specific trip
       #
-      # @param trip_id [String] ID of the trip
+      # @overload retrieve(trip_id, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::TripRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param trip_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::TripRetrieveResponse]
       #

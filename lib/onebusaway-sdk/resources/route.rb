@@ -5,11 +5,10 @@ module OnebusawaySDK
     class Route
       # Retrieve information for a specific route identified by its unique ID.
       #
-      # @param route_id [String] The ID of the route.
+      # @overload retrieve(route_id, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::RouteRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param route_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::RouteRetrieveResponse]
       #

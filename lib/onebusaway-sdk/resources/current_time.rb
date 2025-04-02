@@ -5,9 +5,9 @@ module OnebusawaySDK
     class CurrentTime
       # current-time
       #
-      # @param params [OnebusawaySDK::Models::CurrentTimeRetrieveParams, Hash{Symbol=>Object}] .
+      # @overload retrieve(request_options: {})
       #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::CurrentTimeRetrieveResponse]
       #

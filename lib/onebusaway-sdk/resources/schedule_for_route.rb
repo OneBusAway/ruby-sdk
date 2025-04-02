@@ -5,14 +5,11 @@ module OnebusawaySDK
     class ScheduleForRoute
       # Retrieve the full schedule for a route on a particular day
       #
-      # @param route_id [String] The route id to request the schedule for
+      # @overload retrieve(route_id, date: nil, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::ScheduleForRouteRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Date] :date The date for which you want to request a schedule in the format YYYY-MM-DD
-      #     (optional, defaults to current date)
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param route_id [String]
+      # @param date [Date]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse]
       #

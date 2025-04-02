@@ -5,11 +5,10 @@ module OnebusawaySDK
     class Block
       # Get details of a specific block by ID
       #
-      # @param block_id [String] ID of the block
+      # @overload retrieve(block_id, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::BlockRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param block_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::BlockRetrieveResponse]
       #
