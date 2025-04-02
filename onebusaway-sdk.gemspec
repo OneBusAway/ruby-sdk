@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/onebusaway-sdk/version"
+require_relative "lib/onebusaway_sdk/version"
 
 Gem::Specification.new do |s|
   s.name = "onebusaway-sdk"
