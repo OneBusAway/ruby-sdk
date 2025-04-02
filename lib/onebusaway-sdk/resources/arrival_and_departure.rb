@@ -26,7 +26,7 @@ module OnebusawaySDK
         parsed, options = OnebusawaySDK::Models::ArrivalAndDepartureRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
-          path: ["api/where/arrival-and-departure-for-stop/%0s.json", stop_id],
+          path: ["api/where/arrival-and-departure-for-stop/%1$s.json", stop_id],
           query: parsed,
           model: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse,
           options: options
@@ -52,7 +52,7 @@ module OnebusawaySDK
         parsed, options = OnebusawaySDK::Models::ArrivalAndDepartureListParams.dump_request(params)
         @client.request(
           method: :get,
-          path: ["api/where/arrivals-and-departures-for-stop/%0s.json", stop_id],
+          path: ["api/where/arrivals-and-departures-for-stop/%1$s.json", stop_id],
           query: parsed,
           model: OnebusawaySDK::Models::ArrivalAndDepartureListResponse,
           options: options
