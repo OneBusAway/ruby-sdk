@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::Block#retrieve
     class BlockRetrieveParams < OnebusawaySDK::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Type::RequestParameters::Converter

@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::TripsForLocation#list
     class TripsForLocationListParams < OnebusawaySDK::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Type::RequestParameters::Converter

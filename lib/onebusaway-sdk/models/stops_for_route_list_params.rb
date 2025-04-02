@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::StopsForRoute#list
     class StopsForRouteListParams < OnebusawaySDK::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Type::RequestParameters::Converter

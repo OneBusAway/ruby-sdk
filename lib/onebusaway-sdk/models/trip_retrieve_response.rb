@@ -34,6 +34,7 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+        # @see OnebusawaySDK::Models::TripRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute id
           #

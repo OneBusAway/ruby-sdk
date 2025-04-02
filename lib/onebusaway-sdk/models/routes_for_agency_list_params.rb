@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::RoutesForAgency#list
     class RoutesForAgencyListParams < OnebusawaySDK::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Type::RequestParameters::Converter
