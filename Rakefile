@@ -87,9 +87,9 @@ multitask(typecheck: [:steep, :sorbet])
 multitask(lint: [:rubocop, :typecheck])
 
 multitask(:build) do
-  sh(*%w[gem build -- onebusaway-sdk.gemspec])
+  sh(*%w[gem build -- onebusaway_sdk.gemspec])
 end
 
 multitask(release: [:build]) do
-  sh(*%w[gem push], *FileList["onebusaway-sdk-*.gem"])
+  sh(*%w[gem push], *FileList["onebusaway_sdk-*.gem"])
 end
