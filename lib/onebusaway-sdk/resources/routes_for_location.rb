@@ -5,21 +5,15 @@ module OnebusawaySDK
     class RoutesForLocation
       # routes-for-location
       #
-      # @param params [OnebusawaySDK::Models::RoutesForLocationListParams, Hash{Symbol=>Object}] .
+      # @overload list(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
       #
-      #   @option params [Float] :lat
-      #
-      #   @option params [Float] :lon
-      #
-      #   @option params [Float] :lat_span
-      #
-      #   @option params [Float] :lon_span
-      #
-      #   @option params [String] :query
-      #
-      #   @option params [Float] :radius
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param lat [Float]
+      # @param lon [Float]
+      # @param lat_span [Float]
+      # @param lon_span [Float]
+      # @param query [String]
+      # @param radius [Float]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::RoutesForLocationListResponse]
       #

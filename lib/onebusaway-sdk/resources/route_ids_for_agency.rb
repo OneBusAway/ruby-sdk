@@ -5,11 +5,10 @@ module OnebusawaySDK
     class RouteIDsForAgency
       # Get route IDs for a specific agency
       #
-      # @param agency_id [String] ID of the agency
+      # @overload list(agency_id, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::RouteIDsForAgencyListParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param agency_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::RouteIDsForAgencyListResponse]
       #

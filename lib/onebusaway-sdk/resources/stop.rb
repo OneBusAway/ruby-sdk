@@ -5,11 +5,10 @@ module OnebusawaySDK
     class Stop
       # Get details of a specific stop
       #
-      # @param stop_id [String] ID of the stop
+      # @overload retrieve(stop_id, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::StopRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param stop_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::StopRetrieveResponse]
       #

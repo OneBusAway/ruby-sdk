@@ -5,22 +5,14 @@ module OnebusawaySDK
     class TripForVehicle
       # Retrieve trip for a specific vehicle
       #
-      # @param vehicle_id [String] ID of the vehicle to retrieve trip details for.
+      # @overload retrieve(vehicle_id, include_schedule: nil, include_status: nil, include_trip: nil, time: nil, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::TripForVehicleRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Boolean] :include_schedule Determines whether full <schedule/> element is included in the <tripDetails/>
-      #     section. Defaults to false.
-      #
-      #   @option params [Boolean] :include_status Determines whether the full <status/> element is included in the <tripDetails/>
-      #     section. Defaults to true.
-      #
-      #   @option params [Boolean] :include_trip Determines whether full <trip/> element is included in the <references/>
-      #     section. Defaults to false.
-      #
-      #   @option params [Integer] :time Time parameter to query the system at a specific time (optional).
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param vehicle_id [String]
+      # @param include_schedule [Boolean]
+      # @param include_status [Boolean]
+      # @param include_trip [Boolean]
+      # @param time [Integer]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::TripForVehicleRetrieveResponse]
       #

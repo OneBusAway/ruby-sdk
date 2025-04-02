@@ -5,18 +5,13 @@ module OnebusawaySDK
     class TripsForRoute
       # Search for active trips for a specific route.
       #
-      # @param route_id [String] The ID of the route.
+      # @overload list(route_id, include_schedule: nil, include_status: nil, time: nil, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::TripsForRouteListParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Boolean] :include_schedule Determine whether full schedule elements are included. Defaults to false.
-      #
-      #   @option params [Boolean] :include_status Determine whether full tripStatus elements with real-time information are
-      #     included. Defaults to false.
-      #
-      #   @option params [Integer] :time Query the system at a specific time. Useful for testing.
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param route_id [String]
+      # @param include_schedule [Boolean]
+      # @param include_status [Boolean]
+      # @param time [Integer]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::TripsForRouteListResponse]
       #
