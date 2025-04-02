@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::TripDetails#retrieve
     class TripDetailRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

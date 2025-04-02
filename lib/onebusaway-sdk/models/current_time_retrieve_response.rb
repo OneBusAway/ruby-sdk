@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::CurrentTime#retrieve
     class CurrentTimeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

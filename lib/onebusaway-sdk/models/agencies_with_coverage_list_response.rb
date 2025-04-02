@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::AgenciesWithCoverage#list
     class AgenciesWithCoverageListResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

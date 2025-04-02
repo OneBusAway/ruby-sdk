@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::Agency#retrieve
     class AgencyRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

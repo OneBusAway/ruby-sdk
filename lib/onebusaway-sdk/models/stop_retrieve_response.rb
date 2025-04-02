@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::Stop#retrieve
     class StopRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::StopsForAgency#list
     class StopsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute limit_exceeded
       #

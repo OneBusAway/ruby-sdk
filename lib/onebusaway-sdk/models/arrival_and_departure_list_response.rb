@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::ArrivalAndDeparture#list
     class ArrivalAndDepartureListResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #

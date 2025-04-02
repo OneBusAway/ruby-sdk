@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::RouteIDsForAgency#list
     class RouteIDsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #
