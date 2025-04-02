@@ -2,6 +2,7 @@
 
 module OnebusawaySDK
   module Models
+    # @see OnebusawaySDK::Resources::ScheduleForRoute#retrieve
     class ScheduleForRouteRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       # @!attribute data
       #
