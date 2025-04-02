@@ -544,6 +544,7 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+          # @see OnebusawaySDK::Models::References::Situation::Consequence#condition_details
           class ConditionDetails < OnebusawaySDK::BaseModel
             # @!attribute [r] diversion_path
             #
@@ -573,6 +574,7 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+            # @see OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails#diversion_path
             class DiversionPath < OnebusawaySDK::BaseModel
               # @!attribute [r] length
               #   Length of the diversion path.
@@ -616,6 +618,7 @@ module OnebusawaySDK
           end
         end
 
+        # @see OnebusawaySDK::Models::References::Situation#description
         class Description < OnebusawaySDK::BaseModel
           # @!attribute [r] lang
           #   Language of the description.
@@ -669,6 +672,8 @@ module OnebusawaySDK
         end
 
         # Reason for the service alert, taken from TPEG codes.
+        #
+        # @see OnebusawaySDK::Models::References::Situation#reason
         module Reason
           extend OnebusawaySDK::Enum
 
@@ -685,6 +690,7 @@ module OnebusawaySDK
           #   def self.values; end
         end
 
+        # @see OnebusawaySDK::Models::References::Situation#summary
         class Summary < OnebusawaySDK::BaseModel
           # @!attribute [r] lang
           #   Language of the summary.
@@ -715,6 +721,7 @@ module OnebusawaySDK
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
         end
 
+        # @see OnebusawaySDK::Models::References::Situation#url
         class URL < OnebusawaySDK::BaseModel
           # @!attribute [r] lang
           #   Language of the URL.

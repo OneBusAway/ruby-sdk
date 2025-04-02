@@ -34,6 +34,7 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+        # @see OnebusawaySDK::Models::BlockRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute id
           #
@@ -150,6 +151,7 @@ module OnebusawaySDK
 
                 # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+                # @see OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime#stop_time
                 class StopTime < OnebusawaySDK::BaseModel
                   # @!attribute arrival_time
                   #

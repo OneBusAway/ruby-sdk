@@ -34,6 +34,7 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+        # @see OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute date
           #

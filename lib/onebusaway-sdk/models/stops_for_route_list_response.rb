@@ -34,6 +34,7 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+        # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data#entry
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute [r] polylines
           #
@@ -170,6 +171,7 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+            # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping#name
             class Name < OnebusawaySDK::BaseModel
               # @!attribute [r] name
               #

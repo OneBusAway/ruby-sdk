@@ -14,6 +14,8 @@ module OnebusawaySDK
       #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
       #
       # @return [OnebusawaySDK::Models::SearchForStopListResponse]
+      #
+      # @see OnebusawaySDK::Models::SearchForStopListParams
       def list(params)
         parsed, options = OnebusawaySDK::Models::SearchForStopListParams.dump_request(params)
         @client.request(
@@ -25,6 +27,8 @@ module OnebusawaySDK
         )
       end
 
+      # @api private
+      #
       # @param client [OnebusawaySDK::Client]
       def initialize(client:)
         @client = client

@@ -36,6 +36,7 @@ module OnebusawaySDK
       )
       end
 
+      # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
