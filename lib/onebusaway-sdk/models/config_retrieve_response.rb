@@ -34,6 +34,7 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+        # @see OnebusawaySDK::Models::ConfigRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute [r] id
           #
@@ -93,6 +94,7 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+          # @see OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry#git_properties
           class GitProperties < OnebusawaySDK::BaseModel
             # @!attribute [r] git_branch
             #

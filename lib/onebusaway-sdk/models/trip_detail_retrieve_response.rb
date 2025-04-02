@@ -34,6 +34,7 @@ module OnebusawaySDK
 
         # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+        # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::BaseModel
           # @!attribute trip_id
           #
@@ -93,6 +94,7 @@ module OnebusawaySDK
 
           # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+          # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry#schedule
           class Schedule < OnebusawaySDK::BaseModel
             # @!attribute next_trip_id
             #
@@ -211,6 +213,7 @@ module OnebusawaySDK
             end
           end
 
+          # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry#status
           class Status < OnebusawaySDK::BaseModel
             # @!attribute active_trip_id
             #   Trip ID of the trip the vehicle is actively serving.
@@ -490,6 +493,7 @@ module OnebusawaySDK
 
             # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
 
+            # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status#last_known_location
             class LastKnownLocation < OnebusawaySDK::BaseModel
               # @!attribute [r] lat
               #   Latitude of the last known location of the transit vehicle.
@@ -522,6 +526,7 @@ module OnebusawaySDK
               # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
             end
 
+            # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status#position
             class Position < OnebusawaySDK::BaseModel
               # @!attribute [r] lat
               #   Latitude of the current position of the transit vehicle.

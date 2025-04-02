@@ -12,6 +12,8 @@ module OnebusawaySDK
       #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
       #
       # @return [OnebusawaySDK::Models::RouteRetrieveResponse]
+      #
+      # @see OnebusawaySDK::Models::RouteRetrieveParams
       def retrieve(route_id, params = {})
         @client.request(
           method: :get,
@@ -21,6 +23,8 @@ module OnebusawaySDK
         )
       end
 
+      # @api private
+      #
       # @param client [OnebusawaySDK::Client]
       def initialize(client:)
         @client = client

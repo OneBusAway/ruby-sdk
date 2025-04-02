@@ -22,6 +22,8 @@ module OnebusawaySDK
       #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
       #
       # @return [OnebusawaySDK::Models::ResponseWrapper]
+      #
+      # @see OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams
       def retrieve(stop_id, params = {})
         parsed, options = OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams.dump_request(params)
         @client.request(
@@ -33,6 +35,8 @@ module OnebusawaySDK
         )
       end
 
+      # @api private
+      #
       # @param client [OnebusawaySDK::Client]
       def initialize(client:)
         @client = client
