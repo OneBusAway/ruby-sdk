@@ -135,7 +135,7 @@ module OnebusawaySDK
         TaggedSymbol =
           T.type_alias { T.all(Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code) }
         OrSymbol =
-          T.type_alias { T.any(Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol) }
+          T.type_alias { T.any(Symbol, String, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol) }
 
         VEHICLE_NEVER_CAME =
           T.let(:vehicle_never_came, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
