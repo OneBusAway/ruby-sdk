@@ -15,7 +15,7 @@ module OnebusawaySDK
       def retrieve(stop_id, params = {})
         @client.request(
           method: :get,
-          path: ["api/where/stop/%0s.json", stop_id],
+          path: ["api/where/stop/%1$s.json", stop_id],
           model: OnebusawaySDK::Models::StopRetrieveResponse,
           options: params[:request_options]
         )

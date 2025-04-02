@@ -27,7 +27,7 @@ module OnebusawaySDK
         parsed, options = OnebusawaySDK::Models::TripForVehicleRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
-          path: ["api/where/trip-for-vehicle/%0s.json", vehicle_id],
+          path: ["api/where/trip-for-vehicle/%1$s.json", vehicle_id],
           query: parsed,
           model: OnebusawaySDK::Models::TripForVehicleRetrieveResponse,
           options: options

@@ -26,7 +26,7 @@ module OnebusawaySDK
         parsed, options = OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
-          path: ["api/where/report-problem-with-stop/%0s.json", stop_id],
+          path: ["api/where/report-problem-with-stop/%1$s.json", stop_id],
           query: parsed,
           model: OnebusawaySDK::Models::ResponseWrapper,
           options: options

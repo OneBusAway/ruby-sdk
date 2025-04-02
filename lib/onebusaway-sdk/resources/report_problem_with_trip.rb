@@ -36,7 +36,7 @@ module OnebusawaySDK
         parsed, options = OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
-          path: ["api/where/report-problem-with-trip/%0s.json", trip_id],
+          path: ["api/where/report-problem-with-trip/%1$s.json", trip_id],
           query: parsed,
           model: OnebusawaySDK::Models::ResponseWrapper,
           options: options

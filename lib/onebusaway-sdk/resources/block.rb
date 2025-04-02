@@ -15,7 +15,7 @@ module OnebusawaySDK
       def retrieve(block_id, params = {})
         @client.request(
           method: :get,
-          path: ["api/where/block/%0s.json", block_id],
+          path: ["api/where/block/%1$s.json", block_id],
           model: OnebusawaySDK::Models::BlockRetrieveResponse,
           options: params[:request_options]
         )
