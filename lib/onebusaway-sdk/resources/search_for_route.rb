@@ -5,13 +5,11 @@ module OnebusawaySDK
     class SearchForRoute
       # Search for a route based on its name.
       #
-      # @param params [OnebusawaySDK::Models::SearchForRouteListParams, Hash{Symbol=>Object}] .
+      # @overload list(input:, max_count: nil, request_options: {})
       #
-      #   @option params [String] :input The string to search for.
-      #
-      #   @option params [Integer] :max_count The max number of results to return. Defaults to 20.
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param input [String]
+      # @param max_count [Integer]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::SearchForRouteListResponse]
       #

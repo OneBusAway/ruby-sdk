@@ -5,9 +5,9 @@ module OnebusawaySDK
     class Config
       # config
       #
-      # @param params [OnebusawaySDK::Models::ConfigRetrieveParams, Hash{Symbol=>Object}] .
+      # @overload retrieve(request_options: {})
       #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ConfigRetrieveResponse]
       #

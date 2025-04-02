@@ -5,15 +5,12 @@ module OnebusawaySDK
     class StopsForRoute
       # Get stops for a specific route
       #
-      # @param route_id [String] ID of the route
+      # @overload list(route_id, include_polylines: nil, time: nil, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::StopsForRouteListParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Boolean] :include_polylines Include polyline elements in the response (default true)
-      #
-      #   @option params [String] :time Specify service date (YYYY-MM-DD or epoch) (default today)
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param route_id [String]
+      # @param include_polylines [Boolean]
+      # @param time [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::StopsForRouteListResponse]
       #

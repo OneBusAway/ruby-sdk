@@ -5,14 +5,11 @@ module OnebusawaySDK
     class ScheduleForStop
       # Get schedule for a specific stop
       #
-      # @param stop_id [String] The stop id to request the schedule for, encoded directly in the URL
+      # @overload retrieve(stop_id, date: nil, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::ScheduleForStopRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Date] :date The date for which you want to request a schedule in the format YYYY-MM-DD
-      #     (optional, defaults to the current date)
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param stop_id [String]
+      # @param date [Date]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ScheduleForStopRetrieveResponse]
       #

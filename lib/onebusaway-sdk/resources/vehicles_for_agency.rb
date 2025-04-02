@@ -5,13 +5,11 @@ module OnebusawaySDK
     class VehiclesForAgency
       # Get vehicles for a specific agency
       #
-      # @param agency_id [String] ID of the agency
+      # @overload list(agency_id, time: nil, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::VehiclesForAgencyListParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [String] :time Specific time for querying the status (timestamp format)
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param agency_id [String]
+      # @param time [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse]
       #

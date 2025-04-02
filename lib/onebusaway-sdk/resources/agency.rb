@@ -5,11 +5,10 @@ module OnebusawaySDK
     class Agency
       # Retrieve information for a specific transit agency identified by its unique ID.
       #
-      # @param agency_id [String] The ID of the transit agency.
+      # @overload retrieve(agency_id, request_options: {})
       #
-      # @param params [OnebusawaySDK::Models::AgencyRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param agency_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::AgencyRetrieveResponse]
       #

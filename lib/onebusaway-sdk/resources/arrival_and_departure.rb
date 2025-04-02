@@ -5,21 +5,15 @@ module OnebusawaySDK
     class ArrivalAndDeparture
       # arrival-and-departure-for-stop
       #
+      # @overload retrieve(stop_id, service_date:, trip_id:, stop_sequence: nil, time: nil, vehicle_id: nil, request_options: {})
+      #
       # @param stop_id [String]
-      #
-      # @param params [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Integer] :service_date
-      #
-      #   @option params [String] :trip_id
-      #
-      #   @option params [Integer] :stop_sequence
-      #
-      #   @option params [Integer] :time
-      #
-      #   @option params [String] :vehicle_id
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param service_date [Integer]
+      # @param trip_id [String]
+      # @param stop_sequence [Integer]
+      # @param time [Integer]
+      # @param vehicle_id [String]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse]
       #
@@ -37,17 +31,13 @@ module OnebusawaySDK
 
       # arrivals-and-departures-for-stop
       #
+      # @overload list(stop_id, minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
+      #
       # @param stop_id [String]
-      #
-      # @param params [OnebusawaySDK::Models::ArrivalAndDepartureListParams, Hash{Symbol=>Object}] .
-      #
-      #   @option params [Integer] :minutes_after Include vehicles arriving or departing in the next n minutes.
-      #
-      #   @option params [Integer] :minutes_before Include vehicles having arrived or departed in the previous n minutes.
-      #
-      #   @option params [Time] :time The specific time for querying the system status.
-      #
-      #   @option params [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :request_options
+      # @param minutes_after [Integer]
+      # @param minutes_before [Integer]
+      # @param time [Time]
+      # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ArrivalAndDepartureListResponse]
       #
