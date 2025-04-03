@@ -92,7 +92,7 @@ module OnebusawaySDK
               URI.join(url, response_headers["location"])
             rescue ArgumentError
               message = "Server responded with status #{status} but no valid location header."
-              raise OnebusawaySDK::APIConnectionError.new(url: url, message: message)
+              raise OnebusawaySDK::Errors::APIConnectionError.new(url: url, message: message)
             end
 
           request = {**request, url: location}
@@ -100,7 +100,7 @@ module OnebusawaySDK
           case [url.scheme, location.scheme]
           in ["https", "http"]
             message = "Tried to redirect to a insecure URL"
-            raise OnebusawaySDK::APIConnectionError.new(url: url, message: message)
+            raise OnebusawaySDK::Errors::APIConnectionError.new(url: url, message: message)
           else
             nil
           end
@@ -129,13 +129,13 @@ module OnebusawaySDK
 
         # @api private
         #
-        # @param status [Integer, OnebusawaySDK::APIConnectionError]
+        # @param status [Integer, OnebusawaySDK::Errors::APIConnectionError]
         # @param stream [Enumerable, nil]
         def reap_connection!(status, stream:)
           case status
           in (..199) | (300..499)
             stream&.each { next }
-          in OnebusawaySDK::APIConnectionError | (500..)
+          in OnebusawaySDK::Errors::APIConnectionError | (500..)
             OnebusawaySDK::Util.close_fused!(stream)
           else
           end
@@ -325,7 +325,7 @@ module OnebusawaySDK
       #
       # @param send_retry_header [Boolean]
       #
-      # @raise [OnebusawaySDK::APIError]
+      # @raise [OnebusawaySDK::Errors::APIError]
       # @return [Array(Integer, Net::HTTPResponse, Enumerable)]
       private def send_request(request, redirect_count:, retry_count:, send_retry_header:)
         url, headers, max_retries, timeout = request.fetch_values(:url, :headers, :max_retries, :timeout)
@@ -348,7 +348,7 @@ module OnebusawaySDK
           self.class.reap_connection!(status, stream: stream)
 
           message = "Failed to complete the request within #{self.class::MAX_REDIRECTS} redirects."
-          raise OnebusawaySDK::APIConnectionError.new(url: url, message: message)
+          raise OnebusawaySDK::Errors::APIConnectionError.new(url: url, message: message)
         in 300..399
           self.class.reap_connection!(status, stream: stream)
 
@@ -368,14 +368,14 @@ module OnebusawaySDK
             self.class.reap_connection!(status, stream: stream)
           end
 
-          raise OnebusawaySDK::APIStatusError.for(
+          raise OnebusawaySDK::Errors::APIStatusError.for(
             url: url,
             status: status,
             body: decoded,
             request: nil,
             response: response
           )
-        in (400..) | OnebusawaySDK::APIConnectionError
+        in (400..) | OnebusawaySDK::Errors::APIConnectionError
           self.class.reap_connection!(status, stream: stream)
 
           delay = retry_delay(response, retry_count: retry_count)
@@ -415,7 +415,7 @@ module OnebusawaySDK
       #
       #   @option req [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil] :options
       #
-      # @raise [OnebusawaySDK::APIError]
+      # @raise [OnebusawaySDK::Errors::APIError]
       # @return [Object]
       def request(req)
         self.class.validate!(req)

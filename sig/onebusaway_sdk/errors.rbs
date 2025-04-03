@@ -1,99 +1,129 @@
 module OnebusawaySDK
-  class Error < StandardError
-    attr_accessor cause: StandardError?
+  module Errors
+    class Error < StandardError
+      attr_accessor cause: StandardError?
+    end
+
+    class ConversionError < OnebusawaySDK::Errors::Error
+    end
+
+    class APIError < OnebusawaySDK::Errors::Error
+      attr_accessor url: URI::Generic
+
+      attr_accessor status: Integer?
+
+      attr_accessor body: top?
+
+      def initialize: (
+        url: URI::Generic,
+        ?status: Integer?,
+        ?body: Object?,
+        ?request: nil,
+        ?response: nil,
+        ?message: String?
+      ) -> void
+    end
+
+    class APIConnectionError < OnebusawaySDK::Errors::APIError
+      def initialize: (
+        url: URI::Generic,
+        ?status: nil,
+        ?body: nil,
+        ?request: nil,
+        ?response: nil,
+        ?message: String?
+      ) -> void
+    end
+
+    class APITimeoutError < OnebusawaySDK::Errors::APIConnectionError
+      def initialize: (
+        url: URI::Generic,
+        ?status: nil,
+        ?body: nil,
+        ?request: nil,
+        ?response: nil,
+        ?message: String?
+      ) -> void
+    end
+
+    class APIStatusError < OnebusawaySDK::Errors::APIError
+      def self.for: (
+        url: URI::Generic,
+        status: Integer,
+        body: Object?,
+        request: nil,
+        response: nil,
+        ?message: String?
+      ) -> instance
+
+      def initialize: (
+        url: URI::Generic,
+        status: Integer,
+        body: Object?,
+        request: nil,
+        response: nil,
+        ?message: String?
+      ) -> void
+    end
+
+    class BadRequestError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: 400
+    end
+
+    class AuthenticationError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: 401
+    end
+
+    class PermissionDeniedError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: 403
+    end
+
+    class NotFoundError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: 404
+    end
+
+    class ConflictError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: 409
+    end
+
+    class UnprocessableEntityError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: 422
+    end
+
+    class RateLimitError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: 429
+    end
+
+    class InternalServerError < OnebusawaySDK::Errors::APIStatusError
+      HTTP_STATUS: Range[Integer]
+    end
   end
 
-  class ConversionError < OnebusawaySDK::Error
-  end
+  class Error = OnebusawaySDK::Errors::Error
 
-  class APIError < OnebusawaySDK::Error
-    attr_accessor url: URI::Generic
+  class ConversionError = OnebusawaySDK::Errors::ConversionError
 
-    attr_accessor status: Integer?
+  class APIError = OnebusawaySDK::Errors::APIError
 
-    attr_accessor body: top?
+  class APIStatusError = OnebusawaySDK::Errors::APIStatusError
 
-    def initialize: (
-      url: URI::Generic,
-      ?status: Integer?,
-      ?body: Object?,
-      ?request: nil,
-      ?response: nil,
-      ?message: String?
-    ) -> void
-  end
+  class APIConnectionError = OnebusawaySDK::Errors::APIConnectionError
 
-  class APIConnectionError < OnebusawaySDK::APIError
-    def initialize: (
-      url: URI::Generic,
-      ?status: nil,
-      ?body: nil,
-      ?request: nil,
-      ?response: nil,
-      ?message: String?
-    ) -> void
-  end
+  class APITimeoutError = OnebusawaySDK::Errors::APITimeoutError
 
-  class APITimeoutError < OnebusawaySDK::APIConnectionError
-    def initialize: (
-      url: URI::Generic,
-      ?status: nil,
-      ?body: nil,
-      ?request: nil,
-      ?response: nil,
-      ?message: String?
-    ) -> void
-  end
+  class BadRequestError = OnebusawaySDK::Errors::BadRequestError
 
-  class APIStatusError < OnebusawaySDK::APIError
-    def self.for: (
-      url: URI::Generic,
-      status: Integer,
-      body: Object?,
-      request: nil,
-      response: nil,
-      ?message: String?
-    ) -> instance
+  class AuthenticationError = OnebusawaySDK::Errors::AuthenticationError
 
-    def initialize: (
-      url: URI::Generic,
-      status: Integer,
-      body: Object?,
-      request: nil,
-      response: nil,
-      ?message: String?
-    ) -> void
-  end
+  class PermissionDeniedError = OnebusawaySDK::Errors::PermissionDeniedError
 
-  class BadRequestError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: 400
-  end
+  class NotFoundError = OnebusawaySDK::Errors::NotFoundError
 
-  class AuthenticationError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: 401
-  end
+  class ConflictError = OnebusawaySDK::Errors::ConflictError
 
-  class PermissionDeniedError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: 403
-  end
+  class UnprocessableEntityError = OnebusawaySDK::Errors::UnprocessableEntityError
 
-  class NotFoundError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: 404
-  end
+  class RateLimitError = OnebusawaySDK::Errors::RateLimitError
 
-  class ConflictError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: 409
-  end
-
-  class UnprocessableEntityError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: 422
-  end
-
-  class RateLimitError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: 429
-  end
-
-  class InternalServerError < OnebusawaySDK::APIStatusError
-    HTTP_STATUS: Range[Integer]
-  end
+  class InternalServerError = OnebusawaySDK::Errors::InternalServerError
 end
