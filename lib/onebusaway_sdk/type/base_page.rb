@@ -29,7 +29,7 @@ module OnebusawaySDK
       # @return [Boolean]
       def next_page? = (raise NotImplementedError)
 
-      # @raise [OnebusawaySDK::APIError]
+      # @raise [OnebusawaySDK::Errors::APIError]
       # @return [OnebusawaySDK::Type::BasePage]
       def next_page = (raise NotImplementedError)
 

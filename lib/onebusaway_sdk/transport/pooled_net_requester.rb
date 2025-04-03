@@ -153,7 +153,7 @@ module OnebusawaySDK
             end
           end
         rescue Timeout::Error
-          raise OnebusawaySDK::APITimeoutError
+          raise OnebusawaySDK::Errors::APITimeoutError
         end
 
         conn, _, response = enum.next
