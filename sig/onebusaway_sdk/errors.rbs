@@ -99,45 +99,31 @@ module OnebusawaySDK
     end
   end
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  Error: OnebusawaySDK::Errors::Error
+  class Error = OnebusawaySDK::Errors::Error
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  ConversionError: OnebusawaySDK::Errors::ConversionError
+  class ConversionError = OnebusawaySDK::Errors::ConversionError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  APIError: OnebusawaySDK::Errors::APIError
+  class APIError = OnebusawaySDK::Errors::APIError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  APIStatusError: OnebusawaySDK::Errors::APIStatusError
+  class APIStatusError = OnebusawaySDK::Errors::APIStatusError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  APIConnectionError: OnebusawaySDK::Errors::APIConnectionError
+  class APIConnectionError = OnebusawaySDK::Errors::APIConnectionError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  APITimeoutError: OnebusawaySDK::Errors::APITimeoutError
+  class APITimeoutError = OnebusawaySDK::Errors::APITimeoutError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  BadRequestError: OnebusawaySDK::Errors::BadRequestError
+  class BadRequestError = OnebusawaySDK::Errors::BadRequestError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  AuthenticationError: OnebusawaySDK::Errors::AuthenticationError
+  class AuthenticationError = OnebusawaySDK::Errors::AuthenticationError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  PermissionDeniedError: OnebusawaySDK::Errors::PermissionDeniedError
+  class PermissionDeniedError = OnebusawaySDK::Errors::PermissionDeniedError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  NotFoundError: OnebusawaySDK::Errors::NotFoundError
+  class NotFoundError = OnebusawaySDK::Errors::NotFoundError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  ConflictError: OnebusawaySDK::Errors::ConflictError
+  class ConflictError = OnebusawaySDK::Errors::ConflictError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  UnprocessableEntityError: OnebusawaySDK::Errors::UnprocessableEntityError
+  class UnprocessableEntityError = OnebusawaySDK::Errors::UnprocessableEntityError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  RateLimitError: OnebusawaySDK::Errors::RateLimitError
+  class RateLimitError = OnebusawaySDK::Errors::RateLimitError
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  InternalServerError: OnebusawaySDK::Errors::InternalServerError
+  class InternalServerError = OnebusawaySDK::Errors::InternalServerError
 end
