@@ -1,29 +1,21 @@
 module OnebusawaySDK
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  Unknown: OnebusawaySDK::Type::Unknown
+  class Unknown = OnebusawaySDK::Type::Unknown
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  BooleanModel: OnebusawaySDK::Type::BooleanModel
+  class BooleanModel = OnebusawaySDK::Type::BooleanModel
 
-  # module 36e22138-d773-495d-b5c3-c470f2636c91
-  Enum: OnebusawaySDK::Type::Enum
+  module Enum = OnebusawaySDK::Type::Enum
 
-  # module 36e22138-d773-495d-b5c3-c470f2636c91
-  Union: OnebusawaySDK::Type::Union
+  module Union = OnebusawaySDK::Type::Union
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  ArrayOf: OnebusawaySDK::Type::ArrayOf
+  class ArrayOf = OnebusawaySDK::Type::ArrayOf
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  HashOf: OnebusawaySDK::Type::HashOf
+  class HashOf = OnebusawaySDK::Type::HashOf
 
-  # class 36e22138-d773-495d-b5c3-c470f2636c91
-  BaseModel: OnebusawaySDK::Type::BaseModel
+  class BaseModel = OnebusawaySDK::Type::BaseModel
 
   type request_parameters = OnebusawaySDK::Type::request_parameters
 
-  # module 36e22138-d773-495d-b5c3-c470f2636c91
-  RequestParameters: OnebusawaySDK::Type::RequestParameters
+  module RequestParameters = OnebusawaySDK::Type::RequestParameters
 
   module Type
   end
