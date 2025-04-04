@@ -9,11 +9,11 @@ module OnebusawaySDK
         query: String,
         radius: Float
       }
-      & OnebusawaySDK::request_parameters
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class StopsForLocationListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       attr_accessor lat: Float
 

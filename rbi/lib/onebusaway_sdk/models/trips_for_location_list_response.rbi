@@ -8,7 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::TripsForLocationListResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::TripsForLocationListResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .void
       end
@@ -16,7 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::TripsForLocationListResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::TripsForLocationListResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -38,7 +38,7 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
         attr_writer :references
 
         # Indicates if the search location is out of range
@@ -51,8 +51,13 @@ module OnebusawaySDK
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[T.any(OnebusawaySDK::Models::TripsForLocationListResponse::Data::List, OnebusawaySDK::Util::AnyHash)],
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash),
+            list: T::Array[
+            T.any(
+              OnebusawaySDK::Models::TripsForLocationListResponse::Data::List,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
+            ],
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash),
             out_of_range: T::Boolean
           )
             .returns(T.attached_class)
@@ -82,7 +87,7 @@ module OnebusawaySDK
             params(
               schedule: T.any(
                 OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
             )
               .void
@@ -96,7 +101,7 @@ module OnebusawaySDK
             params(
               status: T.any(
                 OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
             )
               .void
@@ -125,11 +130,11 @@ module OnebusawaySDK
             params(
               schedule: T.any(
                 OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               ),
               status: T.any(
                 OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               ),
               trip_id: String,
               frequency: T.nilable(String),
@@ -180,7 +185,7 @@ module OnebusawaySDK
                 stop_times: T::Array[
                 T.any(
                   OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
                 ],
                 time_zone: String,
@@ -376,7 +381,7 @@ module OnebusawaySDK
               params(
                 last_known_location: T.any(
                   OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
               )
                 .void
@@ -420,7 +425,7 @@ module OnebusawaySDK
               params(
                 position: T.any(
                   OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::Position,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
               )
                 .void
@@ -471,7 +476,7 @@ module OnebusawaySDK
                 frequency: String,
                 last_known_location: T.any(
                   OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 ),
                 last_known_orientation: Float,
                 next_stop: String,
@@ -479,7 +484,7 @@ module OnebusawaySDK
                 orientation: Float,
                 position: T.any(
                   OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::Position,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 ),
                 scheduled_distance_along_trip: Float,
                 situation_ids: T::Array[String],

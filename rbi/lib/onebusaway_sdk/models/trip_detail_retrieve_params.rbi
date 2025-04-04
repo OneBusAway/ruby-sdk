@@ -3,8 +3,8 @@
 module OnebusawaySDK
   module Models
     class TripDetailRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # Whether to include the full schedule element in the tripDetails section
       #   (defaults to true).
@@ -51,7 +51,7 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           service_date: Integer,
           time: Integer,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

@@ -3,8 +3,8 @@
 module OnebusawaySDK
   module Models
     class ArrivalAndDepartureListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # Include vehicles arriving or departing in the next n minutes.
       sig { returns(T.nilable(Integer)) }
@@ -32,7 +32,7 @@ module OnebusawaySDK
           minutes_after: Integer,
           minutes_before: Integer,
           time: Time,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

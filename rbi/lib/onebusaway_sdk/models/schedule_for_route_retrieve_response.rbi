@@ -8,7 +8,10 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(
+            OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data,
+            OnebusawaySDK::Internal::Util::AnyHash
+          )
         )
           .void
       end
@@ -16,7 +19,10 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(
+            OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data,
+            OnebusawaySDK::Internal::Util::AnyHash
+          )
         )
           .returns(T.attached_class)
       end
@@ -33,7 +39,10 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
           )
             .void
         end
@@ -41,7 +50,10 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
           )
             .returns(T.attached_class)
         end
@@ -79,19 +91,19 @@ module OnebusawaySDK
               stops: T::Array[
               T.any(
                 OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
               ],
               stop_trip_groupings: T::Array[
               T.any(
                 OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
               ],
               trips: T::Array[
               T.any(
                 OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
               ]
             )
@@ -242,7 +254,7 @@ module OnebusawaySDK
                 trips_with_stop_times: T::Array[
                 T.any(
                   OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
                 ]
               )
@@ -259,7 +271,7 @@ module OnebusawaySDK
                 trips_with_stop_times: T::Array[
                 T.any(
                   OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
                 ]
               )
@@ -301,7 +313,7 @@ module OnebusawaySDK
                   stop_times: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime,
-                    OnebusawaySDK::Util::AnyHash
+                    OnebusawaySDK::Internal::Util::AnyHash
                   )
                   ],
                   trip_id: String

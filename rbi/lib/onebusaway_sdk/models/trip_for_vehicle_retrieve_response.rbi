@@ -8,7 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .void
       end
@@ -16,7 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -33,7 +33,10 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
           )
             .void
         end
@@ -42,13 +45,16 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            ),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -81,7 +87,7 @@ module OnebusawaySDK
             params(
               schedule: T.any(
                 OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
             )
               .void
@@ -107,7 +113,7 @@ module OnebusawaySDK
             params(
               status: T.any(
                 OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
             )
               .void
@@ -120,13 +126,13 @@ module OnebusawaySDK
               frequency: T.nilable(String),
               schedule: T.any(
                 OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               ),
               service_date: Integer,
               situation_ids: T::Array[String],
               status: T.any(
                 OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
             )
               .returns(T.attached_class)
@@ -180,7 +186,7 @@ module OnebusawaySDK
                 stop_times: T::Array[
                 T.any(
                   OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::StopTime,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
                 ],
                 time_zone: String,
@@ -376,7 +382,7 @@ module OnebusawaySDK
               params(
                 last_known_location: T.any(
                   OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
               )
                 .void
@@ -420,7 +426,7 @@ module OnebusawaySDK
               params(
                 position: T.any(
                   OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
               )
                 .void
@@ -471,7 +477,7 @@ module OnebusawaySDK
                 frequency: String,
                 last_known_location: T.any(
                   OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 ),
                 last_known_orientation: Float,
                 next_stop: String,
@@ -479,7 +485,7 @@ module OnebusawaySDK
                 orientation: Float,
                 position: T.any(
                   OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::Position,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 ),
                 scheduled_distance_along_trip: Float,
                 situation_ids: T::Array[String],

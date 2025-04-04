@@ -1,11 +1,12 @@
 module OnebusawaySDK
   module Models
     type search_for_stop_list_params =
-      { input: String, max_count: Integer } & OnebusawaySDK::request_parameters
+      { input: String, max_count: Integer }
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class SearchForStopListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       attr_accessor input: String
 

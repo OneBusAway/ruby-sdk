@@ -13,11 +13,11 @@ module OnebusawaySDK
         user_vehicle_number: String,
         vehicle_id: String
       }
-      & OnebusawaySDK::request_parameters
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class ReportProblemWithTripRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       attr_reader code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code?
 

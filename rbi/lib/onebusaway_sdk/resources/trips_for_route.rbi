@@ -10,7 +10,12 @@ module OnebusawaySDK
           include_schedule: T::Boolean,
           include_status: T::Boolean,
           time: Integer,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
+          request_options: T.nilable(
+            T.any(
+              OnebusawaySDK::RequestOptions,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
+          )
         )
           .returns(OnebusawaySDK::Models::TripsForRouteListResponse)
       end

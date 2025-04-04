@@ -3,8 +3,8 @@
 module OnebusawaySDK
   module Models
     class TripsForRouteListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # Determine whether full schedule elements are included. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
@@ -33,7 +33,7 @@ module OnebusawaySDK
           include_schedule: T::Boolean,
           include_status: T::Boolean,
           time: Integer,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

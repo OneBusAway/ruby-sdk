@@ -6,11 +6,18 @@ module OnebusawaySDK
       sig { returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data) }
       attr_reader :data
 
-      sig { params(data: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)).void }
+      sig do
+        params(
+          data: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+        )
+          .void
+      end
       attr_writer :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+        params(
+          data: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+        )
           .returns(T.attached_class)
       end
       def self.new(data:)
@@ -26,7 +33,7 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .void
         end
@@ -38,14 +45,14 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
+            entry: T.any(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash),
             limit_exceeded: T::Boolean,
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .returns(T.attached_class)
         end

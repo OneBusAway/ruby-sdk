@@ -1,10 +1,11 @@
 module OnebusawaySDK
   module Models
-    type route_retrieve_params = {  } & OnebusawaySDK::request_parameters
+    type route_retrieve_params =
+      {  } & OnebusawaySDK::Internal::Type::request_parameters
 
     class RouteRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       def initialize: (?request_options: OnebusawaySDK::request_opts) -> void
 
