@@ -3,11 +3,11 @@
 module OnebusawaySDK
   module Models
     class StopsForAgencyListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       sig do
-        params(request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
+        params(request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash))
           .returns(T.attached_class)
       end
       def self.new(request_options: {})

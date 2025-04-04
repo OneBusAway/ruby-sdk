@@ -8,7 +8,10 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(
+            OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data,
+            OnebusawaySDK::Internal::Util::AnyHash
+          )
         )
           .void
       end
@@ -16,7 +19,10 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(
+            OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data,
+            OnebusawaySDK::Internal::Util::AnyHash
+          )
         )
           .returns(T.attached_class)
       end
@@ -33,7 +39,10 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
           )
             .void
         end
@@ -42,13 +51,16 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            ),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -84,7 +96,7 @@ module OnebusawaySDK
               stop_route_schedules: T::Array[
               T.any(
                 OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
               ]
             )
@@ -125,7 +137,7 @@ module OnebusawaySDK
                 stop_route_direction_schedules: T::Array[
                 T.any(
                   OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
                 ]
               )
@@ -177,7 +189,7 @@ module OnebusawaySDK
                   schedule_frequencies: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
-                    OnebusawaySDK::Util::AnyHash
+                    OnebusawaySDK::Internal::Util::AnyHash
                   )
                   ]
                 )
@@ -190,14 +202,14 @@ module OnebusawaySDK
                   schedule_stop_times: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime,
-                    OnebusawaySDK::Util::AnyHash
+                    OnebusawaySDK::Internal::Util::AnyHash
                   )
                   ],
                   trip_headsign: String,
                   schedule_frequencies: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
-                    OnebusawaySDK::Util::AnyHash
+                    OnebusawaySDK::Internal::Util::AnyHash
                   )
                   ]
                 )

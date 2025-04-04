@@ -3,8 +3,8 @@
 module OnebusawaySDK
   module Models
     class StopsForLocationListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       sig { returns(Float) }
       attr_accessor :lat
@@ -48,7 +48,7 @@ module OnebusawaySDK
           lon_span: Float,
           query: String,
           radius: Float,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end

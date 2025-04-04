@@ -6,11 +6,18 @@ module OnebusawaySDK
       sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data) }
       attr_reader :data
 
-      sig { params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)).void }
+      sig do
+        params(
+          data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+        )
+          .void
+      end
       attr_writer :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash))
+        params(
+          data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+        )
           .returns(T.attached_class)
       end
       def self.new(data:)
@@ -26,7 +33,7 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .void
         end
@@ -35,13 +42,13 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -73,7 +80,7 @@ module OnebusawaySDK
               configurations: T::Array[
               T.any(
                 OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
               ]
             )
@@ -113,7 +120,7 @@ module OnebusawaySDK
                 trips: T::Array[
                 T.any(
                   OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
                 ],
                 inactive_service_ids: T::Array[String]
@@ -159,7 +166,7 @@ module OnebusawaySDK
                   block_stop_times: T::Array[
                   T.any(
                     OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime,
-                    OnebusawaySDK::Util::AnyHash
+                    OnebusawaySDK::Internal::Util::AnyHash
                   )
                   ],
                   distance_along_block: Float,
@@ -205,7 +212,7 @@ module OnebusawaySDK
                   params(
                     stop_time: T.any(
                       OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
-                      OnebusawaySDK::Util::AnyHash
+                      OnebusawaySDK::Internal::Util::AnyHash
                     )
                   )
                     .void
@@ -219,7 +226,7 @@ module OnebusawaySDK
                     distance_along_block: Float,
                     stop_time: T.any(
                       OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
-                      OnebusawaySDK::Util::AnyHash
+                      OnebusawaySDK::Internal::Util::AnyHash
                     )
                   )
                     .returns(T.attached_class)

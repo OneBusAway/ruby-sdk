@@ -3,8 +3,8 @@
 module OnebusawaySDK
   module Models
     class ArrivalAndDepartureRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       sig { returns(Integer) }
       attr_accessor :service_date
@@ -37,7 +37,7 @@ module OnebusawaySDK
           stop_sequence: Integer,
           time: Integer,
           vehicle_id: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end
