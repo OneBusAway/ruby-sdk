@@ -3,7 +3,7 @@ module OnebusawaySDK
     type vehicles_for_agency_list_params =
       { time: String } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class VehiclesForAgencyListParams < OnebusawaySDK::BaseModel
+    class VehiclesForAgencyListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

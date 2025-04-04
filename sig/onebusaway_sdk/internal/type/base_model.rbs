@@ -7,10 +7,10 @@ module OnebusawaySDK
         type known_field =
           { mode: (:coerce | :dump)?, required: bool, nilable: bool }
 
-        def self.known_fields: -> ::Hash[Symbol, (OnebusawaySDK::BaseModel::known_field
+        def self.known_fields: -> ::Hash[Symbol, (OnebusawaySDK::Internal::Type::BaseModel::known_field
         & { type_fn: (^-> OnebusawaySDK::Internal::Type::Converter::input) })]
 
-        def self.fields: -> ::Hash[Symbol, (OnebusawaySDK::BaseModel::known_field
+        def self.fields: -> ::Hash[Symbol, (OnebusawaySDK::Internal::Type::BaseModel::known_field
         & { type: OnebusawaySDK::Internal::Type::Converter::input })]
 
         private def self.add_field: (
@@ -52,7 +52,9 @@ module OnebusawaySDK
         def ==: (top other) -> bool
 
         def self.coerce: (
-          OnebusawaySDK::BaseModel | ::Hash[top, top] | top value,
+          OnebusawaySDK::Internal::Type::BaseModel
+          | ::Hash[top, top]
+          | top value,
           state: OnebusawaySDK::Internal::Type::Converter::state
         ) -> (instance | top)
 

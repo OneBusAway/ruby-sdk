@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::StopsForLocation#list
-    class StopsForLocationListParams < OnebusawaySDK::BaseModel
+    class StopsForLocationListParams < OnebusawaySDK::Internal::Type::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
@@ -69,7 +69,7 @@ module OnebusawaySDK
       #   #
       #   def initialize(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {}, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
     end
   end
 end

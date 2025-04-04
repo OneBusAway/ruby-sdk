@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry]
@@ -33,10 +33,10 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, references:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::StopRetrieveResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute id
           #
           #   @return [String]
@@ -65,12 +65,14 @@ module OnebusawaySDK
           # @!attribute route_ids
           #
           #   @return [Array<String>]
-          required :route_ids, OnebusawaySDK::ArrayOf[String], api_name: :routeIds
+          required :route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :routeIds
 
           # @!attribute static_route_ids
           #
           #   @return [Array<String>]
-          required :static_route_ids, OnebusawaySDK::ArrayOf[String], api_name: :staticRouteIds
+          required :static_route_ids,
+                   OnebusawaySDK::Internal::Type::ArrayOf[String],
+                   api_name: :staticRouteIds
 
           # @!attribute [r] code
           #
@@ -138,7 +140,7 @@ module OnebusawaySDK
           #     super
           #   end
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
       end
     end

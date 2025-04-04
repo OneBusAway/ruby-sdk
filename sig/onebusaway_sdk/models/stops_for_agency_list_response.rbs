@@ -53,7 +53,7 @@ module OnebusawaySDK
           wheelchair_boarding: String
         }
 
-      class List < OnebusawaySDK::BaseModel
+      class List < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor lat: Float

@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::SearchForStop#list
-    class SearchForStopListParams < OnebusawaySDK::BaseModel
+    class SearchForStopListParams < OnebusawaySDK::Internal::Type::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
@@ -31,7 +31,7 @@ module OnebusawaySDK
       #   #
       #   def initialize(input:, max_count: nil, request_options: {}, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
     end
   end
 end

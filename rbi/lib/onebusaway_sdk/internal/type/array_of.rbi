@@ -17,11 +17,11 @@ module OnebusawaySDK
         sig(:final) do
           params(
             type_info: T.any(
-              OnebusawaySDK::Internal::Util::AnyHash,
+              OnebusawaySDK::Internal::AnyHash,
               T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
               OnebusawaySDK::Internal::Type::Converter::Input
             ),
-            spec: OnebusawaySDK::Internal::Util::AnyHash
+            spec: OnebusawaySDK::Internal::AnyHash
           )
             .returns(T.attached_class)
         end
@@ -71,11 +71,11 @@ module OnebusawaySDK
         sig(:final) do
           params(
             type_info: T.any(
-              OnebusawaySDK::Internal::Util::AnyHash,
+              OnebusawaySDK::Internal::AnyHash,
               T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
               OnebusawaySDK::Internal::Type::Converter::Input
             ),
-            spec: OnebusawaySDK::Internal::Util::AnyHash
+            spec: OnebusawaySDK::Internal::AnyHash
           )
             .void
         end

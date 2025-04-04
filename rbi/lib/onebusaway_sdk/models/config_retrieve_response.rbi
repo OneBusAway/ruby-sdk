@@ -7,17 +7,13 @@ module OnebusawaySDK
       attr_reader :data
 
       sig do
-        params(
-          data: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
-        )
+        params(data: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
           .void
       end
       attr_writer :data
 
       sig do
-        params(
-          data: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
-        )
+        params(data: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
           .returns(T.attached_class)
       end
       def self.new(data:)
@@ -27,13 +23,13 @@ module OnebusawaySDK
       def to_hash
       end
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry) }
         attr_reader :entry
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash)
           )
             .void
         end
@@ -42,13 +38,13 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -67,7 +63,7 @@ module OnebusawaySDK
         def to_hash
         end
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(T.nilable(String)) }
           attr_reader :id
 
@@ -81,7 +77,7 @@ module OnebusawaySDK
             params(
               git_properties: T.any(
                 OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               )
             )
               .void
@@ -111,7 +107,7 @@ module OnebusawaySDK
               id: String,
               git_properties: T.any(
                 OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               ),
               name: String,
               service_date_from: String,
@@ -137,7 +133,7 @@ module OnebusawaySDK
           def to_hash
           end
 
-          class GitProperties < OnebusawaySDK::BaseModel
+          class GitProperties < OnebusawaySDK::Internal::Type::BaseModel
             sig { returns(T.nilable(String)) }
             attr_reader :git_branch
 

@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry]
@@ -33,15 +33,15 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, references:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute arrival_enabled
           #   Indicates if riders can arrive on this transit vehicle.
           #
           #   @return [Boolean]
-          required :arrival_enabled, OnebusawaySDK::BooleanModel, api_name: :arrivalEnabled
+          required :arrival_enabled, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :arrivalEnabled
 
           # @!attribute block_trip_sequence
           #   Index of this arrival’s trip into the sequence of trips for the active block.
@@ -53,7 +53,9 @@ module OnebusawaySDK
           #   Indicates if riders can depart from this transit vehicle.
           #
           #   @return [Boolean]
-          required :departure_enabled, OnebusawaySDK::BooleanModel, api_name: :departureEnabled
+          required :departure_enabled,
+                   OnebusawaySDK::Internal::Type::BooleanModel,
+                   api_name: :departureEnabled
 
           # @!attribute number_of_stops_away
           #   Number of stops between the arriving transit vehicle and the current stop
@@ -203,7 +205,7 @@ module OnebusawaySDK
           #   Indicates if real-time arrival info is available for this trip.
           #
           #   @return [Boolean, nil]
-          optional :predicted, OnebusawaySDK::BooleanModel
+          optional :predicted, OnebusawaySDK::Internal::Type::BooleanModel
 
           # @!parse
           #   # @return [Boolean]
@@ -295,7 +297,7 @@ module OnebusawaySDK
           #   References to situation elements (if any) applicable to this arrival.
           #
           #   @return [Array<String>, nil]
-          optional :situation_ids, OnebusawaySDK::ArrayOf[String], api_name: :situationIds
+          optional :situation_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :situationIds
 
           # @!parse
           #   # @return [Array<String>]
@@ -399,10 +401,10 @@ module OnebusawaySDK
           #     super
           #   end
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
           # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry#trip_status
-          class TripStatus < OnebusawaySDK::BaseModel
+          class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute active_trip_id
             #   Trip ID of the trip the vehicle is actively serving.
             #
@@ -474,7 +476,7 @@ module OnebusawaySDK
             #   Indicates if real-time arrival info is available for this trip.
             #
             #   @return [Boolean]
-            required :predicted, OnebusawaySDK::BooleanModel
+            required :predicted, OnebusawaySDK::Internal::Type::BooleanModel
 
             # @!attribute schedule_deviation
             #   Deviation from the schedule in seconds (positive for late, negative for early).
@@ -601,7 +603,7 @@ module OnebusawaySDK
             #   References to situation elements (if any) applicable to this trip.
             #
             #   @return [Array<String>, nil]
-            optional :situation_ids, OnebusawaySDK::ArrayOf[String], api_name: :situationIds
+            optional :situation_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :situationIds
 
             # @!parse
             #   # @return [Array<String>]
@@ -681,10 +683,10 @@ module OnebusawaySDK
             #     super
             #   end
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
             # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus#last_known_location
-            class LastKnownLocation < OnebusawaySDK::BaseModel
+            class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] lat
               #   Latitude of the last known location of the transit vehicle.
               #
@@ -713,11 +715,11 @@ module OnebusawaySDK
               #   #
               #   def initialize(lat: nil, lon: nil, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
 
             # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus#position
-            class Position < OnebusawaySDK::BaseModel
+            class Position < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] lat
               #   Latitude of the current position of the transit vehicle.
               #
@@ -746,7 +748,7 @@ module OnebusawaySDK
               #   #
               #   def initialize(lat: nil, lon: nil, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
           end
         end

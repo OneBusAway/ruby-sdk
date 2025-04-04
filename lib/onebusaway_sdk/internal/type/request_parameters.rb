@@ -12,7 +12,7 @@ module OnebusawaySDK
 
         # @param mod [Module]
         def self.included(mod)
-          return unless mod <= OnebusawaySDK::BaseModel
+          return unless mod <= OnebusawaySDK::Internal::Type::BaseModel
 
           mod.extend(OnebusawaySDK::Internal::Type::RequestParameters::Converter)
           mod.optional(:request_options, OnebusawaySDK::RequestOptions)

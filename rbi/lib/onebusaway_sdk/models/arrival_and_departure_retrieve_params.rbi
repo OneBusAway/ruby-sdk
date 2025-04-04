@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class ArrivalAndDepartureRetrieveParams < OnebusawaySDK::BaseModel
+    class ArrivalAndDepartureRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -37,7 +37,7 @@ module OnebusawaySDK
           stop_sequence: Integer,
           time: Integer,
           vehicle_id: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end

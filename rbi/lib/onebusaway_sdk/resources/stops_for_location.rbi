@@ -12,12 +12,7 @@ module OnebusawaySDK
           lon_span: Float,
           query: String,
           radius: Float,
-          request_options: T.nilable(
-            T.any(
-              OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::Util::AnyHash
-            )
-          )
+          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
         )
           .returns(OnebusawaySDK::Models::StopsForLocationListResponse)
       end

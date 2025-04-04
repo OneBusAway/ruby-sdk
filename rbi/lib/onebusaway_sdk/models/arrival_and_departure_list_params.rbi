@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class ArrivalAndDepartureListParams < OnebusawaySDK::BaseModel
+    class ArrivalAndDepartureListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -32,7 +32,7 @@ module OnebusawaySDK
           minutes_after: Integer,
           minutes_before: Integer,
           time: Time,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end

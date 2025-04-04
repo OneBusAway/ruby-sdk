@@ -3,7 +3,7 @@ module OnebusawaySDK
     type schedule_for_stop_retrieve_params =
       { date: Date } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class ScheduleForStopRetrieveParams < OnebusawaySDK::BaseModel
+    class ScheduleForStopRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

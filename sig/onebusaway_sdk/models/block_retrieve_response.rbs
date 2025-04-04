@@ -22,7 +22,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry
 
         attr_accessor references: OnebusawaySDK::Models::References
@@ -40,7 +40,7 @@ module OnebusawaySDK
             configurations: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor configurations: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
@@ -59,7 +59,7 @@ module OnebusawaySDK
               inactive_service_ids: ::Array[String]
             }
 
-          class Configuration < OnebusawaySDK::BaseModel
+          class Configuration < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor active_service_ids: ::Array[String]
 
             attr_accessor trips: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]
@@ -84,7 +84,7 @@ module OnebusawaySDK
                 trip_id: String
               }
 
-            class Trip < OnebusawaySDK::BaseModel
+            class Trip < OnebusawaySDK::Internal::Type::BaseModel
               attr_accessor accumulated_slack_time: Float
 
               attr_accessor block_stop_times: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
@@ -110,7 +110,7 @@ module OnebusawaySDK
                   stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
                 }
 
-              class BlockStopTime < OnebusawaySDK::BaseModel
+              class BlockStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 attr_accessor accumulated_slack_time: Float
 
                 attr_accessor block_sequence: Integer
@@ -137,7 +137,7 @@ module OnebusawaySDK
                     pickup_type: Integer
                   }
 
-                class StopTime < OnebusawaySDK::BaseModel
+                class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                   attr_accessor arrival_time: Integer
 
                   attr_accessor departure_time: Integer

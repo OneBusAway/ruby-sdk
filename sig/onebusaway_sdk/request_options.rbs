@@ -14,7 +14,7 @@ module OnebusawaySDK
       timeout: Float?
     }
 
-  class RequestOptions < OnebusawaySDK::BaseModel
+  class RequestOptions < OnebusawaySDK::Internal::Type::BaseModel
     def self.validate!: (self | ::Hash[Symbol, top] opts) -> void
 
     attr_accessor idempotency_key: String?

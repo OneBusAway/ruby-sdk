@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::StopsForRoute#list
-    class StopsForRouteListParams < OnebusawaySDK::BaseModel
+    class StopsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
@@ -12,7 +12,7 @@ module OnebusawaySDK
       #   Include polyline elements in the response (default true)
       #
       #   @return [Boolean, nil]
-      optional :include_polylines, OnebusawaySDK::BooleanModel, api_name: :includePolylines
+      optional :include_polylines, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includePolylines
 
       # @!parse
       #   # @return [Boolean]
@@ -35,7 +35,7 @@ module OnebusawaySDK
       #   #
       #   def initialize(include_polylines: nil, time: nil, request_options: {}, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
     end
   end
 end

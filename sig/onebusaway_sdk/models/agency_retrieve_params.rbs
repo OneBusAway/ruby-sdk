@@ -3,7 +3,7 @@ module OnebusawaySDK
     type agency_retrieve_params =
       {  } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class AgencyRetrieveParams < OnebusawaySDK::BaseModel
+    class AgencyRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

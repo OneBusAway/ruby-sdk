@@ -2,12 +2,12 @@
 
 module OnebusawaySDK
   module Models
-    class AgencyRetrieveParams < OnebusawaySDK::BaseModel
+    class AgencyRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       sig do
-        params(request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash))
+        params(request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
           .returns(T.attached_class)
       end
       def self.new(request_options: {})

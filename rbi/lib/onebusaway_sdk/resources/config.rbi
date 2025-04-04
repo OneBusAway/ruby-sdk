@@ -9,7 +9,7 @@ module OnebusawaySDK
           request_options: T.nilable(
             T.any(
               OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::Util::AnyHash
+              OnebusawaySDK::Internal::AnyHash
             )
           )
         )

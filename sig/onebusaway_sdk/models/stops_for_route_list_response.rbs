@@ -22,7 +22,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry
 
         attr_accessor references: OnebusawaySDK::Models::References
@@ -42,7 +42,7 @@ module OnebusawaySDK
             stop_ids: ::Array[String]
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader polylines: ::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline]?
 
           def polylines=: (
@@ -74,7 +74,7 @@ module OnebusawaySDK
 
           type polyline = { length: Integer, levels: String, points: String }
 
-          class Polyline < OnebusawaySDK::BaseModel
+          class Polyline < OnebusawaySDK::Internal::Type::BaseModel
             attr_reader length: Integer?
 
             def length=: (Integer) -> Integer
@@ -104,7 +104,7 @@ module OnebusawaySDK
               stop_ids: ::Array[String]
             }
 
-          class StopGrouping < OnebusawaySDK::BaseModel
+          class StopGrouping < OnebusawaySDK::Internal::Type::BaseModel
             attr_reader id: String?
 
             def id=: (String) -> String
@@ -136,7 +136,7 @@ module OnebusawaySDK
 
             type name_ = { name: String, names: ::Array[String], type: String }
 
-            class Name < OnebusawaySDK::BaseModel
+            class Name < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader name: String?
 
               def name=: (String) -> String
@@ -160,7 +160,7 @@ module OnebusawaySDK
 
             type polyline = { length: Integer, levels: String, points: String }
 
-            class Polyline < OnebusawaySDK::BaseModel
+            class Polyline < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader length: Integer?
 
               def length=: (Integer) -> Integer

@@ -7,12 +7,7 @@ module OnebusawaySDK
       sig do
         params(
           agency_id: String,
-          request_options: T.nilable(
-            T.any(
-              OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::Util::AnyHash
-            )
-          )
+          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
         )
           .returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse)
       end

@@ -12,12 +12,7 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           service_date: Integer,
           time: Integer,
-          request_options: T.nilable(
-            T.any(
-              OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::Util::AnyHash
-            )
-          )
+          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
         )
           .returns(OnebusawaySDK::Models::TripDetailRetrieveResponse)
       end

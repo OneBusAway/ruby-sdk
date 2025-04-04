@@ -345,7 +345,7 @@ module OnebusawaySDK
 
           begin
             status, response, stream = @requester.execute(input)
-          rescue OnebusawaySDK::APIConnectionError => e
+          rescue OnebusawaySDK::Errors::APIConnectionError => e
             status = e
           end
 
@@ -367,7 +367,7 @@ module OnebusawaySDK
               retry_count: retry_count,
               send_retry_header: send_retry_header
             )
-          in OnebusawaySDK::APIConnectionError if retry_count >= max_retries
+          in OnebusawaySDK::Errors::APIConnectionError if retry_count >= max_retries
             raise status
           in (400..) if retry_count >= max_retries || !self.class.should_retry?(status, headers: response)
             decoded = Kernel.then do
@@ -427,7 +427,7 @@ module OnebusawaySDK
         # @return [Object]
         def request(req)
           self.class.validate!(req)
-          model = req.fetch(:model) { OnebusawaySDK::Unknown }
+          model = req.fetch(:model) { OnebusawaySDK::Internal::Type::Unknown }
           opts = req[:options].to_h
           OnebusawaySDK::RequestOptions.validate!(opts)
           request = build_request(req.except(:options), opts)

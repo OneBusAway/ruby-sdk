@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class SearchForStopListParams < OnebusawaySDK::BaseModel
+    class SearchForStopListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -21,7 +21,7 @@ module OnebusawaySDK
         params(
           input: String,
           max_count: Integer,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end

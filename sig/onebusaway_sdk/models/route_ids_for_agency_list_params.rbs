@@ -3,7 +3,7 @@ module OnebusawaySDK
     type route_ids_for_agency_list_params =
       {  } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class RouteIDsForAgencyListParams < OnebusawaySDK::BaseModel
+    class RouteIDsForAgencyListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

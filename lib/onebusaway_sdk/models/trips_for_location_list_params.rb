@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::TripsForLocation#list
-    class TripsForLocationListParams < OnebusawaySDK::BaseModel
+    class TripsForLocationListParams < OnebusawaySDK::Internal::Type::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
@@ -37,7 +37,7 @@ module OnebusawaySDK
       #     to false.
       #
       #   @return [Boolean, nil]
-      optional :include_schedule, OnebusawaySDK::BooleanModel, api_name: :includeSchedule
+      optional :include_schedule, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includeSchedule
 
       # @!parse
       #   # @return [Boolean]
@@ -48,7 +48,7 @@ module OnebusawaySDK
       #     false.
       #
       #   @return [Boolean, nil]
-      optional :include_trip, OnebusawaySDK::BooleanModel, api_name: :includeTrip
+      optional :include_trip, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includeTrip
 
       # @!parse
       #   # @return [Boolean]
@@ -88,7 +88,7 @@ module OnebusawaySDK
       #     super
       #   end
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
     end
   end
 end

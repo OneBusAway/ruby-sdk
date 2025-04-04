@@ -3,7 +3,7 @@ module OnebusawaySDK
     type config_retrieve_params =
       {  } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class ConfigRetrieveParams < OnebusawaySDK::BaseModel
+    class ConfigRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

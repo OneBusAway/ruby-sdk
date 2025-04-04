@@ -23,7 +23,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor limit_exceeded: bool
 
         attr_accessor list: ::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List]
@@ -52,7 +52,7 @@ module OnebusawaySDK
             url: String
           }
 
-        class List < OnebusawaySDK::BaseModel
+        class List < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor agency_id: String

@@ -22,7 +22,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry
 
         attr_accessor references: OnebusawaySDK::Models::References
@@ -72,7 +72,7 @@ module OnebusawaySDK
             trip_status: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor arrival_enabled: bool
 
           attr_accessor block_trip_sequence: Integer
@@ -249,7 +249,7 @@ module OnebusawaySDK
               vehicle_id: String
             }
 
-          class TripStatus < OnebusawaySDK::BaseModel
+          class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor active_trip_id: String
 
             attr_accessor block_trip_sequence: Integer
@@ -364,7 +364,7 @@ module OnebusawaySDK
 
             type last_known_location = { lat: Float, lon: Float }
 
-            class LastKnownLocation < OnebusawaySDK::BaseModel
+            class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader lat: Float?
 
               def lat=: (Float) -> Float
@@ -380,7 +380,7 @@ module OnebusawaySDK
 
             type position = { lat: Float, lon: Float }
 
-            class Position < OnebusawaySDK::BaseModel
+            class Position < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader lat: Float?
 
               def lat=: (Float) -> Float

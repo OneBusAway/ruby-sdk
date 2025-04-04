@@ -23,7 +23,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor limit_exceeded: bool
 
         attr_accessor list: ::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List]
@@ -47,7 +47,7 @@ module OnebusawaySDK
             lon_span: Float
           }
 
-        class List < OnebusawaySDK::BaseModel
+        class List < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor agency_id: String
 
           attr_accessor lat: Float

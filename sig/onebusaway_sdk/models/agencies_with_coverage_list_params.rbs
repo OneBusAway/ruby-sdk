@@ -3,7 +3,7 @@ module OnebusawaySDK
     type agencies_with_coverage_list_params =
       {  } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class AgenciesWithCoverageListParams < OnebusawaySDK::BaseModel
+    class AgenciesWithCoverageListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

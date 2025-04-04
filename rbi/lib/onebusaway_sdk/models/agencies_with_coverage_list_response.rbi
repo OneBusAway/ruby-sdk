@@ -8,10 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(
-            OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data,
-            OnebusawaySDK::Internal::Util::AnyHash
-          )
+          data: T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .void
       end
@@ -19,10 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(
-            OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data,
-            OnebusawaySDK::Internal::Util::AnyHash
-          )
+          data: T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -33,7 +27,7 @@ module OnebusawaySDK
       def to_hash
       end
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(T::Boolean) }
         attr_accessor :limit_exceeded
 
@@ -43,7 +37,7 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
         attr_writer :references
 
         sig do
@@ -52,10 +46,10 @@ module OnebusawaySDK
             list: T::Array[
             T.any(
               OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List,
-              OnebusawaySDK::Internal::Util::AnyHash
+              OnebusawaySDK::Internal::AnyHash
             )
             ],
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -75,7 +69,7 @@ module OnebusawaySDK
         def to_hash
         end
 
-        class List < OnebusawaySDK::BaseModel
+        class List < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(String) }
           attr_accessor :agency_id
 

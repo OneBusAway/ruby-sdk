@@ -10,7 +10,7 @@ module OnebusawaySDK
       }
       & OnebusawaySDK::Internal::Type::request_parameters
 
-    class TripDetailRetrieveParams < OnebusawaySDK::BaseModel
+    class TripDetailRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

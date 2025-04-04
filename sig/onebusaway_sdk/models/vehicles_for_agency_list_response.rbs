@@ -23,7 +23,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor limit_exceeded: bool
 
         attr_accessor list: ::Array[OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List]
@@ -53,7 +53,7 @@ module OnebusawaySDK
             status: String
           }
 
-        class List < OnebusawaySDK::BaseModel
+        class List < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor last_location_update_time: Integer
 
           attr_accessor last_update_time: Integer
@@ -104,7 +104,7 @@ module OnebusawaySDK
 
           type location = { lat: Float, lon: Float }
 
-          class Location < OnebusawaySDK::BaseModel
+          class Location < OnebusawaySDK::Internal::Type::BaseModel
             attr_reader lat: Float?
 
             def lat=: (Float) -> Float
@@ -149,7 +149,7 @@ module OnebusawaySDK
               vehicle_id: String
             }
 
-          class TripStatus < OnebusawaySDK::BaseModel
+          class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor active_trip_id: String
 
             attr_accessor block_trip_sequence: Integer
@@ -264,7 +264,7 @@ module OnebusawaySDK
 
             type last_known_location = { lat: Float, lon: Float }
 
-            class LastKnownLocation < OnebusawaySDK::BaseModel
+            class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader lat: Float?
 
               def lat=: (Float) -> Float
@@ -280,7 +280,7 @@ module OnebusawaySDK
 
             type position = { lat: Float, lon: Float }
 
-            class Position < OnebusawaySDK::BaseModel
+            class Position < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader lat: Float?
 
               def lat=: (Float) -> Float

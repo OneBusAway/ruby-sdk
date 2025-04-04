@@ -22,7 +22,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry
 
         attr_accessor references: OnebusawaySDK::Models::References
@@ -41,7 +41,7 @@ module OnebusawaySDK
             stop_route_schedules: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor date: Integer
 
           attr_accessor stop_id: String
@@ -62,7 +62,7 @@ module OnebusawaySDK
               stop_route_direction_schedules: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
             }
 
-          class StopRouteSchedule < OnebusawaySDK::BaseModel
+          class StopRouteSchedule < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor route_id: String
 
             attr_accessor stop_route_direction_schedules: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
@@ -81,7 +81,7 @@ module OnebusawaySDK
                 schedule_frequencies: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
               }
 
-            class StopRouteDirectionSchedule < OnebusawaySDK::BaseModel
+            class StopRouteDirectionSchedule < OnebusawaySDK::Internal::Type::BaseModel
               attr_accessor schedule_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime]
 
               attr_accessor trip_headsign: String
@@ -111,7 +111,7 @@ module OnebusawaySDK
                   stop_headsign: String
                 }
 
-              class ScheduleStopTime < OnebusawaySDK::BaseModel
+              class ScheduleStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 attr_accessor arrival_enabled: bool
 
                 attr_accessor arrival_time: Integer
@@ -151,7 +151,7 @@ module OnebusawaySDK
                   trip_id: String
                 }
 
-              class ScheduleFrequency < OnebusawaySDK::BaseModel
+              class ScheduleFrequency < OnebusawaySDK::Internal::Type::BaseModel
                 attr_accessor end_time: Integer
 
                 attr_accessor headway: Integer

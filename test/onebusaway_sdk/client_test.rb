@@ -55,7 +55,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve
     end
 
@@ -68,7 +68,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve
     end
 
@@ -80,7 +80,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve(request_options: {max_retries: 3})
     end
 
@@ -93,7 +93,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve(request_options: {max_retries: 4})
     end
 
@@ -106,7 +106,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {"retry-after" => "1.3"}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve
     end
 
@@ -120,7 +120,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {"retry-after" => (Time.now + 10).httpdate}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       Thread.current.thread_variable_set(:time_now, Time.now)
       onebusaway_sdk.current_time.retrieve
       Thread.current.thread_variable_set(:time_now, nil)
@@ -136,7 +136,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {"retry-after-ms" => "1300"}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve
     end
 
@@ -149,7 +149,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve
     end
 
@@ -162,7 +162,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve(request_options: {extra_headers: {"x-stainless-retry-count" => nil}})
     end
 
@@ -175,7 +175,7 @@ class OnebusawaySDKTest < Minitest::Test
     requester = MockRequester.new(500, {}, {})
     onebusaway_sdk.requester = requester
 
-    assert_raises(OnebusawaySDK::InternalServerError) do
+    assert_raises(OnebusawaySDK::Errors::InternalServerError) do
       onebusaway_sdk.current_time.retrieve(
         request_options: {extra_headers: {"x-stainless-retry-count" => "42"}}
       )
