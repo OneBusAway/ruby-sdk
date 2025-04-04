@@ -3,27 +3,7 @@
 module OnebusawaySDK
   module Internal
     module Type
-      # @example
-      #   if page.has_next?
-      #     page = page.next_page
-      #   end
-      #
-      # @example
-      #   page.auto_paging_each do |agencies_with_coverage|
-      #     puts(agencies_with_coverage)
-      #   end
-      #
-      # @example
-      #   agencies_with_coverages =
-      #     page
-      #     .to_enum
-      #     .lazy
-      #     .select { _1.object_id.even? }
-      #     .map(&:itself)
-      #     .take(2)
-      #     .to_a
-      #
-      #   agencies_with_coverages => Array
+      # This module provides a base implementation for paginated responses in the SDK.
       module BasePage
         # rubocop:disable Lint/UnusedMethodArgument
 
