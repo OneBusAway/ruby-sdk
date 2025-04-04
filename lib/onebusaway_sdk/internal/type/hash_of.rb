@@ -7,6 +7,8 @@ module OnebusawaySDK
       #
       # @abstract
       #
+      # @generic Elem
+      #
       # Hash of items of a given type.
       class HashOf
         include OnebusawaySDK::Internal::Type::Converter
@@ -111,7 +113,7 @@ module OnebusawaySDK
 
         # @api private
         #
-        # @return [OnebusawaySDK::Internal::Type::Converter, Class]
+        # @return [generic<Elem>]
         protected def item_type = @item_type_fn.call
 
         # @api private
