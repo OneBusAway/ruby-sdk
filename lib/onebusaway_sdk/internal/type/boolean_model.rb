@@ -19,7 +19,7 @@ module OnebusawaySDK
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.==(other) = other.is_a?(Class) && other <= OnebusawaySDK::BooleanModel
+        def self.==(other) = other.is_a?(Class) && other <= OnebusawaySDK::Internal::Type::BooleanModel
 
         class << self
           # @api private

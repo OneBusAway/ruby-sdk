@@ -22,7 +22,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry
 
         attr_accessor references: OnebusawaySDK::Models::References
@@ -43,7 +43,7 @@ module OnebusawaySDK
             service_date_to: String
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader id: String?
 
           def id=: (String) -> String
@@ -100,7 +100,7 @@ module OnebusawaySDK
               git_tags: String
             }
 
-          class GitProperties < OnebusawaySDK::BaseModel
+          class GitProperties < OnebusawaySDK::Internal::Type::BaseModel
             attr_reader git_branch: String?
 
             def git_branch=: (String) -> String

@@ -3,7 +3,7 @@ module OnebusawaySDK
     type trip_retrieve_params =
       {  } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class TripRetrieveParams < OnebusawaySDK::BaseModel
+    class TripRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

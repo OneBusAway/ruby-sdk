@@ -189,32 +189,4 @@ module OnebusawaySDK
       HTTP_STATUS = (500..)
     end
   end
-
-  Error = OnebusawaySDK::Errors::Error
-
-  ConversionError = OnebusawaySDK::Errors::ConversionError
-
-  APIError = OnebusawaySDK::Errors::APIError
-
-  APIStatusError = OnebusawaySDK::Errors::APIStatusError
-
-  APIConnectionError = OnebusawaySDK::Errors::APIConnectionError
-
-  APITimeoutError = OnebusawaySDK::Errors::APITimeoutError
-
-  BadRequestError = OnebusawaySDK::Errors::BadRequestError
-
-  AuthenticationError = OnebusawaySDK::Errors::AuthenticationError
-
-  PermissionDeniedError = OnebusawaySDK::Errors::PermissionDeniedError
-
-  NotFoundError = OnebusawaySDK::Errors::NotFoundError
-
-  ConflictError = OnebusawaySDK::Errors::ConflictError
-
-  UnprocessableEntityError = OnebusawaySDK::Errors::UnprocessableEntityError
-
-  RateLimitError = OnebusawaySDK::Errors::RateLimitError
-
-  InternalServerError = OnebusawaySDK::Errors::InternalServerError
 end

@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::TripsForRoute#list
-    class TripsForRouteListParams < OnebusawaySDK::BaseModel
+    class TripsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
@@ -12,7 +12,7 @@ module OnebusawaySDK
       #   Determine whether full schedule elements are included. Defaults to false.
       #
       #   @return [Boolean, nil]
-      optional :include_schedule, OnebusawaySDK::BooleanModel, api_name: :includeSchedule
+      optional :include_schedule, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includeSchedule
 
       # @!parse
       #   # @return [Boolean]
@@ -23,7 +23,7 @@ module OnebusawaySDK
       #     included. Defaults to false.
       #
       #   @return [Boolean, nil]
-      optional :include_status, OnebusawaySDK::BooleanModel, api_name: :includeStatus
+      optional :include_status, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includeStatus
 
       # @!parse
       #   # @return [Boolean]
@@ -47,7 +47,7 @@ module OnebusawaySDK
       #   #
       #   def initialize(include_schedule: nil, include_status: nil, time: nil, request_options: {}, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
     end
   end
 end

@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry]
@@ -25,7 +25,7 @@ module OnebusawaySDK
         # @!attribute limit_exceeded
         #
         #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::BooleanModel, api_name: :limitExceeded
+        required :limit_exceeded, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :limitExceeded
 
         # @!attribute references
         #
@@ -39,10 +39,10 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, limit_exceeded:, references:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::AgencyRetrieveResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute id
           #
           #   @return [String]
@@ -111,7 +111,7 @@ module OnebusawaySDK
           # @!attribute [r] private_service
           #
           #   @return [Boolean, nil]
-          optional :private_service, OnebusawaySDK::BooleanModel, api_name: :privateService
+          optional :private_service, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :privateService
 
           # @!parse
           #   # @return [Boolean]
@@ -145,7 +145,7 @@ module OnebusawaySDK
           #     super
           #   end
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
       end
     end

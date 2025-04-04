@@ -17,11 +17,11 @@ module OnebusawaySDK
         sig(:final) do
           params(
             type_info: T.any(
-              OnebusawaySDK::Internal::Util::AnyHash,
+              OnebusawaySDK::Internal::AnyHash,
               T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
               OnebusawaySDK::Internal::Type::Converter::Input
             ),
-            spec: OnebusawaySDK::Internal::Util::AnyHash
+            spec: OnebusawaySDK::Internal::AnyHash
           )
             .returns(T.attached_class)
         end
@@ -43,7 +43,7 @@ module OnebusawaySDK
               value: T.any(T::Hash[T.anything, T.anything], T.anything),
               state: OnebusawaySDK::Internal::Type::Converter::State
             )
-            .returns(T.any(OnebusawaySDK::Internal::Util::AnyHash, T.anything))
+            .returns(T.any(OnebusawaySDK::Internal::AnyHash, T.anything))
         end
         def coerce(value, state:)
         end
@@ -52,7 +52,7 @@ module OnebusawaySDK
         sig(:final) do
           override
             .params(value: T.any(T::Hash[T.anything, T.anything], T.anything))
-            .returns(T.any(OnebusawaySDK::Internal::Util::AnyHash, T.anything))
+            .returns(T.any(OnebusawaySDK::Internal::AnyHash, T.anything))
         end
         def dump(value)
         end
@@ -71,11 +71,11 @@ module OnebusawaySDK
         sig(:final) do
           params(
             type_info: T.any(
-              OnebusawaySDK::Internal::Util::AnyHash,
+              OnebusawaySDK::Internal::AnyHash,
               T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
               OnebusawaySDK::Internal::Type::Converter::Input
             ),
-            spec: OnebusawaySDK::Internal::Util::AnyHash
+            spec: OnebusawaySDK::Internal::AnyHash
           )
             .void
         end

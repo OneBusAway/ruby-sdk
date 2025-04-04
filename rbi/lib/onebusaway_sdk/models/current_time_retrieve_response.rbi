@@ -8,7 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .void
       end
@@ -16,7 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -27,16 +27,13 @@ module OnebusawaySDK
       def to_hash
       end
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry) }
         attr_reader :entry
 
         sig do
           params(
-            entry: T.any(
-              OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
-              OnebusawaySDK::Internal::Util::AnyHash
-            )
+            entry: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash)
           )
             .void
         end
@@ -45,16 +42,13 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(
-              OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
-              OnebusawaySDK::Internal::Util::AnyHash
-            ),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -73,7 +67,7 @@ module OnebusawaySDK
         def to_hash
         end
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(T.nilable(String)) }
           attr_reader :readable_time
 

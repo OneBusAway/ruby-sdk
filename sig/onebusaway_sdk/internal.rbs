@@ -1,0 +1,4 @@
+module OnebusawaySDK
+  module Internal
+  end
+end

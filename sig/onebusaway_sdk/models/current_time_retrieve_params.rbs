@@ -3,7 +3,7 @@ module OnebusawaySDK
     type current_time_retrieve_params =
       {  } & OnebusawaySDK::Internal::Type::request_parameters
 
-    class CurrentTimeRetrieveParams < OnebusawaySDK::BaseModel
+    class CurrentTimeRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

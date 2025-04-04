@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class TripForVehicleRetrieveParams < OnebusawaySDK::BaseModel
+    class TripForVehicleRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -43,7 +43,7 @@ module OnebusawaySDK
           include_status: T::Boolean,
           include_trip: T::Boolean,
           time: Integer,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end

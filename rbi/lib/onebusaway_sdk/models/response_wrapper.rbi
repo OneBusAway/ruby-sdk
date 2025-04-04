@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class ResponseWrapper < OnebusawaySDK::BaseModel
+    class ResponseWrapper < OnebusawaySDK::Internal::Type::BaseModel
       sig { returns(Integer) }
       attr_accessor :code
 

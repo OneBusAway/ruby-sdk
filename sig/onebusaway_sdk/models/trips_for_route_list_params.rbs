@@ -4,7 +4,7 @@ module OnebusawaySDK
       { include_schedule: bool, include_status: bool, time: Integer }
       & OnebusawaySDK::Internal::Type::request_parameters
 
-    class TripsForRouteListParams < OnebusawaySDK::BaseModel
+    class TripsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

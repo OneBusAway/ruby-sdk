@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class RoutesForLocationListParams < OnebusawaySDK::BaseModel
+    class RoutesForLocationListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -44,7 +44,7 @@ module OnebusawaySDK
           lon_span: Float,
           query: String,
           radius: Float,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end

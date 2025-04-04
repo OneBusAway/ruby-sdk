@@ -8,7 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .void
       end
@@ -16,7 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -27,7 +27,7 @@ module OnebusawaySDK
       def to_hash
       end
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(T::Boolean) }
         attr_accessor :limit_exceeded
 
@@ -37,7 +37,7 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
         attr_writer :references
 
         sig { returns(T.nilable(T::Boolean)) }
@@ -49,13 +49,8 @@ module OnebusawaySDK
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[
-            T.any(
-              OnebusawaySDK::Models::StopsForLocationListResponse::Data::List,
-              OnebusawaySDK::Internal::Util::AnyHash
-            )
-            ],
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash),
+            list: T::Array[T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data::List, OnebusawaySDK::Internal::AnyHash)],
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash),
             out_of_range: T::Boolean
           )
             .returns(T.attached_class)
@@ -77,7 +72,7 @@ module OnebusawaySDK
         def to_hash
         end
 
-        class List < OnebusawaySDK::BaseModel
+        class List < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(String) }
           attr_accessor :id
 

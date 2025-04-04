@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry]
@@ -33,10 +33,10 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, references:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::BlockRetrieveResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute id
           #
           #   @return [String]
@@ -46,7 +46,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration>]
           required :configurations,
-                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration] }
+                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration] }
 
           # @!parse
           #   # @param id [String]
@@ -54,24 +54,28 @@ module OnebusawaySDK
           #   #
           #   def initialize(id:, configurations:, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-          class Configuration < OnebusawaySDK::BaseModel
+          class Configuration < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute active_service_ids
             #
             #   @return [Array<String>]
-            required :active_service_ids, OnebusawaySDK::ArrayOf[String], api_name: :activeServiceIds
+            required :active_service_ids,
+                     OnebusawaySDK::Internal::Type::ArrayOf[String],
+                     api_name: :activeServiceIds
 
             # @!attribute trips
             #
             #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip>]
             required :trips,
-                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip] }
+                     -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip] }
 
             # @!attribute [r] inactive_service_ids
             #
             #   @return [Array<String>, nil]
-            optional :inactive_service_ids, OnebusawaySDK::ArrayOf[String], api_name: :inactiveServiceIds
+            optional :inactive_service_ids,
+                     OnebusawaySDK::Internal::Type::ArrayOf[String],
+                     api_name: :inactiveServiceIds
 
             # @!parse
             #   # @return [Array<String>]
@@ -84,9 +88,9 @@ module OnebusawaySDK
             #   #
             #   def initialize(active_service_ids:, trips:, inactive_service_ids: nil, **) = super
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-            class Trip < OnebusawaySDK::BaseModel
+            class Trip < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute accumulated_slack_time
               #
               #   @return [Float]
@@ -96,7 +100,7 @@ module OnebusawaySDK
               #
               #   @return [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime>]
               required :block_stop_times,
-                       -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime] },
+                       -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime] },
                        api_name: :blockStopTimes
 
               # @!attribute distance_along_block
@@ -117,9 +121,9 @@ module OnebusawaySDK
               #   #
               #   def initialize(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-              class BlockStopTime < OnebusawaySDK::BaseModel
+              class BlockStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 # @!attribute accumulated_slack_time
                 #
                 #   @return [Float]
@@ -150,10 +154,10 @@ module OnebusawaySDK
                 #   #
                 #   def initialize(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:, **) = super
 
-                # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+                # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
                 # @see OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime#stop_time
-                class StopTime < OnebusawaySDK::BaseModel
+                class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                   # @!attribute arrival_time
                   #
                   #   @return [Integer]
@@ -196,7 +200,7 @@ module OnebusawaySDK
                   #   #
                   #   def initialize(arrival_time:, departure_time:, stop_id:, drop_off_type: nil, pickup_type: nil, **) = super
 
-                  # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+                  # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
                 end
               end
             end

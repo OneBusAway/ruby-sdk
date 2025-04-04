@@ -24,7 +24,7 @@ module OnebusawaySDK
           out_of_range: bool
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor limit_exceeded: bool
 
         attr_accessor list: ::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List]
@@ -59,7 +59,7 @@ module OnebusawaySDK
             wheelchair_boarding: String
           }
 
-        class List < OnebusawaySDK::BaseModel
+        class List < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor lat: Float

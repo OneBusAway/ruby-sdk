@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::ReportProblemWithStop#retrieve
-    class ReportProblemWithStopRetrieveParams < OnebusawaySDK::BaseModel
+    class ReportProblemWithStopRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
@@ -78,11 +78,11 @@ module OnebusawaySDK
       #     super
       #   end
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
       # A string code identifying the nature of the problem
       module Code
-        extend OnebusawaySDK::Enum
+        extend OnebusawaySDK::Internal::Type::Enum
 
         STOP_NAME_WRONG = :stop_name_wrong
         STOP_NUMBER_WRONG = :stop_number_wrong

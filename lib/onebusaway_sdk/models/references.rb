@@ -2,38 +2,40 @@
 
 module OnebusawaySDK
   module Models
-    class References < OnebusawaySDK::BaseModel
+    class References < OnebusawaySDK::Internal::Type::BaseModel
       # @!attribute agencies
       #
       #   @return [Array<OnebusawaySDK::Models::References::Agency>]
-      required :agencies, -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Agency] }
+      required :agencies,
+               -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Agency] }
 
       # @!attribute routes
       #
       #   @return [Array<OnebusawaySDK::Models::References::Route>]
-      required :routes, -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Route] }
+      required :routes, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Route] }
 
       # @!attribute situations
       #
       #   @return [Array<OnebusawaySDK::Models::References::Situation>]
-      required :situations, -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation] }
+      required :situations,
+               -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Situation] }
 
       # @!attribute stops
       #
       #   @return [Array<OnebusawaySDK::Models::References::Stop>]
-      required :stops, -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Stop] }
+      required :stops, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Stop] }
 
       # @!attribute stop_times
       #
       #   @return [Array<OnebusawaySDK::Models::References::StopTime>]
       required :stop_times,
-               -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::StopTime] },
+               -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::StopTime] },
                api_name: :stopTimes
 
       # @!attribute trips
       #
       #   @return [Array<OnebusawaySDK::Models::References::Trip>]
-      required :trips, -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Trip] }
+      required :trips, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Trip] }
 
       # @!parse
       #   # @param agencies [Array<OnebusawaySDK::Models::References::Agency>]
@@ -45,9 +47,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(agencies:, routes:, situations:, stops:, stop_times:, trips:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Agency < OnebusawaySDK::BaseModel
+      class Agency < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -116,7 +118,7 @@ module OnebusawaySDK
         # @!attribute [r] private_service
         #
         #   @return [Boolean, nil]
-        optional :private_service, OnebusawaySDK::BooleanModel, api_name: :privateService
+        optional :private_service, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :privateService
 
         # @!parse
         #   # @return [Boolean]
@@ -150,10 +152,10 @@ module OnebusawaySDK
         #     super
         #   end
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
       end
 
-      class Route < OnebusawaySDK::BaseModel
+      class Route < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -260,10 +262,10 @@ module OnebusawaySDK
         #     super
         #   end
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
       end
 
-      class Situation < OnebusawaySDK::BaseModel
+      class Situation < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
         #   Unique identifier for the situation.
         #
@@ -280,7 +282,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::References::Situation::ActiveWindow>, nil]
         optional :active_windows,
-                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::ActiveWindow] },
+                 -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Situation::ActiveWindow] },
                  api_name: :activeWindows
 
         # @!parse
@@ -291,7 +293,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::References::Situation::AllAffect>, nil]
         optional :all_affects,
-                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::AllAffect] },
+                 -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Situation::AllAffect] },
                  api_name: :allAffects
 
         # @!parse
@@ -312,7 +314,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::References::Situation::Consequence>, nil]
         optional :consequences,
-                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::Consequence] }
+                 -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Situation::Consequence] }
 
         # @!parse
         #   # @return [Array<OnebusawaySDK::Models::References::Situation::Consequence>]
@@ -331,7 +333,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>, nil]
         optional :publication_windows,
-                 -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::References::Situation::PublicationWindow] },
+                 -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Situation::PublicationWindow] },
                  api_name: :publicationWindows
 
         # @!parse
@@ -408,9 +410,9 @@ module OnebusawaySDK
         #     super
         #   end
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-        class ActiveWindow < OnebusawaySDK::BaseModel
+        class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] from
           #   Start time of the active window as a Unix timestamp.
           #
@@ -437,10 +439,10 @@ module OnebusawaySDK
           #   #
           #   def initialize(from: nil, to: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
 
-        class AllAffect < OnebusawaySDK::BaseModel
+        class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] agency_id
           #   Identifier for the agency.
           #
@@ -511,10 +513,10 @@ module OnebusawaySDK
           #   #
           #   def initialize(agency_id: nil, application_id: nil, direction_id: nil, route_id: nil, stop_id: nil, trip_id: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
 
-        class Consequence < OnebusawaySDK::BaseModel
+        class Consequence < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] condition
           #   Condition of the consequence.
           #
@@ -542,10 +544,10 @@ module OnebusawaySDK
           #   #
           #   def initialize(condition: nil, condition_details: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
           # @see OnebusawaySDK::Models::References::Situation::Consequence#condition_details
-          class ConditionDetails < OnebusawaySDK::BaseModel
+          class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute [r] diversion_path
             #
             #   @return [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath, nil]
@@ -560,7 +562,9 @@ module OnebusawaySDK
             # @!attribute [r] diversion_stop_ids
             #
             #   @return [Array<String>, nil]
-            optional :diversion_stop_ids, OnebusawaySDK::ArrayOf[String], api_name: :diversionStopIds
+            optional :diversion_stop_ids,
+                     OnebusawaySDK::Internal::Type::ArrayOf[String],
+                     api_name: :diversionStopIds
 
             # @!parse
             #   # @return [Array<String>]
@@ -572,10 +576,10 @@ module OnebusawaySDK
             #   #
             #   def initialize(diversion_path: nil, diversion_stop_ids: nil, **) = super
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
             # @see OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails#diversion_path
-            class DiversionPath < OnebusawaySDK::BaseModel
+            class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] length
               #   Length of the diversion path.
               #
@@ -613,13 +617,13 @@ module OnebusawaySDK
               #   #
               #   def initialize(length: nil, levels: nil, points: nil, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
           end
         end
 
         # @see OnebusawaySDK::Models::References::Situation#description
-        class Description < OnebusawaySDK::BaseModel
+        class Description < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] lang
           #   Language of the description.
           #
@@ -646,10 +650,10 @@ module OnebusawaySDK
           #   #
           #   def initialize(lang: nil, value: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
 
-        class PublicationWindow < OnebusawaySDK::BaseModel
+        class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute from
           #   Start time of the time window as a Unix timestamp.
           #
@@ -668,14 +672,14 @@ module OnebusawaySDK
           #   #
           #   def initialize(from:, to:, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
 
         # Reason for the service alert, taken from TPEG codes.
         #
         # @see OnebusawaySDK::Models::References::Situation#reason
         module Reason
-          extend OnebusawaySDK::Enum
+          extend OnebusawaySDK::Internal::Type::Enum
 
           EQUIPMENT_REASON = :equipmentReason
           ENVIRONMENT_REASON = :environmentReason
@@ -691,7 +695,7 @@ module OnebusawaySDK
         end
 
         # @see OnebusawaySDK::Models::References::Situation#summary
-        class Summary < OnebusawaySDK::BaseModel
+        class Summary < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] lang
           #   Language of the summary.
           #
@@ -718,11 +722,11 @@ module OnebusawaySDK
           #   #
           #   def initialize(lang: nil, value: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
 
         # @see OnebusawaySDK::Models::References::Situation#url
-        class URL < OnebusawaySDK::BaseModel
+        class URL < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] lang
           #   Language of the URL.
           #
@@ -749,11 +753,11 @@ module OnebusawaySDK
           #   #
           #   def initialize(lang: nil, value: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
         end
       end
 
-      class Stop < OnebusawaySDK::BaseModel
+      class Stop < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -782,12 +786,12 @@ module OnebusawaySDK
         # @!attribute route_ids
         #
         #   @return [Array<String>]
-        required :route_ids, OnebusawaySDK::ArrayOf[String], api_name: :routeIds
+        required :route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :routeIds
 
         # @!attribute static_route_ids
         #
         #   @return [Array<String>]
-        required :static_route_ids, OnebusawaySDK::ArrayOf[String], api_name: :staticRouteIds
+        required :static_route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :staticRouteIds
 
         # @!attribute [r] code
         #
@@ -855,10 +859,10 @@ module OnebusawaySDK
         #     super
         #   end
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
       end
 
-      class StopTime < OnebusawaySDK::BaseModel
+      class StopTime < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute [r] arrival_time
         #
         #   @return [Integer, nil]
@@ -933,10 +937,10 @@ module OnebusawaySDK
         #     super
         #   end
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
       end
 
-      class Trip < OnebusawaySDK::BaseModel
+      class Trip < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -1054,7 +1058,7 @@ module OnebusawaySDK
         #     super
         #   end
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
       end
     end
   end

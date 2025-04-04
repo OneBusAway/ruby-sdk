@@ -22,7 +22,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry
 
         attr_accessor references: OnebusawaySDK::Models::References
@@ -36,7 +36,7 @@ module OnebusawaySDK
 
         type entry = { length: Integer, points: String, levels: String }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor length: Integer
 
           attr_accessor points: String

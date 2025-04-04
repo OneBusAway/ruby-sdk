@@ -11,12 +11,7 @@ module OnebusawaySDK
           include_status: T::Boolean,
           include_trip: T::Boolean,
           time: Integer,
-          request_options: T.nilable(
-            T.any(
-              OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::Util::AnyHash
-            )
-          )
+          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
         )
           .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse)
       end

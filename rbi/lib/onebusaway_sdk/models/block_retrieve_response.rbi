@@ -7,17 +7,13 @@ module OnebusawaySDK
       attr_reader :data
 
       sig do
-        params(
-          data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
-        )
+        params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
           .void
       end
       attr_writer :data
 
       sig do
-        params(
-          data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
-        )
+        params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
           .returns(T.attached_class)
       end
       def self.new(data:)
@@ -27,13 +23,13 @@ module OnebusawaySDK
       def to_hash
       end
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry) }
         attr_reader :entry
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash)
           )
             .void
         end
@@ -42,13 +38,13 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::Util::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
+            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -67,7 +63,7 @@ module OnebusawaySDK
         def to_hash
         end
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(String) }
           attr_accessor :id
 
@@ -80,7 +76,7 @@ module OnebusawaySDK
               configurations: T::Array[
               T.any(
                 OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               )
               ]
             )
@@ -101,7 +97,7 @@ module OnebusawaySDK
           def to_hash
           end
 
-          class Configuration < OnebusawaySDK::BaseModel
+          class Configuration < OnebusawaySDK::Internal::Type::BaseModel
             sig { returns(T::Array[String]) }
             attr_accessor :active_service_ids
 
@@ -120,7 +116,7 @@ module OnebusawaySDK
                 trips: T::Array[
                 T.any(
                   OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip,
-                  OnebusawaySDK::Internal::Util::AnyHash
+                  OnebusawaySDK::Internal::AnyHash
                 )
                 ],
                 inactive_service_ids: T::Array[String]
@@ -143,7 +139,7 @@ module OnebusawaySDK
             def to_hash
             end
 
-            class Trip < OnebusawaySDK::BaseModel
+            class Trip < OnebusawaySDK::Internal::Type::BaseModel
               sig { returns(Float) }
               attr_accessor :accumulated_slack_time
 
@@ -166,7 +162,7 @@ module OnebusawaySDK
                   block_stop_times: T::Array[
                   T.any(
                     OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime,
-                    OnebusawaySDK::Internal::Util::AnyHash
+                    OnebusawaySDK::Internal::AnyHash
                   )
                   ],
                   distance_along_block: Float,
@@ -191,7 +187,7 @@ module OnebusawaySDK
               def to_hash
               end
 
-              class BlockStopTime < OnebusawaySDK::BaseModel
+              class BlockStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 sig { returns(Float) }
                 attr_accessor :accumulated_slack_time
 
@@ -212,7 +208,7 @@ module OnebusawaySDK
                   params(
                     stop_time: T.any(
                       OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
-                      OnebusawaySDK::Internal::Util::AnyHash
+                      OnebusawaySDK::Internal::AnyHash
                     )
                   )
                     .void
@@ -226,7 +222,7 @@ module OnebusawaySDK
                     distance_along_block: Float,
                     stop_time: T.any(
                       OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
-                      OnebusawaySDK::Internal::Util::AnyHash
+                      OnebusawaySDK::Internal::AnyHash
                     )
                   )
                     .returns(T.attached_class)
@@ -248,7 +244,7 @@ module OnebusawaySDK
                 def to_hash
                 end
 
-                class StopTime < OnebusawaySDK::BaseModel
+                class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                   sig { returns(Integer) }
                   attr_accessor :arrival_time
 
