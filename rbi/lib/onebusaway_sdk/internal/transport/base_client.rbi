@@ -25,10 +25,10 @@ module OnebusawaySDK
               ),
               body: T.nilable(T.anything),
               unwrap: T.nilable(Symbol),
-              page: T.nilable(T::Class[OnebusawaySDK::Internal::Type::BasePage[OnebusawaySDK::BaseModel]]),
+              page: T.nilable(T::Class[OnebusawaySDK::Internal::Type::BasePage[OnebusawaySDK::Internal::Type::BaseModel]]),
               stream: T.nilable(T::Class[T.anything]),
               model: T.nilable(OnebusawaySDK::Internal::Type::Converter::Input),
-              options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash))
+              options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
             }
           end
 
@@ -136,7 +136,7 @@ module OnebusawaySDK
           overridable
             .params(
               req: OnebusawaySDK::Internal::Transport::BaseClient::RequestComponentsShape,
-              opts: OnebusawaySDK::Internal::Util::AnyHash
+              opts: OnebusawaySDK::Internal::AnyHash
             )
             .returns(OnebusawaySDK::Internal::Transport::BaseClient::RequestInputShape)
         end
@@ -180,10 +180,10 @@ module OnebusawaySDK
             ),
             body: T.nilable(T.anything),
             unwrap: T.nilable(Symbol),
-            page: T.nilable(T::Class[OnebusawaySDK::Internal::Type::BasePage[OnebusawaySDK::BaseModel]]),
+            page: T.nilable(T::Class[OnebusawaySDK::Internal::Type::BasePage[OnebusawaySDK::Internal::Type::BaseModel]]),
             stream: T.nilable(T::Class[T.anything]),
             model: T.nilable(OnebusawaySDK::Internal::Type::Converter::Input),
-            options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash))
+            options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
           )
             .returns(T.anything)
         end
@@ -196,7 +196,7 @@ module OnebusawaySDK
           unwrap: nil,
           page: nil,
           stream: nil,
-          model: OnebusawaySDK::Unknown,
+          model: OnebusawaySDK::Internal::Type::Unknown,
           options: {}
         )
         end

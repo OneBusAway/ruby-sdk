@@ -21,7 +21,7 @@ module OnebusawaySDK
           entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
 
         def initialize: (
@@ -40,7 +40,7 @@ module OnebusawaySDK
             trips: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor route_id: String
 
           attr_accessor schedule_date: Integer
@@ -79,7 +79,7 @@ module OnebusawaySDK
               wheelchair_boarding: String
             }
 
-          class Stop < OnebusawaySDK::BaseModel
+          class Stop < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor id: String
 
             attr_accessor lat: Float
@@ -136,7 +136,7 @@ module OnebusawaySDK
               trips_with_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
             }
 
-          class StopTripGrouping < OnebusawaySDK::BaseModel
+          class StopTripGrouping < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor direction_id: String
 
             attr_accessor stop_ids: ::Array[String]
@@ -167,7 +167,7 @@ module OnebusawaySDK
                 trip_id: String
               }
 
-            class TripsWithStopTime < OnebusawaySDK::BaseModel
+            class TripsWithStopTime < OnebusawaySDK::Internal::Type::BaseModel
               attr_accessor stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime]
 
               attr_accessor trip_id: String
@@ -191,7 +191,7 @@ module OnebusawaySDK
                   stop_headsign: String
                 }
 
-              class StopTime < OnebusawaySDK::BaseModel
+              class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                 attr_accessor arrival_enabled: bool
 
                 attr_accessor arrival_time: Integer
@@ -243,7 +243,7 @@ module OnebusawaySDK
               trip_short_name: String
             }
 
-          class Trip < OnebusawaySDK::BaseModel
+          class Trip < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor id: String
 
             attr_accessor route_id: String

@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class StopsForRouteListParams < OnebusawaySDK::BaseModel
+    class StopsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -24,7 +24,7 @@ module OnebusawaySDK
         params(
           include_polylines: T::Boolean,
           time: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end

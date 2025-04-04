@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry]
@@ -33,10 +33,10 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, references:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::ConfigRetrieveResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] id
           #
           #   @return [String, nil]
@@ -93,10 +93,10 @@ module OnebusawaySDK
           #   #
           #   def initialize(id: nil, git_properties: nil, name: nil, service_date_from: nil, service_date_to: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
           # @see OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry#git_properties
-          class GitProperties < OnebusawaySDK::BaseModel
+          class GitProperties < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute [r] git_branch
             #
             #   @return [String, nil]
@@ -325,7 +325,7 @@ module OnebusawaySDK
             #     super
             #   end
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
           end
         end
       end

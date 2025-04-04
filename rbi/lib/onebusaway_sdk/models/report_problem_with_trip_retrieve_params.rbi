@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class ReportProblemWithTripRetrieveParams < OnebusawaySDK::BaseModel
+    class ReportProblemWithTripRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -88,7 +88,7 @@ module OnebusawaySDK
           user_on_vehicle: T::Boolean,
           user_vehicle_number: String,
           vehicle_id: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -130,7 +130,7 @@ module OnebusawaySDK
 
       # A string code identifying the nature of the problem
       module Code
-        extend OnebusawaySDK::Enum
+        extend OnebusawaySDK::Internal::Type::Enum
 
         TaggedSymbol =
           T.type_alias { T.all(Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code) }

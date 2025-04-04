@@ -7,12 +7,13 @@ module OnebusawaySDK
       # @!attribute limit_exceeded
       #
       #   @return [Boolean]
-      required :limit_exceeded, OnebusawaySDK::BooleanModel, api_name: :limitExceeded
+      required :limit_exceeded, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :limitExceeded
 
       # @!attribute list
       #
       #   @return [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::List>]
-      required :list, -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForAgencyListResponse::List] }
+      required :list,
+               -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForAgencyListResponse::List] }
 
       # @!attribute references
       #
@@ -22,7 +23,7 @@ module OnebusawaySDK
       # @!attribute [r] out_of_range
       #
       #   @return [Boolean, nil]
-      optional :out_of_range, OnebusawaySDK::BooleanModel, api_name: :outOfRange
+      optional :out_of_range, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :outOfRange
 
       # @!parse
       #   # @return [Boolean]
@@ -36,9 +37,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(limit_exceeded:, list:, references:, out_of_range: nil, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class List < OnebusawaySDK::BaseModel
+      class List < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -67,12 +68,12 @@ module OnebusawaySDK
         # @!attribute route_ids
         #
         #   @return [Array<String>]
-        required :route_ids, OnebusawaySDK::ArrayOf[String], api_name: :routeIds
+        required :route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :routeIds
 
         # @!attribute static_route_ids
         #
         #   @return [Array<String>]
-        required :static_route_ids, OnebusawaySDK::ArrayOf[String], api_name: :staticRouteIds
+        required :static_route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :staticRouteIds
 
         # @!attribute [r] code
         #
@@ -140,7 +141,7 @@ module OnebusawaySDK
         #     super
         #   end
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
       end
     end
   end

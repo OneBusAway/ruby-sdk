@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class ResponseWrapper < OnebusawaySDK::BaseModel
+    class ResponseWrapper < OnebusawaySDK::Internal::Type::BaseModel
       # @!attribute code
       #
       #   @return [Integer]
@@ -31,7 +31,7 @@ module OnebusawaySDK
       #   #
       #   def initialize(code:, current_time:, text:, version:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
     end
   end
 end

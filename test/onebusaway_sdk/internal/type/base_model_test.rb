@@ -3,26 +3,26 @@
 require_relative "../../test_helper"
 
 class OnebusawaySDK::Test::PrimitiveModelTest < Minitest::Test
-  A = OnebusawaySDK::ArrayOf[-> { Integer }]
-  H = OnebusawaySDK::HashOf[-> { Integer }, nil?: true]
+  A = OnebusawaySDK::Internal::Type::ArrayOf[-> { Integer }]
+  H = OnebusawaySDK::Internal::Type::HashOf[-> { Integer }, nil?: true]
 
   module E
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
   end
 
   module U
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
   end
 
-  class B < OnebusawaySDK::BaseModel
+  class B < OnebusawaySDK::Internal::Type::BaseModel
     optional :a, Integer
     optional :b, B
   end
 
   def test_typing
     converters = [
-      OnebusawaySDK::Unknown,
-      OnebusawaySDK::BooleanModel,
+      OnebusawaySDK::Internal::Type::Unknown,
+      OnebusawaySDK::Internal::Type::BooleanModel,
       A,
       H,
       E,
@@ -39,11 +39,11 @@ class OnebusawaySDK::Test::PrimitiveModelTest < Minitest::Test
 
   def test_coerce
     cases = {
-      [OnebusawaySDK::Unknown, :a] => [{yes: 1}, :a],
+      [OnebusawaySDK::Internal::Type::Unknown, :a] => [{yes: 1}, :a],
       [NilClass, :a] => [{maybe: 1}, nil],
       [NilClass, nil] => [{yes: 1}, nil],
-      [OnebusawaySDK::BooleanModel, true] => [{yes: 1}, true],
-      [OnebusawaySDK::BooleanModel, "true"] => [{no: 1}, "true"],
+      [OnebusawaySDK::Internal::Type::BooleanModel, true] => [{yes: 1}, true],
+      [OnebusawaySDK::Internal::Type::BooleanModel, "true"] => [{no: 1}, "true"],
       [Integer, 1] => [{yes: 1}, 1],
       [Integer, 1.0] => [{maybe: 1}, 1],
       [Integer, "1"] => [{maybe: 1}, 1],
@@ -76,7 +76,7 @@ class OnebusawaySDK::Test::PrimitiveModelTest < Minitest::Test
 
   def test_dump
     cases = {
-      [OnebusawaySDK::Unknown, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
+      [OnebusawaySDK::Internal::Type::Unknown, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [A, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [H, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [E, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
@@ -85,8 +85,8 @@ class OnebusawaySDK::Test::PrimitiveModelTest < Minitest::Test
       [String, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [:b, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [nil, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
-      [OnebusawaySDK::BooleanModel, true] => true,
-      [OnebusawaySDK::BooleanModel, "true"] => "true",
+      [OnebusawaySDK::Internal::Type::BooleanModel, true] => true,
+      [OnebusawaySDK::Internal::Type::BooleanModel, "true"] => "true",
       [Integer, "1"] => "1",
       [Float, 1] => 1,
       [String, "one"] => "one",
@@ -126,27 +126,27 @@ end
 
 class OnebusawaySDK::Test::EnumModelTest < Minitest::Test
   module E1
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
 
     TRUE = true
   end
 
   module E2
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
 
     ONE = 1
     TWO = 2
   end
 
   module E3
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
 
     ONE = 1.0
     TWO = 2.0
   end
 
   module E4
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
 
     ONE = :one
     TWO = :two
@@ -216,14 +216,14 @@ class OnebusawaySDK::Test::EnumModelTest < Minitest::Test
 end
 
 class OnebusawaySDK::Test::CollectionModelTest < Minitest::Test
-  A1 = OnebusawaySDK::ArrayOf[-> { Integer }]
-  H1 = OnebusawaySDK::HashOf[Integer]
+  A1 = OnebusawaySDK::Internal::Type::ArrayOf[-> { Integer }]
+  H1 = OnebusawaySDK::Internal::Type::HashOf[Integer]
 
-  A2 = OnebusawaySDK::ArrayOf[H1]
-  H2 = OnebusawaySDK::HashOf[-> { A1 }]
+  A2 = OnebusawaySDK::Internal::Type::ArrayOf[H1]
+  H2 = OnebusawaySDK::Internal::Type::HashOf[-> { A1 }]
 
-  A3 = OnebusawaySDK::ArrayOf[Integer, nil?: true]
-  H3 = OnebusawaySDK::HashOf[Integer, nil?: true]
+  A3 = OnebusawaySDK::Internal::Type::ArrayOf[Integer, nil?: true]
+  H3 = OnebusawaySDK::Internal::Type::HashOf[Integer, nil?: true]
 
   def test_coerce
     cases = {
@@ -263,7 +263,7 @@ class OnebusawaySDK::Test::CollectionModelTest < Minitest::Test
 end
 
 class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
-  class M1 < OnebusawaySDK::BaseModel
+  class M1 < OnebusawaySDK::Internal::Type::BaseModel
     required :a, Integer
   end
 
@@ -273,7 +273,7 @@ class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
     optional :c, String
   end
 
-  class M3 < OnebusawaySDK::BaseModel
+  class M3 < OnebusawaySDK::Internal::Type::BaseModel
     optional :c, const: :c
     required :d, const: :d
   end
@@ -290,7 +290,7 @@ class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
     end
   end
 
-  class M5 < OnebusawaySDK::BaseModel
+  class M5 < OnebusawaySDK::Internal::Type::BaseModel
     request_only do
       required :c, const: :c
     end
@@ -301,7 +301,7 @@ class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
   end
 
   class M6 < M1
-    required :a, OnebusawaySDK::ArrayOf[M6]
+    required :a, OnebusawaySDK::Internal::Type::ArrayOf[M6]
   end
 
   def test_coerce
@@ -337,7 +337,7 @@ class OnebusawaySDK::Test::BaseModelTest < Minitest::Test
       assert_pattern do
         coerced = OnebusawaySDK::Internal::Type::Converter.coerce(target, input, state: state)
         assert_equal(coerced, coerced)
-        if coerced.is_a?(OnebusawaySDK::BaseModel)
+        if coerced.is_a?(OnebusawaySDK::Internal::Type::BaseModel)
           coerced.to_h => ^expect
         else
           coerced => ^expect
@@ -403,27 +403,27 @@ end
 
 class OnebusawaySDK::Test::UnionTest < Minitest::Test
   module U0
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
   end
 
   module U1
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
     variant const: :a
     variant const: 2
   end
 
-  class M1 < OnebusawaySDK::BaseModel
+  class M1 < OnebusawaySDK::Internal::Type::BaseModel
     required :t, const: :a, api_name: :type
     optional :c, String
   end
 
-  class M2 < OnebusawaySDK::BaseModel
+  class M2 < OnebusawaySDK::Internal::Type::BaseModel
     required :type, const: :b
     optional :c, String
   end
 
   module U2
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
     discriminator :type
 
     variant :a, M1
@@ -431,7 +431,7 @@ class OnebusawaySDK::Test::UnionTest < Minitest::Test
   end
 
   module U3
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
     discriminator :type
 
     variant :a, M1
@@ -439,37 +439,37 @@ class OnebusawaySDK::Test::UnionTest < Minitest::Test
   end
 
   module U4
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
     discriminator :type
 
     variant String
     variant :a, M1
   end
 
-  class M3 < OnebusawaySDK::BaseModel
+  class M3 < OnebusawaySDK::Internal::Type::BaseModel
     optional :recur, -> { U5 }
     required :a, Integer
   end
 
-  class M4 < OnebusawaySDK::BaseModel
+  class M4 < OnebusawaySDK::Internal::Type::BaseModel
     optional :recur, -> { U5 }
-    required :a, OnebusawaySDK::ArrayOf[-> { U5 }]
+    required :a, OnebusawaySDK::Internal::Type::ArrayOf[-> { U5 }]
   end
 
-  class M5 < OnebusawaySDK::BaseModel
+  class M5 < OnebusawaySDK::Internal::Type::BaseModel
     optional :recur, -> { U5 }
-    required :b, OnebusawaySDK::ArrayOf[-> { U5 }]
+    required :b, OnebusawaySDK::Internal::Type::ArrayOf[-> { U5 }]
   end
 
   module U5
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
 
     variant -> { M3 }
     variant -> { M4 }
   end
 
   module U6
-    extend OnebusawaySDK::Union
+    extend OnebusawaySDK::Internal::Type::Union
 
     variant -> { M3 }
     variant -> { M5 }
@@ -480,7 +480,7 @@ class OnebusawaySDK::Test::UnionTest < Minitest::Test
     tap do
       model.recur
       flunk
-    rescue OnebusawaySDK::ConversionError => e
+    rescue OnebusawaySDK::Errors::ConversionError => e
       assert_kind_of(ArgumentError, e.cause)
     end
   end
@@ -513,7 +513,7 @@ class OnebusawaySDK::Test::UnionTest < Minitest::Test
       assert_pattern do
         coerced = OnebusawaySDK::Internal::Type::Converter.coerce(target, input, state: state)
         assert_equal(coerced, coerced)
-        if coerced.is_a?(OnebusawaySDK::BaseModel)
+        if coerced.is_a?(OnebusawaySDK::Internal::Type::BaseModel)
           coerced.to_h => ^expect
         else
           coerced => ^expect
@@ -527,29 +527,29 @@ end
 
 class OnebusawaySDK::Test::BaseModelQoLTest < Minitest::Test
   module E1
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
 
     A = 1
   end
 
   module E2
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
 
     A = 1
   end
 
   module E3
-    extend OnebusawaySDK::Enum
+    extend OnebusawaySDK::Internal::Type::Enum
 
     A = 2
     B = 3
   end
 
-  class M1 < OnebusawaySDK::BaseModel
+  class M1 < OnebusawaySDK::Internal::Type::BaseModel
     required :a, Integer
   end
 
-  class M2 < OnebusawaySDK::BaseModel
+  class M2 < OnebusawaySDK::Internal::Type::BaseModel
     required :a, Integer, nil?: true
   end
 
@@ -559,9 +559,9 @@ class OnebusawaySDK::Test::BaseModelQoLTest < Minitest::Test
 
   def test_equality
     cases = {
-      [OnebusawaySDK::Unknown, OnebusawaySDK::Unknown] => true,
-      [OnebusawaySDK::BooleanModel, OnebusawaySDK::BooleanModel] => true,
-      [OnebusawaySDK::Unknown, OnebusawaySDK::BooleanModel] => false,
+      [OnebusawaySDK::Internal::Type::Unknown, OnebusawaySDK::Internal::Type::Unknown] => true,
+      [OnebusawaySDK::Internal::Type::BooleanModel, OnebusawaySDK::Internal::Type::BooleanModel] => true,
+      [OnebusawaySDK::Internal::Type::Unknown, OnebusawaySDK::Internal::Type::BooleanModel] => false,
       [E1, E2] => true,
       [E1, E3] => false,
       [M1, M2] => false,

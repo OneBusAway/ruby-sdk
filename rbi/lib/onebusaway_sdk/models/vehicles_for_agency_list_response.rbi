@@ -8,7 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .void
       end
@@ -16,7 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -27,7 +27,7 @@ module OnebusawaySDK
       def to_hash
       end
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(T::Boolean) }
         attr_accessor :limit_exceeded
 
@@ -37,19 +37,14 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[
-            T.any(
-              OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List,
-              OnebusawaySDK::Internal::Util::AnyHash
-            )
-            ],
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
+            list: T::Array[T.any(OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List, OnebusawaySDK::Internal::AnyHash)],
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -69,7 +64,7 @@ module OnebusawaySDK
         def to_hash
         end
 
-        class List < OnebusawaySDK::BaseModel
+        class List < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(Integer) }
           attr_accessor :last_location_update_time
 
@@ -83,7 +78,7 @@ module OnebusawaySDK
             params(
               location: T.any(
                 OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               )
             )
               .void
@@ -100,7 +95,7 @@ module OnebusawaySDK
             params(
               trip_status: T.any(
                 OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               )
             )
               .void
@@ -146,12 +141,12 @@ module OnebusawaySDK
               last_update_time: Integer,
               location: T.any(
                 OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               ),
               trip_id: String,
               trip_status: T.any(
                 OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               ),
               vehicle_id: String,
               occupancy_capacity: Integer,
@@ -198,7 +193,7 @@ module OnebusawaySDK
           def to_hash
           end
 
-          class Location < OnebusawaySDK::BaseModel
+          class Location < OnebusawaySDK::Internal::Type::BaseModel
             sig { returns(T.nilable(Float)) }
             attr_reader :lat
 
@@ -220,7 +215,7 @@ module OnebusawaySDK
             end
           end
 
-          class TripStatus < OnebusawaySDK::BaseModel
+          class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
             # Trip ID of the trip the vehicle is actively serving.
             sig { returns(String) }
             attr_accessor :active_trip_id
@@ -314,7 +309,7 @@ module OnebusawaySDK
               params(
                 last_known_location: T.any(
                   OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation,
-                  OnebusawaySDK::Internal::Util::AnyHash
+                  OnebusawaySDK::Internal::AnyHash
                 )
               )
                 .void
@@ -358,7 +353,7 @@ module OnebusawaySDK
               params(
                 position: T.any(
                   OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position,
-                  OnebusawaySDK::Internal::Util::AnyHash
+                  OnebusawaySDK::Internal::AnyHash
                 )
               )
                 .void
@@ -409,7 +404,7 @@ module OnebusawaySDK
                 frequency: String,
                 last_known_location: T.any(
                   OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation,
-                  OnebusawaySDK::Internal::Util::AnyHash
+                  OnebusawaySDK::Internal::AnyHash
                 ),
                 last_known_orientation: Float,
                 next_stop: String,
@@ -417,7 +412,7 @@ module OnebusawaySDK
                 orientation: Float,
                 position: T.any(
                   OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position,
-                  OnebusawaySDK::Internal::Util::AnyHash
+                  OnebusawaySDK::Internal::AnyHash
                 ),
                 scheduled_distance_along_trip: Float,
                 situation_ids: T::Array[String],
@@ -493,7 +488,7 @@ module OnebusawaySDK
             def to_hash
             end
 
-            class LastKnownLocation < OnebusawaySDK::BaseModel
+            class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               # Latitude of the last known location of the transit vehicle.
               sig { returns(T.nilable(Float)) }
               attr_reader :lat
@@ -518,7 +513,7 @@ module OnebusawaySDK
               end
             end
 
-            class Position < OnebusawaySDK::BaseModel
+            class Position < OnebusawaySDK::Internal::Type::BaseModel
               # Latitude of the current position of the transit vehicle.
               sig { returns(T.nilable(Float)) }
               attr_reader :lat

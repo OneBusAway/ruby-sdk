@@ -23,7 +23,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry
 
         attr_accessor limit_exceeded: bool
@@ -52,7 +52,7 @@ module OnebusawaySDK
             private_service: bool
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor name: String

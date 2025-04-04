@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry]
@@ -33,15 +33,15 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, references:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] polylines
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>, nil]
           optional :polylines,
-                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline] }
+                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline] }
 
           # @!parse
           #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>]
@@ -60,7 +60,7 @@ module OnebusawaySDK
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping>, nil]
           optional :stop_groupings,
-                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping] },
+                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping] },
                    api_name: :stopGroupings
 
           # @!parse
@@ -70,7 +70,7 @@ module OnebusawaySDK
           # @!attribute [r] stop_ids
           #
           #   @return [Array<String>, nil]
-          optional :stop_ids, OnebusawaySDK::ArrayOf[String], api_name: :stopIds
+          optional :stop_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :stopIds
 
           # @!parse
           #   # @return [Array<String>]
@@ -84,9 +84,9 @@ module OnebusawaySDK
           #   #
           #   def initialize(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-          class Polyline < OnebusawaySDK::BaseModel
+          class Polyline < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute [r] length
             #
             #   @return [Integer, nil]
@@ -121,10 +121,10 @@ module OnebusawaySDK
             #   #
             #   def initialize(length: nil, levels: nil, points: nil, **) = super
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
           end
 
-          class StopGrouping < OnebusawaySDK::BaseModel
+          class StopGrouping < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute [r] id
             #
             #   @return [String, nil]
@@ -147,7 +147,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>, nil]
             optional :polylines,
-                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline] }
+                     -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline] }
 
             # @!parse
             #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>]
@@ -156,7 +156,7 @@ module OnebusawaySDK
             # @!attribute [r] stop_ids
             #
             #   @return [Array<String>, nil]
-            optional :stop_ids, OnebusawaySDK::ArrayOf[String], api_name: :stopIds
+            optional :stop_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :stopIds
 
             # @!parse
             #   # @return [Array<String>]
@@ -170,10 +170,10 @@ module OnebusawaySDK
             #   #
             #   def initialize(id: nil, name: nil, polylines: nil, stop_ids: nil, **) = super
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
             # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping#name
-            class Name < OnebusawaySDK::BaseModel
+            class Name < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] name
               #
               #   @return [String, nil]
@@ -186,7 +186,7 @@ module OnebusawaySDK
               # @!attribute [r] names
               #
               #   @return [Array<String>, nil]
-              optional :names, OnebusawaySDK::ArrayOf[String]
+              optional :names, OnebusawaySDK::Internal::Type::ArrayOf[String]
 
               # @!parse
               #   # @return [Array<String>]
@@ -208,10 +208,10 @@ module OnebusawaySDK
               #   #
               #   def initialize(name: nil, names: nil, type: nil, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
 
-            class Polyline < OnebusawaySDK::BaseModel
+            class Polyline < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] length
               #
               #   @return [Integer, nil]
@@ -246,7 +246,7 @@ module OnebusawaySDK
               #   #
               #   def initialize(length: nil, levels: nil, points: nil, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
           end
         end

@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry]
@@ -33,10 +33,10 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, references:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute trip_id
           #
           #   @return [String]
@@ -68,7 +68,7 @@ module OnebusawaySDK
           # @!attribute [r] situation_ids
           #
           #   @return [Array<String>, nil]
-          optional :situation_ids, OnebusawaySDK::ArrayOf[String], api_name: :situationIds
+          optional :situation_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :situationIds
 
           # @!parse
           #   # @return [Array<String>]
@@ -93,10 +93,10 @@ module OnebusawaySDK
           #   #
           #   def initialize(trip_id:, frequency: nil, schedule: nil, service_date: nil, situation_ids: nil, status: nil, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
           # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry#schedule
-          class Schedule < OnebusawaySDK::BaseModel
+          class Schedule < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute next_trip_id
             #
             #   @return [String]
@@ -111,7 +111,7 @@ module OnebusawaySDK
             #
             #   @return [Array<OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime>]
             required :stop_times,
-                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime] },
+                     -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::StopTime] },
                      api_name: :stopTimes
 
             # @!attribute time_zone
@@ -133,9 +133,9 @@ module OnebusawaySDK
             #   #
             #   def initialize(next_trip_id:, previous_trip_id:, stop_times:, time_zone:, frequency: nil, **) = super
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-            class StopTime < OnebusawaySDK::BaseModel
+            class StopTime < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] arrival_time
               #
               #   @return [Integer, nil]
@@ -210,12 +210,12 @@ module OnebusawaySDK
               #     super
               #   end
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
           end
 
           # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry#status
-          class Status < OnebusawaySDK::BaseModel
+          class Status < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute active_trip_id
             #   Trip ID of the trip the vehicle is actively serving.
             #
@@ -287,7 +287,7 @@ module OnebusawaySDK
             #   Indicates if real-time arrival info is available for this trip.
             #
             #   @return [Boolean]
-            required :predicted, OnebusawaySDK::BooleanModel
+            required :predicted, OnebusawaySDK::Internal::Type::BooleanModel
 
             # @!attribute schedule_deviation
             #   Deviation from the schedule in seconds (positive for late, negative for early).
@@ -414,7 +414,7 @@ module OnebusawaySDK
             #   References to situation elements (if any) applicable to this trip.
             #
             #   @return [Array<String>, nil]
-            optional :situation_ids, OnebusawaySDK::ArrayOf[String], api_name: :situationIds
+            optional :situation_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :situationIds
 
             # @!parse
             #   # @return [Array<String>]
@@ -492,10 +492,10 @@ module OnebusawaySDK
             #     super
             #   end
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
             # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status#last_known_location
-            class LastKnownLocation < OnebusawaySDK::BaseModel
+            class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] lat
               #   Latitude of the last known location of the transit vehicle.
               #
@@ -524,11 +524,11 @@ module OnebusawaySDK
               #   #
               #   def initialize(lat: nil, lon: nil, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
 
             # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status#position
-            class Position < OnebusawaySDK::BaseModel
+            class Position < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute [r] lat
               #   Latitude of the current position of the transit vehicle.
               #
@@ -557,7 +557,7 @@ module OnebusawaySDK
               #   #
               #   def initialize(lat: nil, lon: nil, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
             end
           end
         end

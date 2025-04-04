@@ -21,7 +21,7 @@ module OnebusawaySDK
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.==(other) = other.is_a?(Class) && other <= OnebusawaySDK::Unknown
+        def self.==(other) = other.is_a?(Class) && other <= OnebusawaySDK::Internal::Type::Unknown
 
         class << self
           # @api private

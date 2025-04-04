@@ -2,7 +2,7 @@
 
 module OnebusawaySDK
   module Models
-    class ReportProblemWithStopRetrieveParams < OnebusawaySDK::BaseModel
+    class ReportProblemWithStopRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -48,7 +48,7 @@ module OnebusawaySDK
           user_lat: Float,
           user_location_accuracy: Float,
           user_lon: Float,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -80,7 +80,7 @@ module OnebusawaySDK
 
       # A string code identifying the nature of the problem
       module Code
-        extend OnebusawaySDK::Enum
+        extend OnebusawaySDK::Internal::Type::Enum
 
         TaggedSymbol =
           T.type_alias { T.all(Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code) }

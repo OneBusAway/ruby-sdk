@@ -22,7 +22,7 @@ module OnebusawaySDK
               T::Hash[
               Symbol,
               T.all(
-                OnebusawaySDK::BaseModel::KnownFieldShape,
+                OnebusawaySDK::Internal::Type::BaseModel::KnownFieldShape,
                 {type_fn: T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input)}
               )
               ]
@@ -37,7 +37,7 @@ module OnebusawaySDK
               T::Hash[
               Symbol,
               T.all(
-                OnebusawaySDK::BaseModel::KnownFieldShape,
+                OnebusawaySDK::Internal::Type::BaseModel::KnownFieldShape,
                 {type: OnebusawaySDK::Internal::Type::Converter::Input}
               )
               ]
@@ -62,7 +62,7 @@ module OnebusawaySDK
                 T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
                 OnebusawaySDK::Internal::Type::Converter::Input
               ),
-              spec: OnebusawaySDK::Internal::Util::AnyHash
+              spec: OnebusawaySDK::Internal::AnyHash
             )
               .void
           end
@@ -74,11 +74,11 @@ module OnebusawaySDK
             params(
               name_sym: Symbol,
               type_info: T.any(
-                OnebusawaySDK::Internal::Util::AnyHash,
+                OnebusawaySDK::Internal::AnyHash,
                 T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
                 OnebusawaySDK::Internal::Type::Converter::Input
               ),
-              spec: OnebusawaySDK::Internal::Util::AnyHash
+              spec: OnebusawaySDK::Internal::AnyHash
             )
               .void
           end
@@ -90,11 +90,11 @@ module OnebusawaySDK
             params(
               name_sym: Symbol,
               type_info: T.any(
-                OnebusawaySDK::Internal::Util::AnyHash,
+                OnebusawaySDK::Internal::AnyHash,
                 T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
                 OnebusawaySDK::Internal::Type::Converter::Input
               ),
-              spec: OnebusawaySDK::Internal::Util::AnyHash
+              spec: OnebusawaySDK::Internal::AnyHash
             )
               .void
           end
@@ -130,7 +130,11 @@ module OnebusawaySDK
           sig do
             override
               .params(
-                value: T.any(OnebusawaySDK::BaseModel, T::Hash[T.anything, T.anything], T.anything),
+                value: T.any(
+                  OnebusawaySDK::Internal::Type::BaseModel,
+                  T::Hash[T.anything, T.anything],
+                  T.anything
+                ),
                 state: OnebusawaySDK::Internal::Type::Converter::State
               )
               .returns(T.any(T.attached_class, T.anything))
@@ -166,7 +170,7 @@ module OnebusawaySDK
         #
         #   This method is not recursive. The returned value is shared by the object, so it
         #   should not be mutated.
-        sig { overridable.returns(OnebusawaySDK::Internal::Util::AnyHash) }
+        sig { overridable.returns(OnebusawaySDK::Internal::AnyHash) }
         def to_h
         end
 
@@ -178,11 +182,11 @@ module OnebusawaySDK
         #
         #   This method is not recursive. The returned value is shared by the object, so it
         #   should not be mutated.
-        sig { overridable.returns(OnebusawaySDK::Internal::Util::AnyHash) }
+        sig { overridable.returns(OnebusawaySDK::Internal::AnyHash) }
         def to_hash
         end
 
-        sig { params(keys: T.nilable(T::Array[Symbol])).returns(OnebusawaySDK::Internal::Util::AnyHash) }
+        sig { params(keys: T.nilable(T::Array[Symbol])).returns(OnebusawaySDK::Internal::AnyHash) }
         def deconstruct_keys(keys)
         end
 

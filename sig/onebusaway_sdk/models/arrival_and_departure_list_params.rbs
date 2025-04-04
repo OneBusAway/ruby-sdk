@@ -4,7 +4,7 @@ module OnebusawaySDK
       { minutes_after: Integer, minutes_before: Integer, time: Time }
       & OnebusawaySDK::Internal::Type::request_parameters
 
-    class ArrivalAndDepartureListParams < OnebusawaySDK::BaseModel
+    class ArrivalAndDepartureListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

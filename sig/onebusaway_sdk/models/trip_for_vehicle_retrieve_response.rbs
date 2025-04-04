@@ -22,7 +22,7 @@ module OnebusawaySDK
           references: OnebusawaySDK::Models::References
         }
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry
 
         attr_accessor references: OnebusawaySDK::Models::References
@@ -44,7 +44,7 @@ module OnebusawaySDK
             status: OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status
           }
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor trip_id: String
 
           attr_accessor frequency: String?
@@ -89,7 +89,7 @@ module OnebusawaySDK
               frequency: String?
             }
 
-          class Schedule < OnebusawaySDK::BaseModel
+          class Schedule < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor next_trip_id: String
 
             attr_accessor previous_trip_id: String
@@ -120,7 +120,7 @@ module OnebusawaySDK
                 stop_id: String
               }
 
-            class StopTime < OnebusawaySDK::BaseModel
+            class StopTime < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader arrival_time: Integer?
 
               def arrival_time=: (Integer) -> Integer
@@ -189,7 +189,7 @@ module OnebusawaySDK
               vehicle_id: String
             }
 
-          class Status < OnebusawaySDK::BaseModel
+          class Status < OnebusawaySDK::Internal::Type::BaseModel
             attr_accessor active_trip_id: String
 
             attr_accessor block_trip_sequence: Integer
@@ -304,7 +304,7 @@ module OnebusawaySDK
 
             type last_known_location = { lat: Float, lon: Float }
 
-            class LastKnownLocation < OnebusawaySDK::BaseModel
+            class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader lat: Float?
 
               def lat=: (Float) -> Float
@@ -320,7 +320,7 @@ module OnebusawaySDK
 
             type position = { lat: Float, lon: Float }
 
-            class Position < OnebusawaySDK::BaseModel
+            class Position < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader lat: Float?
 
               def lat=: (Float) -> Float

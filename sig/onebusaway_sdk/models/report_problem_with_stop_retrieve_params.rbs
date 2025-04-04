@@ -10,7 +10,7 @@ module OnebusawaySDK
       }
       & OnebusawaySDK::Internal::Type::request_parameters
 
-    class ReportProblemWithStopRetrieveParams < OnebusawaySDK::BaseModel
+    class ReportProblemWithStopRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -55,7 +55,7 @@ module OnebusawaySDK
         | :other
 
       module Code
-        extend OnebusawaySDK::Enum
+        extend OnebusawaySDK::Internal::Type::Enum
 
         STOP_NAME_WRONG: :stop_name_wrong
         STOP_NUMBER_WRONG: :stop_number_wrong

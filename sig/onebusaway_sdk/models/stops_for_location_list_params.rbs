@@ -11,7 +11,7 @@ module OnebusawaySDK
       }
       & OnebusawaySDK::Internal::Type::request_parameters
 
-    class StopsForLocationListParams < OnebusawaySDK::BaseModel
+    class StopsForLocationListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

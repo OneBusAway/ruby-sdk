@@ -15,7 +15,7 @@ module OnebusawaySDK
       }
       & OnebusawaySDK::Internal::Type::request_parameters
 
-    class ReportProblemWithTripRetrieveParams < OnebusawaySDK::BaseModel
+    class ReportProblemWithTripRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
@@ -86,7 +86,7 @@ module OnebusawaySDK
         | :other
 
       module Code
-        extend OnebusawaySDK::Enum
+        extend OnebusawaySDK::Internal::Type::Enum
 
         VEHICLE_NEVER_CAME: :vehicle_never_came
         VEHICLE_CAME_EARLY: :vehicle_came_early

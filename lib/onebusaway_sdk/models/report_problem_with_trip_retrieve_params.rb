@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::ReportProblemWithTrip#retrieve
-    class ReportProblemWithTripRetrieveParams < OnebusawaySDK::BaseModel
+    class ReportProblemWithTripRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       # @!parse
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
@@ -82,7 +82,7 @@ module OnebusawaySDK
       #   Indicator if the user is on the transit vehicle experiencing the problem
       #
       #   @return [Boolean, nil]
-      optional :user_on_vehicle, OnebusawaySDK::BooleanModel, api_name: :userOnVehicle
+      optional :user_on_vehicle, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :userOnVehicle
 
       # @!parse
       #   # @return [Boolean]
@@ -138,11 +138,11 @@ module OnebusawaySDK
       #     super
       #   end
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
       # A string code identifying the nature of the problem
       module Code
-        extend OnebusawaySDK::Enum
+        extend OnebusawaySDK::Internal::Type::Enum
 
         VEHICLE_NEVER_CAME = :vehicle_never_came
         VEHICLE_CAME_EARLY = :vehicle_came_early

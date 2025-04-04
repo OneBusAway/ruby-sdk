@@ -31,10 +31,10 @@ module OnebusawaySDK
         def dump(value)
           case value
           in Array
-            value.map { OnebusawaySDK::Unknown.dump(_1) }
+            value.map { OnebusawaySDK::Internal::Type::Unknown.dump(_1) }
           in Hash
-            value.transform_values { OnebusawaySDK::Unknown.dump(_1) }
-          in OnebusawaySDK::BaseModel
+            value.transform_values { OnebusawaySDK::Internal::Type::Unknown.dump(_1) }
+          in OnebusawaySDK::Internal::Type::BaseModel
             value.class.dump(value)
           else
             value
@@ -64,7 +64,7 @@ module OnebusawaySDK
             in Hash
               type_info(spec.slice(:const, :enum, :union).first&.last)
             in true | false
-              -> { OnebusawaySDK::BooleanModel }
+              -> { OnebusawaySDK::Internal::Type::BooleanModel }
             in OnebusawaySDK::Internal::Type::Converter | Class | Symbol
               -> { spec }
             in NilClass | Integer | Float
@@ -209,7 +209,7 @@ module OnebusawaySDK
           #
           # @return [Object]
           def dump(target, value)
-            target.is_a?(OnebusawaySDK::Internal::Type::Converter) ? target.dump(value) : OnebusawaySDK::Unknown.dump(value)
+            target.is_a?(OnebusawaySDK::Internal::Type::Converter) ? target.dump(value) : OnebusawaySDK::Internal::Type::Unknown.dump(value)
           end
         end
       end

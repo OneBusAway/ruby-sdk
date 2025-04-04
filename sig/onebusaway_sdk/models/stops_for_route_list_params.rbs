@@ -4,7 +4,7 @@ module OnebusawaySDK
       { include_polylines: bool, time: String }
       & OnebusawaySDK::Internal::Type::request_parameters
 
-    class StopsForRouteListParams < OnebusawaySDK::BaseModel
+    class StopsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 

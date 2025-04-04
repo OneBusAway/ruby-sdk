@@ -14,9 +14,9 @@ module OnebusawaySDK
       #   #
       #   def initialize(data:, **) = super
 
-      # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
         #
         #   @return [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry]
@@ -27,10 +27,10 @@ module OnebusawaySDK
         #   #
         #   def initialize(entry:, **) = super
 
-        # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
         # @see OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data#entry
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute route_id
           #
           #   @return [String]
@@ -44,26 +44,26 @@ module OnebusawaySDK
           # @!attribute service_ids
           #
           #   @return [Array<String>]
-          required :service_ids, OnebusawaySDK::ArrayOf[String], api_name: :serviceIds
+          required :service_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :serviceIds
 
           # @!attribute stops
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop>]
           required :stops,
-                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop] }
+                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop] }
 
           # @!attribute stop_trip_groupings
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping>]
           required :stop_trip_groupings,
-                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping] },
+                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping] },
                    api_name: :stopTripGroupings
 
           # @!attribute trips
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip>]
           required :trips,
-                   -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip] }
+                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip] }
 
           # @!parse
           #   # @param route_id [String]
@@ -75,9 +75,9 @@ module OnebusawaySDK
           #   #
           #   def initialize(route_id:, schedule_date:, service_ids:, stops:, stop_trip_groupings:, trips:, **) = super
 
-          # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-          class Stop < OnebusawaySDK::BaseModel
+          class Stop < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute id
             #
             #   @return [String]
@@ -106,12 +106,14 @@ module OnebusawaySDK
             # @!attribute route_ids
             #
             #   @return [Array<String>]
-            required :route_ids, OnebusawaySDK::ArrayOf[String], api_name: :routeIds
+            required :route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :routeIds
 
             # @!attribute static_route_ids
             #
             #   @return [Array<String>]
-            required :static_route_ids, OnebusawaySDK::ArrayOf[String], api_name: :staticRouteIds
+            required :static_route_ids,
+                     OnebusawaySDK::Internal::Type::ArrayOf[String],
+                     api_name: :staticRouteIds
 
             # @!attribute [r] code
             #
@@ -179,10 +181,10 @@ module OnebusawaySDK
             #     super
             #   end
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
           end
 
-          class StopTripGrouping < OnebusawaySDK::BaseModel
+          class StopTripGrouping < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute direction_id
             #
             #   @return [String]
@@ -191,23 +193,23 @@ module OnebusawaySDK
             # @!attribute stop_ids
             #
             #   @return [Array<String>]
-            required :stop_ids, OnebusawaySDK::ArrayOf[String], api_name: :stopIds
+            required :stop_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :stopIds
 
             # @!attribute trip_headsigns
             #
             #   @return [Array<String>]
-            required :trip_headsigns, OnebusawaySDK::ArrayOf[String], api_name: :tripHeadsigns
+            required :trip_headsigns, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :tripHeadsigns
 
             # @!attribute trip_ids
             #
             #   @return [Array<String>]
-            required :trip_ids, OnebusawaySDK::ArrayOf[String], api_name: :tripIds
+            required :trip_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :tripIds
 
             # @!attribute [r] trips_with_stop_times
             #
             #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime>, nil]
             optional :trips_with_stop_times,
-                     -> { OnebusawaySDK::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime] },
+                     -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime] },
                      api_name: :tripsWithStopTimes
 
             # @!parse
@@ -223,15 +225,15 @@ module OnebusawaySDK
             #   #
             #   def initialize(direction_id:, stop_ids:, trip_headsigns:, trip_ids:, trips_with_stop_times: nil, **) = super
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-            class TripsWithStopTime < OnebusawaySDK::BaseModel
+            class TripsWithStopTime < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute stop_times
               #
               #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime>]
               required :stop_times,
                        -> do
-                         OnebusawaySDK::ArrayOf[
+                         OnebusawaySDK::Internal::Type::ArrayOf[
                          OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime
                          ]
                        end,
@@ -248,13 +250,15 @@ module OnebusawaySDK
               #   #
               #   def initialize(stop_times:, trip_id:, **) = super
 
-              # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
 
-              class StopTime < OnebusawaySDK::BaseModel
+              class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                 # @!attribute arrival_enabled
                 #
                 #   @return [Boolean]
-                required :arrival_enabled, OnebusawaySDK::BooleanModel, api_name: :arrivalEnabled
+                required :arrival_enabled,
+                         OnebusawaySDK::Internal::Type::BooleanModel,
+                         api_name: :arrivalEnabled
 
                 # @!attribute arrival_time
                 #
@@ -264,7 +268,9 @@ module OnebusawaySDK
                 # @!attribute departure_enabled
                 #
                 #   @return [Boolean]
-                required :departure_enabled, OnebusawaySDK::BooleanModel, api_name: :departureEnabled
+                required :departure_enabled,
+                         OnebusawaySDK::Internal::Type::BooleanModel,
+                         api_name: :departureEnabled
 
                 # @!attribute departure_time
                 #
@@ -323,12 +329,12 @@ module OnebusawaySDK
                 #     super
                 #   end
 
-                # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+                # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
               end
             end
           end
 
-          class Trip < OnebusawaySDK::BaseModel
+          class Trip < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute id
             #
             #   @return [String]
@@ -446,7 +452,7 @@ module OnebusawaySDK
             #     super
             #   end
 
-            # def initialize: (Hash | OnebusawaySDK::BaseModel) -> void
+            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
           end
         end
       end

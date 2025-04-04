@@ -10,7 +10,7 @@ module OnebusawaySDK
         trips: ::Array[OnebusawaySDK::Models::References::Trip]
       }
 
-    class References < OnebusawaySDK::BaseModel
+    class References < OnebusawaySDK::Internal::Type::BaseModel
       attr_accessor agencies: ::Array[OnebusawaySDK::Models::References::Agency]
 
       attr_accessor routes: ::Array[OnebusawaySDK::Models::References::Route]
@@ -48,7 +48,7 @@ module OnebusawaySDK
           private_service: bool
         }
 
-      class Agency < OnebusawaySDK::BaseModel
+      class Agency < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor name: String
@@ -111,7 +111,7 @@ module OnebusawaySDK
           url: String
         }
 
-      class Route < OnebusawaySDK::BaseModel
+      class Route < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor agency_id: String
@@ -178,7 +178,7 @@ module OnebusawaySDK
           url: OnebusawaySDK::Models::References::Situation::URL
         }
 
-      class Situation < OnebusawaySDK::BaseModel
+      class Situation < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor creation_time: Integer
@@ -258,7 +258,7 @@ module OnebusawaySDK
 
         type active_window = { from: Integer, to: Integer }
 
-        class ActiveWindow < OnebusawaySDK::BaseModel
+        class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader from: Integer?
 
           def from=: (Integer) -> Integer
@@ -282,7 +282,7 @@ module OnebusawaySDK
             trip_id: String
           }
 
-        class AllAffect < OnebusawaySDK::BaseModel
+        class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader agency_id: String?
 
           def agency_id=: (String) -> String
@@ -325,7 +325,7 @@ module OnebusawaySDK
             condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
           }
 
-        class Consequence < OnebusawaySDK::BaseModel
+        class Consequence < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader condition: String?
 
           def condition=: (String) -> String
@@ -349,7 +349,7 @@ module OnebusawaySDK
               diversion_stop_ids: ::Array[String]
             }
 
-          class ConditionDetails < OnebusawaySDK::BaseModel
+          class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
             attr_reader diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath?
 
             def diversion_path=: (
@@ -370,7 +370,7 @@ module OnebusawaySDK
             type diversion_path =
               { length: Integer, levels: String, points: String }
 
-            class DiversionPath < OnebusawaySDK::BaseModel
+            class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
               attr_reader length: Integer?
 
               def length=: (Integer) -> Integer
@@ -396,7 +396,7 @@ module OnebusawaySDK
 
         type description = { lang: String, value: String }
 
-        class Description < OnebusawaySDK::BaseModel
+        class Description < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader lang: String?
 
           def lang=: (String) -> String
@@ -412,7 +412,7 @@ module OnebusawaySDK
 
         type publication_window = { from: Integer, to: Integer }
 
-        class PublicationWindow < OnebusawaySDK::BaseModel
+        class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
           attr_accessor from: Integer
 
           attr_accessor to: Integer
@@ -430,7 +430,7 @@ module OnebusawaySDK
           | :securityAlert
 
         module Reason
-          extend OnebusawaySDK::Enum
+          extend OnebusawaySDK::Internal::Type::Enum
 
           EQUIPMENT_REASON: :equipmentReason
           ENVIRONMENT_REASON: :environmentReason
@@ -443,7 +443,7 @@ module OnebusawaySDK
 
         type summary = { lang: String, value: String }
 
-        class Summary < OnebusawaySDK::BaseModel
+        class Summary < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader lang: String?
 
           def lang=: (String) -> String
@@ -459,7 +459,7 @@ module OnebusawaySDK
 
         type url = { lang: String, value: String }
 
-        class URL < OnebusawaySDK::BaseModel
+        class URL < OnebusawaySDK::Internal::Type::BaseModel
           attr_reader lang: String?
 
           def lang=: (String) -> String
@@ -489,7 +489,7 @@ module OnebusawaySDK
           wheelchair_boarding: String
         }
 
-      class Stop < OnebusawaySDK::BaseModel
+      class Stop < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor lat: Float
@@ -547,7 +547,7 @@ module OnebusawaySDK
           stop_id: String
         }
 
-      class StopTime < OnebusawaySDK::BaseModel
+      class StopTime < OnebusawaySDK::Internal::Type::BaseModel
         attr_reader arrival_time: Integer?
 
         def arrival_time=: (Integer) -> Integer
@@ -599,7 +599,7 @@ module OnebusawaySDK
           trip_short_name: String
         }
 
-      class Trip < OnebusawaySDK::BaseModel
+      class Trip < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor route_id: String

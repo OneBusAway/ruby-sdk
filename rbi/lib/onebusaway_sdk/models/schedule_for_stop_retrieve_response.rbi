@@ -8,10 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(
-            OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data,
-            OnebusawaySDK::Internal::Util::AnyHash
-          )
+          data: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .void
       end
@@ -19,10 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(
-            OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data,
-            OnebusawaySDK::Internal::Util::AnyHash
-          )
+          data: T.any(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -33,7 +27,7 @@ module OnebusawaySDK
       def to_hash
       end
 
-      class Data < OnebusawaySDK::BaseModel
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry) }
         attr_reader :entry
 
@@ -41,7 +35,7 @@ module OnebusawaySDK
           params(
             entry: T.any(
               OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
-              OnebusawaySDK::Internal::Util::AnyHash
+              OnebusawaySDK::Internal::AnyHash
             )
           )
             .void
@@ -51,16 +45,16 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
             entry: T.any(
               OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
-              OnebusawaySDK::Internal::Util::AnyHash
+              OnebusawaySDK::Internal::AnyHash
             ),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -79,7 +73,7 @@ module OnebusawaySDK
         def to_hash
         end
 
-        class Entry < OnebusawaySDK::BaseModel
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(Integer) }
           attr_accessor :date
 
@@ -96,7 +90,7 @@ module OnebusawaySDK
               stop_route_schedules: T::Array[
               T.any(
                 OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule,
-                OnebusawaySDK::Internal::Util::AnyHash
+                OnebusawaySDK::Internal::AnyHash
               )
               ]
             )
@@ -118,7 +112,7 @@ module OnebusawaySDK
           def to_hash
           end
 
-          class StopRouteSchedule < OnebusawaySDK::BaseModel
+          class StopRouteSchedule < OnebusawaySDK::Internal::Type::BaseModel
             sig { returns(String) }
             attr_accessor :route_id
 
@@ -137,7 +131,7 @@ module OnebusawaySDK
                 stop_route_direction_schedules: T::Array[
                 T.any(
                   OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule,
-                  OnebusawaySDK::Internal::Util::AnyHash
+                  OnebusawaySDK::Internal::AnyHash
                 )
                 ]
               )
@@ -160,7 +154,7 @@ module OnebusawaySDK
             def to_hash
             end
 
-            class StopRouteDirectionSchedule < OnebusawaySDK::BaseModel
+            class StopRouteDirectionSchedule < OnebusawaySDK::Internal::Type::BaseModel
               sig do
                 returns(
                   T::Array[
@@ -189,7 +183,7 @@ module OnebusawaySDK
                   schedule_frequencies: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
-                    OnebusawaySDK::Internal::Util::AnyHash
+                    OnebusawaySDK::Internal::AnyHash
                   )
                   ]
                 )
@@ -202,14 +196,14 @@ module OnebusawaySDK
                   schedule_stop_times: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime,
-                    OnebusawaySDK::Internal::Util::AnyHash
+                    OnebusawaySDK::Internal::AnyHash
                   )
                   ],
                   trip_headsign: String,
                   schedule_frequencies: T::Array[
                   T.any(
                     OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
-                    OnebusawaySDK::Internal::Util::AnyHash
+                    OnebusawaySDK::Internal::AnyHash
                   )
                   ]
                 )
@@ -235,7 +229,7 @@ module OnebusawaySDK
               def to_hash
               end
 
-              class ScheduleStopTime < OnebusawaySDK::BaseModel
+              class ScheduleStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 sig { returns(T::Boolean) }
                 attr_accessor :arrival_enabled
 
@@ -301,7 +295,7 @@ module OnebusawaySDK
                 end
               end
 
-              class ScheduleFrequency < OnebusawaySDK::BaseModel
+              class ScheduleFrequency < OnebusawaySDK::Internal::Type::BaseModel
                 sig { returns(Integer) }
                 attr_accessor :end_time
 

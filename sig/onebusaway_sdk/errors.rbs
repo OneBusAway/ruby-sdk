@@ -98,32 +98,4 @@ module OnebusawaySDK
       HTTP_STATUS: Range[Integer]
     end
   end
-
-  class Error = OnebusawaySDK::Errors::Error
-
-  class ConversionError = OnebusawaySDK::Errors::ConversionError
-
-  class APIError = OnebusawaySDK::Errors::APIError
-
-  class APIStatusError = OnebusawaySDK::Errors::APIStatusError
-
-  class APIConnectionError = OnebusawaySDK::Errors::APIConnectionError
-
-  class APITimeoutError = OnebusawaySDK::Errors::APITimeoutError
-
-  class BadRequestError = OnebusawaySDK::Errors::BadRequestError
-
-  class AuthenticationError = OnebusawaySDK::Errors::AuthenticationError
-
-  class PermissionDeniedError = OnebusawaySDK::Errors::PermissionDeniedError
-
-  class NotFoundError = OnebusawaySDK::Errors::NotFoundError
-
-  class ConflictError = OnebusawaySDK::Errors::ConflictError
-
-  class UnprocessableEntityError = OnebusawaySDK::Errors::UnprocessableEntityError
-
-  class RateLimitError = OnebusawaySDK::Errors::RateLimitError
-
-  class InternalServerError = OnebusawaySDK::Errors::InternalServerError
 end
