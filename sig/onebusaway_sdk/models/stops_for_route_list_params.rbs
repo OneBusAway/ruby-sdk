@@ -2,11 +2,11 @@ module OnebusawaySDK
   module Models
     type stops_for_route_list_params =
       { include_polylines: bool, time: String }
-      & OnebusawaySDK::request_parameters
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class StopsForRouteListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       attr_reader include_polylines: bool?
 

@@ -5,8 +5,8 @@ module OnebusawaySDK
     # @see OnebusawaySDK::Resources::SearchForStop#list
     class SearchForStopListParams < OnebusawaySDK::BaseModel
       # @!parse
-      #   extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute input
       #   The string to search for.

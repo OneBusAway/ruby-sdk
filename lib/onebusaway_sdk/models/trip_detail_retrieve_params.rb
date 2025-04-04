@@ -5,8 +5,8 @@ module OnebusawaySDK
     # @see OnebusawaySDK::Resources::TripDetails#retrieve
     class TripDetailRetrieveParams < OnebusawaySDK::BaseModel
       # @!parse
-      #   extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute [r] include_schedule
       #   Whether to include the full schedule element in the tripDetails section

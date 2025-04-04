@@ -5,8 +5,8 @@ module OnebusawaySDK
     # @see OnebusawaySDK::Resources::TripsForLocation#list
     class TripsForLocationListParams < OnebusawaySDK::BaseModel
       # @!parse
-      #   extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute lat
       #   The latitude coordinate of the search center

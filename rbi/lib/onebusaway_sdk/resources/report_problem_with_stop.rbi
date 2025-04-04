@@ -12,7 +12,12 @@ module OnebusawaySDK
           user_lat: Float,
           user_location_accuracy: Float,
           user_lon: Float,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
+          request_options: T.nilable(
+            T.any(
+              OnebusawaySDK::RequestOptions,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
+          )
         )
           .returns(OnebusawaySDK::Models::ResponseWrapper)
       end

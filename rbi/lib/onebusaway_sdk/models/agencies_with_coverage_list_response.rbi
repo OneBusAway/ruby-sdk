@@ -8,7 +8,10 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(
+            OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data,
+            OnebusawaySDK::Internal::Util::AnyHash
+          )
         )
           .void
       end
@@ -16,7 +19,10 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(
+            OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data,
+            OnebusawaySDK::Internal::Util::AnyHash
+          )
         )
           .returns(T.attached_class)
       end
@@ -37,14 +43,19 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[T.any(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List, OnebusawaySDK::Util::AnyHash)],
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
+            list: T::Array[
+            T.any(
+              OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
+            ],
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .returns(T.attached_class)
         end

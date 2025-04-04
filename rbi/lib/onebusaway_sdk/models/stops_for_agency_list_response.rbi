@@ -12,7 +12,7 @@ module OnebusawaySDK
       sig { returns(OnebusawaySDK::Models::References) }
       attr_reader :references
 
-      sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+      sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
       attr_writer :references
 
       sig { returns(T.nilable(T::Boolean)) }
@@ -24,8 +24,8 @@ module OnebusawaySDK
       sig do
         params(
           limit_exceeded: T::Boolean,
-          list: T::Array[T.any(OnebusawaySDK::Models::StopsForAgencyListResponse::List, OnebusawaySDK::Util::AnyHash)],
-          references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash),
+          list: T::Array[T.any(OnebusawaySDK::Models::StopsForAgencyListResponse::List, OnebusawaySDK::Internal::Util::AnyHash)],
+          references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash),
           out_of_range: T::Boolean
         )
           .returns(T.attached_class)

@@ -2,11 +2,11 @@ module OnebusawaySDK
   module Models
     type arrival_and_departure_list_params =
       { minutes_after: Integer, minutes_before: Integer, time: Time }
-      & OnebusawaySDK::request_parameters
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class ArrivalAndDepartureListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       attr_reader minutes_after: Integer?
 

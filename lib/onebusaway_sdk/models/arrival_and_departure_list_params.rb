@@ -5,8 +5,8 @@ module OnebusawaySDK
     # @see OnebusawaySDK::Resources::ArrivalAndDeparture#list
     class ArrivalAndDepartureListParams < OnebusawaySDK::BaseModel
       # @!parse
-      #   extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute [r] minutes_after
       #   Include vehicles arriving or departing in the next n minutes.

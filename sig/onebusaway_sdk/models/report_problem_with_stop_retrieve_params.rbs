@@ -8,11 +8,11 @@ module OnebusawaySDK
         user_location_accuracy: Float,
         user_lon: Float
       }
-      & OnebusawaySDK::request_parameters
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class ReportProblemWithStopRetrieveParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       attr_reader code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code?
 

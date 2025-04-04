@@ -2,11 +2,11 @@ module OnebusawaySDK
   module Models
     type trips_for_route_list_params =
       { include_schedule: bool, include_status: bool, time: Integer }
-      & OnebusawaySDK::request_parameters
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class TripsForRouteListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       attr_reader include_schedule: bool?
 

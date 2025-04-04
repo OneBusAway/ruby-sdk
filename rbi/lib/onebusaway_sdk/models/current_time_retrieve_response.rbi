@@ -8,7 +8,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .void
       end
@@ -16,7 +16,7 @@ module OnebusawaySDK
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Util::AnyHash)
+          data: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end
@@ -33,7 +33,10 @@ module OnebusawaySDK
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
           )
             .void
         end
@@ -42,13 +45,16 @@ module OnebusawaySDK
         sig { returns(OnebusawaySDK::Models::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)).void }
+        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry, OnebusawaySDK::Util::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Util::AnyHash)
+            entry: T.any(
+              OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
+              OnebusawaySDK::Internal::Util::AnyHash
+            ),
+            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .returns(T.attached_class)
         end

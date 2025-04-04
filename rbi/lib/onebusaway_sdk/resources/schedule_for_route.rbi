@@ -8,7 +8,12 @@ module OnebusawaySDK
         params(
           route_id: String,
           date: Date,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Util::AnyHash))
+          request_options: T.nilable(
+            T.any(
+              OnebusawaySDK::RequestOptions,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
+          )
         )
           .returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse)
       end

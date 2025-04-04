@@ -23,12 +23,12 @@ module OnebusawaySDK
 
       sig do
         params(
-          agencies: T::Array[T.any(OnebusawaySDK::Models::References::Agency, OnebusawaySDK::Util::AnyHash)],
-          routes: T::Array[T.any(OnebusawaySDK::Models::References::Route, OnebusawaySDK::Util::AnyHash)],
-          situations: T::Array[T.any(OnebusawaySDK::Models::References::Situation, OnebusawaySDK::Util::AnyHash)],
-          stops: T::Array[T.any(OnebusawaySDK::Models::References::Stop, OnebusawaySDK::Util::AnyHash)],
-          stop_times: T::Array[T.any(OnebusawaySDK::Models::References::StopTime, OnebusawaySDK::Util::AnyHash)],
-          trips: T::Array[T.any(OnebusawaySDK::Models::References::Trip, OnebusawaySDK::Util::AnyHash)]
+          agencies: T::Array[T.any(OnebusawaySDK::Models::References::Agency, OnebusawaySDK::Internal::Util::AnyHash)],
+          routes: T::Array[T.any(OnebusawaySDK::Models::References::Route, OnebusawaySDK::Internal::Util::AnyHash)],
+          situations: T::Array[T.any(OnebusawaySDK::Models::References::Situation, OnebusawaySDK::Internal::Util::AnyHash)],
+          stops: T::Array[T.any(OnebusawaySDK::Models::References::Stop, OnebusawaySDK::Internal::Util::AnyHash)],
+          stop_times: T::Array[T.any(OnebusawaySDK::Models::References::StopTime, OnebusawaySDK::Internal::Util::AnyHash)],
+          trips: T::Array[T.any(OnebusawaySDK::Models::References::Trip, OnebusawaySDK::Internal::Util::AnyHash)]
         )
           .returns(T.attached_class)
       end
@@ -266,7 +266,7 @@ module OnebusawaySDK
 
         sig do
           params(
-            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)]
+            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Internal::Util::AnyHash)]
           )
             .void
         end
@@ -277,7 +277,7 @@ module OnebusawaySDK
 
         sig do
           params(
-            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)]
+            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Internal::Util::AnyHash)]
           )
             .void
         end
@@ -295,7 +295,7 @@ module OnebusawaySDK
 
         sig do
           params(
-            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)]
+            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Internal::Util::AnyHash)]
           )
             .void
         end
@@ -306,7 +306,7 @@ module OnebusawaySDK
 
         sig do
           params(
-            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash)
+            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .void
         end
@@ -317,7 +317,12 @@ module OnebusawaySDK
 
         sig do
           params(
-            publication_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)]
+            publication_windows: T::Array[
+            T.any(
+              OnebusawaySDK::Models::References::Situation::PublicationWindow,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
+            ]
           )
             .void
         end
@@ -342,7 +347,7 @@ module OnebusawaySDK
 
         sig do
           params(
-            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash)
+            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .void
         end
@@ -351,23 +356,33 @@ module OnebusawaySDK
         sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::URL)) }
         attr_reader :url
 
-        sig { params(url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash)).void }
+        sig do
+          params(
+            url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Internal::Util::AnyHash)
+          )
+            .void
+        end
         attr_writer :url
 
         sig do
           params(
             id: String,
             creation_time: Integer,
-            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Util::AnyHash)],
-            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Util::AnyHash)],
+            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Internal::Util::AnyHash)],
+            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Internal::Util::AnyHash)],
             consequence_message: String,
-            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Util::AnyHash)],
-            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Util::AnyHash),
-            publication_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Util::AnyHash)],
+            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Internal::Util::AnyHash)],
+            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Internal::Util::AnyHash),
+            publication_windows: T::Array[
+            T.any(
+              OnebusawaySDK::Models::References::Situation::PublicationWindow,
+              OnebusawaySDK::Internal::Util::AnyHash
+            )
+            ],
             reason: OnebusawaySDK::Models::References::Situation::Reason::OrSymbol,
             severity: String,
-            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Util::AnyHash),
-            url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Util::AnyHash)
+            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Internal::Util::AnyHash),
+            url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Internal::Util::AnyHash)
           )
             .returns(T.attached_class)
         end
@@ -529,7 +544,7 @@ module OnebusawaySDK
             params(
               condition_details: T.any(
                 OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
             )
               .void
@@ -541,7 +556,7 @@ module OnebusawaySDK
               condition: String,
               condition_details: T.any(
                 OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
-                OnebusawaySDK::Util::AnyHash
+                OnebusawaySDK::Internal::Util::AnyHash
               )
             )
               .returns(T.attached_class)
@@ -573,7 +588,7 @@ module OnebusawaySDK
               params(
                 diversion_path: T.any(
                   OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 )
               )
                 .void
@@ -590,7 +605,7 @@ module OnebusawaySDK
               params(
                 diversion_path: T.any(
                   OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                  OnebusawaySDK::Util::AnyHash
+                  OnebusawaySDK::Internal::Util::AnyHash
                 ),
                 diversion_stop_ids: T::Array[String]
               )

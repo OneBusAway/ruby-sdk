@@ -5,8 +5,8 @@ module OnebusawaySDK
     # @see OnebusawaySDK::Resources::TripsForRoute#list
     class TripsForRouteListParams < OnebusawaySDK::BaseModel
       # @!parse
-      #   extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute [r] include_schedule
       #   Determine whether full schedule elements are included. Defaults to false.

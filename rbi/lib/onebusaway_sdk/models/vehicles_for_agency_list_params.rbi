@@ -3,8 +3,8 @@
 module OnebusawaySDK
   module Models
     class VehiclesForAgencyListParams < OnebusawaySDK::BaseModel
-      extend OnebusawaySDK::Type::RequestParameters::Converter
-      include OnebusawaySDK::RequestParameters
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
 
       # Specific time for querying the status (timestamp format)
       sig { returns(T.nilable(String)) }
@@ -16,10 +16,7 @@ module OnebusawaySDK
       sig do
         params(
           time: String,
-          request_options: T.any(
-            OnebusawaySDK::RequestOptions,
-            OnebusawaySDK::Util::AnyHash
-          )
+          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::Util::AnyHash)
         )
           .returns(T.attached_class)
       end
