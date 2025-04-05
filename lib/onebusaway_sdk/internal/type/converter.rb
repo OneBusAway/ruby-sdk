@@ -209,7 +209,9 @@ module OnebusawaySDK
           #
           # @return [Object]
           def dump(target, value)
+            # rubocop:disable Layout/LineLength
             target.is_a?(OnebusawaySDK::Internal::Type::Converter) ? target.dump(value) : OnebusawaySDK::Internal::Type::Unknown.dump(value)
+            # rubocop:enable Layout/LineLength
           end
         end
       end
