@@ -287,7 +287,7 @@ module OnebusawaySDK
             #   Indicates if real-time arrival info is available for this trip.
             #
             #   @return [Boolean]
-            required :predicted, OnebusawaySDK::Internal::Type::BooleanModel
+            required :predicted, OnebusawaySDK::Internal::Type::Boolean
 
             # @!attribute schedule_deviation
             #   Deviation from the schedule in seconds (positive for late, negative for early).

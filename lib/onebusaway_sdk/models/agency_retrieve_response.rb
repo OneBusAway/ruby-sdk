@@ -25,7 +25,7 @@ module OnebusawaySDK
         # @!attribute limit_exceeded
         #
         #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :limitExceeded
+        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
 
         # @!attribute references
         #
@@ -111,7 +111,7 @@ module OnebusawaySDK
           # @!attribute [r] private_service
           #
           #   @return [Boolean, nil]
-          optional :private_service, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :privateService
+          optional :private_service, OnebusawaySDK::Internal::Type::Boolean, api_name: :privateService
 
           # @!parse
           #   # @return [Boolean]

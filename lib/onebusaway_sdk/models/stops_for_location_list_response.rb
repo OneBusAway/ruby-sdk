@@ -20,7 +20,7 @@ module OnebusawaySDK
         # @!attribute limit_exceeded
         #
         #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :limitExceeded
+        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
 
         # @!attribute list
         #
@@ -36,7 +36,7 @@ module OnebusawaySDK
         # @!attribute [r] out_of_range
         #
         #   @return [Boolean, nil]
-        optional :out_of_range, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :outOfRange
+        optional :out_of_range, OnebusawaySDK::Internal::Type::Boolean, api_name: :outOfRange
 
         # @!parse
         #   # @return [Boolean]

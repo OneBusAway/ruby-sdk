@@ -20,7 +20,7 @@ module OnebusawaySDK
         # @!attribute limit_exceeded
         #
         #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :limitExceeded
+        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
 
         # @!attribute list
         #
