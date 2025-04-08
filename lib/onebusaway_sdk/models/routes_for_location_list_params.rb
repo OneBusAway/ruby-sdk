@@ -21,7 +21,7 @@ module OnebusawaySDK
       # @!attribute [r] lat_span
       #
       #   @return [Float, nil]
-      optional :lat_span, Float, api_name: :latSpan
+      optional :lat_span, Float
 
       # @!parse
       #   # @return [Float]
@@ -30,7 +30,7 @@ module OnebusawaySDK
       # @!attribute [r] lon_span
       #
       #   @return [Float, nil]
-      optional :lon_span, Float, api_name: :lonSpan
+      optional :lon_span, Float
 
       # @!parse
       #   # @return [Float]

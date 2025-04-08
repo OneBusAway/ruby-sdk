@@ -12,7 +12,7 @@ module OnebusawaySDK
       #   Determine whether full schedule elements are included. Defaults to false.
       #
       #   @return [Boolean, nil]
-      optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeSchedule
+      optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean
 
       # @!parse
       #   # @return [Boolean]
@@ -23,7 +23,7 @@ module OnebusawaySDK
       #   included. Defaults to false.
       #
       #   @return [Boolean, nil]
-      optional :include_status, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeStatus
+      optional :include_status, OnebusawaySDK::Internal::Type::Boolean
 
       # @!parse
       #   # @return [Boolean]

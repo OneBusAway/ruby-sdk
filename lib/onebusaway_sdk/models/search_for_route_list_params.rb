@@ -18,7 +18,7 @@ module OnebusawaySDK
       #   The max number of results to return. Defaults to 20.
       #
       #   @return [Integer, nil]
-      optional :max_count, Integer, api_name: :maxCount
+      optional :max_count, Integer
 
       # @!parse
       #   # @return [Integer]

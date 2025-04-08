@@ -24,10 +24,10 @@ module OnebusawaySDK
           method: :get,
           path: ["api/where/report-problem-with-stop/%1$s.json", stop_id],
           query: parsed.transform_keys(
-            user_comment: :userComment,
-            user_lat: :userLat,
-            user_location_accuracy: :userLocationAccuracy,
-            user_lon: :userLon
+            user_comment: "userComment",
+            user_lat: "userLat",
+            user_location_accuracy: "userLocationAccuracy",
+            user_lon: "userLon"
           ),
           model: OnebusawaySDK::Models::ResponseWrapper,
           options: options
