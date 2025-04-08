@@ -18,13 +18,10 @@ module OnebusawaySDK
         # Specific time for querying the status (timestamp format)
         time: nil,
         request_options: {}
-      )
-      end
-
+      ); end
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:)
-      end
+      def self.new(client:); end
     end
   end
 end

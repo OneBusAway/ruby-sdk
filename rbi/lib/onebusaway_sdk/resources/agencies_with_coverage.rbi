@@ -16,13 +16,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::AgenciesWithCoverageListResponse)
       end
-      def list(request_options: {})
-      end
+      def list(request_options: {}); end
 
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:)
-      end
+      def self.new(client:); end
     end
   end
 end

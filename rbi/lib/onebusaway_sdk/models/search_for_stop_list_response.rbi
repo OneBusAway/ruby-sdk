@@ -20,12 +20,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(data: nil)
-      end
+      def self.new(data: nil); end
 
       sig { override.returns({data: OnebusawaySDK::Models::SearchForStopListResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(T::Boolean) }
@@ -52,8 +50,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(limit_exceeded:, list:, out_of_range:, references:)
-        end
+        def self.new(limit_exceeded:, list:, out_of_range:, references:); end
 
         sig do
           override
@@ -66,8 +63,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(String) }
@@ -143,9 +139,7 @@ module OnebusawaySDK
             direction: nil,
             location_type: nil,
             wheelchair_boarding: nil
-          )
-          end
-
+          ); end
           sig do
             override
               .returns(
@@ -164,8 +158,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
         end
       end
     end

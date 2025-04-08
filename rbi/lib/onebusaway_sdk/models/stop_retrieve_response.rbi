@@ -16,12 +16,10 @@ module OnebusawaySDK
         params(data: T.any(OnebusawaySDK::Models::StopRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::StopRetrieveResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry) }
@@ -48,8 +46,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(entry:, references:)
-        end
+        def self.new(entry:, references:); end
 
         sig do
           override
@@ -60,8 +57,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(String) }
@@ -137,9 +133,7 @@ module OnebusawaySDK
             direction: nil,
             location_type: nil,
             wheelchair_boarding: nil
-          )
-          end
-
+          ); end
           sig do
             override
               .returns(
@@ -158,8 +152,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
         end
       end
     end

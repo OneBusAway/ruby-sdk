@@ -59,9 +59,7 @@ module OnebusawaySDK
         user_location_accuracy: nil,
         user_lon: nil,
         request_options: {}
-      )
-      end
-
+      ); end
       sig do
         override
           .returns(
@@ -75,8 +73,7 @@ module OnebusawaySDK
             }
           )
       end
-      def to_hash
-      end
+      def to_hash; end
 
       # A string code identifying the nature of the problem
       module Code
@@ -104,8 +101,7 @@ module OnebusawaySDK
         OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
 
         sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol]) }
-        def self.values
-        end
+        def self.values; end
       end
     end
   end

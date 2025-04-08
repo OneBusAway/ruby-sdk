@@ -20,12 +20,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry) }
@@ -52,8 +50,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(entry:, references:)
-        end
+        def self.new(entry:, references:); end
 
         sig do
           override
@@ -64,8 +61,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(T.nilable(String)) }
@@ -81,12 +77,10 @@ module OnebusawaySDK
           attr_writer :time
 
           sig { params(readable_time: String, time: Integer).returns(T.attached_class) }
-          def self.new(readable_time: nil, time: nil)
-          end
+          def self.new(readable_time: nil, time: nil); end
 
           sig { override.returns({readable_time: String, time: Integer}) }
-          def to_hash
-          end
+          def to_hash; end
         end
       end
     end

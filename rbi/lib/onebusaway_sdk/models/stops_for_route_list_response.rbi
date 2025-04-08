@@ -20,12 +20,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::StopsForRouteListResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry) }
@@ -52,8 +50,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(entry:, references:)
-        end
+        def self.new(entry:, references:); end
 
         sig do
           override
@@ -64,8 +61,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline])) }
@@ -74,10 +70,10 @@ module OnebusawaySDK
           sig do
             params(
               polylines: T::Array[
-              T.any(
-                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
-                OnebusawaySDK::Internal::AnyHash
-              )
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               ]
             )
               .void
@@ -96,10 +92,10 @@ module OnebusawaySDK
           sig do
             params(
               stop_groupings: T::Array[
-              T.any(
-                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
-                OnebusawaySDK::Internal::AnyHash
-              )
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               ]
             )
               .void
@@ -115,24 +111,23 @@ module OnebusawaySDK
           sig do
             params(
               polylines: T::Array[
-              T.any(
-                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
-                OnebusawaySDK::Internal::AnyHash
-              )
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               ],
               route_id: String,
               stop_groupings: T::Array[
-              T.any(
-                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
-                OnebusawaySDK::Internal::AnyHash
-              )
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               ],
               stop_ids: T::Array[String]
             )
               .returns(T.attached_class)
           end
-          def self.new(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil)
-          end
+          def self.new(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil); end
 
           sig do
             override
@@ -145,8 +140,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
 
           class Polyline < OnebusawaySDK::Internal::Type::BaseModel
             sig { returns(T.nilable(Integer)) }
@@ -168,12 +162,10 @@ module OnebusawaySDK
             attr_writer :points
 
             sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
-            def self.new(length: nil, levels: nil, points: nil)
-            end
+            def self.new(length: nil, levels: nil, points: nil); end
 
             sig { override.returns({length: Integer, levels: String, points: String}) }
-            def to_hash
-            end
+            def to_hash; end
           end
 
           class StopGrouping < OnebusawaySDK::Internal::Type::BaseModel
@@ -207,10 +199,10 @@ module OnebusawaySDK
             sig do
               params(
                 polylines: T::Array[
-                T.any(
-                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
-                  OnebusawaySDK::Internal::AnyHash
-                )
+                  T.any(
+                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 ]
               )
                 .void
@@ -231,17 +223,16 @@ module OnebusawaySDK
                   OnebusawaySDK::Internal::AnyHash
                 ),
                 polylines: T::Array[
-                T.any(
-                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
-                  OnebusawaySDK::Internal::AnyHash
-                )
+                  T.any(
+                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 ],
                 stop_ids: T::Array[String]
               )
                 .returns(T.attached_class)
             end
-            def self.new(id: nil, name: nil, polylines: nil, stop_ids: nil)
-            end
+            def self.new(id: nil, name: nil, polylines: nil, stop_ids: nil); end
 
             sig do
               override
@@ -254,8 +245,7 @@ module OnebusawaySDK
                   }
                 )
             end
-            def to_hash
-            end
+            def to_hash; end
 
             class Name < OnebusawaySDK::Internal::Type::BaseModel
               sig { returns(T.nilable(String)) }
@@ -277,12 +267,10 @@ module OnebusawaySDK
               attr_writer :type
 
               sig { params(name: String, names: T::Array[String], type: String).returns(T.attached_class) }
-              def self.new(name: nil, names: nil, type: nil)
-              end
+              def self.new(name: nil, names: nil, type: nil); end
 
               sig { override.returns({name: String, names: T::Array[String], type: String}) }
-              def to_hash
-              end
+              def to_hash; end
             end
 
             class Polyline < OnebusawaySDK::Internal::Type::BaseModel
@@ -305,12 +293,10 @@ module OnebusawaySDK
               attr_writer :points
 
               sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
-              def self.new(length: nil, levels: nil, points: nil)
-              end
+              def self.new(length: nil, levels: nil, points: nil); end
 
               sig { override.returns({length: Integer, levels: String, points: String}) }
-              def to_hash
-              end
+              def to_hash; end
             end
           end
         end

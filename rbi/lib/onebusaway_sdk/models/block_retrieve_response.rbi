@@ -16,12 +16,10 @@ module OnebusawaySDK
         params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::BlockRetrieveResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry) }
@@ -48,8 +46,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(entry:, references:)
-        end
+        def self.new(entry:, references:); end
 
         sig do
           override
@@ -60,8 +57,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(String) }
@@ -74,16 +70,15 @@ module OnebusawaySDK
             params(
               id: String,
               configurations: T::Array[
-              T.any(
-                OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration,
-                OnebusawaySDK::Internal::AnyHash
-              )
+                T.any(
+                  OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               ]
             )
               .returns(T.attached_class)
           end
-          def self.new(id:, configurations:)
-          end
+          def self.new(id:, configurations:); end
 
           sig do
             override
@@ -94,8 +89,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
 
           class Configuration < OnebusawaySDK::Internal::Type::BaseModel
             sig { returns(T::Array[String]) }
@@ -114,17 +108,16 @@ module OnebusawaySDK
               params(
                 active_service_ids: T::Array[String],
                 trips: T::Array[
-                T.any(
-                  OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip,
-                  OnebusawaySDK::Internal::AnyHash
-                )
+                  T.any(
+                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 ],
                 inactive_service_ids: T::Array[String]
               )
                 .returns(T.attached_class)
             end
-            def self.new(active_service_ids:, trips:, inactive_service_ids: nil)
-            end
+            def self.new(active_service_ids:, trips:, inactive_service_ids: nil); end
 
             sig do
               override
@@ -136,8 +129,7 @@ module OnebusawaySDK
                   }
                 )
             end
-            def to_hash
-            end
+            def to_hash; end
 
             class Trip < OnebusawaySDK::Internal::Type::BaseModel
               sig { returns(Float) }
@@ -160,18 +152,17 @@ module OnebusawaySDK
                 params(
                   accumulated_slack_time: Float,
                   block_stop_times: T::Array[
-                  T.any(
-                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime,
-                    OnebusawaySDK::Internal::AnyHash
-                  )
+                    T.any(
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime,
+                      OnebusawaySDK::Internal::AnyHash
+                    )
                   ],
                   distance_along_block: Float,
                   trip_id: String
                 )
                   .returns(T.attached_class)
               end
-              def self.new(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:)
-              end
+              def self.new(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:); end
 
               sig do
                 override
@@ -184,8 +175,7 @@ module OnebusawaySDK
                     }
                   )
               end
-              def to_hash
-              end
+              def to_hash; end
 
               class BlockStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 sig { returns(Float) }
@@ -227,8 +217,7 @@ module OnebusawaySDK
                   )
                     .returns(T.attached_class)
                 end
-                def self.new(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:)
-                end
+                def self.new(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:); end
 
                 sig do
                   override
@@ -241,8 +230,7 @@ module OnebusawaySDK
                       }
                     )
                 end
-                def to_hash
-                end
+                def to_hash; end
 
                 class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                   sig { returns(Integer) }
@@ -276,7 +264,13 @@ module OnebusawaySDK
                     )
                       .returns(T.attached_class)
                   end
-                  def self.new(arrival_time:, departure_time:, stop_id:, drop_off_type: nil, pickup_type: nil)
+                  def self.new(
+                    arrival_time:,
+                    departure_time:,
+                    stop_id:,
+                    drop_off_type: nil,
+                    pickup_type: nil
+                  )
                   end
 
                   sig do
@@ -291,8 +285,7 @@ module OnebusawaySDK
                         }
                       )
                   end
-                  def to_hash
-                  end
+                  def to_hash; end
                 end
               end
             end

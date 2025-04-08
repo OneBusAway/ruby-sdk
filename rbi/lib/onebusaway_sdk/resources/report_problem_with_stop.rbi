@@ -30,13 +30,10 @@ module OnebusawaySDK
         # The reporting user’s current longitude
         user_lon: nil,
         request_options: {}
-      )
-      end
-
+      ); end
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:)
-      end
+      def self.new(client:); end
     end
   end
 end

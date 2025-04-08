@@ -20,12 +20,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::RouteIDsForAgencyListResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(T::Boolean) }
@@ -48,8 +46,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(limit_exceeded:, list:, references:)
-        end
+        def self.new(limit_exceeded:, list:, references:); end
 
         sig do
           override
@@ -57,8 +54,7 @@ module OnebusawaySDK
               {limit_exceeded: T::Boolean, list: T::Array[String], references: OnebusawaySDK::Models::References}
             )
         end
-        def to_hash
-        end
+        def to_hash; end
       end
     end
   end

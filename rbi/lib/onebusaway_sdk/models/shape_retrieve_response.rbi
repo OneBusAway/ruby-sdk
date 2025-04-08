@@ -16,12 +16,10 @@ module OnebusawaySDK
         params(data: T.any(OnebusawaySDK::Models::ShapeRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry) }
@@ -48,8 +46,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(entry:, references:)
-        end
+        def self.new(entry:, references:); end
 
         sig do
           override
@@ -60,8 +57,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(Integer) }
@@ -78,12 +74,10 @@ module OnebusawaySDK
           attr_writer :levels
 
           sig { params(length: Integer, points: String, levels: String).returns(T.attached_class) }
-          def self.new(length:, points:, levels: nil)
-          end
+          def self.new(length:, points:, levels: nil); end
 
           sig { override.returns({length: Integer, points: String, levels: String}) }
-          def to_hash
-          end
+          def to_hash; end
         end
       end
     end

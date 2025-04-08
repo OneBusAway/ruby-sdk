@@ -20,12 +20,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(T::Boolean) }
@@ -44,17 +42,16 @@ module OnebusawaySDK
           params(
             limit_exceeded: T::Boolean,
             list: T::Array[
-            T.any(
-              OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List,
-              OnebusawaySDK::Internal::AnyHash
-            )
+              T.any(
+                OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List,
+                OnebusawaySDK::Internal::AnyHash
+              )
             ],
             references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
           )
             .returns(T.attached_class)
         end
-        def self.new(limit_exceeded:, list:, references:)
-        end
+        def self.new(limit_exceeded:, list:, references:); end
 
         sig do
           override
@@ -66,8 +63,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(String) }
@@ -89,14 +85,12 @@ module OnebusawaySDK
             params(agency_id: String, lat: Float, lat_span: Float, lon: Float, lon_span: Float)
               .returns(T.attached_class)
           end
-          def self.new(agency_id:, lat:, lat_span:, lon:, lon_span:)
-          end
+          def self.new(agency_id:, lat:, lat_span:, lon:, lon_span:); end
 
           sig do
             override.returns({agency_id: String, lat: Float, lat_span: Float, lon: Float, lon_span: Float})
           end
-          def to_hash
-          end
+          def to_hash; end
         end
       end
     end
