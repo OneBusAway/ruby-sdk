@@ -10,7 +10,7 @@ module OnebusawaySDK
 
       # @!attribute [r] include_schedule
       #   Determines whether full <schedule/> element is included in the <tripDetails/>
-      #     section. Defaults to false.
+      #   section. Defaults to false.
       #
       #   @return [Boolean, nil]
       optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeSchedule
@@ -21,7 +21,7 @@ module OnebusawaySDK
 
       # @!attribute [r] include_status
       #   Determines whether the full <status/> element is included in the <tripDetails/>
-      #     section. Defaults to true.
+      #   section. Defaults to true.
       #
       #   @return [Boolean, nil]
       optional :include_status, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeStatus
@@ -32,7 +32,7 @@ module OnebusawaySDK
 
       # @!attribute [r] include_trip
       #   Determines whether full <trip/> element is included in the <references/>
-      #     section. Defaults to false.
+      #   section. Defaults to false.
       #
       #   @return [Boolean, nil]
       optional :include_trip, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeTrip

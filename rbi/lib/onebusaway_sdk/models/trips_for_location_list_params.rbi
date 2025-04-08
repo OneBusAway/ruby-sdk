@@ -23,7 +23,7 @@ module OnebusawaySDK
       attr_accessor :lon_span
 
       # Whether to include full schedule elements in the tripDetails section. Defaults
-      #   to false.
+      # to false.
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_schedule
 
@@ -31,7 +31,7 @@ module OnebusawaySDK
       attr_writer :include_schedule
 
       # Whether to include full trip elements in the references section. Defaults to
-      #   false.
+      # false.
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_trip
 

@@ -14,7 +14,7 @@ module OnebusawaySDK
       attr_writer :include_schedule
 
       # Determine whether full tripStatus elements with real-time information are
-      #   included. Defaults to false.
+      # included. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_status
 

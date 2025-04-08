@@ -10,7 +10,7 @@ module OnebusawaySDK
 
       # @!attribute [r] date
       #   The date for which you want to request a schedule in the format YYYY-MM-DD
-      #     (optional, defaults to current date)
+      #   (optional, defaults to current date)
       #
       #   @return [Date, nil]
       optional :date, Date
