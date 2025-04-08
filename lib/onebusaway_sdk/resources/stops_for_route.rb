@@ -20,7 +20,7 @@ module OnebusawaySDK
         @client.request(
           method: :get,
           path: ["api/where/stops-for-route/%1$s.json", route_id],
-          query: parsed,
+          query: parsed.transform_keys(include_polylines: :includePolylines),
           model: OnebusawaySDK::Models::StopsForRouteListResponse,
           options: options
         )
