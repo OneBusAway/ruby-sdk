@@ -23,7 +23,7 @@ module OnebusawaySDK
         @client.request(
           method: :get,
           path: "api/where/routes-for-location.json",
-          query: parsed.transform_keys(lat_span: :latSpan, lon_span: :lonSpan),
+          query: parsed.transform_keys(lat_span: "latSpan", lon_span: "lonSpan"),
           model: OnebusawaySDK::Models::RoutesForLocationListResponse,
           options: options
         )

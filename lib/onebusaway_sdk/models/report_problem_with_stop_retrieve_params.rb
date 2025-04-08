@@ -22,7 +22,7 @@ module OnebusawaySDK
       #   Additional comment text supplied by the user describing the problem
       #
       #   @return [String, nil]
-      optional :user_comment, String, api_name: :userComment
+      optional :user_comment, String
 
       # @!parse
       #   # @return [String]
@@ -32,7 +32,7 @@ module OnebusawaySDK
       #   The reporting user’s current latitude
       #
       #   @return [Float, nil]
-      optional :user_lat, Float, api_name: :userLat
+      optional :user_lat, Float
 
       # @!parse
       #   # @return [Float]
@@ -42,7 +42,7 @@ module OnebusawaySDK
       #   The reporting user’s location accuracy, in meters
       #
       #   @return [Float, nil]
-      optional :user_location_accuracy, Float, api_name: :userLocationAccuracy
+      optional :user_location_accuracy, Float
 
       # @!parse
       #   # @return [Float]
@@ -52,7 +52,7 @@ module OnebusawaySDK
       #   The reporting user’s current longitude
       #
       #   @return [Float, nil]
-      optional :user_lon, Float, api_name: :userLon
+      optional :user_lon, Float
 
       # @!parse
       #   # @return [Float]

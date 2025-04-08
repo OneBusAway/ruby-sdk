@@ -18,7 +18,7 @@ module OnebusawaySDK
       #   Latitude span of the search bounding box
       #
       #   @return [Float]
-      required :lat_span, Float, api_name: :latSpan
+      required :lat_span, Float
 
       # @!attribute lon
       #   The longitude coordinate of the search center
@@ -30,14 +30,14 @@ module OnebusawaySDK
       #   Longitude span of the search bounding box
       #
       #   @return [Float]
-      required :lon_span, Float, api_name: :lonSpan
+      required :lon_span, Float
 
       # @!attribute [r] include_schedule
       #   Whether to include full schedule elements in the tripDetails section. Defaults
       #   to false.
       #
       #   @return [Boolean, nil]
-      optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeSchedule
+      optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean
 
       # @!parse
       #   # @return [Boolean]
@@ -48,7 +48,7 @@ module OnebusawaySDK
       #   false.
       #
       #   @return [Boolean, nil]
-      optional :include_trip, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeTrip
+      optional :include_trip, OnebusawaySDK::Internal::Type::Boolean
 
       # @!parse
       #   # @return [Boolean]

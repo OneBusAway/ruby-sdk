@@ -22,7 +22,7 @@ module OnebusawaySDK
       #   The service date of the trip
       #
       #   @return [Integer, nil]
-      optional :service_date, Integer, api_name: :serviceDate
+      optional :service_date, Integer
 
       # @!parse
       #   # @return [Integer]
@@ -32,7 +32,7 @@ module OnebusawaySDK
       #   A stop ID indicating where the user is experiencing the problem
       #
       #   @return [String, nil]
-      optional :stop_id, String, api_name: :stopID
+      optional :stop_id, String
 
       # @!parse
       #   # @return [String]
@@ -42,7 +42,7 @@ module OnebusawaySDK
       #   Additional comment text supplied by the user describing the problem
       #
       #   @return [String, nil]
-      optional :user_comment, String, api_name: :userComment
+      optional :user_comment, String
 
       # @!parse
       #   # @return [String]
@@ -52,7 +52,7 @@ module OnebusawaySDK
       #   The reporting user’s current latitude
       #
       #   @return [Float, nil]
-      optional :user_lat, Float, api_name: :userLat
+      optional :user_lat, Float
 
       # @!parse
       #   # @return [Float]
@@ -62,7 +62,7 @@ module OnebusawaySDK
       #   The reporting user’s location accuracy, in meters
       #
       #   @return [Float, nil]
-      optional :user_location_accuracy, Float, api_name: :userLocationAccuracy
+      optional :user_location_accuracy, Float
 
       # @!parse
       #   # @return [Float]
@@ -72,7 +72,7 @@ module OnebusawaySDK
       #   The reporting user’s current longitude
       #
       #   @return [Float, nil]
-      optional :user_lon, Float, api_name: :userLon
+      optional :user_lon, Float
 
       # @!parse
       #   # @return [Float]
@@ -82,7 +82,7 @@ module OnebusawaySDK
       #   Indicator if the user is on the transit vehicle experiencing the problem
       #
       #   @return [Boolean, nil]
-      optional :user_on_vehicle, OnebusawaySDK::Internal::Type::Boolean, api_name: :userOnVehicle
+      optional :user_on_vehicle, OnebusawaySDK::Internal::Type::Boolean
 
       # @!parse
       #   # @return [Boolean]
@@ -92,7 +92,7 @@ module OnebusawaySDK
       #   The vehicle number, as reported by the user
       #
       #   @return [String, nil]
-      optional :user_vehicle_number, String, api_name: :userVehicleNumber
+      optional :user_vehicle_number, String
 
       # @!parse
       #   # @return [String]
@@ -102,7 +102,7 @@ module OnebusawaySDK
       #   The vehicle actively serving the trip
       #
       #   @return [String, nil]
-      optional :vehicle_id, String, api_name: :vehicleID
+      optional :vehicle_id, String
 
       # @!parse
       #   # @return [String]

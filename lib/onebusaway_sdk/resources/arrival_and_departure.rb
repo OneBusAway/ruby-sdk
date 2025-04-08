@@ -24,10 +24,10 @@ module OnebusawaySDK
           method: :get,
           path: ["api/where/arrival-and-departure-for-stop/%1$s.json", stop_id],
           query: parsed.transform_keys(
-            service_date: :serviceDate,
-            trip_id: :tripId,
-            stop_sequence: :stopSequence,
-            vehicle_id: :vehicleId
+            service_date: "serviceDate",
+            trip_id: "tripId",
+            stop_sequence: "stopSequence",
+            vehicle_id: "vehicleId"
           ),
           model: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse,
           options: options
@@ -52,7 +52,7 @@ module OnebusawaySDK
         @client.request(
           method: :get,
           path: ["api/where/arrivals-and-departures-for-stop/%1$s.json", stop_id],
-          query: parsed.transform_keys(minutes_after: :minutesAfter, minutes_before: :minutesBefore),
+          query: parsed.transform_keys(minutes_after: "minutesAfter", minutes_before: "minutesBefore"),
           model: OnebusawaySDK::Models::ArrivalAndDepartureListResponse,
           options: options
         )

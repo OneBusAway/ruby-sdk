@@ -21,7 +21,7 @@ module OnebusawaySDK
         @client.request(
           method: :get,
           path: ["api/where/trips-for-route/%1$s.json", route_id],
-          query: parsed.transform_keys(include_schedule: :includeSchedule, include_status: :includeStatus),
+          query: parsed.transform_keys(include_schedule: "includeSchedule", include_status: "includeStatus"),
           model: OnebusawaySDK::Models::TripsForRouteListResponse,
           options: options
         )

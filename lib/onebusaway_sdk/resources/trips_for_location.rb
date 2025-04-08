@@ -25,10 +25,10 @@ module OnebusawaySDK
           method: :get,
           path: "api/where/trips-for-location.json",
           query: parsed.transform_keys(
-            lat_span: :latSpan,
-            lon_span: :lonSpan,
-            include_schedule: :includeSchedule,
-            include_trip: :includeTrip
+            lat_span: "latSpan",
+            lon_span: "lonSpan",
+            include_schedule: "includeSchedule",
+            include_trip: "includeTrip"
           ),
           model: OnebusawaySDK::Models::TripsForLocationListResponse,
           options: options
