@@ -12,7 +12,7 @@ module OnebusawaySDK
       #   Include polyline elements in the response (default true)
       #
       #   @return [Boolean, nil]
-      optional :include_polylines, OnebusawaySDK::Internal::Type::Boolean, api_name: :includePolylines
+      optional :include_polylines, OnebusawaySDK::Internal::Type::Boolean
 
       # @!parse
       #   # @return [Boolean]

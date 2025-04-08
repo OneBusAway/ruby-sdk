@@ -24,10 +24,10 @@ module OnebusawaySDK
           method: :get,
           path: ["api/where/trip-details/%1$s.json", trip_id],
           query: parsed.transform_keys(
-            include_schedule: :includeSchedule,
-            include_status: :includeStatus,
-            include_trip: :includeTrip,
-            service_date: :serviceDate
+            include_schedule: "includeSchedule",
+            include_status: "includeStatus",
+            include_trip: "includeTrip",
+            service_date: "serviceDate"
           ),
           model: OnebusawaySDK::Models::TripDetailRetrieveResponse,
           options: options

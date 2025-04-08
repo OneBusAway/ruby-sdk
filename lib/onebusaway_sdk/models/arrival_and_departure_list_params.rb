@@ -12,7 +12,7 @@ module OnebusawaySDK
       #   Include vehicles arriving or departing in the next n minutes.
       #
       #   @return [Integer, nil]
-      optional :minutes_after, Integer, api_name: :minutesAfter
+      optional :minutes_after, Integer
 
       # @!parse
       #   # @return [Integer]
@@ -22,7 +22,7 @@ module OnebusawaySDK
       #   Include vehicles having arrived or departed in the previous n minutes.
       #
       #   @return [Integer, nil]
-      optional :minutes_before, Integer, api_name: :minutesBefore
+      optional :minutes_before, Integer
 
       # @!parse
       #   # @return [Integer]

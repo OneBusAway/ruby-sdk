@@ -11,17 +11,17 @@ module OnebusawaySDK
       # @!attribute service_date
       #
       #   @return [Integer]
-      required :service_date, Integer, api_name: :serviceDate
+      required :service_date, Integer
 
       # @!attribute trip_id
       #
       #   @return [String]
-      required :trip_id, String, api_name: :tripId
+      required :trip_id, String
 
       # @!attribute [r] stop_sequence
       #
       #   @return [Integer, nil]
-      optional :stop_sequence, Integer, api_name: :stopSequence
+      optional :stop_sequence, Integer
 
       # @!parse
       #   # @return [Integer]
@@ -39,7 +39,7 @@ module OnebusawaySDK
       # @!attribute [r] vehicle_id
       #
       #   @return [String, nil]
-      optional :vehicle_id, String, api_name: :vehicleId
+      optional :vehicle_id, String
 
       # @!parse
       #   # @return [String]
