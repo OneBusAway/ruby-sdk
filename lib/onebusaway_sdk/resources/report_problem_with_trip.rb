@@ -28,7 +28,17 @@ module OnebusawaySDK
         @client.request(
           method: :get,
           path: ["api/where/report-problem-with-trip/%1$s.json", trip_id],
-          query: parsed,
+          query: parsed.transform_keys(
+            service_date: :serviceDate,
+            stop_id: :stopID,
+            user_comment: :userComment,
+            user_lat: :userLat,
+            user_location_accuracy: :userLocationAccuracy,
+            user_lon: :userLon,
+            user_on_vehicle: :userOnVehicle,
+            user_vehicle_number: :userVehicleNumber,
+            vehicle_id: :vehicleID
+          ),
           model: OnebusawaySDK::Models::ResponseWrapper,
           options: options
         )

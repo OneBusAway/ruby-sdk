@@ -22,7 +22,11 @@ module OnebusawaySDK
         @client.request(
           method: :get,
           path: ["api/where/trip-for-vehicle/%1$s.json", vehicle_id],
-          query: parsed,
+          query: parsed.transform_keys(
+            include_schedule: :includeSchedule,
+            include_status: :includeStatus,
+            include_trip: :includeTrip
+          ),
           model: OnebusawaySDK::Models::TripForVehicleRetrieveResponse,
           options: options
         )
