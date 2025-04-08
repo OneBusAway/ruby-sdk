@@ -7,7 +7,7 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # The date for which you want to request a schedule in the format YYYY-MM-DD
-      #   (optional, defaults to current date)
+      # (optional, defaults to current date)
       sig { returns(T.nilable(Date)) }
       attr_reader :date
 

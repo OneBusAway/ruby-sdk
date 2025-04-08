@@ -7,7 +7,7 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # Whether to include the full schedule element in the tripDetails section
-      #   (defaults to true).
+      # (defaults to true).
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_schedule
 
@@ -15,7 +15,7 @@ module OnebusawaySDK
       attr_writer :include_schedule
 
       # Whether to include the full status element in the tripDetails section (defaults
-      #   to true).
+      # to true).
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_status
 
@@ -23,7 +23,7 @@ module OnebusawaySDK
       attr_writer :include_status
 
       # Whether to include the full trip element in the references section (defaults to
-      #   true).
+      # true).
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_trip
 

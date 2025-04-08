@@ -290,7 +290,7 @@ module OnebusawaySDK
             attr_accessor :distance_along_trip
 
             # Last known distance along the trip received in real-time from the transit
-            #   vehicle.
+            # vehicle.
             sig { returns(Float) }
             attr_accessor :last_known_distance_along_trip
 
@@ -327,7 +327,7 @@ module OnebusawaySDK
             attr_accessor :schedule_deviation
 
             # Time, in milliseconds since the Unix epoch, of midnight for the start of the
-            #   service date for the trip.
+            # service date for the trip.
             sig { returns(Integer) }
             attr_accessor :service_date
 
@@ -340,7 +340,7 @@ module OnebusawaySDK
             attr_accessor :total_distance_along_trip
 
             # Time offset from the closest stop to the current position of the transit vehicle
-            #   (in seconds).
+            # (in seconds).
             sig { returns(T.nilable(Integer)) }
             attr_reader :closest_stop_time_offset
 
@@ -388,7 +388,7 @@ module OnebusawaySDK
             attr_writer :next_stop
 
             # Time offset from the next stop to the current position of the transit vehicle
-            #   (in seconds).
+            # (in seconds).
             sig { returns(T.nilable(Integer)) }
             attr_reader :next_stop_time_offset
 
@@ -418,7 +418,7 @@ module OnebusawaySDK
             attr_writer :position
 
             # Distance, in meters, the transit vehicle is scheduled to have progressed along
-            #   the active trip.
+            # the active trip.
             sig { returns(T.nilable(Float)) }
             attr_reader :scheduled_distance_along_trip
 

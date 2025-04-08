@@ -27,10 +27,10 @@ module OnebusawaySDK
         # Longitude span of the search bounding box
         lon_span:,
         # Whether to include full schedule elements in the tripDetails section. Defaults
-        #   to false.
+        # to false.
         include_schedule: nil,
         # Whether to include full trip elements in the references section. Defaults to
-        #   false.
+        # false.
         include_trip: nil,
         # Specific time for the query. Defaults to the current time.
         time: nil,

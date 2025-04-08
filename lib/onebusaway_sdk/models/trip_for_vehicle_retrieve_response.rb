@@ -242,7 +242,7 @@ module OnebusawaySDK
 
             # @!attribute last_known_distance_along_trip
             #   Last known distance along the trip received in real-time from the transit
-            #     vehicle.
+            #   vehicle.
             #
             #   @return [Float]
             required :last_known_distance_along_trip, Float, api_name: :lastKnownDistanceAlongTrip
@@ -297,7 +297,7 @@ module OnebusawaySDK
 
             # @!attribute service_date
             #   Time, in milliseconds since the Unix epoch, of midnight for the start of the
-            #     service date for the trip.
+            #   service date for the trip.
             #
             #   @return [Integer]
             required :service_date, Integer, api_name: :serviceDate
@@ -316,7 +316,7 @@ module OnebusawaySDK
 
             # @!attribute [r] closest_stop_time_offset
             #   Time offset from the closest stop to the current position of the transit vehicle
-            #     (in seconds).
+            #   (in seconds).
             #
             #   @return [Integer, nil]
             optional :closest_stop_time_offset, Integer, api_name: :closestStopTimeOffset
@@ -369,7 +369,7 @@ module OnebusawaySDK
 
             # @!attribute [r] next_stop_time_offset
             #   Time offset from the next stop to the current position of the transit vehicle
-            #     (in seconds).
+            #   (in seconds).
             #
             #   @return [Integer, nil]
             optional :next_stop_time_offset, Integer, api_name: :nextStopTimeOffset
@@ -401,7 +401,7 @@ module OnebusawaySDK
 
             # @!attribute [r] scheduled_distance_along_trip
             #   Distance, in meters, the transit vehicle is scheduled to have progressed along
-            #     the active trip.
+            #   the active trip.
             #
             #   @return [Float, nil]
             optional :scheduled_distance_along_trip, Float, api_name: :scheduledDistanceAlongTrip

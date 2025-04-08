@@ -16,7 +16,7 @@ module OnebusawaySDK
         # The stop id to request the schedule for, encoded directly in the URL
         stop_id,
         # The date for which you want to request a schedule in the format YYYY-MM-DD
-        #   (optional, defaults to the current date)
+        # (optional, defaults to the current date)
         date: nil,
         request_options: {}
       ); end
