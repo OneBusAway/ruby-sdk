@@ -2,8 +2,6 @@
 
 module OnebusawaySDK
   module Internal
-    # rubocop:disable Metrics/ModuleLength
-
     # @api private
     module Util
       # @api private
@@ -694,7 +692,5 @@ module OnebusawaySDK
         end
       end
     end
-
-    # rubocop:enable Metrics/ModuleLength
   end
 end
