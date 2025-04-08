@@ -19,13 +19,13 @@ module OnebusawaySDK
         # ID of the vehicle to retrieve trip details for.
         vehicle_id,
         # Determines whether full <schedule/> element is included in the <tripDetails/>
-        #   section. Defaults to false.
+        # section. Defaults to false.
         include_schedule: nil,
         # Determines whether the full <status/> element is included in the <tripDetails/>
-        #   section. Defaults to true.
+        # section. Defaults to true.
         include_status: nil,
         # Determines whether full <trip/> element is included in the <references/>
-        #   section. Defaults to false.
+        # section. Defaults to false.
         include_trip: nil,
         # Time parameter to query the system at a specific time (optional).
         time: nil,

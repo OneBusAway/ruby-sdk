@@ -20,7 +20,7 @@ module OnebusawaySDK
         # Determine whether full schedule elements are included. Defaults to false.
         include_schedule: nil,
         # Determine whether full tripStatus elements with real-time information are
-        #   included. Defaults to false.
+        # included. Defaults to false.
         include_status: nil,
         # Query the system at a specific time. Useful for testing.
         time: nil,

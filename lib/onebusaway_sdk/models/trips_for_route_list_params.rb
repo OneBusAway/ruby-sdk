@@ -20,7 +20,7 @@ module OnebusawaySDK
 
       # @!attribute [r] include_status
       #   Determine whether full tripStatus elements with real-time information are
-      #     included. Defaults to false.
+      #   included. Defaults to false.
       #
       #   @return [Boolean, nil]
       optional :include_status, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeStatus

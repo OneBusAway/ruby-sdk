@@ -16,7 +16,7 @@ module OnebusawaySDK
         # The route id to request the schedule for
         route_id,
         # The date for which you want to request a schedule in the format YYYY-MM-DD
-        #   (optional, defaults to current date)
+        # (optional, defaults to current date)
         date: nil,
         request_options: {}
       ); end
