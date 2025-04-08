@@ -35,13 +35,10 @@ module OnebusawaySDK
         # Specific time for the query. Defaults to the current time.
         time: nil,
         request_options: {}
-      )
-      end
-
+      ); end
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:)
-      end
+      def self.new(client:); end
     end
   end
 end

@@ -32,8 +32,7 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(agencies:, routes:, situations:, stops:, stop_times:, trips:)
-      end
+      def self.new(agencies:, routes:, situations:, stops:, stop_times:, trips:); end
 
       sig do
         override
@@ -48,8 +47,7 @@ module OnebusawaySDK
             }
           )
       end
-      def to_hash
-      end
+      def to_hash; end
 
       class Agency < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(String) }
@@ -126,9 +124,7 @@ module OnebusawaySDK
           lang: nil,
           phone: nil,
           private_service: nil
-        )
-        end
-
+        ); end
         sig do
           override
             .returns(
@@ -146,8 +142,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
       end
 
       class Route < OnebusawaySDK::Internal::Type::BaseModel
@@ -228,9 +223,7 @@ module OnebusawaySDK
           short_name: nil,
           text_color: nil,
           url: nil
-        )
-        end
-
+        ); end
         sig do
           override
             .returns(
@@ -248,8 +241,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
       end
 
       class Situation < OnebusawaySDK::Internal::Type::BaseModel
@@ -387,9 +379,7 @@ module OnebusawaySDK
           severity: nil,
           summary: nil,
           url: nil
-        )
-        end
-
+        ); end
         sig do
           override
             .returns(
@@ -409,8 +399,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
           # Start time of the active window as a Unix timestamp.
@@ -428,12 +417,10 @@ module OnebusawaySDK
           attr_writer :to
 
           sig { params(from: Integer, to: Integer).returns(T.attached_class) }
-          def self.new(from: nil, to: nil)
-          end
+          def self.new(from: nil, to: nil); end
 
           sig { override.returns({from: Integer, to: Integer}) }
-          def to_hash
-          end
+          def to_hash; end
         end
 
         class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
@@ -513,8 +500,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
         end
 
         class Consequence < OnebusawaySDK::Internal::Type::BaseModel
@@ -549,8 +535,7 @@ module OnebusawaySDK
             )
               .returns(T.attached_class)
           end
-          def self.new(condition: nil, condition_details: nil)
-          end
+          def self.new(condition: nil, condition_details: nil); end
 
           sig do
             override
@@ -561,8 +546,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
 
           class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
             sig do
@@ -599,8 +583,7 @@ module OnebusawaySDK
               )
                 .returns(T.attached_class)
             end
-            def self.new(diversion_path: nil, diversion_stop_ids: nil)
-            end
+            def self.new(diversion_path: nil, diversion_stop_ids: nil); end
 
             sig do
               override
@@ -611,8 +594,7 @@ module OnebusawaySDK
                   }
                 )
             end
-            def to_hash
-            end
+            def to_hash; end
 
             class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
               # Length of the diversion path.
@@ -637,12 +619,10 @@ module OnebusawaySDK
               attr_writer :points
 
               sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
-              def self.new(length: nil, levels: nil, points: nil)
-              end
+              def self.new(length: nil, levels: nil, points: nil); end
 
               sig { override.returns({length: Integer, levels: String, points: String}) }
-              def to_hash
-              end
+              def to_hash; end
             end
           end
         end
@@ -663,12 +643,10 @@ module OnebusawaySDK
           attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
-          def self.new(lang: nil, value: nil)
-          end
+          def self.new(lang: nil, value: nil); end
 
           sig { override.returns({lang: String, value: String}) }
-          def to_hash
-          end
+          def to_hash; end
         end
 
         class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
@@ -681,12 +659,10 @@ module OnebusawaySDK
           attr_accessor :to
 
           sig { params(from: Integer, to: Integer).returns(T.attached_class) }
-          def self.new(from:, to:)
-          end
+          def self.new(from:, to:); end
 
           sig { override.returns({from: Integer, to: Integer}) }
-          def to_hash
-          end
+          def to_hash; end
         end
 
         # Reason for the service alert, taken from TPEG codes.
@@ -709,8 +685,7 @@ module OnebusawaySDK
             T.let(:securityAlert, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
 
           sig { override.returns(T::Array[OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol]) }
-          def self.values
-          end
+          def self.values; end
         end
 
         class Summary < OnebusawaySDK::Internal::Type::BaseModel
@@ -729,12 +704,10 @@ module OnebusawaySDK
           attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
-          def self.new(lang: nil, value: nil)
-          end
+          def self.new(lang: nil, value: nil); end
 
           sig { override.returns({lang: String, value: String}) }
-          def to_hash
-          end
+          def to_hash; end
         end
 
         class URL < OnebusawaySDK::Internal::Type::BaseModel
@@ -753,12 +726,10 @@ module OnebusawaySDK
           attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
-          def self.new(lang: nil, value: nil)
-          end
+          def self.new(lang: nil, value: nil); end
 
           sig { override.returns({lang: String, value: String}) }
-          def to_hash
-          end
+          def to_hash; end
         end
       end
 
@@ -836,9 +807,7 @@ module OnebusawaySDK
           direction: nil,
           location_type: nil,
           wheelchair_boarding: nil
-        )
-        end
-
+        ); end
         sig do
           override
             .returns(
@@ -857,8 +826,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
       end
 
       class StopTime < OnebusawaySDK::Internal::Type::BaseModel
@@ -916,9 +884,7 @@ module OnebusawaySDK
           historical_occupancy: nil,
           stop_headsign: nil,
           stop_id: nil
-        )
-        end
-
+        ); end
         sig do
           override
             .returns(
@@ -932,8 +898,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
       end
 
       class Trip < OnebusawaySDK::Internal::Type::BaseModel
@@ -1022,9 +987,7 @@ module OnebusawaySDK
           time_zone: nil,
           trip_headsign: nil,
           trip_short_name: nil
-        )
-        end
-
+        ); end
         sig do
           override
             .returns(
@@ -1043,8 +1006,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
       end
     end
   end

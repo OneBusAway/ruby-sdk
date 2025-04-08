@@ -104,9 +104,7 @@ module OnebusawaySDK
         user_vehicle_number: nil,
         vehicle_id: nil,
         request_options: {}
-      )
-      end
-
+      ); end
       sig do
         override
           .returns(
@@ -125,8 +123,7 @@ module OnebusawaySDK
             }
           )
       end
-      def to_hash
-      end
+      def to_hash; end
 
       # A string code identifying the nature of the problem
       module Code
@@ -153,8 +150,7 @@ module OnebusawaySDK
         OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
 
         sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol]) }
-        def self.values
-        end
+        def self.values; end
       end
     end
   end

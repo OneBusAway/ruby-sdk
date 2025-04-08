@@ -15,13 +15,10 @@ module OnebusawaySDK
         # The shape ID, encoded directly in the URL
         shape_id,
         request_options: {}
-      )
-      end
-
+      ); end
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:)
-      end
+      def self.new(client:); end
     end
   end
 end

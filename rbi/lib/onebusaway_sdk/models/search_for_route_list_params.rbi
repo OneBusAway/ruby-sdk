@@ -25,14 +25,12 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(input:, max_count: nil, request_options: {})
-      end
+      def self.new(input:, max_count: nil, request_options: {}); end
 
       sig do
         override.returns({input: String, max_count: Integer, request_options: OnebusawaySDK::RequestOptions})
       end
-      def to_hash
-      end
+      def to_hash; end
     end
   end
 end

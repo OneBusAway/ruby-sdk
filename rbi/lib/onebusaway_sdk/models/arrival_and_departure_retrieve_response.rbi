@@ -20,12 +20,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry) }
@@ -58,8 +56,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(entry:, references:)
-        end
+        def self.new(entry:, references:); end
 
         sig do
           override
@@ -70,8 +67,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           # Indicates if riders can arrive on this transit vehicle.
@@ -357,9 +353,7 @@ module OnebusawaySDK
             situation_ids: nil,
             status: nil,
             trip_status: nil
-          )
-          end
-
+          ); end
           sig do
             override
               .returns(
@@ -401,8 +395,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
 
           class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
             # Trip ID of the trip the vehicle is actively serving.
@@ -644,9 +637,7 @@ module OnebusawaySDK
               scheduled_distance_along_trip: nil,
               situation_ids: nil,
               vehicle_id: nil
-            )
-            end
-
+            ); end
             sig do
               override
                 .returns(
@@ -681,8 +672,7 @@ module OnebusawaySDK
                   }
                 )
             end
-            def to_hash
-            end
+            def to_hash; end
 
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               # Latitude of the last known location of the transit vehicle.
@@ -701,12 +691,10 @@ module OnebusawaySDK
 
               # Last known location of the transit vehicle.
               sig { params(lat: Float, lon: Float).returns(T.attached_class) }
-              def self.new(lat: nil, lon: nil)
-              end
+              def self.new(lat: nil, lon: nil); end
 
               sig { override.returns({lat: Float, lon: Float}) }
-              def to_hash
-              end
+              def to_hash; end
             end
 
             class Position < OnebusawaySDK::Internal::Type::BaseModel
@@ -726,12 +714,10 @@ module OnebusawaySDK
 
               # Current position of the transit vehicle.
               sig { params(lat: Float, lon: Float).returns(T.attached_class) }
-              def self.new(lat: nil, lon: nil)
-              end
+              def self.new(lat: nil, lon: nil); end
 
               sig { override.returns({lat: Float, lon: Float}) }
-              def to_hash
-              end
+              def to_hash; end
             end
           end
         end
