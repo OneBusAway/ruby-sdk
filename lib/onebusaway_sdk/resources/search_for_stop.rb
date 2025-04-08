@@ -19,7 +19,7 @@ module OnebusawaySDK
         @client.request(
           method: :get,
           path: "api/where/search/stop.json",
-          query: parsed,
+          query: parsed.transform_keys(max_count: :maxCount),
           model: OnebusawaySDK::Models::SearchForStopListResponse,
           options: options
         )
