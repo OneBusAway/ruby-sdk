@@ -36,8 +36,7 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
-      end
+      def self.new(minutes_after: nil, minutes_before: nil, time: nil, request_options: {}); end
 
       sig do
         override
@@ -50,8 +49,7 @@ module OnebusawaySDK
             }
           )
       end
-      def to_hash
-      end
+      def to_hash; end
     end
   end
 end

@@ -62,9 +62,7 @@ module OnebusawaySDK
         service_date: nil,
         time: nil,
         request_options: {}
-      )
-      end
-
+      ); end
       sig do
         override
           .returns(
@@ -78,8 +76,7 @@ module OnebusawaySDK
             }
           )
       end
-      def to_hash
-      end
+      def to_hash; end
     end
   end
 end

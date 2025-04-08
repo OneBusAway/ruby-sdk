@@ -18,12 +18,10 @@ module OnebusawaySDK
       sig do
         params(code: Integer, current_time: Integer, text: String, version: Integer).returns(T.attached_class)
       end
-      def self.new(code:, current_time:, text:, version:)
-      end
+      def self.new(code:, current_time:, text:, version:); end
 
       sig { override.returns({code: Integer, current_time: Integer, text: String, version: Integer}) }
-      def to_hash
-      end
+      def to_hash; end
     end
   end
 end

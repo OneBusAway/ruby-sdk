@@ -234,7 +234,7 @@ module OnebusawaySDK
               required :stop_times,
                        -> do
                          OnebusawaySDK::Internal::Type::ArrayOf[
-                         OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime
+                           OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime
                          ]
                        end,
                        api_name: :stopTimes

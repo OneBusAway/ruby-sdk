@@ -16,13 +16,11 @@ module OnebusawaySDK
         )
           .returns(OnebusawaySDK::Models::RoutesForLocationListResponse)
       end
-      def list(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
-      end
+      def list(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {}); end
 
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:)
-      end
+      def self.new(client:); end
     end
   end
 end

@@ -75,7 +75,7 @@ module OnebusawaySDK
             required :stop_route_direction_schedules,
                      -> do
                        OnebusawaySDK::Internal::Type::ArrayOf[
-                       OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
+                         OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule
                        ]
                      end,
                      api_name: :stopRouteDirectionSchedules
@@ -95,7 +95,7 @@ module OnebusawaySDK
               required :schedule_stop_times,
                        -> do
                          OnebusawaySDK::Internal::Type::ArrayOf[
-                         OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
+                           OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime
                          ]
                        end,
                        api_name: :scheduleStopTimes
@@ -111,7 +111,7 @@ module OnebusawaySDK
               optional :schedule_frequencies,
                        -> do
                          OnebusawaySDK::Internal::Type::ArrayOf[
-                         OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
+                           OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency
                          ]
                        end,
                        api_name: :scheduleFrequencies

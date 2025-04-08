@@ -20,12 +20,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(data:)
-      end
+      def self.new(data:); end
 
       sig { override.returns({data: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data}) }
-      def to_hash
-      end
+      def to_hash; end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         sig { returns(T::Boolean) }
@@ -48,8 +46,7 @@ module OnebusawaySDK
           )
             .returns(T.attached_class)
         end
-        def self.new(limit_exceeded:, list:, references:)
-        end
+        def self.new(limit_exceeded:, list:, references:); end
 
         sig do
           override
@@ -61,8 +58,7 @@ module OnebusawaySDK
               }
             )
         end
-        def to_hash
-        end
+        def to_hash; end
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           sig { returns(Integer) }
@@ -169,9 +165,7 @@ module OnebusawaySDK
             occupancy_status: nil,
             phase: nil,
             status: nil
-          )
-          end
-
+          ); end
           sig do
             override
               .returns(
@@ -190,8 +184,7 @@ module OnebusawaySDK
                 }
               )
           end
-          def to_hash
-          end
+          def to_hash; end
 
           class Location < OnebusawaySDK::Internal::Type::BaseModel
             sig { returns(T.nilable(Float)) }
@@ -207,12 +200,10 @@ module OnebusawaySDK
             attr_writer :lon
 
             sig { params(lat: Float, lon: Float).returns(T.attached_class) }
-            def self.new(lat: nil, lon: nil)
-            end
+            def self.new(lat: nil, lon: nil); end
 
             sig { override.returns({lat: Float, lon: Float}) }
-            def to_hash
-            end
+            def to_hash; end
           end
 
           class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
@@ -448,9 +439,7 @@ module OnebusawaySDK
               scheduled_distance_along_trip: nil,
               situation_ids: nil,
               vehicle_id: nil
-            )
-            end
-
+            ); end
             sig do
               override
                 .returns(
@@ -485,8 +474,7 @@ module OnebusawaySDK
                   }
                 )
             end
-            def to_hash
-            end
+            def to_hash; end
 
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               # Latitude of the last known location of the transit vehicle.
@@ -505,12 +493,10 @@ module OnebusawaySDK
 
               # Last known location of the transit vehicle.
               sig { params(lat: Float, lon: Float).returns(T.attached_class) }
-              def self.new(lat: nil, lon: nil)
-              end
+              def self.new(lat: nil, lon: nil); end
 
               sig { override.returns({lat: Float, lon: Float}) }
-              def to_hash
-              end
+              def to_hash; end
             end
 
             class Position < OnebusawaySDK::Internal::Type::BaseModel
@@ -530,12 +516,10 @@ module OnebusawaySDK
 
               # Current position of the transit vehicle.
               sig { params(lat: Float, lon: Float).returns(T.attached_class) }
-              def self.new(lat: nil, lon: nil)
-              end
+              def self.new(lat: nil, lon: nil); end
 
               sig { override.returns({lat: Float, lon: Float}) }
-              def to_hash
-              end
+              def to_hash; end
             end
           end
         end

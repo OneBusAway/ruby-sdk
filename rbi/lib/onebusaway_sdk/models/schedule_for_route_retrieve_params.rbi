@@ -21,12 +21,10 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(date: nil, request_options: {})
-      end
+      def self.new(date: nil, request_options: {}); end
 
       sig { override.returns({date: Date, request_options: OnebusawaySDK::RequestOptions}) }
-      def to_hash
-      end
+      def to_hash; end
     end
   end
 end
