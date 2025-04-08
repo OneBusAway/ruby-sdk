@@ -56,7 +56,7 @@ module OnebusawaySDK
             #   Indicates if riders can arrive on this transit vehicle.
             #
             #   @return [Boolean]
-            required :arrival_enabled, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :arrivalEnabled
+            required :arrival_enabled, OnebusawaySDK::Internal::Type::Boolean, api_name: :arrivalEnabled
 
             # @!attribute block_trip_sequence
             #   Index of this arrival’s trip into the sequence of trips for the active block.
@@ -68,9 +68,7 @@ module OnebusawaySDK
             #   Indicates if riders can depart from this transit vehicle.
             #
             #   @return [Boolean]
-            required :departure_enabled,
-                     OnebusawaySDK::Internal::Type::BooleanModel,
-                     api_name: :departureEnabled
+            required :departure_enabled, OnebusawaySDK::Internal::Type::Boolean, api_name: :departureEnabled
 
             # @!attribute number_of_stops_away
             #   Number of stops between the arriving transit vehicle and the current stop
@@ -220,7 +218,7 @@ module OnebusawaySDK
             #   Indicates if real-time arrival info is available for this trip.
             #
             #   @return [Boolean, nil]
-            optional :predicted, OnebusawaySDK::Internal::Type::BooleanModel
+            optional :predicted, OnebusawaySDK::Internal::Type::Boolean
 
             # @!parse
             #   # @return [Boolean]
@@ -491,7 +489,7 @@ module OnebusawaySDK
               #   Indicates if real-time arrival info is available for this trip.
               #
               #   @return [Boolean]
-              required :predicted, OnebusawaySDK::Internal::Type::BooleanModel
+              required :predicted, OnebusawaySDK::Internal::Type::Boolean
 
               # @!attribute schedule_deviation
               #   Deviation from the schedule in seconds (positive for late, negative for early).

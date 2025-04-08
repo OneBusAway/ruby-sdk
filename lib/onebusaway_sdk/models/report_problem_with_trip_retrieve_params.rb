@@ -82,7 +82,7 @@ module OnebusawaySDK
       #   Indicator if the user is on the transit vehicle experiencing the problem
       #
       #   @return [Boolean, nil]
-      optional :user_on_vehicle, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :userOnVehicle
+      optional :user_on_vehicle, OnebusawaySDK::Internal::Type::Boolean, api_name: :userOnVehicle
 
       # @!parse
       #   # @return [Boolean]

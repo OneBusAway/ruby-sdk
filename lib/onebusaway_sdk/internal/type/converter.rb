@@ -64,7 +64,7 @@ module OnebusawaySDK
             in Hash
               type_info(spec.slice(:const, :enum, :union).first&.last)
             in true | false
-              -> { OnebusawaySDK::Internal::Type::BooleanModel }
+              -> { OnebusawaySDK::Internal::Type::Boolean }
             in OnebusawaySDK::Internal::Type::Converter | Class | Symbol
               -> { spec }
             in NilClass | Integer | Float

@@ -22,7 +22,7 @@ class OnebusawaySDK::Test::PrimitiveModelTest < Minitest::Test
   def test_typing
     converters = [
       OnebusawaySDK::Internal::Type::Unknown,
-      OnebusawaySDK::Internal::Type::BooleanModel,
+      OnebusawaySDK::Internal::Type::Boolean,
       A,
       H,
       E,
@@ -42,8 +42,8 @@ class OnebusawaySDK::Test::PrimitiveModelTest < Minitest::Test
       [OnebusawaySDK::Internal::Type::Unknown, :a] => [{yes: 1}, :a],
       [NilClass, :a] => [{maybe: 1}, nil],
       [NilClass, nil] => [{yes: 1}, nil],
-      [OnebusawaySDK::Internal::Type::BooleanModel, true] => [{yes: 1}, true],
-      [OnebusawaySDK::Internal::Type::BooleanModel, "true"] => [{no: 1}, "true"],
+      [OnebusawaySDK::Internal::Type::Boolean, true] => [{yes: 1}, true],
+      [OnebusawaySDK::Internal::Type::Boolean, "true"] => [{no: 1}, "true"],
       [Integer, 1] => [{yes: 1}, 1],
       [Integer, 1.0] => [{maybe: 1}, 1],
       [Integer, "1"] => [{maybe: 1}, 1],
@@ -85,8 +85,8 @@ class OnebusawaySDK::Test::PrimitiveModelTest < Minitest::Test
       [String, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [:b, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [nil, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
-      [OnebusawaySDK::Internal::Type::BooleanModel, true] => true,
-      [OnebusawaySDK::Internal::Type::BooleanModel, "true"] => "true",
+      [OnebusawaySDK::Internal::Type::Boolean, true] => true,
+      [OnebusawaySDK::Internal::Type::Boolean, "true"] => "true",
       [Integer, "1"] => "1",
       [Float, 1] => 1,
       [String, "one"] => "one",
@@ -560,8 +560,8 @@ class OnebusawaySDK::Test::BaseModelQoLTest < Minitest::Test
   def test_equality
     cases = {
       [OnebusawaySDK::Internal::Type::Unknown, OnebusawaySDK::Internal::Type::Unknown] => true,
-      [OnebusawaySDK::Internal::Type::BooleanModel, OnebusawaySDK::Internal::Type::BooleanModel] => true,
-      [OnebusawaySDK::Internal::Type::Unknown, OnebusawaySDK::Internal::Type::BooleanModel] => false,
+      [OnebusawaySDK::Internal::Type::Boolean, OnebusawaySDK::Internal::Type::Boolean] => true,
+      [OnebusawaySDK::Internal::Type::Unknown, OnebusawaySDK::Internal::Type::Boolean] => false,
       [E1, E2] => true,
       [E1, E3] => false,
       [M1, M2] => false,

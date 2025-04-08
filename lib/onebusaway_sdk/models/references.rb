@@ -118,7 +118,7 @@ module OnebusawaySDK
         # @!attribute [r] private_service
         #
         #   @return [Boolean, nil]
-        optional :private_service, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :privateService
+        optional :private_service, OnebusawaySDK::Internal::Type::Boolean, api_name: :privateService
 
         # @!parse
         #   # @return [Boolean]

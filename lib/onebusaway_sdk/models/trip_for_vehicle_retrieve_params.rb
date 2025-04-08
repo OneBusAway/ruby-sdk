@@ -13,7 +13,7 @@ module OnebusawaySDK
       #     section. Defaults to false.
       #
       #   @return [Boolean, nil]
-      optional :include_schedule, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includeSchedule
+      optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeSchedule
 
       # @!parse
       #   # @return [Boolean]
@@ -24,7 +24,7 @@ module OnebusawaySDK
       #     section. Defaults to true.
       #
       #   @return [Boolean, nil]
-      optional :include_status, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includeStatus
+      optional :include_status, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeStatus
 
       # @!parse
       #   # @return [Boolean]
@@ -35,7 +35,7 @@ module OnebusawaySDK
       #     section. Defaults to false.
       #
       #   @return [Boolean, nil]
-      optional :include_trip, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :includeTrip
+      optional :include_trip, OnebusawaySDK::Internal::Type::Boolean, api_name: :includeTrip
 
       # @!parse
       #   # @return [Boolean]

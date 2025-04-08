@@ -256,9 +256,7 @@ module OnebusawaySDK
                 # @!attribute arrival_enabled
                 #
                 #   @return [Boolean]
-                required :arrival_enabled,
-                         OnebusawaySDK::Internal::Type::BooleanModel,
-                         api_name: :arrivalEnabled
+                required :arrival_enabled, OnebusawaySDK::Internal::Type::Boolean, api_name: :arrivalEnabled
 
                 # @!attribute arrival_time
                 #
@@ -269,7 +267,7 @@ module OnebusawaySDK
                 #
                 #   @return [Boolean]
                 required :departure_enabled,
-                         OnebusawaySDK::Internal::Type::BooleanModel,
+                         OnebusawaySDK::Internal::Type::Boolean,
                          api_name: :departureEnabled
 
                 # @!attribute departure_time

@@ -20,7 +20,7 @@ module OnebusawaySDK
         # @!attribute limit_exceeded
         #
         #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :limitExceeded
+        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
 
         # @!attribute list
         #
@@ -285,7 +285,7 @@ module OnebusawaySDK
             #   Indicates if real-time arrival info is available for this trip.
             #
             #   @return [Boolean]
-            required :predicted, OnebusawaySDK::Internal::Type::BooleanModel
+            required :predicted, OnebusawaySDK::Internal::Type::Boolean
 
             # @!attribute schedule_deviation
             #   Deviation from the schedule in seconds (positive for late, negative for early).

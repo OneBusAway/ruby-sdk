@@ -21,7 +21,7 @@ module OnebusawaySDK
         #   Indicates if the limit of trips has been exceeded
         #
         #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :limitExceeded
+        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
 
         # @!attribute list
         #
@@ -38,7 +38,7 @@ module OnebusawaySDK
         #   Indicates if the search location is out of range
         #
         #   @return [Boolean, nil]
-        optional :out_of_range, OnebusawaySDK::Internal::Type::BooleanModel, api_name: :outOfRange
+        optional :out_of_range, OnebusawaySDK::Internal::Type::Boolean, api_name: :outOfRange
 
         # @!parse
         #   # @return [Boolean]
@@ -297,7 +297,7 @@ module OnebusawaySDK
             #   Indicates if real-time arrival info is available for this trip.
             #
             #   @return [Boolean]
-            required :predicted, OnebusawaySDK::Internal::Type::BooleanModel
+            required :predicted, OnebusawaySDK::Internal::Type::Boolean
 
             # @!attribute schedule_deviation
             #   Deviation from the schedule in seconds (positive for late, negative for early).

@@ -1,7 +1,7 @@
 module OnebusawaySDK
   module Internal
     module Type
-      class BooleanModel
+      class Boolean
         extend OnebusawaySDK::Internal::Type::Converter
 
         def self.===: (top other) -> bool
