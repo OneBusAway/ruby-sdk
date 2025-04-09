@@ -386,7 +386,7 @@ module OnebusawaySDK
           in (400..) | OnebusawaySDK::Errors::APIConnectionError
             self.class.reap_connection!(status, stream: stream)
 
-            delay = retry_delay(response, retry_count: retry_count)
+            delay = retry_delay(response || {}, retry_count: retry_count)
             sleep(delay)
 
             send_request(
