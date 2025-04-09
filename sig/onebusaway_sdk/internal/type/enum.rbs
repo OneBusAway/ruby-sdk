@@ -14,10 +14,13 @@ module OnebusawaySDK
 
         def coerce: (
           String | Symbol | top value,
-          state: OnebusawaySDK::Internal::Type::Converter::state
+          state: OnebusawaySDK::Internal::Type::Converter::coerce_state
         ) -> (Symbol | top)
 
-        def dump: (Symbol | top value) -> (Symbol | top)
+        def dump: (
+          Symbol | top value,
+          state: OnebusawaySDK::Internal::Type::Converter::dump_state
+        ) -> (Symbol | top)
       end
     end
   end
