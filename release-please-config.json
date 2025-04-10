@@ -60,5 +60,8 @@
     }
   ],
   "release-type": "ruby",
-  "version-file": "lib/onebusaway_sdk/version.rb"
+  "version-file": "lib/onebusaway_sdk/version.rb",
+  "extra-files": [
+    "README.md"
+  ]
 }
