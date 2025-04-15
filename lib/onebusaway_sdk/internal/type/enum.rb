@@ -37,9 +37,9 @@ module OnebusawaySDK
         #
         # @return [Boolean]
         def ==(other)
-          # rubocop:disable Layout/LineLength
-          other.is_a?(Module) && other.singleton_class <= OnebusawaySDK::Internal::Type::Enum && other.values.to_set == values.to_set
-          # rubocop:enable Layout/LineLength
+          # rubocop:disable Style/CaseEquality
+          OnebusawaySDK::Internal::Type::Enum === other && other.values.to_set == values.to_set
+          # rubocop:enable Style/CaseEquality
         end
 
         # @api private
