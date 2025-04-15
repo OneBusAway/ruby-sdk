@@ -8,7 +8,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 Documentation for releases of this gem can be found [on RubyDoc](https://gemdocs.org/gems/onebusaway-sdk).
 
-The underlying REST API documentation can be found on [developer.onebusaway.org](https://developer.onebusaway.org).
+The REST API documentation can be found on [developer.onebusaway.org](https://developer.onebusaway.org).
 
 ## Installation
 
