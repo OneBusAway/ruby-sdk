@@ -191,6 +191,19 @@ module OnebusawaySDK
 
         # rubocop:enable Style/CaseEquality
         # rubocop:enable Style/HashEachMethods
+
+        # @api private
+        #
+        # @param depth [Integer]
+        #
+        # @return [String]
+        def inspect(depth: 0)
+          # rubocop:disable Layout/LineLength
+          return super() if depth.positive?
+
+          "#{name}[#{variants.map { OnebusawaySDK::Internal::Type::Converter.inspect(_1, depth: depth.succ) }.join(' | ')}]"
+          # rubocop:enable Layout/LineLength
+        end
       end
     end
   end

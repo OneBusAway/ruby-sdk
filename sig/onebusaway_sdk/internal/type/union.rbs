@@ -39,6 +39,8 @@ module OnebusawaySDK
           top value,
           state: OnebusawaySDK::Internal::Type::Converter::dump_state
         ) -> top
+
+        def inspect: (?depth: Integer) -> String
       end
     end
   end

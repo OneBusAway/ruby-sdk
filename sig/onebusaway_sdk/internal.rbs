@@ -1,5 +1,5 @@
 module OnebusawaySDK
   module Internal
-    OMIT: top
+    OMIT: Object
   end
 end
