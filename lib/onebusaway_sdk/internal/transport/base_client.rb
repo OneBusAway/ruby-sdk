@@ -93,7 +93,11 @@ module OnebusawaySDK
                 URI.join(url, response_headers["location"])
               rescue ArgumentError
                 message = "Server responded with status #{status} but no valid location header."
-                raise OnebusawaySDK::Errors::APIConnectionError.new(url: url, message: message)
+                raise OnebusawaySDK::Errors::APIConnectionError.new(
+                  url: url,
+                  response: response_headers,
+                  message: message
+                )
               end
 
             request = {**request, url: location}
@@ -101,7 +105,11 @@ module OnebusawaySDK
             case [url.scheme, location.scheme]
             in ["https", "http"]
               message = "Tried to redirect to a insecure URL"
-              raise OnebusawaySDK::Errors::APIConnectionError.new(url: url, message: message)
+              raise OnebusawaySDK::Errors::APIConnectionError.new(
+                url: url,
+                response: response_headers,
+                message: message
+              )
             else
               nil
             end
@@ -356,7 +364,11 @@ module OnebusawaySDK
             self.class.reap_connection!(status, stream: stream)
 
             message = "Failed to complete the request within #{self.class::MAX_REDIRECTS} redirects."
-            raise OnebusawaySDK::Errors::APIConnectionError.new(url: url, message: message)
+            raise OnebusawaySDK::Errors::APIConnectionError.new(
+              url: url,
+              response: response,
+              message: message
+            )
           in 300..399
             self.class.reap_connection!(status, stream: stream)
 
