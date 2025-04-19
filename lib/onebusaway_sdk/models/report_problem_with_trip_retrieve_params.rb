@@ -4,109 +4,68 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::ReportProblemWithTrip#retrieve
     class ReportProblemWithTripRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!attribute [r] code
+      # @!attribute code
       #   A string code identifying the nature of the problem
       #
       #   @return [Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code, nil]
       optional :code, enum: -> { OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code }
 
-      # @!parse
-      #   # @return [Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code]
-      #   attr_writer :code
-
-      # @!attribute [r] service_date
+      # @!attribute service_date
       #   The service date of the trip
       #
       #   @return [Integer, nil]
       optional :service_date, Integer
 
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :service_date
-
-      # @!attribute [r] stop_id
+      # @!attribute stop_id
       #   A stop ID indicating where the user is experiencing the problem
       #
       #   @return [String, nil]
       optional :stop_id, String
 
-      # @!parse
-      #   # @return [String]
-      #   attr_writer :stop_id
-
-      # @!attribute [r] user_comment
+      # @!attribute user_comment
       #   Additional comment text supplied by the user describing the problem
       #
       #   @return [String, nil]
       optional :user_comment, String
 
-      # @!parse
-      #   # @return [String]
-      #   attr_writer :user_comment
-
-      # @!attribute [r] user_lat
+      # @!attribute user_lat
       #   The reporting user’s current latitude
       #
       #   @return [Float, nil]
       optional :user_lat, Float
 
-      # @!parse
-      #   # @return [Float]
-      #   attr_writer :user_lat
-
-      # @!attribute [r] user_location_accuracy
+      # @!attribute user_location_accuracy
       #   The reporting user’s location accuracy, in meters
       #
       #   @return [Float, nil]
       optional :user_location_accuracy, Float
 
-      # @!parse
-      #   # @return [Float]
-      #   attr_writer :user_location_accuracy
-
-      # @!attribute [r] user_lon
+      # @!attribute user_lon
       #   The reporting user’s current longitude
       #
       #   @return [Float, nil]
       optional :user_lon, Float
 
-      # @!parse
-      #   # @return [Float]
-      #   attr_writer :user_lon
-
-      # @!attribute [r] user_on_vehicle
+      # @!attribute user_on_vehicle
       #   Indicator if the user is on the transit vehicle experiencing the problem
       #
       #   @return [Boolean, nil]
       optional :user_on_vehicle, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :user_on_vehicle
-
-      # @!attribute [r] user_vehicle_number
+      # @!attribute user_vehicle_number
       #   The vehicle number, as reported by the user
       #
       #   @return [String, nil]
       optional :user_vehicle_number, String
 
-      # @!parse
-      #   # @return [String]
-      #   attr_writer :user_vehicle_number
-
-      # @!attribute [r] vehicle_id
+      # @!attribute vehicle_id
       #   The vehicle actively serving the trip
       #
       #   @return [String, nil]
       optional :vehicle_id, String
-
-      # @!parse
-      #   # @return [String]
-      #   attr_writer :vehicle_id
 
       # @!method initialize(code: nil, service_date: nil, stop_id: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, user_on_vehicle: nil, user_vehicle_number: nil, vehicle_id: nil, request_options: {})
       #   @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code]

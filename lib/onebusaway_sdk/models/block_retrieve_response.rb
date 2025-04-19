@@ -58,16 +58,12 @@ module OnebusawaySDK
             required :trips,
                      -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip] }
 
-            # @!attribute [r] inactive_service_ids
+            # @!attribute inactive_service_ids
             #
             #   @return [Array<String>, nil]
             optional :inactive_service_ids,
                      OnebusawaySDK::Internal::Type::ArrayOf[String],
                      api_name: :inactiveServiceIds
-
-            # @!parse
-            #   # @return [Array<String>]
-            #   attr_writer :inactive_service_ids
 
             # @!method initialize(active_service_ids:, trips:, inactive_service_ids: nil)
             #   @param active_service_ids [Array<String>]
@@ -149,23 +145,15 @@ module OnebusawaySDK
                   #   @return [String]
                   required :stop_id, String, api_name: :stopId
 
-                  # @!attribute [r] drop_off_type
+                  # @!attribute drop_off_type
                   #
                   #   @return [Integer, nil]
                   optional :drop_off_type, Integer, api_name: :dropOffType
 
-                  # @!parse
-                  #   # @return [Integer]
-                  #   attr_writer :drop_off_type
-
-                  # @!attribute [r] pickup_type
+                  # @!attribute pickup_type
                   #
                   #   @return [Integer, nil]
                   optional :pickup_type, Integer, api_name: :pickupType
-
-                  # @!parse
-                  #   # @return [Integer]
-                  #   attr_writer :pickup_type
 
                   # @!method initialize(arrival_time:, departure_time:, stop_id:, drop_off_type: nil, pickup_type: nil)
                   #   @param arrival_time [Integer]

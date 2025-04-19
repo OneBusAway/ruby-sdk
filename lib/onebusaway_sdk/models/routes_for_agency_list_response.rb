@@ -50,68 +50,40 @@ module OnebusawaySDK
           #   @return [Integer]
           required :type, Integer
 
-          # @!attribute [r] color
+          # @!attribute color
           #
           #   @return [String, nil]
           optional :color, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :color
-
-          # @!attribute [r] description
+          # @!attribute description
           #
           #   @return [String, nil]
           optional :description, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :description
-
-          # @!attribute [r] long_name
+          # @!attribute long_name
           #
           #   @return [String, nil]
           optional :long_name, String, api_name: :longName
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :long_name
-
-          # @!attribute [r] null_safe_short_name
+          # @!attribute null_safe_short_name
           #
           #   @return [String, nil]
           optional :null_safe_short_name, String, api_name: :nullSafeShortName
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :null_safe_short_name
-
-          # @!attribute [r] short_name
+          # @!attribute short_name
           #
           #   @return [String, nil]
           optional :short_name, String, api_name: :shortName
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :short_name
-
-          # @!attribute [r] text_color
+          # @!attribute text_color
           #
           #   @return [String, nil]
           optional :text_color, String, api_name: :textColor
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :text_color
-
-          # @!attribute [r] url
+          # @!attribute url
           #
           #   @return [String, nil]
           optional :url, String
-
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :url
 
           # @!method initialize(id:, agency_id:, type:, color: nil, description: nil, long_name: nil, null_safe_short_name: nil, short_name: nil, text_color: nil, url: nil)
           #   @param id [String]

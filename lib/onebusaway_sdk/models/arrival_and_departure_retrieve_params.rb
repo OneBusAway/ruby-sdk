@@ -4,8 +4,7 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::ArrivalAndDeparture#retrieve
     class ArrivalAndDepartureRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute service_date
@@ -18,32 +17,20 @@ module OnebusawaySDK
       #   @return [String]
       required :trip_id, String
 
-      # @!attribute [r] stop_sequence
+      # @!attribute stop_sequence
       #
       #   @return [Integer, nil]
       optional :stop_sequence, Integer
 
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :stop_sequence
-
-      # @!attribute [r] time
+      # @!attribute time
       #
       #   @return [Integer, nil]
       optional :time, Integer
 
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :time
-
-      # @!attribute [r] vehicle_id
+      # @!attribute vehicle_id
       #
       #   @return [String, nil]
       optional :vehicle_id, String
-
-      # @!parse
-      #   # @return [String]
-      #   attr_writer :vehicle_id
 
       # @!method initialize(service_date:, trip_id:, stop_sequence: nil, time: nil, vehicle_id: nil, request_options: {})
       #   @param service_date [Integer]

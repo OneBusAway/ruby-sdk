@@ -40,14 +40,10 @@ module OnebusawaySDK
           #   @return [String]
           required :points, String
 
-          # @!attribute [r] levels
+          # @!attribute levels
           #
           #   @return [String, nil]
           optional :levels, String
-
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :levels
 
           # @!method initialize(length:, points:, levels: nil)
           #   @param length [Integer]

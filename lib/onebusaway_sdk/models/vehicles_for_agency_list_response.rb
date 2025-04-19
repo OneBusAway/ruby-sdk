@@ -67,50 +67,30 @@ module OnebusawaySDK
           #   @return [String]
           required :vehicle_id, String, api_name: :vehicleId
 
-          # @!attribute [r] occupancy_capacity
+          # @!attribute occupancy_capacity
           #
           #   @return [Integer, nil]
           optional :occupancy_capacity, Integer, api_name: :occupancyCapacity
 
-          # @!parse
-          #   # @return [Integer]
-          #   attr_writer :occupancy_capacity
-
-          # @!attribute [r] occupancy_count
+          # @!attribute occupancy_count
           #
           #   @return [Integer, nil]
           optional :occupancy_count, Integer, api_name: :occupancyCount
 
-          # @!parse
-          #   # @return [Integer]
-          #   attr_writer :occupancy_count
-
-          # @!attribute [r] occupancy_status
+          # @!attribute occupancy_status
           #
           #   @return [String, nil]
           optional :occupancy_status, String, api_name: :occupancyStatus
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :occupancy_status
-
-          # @!attribute [r] phase
+          # @!attribute phase
           #
           #   @return [String, nil]
           optional :phase, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :phase
-
-          # @!attribute [r] status
+          # @!attribute status
           #
           #   @return [String, nil]
           optional :status, String
-
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :status
 
           # @!method initialize(last_location_update_time:, last_update_time:, location:, trip_id:, trip_status:, vehicle_id:, occupancy_capacity: nil, occupancy_count: nil, occupancy_status: nil, phase: nil, status: nil)
           #   @param last_location_update_time [Integer]
@@ -127,23 +107,15 @@ module OnebusawaySDK
 
           # @see OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List#location
           class Location < OnebusawaySDK::Internal::Type::BaseModel
-            # @!attribute [r] lat
+            # @!attribute lat
             #
             #   @return [Float, nil]
             optional :lat, Float
 
-            # @!parse
-            #   # @return [Float]
-            #   attr_writer :lat
-
-            # @!attribute [r] lon
+            # @!attribute lon
             #
             #   @return [Float, nil]
             optional :lon, Float
-
-            # @!parse
-            #   # @return [Float]
-            #   attr_writer :lon
 
             # @!method initialize(lat: nil, lon: nil)
             #   @param lat [Float]
@@ -250,28 +222,20 @@ module OnebusawaySDK
             #   @return [Float]
             required :total_distance_along_trip, Float, api_name: :totalDistanceAlongTrip
 
-            # @!attribute [r] closest_stop_time_offset
+            # @!attribute closest_stop_time_offset
             #   Time offset from the closest stop to the current position of the transit vehicle
             #   (in seconds).
             #
             #   @return [Integer, nil]
             optional :closest_stop_time_offset, Integer, api_name: :closestStopTimeOffset
 
-            # @!parse
-            #   # @return [Integer]
-            #   attr_writer :closest_stop_time_offset
-
-            # @!attribute [r] frequency
+            # @!attribute frequency
             #   Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @return [String, nil]
             optional :frequency, String
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :frequency
-
-            # @!attribute [r] last_known_location
+            # @!attribute last_known_location
             #   Last known location of the transit vehicle.
             #
             #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation, nil]
@@ -279,92 +243,56 @@ module OnebusawaySDK
                      -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation },
                      api_name: :lastKnownLocation
 
-            # @!parse
-            #   # @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation]
-            #   attr_writer :last_known_location
-
-            # @!attribute [r] last_known_orientation
+            # @!attribute last_known_orientation
             #   Last known orientation value received in real-time from the transit vehicle.
             #
             #   @return [Float, nil]
             optional :last_known_orientation, Float, api_name: :lastKnownOrientation
 
-            # @!parse
-            #   # @return [Float]
-            #   attr_writer :last_known_orientation
-
-            # @!attribute [r] next_stop
+            # @!attribute next_stop
             #   ID of the next stop the transit vehicle is scheduled to arrive at.
             #
             #   @return [String, nil]
             optional :next_stop, String, api_name: :nextStop
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :next_stop
-
-            # @!attribute [r] next_stop_time_offset
+            # @!attribute next_stop_time_offset
             #   Time offset from the next stop to the current position of the transit vehicle
             #   (in seconds).
             #
             #   @return [Integer, nil]
             optional :next_stop_time_offset, Integer, api_name: :nextStopTimeOffset
 
-            # @!parse
-            #   # @return [Integer]
-            #   attr_writer :next_stop_time_offset
-
-            # @!attribute [r] orientation
+            # @!attribute orientation
             #   Orientation of the transit vehicle, represented as an angle in degrees.
             #
             #   @return [Float, nil]
             optional :orientation, Float
 
-            # @!parse
-            #   # @return [Float]
-            #   attr_writer :orientation
-
-            # @!attribute [r] position
+            # @!attribute position
             #   Current position of the transit vehicle.
             #
             #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position, nil]
             optional :position,
                      -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position }
 
-            # @!parse
-            #   # @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position]
-            #   attr_writer :position
-
-            # @!attribute [r] scheduled_distance_along_trip
+            # @!attribute scheduled_distance_along_trip
             #   Distance, in meters, the transit vehicle is scheduled to have progressed along
             #   the active trip.
             #
             #   @return [Float, nil]
             optional :scheduled_distance_along_trip, Float, api_name: :scheduledDistanceAlongTrip
 
-            # @!parse
-            #   # @return [Float]
-            #   attr_writer :scheduled_distance_along_trip
-
-            # @!attribute [r] situation_ids
+            # @!attribute situation_ids
             #   References to situation elements (if any) applicable to this trip.
             #
             #   @return [Array<String>, nil]
             optional :situation_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :situationIds
 
-            # @!parse
-            #   # @return [Array<String>]
-            #   attr_writer :situation_ids
-
-            # @!attribute [r] vehicle_id
+            # @!attribute vehicle_id
             #   ID of the transit vehicle currently serving the trip.
             #
             #   @return [String, nil]
             optional :vehicle_id, String, api_name: :vehicleId
-
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :vehicle_id
 
             # @!method initialize(active_trip_id:, block_trip_sequence:, closest_stop:, distance_along_trip:, last_known_distance_along_trip:, last_location_update_time:, last_update_time:, occupancy_capacity:, occupancy_count:, occupancy_status:, phase:, predicted:, schedule_deviation:, service_date:, status:, total_distance_along_trip:, closest_stop_time_offset: nil, frequency: nil, last_known_location: nil, last_known_orientation: nil, next_stop: nil, next_stop_time_offset: nil, orientation: nil, position: nil, scheduled_distance_along_trip: nil, situation_ids: nil, vehicle_id: nil)
             #   @param active_trip_id [String]
@@ -397,25 +325,17 @@ module OnebusawaySDK
 
             # @see OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus#last_known_location
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
-              # @!attribute [r] lat
+              # @!attribute lat
               #   Latitude of the last known location of the transit vehicle.
               #
               #   @return [Float, nil]
               optional :lat, Float
 
-              # @!parse
-              #   # @return [Float]
-              #   attr_writer :lat
-
-              # @!attribute [r] lon
+              # @!attribute lon
               #   Longitude of the last known location of the transit vehicle.
               #
               #   @return [Float, nil]
               optional :lon, Float
-
-              # @!parse
-              #   # @return [Float]
-              #   attr_writer :lon
 
               # @!method initialize(lat: nil, lon: nil)
               #   Last known location of the transit vehicle.
@@ -426,25 +346,17 @@ module OnebusawaySDK
 
             # @see OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus#position
             class Position < OnebusawaySDK::Internal::Type::BaseModel
-              # @!attribute [r] lat
+              # @!attribute lat
               #   Latitude of the current position of the transit vehicle.
               #
               #   @return [Float, nil]
               optional :lat, Float
 
-              # @!parse
-              #   # @return [Float]
-              #   attr_writer :lat
-
-              # @!attribute [r] lon
+              # @!attribute lon
               #   Longitude of the current position of the transit vehicle.
               #
               #   @return [Float, nil]
               optional :lon, Float
-
-              # @!parse
-              #   # @return [Float]
-              #   attr_writer :lon
 
               # @!method initialize(lat: nil, lon: nil)
               #   Current position of the transit vehicle.

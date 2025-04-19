@@ -4,29 +4,20 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::StopsForRoute#list
     class StopsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!attribute [r] include_polylines
+      # @!attribute include_polylines
       #   Include polyline elements in the response (default true)
       #
       #   @return [Boolean, nil]
       optional :include_polylines, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_polylines
-
-      # @!attribute [r] time
+      # @!attribute time
       #   Specify service date (YYYY-MM-DD or epoch) (default today)
       #
       #   @return [String, nil]
       optional :time, String
-
-      # @!parse
-      #   # @return [String]
-      #   attr_writer :time
 
       # @!method initialize(include_polylines: nil, time: nil, request_options: {})
       #   @param include_polylines [Boolean]

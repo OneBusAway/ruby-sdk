@@ -29,23 +29,15 @@ module OnebusawaySDK
 
         # @see OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
-          # @!attribute [r] readable_time
+          # @!attribute readable_time
           #
           #   @return [String, nil]
           optional :readable_time, String, api_name: :readableTime
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :readable_time
-
-          # @!attribute [r] time
+          # @!attribute time
           #
           #   @return [Integer, nil]
           optional :time, Integer
-
-          # @!parse
-          #   # @return [Integer]
-          #   attr_writer :time
 
           # @!method initialize(readable_time: nil, time: nil)
           #   @param readable_time [String]

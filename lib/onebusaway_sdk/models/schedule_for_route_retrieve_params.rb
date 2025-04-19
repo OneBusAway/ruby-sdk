@@ -4,20 +4,15 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::ScheduleForRoute#retrieve
     class ScheduleForRouteRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!attribute [r] date
+      # @!attribute date
       #   The date for which you want to request a schedule in the format YYYY-MM-DD
       #   (optional, defaults to current date)
       #
       #   @return [Date, nil]
       optional :date, Date
-
-      # @!parse
-      #   # @return [Date]
-      #   attr_writer :date
 
       # @!method initialize(date: nil, request_options: {})
       #   @param date [Date]

@@ -55,59 +55,35 @@ module OnebusawaySDK
           #   @return [String]
           required :url, String
 
-          # @!attribute [r] disclaimer
+          # @!attribute disclaimer
           #
           #   @return [String, nil]
           optional :disclaimer, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :disclaimer
-
-          # @!attribute [r] email
+          # @!attribute email
           #
           #   @return [String, nil]
           optional :email, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :email
-
-          # @!attribute [r] fare_url
+          # @!attribute fare_url
           #
           #   @return [String, nil]
           optional :fare_url, String, api_name: :fareUrl
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :fare_url
-
-          # @!attribute [r] lang
+          # @!attribute lang
           #
           #   @return [String, nil]
           optional :lang, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :lang
-
-          # @!attribute [r] phone
+          # @!attribute phone
           #
           #   @return [String, nil]
           optional :phone, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :phone
-
-          # @!attribute [r] private_service
+          # @!attribute private_service
           #
           #   @return [Boolean, nil]
           optional :private_service, OnebusawaySDK::Internal::Type::Boolean, api_name: :privateService
-
-          # @!parse
-          #   # @return [Boolean]
-          #   attr_writer :private_service
 
           # @!method initialize(id:, name:, timezone:, url:, disclaimer: nil, email: nil, fare_url: nil, lang: nil, phone: nil, private_service: nil)
           #   @param id [String]

@@ -29,44 +29,28 @@ module OnebusawaySDK
 
         # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
-          # @!attribute [r] polylines
+          # @!attribute polylines
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>, nil]
           optional :polylines,
                    -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline] }
 
-          # @!parse
-          #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>]
-          #   attr_writer :polylines
-
-          # @!attribute [r] route_id
+          # @!attribute route_id
           #
           #   @return [String, nil]
           optional :route_id, String, api_name: :routeId
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :route_id
-
-          # @!attribute [r] stop_groupings
+          # @!attribute stop_groupings
           #
           #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping>, nil]
           optional :stop_groupings,
                    -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping] },
                    api_name: :stopGroupings
 
-          # @!parse
-          #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping>]
-          #   attr_writer :stop_groupings
-
-          # @!attribute [r] stop_ids
+          # @!attribute stop_ids
           #
           #   @return [Array<String>, nil]
           optional :stop_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :stopIds
-
-          # @!parse
-          #   # @return [Array<String>]
-          #   attr_writer :stop_ids
 
           # @!method initialize(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil)
           #   @param polylines [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>]
@@ -75,32 +59,20 @@ module OnebusawaySDK
           #   @param stop_ids [Array<String>]
 
           class Polyline < OnebusawaySDK::Internal::Type::BaseModel
-            # @!attribute [r] length
+            # @!attribute length
             #
             #   @return [Integer, nil]
             optional :length, Integer
 
-            # @!parse
-            #   # @return [Integer]
-            #   attr_writer :length
-
-            # @!attribute [r] levels
+            # @!attribute levels
             #
             #   @return [String, nil]
             optional :levels, String
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :levels
-
-            # @!attribute [r] points
+            # @!attribute points
             #
             #   @return [String, nil]
             optional :points, String
-
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :points
 
             # @!method initialize(length: nil, levels: nil, points: nil)
             #   @param length [Integer]
@@ -109,42 +81,26 @@ module OnebusawaySDK
           end
 
           class StopGrouping < OnebusawaySDK::Internal::Type::BaseModel
-            # @!attribute [r] id
+            # @!attribute id
             #
             #   @return [String, nil]
             optional :id, String
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :id
-
-            # @!attribute [r] name
+            # @!attribute name
             #
             #   @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name, nil]
             optional :name, -> { OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name }
 
-            # @!parse
-            #   # @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name]
-            #   attr_writer :name
-
-            # @!attribute [r] polylines
+            # @!attribute polylines
             #
             #   @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>, nil]
             optional :polylines,
                      -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline] }
 
-            # @!parse
-            #   # @return [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>]
-            #   attr_writer :polylines
-
-            # @!attribute [r] stop_ids
+            # @!attribute stop_ids
             #
             #   @return [Array<String>, nil]
             optional :stop_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :stopIds
-
-            # @!parse
-            #   # @return [Array<String>]
-            #   attr_writer :stop_ids
 
             # @!method initialize(id: nil, name: nil, polylines: nil, stop_ids: nil)
             #   @param id [String]
@@ -154,32 +110,20 @@ module OnebusawaySDK
 
             # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping#name
             class Name < OnebusawaySDK::Internal::Type::BaseModel
-              # @!attribute [r] name
+              # @!attribute name
               #
               #   @return [String, nil]
               optional :name, String
 
-              # @!parse
-              #   # @return [String]
-              #   attr_writer :name
-
-              # @!attribute [r] names
+              # @!attribute names
               #
               #   @return [Array<String>, nil]
               optional :names, OnebusawaySDK::Internal::Type::ArrayOf[String]
 
-              # @!parse
-              #   # @return [Array<String>]
-              #   attr_writer :names
-
-              # @!attribute [r] type
+              # @!attribute type
               #
               #   @return [String, nil]
               optional :type, String
-
-              # @!parse
-              #   # @return [String]
-              #   attr_writer :type
 
               # @!method initialize(name: nil, names: nil, type: nil)
               #   @param name [String]
@@ -188,32 +132,20 @@ module OnebusawaySDK
             end
 
             class Polyline < OnebusawaySDK::Internal::Type::BaseModel
-              # @!attribute [r] length
+              # @!attribute length
               #
               #   @return [Integer, nil]
               optional :length, Integer
 
-              # @!parse
-              #   # @return [Integer]
-              #   attr_writer :length
-
-              # @!attribute [r] levels
+              # @!attribute levels
               #
               #   @return [String, nil]
               optional :levels, String
 
-              # @!parse
-              #   # @return [String]
-              #   attr_writer :levels
-
-              # @!attribute [r] points
+              # @!attribute points
               #
               #   @return [String, nil]
               optional :points, String
-
-              # @!parse
-              #   # @return [String]
-              #   attr_writer :points
 
               # @!method initialize(length: nil, levels: nil, points: nil)
               #   @param length [Integer]

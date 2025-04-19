@@ -4,8 +4,7 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::SearchForRoute#list
     class SearchForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute input
@@ -14,15 +13,11 @@ module OnebusawaySDK
       #   @return [String]
       required :input, String
 
-      # @!attribute [r] max_count
+      # @!attribute max_count
       #   The max number of results to return. Defaults to 20.
       #
       #   @return [Integer, nil]
       optional :max_count, Integer
-
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :max_count
 
       # @!method initialize(input:, max_count: nil, request_options: {})
       #   @param input [String]

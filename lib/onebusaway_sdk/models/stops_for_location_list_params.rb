@@ -4,8 +4,7 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::StopsForLocation#list
     class StopsForLocationListParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute lat
@@ -18,45 +17,29 @@ module OnebusawaySDK
       #   @return [Float]
       required :lon, Float
 
-      # @!attribute [r] lat_span
+      # @!attribute lat_span
       #   An alternative to radius to set the search bounding box (optional)
       #
       #   @return [Float, nil]
       optional :lat_span, Float
 
-      # @!parse
-      #   # @return [Float]
-      #   attr_writer :lat_span
-
-      # @!attribute [r] lon_span
+      # @!attribute lon_span
       #   An alternative to radius to set the search bounding box (optional)
       #
       #   @return [Float, nil]
       optional :lon_span, Float
 
-      # @!parse
-      #   # @return [Float]
-      #   attr_writer :lon_span
-
-      # @!attribute [r] query
+      # @!attribute query
       #   A search query string to filter the results
       #
       #   @return [String, nil]
       optional :query, String
 
-      # @!parse
-      #   # @return [String]
-      #   attr_writer :query
-
-      # @!attribute [r] radius
+      # @!attribute radius
       #   The radius in meters to search within
       #
       #   @return [Float, nil]
       optional :radius, Float
-
-      # @!parse
-      #   # @return [Float]
-      #   attr_writer :radius
 
       # @!method initialize(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
       #   @param lat [Float]
