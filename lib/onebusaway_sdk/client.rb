@@ -126,10 +126,10 @@ module OnebusawaySDK
     def initialize(
       api_key: ENV["ONEBUSAWAY_API_KEY"],
       base_url: ENV["ONEBUSAWAY_SDK_BASE_URL"],
-      max_retries: DEFAULT_MAX_RETRIES,
-      timeout: DEFAULT_TIMEOUT_IN_SECONDS,
-      initial_retry_delay: DEFAULT_INITIAL_RETRY_DELAY,
-      max_retry_delay: DEFAULT_MAX_RETRY_DELAY
+      max_retries: OnebusawaySDK::Client::DEFAULT_MAX_RETRIES,
+      timeout: OnebusawaySDK::Client::DEFAULT_TIMEOUT_IN_SECONDS,
+      initial_retry_delay: OnebusawaySDK::Client::DEFAULT_INITIAL_RETRY_DELAY,
+      max_retry_delay: OnebusawaySDK::Client::DEFAULT_MAX_RETRY_DELAY
     )
       base_url ||= "https://api.pugetsound.onebusaway.org"
 
