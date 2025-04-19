@@ -13,6 +13,8 @@ module OnebusawaySDK
 
         private_class_method :new
 
+        # @api public
+        #
         # @param other [Object]
         #
         # @return [Boolean]
@@ -25,6 +27,8 @@ module OnebusawaySDK
           end
         end
 
+        # @api public
+        #
         # @param other [Object]
         #
         # @return [Boolean]
