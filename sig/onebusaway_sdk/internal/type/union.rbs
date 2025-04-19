@@ -30,6 +30,8 @@ module OnebusawaySDK
 
         def ==: (top other) -> bool
 
+        def hash: -> Integer
+
         def coerce: (
           top value,
           state: OnebusawaySDK::Internal::Type::Converter::coerce_state
