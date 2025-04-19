@@ -178,6 +178,13 @@ module OnebusawaySDK
         sig { params(keys: T.nilable(T::Array[Symbol])).returns(OnebusawaySDK::Internal::AnyHash) }
         def deconstruct_keys(keys); end
 
+        class << self
+          sig do
+            params(model: OnebusawaySDK::Internal::Type::BaseModel).returns(OnebusawaySDK::Internal::AnyHash)
+          end
+          def walk(model); end
+        end
+
         sig { params(a: T.anything).returns(String) }
         def to_json(*a); end
 
@@ -193,6 +200,10 @@ module OnebusawaySDK
           sig { params(depth: Integer).returns(String) }
           def inspect(depth: 0); end
         end
+
+        # @api private
+        sig { returns(String) }
+        def to_s; end
 
         # @api private
         sig { returns(String) }

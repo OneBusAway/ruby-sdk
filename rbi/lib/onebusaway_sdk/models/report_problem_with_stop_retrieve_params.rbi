@@ -81,8 +81,7 @@ module OnebusawaySDK
 
         TaggedSymbol =
           T.type_alias { T.all(Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code) }
-        OrSymbol =
-          T.type_alias { T.any(Symbol, String, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol) }
+        OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         STOP_NAME_WRONG =
           T.let(:stop_name_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)

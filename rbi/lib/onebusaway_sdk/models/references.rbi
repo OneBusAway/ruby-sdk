@@ -670,8 +670,7 @@ module OnebusawaySDK
           extend OnebusawaySDK::Internal::Type::Enum
 
           TaggedSymbol = T.type_alias { T.all(Symbol, OnebusawaySDK::Models::References::Situation::Reason) }
-          OrSymbol =
-            T.type_alias { T.any(Symbol, String, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol) }
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           EQUIPMENT_REASON =
             T.let(:equipmentReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
