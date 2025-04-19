@@ -4,40 +4,27 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::TripsForRoute#list
     class TripsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!attribute [r] include_schedule
+      # @!attribute include_schedule
       #   Determine whether full schedule elements are included. Defaults to false.
       #
       #   @return [Boolean, nil]
       optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_schedule
-
-      # @!attribute [r] include_status
+      # @!attribute include_status
       #   Determine whether full tripStatus elements with real-time information are
       #   included. Defaults to false.
       #
       #   @return [Boolean, nil]
       optional :include_status, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_status
-
-      # @!attribute [r] time
+      # @!attribute time
       #   Query the system at a specific time. Useful for testing.
       #
       #   @return [Integer, nil]
       optional :time, Integer
-
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :time
 
       # @!method initialize(include_schedule: nil, include_status: nil, time: nil, request_options: {})
       #   @param include_schedule [Boolean]

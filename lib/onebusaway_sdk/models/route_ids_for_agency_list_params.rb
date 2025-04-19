@@ -4,8 +4,7 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::RouteIDsForAgency#list
     class RouteIDsForAgencyListParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!method initialize(request_options: {})

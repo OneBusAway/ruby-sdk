@@ -4,8 +4,7 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::TripsForLocation#list
     class TripsForLocationListParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute lat
@@ -32,37 +31,25 @@ module OnebusawaySDK
       #   @return [Float]
       required :lon_span, Float
 
-      # @!attribute [r] include_schedule
+      # @!attribute include_schedule
       #   Whether to include full schedule elements in the tripDetails section. Defaults
       #   to false.
       #
       #   @return [Boolean, nil]
       optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_schedule
-
-      # @!attribute [r] include_trip
+      # @!attribute include_trip
       #   Whether to include full trip elements in the references section. Defaults to
       #   false.
       #
       #   @return [Boolean, nil]
       optional :include_trip, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_trip
-
-      # @!attribute [r] time
+      # @!attribute time
       #   Specific time for the query. Defaults to the current time.
       #
       #   @return [Integer, nil]
       optional :time, Integer
-
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :time
 
       # @!method initialize(lat:, lat_span:, lon:, lon_span:, include_schedule: nil, include_trip: nil, time: nil, request_options: {})
       #   @param lat [Float]

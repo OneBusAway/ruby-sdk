@@ -103,41 +103,25 @@ module OnebusawaySDK
                      OnebusawaySDK::Internal::Type::ArrayOf[String],
                      api_name: :staticRouteIds
 
-            # @!attribute [r] code
+            # @!attribute code
             #
             #   @return [String, nil]
             optional :code, String
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :code
-
-            # @!attribute [r] direction
+            # @!attribute direction
             #
             #   @return [String, nil]
             optional :direction, String
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :direction
-
-            # @!attribute [r] location_type
+            # @!attribute location_type
             #
             #   @return [Integer, nil]
             optional :location_type, Integer, api_name: :locationType
 
-            # @!parse
-            #   # @return [Integer]
-            #   attr_writer :location_type
-
-            # @!attribute [r] wheelchair_boarding
+            # @!attribute wheelchair_boarding
             #
             #   @return [String, nil]
             optional :wheelchair_boarding, String, api_name: :wheelchairBoarding
-
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :wheelchair_boarding
 
             # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
             #   @param id [String]
@@ -174,16 +158,12 @@ module OnebusawaySDK
             #   @return [Array<String>]
             required :trip_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :tripIds
 
-            # @!attribute [r] trips_with_stop_times
+            # @!attribute trips_with_stop_times
             #
             #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime>, nil]
             optional :trips_with_stop_times,
                      -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime] },
                      api_name: :tripsWithStopTimes
-
-            # @!parse
-            #   # @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime>]
-            #   attr_writer :trips_with_stop_times
 
             # @!method initialize(direction_id:, stop_ids:, trip_headsigns:, trip_ids:, trips_with_stop_times: nil)
             #   @param direction_id [String]
@@ -246,23 +226,15 @@ module OnebusawaySDK
                 #   @return [String]
                 required :trip_id, String, api_name: :tripId
 
-                # @!attribute [r] service_id
+                # @!attribute service_id
                 #
                 #   @return [String, nil]
                 optional :service_id, String, api_name: :serviceId
 
-                # @!parse
-                #   # @return [String]
-                #   attr_writer :service_id
-
-                # @!attribute [r] stop_headsign
+                # @!attribute stop_headsign
                 #
                 #   @return [String, nil]
                 optional :stop_headsign, String, api_name: :stopHeadsign
-
-                # @!parse
-                #   # @return [String]
-                #   attr_writer :stop_headsign
 
                 # @!method initialize(arrival_enabled:, arrival_time:, departure_enabled:, departure_time:, stop_id:, trip_id:, service_id: nil, stop_headsign: nil)
                 #   @param arrival_enabled [Boolean]
@@ -293,77 +265,45 @@ module OnebusawaySDK
             #   @return [String]
             required :service_id, String, api_name: :serviceId
 
-            # @!attribute [r] block_id
+            # @!attribute block_id
             #
             #   @return [String, nil]
             optional :block_id, String, api_name: :blockId
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :block_id
-
-            # @!attribute [r] direction_id
+            # @!attribute direction_id
             #
             #   @return [String, nil]
             optional :direction_id, String, api_name: :directionId
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :direction_id
-
-            # @!attribute [r] peak_offpeak
+            # @!attribute peak_offpeak
             #
             #   @return [Integer, nil]
             optional :peak_offpeak, Integer, api_name: :peakOffpeak
 
-            # @!parse
-            #   # @return [Integer]
-            #   attr_writer :peak_offpeak
-
-            # @!attribute [r] route_short_name
+            # @!attribute route_short_name
             #
             #   @return [String, nil]
             optional :route_short_name, String, api_name: :routeShortName
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :route_short_name
-
-            # @!attribute [r] shape_id
+            # @!attribute shape_id
             #
             #   @return [String, nil]
             optional :shape_id, String, api_name: :shapeId
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :shape_id
-
-            # @!attribute [r] time_zone
+            # @!attribute time_zone
             #
             #   @return [String, nil]
             optional :time_zone, String, api_name: :timeZone
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :time_zone
-
-            # @!attribute [r] trip_headsign
+            # @!attribute trip_headsign
             #
             #   @return [String, nil]
             optional :trip_headsign, String, api_name: :tripHeadsign
 
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :trip_headsign
-
-            # @!attribute [r] trip_short_name
+            # @!attribute trip_short_name
             #
             #   @return [String, nil]
             optional :trip_short_name, String, api_name: :tripShortName
-
-            # @!parse
-            #   # @return [String]
-            #   attr_writer :trip_short_name
 
             # @!method initialize(id:, route_id:, service_id:, block_id: nil, direction_id: nil, peak_offpeak: nil, route_short_name: nil, shape_id: nil, time_zone: nil, trip_headsign: nil, trip_short_name: nil)
             #   @param id [String]

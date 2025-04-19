@@ -4,62 +4,41 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::TripDetails#retrieve
     class TripDetailRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
-      # @!parse
-      #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!attribute [r] include_schedule
+      # @!attribute include_schedule
       #   Whether to include the full schedule element in the tripDetails section
       #   (defaults to true).
       #
       #   @return [Boolean, nil]
       optional :include_schedule, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_schedule
-
-      # @!attribute [r] include_status
+      # @!attribute include_status
       #   Whether to include the full status element in the tripDetails section (defaults
       #   to true).
       #
       #   @return [Boolean, nil]
       optional :include_status, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_status
-
-      # @!attribute [r] include_trip
+      # @!attribute include_trip
       #   Whether to include the full trip element in the references section (defaults to
       #   true).
       #
       #   @return [Boolean, nil]
       optional :include_trip, OnebusawaySDK::Internal::Type::Boolean
 
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :include_trip
-
-      # @!attribute [r] service_date
+      # @!attribute service_date
       #   Service date for the trip as Unix time in milliseconds (optional).
       #
       #   @return [Integer, nil]
       optional :service_date, Integer
 
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :service_date
-
-      # @!attribute [r] time
+      # @!attribute time
       #   Time parameter to query the system at a specific time (optional).
       #
       #   @return [Integer, nil]
       optional :time, Integer
-
-      # @!parse
-      #   # @return [Integer]
-      #   attr_writer :time
 
       # @!method initialize(include_schedule: nil, include_status: nil, include_trip: nil, service_date: nil, time: nil, request_options: {})
       #   @param include_schedule [Boolean]

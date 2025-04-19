@@ -89,7 +89,7 @@ module OnebusawaySDK
               #   @return [String]
               required :trip_headsign, String, api_name: :tripHeadsign
 
-              # @!attribute [r] schedule_frequencies
+              # @!attribute schedule_frequencies
               #
               #   @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency>, nil]
               optional :schedule_frequencies,
@@ -99,10 +99,6 @@ module OnebusawaySDK
                          ]
                        end,
                        api_name: :scheduleFrequencies
-
-              # @!parse
-              #   # @return [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency>]
-              #   attr_writer :schedule_frequencies
 
               # @!method initialize(schedule_stop_times:, trip_headsign:, schedule_frequencies: nil)
               #   @param schedule_stop_times [Array<OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime>]
@@ -142,14 +138,10 @@ module OnebusawaySDK
                 #   @return [String]
                 required :trip_id, String, api_name: :tripId
 
-                # @!attribute [r] stop_headsign
+                # @!attribute stop_headsign
                 #
                 #   @return [String, nil]
                 optional :stop_headsign, String, api_name: :stopHeadsign
-
-                # @!parse
-                #   # @return [String]
-                #   attr_writer :stop_headsign
 
                 # @!method initialize(arrival_enabled:, arrival_time:, departure_enabled:, departure_time:, service_id:, trip_id:, stop_headsign: nil)
                 #   @param arrival_enabled [Boolean]

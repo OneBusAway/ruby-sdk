@@ -20,14 +20,10 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::References]
       required :references, -> { OnebusawaySDK::Models::References }
 
-      # @!attribute [r] out_of_range
+      # @!attribute out_of_range
       #
       #   @return [Boolean, nil]
       optional :out_of_range, OnebusawaySDK::Internal::Type::Boolean, api_name: :outOfRange
-
-      # @!parse
-      #   # @return [Boolean]
-      #   attr_writer :out_of_range
 
       # @!method initialize(limit_exceeded:, list:, references:, out_of_range: nil)
       #   @param limit_exceeded [Boolean]
@@ -71,41 +67,25 @@ module OnebusawaySDK
         #   @return [Array<String>]
         required :static_route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :staticRouteIds
 
-        # @!attribute [r] code
+        # @!attribute code
         #
         #   @return [String, nil]
         optional :code, String
 
-        # @!parse
-        #   # @return [String]
-        #   attr_writer :code
-
-        # @!attribute [r] direction
+        # @!attribute direction
         #
         #   @return [String, nil]
         optional :direction, String
 
-        # @!parse
-        #   # @return [String]
-        #   attr_writer :direction
-
-        # @!attribute [r] location_type
+        # @!attribute location_type
         #
         #   @return [Integer, nil]
         optional :location_type, Integer, api_name: :locationType
 
-        # @!parse
-        #   # @return [Integer]
-        #   attr_writer :location_type
-
-        # @!attribute [r] wheelchair_boarding
+        # @!attribute wheelchair_boarding
         #
         #   @return [String, nil]
         optional :wheelchair_boarding, String, api_name: :wheelchairBoarding
-
-        # @!parse
-        #   # @return [String]
-        #   attr_writer :wheelchair_boarding
 
         # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
         #   @param id [String]

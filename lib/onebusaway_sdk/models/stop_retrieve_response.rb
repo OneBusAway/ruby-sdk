@@ -66,41 +66,25 @@ module OnebusawaySDK
                    OnebusawaySDK::Internal::Type::ArrayOf[String],
                    api_name: :staticRouteIds
 
-          # @!attribute [r] code
+          # @!attribute code
           #
           #   @return [String, nil]
           optional :code, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :code
-
-          # @!attribute [r] direction
+          # @!attribute direction
           #
           #   @return [String, nil]
           optional :direction, String
 
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :direction
-
-          # @!attribute [r] location_type
+          # @!attribute location_type
           #
           #   @return [Integer, nil]
           optional :location_type, Integer, api_name: :locationType
 
-          # @!parse
-          #   # @return [Integer]
-          #   attr_writer :location_type
-
-          # @!attribute [r] wheelchair_boarding
+          # @!attribute wheelchair_boarding
           #
           #   @return [String, nil]
           optional :wheelchair_boarding, String, api_name: :wheelchairBoarding
-
-          # @!parse
-          #   # @return [String]
-          #   attr_writer :wheelchair_boarding
 
           # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
           #   @param id [String]
