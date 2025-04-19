@@ -179,6 +179,7 @@ module OnebusawaySDK
         def deconstruct_keys(keys); end
 
         class << self
+          # @api private
           sig do
             params(model: OnebusawaySDK::Internal::Type::BaseModel).returns(OnebusawaySDK::Internal::AnyHash)
           end

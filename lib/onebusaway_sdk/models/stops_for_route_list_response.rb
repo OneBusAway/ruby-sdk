@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::StopsForRouteListResponse::Data]
       required :data, -> { OnebusawaySDK::Models::StopsForRouteListResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::StopsForRouteListResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::StopsForRouteListResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -27,13 +23,9 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, references:)
+        #   @param entry [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -76,15 +68,11 @@ module OnebusawaySDK
           #   # @return [Array<String>]
           #   attr_writer :stop_ids
 
-          # @!parse
-          #   # @param polylines [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>]
-          #   # @param route_id [String]
-          #   # @param stop_groupings [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping>]
-          #   # @param stop_ids [Array<String>]
-          #   #
-          #   def initialize(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(polylines: nil, route_id: nil, stop_groupings: nil, stop_ids: nil)
+          #   @param polylines [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline>]
+          #   @param route_id [String]
+          #   @param stop_groupings [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping>]
+          #   @param stop_ids [Array<String>]
 
           class Polyline < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute [r] length
@@ -114,14 +102,10 @@ module OnebusawaySDK
             #   # @return [String]
             #   attr_writer :points
 
-            # @!parse
-            #   # @param length [Integer]
-            #   # @param levels [String]
-            #   # @param points [String]
-            #   #
-            #   def initialize(length: nil, levels: nil, points: nil, **) = super
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(length: nil, levels: nil, points: nil)
+            #   @param length [Integer]
+            #   @param levels [String]
+            #   @param points [String]
           end
 
           class StopGrouping < OnebusawaySDK::Internal::Type::BaseModel
@@ -162,15 +146,11 @@ module OnebusawaySDK
             #   # @return [Array<String>]
             #   attr_writer :stop_ids
 
-            # @!parse
-            #   # @param id [String]
-            #   # @param name [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name]
-            #   # @param polylines [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>]
-            #   # @param stop_ids [Array<String>]
-            #   #
-            #   def initialize(id: nil, name: nil, polylines: nil, stop_ids: nil, **) = super
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(id: nil, name: nil, polylines: nil, stop_ids: nil)
+            #   @param id [String]
+            #   @param name [OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name]
+            #   @param polylines [Array<OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline>]
+            #   @param stop_ids [Array<String>]
 
             # @see OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping#name
             class Name < OnebusawaySDK::Internal::Type::BaseModel
@@ -201,14 +181,10 @@ module OnebusawaySDK
               #   # @return [String]
               #   attr_writer :type
 
-              # @!parse
-              #   # @param name [String]
-              #   # @param names [Array<String>]
-              #   # @param type [String]
-              #   #
-              #   def initialize(name: nil, names: nil, type: nil, **) = super
-
-              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+              # @!method initialize(name: nil, names: nil, type: nil)
+              #   @param name [String]
+              #   @param names [Array<String>]
+              #   @param type [String]
             end
 
             class Polyline < OnebusawaySDK::Internal::Type::BaseModel
@@ -239,14 +215,10 @@ module OnebusawaySDK
               #   # @return [String]
               #   attr_writer :points
 
-              # @!parse
-              #   # @param length [Integer]
-              #   # @param levels [String]
-              #   # @param points [String]
-              #   #
-              #   def initialize(length: nil, levels: nil, points: nil, **) = super
-
-              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+              # @!method initialize(length: nil, levels: nil, points: nil)
+              #   @param length [Integer]
+              #   @param levels [String]
+              #   @param points [String]
             end
           end
         end

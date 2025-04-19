@@ -19,13 +19,9 @@ module OnebusawaySDK
       #   # @return [Date]
       #   attr_writer :date
 
-      # @!parse
-      #   # @param date [Date]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(date: nil, request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(date: nil, request_options: {})
+      #   @param date [Date]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

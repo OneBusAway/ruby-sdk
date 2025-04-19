@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::StopRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::StopRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::StopRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::StopRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -27,13 +23,9 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, references:)
+        #   @param entry [OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::StopRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -110,37 +102,18 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :wheelchair_boarding
 
-          # @!parse
-          #   # @param id [String]
-          #   # @param lat [Float]
-          #   # @param lon [Float]
-          #   # @param name [String]
-          #   # @param parent [String]
-          #   # @param route_ids [Array<String>]
-          #   # @param static_route_ids [Array<String>]
-          #   # @param code [String]
-          #   # @param direction [String]
-          #   # @param location_type [Integer]
-          #   # @param wheelchair_boarding [String]
-          #   #
-          #   def initialize(
-          #     id:,
-          #     lat:,
-          #     lon:,
-          #     name:,
-          #     parent:,
-          #     route_ids:,
-          #     static_route_ids:,
-          #     code: nil,
-          #     direction: nil,
-          #     location_type: nil,
-          #     wheelchair_boarding: nil,
-          #     **
-          #   )
-          #     super
-          #   end
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
+          #   @param id [String]
+          #   @param lat [Float]
+          #   @param lon [Float]
+          #   @param name [String]
+          #   @param parent [String]
+          #   @param route_ids [Array<String>]
+          #   @param static_route_ids [Array<String>]
+          #   @param code [String]
+          #   @param direction [String]
+          #   @param location_type [Integer]
+          #   @param wheelchair_boarding [String]
         end
       end
     end

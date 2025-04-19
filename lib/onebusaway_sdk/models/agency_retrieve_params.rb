@@ -8,12 +8,8 @@ module OnebusawaySDK
       #   extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!parse
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(request_options: {})
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

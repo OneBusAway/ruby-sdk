@@ -39,15 +39,11 @@ module OnebusawaySDK
       #   # @return [Integer]
       #   attr_writer :time
 
-      # @!parse
-      #   # @param include_schedule [Boolean]
-      #   # @param include_status [Boolean]
-      #   # @param time [Integer]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(include_schedule: nil, include_status: nil, time: nil, request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(include_schedule: nil, include_status: nil, time: nil, request_options: {})
+      #   @param include_schedule [Boolean]
+      #   @param include_status [Boolean]
+      #   @param time [Integer]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

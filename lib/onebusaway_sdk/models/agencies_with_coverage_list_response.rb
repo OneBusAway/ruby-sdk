@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data]
       required :data, -> { OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute limit_exceeded
@@ -33,14 +29,10 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param limit_exceeded [Boolean]
-        #   # @param list [Array<OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List>]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(limit_exceeded:, list:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(limit_exceeded:, list:, references:)
+        #   @param limit_exceeded [Boolean]
+        #   @param list [Array<OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List>]
+        #   @param references [OnebusawaySDK::Models::References]
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute agency_id
@@ -68,16 +60,12 @@ module OnebusawaySDK
           #   @return [Float]
           required :lon_span, Float, api_name: :lonSpan
 
-          # @!parse
-          #   # @param agency_id [String]
-          #   # @param lat [Float]
-          #   # @param lat_span [Float]
-          #   # @param lon [Float]
-          #   # @param lon_span [Float]
-          #   #
-          #   def initialize(agency_id:, lat:, lat_span:, lon:, lon_span:, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(agency_id:, lat:, lat_span:, lon:, lon_span:)
+          #   @param agency_id [String]
+          #   @param lat [Float]
+          #   @param lat_span [Float]
+          #   @param lon [Float]
+          #   @param lon_span [Float]
         end
       end
     end

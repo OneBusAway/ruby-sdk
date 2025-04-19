@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::ShapeRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::ShapeRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::ShapeRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::ShapeRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -27,13 +23,9 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, references:)
+        #   @param entry [OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::ShapeRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -57,14 +49,10 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :levels
 
-          # @!parse
-          #   # @param length [Integer]
-          #   # @param points [String]
-          #   # @param levels [String]
-          #   #
-          #   def initialize(length:, points:, levels: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(length:, points:, levels: nil)
+          #   @param length [Integer]
+          #   @param points [String]
+          #   @param levels [String]
         end
       end
     end

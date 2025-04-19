@@ -24,14 +24,10 @@ module OnebusawaySDK
       #   # @return [Integer]
       #   attr_writer :max_count
 
-      # @!parse
-      #   # @param input [String]
-      #   # @param max_count [Integer]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(input:, max_count: nil, request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(input:, max_count: nil, request_options: {})
+      #   @param input [String]
+      #   @param max_count [Integer]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end
