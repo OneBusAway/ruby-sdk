@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -27,13 +23,9 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, references:)
+        #   @param entry [OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -55,13 +47,9 @@ module OnebusawaySDK
           #   # @return [Integer]
           #   attr_writer :time
 
-          # @!parse
-          #   # @param readable_time [String]
-          #   # @param time [Integer]
-          #   #
-          #   def initialize(readable_time: nil, time: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(readable_time: nil, time: nil)
+          #   @param readable_time [String]
+          #   @param time [Integer]
         end
       end
     end

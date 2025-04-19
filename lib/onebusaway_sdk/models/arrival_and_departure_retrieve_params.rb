@@ -45,17 +45,13 @@ module OnebusawaySDK
       #   # @return [String]
       #   attr_writer :vehicle_id
 
-      # @!parse
-      #   # @param service_date [Integer]
-      #   # @param trip_id [String]
-      #   # @param stop_sequence [Integer]
-      #   # @param time [Integer]
-      #   # @param vehicle_id [String]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(service_date:, trip_id:, stop_sequence: nil, time: nil, vehicle_id: nil, request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(service_date:, trip_id:, stop_sequence: nil, time: nil, vehicle_id: nil, request_options: {})
+      #   @param service_date [Integer]
+      #   @param trip_id [String]
+      #   @param stop_sequence [Integer]
+      #   @param time [Integer]
+      #   @param vehicle_id [String]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

@@ -64,31 +64,15 @@ module OnebusawaySDK
       #   # @return [Integer]
       #   attr_writer :time
 
-      # @!parse
-      #   # @param lat [Float]
-      #   # @param lat_span [Float]
-      #   # @param lon [Float]
-      #   # @param lon_span [Float]
-      #   # @param include_schedule [Boolean]
-      #   # @param include_trip [Boolean]
-      #   # @param time [Integer]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(
-      #     lat:,
-      #     lat_span:,
-      #     lon:,
-      #     lon_span:,
-      #     include_schedule: nil,
-      #     include_trip: nil,
-      #     time: nil,
-      #     request_options: {},
-      #     **
-      #   )
-      #     super
-      #   end
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(lat:, lat_span:, lon:, lon_span:, include_schedule: nil, include_trip: nil, time: nil, request_options: {})
+      #   @param lat [Float]
+      #   @param lat_span [Float]
+      #   @param lon [Float]
+      #   @param lon_span [Float]
+      #   @param include_schedule [Boolean]
+      #   @param include_trip [Boolean]
+      #   @param time [Integer]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

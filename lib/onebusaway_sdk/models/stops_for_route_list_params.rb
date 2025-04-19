@@ -28,14 +28,10 @@ module OnebusawaySDK
       #   # @return [String]
       #   attr_writer :time
 
-      # @!parse
-      #   # @param include_polylines [Boolean]
-      #   # @param time [String]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(include_polylines: nil, time: nil, request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(include_polylines: nil, time: nil, request_options: {})
+      #   @param include_polylines [Boolean]
+      #   @param time [String]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

@@ -58,27 +58,13 @@ module OnebusawaySDK
       #   # @return [Float]
       #   attr_writer :user_lon
 
-      # @!parse
-      #   # @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code]
-      #   # @param user_comment [String]
-      #   # @param user_lat [Float]
-      #   # @param user_location_accuracy [Float]
-      #   # @param user_lon [Float]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(
-      #     code: nil,
-      #     user_comment: nil,
-      #     user_lat: nil,
-      #     user_location_accuracy: nil,
-      #     user_lon: nil,
-      #     request_options: {},
-      #     **
-      #   )
-      #     super
-      #   end
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(code: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, request_options: {})
+      #   @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code]
+      #   @param user_comment [String]
+      #   @param user_lat [Float]
+      #   @param user_location_accuracy [Float]
+      #   @param user_lon [Float]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
 
       # A string code identifying the nature of the problem
       module Code
@@ -90,11 +76,8 @@ module OnebusawaySDK
         ROUTE_OR_TRIP_MISSING = :route_or_trip_missing
         OTHER = :other
 
-        finalize!
-
-        # @!parse
-        #   # @return [Array<Symbol>]
-        #   def self.values; end
+        # @!method self.values
+        #   @return [Array<Symbol>]
       end
     end
   end

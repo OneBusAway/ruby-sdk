@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -27,13 +23,9 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, references:)
+        #   @param entry [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -323,83 +315,41 @@ module OnebusawaySDK
           #   # @return [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus]
           #   attr_writer :trip_status
 
-          # @!parse
-          #   # @param arrival_enabled [Boolean]
-          #   # @param block_trip_sequence [Integer]
-          #   # @param departure_enabled [Boolean]
-          #   # @param number_of_stops_away [Integer]
-          #   # @param predicted_arrival_time [Integer]
-          #   # @param predicted_departure_time [Integer]
-          #   # @param route_id [String]
-          #   # @param scheduled_arrival_time [Integer]
-          #   # @param scheduled_departure_time [Integer]
-          #   # @param service_date [Integer]
-          #   # @param stop_id [String]
-          #   # @param stop_sequence [Integer]
-          #   # @param total_stops_in_trip [Integer]
-          #   # @param trip_headsign [String]
-          #   # @param trip_id [String]
-          #   # @param vehicle_id [String]
-          #   # @param actual_track [String]
-          #   # @param distance_from_stop [Float]
-          #   # @param frequency [String]
-          #   # @param historical_occupancy [String]
-          #   # @param last_update_time [Integer]
-          #   # @param occupancy_status [String]
-          #   # @param predicted [Boolean]
-          #   # @param predicted_arrival_interval [String]
-          #   # @param predicted_departure_interval [String]
-          #   # @param predicted_occupancy [String]
-          #   # @param route_long_name [String]
-          #   # @param route_short_name [String]
-          #   # @param scheduled_arrival_interval [String]
-          #   # @param scheduled_departure_interval [String]
-          #   # @param scheduled_track [String]
-          #   # @param situation_ids [Array<String>]
-          #   # @param status [String]
-          #   # @param trip_status [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus]
-          #   #
-          #   def initialize(
-          #     arrival_enabled:,
-          #     block_trip_sequence:,
-          #     departure_enabled:,
-          #     number_of_stops_away:,
-          #     predicted_arrival_time:,
-          #     predicted_departure_time:,
-          #     route_id:,
-          #     scheduled_arrival_time:,
-          #     scheduled_departure_time:,
-          #     service_date:,
-          #     stop_id:,
-          #     stop_sequence:,
-          #     total_stops_in_trip:,
-          #     trip_headsign:,
-          #     trip_id:,
-          #     vehicle_id:,
-          #     actual_track: nil,
-          #     distance_from_stop: nil,
-          #     frequency: nil,
-          #     historical_occupancy: nil,
-          #     last_update_time: nil,
-          #     occupancy_status: nil,
-          #     predicted: nil,
-          #     predicted_arrival_interval: nil,
-          #     predicted_departure_interval: nil,
-          #     predicted_occupancy: nil,
-          #     route_long_name: nil,
-          #     route_short_name: nil,
-          #     scheduled_arrival_interval: nil,
-          #     scheduled_departure_interval: nil,
-          #     scheduled_track: nil,
-          #     situation_ids: nil,
-          #     status: nil,
-          #     trip_status: nil,
-          #     **
-          #   )
-          #     super
-          #   end
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(arrival_enabled:, block_trip_sequence:, departure_enabled:, number_of_stops_away:, predicted_arrival_time:, predicted_departure_time:, route_id:, scheduled_arrival_time:, scheduled_departure_time:, service_date:, stop_id:, stop_sequence:, total_stops_in_trip:, trip_headsign:, trip_id:, vehicle_id:, actual_track: nil, distance_from_stop: nil, frequency: nil, historical_occupancy: nil, last_update_time: nil, occupancy_status: nil, predicted: nil, predicted_arrival_interval: nil, predicted_departure_interval: nil, predicted_occupancy: nil, route_long_name: nil, route_short_name: nil, scheduled_arrival_interval: nil, scheduled_departure_interval: nil, scheduled_track: nil, situation_ids: nil, status: nil, trip_status: nil)
+          #   @param arrival_enabled [Boolean]
+          #   @param block_trip_sequence [Integer]
+          #   @param departure_enabled [Boolean]
+          #   @param number_of_stops_away [Integer]
+          #   @param predicted_arrival_time [Integer]
+          #   @param predicted_departure_time [Integer]
+          #   @param route_id [String]
+          #   @param scheduled_arrival_time [Integer]
+          #   @param scheduled_departure_time [Integer]
+          #   @param service_date [Integer]
+          #   @param stop_id [String]
+          #   @param stop_sequence [Integer]
+          #   @param total_stops_in_trip [Integer]
+          #   @param trip_headsign [String]
+          #   @param trip_id [String]
+          #   @param vehicle_id [String]
+          #   @param actual_track [String]
+          #   @param distance_from_stop [Float]
+          #   @param frequency [String]
+          #   @param historical_occupancy [String]
+          #   @param last_update_time [Integer]
+          #   @param occupancy_status [String]
+          #   @param predicted [Boolean]
+          #   @param predicted_arrival_interval [String]
+          #   @param predicted_departure_interval [String]
+          #   @param predicted_occupancy [String]
+          #   @param route_long_name [String]
+          #   @param route_short_name [String]
+          #   @param scheduled_arrival_interval [String]
+          #   @param scheduled_departure_interval [String]
+          #   @param scheduled_track [String]
+          #   @param situation_ids [Array<String>]
+          #   @param status [String]
+          #   @param trip_status [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus]
 
           # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry#trip_status
           class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
@@ -617,71 +567,36 @@ module OnebusawaySDK
             #   # @return [String]
             #   attr_writer :vehicle_id
 
-            # @!parse
-            #   # Trip-specific status for the arriving transit vehicle.
-            #   #
-            #   # @param active_trip_id [String]
-            #   # @param block_trip_sequence [Integer]
-            #   # @param closest_stop [String]
-            #   # @param distance_along_trip [Float]
-            #   # @param last_known_distance_along_trip [Float]
-            #   # @param last_location_update_time [Integer]
-            #   # @param last_update_time [Integer]
-            #   # @param occupancy_capacity [Integer]
-            #   # @param occupancy_count [Integer]
-            #   # @param occupancy_status [String]
-            #   # @param phase [String]
-            #   # @param predicted [Boolean]
-            #   # @param schedule_deviation [Integer]
-            #   # @param service_date [Integer]
-            #   # @param status [String]
-            #   # @param total_distance_along_trip [Float]
-            #   # @param closest_stop_time_offset [Integer]
-            #   # @param frequency [String]
-            #   # @param last_known_location [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation]
-            #   # @param last_known_orientation [Float]
-            #   # @param next_stop [String]
-            #   # @param next_stop_time_offset [Integer]
-            #   # @param orientation [Float]
-            #   # @param position [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position]
-            #   # @param scheduled_distance_along_trip [Float]
-            #   # @param situation_ids [Array<String>]
-            #   # @param vehicle_id [String]
-            #   #
-            #   def initialize(
-            #     active_trip_id:,
-            #     block_trip_sequence:,
-            #     closest_stop:,
-            #     distance_along_trip:,
-            #     last_known_distance_along_trip:,
-            #     last_location_update_time:,
-            #     last_update_time:,
-            #     occupancy_capacity:,
-            #     occupancy_count:,
-            #     occupancy_status:,
-            #     phase:,
-            #     predicted:,
-            #     schedule_deviation:,
-            #     service_date:,
-            #     status:,
-            #     total_distance_along_trip:,
-            #     closest_stop_time_offset: nil,
-            #     frequency: nil,
-            #     last_known_location: nil,
-            #     last_known_orientation: nil,
-            #     next_stop: nil,
-            #     next_stop_time_offset: nil,
-            #     orientation: nil,
-            #     position: nil,
-            #     scheduled_distance_along_trip: nil,
-            #     situation_ids: nil,
-            #     vehicle_id: nil,
-            #     **
-            #   )
-            #     super
-            #   end
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(active_trip_id:, block_trip_sequence:, closest_stop:, distance_along_trip:, last_known_distance_along_trip:, last_location_update_time:, last_update_time:, occupancy_capacity:, occupancy_count:, occupancy_status:, phase:, predicted:, schedule_deviation:, service_date:, status:, total_distance_along_trip:, closest_stop_time_offset: nil, frequency: nil, last_known_location: nil, last_known_orientation: nil, next_stop: nil, next_stop_time_offset: nil, orientation: nil, position: nil, scheduled_distance_along_trip: nil, situation_ids: nil, vehicle_id: nil)
+            #   Trip-specific status for the arriving transit vehicle.
+            #
+            #   @param active_trip_id [String]
+            #   @param block_trip_sequence [Integer]
+            #   @param closest_stop [String]
+            #   @param distance_along_trip [Float]
+            #   @param last_known_distance_along_trip [Float]
+            #   @param last_location_update_time [Integer]
+            #   @param last_update_time [Integer]
+            #   @param occupancy_capacity [Integer]
+            #   @param occupancy_count [Integer]
+            #   @param occupancy_status [String]
+            #   @param phase [String]
+            #   @param predicted [Boolean]
+            #   @param schedule_deviation [Integer]
+            #   @param service_date [Integer]
+            #   @param status [String]
+            #   @param total_distance_along_trip [Float]
+            #   @param closest_stop_time_offset [Integer]
+            #   @param frequency [String]
+            #   @param last_known_location [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation]
+            #   @param last_known_orientation [Float]
+            #   @param next_stop [String]
+            #   @param next_stop_time_offset [Integer]
+            #   @param orientation [Float]
+            #   @param position [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position]
+            #   @param scheduled_distance_along_trip [Float]
+            #   @param situation_ids [Array<String>]
+            #   @param vehicle_id [String]
 
             # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus#last_known_location
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
@@ -705,15 +620,11 @@ module OnebusawaySDK
               #   # @return [Float]
               #   attr_writer :lon
 
-              # @!parse
-              #   # Last known location of the transit vehicle.
-              #   #
-              #   # @param lat [Float]
-              #   # @param lon [Float]
-              #   #
-              #   def initialize(lat: nil, lon: nil, **) = super
-
-              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+              # @!method initialize(lat: nil, lon: nil)
+              #   Last known location of the transit vehicle.
+              #
+              #   @param lat [Float]
+              #   @param lon [Float]
             end
 
             # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus#position
@@ -738,15 +649,11 @@ module OnebusawaySDK
               #   # @return [Float]
               #   attr_writer :lon
 
-              # @!parse
-              #   # Current position of the transit vehicle.
-              #   #
-              #   # @param lat [Float]
-              #   # @param lon [Float]
-              #   #
-              #   def initialize(lat: nil, lon: nil, **) = super
-
-              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+              # @!method initialize(lat: nil, lon: nil)
+              #   Current position of the transit vehicle.
+              #
+              #   @param lat [Float]
+              #   @param lon [Float]
             end
           end
         end

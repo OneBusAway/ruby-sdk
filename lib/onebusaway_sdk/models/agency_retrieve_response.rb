@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::AgencyRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::AgencyRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::AgencyRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::AgencyRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -32,14 +28,10 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry]
-        #   # @param limit_exceeded [Boolean]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, limit_exceeded:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, limit_exceeded:, references:)
+        #   @param entry [OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry]
+        #   @param limit_exceeded [Boolean]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::AgencyRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -117,35 +109,17 @@ module OnebusawaySDK
           #   # @return [Boolean]
           #   attr_writer :private_service
 
-          # @!parse
-          #   # @param id [String]
-          #   # @param name [String]
-          #   # @param timezone [String]
-          #   # @param url [String]
-          #   # @param disclaimer [String]
-          #   # @param email [String]
-          #   # @param fare_url [String]
-          #   # @param lang [String]
-          #   # @param phone [String]
-          #   # @param private_service [Boolean]
-          #   #
-          #   def initialize(
-          #     id:,
-          #     name:,
-          #     timezone:,
-          #     url:,
-          #     disclaimer: nil,
-          #     email: nil,
-          #     fare_url: nil,
-          #     lang: nil,
-          #     phone: nil,
-          #     private_service: nil,
-          #     **
-          #   )
-          #     super
-          #   end
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(id:, name:, timezone:, url:, disclaimer: nil, email: nil, fare_url: nil, lang: nil, phone: nil, private_service: nil)
+          #   @param id [String]
+          #   @param name [String]
+          #   @param timezone [String]
+          #   @param url [String]
+          #   @param disclaimer [String]
+          #   @param email [String]
+          #   @param fare_url [String]
+          #   @param lang [String]
+          #   @param phone [String]
+          #   @param private_service [Boolean]
         end
       end
     end

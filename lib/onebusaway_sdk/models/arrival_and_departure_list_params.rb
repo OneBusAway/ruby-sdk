@@ -38,15 +38,11 @@ module OnebusawaySDK
       #   # @return [Time]
       #   attr_writer :time
 
-      # @!parse
-      #   # @param minutes_after [Integer]
-      #   # @param minutes_before [Integer]
-      #   # @param time [Time]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(minutes_after: nil, minutes_before: nil, time: nil, request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
+      #   @param minutes_after [Integer]
+      #   @param minutes_before [Integer]
+      #   @param time [Time]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

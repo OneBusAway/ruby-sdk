@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::ConfigRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::ConfigRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::ConfigRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::ConfigRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -27,13 +23,9 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, references:)
+        #   @param entry [OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::ConfigRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -84,16 +76,12 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :service_date_to
 
-          # @!parse
-          #   # @param id [String]
-          #   # @param git_properties [OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties]
-          #   # @param name [String]
-          #   # @param service_date_from [String]
-          #   # @param service_date_to [String]
-          #   #
-          #   def initialize(id: nil, git_properties: nil, name: nil, service_date_from: nil, service_date_to: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(id: nil, git_properties: nil, name: nil, service_date_from: nil, service_date_to: nil)
+          #   @param id [String]
+          #   @param git_properties [OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties]
+          #   @param name [String]
+          #   @param service_date_from [String]
+          #   @param service_date_to [String]
 
           # @see OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry#git_properties
           class GitProperties < OnebusawaySDK::Internal::Type::BaseModel
@@ -277,55 +265,27 @@ module OnebusawaySDK
             #   # @return [String]
             #   attr_writer :git_tags
 
-            # @!parse
-            #   # @param git_branch [String]
-            #   # @param git_build_host [String]
-            #   # @param git_build_time [String]
-            #   # @param git_build_user_email [String]
-            #   # @param git_build_user_name [String]
-            #   # @param git_build_version [String]
-            #   # @param git_closest_tag_commit_count [String]
-            #   # @param git_closest_tag_name [String]
-            #   # @param git_commit_id [String]
-            #   # @param git_commit_id_abbrev [String]
-            #   # @param git_commit_id_describe [String]
-            #   # @param git_commit_id_describe_short [String]
-            #   # @param git_commit_message_full [String]
-            #   # @param git_commit_message_short [String]
-            #   # @param git_commit_time [String]
-            #   # @param git_commit_user_email [String]
-            #   # @param git_commit_user_name [String]
-            #   # @param git_dirty [String]
-            #   # @param git_remote_origin_url [String]
-            #   # @param git_tags [String]
-            #   #
-            #   def initialize(
-            #     git_branch: nil,
-            #     git_build_host: nil,
-            #     git_build_time: nil,
-            #     git_build_user_email: nil,
-            #     git_build_user_name: nil,
-            #     git_build_version: nil,
-            #     git_closest_tag_commit_count: nil,
-            #     git_closest_tag_name: nil,
-            #     git_commit_id: nil,
-            #     git_commit_id_abbrev: nil,
-            #     git_commit_id_describe: nil,
-            #     git_commit_id_describe_short: nil,
-            #     git_commit_message_full: nil,
-            #     git_commit_message_short: nil,
-            #     git_commit_time: nil,
-            #     git_commit_user_email: nil,
-            #     git_commit_user_name: nil,
-            #     git_dirty: nil,
-            #     git_remote_origin_url: nil,
-            #     git_tags: nil,
-            #     **
-            #   )
-            #     super
-            #   end
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(git_branch: nil, git_build_host: nil, git_build_time: nil, git_build_user_email: nil, git_build_user_name: nil, git_build_version: nil, git_closest_tag_commit_count: nil, git_closest_tag_name: nil, git_commit_id: nil, git_commit_id_abbrev: nil, git_commit_id_describe: nil, git_commit_id_describe_short: nil, git_commit_message_full: nil, git_commit_message_short: nil, git_commit_time: nil, git_commit_user_email: nil, git_commit_user_name: nil, git_dirty: nil, git_remote_origin_url: nil, git_tags: nil)
+            #   @param git_branch [String]
+            #   @param git_build_host [String]
+            #   @param git_build_time [String]
+            #   @param git_build_user_email [String]
+            #   @param git_build_user_name [String]
+            #   @param git_build_version [String]
+            #   @param git_closest_tag_commit_count [String]
+            #   @param git_closest_tag_name [String]
+            #   @param git_commit_id [String]
+            #   @param git_commit_id_abbrev [String]
+            #   @param git_commit_id_describe [String]
+            #   @param git_commit_id_describe_short [String]
+            #   @param git_commit_message_full [String]
+            #   @param git_commit_message_short [String]
+            #   @param git_commit_time [String]
+            #   @param git_commit_user_email [String]
+            #   @param git_commit_user_name [String]
+            #   @param git_dirty [String]
+            #   @param git_remote_origin_url [String]
+            #   @param git_tags [String]
           end
         end
       end

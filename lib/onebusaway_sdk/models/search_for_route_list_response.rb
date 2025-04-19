@@ -13,12 +13,8 @@ module OnebusawaySDK
       #   # @return [OnebusawaySDK::Models::SearchForRouteListResponse::Data]
       #   attr_writer :data
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::SearchForRouteListResponse::Data]
-      #   #
-      #   def initialize(data: nil, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data: nil)
+      #   @param data [OnebusawaySDK::Models::SearchForRouteListResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute limit_exceeded
@@ -42,15 +38,11 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param limit_exceeded [Boolean]
-        #   # @param list [Array<OnebusawaySDK::Models::SearchForRouteListResponse::Data::List>]
-        #   # @param out_of_range [Boolean]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(limit_exceeded:, list:, out_of_range:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(limit_exceeded:, list:, out_of_range:, references:)
+        #   @param limit_exceeded [Boolean]
+        #   @param list [Array<OnebusawaySDK::Models::SearchForRouteListResponse::Data::List>]
+        #   @param out_of_range [Boolean]
+        #   @param references [OnebusawaySDK::Models::References]
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute id
@@ -131,35 +123,17 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :url
 
-          # @!parse
-          #   # @param id [String]
-          #   # @param agency_id [String]
-          #   # @param type [Integer]
-          #   # @param color [String]
-          #   # @param description [String]
-          #   # @param long_name [String]
-          #   # @param null_safe_short_name [String]
-          #   # @param short_name [String]
-          #   # @param text_color [String]
-          #   # @param url [String]
-          #   #
-          #   def initialize(
-          #     id:,
-          #     agency_id:,
-          #     type:,
-          #     color: nil,
-          #     description: nil,
-          #     long_name: nil,
-          #     null_safe_short_name: nil,
-          #     short_name: nil,
-          #     text_color: nil,
-          #     url: nil,
-          #     **
-          #   )
-          #     super
-          #   end
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(id:, agency_id:, type:, color: nil, description: nil, long_name: nil, null_safe_short_name: nil, short_name: nil, text_color: nil, url: nil)
+          #   @param id [String]
+          #   @param agency_id [String]
+          #   @param type [Integer]
+          #   @param color [String]
+          #   @param description [String]
+          #   @param long_name [String]
+          #   @param null_safe_short_name [String]
+          #   @param short_name [String]
+          #   @param text_color [String]
+          #   @param url [String]
         end
       end
     end

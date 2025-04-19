@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::BlockRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::BlockRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::BlockRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::BlockRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -27,13 +23,9 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::Models::References }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry]
-        #   # @param references [OnebusawaySDK::Models::References]
-        #   #
-        #   def initialize(entry:, references:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:, references:)
+        #   @param entry [OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::BlockRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -48,13 +40,9 @@ module OnebusawaySDK
           required :configurations,
                    -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration] }
 
-          # @!parse
-          #   # @param id [String]
-          #   # @param configurations [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration>]
-          #   #
-          #   def initialize(id:, configurations:, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(id:, configurations:)
+          #   @param id [String]
+          #   @param configurations [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration>]
 
           class Configuration < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute active_service_ids
@@ -81,14 +69,10 @@ module OnebusawaySDK
             #   # @return [Array<String>]
             #   attr_writer :inactive_service_ids
 
-            # @!parse
-            #   # @param active_service_ids [Array<String>]
-            #   # @param trips [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip>]
-            #   # @param inactive_service_ids [Array<String>]
-            #   #
-            #   def initialize(active_service_ids:, trips:, inactive_service_ids: nil, **) = super
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(active_service_ids:, trips:, inactive_service_ids: nil)
+            #   @param active_service_ids [Array<String>]
+            #   @param trips [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip>]
+            #   @param inactive_service_ids [Array<String>]
 
             class Trip < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute accumulated_slack_time
@@ -113,15 +97,11 @@ module OnebusawaySDK
               #   @return [String]
               required :trip_id, String, api_name: :tripId
 
-              # @!parse
-              #   # @param accumulated_slack_time [Float]
-              #   # @param block_stop_times [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime>]
-              #   # @param distance_along_block [Float]
-              #   # @param trip_id [String]
-              #   #
-              #   def initialize(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:, **) = super
-
-              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+              # @!method initialize(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:)
+              #   @param accumulated_slack_time [Float]
+              #   @param block_stop_times [Array<OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime>]
+              #   @param distance_along_block [Float]
+              #   @param trip_id [String]
 
               class BlockStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 # @!attribute accumulated_slack_time
@@ -146,15 +126,11 @@ module OnebusawaySDK
                          -> { OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime },
                          api_name: :stopTime
 
-                # @!parse
-                #   # @param accumulated_slack_time [Float]
-                #   # @param block_sequence [Integer]
-                #   # @param distance_along_block [Float]
-                #   # @param stop_time [OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime]
-                #   #
-                #   def initialize(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:, **) = super
-
-                # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+                # @!method initialize(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:)
+                #   @param accumulated_slack_time [Float]
+                #   @param block_sequence [Integer]
+                #   @param distance_along_block [Float]
+                #   @param stop_time [OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime]
 
                 # @see OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime#stop_time
                 class StopTime < OnebusawaySDK::Internal::Type::BaseModel
@@ -191,16 +167,12 @@ module OnebusawaySDK
                   #   # @return [Integer]
                   #   attr_writer :pickup_type
 
-                  # @!parse
-                  #   # @param arrival_time [Integer]
-                  #   # @param departure_time [Integer]
-                  #   # @param stop_id [String]
-                  #   # @param drop_off_type [Integer]
-                  #   # @param pickup_type [Integer]
-                  #   #
-                  #   def initialize(arrival_time:, departure_time:, stop_id:, drop_off_type: nil, pickup_type: nil, **) = super
-
-                  # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+                  # @!method initialize(arrival_time:, departure_time:, stop_id:, drop_off_type: nil, pickup_type: nil)
+                  #   @param arrival_time [Integer]
+                  #   @param departure_time [Integer]
+                  #   @param stop_id [String]
+                  #   @param drop_off_type [Integer]
+                  #   @param pickup_type [Integer]
                 end
               end
             end

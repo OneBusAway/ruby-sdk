@@ -37,17 +37,13 @@ module OnebusawaySDK
       #   @return [Array<OnebusawaySDK::Models::References::Trip>]
       required :trips, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::References::Trip] }
 
-      # @!parse
-      #   # @param agencies [Array<OnebusawaySDK::Models::References::Agency>]
-      #   # @param routes [Array<OnebusawaySDK::Models::References::Route>]
-      #   # @param situations [Array<OnebusawaySDK::Models::References::Situation>]
-      #   # @param stops [Array<OnebusawaySDK::Models::References::Stop>]
-      #   # @param stop_times [Array<OnebusawaySDK::Models::References::StopTime>]
-      #   # @param trips [Array<OnebusawaySDK::Models::References::Trip>]
-      #   #
-      #   def initialize(agencies:, routes:, situations:, stops:, stop_times:, trips:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(agencies:, routes:, situations:, stops:, stop_times:, trips:)
+      #   @param agencies [Array<OnebusawaySDK::Models::References::Agency>]
+      #   @param routes [Array<OnebusawaySDK::Models::References::Route>]
+      #   @param situations [Array<OnebusawaySDK::Models::References::Situation>]
+      #   @param stops [Array<OnebusawaySDK::Models::References::Stop>]
+      #   @param stop_times [Array<OnebusawaySDK::Models::References::StopTime>]
+      #   @param trips [Array<OnebusawaySDK::Models::References::Trip>]
 
       class Agency < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
@@ -124,35 +120,17 @@ module OnebusawaySDK
         #   # @return [Boolean]
         #   attr_writer :private_service
 
-        # @!parse
-        #   # @param id [String]
-        #   # @param name [String]
-        #   # @param timezone [String]
-        #   # @param url [String]
-        #   # @param disclaimer [String]
-        #   # @param email [String]
-        #   # @param fare_url [String]
-        #   # @param lang [String]
-        #   # @param phone [String]
-        #   # @param private_service [Boolean]
-        #   #
-        #   def initialize(
-        #     id:,
-        #     name:,
-        #     timezone:,
-        #     url:,
-        #     disclaimer: nil,
-        #     email: nil,
-        #     fare_url: nil,
-        #     lang: nil,
-        #     phone: nil,
-        #     private_service: nil,
-        #     **
-        #   )
-        #     super
-        #   end
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(id:, name:, timezone:, url:, disclaimer: nil, email: nil, fare_url: nil, lang: nil, phone: nil, private_service: nil)
+        #   @param id [String]
+        #   @param name [String]
+        #   @param timezone [String]
+        #   @param url [String]
+        #   @param disclaimer [String]
+        #   @param email [String]
+        #   @param fare_url [String]
+        #   @param lang [String]
+        #   @param phone [String]
+        #   @param private_service [Boolean]
       end
 
       class Route < OnebusawaySDK::Internal::Type::BaseModel
@@ -234,35 +212,17 @@ module OnebusawaySDK
         #   # @return [String]
         #   attr_writer :url
 
-        # @!parse
-        #   # @param id [String]
-        #   # @param agency_id [String]
-        #   # @param type [Integer]
-        #   # @param color [String]
-        #   # @param description [String]
-        #   # @param long_name [String]
-        #   # @param null_safe_short_name [String]
-        #   # @param short_name [String]
-        #   # @param text_color [String]
-        #   # @param url [String]
-        #   #
-        #   def initialize(
-        #     id:,
-        #     agency_id:,
-        #     type:,
-        #     color: nil,
-        #     description: nil,
-        #     long_name: nil,
-        #     null_safe_short_name: nil,
-        #     short_name: nil,
-        #     text_color: nil,
-        #     url: nil,
-        #     **
-        #   )
-        #     super
-        #   end
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(id:, agency_id:, type:, color: nil, description: nil, long_name: nil, null_safe_short_name: nil, short_name: nil, text_color: nil, url: nil)
+        #   @param id [String]
+        #   @param agency_id [String]
+        #   @param type [Integer]
+        #   @param color [String]
+        #   @param description [String]
+        #   @param long_name [String]
+        #   @param null_safe_short_name [String]
+        #   @param short_name [String]
+        #   @param text_color [String]
+        #   @param url [String]
       end
 
       class Situation < OnebusawaySDK::Internal::Type::BaseModel
@@ -378,39 +338,19 @@ module OnebusawaySDK
         #   # @return [OnebusawaySDK::Models::References::Situation::URL]
         #   attr_writer :url
 
-        # @!parse
-        #   # @param id [String]
-        #   # @param creation_time [Integer]
-        #   # @param active_windows [Array<OnebusawaySDK::Models::References::Situation::ActiveWindow>]
-        #   # @param all_affects [Array<OnebusawaySDK::Models::References::Situation::AllAffect>]
-        #   # @param consequence_message [String]
-        #   # @param consequences [Array<OnebusawaySDK::Models::References::Situation::Consequence>]
-        #   # @param description [OnebusawaySDK::Models::References::Situation::Description]
-        #   # @param publication_windows [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>]
-        #   # @param reason [Symbol, OnebusawaySDK::Models::References::Situation::Reason]
-        #   # @param severity [String]
-        #   # @param summary [OnebusawaySDK::Models::References::Situation::Summary]
-        #   # @param url [OnebusawaySDK::Models::References::Situation::URL]
-        #   #
-        #   def initialize(
-        #     id:,
-        #     creation_time:,
-        #     active_windows: nil,
-        #     all_affects: nil,
-        #     consequence_message: nil,
-        #     consequences: nil,
-        #     description: nil,
-        #     publication_windows: nil,
-        #     reason: nil,
-        #     severity: nil,
-        #     summary: nil,
-        #     url: nil,
-        #     **
-        #   )
-        #     super
-        #   end
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(id:, creation_time:, active_windows: nil, all_affects: nil, consequence_message: nil, consequences: nil, description: nil, publication_windows: nil, reason: nil, severity: nil, summary: nil, url: nil)
+        #   @param id [String]
+        #   @param creation_time [Integer]
+        #   @param active_windows [Array<OnebusawaySDK::Models::References::Situation::ActiveWindow>]
+        #   @param all_affects [Array<OnebusawaySDK::Models::References::Situation::AllAffect>]
+        #   @param consequence_message [String]
+        #   @param consequences [Array<OnebusawaySDK::Models::References::Situation::Consequence>]
+        #   @param description [OnebusawaySDK::Models::References::Situation::Description]
+        #   @param publication_windows [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>]
+        #   @param reason [Symbol, OnebusawaySDK::Models::References::Situation::Reason]
+        #   @param severity [String]
+        #   @param summary [OnebusawaySDK::Models::References::Situation::Summary]
+        #   @param url [OnebusawaySDK::Models::References::Situation::URL]
 
         class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute [r] from
@@ -433,13 +373,9 @@ module OnebusawaySDK
           #   # @return [Integer]
           #   attr_writer :to
 
-          # @!parse
-          #   # @param from [Integer]
-          #   # @param to [Integer]
-          #   #
-          #   def initialize(from: nil, to: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(from: nil, to: nil)
+          #   @param from [Integer]
+          #   @param to [Integer]
         end
 
         class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
@@ -503,17 +439,13 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :trip_id
 
-          # @!parse
-          #   # @param agency_id [String]
-          #   # @param application_id [String]
-          #   # @param direction_id [String]
-          #   # @param route_id [String]
-          #   # @param stop_id [String]
-          #   # @param trip_id [String]
-          #   #
-          #   def initialize(agency_id: nil, application_id: nil, direction_id: nil, route_id: nil, stop_id: nil, trip_id: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(agency_id: nil, application_id: nil, direction_id: nil, route_id: nil, stop_id: nil, trip_id: nil)
+          #   @param agency_id [String]
+          #   @param application_id [String]
+          #   @param direction_id [String]
+          #   @param route_id [String]
+          #   @param stop_id [String]
+          #   @param trip_id [String]
         end
 
         class Consequence < OnebusawaySDK::Internal::Type::BaseModel
@@ -538,13 +470,9 @@ module OnebusawaySDK
           #   # @return [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails]
           #   attr_writer :condition_details
 
-          # @!parse
-          #   # @param condition [String]
-          #   # @param condition_details [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails]
-          #   #
-          #   def initialize(condition: nil, condition_details: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(condition: nil, condition_details: nil)
+          #   @param condition [String]
+          #   @param condition_details [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails]
 
           # @see OnebusawaySDK::Models::References::Situation::Consequence#condition_details
           class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
@@ -570,13 +498,9 @@ module OnebusawaySDK
             #   # @return [Array<String>]
             #   attr_writer :diversion_stop_ids
 
-            # @!parse
-            #   # @param diversion_path [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath]
-            #   # @param diversion_stop_ids [Array<String>]
-            #   #
-            #   def initialize(diversion_path: nil, diversion_stop_ids: nil, **) = super
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(diversion_path: nil, diversion_stop_ids: nil)
+            #   @param diversion_path [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath]
+            #   @param diversion_stop_ids [Array<String>]
 
             # @see OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails#diversion_path
             class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
@@ -610,14 +534,10 @@ module OnebusawaySDK
               #   # @return [String]
               #   attr_writer :points
 
-              # @!parse
-              #   # @param length [Integer]
-              #   # @param levels [String]
-              #   # @param points [String]
-              #   #
-              #   def initialize(length: nil, levels: nil, points: nil, **) = super
-
-              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+              # @!method initialize(length: nil, levels: nil, points: nil)
+              #   @param length [Integer]
+              #   @param levels [String]
+              #   @param points [String]
             end
           end
         end
@@ -644,13 +564,9 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :value
 
-          # @!parse
-          #   # @param lang [String]
-          #   # @param value [String]
-          #   #
-          #   def initialize(lang: nil, value: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(lang: nil, value: nil)
+          #   @param lang [String]
+          #   @param value [String]
         end
 
         class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
@@ -666,13 +582,9 @@ module OnebusawaySDK
           #   @return [Integer]
           required :to, Integer
 
-          # @!parse
-          #   # @param from [Integer]
-          #   # @param to [Integer]
-          #   #
-          #   def initialize(from:, to:, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(from:, to:)
+          #   @param from [Integer]
+          #   @param to [Integer]
         end
 
         # Reason for the service alert, taken from TPEG codes.
@@ -687,11 +599,8 @@ module OnebusawaySDK
           MISCELLANEOUS_REASON = :miscellaneousReason
           SECURITY_ALERT = :securityAlert
 
-          finalize!
-
-          # @!parse
-          #   # @return [Array<Symbol>]
-          #   def self.values; end
+          # @!method self.values
+          #   @return [Array<Symbol>]
         end
 
         # @see OnebusawaySDK::Models::References::Situation#summary
@@ -716,13 +625,9 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :value
 
-          # @!parse
-          #   # @param lang [String]
-          #   # @param value [String]
-          #   #
-          #   def initialize(lang: nil, value: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(lang: nil, value: nil)
+          #   @param lang [String]
+          #   @param value [String]
         end
 
         # @see OnebusawaySDK::Models::References::Situation#url
@@ -747,13 +652,9 @@ module OnebusawaySDK
           #   # @return [String]
           #   attr_writer :value
 
-          # @!parse
-          #   # @param lang [String]
-          #   # @param value [String]
-          #   #
-          #   def initialize(lang: nil, value: nil, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(lang: nil, value: nil)
+          #   @param lang [String]
+          #   @param value [String]
         end
       end
 
@@ -829,37 +730,18 @@ module OnebusawaySDK
         #   # @return [String]
         #   attr_writer :wheelchair_boarding
 
-        # @!parse
-        #   # @param id [String]
-        #   # @param lat [Float]
-        #   # @param lon [Float]
-        #   # @param name [String]
-        #   # @param parent [String]
-        #   # @param route_ids [Array<String>]
-        #   # @param static_route_ids [Array<String>]
-        #   # @param code [String]
-        #   # @param direction [String]
-        #   # @param location_type [Integer]
-        #   # @param wheelchair_boarding [String]
-        #   #
-        #   def initialize(
-        #     id:,
-        #     lat:,
-        #     lon:,
-        #     name:,
-        #     parent:,
-        #     route_ids:,
-        #     static_route_ids:,
-        #     code: nil,
-        #     direction: nil,
-        #     location_type: nil,
-        #     wheelchair_boarding: nil,
-        #     **
-        #   )
-        #     super
-        #   end
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
+        #   @param id [String]
+        #   @param lat [Float]
+        #   @param lon [Float]
+        #   @param name [String]
+        #   @param parent [String]
+        #   @param route_ids [Array<String>]
+        #   @param static_route_ids [Array<String>]
+        #   @param code [String]
+        #   @param direction [String]
+        #   @param location_type [Integer]
+        #   @param wheelchair_boarding [String]
       end
 
       class StopTime < OnebusawaySDK::Internal::Type::BaseModel
@@ -917,27 +799,13 @@ module OnebusawaySDK
         #   # @return [String]
         #   attr_writer :stop_id
 
-        # @!parse
-        #   # @param arrival_time [Integer]
-        #   # @param departure_time [Integer]
-        #   # @param distance_along_trip [Float]
-        #   # @param historical_occupancy [String]
-        #   # @param stop_headsign [String]
-        #   # @param stop_id [String]
-        #   #
-        #   def initialize(
-        #     arrival_time: nil,
-        #     departure_time: nil,
-        #     distance_along_trip: nil,
-        #     historical_occupancy: nil,
-        #     stop_headsign: nil,
-        #     stop_id: nil,
-        #     **
-        #   )
-        #     super
-        #   end
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(arrival_time: nil, departure_time: nil, distance_along_trip: nil, historical_occupancy: nil, stop_headsign: nil, stop_id: nil)
+        #   @param arrival_time [Integer]
+        #   @param departure_time [Integer]
+        #   @param distance_along_trip [Float]
+        #   @param historical_occupancy [String]
+        #   @param stop_headsign [String]
+        #   @param stop_id [String]
       end
 
       class Trip < OnebusawaySDK::Internal::Type::BaseModel
@@ -1028,37 +896,18 @@ module OnebusawaySDK
         #   # @return [String]
         #   attr_writer :trip_short_name
 
-        # @!parse
-        #   # @param id [String]
-        #   # @param route_id [String]
-        #   # @param service_id [String]
-        #   # @param block_id [String]
-        #   # @param direction_id [String]
-        #   # @param peak_offpeak [Integer]
-        #   # @param route_short_name [String]
-        #   # @param shape_id [String]
-        #   # @param time_zone [String]
-        #   # @param trip_headsign [String]
-        #   # @param trip_short_name [String]
-        #   #
-        #   def initialize(
-        #     id:,
-        #     route_id:,
-        #     service_id:,
-        #     block_id: nil,
-        #     direction_id: nil,
-        #     peak_offpeak: nil,
-        #     route_short_name: nil,
-        #     shape_id: nil,
-        #     time_zone: nil,
-        #     trip_headsign: nil,
-        #     trip_short_name: nil,
-        #     **
-        #   )
-        #     super
-        #   end
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(id:, route_id:, service_id:, block_id: nil, direction_id: nil, peak_offpeak: nil, route_short_name: nil, shape_id: nil, time_zone: nil, trip_headsign: nil, trip_short_name: nil)
+        #   @param id [String]
+        #   @param route_id [String]
+        #   @param service_id [String]
+        #   @param block_id [String]
+        #   @param direction_id [String]
+        #   @param peak_offpeak [Integer]
+        #   @param route_short_name [String]
+        #   @param shape_id [String]
+        #   @param time_zone [String]
+        #   @param trip_headsign [String]
+        #   @param trip_short_name [String]
       end
     end
   end

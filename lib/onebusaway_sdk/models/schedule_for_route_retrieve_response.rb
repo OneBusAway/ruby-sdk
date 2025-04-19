@@ -9,12 +9,8 @@ module OnebusawaySDK
       #   @return [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data]
       required :data, -> { OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data }
 
-      # @!parse
-      #   # @param data [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data]
-      #   #
-      #   def initialize(data:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute entry
@@ -22,12 +18,8 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry]
         required :entry, -> { OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry }
 
-        # @!parse
-        #   # @param entry [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry]
-        #   #
-        #   def initialize(entry:, **) = super
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(entry:)
+        #   @param entry [OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry]
 
         # @see OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -65,17 +57,13 @@ module OnebusawaySDK
           required :trips,
                    -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip] }
 
-          # @!parse
-          #   # @param route_id [String]
-          #   # @param schedule_date [Integer]
-          #   # @param service_ids [Array<String>]
-          #   # @param stops [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop>]
-          #   # @param stop_trip_groupings [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping>]
-          #   # @param trips [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip>]
-          #   #
-          #   def initialize(route_id:, schedule_date:, service_ids:, stops:, stop_trip_groupings:, trips:, **) = super
-
-          # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+          # @!method initialize(route_id:, schedule_date:, service_ids:, stops:, stop_trip_groupings:, trips:)
+          #   @param route_id [String]
+          #   @param schedule_date [Integer]
+          #   @param service_ids [Array<String>]
+          #   @param stops [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop>]
+          #   @param stop_trip_groupings [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping>]
+          #   @param trips [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip>]
 
           class Stop < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute id
@@ -151,37 +139,18 @@ module OnebusawaySDK
             #   # @return [String]
             #   attr_writer :wheelchair_boarding
 
-            # @!parse
-            #   # @param id [String]
-            #   # @param lat [Float]
-            #   # @param lon [Float]
-            #   # @param name [String]
-            #   # @param parent [String]
-            #   # @param route_ids [Array<String>]
-            #   # @param static_route_ids [Array<String>]
-            #   # @param code [String]
-            #   # @param direction [String]
-            #   # @param location_type [Integer]
-            #   # @param wheelchair_boarding [String]
-            #   #
-            #   def initialize(
-            #     id:,
-            #     lat:,
-            #     lon:,
-            #     name:,
-            #     parent:,
-            #     route_ids:,
-            #     static_route_ids:,
-            #     code: nil,
-            #     direction: nil,
-            #     location_type: nil,
-            #     wheelchair_boarding: nil,
-            #     **
-            #   )
-            #     super
-            #   end
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
+            #   @param id [String]
+            #   @param lat [Float]
+            #   @param lon [Float]
+            #   @param name [String]
+            #   @param parent [String]
+            #   @param route_ids [Array<String>]
+            #   @param static_route_ids [Array<String>]
+            #   @param code [String]
+            #   @param direction [String]
+            #   @param location_type [Integer]
+            #   @param wheelchair_boarding [String]
           end
 
           class StopTripGrouping < OnebusawaySDK::Internal::Type::BaseModel
@@ -216,16 +185,12 @@ module OnebusawaySDK
             #   # @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime>]
             #   attr_writer :trips_with_stop_times
 
-            # @!parse
-            #   # @param direction_id [String]
-            #   # @param stop_ids [Array<String>]
-            #   # @param trip_headsigns [Array<String>]
-            #   # @param trip_ids [Array<String>]
-            #   # @param trips_with_stop_times [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime>]
-            #   #
-            #   def initialize(direction_id:, stop_ids:, trip_headsigns:, trip_ids:, trips_with_stop_times: nil, **) = super
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(direction_id:, stop_ids:, trip_headsigns:, trip_ids:, trips_with_stop_times: nil)
+            #   @param direction_id [String]
+            #   @param stop_ids [Array<String>]
+            #   @param trip_headsigns [Array<String>]
+            #   @param trip_ids [Array<String>]
+            #   @param trips_with_stop_times [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime>]
 
             class TripsWithStopTime < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute stop_times
@@ -244,13 +209,9 @@ module OnebusawaySDK
               #   @return [String]
               required :trip_id, String, api_name: :tripId
 
-              # @!parse
-              #   # @param stop_times [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime>]
-              #   # @param trip_id [String]
-              #   #
-              #   def initialize(stop_times:, trip_id:, **) = super
-
-              # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+              # @!method initialize(stop_times:, trip_id:)
+              #   @param stop_times [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime>]
+              #   @param trip_id [String]
 
               class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                 # @!attribute arrival_enabled
@@ -303,31 +264,15 @@ module OnebusawaySDK
                 #   # @return [String]
                 #   attr_writer :stop_headsign
 
-                # @!parse
-                #   # @param arrival_enabled [Boolean]
-                #   # @param arrival_time [Integer]
-                #   # @param departure_enabled [Boolean]
-                #   # @param departure_time [Integer]
-                #   # @param stop_id [String]
-                #   # @param trip_id [String]
-                #   # @param service_id [String]
-                #   # @param stop_headsign [String]
-                #   #
-                #   def initialize(
-                #     arrival_enabled:,
-                #     arrival_time:,
-                #     departure_enabled:,
-                #     departure_time:,
-                #     stop_id:,
-                #     trip_id:,
-                #     service_id: nil,
-                #     stop_headsign: nil,
-                #     **
-                #   )
-                #     super
-                #   end
-
-                # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+                # @!method initialize(arrival_enabled:, arrival_time:, departure_enabled:, departure_time:, stop_id:, trip_id:, service_id: nil, stop_headsign: nil)
+                #   @param arrival_enabled [Boolean]
+                #   @param arrival_time [Integer]
+                #   @param departure_enabled [Boolean]
+                #   @param departure_time [Integer]
+                #   @param stop_id [String]
+                #   @param trip_id [String]
+                #   @param service_id [String]
+                #   @param stop_headsign [String]
               end
             end
           end
@@ -420,37 +365,18 @@ module OnebusawaySDK
             #   # @return [String]
             #   attr_writer :trip_short_name
 
-            # @!parse
-            #   # @param id [String]
-            #   # @param route_id [String]
-            #   # @param service_id [String]
-            #   # @param block_id [String]
-            #   # @param direction_id [String]
-            #   # @param peak_offpeak [Integer]
-            #   # @param route_short_name [String]
-            #   # @param shape_id [String]
-            #   # @param time_zone [String]
-            #   # @param trip_headsign [String]
-            #   # @param trip_short_name [String]
-            #   #
-            #   def initialize(
-            #     id:,
-            #     route_id:,
-            #     service_id:,
-            #     block_id: nil,
-            #     direction_id: nil,
-            #     peak_offpeak: nil,
-            #     route_short_name: nil,
-            #     shape_id: nil,
-            #     time_zone: nil,
-            #     trip_headsign: nil,
-            #     trip_short_name: nil,
-            #     **
-            #   )
-            #     super
-            #   end
-
-            # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+            # @!method initialize(id:, route_id:, service_id:, block_id: nil, direction_id: nil, peak_offpeak: nil, route_short_name: nil, shape_id: nil, time_zone: nil, trip_headsign: nil, trip_short_name: nil)
+            #   @param id [String]
+            #   @param route_id [String]
+            #   @param service_id [String]
+            #   @param block_id [String]
+            #   @param direction_id [String]
+            #   @param peak_offpeak [Integer]
+            #   @param route_short_name [String]
+            #   @param shape_id [String]
+            #   @param time_zone [String]
+            #   @param trip_headsign [String]
+            #   @param trip_short_name [String]
           end
         end
       end

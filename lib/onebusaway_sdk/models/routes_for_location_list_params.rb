@@ -54,18 +54,14 @@ module OnebusawaySDK
       #   # @return [Float]
       #   attr_writer :radius
 
-      # @!parse
-      #   # @param lat [Float]
-      #   # @param lon [Float]
-      #   # @param lat_span [Float]
-      #   # @param lon_span [Float]
-      #   # @param query [String]
-      #   # @param radius [Float]
-      #   # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
-      #   #
-      #   def initialize(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {}, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
+      #   @param lat [Float]
+      #   @param lon [Float]
+      #   @param lat_span [Float]
+      #   @param lon_span [Float]
+      #   @param query [String]
+      #   @param radius [Float]
+      #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
 end

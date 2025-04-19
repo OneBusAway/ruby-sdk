@@ -347,6 +347,8 @@ module OnebusawaySDK
         end
 
         class << self
+          # @api private
+          #
           # @param model [OnebusawaySDK::Internal::Type::BaseModel]
           #
           # @return [Hash{Symbol=>Object}]

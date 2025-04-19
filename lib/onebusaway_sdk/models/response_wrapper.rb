@@ -23,15 +23,11 @@ module OnebusawaySDK
       #   @return [Integer]
       required :version, Integer
 
-      # @!parse
-      #   # @param code [Integer]
-      #   # @param current_time [Integer]
-      #   # @param text [String]
-      #   # @param version [Integer]
-      #   #
-      #   def initialize(code:, current_time:, text:, version:, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(code:, current_time:, text:, version:)
+      #   @param code [Integer]
+      #   @param current_time [Integer]
+      #   @param text [String]
+      #   @param version [Integer]
     end
   end
 end

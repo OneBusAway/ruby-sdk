@@ -29,15 +29,11 @@ module OnebusawaySDK
       #   # @return [Boolean]
       #   attr_writer :out_of_range
 
-      # @!parse
-      #   # @param limit_exceeded [Boolean]
-      #   # @param list [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::List>]
-      #   # @param references [OnebusawaySDK::Models::References]
-      #   # @param out_of_range [Boolean]
-      #   #
-      #   def initialize(limit_exceeded:, list:, references:, out_of_range: nil, **) = super
-
-      # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+      # @!method initialize(limit_exceeded:, list:, references:, out_of_range: nil)
+      #   @param limit_exceeded [Boolean]
+      #   @param list [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::List>]
+      #   @param references [OnebusawaySDK::Models::References]
+      #   @param out_of_range [Boolean]
 
       class List < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
@@ -111,37 +107,18 @@ module OnebusawaySDK
         #   # @return [String]
         #   attr_writer :wheelchair_boarding
 
-        # @!parse
-        #   # @param id [String]
-        #   # @param lat [Float]
-        #   # @param lon [Float]
-        #   # @param name [String]
-        #   # @param parent [String]
-        #   # @param route_ids [Array<String>]
-        #   # @param static_route_ids [Array<String>]
-        #   # @param code [String]
-        #   # @param direction [String]
-        #   # @param location_type [Integer]
-        #   # @param wheelchair_boarding [String]
-        #   #
-        #   def initialize(
-        #     id:,
-        #     lat:,
-        #     lon:,
-        #     name:,
-        #     parent:,
-        #     route_ids:,
-        #     static_route_ids:,
-        #     code: nil,
-        #     direction: nil,
-        #     location_type: nil,
-        #     wheelchair_boarding: nil,
-        #     **
-        #   )
-        #     super
-        #   end
-
-        # def initialize: (Hash | OnebusawaySDK::Internal::Type::BaseModel) -> void
+        # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
+        #   @param id [String]
+        #   @param lat [Float]
+        #   @param lon [Float]
+        #   @param name [String]
+        #   @param parent [String]
+        #   @param route_ids [Array<String>]
+        #   @param static_route_ids [Array<String>]
+        #   @param code [String]
+        #   @param direction [String]
+        #   @param location_type [Integer]
+        #   @param wheelchair_boarding [String]
       end
     end
   end
