@@ -397,7 +397,7 @@ module OnebusawaySDK
 
         # Create a new instance of a model.
         #
-        # @param data [Hash{Symbol=>Object}, OnebusawaySDK::Internal::Type::BaseModel]
+        # @param data [Hash{Symbol=>Object}, self]
         def initialize(data = {})
           case OnebusawaySDK::Internal::Util.coerce_hash(data)
           in Hash => coerced
