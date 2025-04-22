@@ -19,7 +19,7 @@ module OnebusawaySDK
         # @api public
         #
         # @raise [OnebusawaySDK::Errors::APIError]
-        # @return [OnebusawaySDK::Internal::Type::BasePage]
+        # @return [self]
         def next_page = (raise NotImplementedError)
 
         # @api public

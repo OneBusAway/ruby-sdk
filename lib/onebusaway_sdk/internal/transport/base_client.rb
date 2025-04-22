@@ -216,9 +216,9 @@ module OnebusawaySDK
         #
         #   @option req [Symbol, nil] :unwrap
         #
-        #   @option req [Class, nil] :page
+        #   @option req [Class<OnebusawaySDK::Internal::Type::BasePage>, nil] :page
         #
-        #   @option req [Class, nil] :stream
+        #   @option req [Class<OnebusawaySDK::Internal::Type::BaseStream>, nil] :stream
         #
         #   @option req [OnebusawaySDK::Internal::Type::Converter, Class, nil] :model
         #
@@ -427,9 +427,9 @@ module OnebusawaySDK
         #
         # @param unwrap [Symbol, nil]
         #
-        # @param page [Class, nil]
+        # @param page [Class<OnebusawaySDK::Internal::Type::BasePage>, nil]
         #
-        # @param stream [Class, nil]
+        # @param stream [Class<OnebusawaySDK::Internal::Type::BaseStream>, nil]
         #
         # @param model [OnebusawaySDK::Internal::Type::Converter, Class, nil]
         #

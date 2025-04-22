@@ -28,6 +28,8 @@ module OnebusawaySDK
         #   @option spec [Proc] :union
         #
         #   @option spec [Boolean] :"nil?"
+        #
+        # @return [OnebusawaySDK::Internal::Type::HashOf]
         def self.[](...) = new(...)
 
         # @api public
