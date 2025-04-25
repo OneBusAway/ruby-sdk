@@ -367,15 +367,20 @@ module OnebusawaySDK
             .returns(T.attached_class)
         end
         def self.new(
+          # Unique identifier for the situation.
           id:,
+          # Unix timestamp of when this situation was created.
           creation_time:,
           active_windows: nil,
           all_affects: nil,
+          # Message regarding the consequence of the situation.
           consequence_message: nil,
           consequences: nil,
           description: nil,
           publication_windows: nil,
+          # Reason for the service alert, taken from TPEG codes.
           reason: nil,
+          # Severity of the situation.
           severity: nil,
           summary: nil,
           url: nil
@@ -417,8 +422,12 @@ module OnebusawaySDK
           attr_writer :to
 
           sig { params(from: Integer, to: Integer).returns(T.attached_class) }
-          def self.new(from: nil, to: nil); end
-
+          def self.new(
+            # Start time of the active window as a Unix timestamp.
+            from: nil,
+            # End time of the active window as a Unix timestamp.
+            to: nil
+          ); end
           sig { override.returns({from: Integer, to: Integer}) }
           def to_hash; end
         end
@@ -478,15 +487,19 @@ module OnebusawaySDK
               .returns(T.attached_class)
           end
           def self.new(
+            # Identifier for the agency.
             agency_id: nil,
+            # Identifier for the application.
             application_id: nil,
+            # Identifier for the direction.
             direction_id: nil,
+            # Identifier for the route.
             route_id: nil,
+            # Identifier for the stop.
             stop_id: nil,
+            # Identifier for the trip.
             trip_id: nil
-          )
-          end
-
+          ); end
           sig do
             override
               .returns(
@@ -535,8 +548,11 @@ module OnebusawaySDK
             )
               .returns(T.attached_class)
           end
-          def self.new(condition: nil, condition_details: nil); end
-
+          def self.new(
+            # Condition of the consequence.
+            condition: nil,
+            condition_details: nil
+          ); end
           sig do
             override
               .returns(
@@ -619,8 +635,14 @@ module OnebusawaySDK
               attr_writer :points
 
               sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
-              def self.new(length: nil, levels: nil, points: nil); end
-
+              def self.new(
+                # Length of the diversion path.
+                length: nil,
+                # Levels of the diversion path.
+                levels: nil,
+                # Points of the diversion path.
+                points: nil
+              ); end
               sig { override.returns({length: Integer, levels: String, points: String}) }
               def to_hash; end
             end
@@ -643,8 +665,12 @@ module OnebusawaySDK
           attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
-          def self.new(lang: nil, value: nil); end
-
+          def self.new(
+            # Language of the description.
+            lang: nil,
+            # Longer description of the situation.
+            value: nil
+          ); end
           sig { override.returns({lang: String, value: String}) }
           def to_hash; end
         end
@@ -659,8 +685,12 @@ module OnebusawaySDK
           attr_accessor :to
 
           sig { params(from: Integer, to: Integer).returns(T.attached_class) }
-          def self.new(from:, to:); end
-
+          def self.new(
+            # Start time of the time window as a Unix timestamp.
+            from:,
+            # End time of the time window as a Unix timestamp.
+            to:
+          ); end
           sig { override.returns({from: Integer, to: Integer}) }
           def to_hash; end
         end
@@ -703,8 +733,12 @@ module OnebusawaySDK
           attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
-          def self.new(lang: nil, value: nil); end
-
+          def self.new(
+            # Language of the summary.
+            lang: nil,
+            # Short summary of the situation.
+            value: nil
+          ); end
           sig { override.returns({lang: String, value: String}) }
           def to_hash; end
         end
@@ -725,8 +759,12 @@ module OnebusawaySDK
           attr_writer :value
 
           sig { params(lang: String, value: String).returns(T.attached_class) }
-          def self.new(lang: nil, value: nil); end
-
+          def self.new(
+            # Language of the URL.
+            lang: nil,
+            # URL for more information about the situation.
+            value: nil
+          ); end
           sig { override.returns({lang: String, value: String}) }
           def to_hash; end
         end

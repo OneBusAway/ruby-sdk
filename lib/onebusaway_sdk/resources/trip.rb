@@ -7,7 +7,8 @@ module OnebusawaySDK
       #
       # @overload retrieve(trip_id, request_options: {})
       #
-      # @param trip_id [String]
+      # @param trip_id [String] ID of the trip
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::TripRetrieveResponse]

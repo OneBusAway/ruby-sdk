@@ -7,7 +7,8 @@ module OnebusawaySDK
       #
       # @overload retrieve(stop_id, request_options: {})
       #
-      # @param stop_id [String]
+      # @param stop_id [String] ID of the stop
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::StopRetrieveResponse]

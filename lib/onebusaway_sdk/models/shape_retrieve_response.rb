@@ -47,7 +47,9 @@ module OnebusawaySDK
 
           # @!method initialize(length:, points:, levels: nil)
           #   @param length [Integer]
-          #   @param points [String]
+          #
+          #   @param points [String] Encoded polyline format representing the shape of the path
+          #
           #   @param levels [String]
         end
       end

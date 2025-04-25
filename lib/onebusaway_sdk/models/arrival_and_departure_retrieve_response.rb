@@ -244,40 +244,85 @@ module OnebusawaySDK
                    api_name: :tripStatus
 
           # @!method initialize(arrival_enabled:, block_trip_sequence:, departure_enabled:, number_of_stops_away:, predicted_arrival_time:, predicted_departure_time:, route_id:, scheduled_arrival_time:, scheduled_departure_time:, service_date:, stop_id:, stop_sequence:, total_stops_in_trip:, trip_headsign:, trip_id:, vehicle_id:, actual_track: nil, distance_from_stop: nil, frequency: nil, historical_occupancy: nil, last_update_time: nil, occupancy_status: nil, predicted: nil, predicted_arrival_interval: nil, predicted_departure_interval: nil, predicted_occupancy: nil, route_long_name: nil, route_short_name: nil, scheduled_arrival_interval: nil, scheduled_departure_interval: nil, scheduled_track: nil, situation_ids: nil, status: nil, trip_status: nil)
-          #   @param arrival_enabled [Boolean]
-          #   @param block_trip_sequence [Integer]
-          #   @param departure_enabled [Boolean]
-          #   @param number_of_stops_away [Integer]
-          #   @param predicted_arrival_time [Integer]
-          #   @param predicted_departure_time [Integer]
-          #   @param route_id [String]
-          #   @param scheduled_arrival_time [Integer]
-          #   @param scheduled_departure_time [Integer]
-          #   @param service_date [Integer]
-          #   @param stop_id [String]
-          #   @param stop_sequence [Integer]
-          #   @param total_stops_in_trip [Integer]
-          #   @param trip_headsign [String]
-          #   @param trip_id [String]
-          #   @param vehicle_id [String]
-          #   @param actual_track [String]
-          #   @param distance_from_stop [Float]
-          #   @param frequency [String]
-          #   @param historical_occupancy [String]
-          #   @param last_update_time [Integer]
-          #   @param occupancy_status [String]
-          #   @param predicted [Boolean]
-          #   @param predicted_arrival_interval [String]
-          #   @param predicted_departure_interval [String]
-          #   @param predicted_occupancy [String]
-          #   @param route_long_name [String]
-          #   @param route_short_name [String]
-          #   @param scheduled_arrival_interval [String]
-          #   @param scheduled_departure_interval [String]
-          #   @param scheduled_track [String]
-          #   @param situation_ids [Array<String>]
-          #   @param status [String]
-          #   @param trip_status [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus]
+          #   Some parameter documentations has been truncated, see
+          #   {OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry} for
+          #   more details.
+          #
+          #   @param arrival_enabled [Boolean] Indicates if riders can arrive on this transit vehicle.
+          #
+          #   @param block_trip_sequence [Integer] Index of this arrival’s trip into the sequence of trips for the active block.
+          #
+          #   @param departure_enabled [Boolean] Indicates if riders can depart from this transit vehicle.
+          #
+          #   @param number_of_stops_away [Integer] Number of stops between the arriving transit vehicle and the current stop (exclu
+          #   ...
+          #
+          #   @param predicted_arrival_time [Integer] Predicted arrival time, in milliseconds since Unix epoch (zero if no real-time a
+          #   ...
+          #
+          #   @param predicted_departure_time [Integer] Predicted departure time, in milliseconds since Unix epoch (zero if no real-time
+          #   ...
+          #
+          #   @param route_id [String] The ID of the route for the arriving vehicle.
+          #
+          #   @param scheduled_arrival_time [Integer] Scheduled arrival time, in milliseconds since Unix epoch.
+          #
+          #   @param scheduled_departure_time [Integer] Scheduled departure time, in milliseconds since Unix epoch.
+          #
+          #   @param service_date [Integer] Time, in milliseconds since the Unix epoch, of midnight for the start of the ser
+          #   ...
+          #
+          #   @param stop_id [String] The ID of the stop the vehicle is arriving at.
+          #
+          #   @param stop_sequence [Integer] Index of the stop into the sequence of stops that make up the trip for this arri
+          #   ...
+          #
+          #   @param total_stops_in_trip [Integer] Total number of stops visited on the trip for this arrival.
+          #
+          #   @param trip_headsign [String] Optional trip headsign that potentially overrides the trip headsign in the refer
+          #   ...
+          #
+          #   @param trip_id [String] The ID of the trip for the arriving vehicle.
+          #
+          #   @param vehicle_id [String] ID of the transit vehicle serving this trip.
+          #
+          #   @param actual_track [String] The actual track information of the arriving transit vehicle.
+          #
+          #   @param distance_from_stop [Float] Distance of the arriving transit vehicle from the stop, in meters.
+          #
+          #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+          #
+          #   @param historical_occupancy [String] Historical occupancy information of the transit vehicle.
+          #
+          #   @param last_update_time [Integer] Timestamp of the last update time for this arrival.
+          #
+          #   @param occupancy_status [String] Current occupancy status of the transit vehicle.
+          #
+          #   @param predicted [Boolean] Indicates if real-time arrival info is available for this trip.
+          #
+          #   @param predicted_arrival_interval [String] Interval for predicted arrival time, if available.
+          #
+          #   @param predicted_departure_interval [String] Interval for predicted departure time, if available.
+          #
+          #   @param predicted_occupancy [String] Predicted occupancy status of the transit vehicle.
+          #
+          #   @param route_long_name [String] Optional route long name that potentially overrides the route long name in the r
+          #   ...
+          #
+          #   @param route_short_name [String] Optional route short name that potentially overrides the route short name in the
+          #   ...
+          #
+          #   @param scheduled_arrival_interval [String] Interval for scheduled arrival time.
+          #
+          #   @param scheduled_departure_interval [String] Interval for scheduled departure time.
+          #
+          #   @param scheduled_track [String] Scheduled track information of the arriving transit vehicle.
+          #
+          #   @param situation_ids [Array<String>] References to situation elements (if any) applicable to this arrival.
+          #
+          #   @param status [String] Current status of the arrival.
+          #
+          #   @param trip_status [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus] Trip-specific status for the arriving transit vehicle.
 
           # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry#trip_status
           class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
@@ -452,35 +497,70 @@ module OnebusawaySDK
             optional :vehicle_id, String, api_name: :vehicleId
 
             # @!method initialize(active_trip_id:, block_trip_sequence:, closest_stop:, distance_along_trip:, last_known_distance_along_trip:, last_location_update_time:, last_update_time:, occupancy_capacity:, occupancy_count:, occupancy_status:, phase:, predicted:, schedule_deviation:, service_date:, status:, total_distance_along_trip:, closest_stop_time_offset: nil, frequency: nil, last_known_location: nil, last_known_orientation: nil, next_stop: nil, next_stop_time_offset: nil, orientation: nil, position: nil, scheduled_distance_along_trip: nil, situation_ids: nil, vehicle_id: nil)
+            #   Some parameter documentations has been truncated, see
+            #   {OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus}
+            #   for more details.
+            #
             #   Trip-specific status for the arriving transit vehicle.
             #
-            #   @param active_trip_id [String]
-            #   @param block_trip_sequence [Integer]
-            #   @param closest_stop [String]
-            #   @param distance_along_trip [Float]
-            #   @param last_known_distance_along_trip [Float]
-            #   @param last_location_update_time [Integer]
-            #   @param last_update_time [Integer]
-            #   @param occupancy_capacity [Integer]
-            #   @param occupancy_count [Integer]
-            #   @param occupancy_status [String]
-            #   @param phase [String]
-            #   @param predicted [Boolean]
-            #   @param schedule_deviation [Integer]
-            #   @param service_date [Integer]
-            #   @param status [String]
-            #   @param total_distance_along_trip [Float]
-            #   @param closest_stop_time_offset [Integer]
-            #   @param frequency [String]
-            #   @param last_known_location [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation]
-            #   @param last_known_orientation [Float]
-            #   @param next_stop [String]
-            #   @param next_stop_time_offset [Integer]
-            #   @param orientation [Float]
-            #   @param position [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position]
-            #   @param scheduled_distance_along_trip [Float]
-            #   @param situation_ids [Array<String>]
-            #   @param vehicle_id [String]
+            #   @param active_trip_id [String] Trip ID of the trip the vehicle is actively serving.
+            #
+            #   @param block_trip_sequence [Integer] Index of the active trip into the sequence of trips for the active block.
+            #
+            #   @param closest_stop [String] ID of the closest stop to the current location of the transit vehicle.
+            #
+            #   @param distance_along_trip [Float] Distance, in meters, the transit vehicle has progressed along the active trip.
+            #
+            #   @param last_known_distance_along_trip [Float] Last known distance along the trip received in real-time from the transit vehicl
+            #   ...
+            #
+            #   @param last_location_update_time [Integer] Timestamp of the last known real-time location update from the transit vehicle.
+            #
+            #   @param last_update_time [Integer] Timestamp of the last known real-time update from the transit vehicle.
+            #
+            #   @param occupancy_capacity [Integer] Capacity of the transit vehicle in terms of occupancy.
+            #
+            #   @param occupancy_count [Integer] Current count of occupants in the transit vehicle.
+            #
+            #   @param occupancy_status [String] Current occupancy status of the transit vehicle.
+            #
+            #   @param phase [String] Current journey phase of the trip.
+            #
+            #   @param predicted [Boolean] Indicates if real-time arrival info is available for this trip.
+            #
+            #   @param schedule_deviation [Integer] Deviation from the schedule in seconds (positive for late, negative for early).
+            #
+            #   @param service_date [Integer] Time, in milliseconds since the Unix epoch, of midnight for the start of the ser
+            #   ...
+            #
+            #   @param status [String] Current status modifiers for the trip.
+            #
+            #   @param total_distance_along_trip [Float] Total length of the trip, in meters.
+            #
+            #   @param closest_stop_time_offset [Integer] Time offset from the closest stop to the current position of the transit vehicle
+            #   ...
+            #
+            #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+            #
+            #   @param last_known_location [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation] Last known location of the transit vehicle.
+            #
+            #   @param last_known_orientation [Float] Last known orientation value received in real-time from the transit vehicle.
+            #
+            #   @param next_stop [String] ID of the next stop the transit vehicle is scheduled to arrive at.
+            #
+            #   @param next_stop_time_offset [Integer] Time offset from the next stop to the current position of the transit vehicle (i
+            #   ...
+            #
+            #   @param orientation [Float] Orientation of the transit vehicle, represented as an angle in degrees.
+            #
+            #   @param position [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position] Current position of the transit vehicle.
+            #
+            #   @param scheduled_distance_along_trip [Float] Distance, in meters, the transit vehicle is scheduled to have progressed along t
+            #   ...
+            #
+            #   @param situation_ids [Array<String>] References to situation elements (if any) applicable to this trip.
+            #
+            #   @param vehicle_id [String] ID of the transit vehicle currently serving the trip.
 
             # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus#last_known_location
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
@@ -499,8 +579,9 @@ module OnebusawaySDK
               # @!method initialize(lat: nil, lon: nil)
               #   Last known location of the transit vehicle.
               #
-              #   @param lat [Float]
-              #   @param lon [Float]
+              #   @param lat [Float] Latitude of the last known location of the transit vehicle.
+              #
+              #   @param lon [Float] Longitude of the last known location of the transit vehicle.
             end
 
             # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus#position
@@ -520,8 +601,9 @@ module OnebusawaySDK
               # @!method initialize(lat: nil, lon: nil)
               #   Current position of the transit vehicle.
               #
-              #   @param lat [Float]
-              #   @param lon [Float]
+              #   @param lat [Float] Latitude of the current position of the transit vehicle.
+              #
+              #   @param lon [Float] Longitude of the current position of the transit vehicle.
             end
           end
         end

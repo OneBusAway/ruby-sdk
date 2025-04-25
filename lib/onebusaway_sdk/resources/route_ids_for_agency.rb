@@ -7,7 +7,8 @@ module OnebusawaySDK
       #
       # @overload list(agency_id, request_options: {})
       #
-      # @param agency_id [String]
+      # @param agency_id [String] ID of the agency
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::RouteIDsForAgencyListResponse]

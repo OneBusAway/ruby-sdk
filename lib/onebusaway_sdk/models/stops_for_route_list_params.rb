@@ -20,8 +20,10 @@ module OnebusawaySDK
       optional :time, String
 
       # @!method initialize(include_polylines: nil, time: nil, request_options: {})
-      #   @param include_polylines [Boolean]
-      #   @param time [String]
+      #   @param include_polylines [Boolean] Include polyline elements in the response (default true)
+      #
+      #   @param time [String] Specify service date (YYYY-MM-DD or epoch) (default today)
+      #
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end

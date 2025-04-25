@@ -36,8 +36,15 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(minutes_after: nil, minutes_before: nil, time: nil, request_options: {}); end
-
+      def self.new(
+        # Include vehicles arriving or departing in the next n minutes.
+        minutes_after: nil,
+        # Include vehicles having arrived or departed in the previous n minutes.
+        minutes_before: nil,
+        # The specific time for querying the system status.
+        time: nil,
+        request_options: {}
+      ); end
       sig do
         override
           .returns(

@@ -8,11 +8,17 @@ module OnebusawaySDK
       # @overload list(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
       #
       # @param lat [Float]
+      #
       # @param lon [Float]
-      # @param lat_span [Float]
-      # @param lon_span [Float]
-      # @param query [String]
-      # @param radius [Float]
+      #
+      # @param lat_span [Float] An alternative to radius to set the search bounding box (optional)
+      #
+      # @param lon_span [Float] An alternative to radius to set the search bounding box (optional)
+      #
+      # @param query [String] A search query string to filter the results
+      #
+      # @param radius [Float] The radius in meters to search within
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::StopsForLocationListResponse]

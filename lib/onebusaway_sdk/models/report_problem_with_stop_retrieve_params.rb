@@ -38,11 +38,16 @@ module OnebusawaySDK
       optional :user_lon, Float
 
       # @!method initialize(code: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, request_options: {})
-      #   @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code]
-      #   @param user_comment [String]
-      #   @param user_lat [Float]
-      #   @param user_location_accuracy [Float]
-      #   @param user_lon [Float]
+      #   @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
+      #
+      #   @param user_comment [String] Additional comment text supplied by the user describing the problem
+      #
+      #   @param user_lat [Float] The reporting user’s current latitude
+      #
+      #   @param user_location_accuracy [Float] The reporting user’s location accuracy, in meters
+      #
+      #   @param user_lon [Float] The reporting user’s current longitude
+      #
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
 
       # A string code identifying the nature of the problem

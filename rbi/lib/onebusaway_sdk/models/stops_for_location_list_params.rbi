@@ -52,9 +52,19 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
-      end
-
+      def self.new(
+        lat:,
+        lon:,
+        # An alternative to radius to set the search bounding box (optional)
+        lat_span: nil,
+        # An alternative to radius to set the search bounding box (optional)
+        lon_span: nil,
+        # A search query string to filter the results
+        query: nil,
+        # The radius in meters to search within
+        radius: nil,
+        request_options: {}
+      ); end
       sig do
         override
           .returns(

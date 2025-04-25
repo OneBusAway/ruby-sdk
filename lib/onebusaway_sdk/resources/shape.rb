@@ -7,7 +7,8 @@ module OnebusawaySDK
       #
       # @overload retrieve(shape_id, request_options: {})
       #
-      # @param shape_id [String]
+      # @param shape_id [String] The shape ID, encoded directly in the URL
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::ShapeRetrieveResponse]

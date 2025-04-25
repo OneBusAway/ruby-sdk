@@ -48,14 +48,19 @@ module OnebusawaySDK
           .returns(T.attached_class)
       end
       def self.new(
+        # Determines whether full <schedule/> element is included in the <tripDetails/>
+        # section. Defaults to false.
         include_schedule: nil,
+        # Determines whether the full <status/> element is included in the <tripDetails/>
+        # section. Defaults to true.
         include_status: nil,
+        # Determines whether full <trip/> element is included in the <references/>
+        # section. Defaults to false.
         include_trip: nil,
+        # Time parameter to query the system at a specific time (optional).
         time: nil,
         request_options: {}
-      )
-      end
-
+      ); end
       sig do
         override
           .returns(
