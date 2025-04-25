@@ -153,7 +153,7 @@ module OnebusawaySDK
 
         # @api private
         # @return [OnebusawaySDK::Internal::Transport::PooledNetRequester]
-        attr_accessor :requester
+        attr_reader :requester
 
         # @api private
         #
