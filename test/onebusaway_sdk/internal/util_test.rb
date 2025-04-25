@@ -87,8 +87,9 @@ class OnebusawaySDK::Test::UtilDataHandlingTest < Minitest::Test
       OnebusawaySDK::Internal::Util.dig([], 1.0) => nil
 
       OnebusawaySDK::Internal::Util.dig(Object, 1) => nil
-      OnebusawaySDK::Internal::Util.dig([], 1.0, 2) => 2
       OnebusawaySDK::Internal::Util.dig([], 1.0) { 2 } => 2
+      OnebusawaySDK::Internal::Util.dig([], ->(_) { 2 }) => 2
+      OnebusawaySDK::Internal::Util.dig([1], -> { _1 in [1] }) => true
     end
   end
 end
@@ -165,9 +166,9 @@ class OnebusawaySDK::Test::RegexMatchTest < Minitest::Test
       "application/vnd.github.v3+json" => true,
       "application/vnd.api+json" => true
     }
-    cases.each do |header, _verdict|
+    cases.each do |header, verdict|
       assert_pattern do
-        OnebusawaySDK::Internal::Util::JSON_CONTENT.match?(header) => verdict
+        OnebusawaySDK::Internal::Util::JSON_CONTENT.match?(header) => ^verdict
       end
     end
   end
