@@ -200,8 +200,12 @@ class OnebusawaySDK::Test::UtilFormDataEncodingTest < Minitest::Test
     file = Pathname(__FILE__)
     headers = {"content-type" => "multipart/form-data"}
     cases = {
+      "abc" => "abc",
       StringIO.new("abc") => "abc",
-      file => /^class OnebusawaySDK/
+      OnebusawaySDK::FilePart.new("abc") => "abc",
+      OnebusawaySDK::FilePart.new(StringIO.new("abc")) => "abc",
+      file => /^class OnebusawaySDK/,
+      OnebusawaySDK::FilePart.new(file) => /^class OnebusawaySDK/
     }
     cases.each do |body, val|
       encoded = OnebusawaySDK::Internal::Util.encode_content(headers, body)
@@ -219,7 +223,13 @@ class OnebusawaySDK::Test::UtilFormDataEncodingTest < Minitest::Test
       {a: 2, b: nil} => {"a" => "2", "b" => "null"},
       {a: 2, b: [1, 2, 3]} => {"a" => "2", "b" => "1"},
       {strio: StringIO.new("a")} => {"strio" => "a"},
-      {pathname: Pathname(__FILE__)} => {"pathname" => -> { _1.read in /^class OnebusawaySDK/ }}
+      {strio: OnebusawaySDK::FilePart.new("a")} => {"strio" => "a"},
+      {pathname: Pathname(__FILE__)} => {"pathname" => -> { _1.read in /^class OnebusawaySDK/ }},
+      {pathname: OnebusawaySDK::FilePart.new(Pathname(__FILE__))} => {
+        "pathname" => -> {
+          _1.read in /^class OnebusawaySDK/
+        }
+      }
     }
     cases.each do |body, testcase|
       encoded = OnebusawaySDK::Internal::Util.encode_content(headers, body)
