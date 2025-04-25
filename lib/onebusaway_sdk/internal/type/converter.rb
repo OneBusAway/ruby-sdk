@@ -43,7 +43,7 @@ module OnebusawaySDK
             value.string
           in Pathname | IO
             state[:can_retry] = false if value.is_a?(IO)
-            OnebusawaySDK::Internal::Util::SerializationAdapter.new(value)
+            OnebusawaySDK::FilePart.new(value)
           else
             value
           end
