@@ -214,7 +214,7 @@ module OnebusawaySDK
         #
         #   @option req [Object, nil] :body
         #
-        #   @option req [Symbol, nil] :unwrap
+        #   @option req [Symbol, Integer, Array<Symbol, Integer>, Proc, nil] :unwrap
         #
         #   @option req [Class<OnebusawaySDK::Internal::Type::BasePage>, nil] :page
         #
@@ -425,7 +425,7 @@ module OnebusawaySDK
         #
         # @param body [Object, nil]
         #
-        # @param unwrap [Symbol, nil]
+        # @param unwrap [Symbol, Integer, Array<Symbol, Integer>, Proc, nil]
         #
         # @param page [Class<OnebusawaySDK::Internal::Type::BasePage>, nil]
         #
