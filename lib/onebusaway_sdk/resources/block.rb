@@ -7,7 +7,8 @@ module OnebusawaySDK
       #
       # @overload retrieve(block_id, request_options: {})
       #
-      # @param block_id [String]
+      # @param block_id [String] ID of the block
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::BlockRetrieveResponse]

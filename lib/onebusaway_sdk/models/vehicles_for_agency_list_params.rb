@@ -14,7 +14,8 @@ module OnebusawaySDK
       optional :time, String
 
       # @!method initialize(time: nil, request_options: {})
-      #   @param time [String]
+      #   @param time [String] Specific time for querying the status (timestamp format)
+      #
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end

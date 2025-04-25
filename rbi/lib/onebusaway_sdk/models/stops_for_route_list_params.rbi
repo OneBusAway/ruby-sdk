@@ -28,8 +28,13 @@ module OnebusawaySDK
         )
           .returns(T.attached_class)
       end
-      def self.new(include_polylines: nil, time: nil, request_options: {}); end
-
+      def self.new(
+        # Include polyline elements in the response (default true)
+        include_polylines: nil,
+        # Specify service date (YYYY-MM-DD or epoch) (default today)
+        time: nil,
+        request_options: {}
+      ); end
       sig do
         override
           .returns({

@@ -247,17 +247,28 @@ module OnebusawaySDK
         optional :url, -> { OnebusawaySDK::Models::References::Situation::URL }
 
         # @!method initialize(id:, creation_time:, active_windows: nil, all_affects: nil, consequence_message: nil, consequences: nil, description: nil, publication_windows: nil, reason: nil, severity: nil, summary: nil, url: nil)
-        #   @param id [String]
-        #   @param creation_time [Integer]
+        #   @param id [String] Unique identifier for the situation.
+        #
+        #   @param creation_time [Integer] Unix timestamp of when this situation was created.
+        #
         #   @param active_windows [Array<OnebusawaySDK::Models::References::Situation::ActiveWindow>]
+        #
         #   @param all_affects [Array<OnebusawaySDK::Models::References::Situation::AllAffect>]
-        #   @param consequence_message [String]
+        #
+        #   @param consequence_message [String] Message regarding the consequence of the situation.
+        #
         #   @param consequences [Array<OnebusawaySDK::Models::References::Situation::Consequence>]
+        #
         #   @param description [OnebusawaySDK::Models::References::Situation::Description]
+        #
         #   @param publication_windows [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>]
-        #   @param reason [Symbol, OnebusawaySDK::Models::References::Situation::Reason]
-        #   @param severity [String]
+        #
+        #   @param reason [Symbol, OnebusawaySDK::Models::References::Situation::Reason] Reason for the service alert, taken from TPEG codes.
+        #
+        #   @param severity [String] Severity of the situation.
+        #
         #   @param summary [OnebusawaySDK::Models::References::Situation::Summary]
+        #
         #   @param url [OnebusawaySDK::Models::References::Situation::URL]
 
         class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
@@ -274,8 +285,9 @@ module OnebusawaySDK
           optional :to, Integer
 
           # @!method initialize(from: nil, to: nil)
-          #   @param from [Integer]
-          #   @param to [Integer]
+          #   @param from [Integer] Start time of the active window as a Unix timestamp.
+          #
+          #   @param to [Integer] End time of the active window as a Unix timestamp.
         end
 
         class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
@@ -316,12 +328,17 @@ module OnebusawaySDK
           optional :trip_id, String, api_name: :tripId
 
           # @!method initialize(agency_id: nil, application_id: nil, direction_id: nil, route_id: nil, stop_id: nil, trip_id: nil)
-          #   @param agency_id [String]
-          #   @param application_id [String]
-          #   @param direction_id [String]
-          #   @param route_id [String]
-          #   @param stop_id [String]
-          #   @param trip_id [String]
+          #   @param agency_id [String] Identifier for the agency.
+          #
+          #   @param application_id [String] Identifier for the application.
+          #
+          #   @param direction_id [String] Identifier for the direction.
+          #
+          #   @param route_id [String] Identifier for the route.
+          #
+          #   @param stop_id [String] Identifier for the stop.
+          #
+          #   @param trip_id [String] Identifier for the trip.
         end
 
         class Consequence < OnebusawaySDK::Internal::Type::BaseModel
@@ -339,7 +356,8 @@ module OnebusawaySDK
                    api_name: :conditionDetails
 
           # @!method initialize(condition: nil, condition_details: nil)
-          #   @param condition [String]
+          #   @param condition [String] Condition of the consequence.
+          #
           #   @param condition_details [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails]
 
           # @see OnebusawaySDK::Models::References::Situation::Consequence#condition_details
@@ -383,9 +401,11 @@ module OnebusawaySDK
               optional :points, String
 
               # @!method initialize(length: nil, levels: nil, points: nil)
-              #   @param length [Integer]
-              #   @param levels [String]
-              #   @param points [String]
+              #   @param length [Integer] Length of the diversion path.
+              #
+              #   @param levels [String] Levels of the diversion path.
+              #
+              #   @param points [String] Points of the diversion path.
             end
           end
         end
@@ -405,8 +425,9 @@ module OnebusawaySDK
           optional :value, String
 
           # @!method initialize(lang: nil, value: nil)
-          #   @param lang [String]
-          #   @param value [String]
+          #   @param lang [String] Language of the description.
+          #
+          #   @param value [String] Longer description of the situation.
         end
 
         class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
@@ -423,8 +444,9 @@ module OnebusawaySDK
           required :to, Integer
 
           # @!method initialize(from:, to:)
-          #   @param from [Integer]
-          #   @param to [Integer]
+          #   @param from [Integer] Start time of the time window as a Unix timestamp.
+          #
+          #   @param to [Integer] End time of the time window as a Unix timestamp.
         end
 
         # Reason for the service alert, taken from TPEG codes.
@@ -458,8 +480,9 @@ module OnebusawaySDK
           optional :value, String
 
           # @!method initialize(lang: nil, value: nil)
-          #   @param lang [String]
-          #   @param value [String]
+          #   @param lang [String] Language of the summary.
+          #
+          #   @param value [String] Short summary of the situation.
         end
 
         # @see OnebusawaySDK::Models::References::Situation#url
@@ -477,8 +500,9 @@ module OnebusawaySDK
           optional :value, String
 
           # @!method initialize(lang: nil, value: nil)
-          #   @param lang [String]
-          #   @param value [String]
+          #   @param lang [String] Language of the URL.
+          #
+          #   @param value [String] URL for more information about the situation.
         end
       end
 

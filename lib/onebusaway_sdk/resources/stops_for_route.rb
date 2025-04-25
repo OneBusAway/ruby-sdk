@@ -7,9 +7,12 @@ module OnebusawaySDK
       #
       # @overload list(route_id, include_polylines: nil, time: nil, request_options: {})
       #
-      # @param route_id [String]
-      # @param include_polylines [Boolean]
-      # @param time [String]
+      # @param route_id [String] ID of the route
+      #
+      # @param include_polylines [Boolean] Include polyline elements in the response (default true)
+      #
+      # @param time [String] Specify service date (YYYY-MM-DD or epoch) (default today)
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::StopsForRouteListResponse]

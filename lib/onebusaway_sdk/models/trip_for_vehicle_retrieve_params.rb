@@ -35,10 +35,20 @@ module OnebusawaySDK
       optional :time, Integer
 
       # @!method initialize(include_schedule: nil, include_status: nil, include_trip: nil, time: nil, request_options: {})
-      #   @param include_schedule [Boolean]
-      #   @param include_status [Boolean]
-      #   @param include_trip [Boolean]
-      #   @param time [Integer]
+      #   Some parameter documentations has been truncated, see
+      #   {OnebusawaySDK::Models::TripForVehicleRetrieveParams} for more details.
+      #
+      #   @param include_schedule [Boolean] Determines whether full <schedule/> element is included in the <tripDetails/> se
+      #   ...
+      #
+      #   @param include_status [Boolean] Determines whether the full <status/> element is included in the <tripDetails/>
+      #   ...
+      #
+      #   @param include_trip [Boolean] Determines whether full <trip/> element is included in the <references/> section
+      #   ...
+      #
+      #   @param time [Integer] Time parameter to query the system at a specific time (optional).
+      #
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end

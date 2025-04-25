@@ -37,10 +37,13 @@ module OnebusawaySDK
         optional :out_of_range, OnebusawaySDK::Internal::Type::Boolean, api_name: :outOfRange
 
         # @!method initialize(limit_exceeded:, list:, references:, out_of_range: nil)
-        #   @param limit_exceeded [Boolean]
+        #   @param limit_exceeded [Boolean] Indicates if the limit of trips has been exceeded
+        #
         #   @param list [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List>]
+        #
         #   @param references [OnebusawaySDK::Models::References]
-        #   @param out_of_range [Boolean]
+        #
+        #   @param out_of_range [Boolean] Indicates if the search location is out of range
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute schedule
@@ -331,33 +334,68 @@ module OnebusawaySDK
             optional :vehicle_id, String, api_name: :vehicleId
 
             # @!method initialize(active_trip_id:, block_trip_sequence:, closest_stop:, distance_along_trip:, last_known_distance_along_trip:, last_location_update_time:, last_update_time:, occupancy_capacity:, occupancy_count:, occupancy_status:, phase:, predicted:, schedule_deviation:, service_date:, status:, total_distance_along_trip:, closest_stop_time_offset: nil, frequency: nil, last_known_location: nil, last_known_orientation: nil, next_stop: nil, next_stop_time_offset: nil, orientation: nil, position: nil, scheduled_distance_along_trip: nil, situation_ids: nil, vehicle_id: nil)
-            #   @param active_trip_id [String]
-            #   @param block_trip_sequence [Integer]
-            #   @param closest_stop [String]
-            #   @param distance_along_trip [Float]
-            #   @param last_known_distance_along_trip [Float]
-            #   @param last_location_update_time [Integer]
-            #   @param last_update_time [Integer]
-            #   @param occupancy_capacity [Integer]
-            #   @param occupancy_count [Integer]
-            #   @param occupancy_status [String]
-            #   @param phase [String]
-            #   @param predicted [Boolean]
-            #   @param schedule_deviation [Integer]
-            #   @param service_date [Integer]
-            #   @param status [String]
-            #   @param total_distance_along_trip [Float]
-            #   @param closest_stop_time_offset [Integer]
-            #   @param frequency [String]
-            #   @param last_known_location [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation]
-            #   @param last_known_orientation [Float]
-            #   @param next_stop [String]
-            #   @param next_stop_time_offset [Integer]
-            #   @param orientation [Float]
-            #   @param position [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::Position]
-            #   @param scheduled_distance_along_trip [Float]
-            #   @param situation_ids [Array<String>]
-            #   @param vehicle_id [String]
+            #   Some parameter documentations has been truncated, see
+            #   {OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status} for
+            #   more details.
+            #
+            #   @param active_trip_id [String] Trip ID of the trip the vehicle is actively serving.
+            #
+            #   @param block_trip_sequence [Integer] Index of the active trip into the sequence of trips for the active block.
+            #
+            #   @param closest_stop [String] ID of the closest stop to the current location of the transit vehicle.
+            #
+            #   @param distance_along_trip [Float] Distance, in meters, the transit vehicle has progressed along the active trip.
+            #
+            #   @param last_known_distance_along_trip [Float] Last known distance along the trip received in real-time from the transit vehicl
+            #   ...
+            #
+            #   @param last_location_update_time [Integer] Timestamp of the last known real-time location update from the transit vehicle.
+            #
+            #   @param last_update_time [Integer] Timestamp of the last known real-time update from the transit vehicle.
+            #
+            #   @param occupancy_capacity [Integer] Capacity of the transit vehicle in terms of occupancy.
+            #
+            #   @param occupancy_count [Integer] Current count of occupants in the transit vehicle.
+            #
+            #   @param occupancy_status [String] Current occupancy status of the transit vehicle.
+            #
+            #   @param phase [String] Current journey phase of the trip.
+            #
+            #   @param predicted [Boolean] Indicates if real-time arrival info is available for this trip.
+            #
+            #   @param schedule_deviation [Integer] Deviation from the schedule in seconds (positive for late, negative for early).
+            #
+            #   @param service_date [Integer] Time, in milliseconds since the Unix epoch, of midnight for the start of the ser
+            #   ...
+            #
+            #   @param status [String] Current status modifiers for the trip.
+            #
+            #   @param total_distance_along_trip [Float] Total length of the trip, in meters.
+            #
+            #   @param closest_stop_time_offset [Integer] Time offset from the closest stop to the current position of the transit vehicle
+            #   ...
+            #
+            #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+            #
+            #   @param last_known_location [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation] Last known location of the transit vehicle.
+            #
+            #   @param last_known_orientation [Float] Last known orientation value received in real-time from the transit vehicle.
+            #
+            #   @param next_stop [String] ID of the next stop the transit vehicle is scheduled to arrive at.
+            #
+            #   @param next_stop_time_offset [Integer] Time offset from the next stop to the current position of the transit vehicle (i
+            #   ...
+            #
+            #   @param orientation [Float] Orientation of the transit vehicle, represented as an angle in degrees.
+            #
+            #   @param position [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::Position] Current position of the transit vehicle.
+            #
+            #   @param scheduled_distance_along_trip [Float] Distance, in meters, the transit vehicle is scheduled to have progressed along t
+            #   ...
+            #
+            #   @param situation_ids [Array<String>] References to situation elements (if any) applicable to this trip.
+            #
+            #   @param vehicle_id [String] ID of the transit vehicle currently serving the trip.
 
             # @see OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status#last_known_location
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
@@ -376,8 +414,9 @@ module OnebusawaySDK
               # @!method initialize(lat: nil, lon: nil)
               #   Last known location of the transit vehicle.
               #
-              #   @param lat [Float]
-              #   @param lon [Float]
+              #   @param lat [Float] Latitude of the last known location of the transit vehicle.
+              #
+              #   @param lon [Float] Longitude of the last known location of the transit vehicle.
             end
 
             # @see OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status#position
@@ -397,8 +436,9 @@ module OnebusawaySDK
               # @!method initialize(lat: nil, lon: nil)
               #   Current position of the transit vehicle.
               #
-              #   @param lat [Float]
-              #   @param lon [Float]
+              #   @param lat [Float] Latitude of the current position of the transit vehicle.
+              #
+              #   @param lon [Float] Longitude of the current position of the transit vehicle.
             end
           end
         end

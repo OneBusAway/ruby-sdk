@@ -7,7 +7,8 @@ module OnebusawaySDK
       #
       # @overload retrieve(agency_id, request_options: {})
       #
-      # @param agency_id [String]
+      # @param agency_id [String] The ID of the transit agency.
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::AgencyRetrieveResponse]

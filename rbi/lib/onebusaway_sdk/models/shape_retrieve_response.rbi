@@ -74,8 +74,12 @@ module OnebusawaySDK
           attr_writer :levels
 
           sig { params(length: Integer, points: String, levels: String).returns(T.attached_class) }
-          def self.new(length:, points:, levels: nil); end
-
+          def self.new(
+            length:,
+            # Encoded polyline format representing the shape of the path
+            points:,
+            levels: nil
+          ); end
           sig { override.returns({length: Integer, points: String, levels: String}) }
           def to_hash; end
         end

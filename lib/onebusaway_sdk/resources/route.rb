@@ -7,7 +7,8 @@ module OnebusawaySDK
       #
       # @overload retrieve(route_id, request_options: {})
       #
-      # @param route_id [String]
+      # @param route_id [String] The ID of the route.
+      #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [OnebusawaySDK::Models::RouteRetrieveResponse]

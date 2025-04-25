@@ -468,32 +468,64 @@ module OnebusawaySDK
                 .returns(T.attached_class)
             end
             def self.new(
+              # Trip ID of the trip the vehicle is actively serving.
               active_trip_id:,
+              # Index of the active trip into the sequence of trips for the active block.
               block_trip_sequence:,
+              # ID of the closest stop to the current location of the transit vehicle.
               closest_stop:,
+              # Distance, in meters, the transit vehicle has progressed along the active trip.
               distance_along_trip:,
+              # Last known distance along the trip received in real-time from the transit
+              # vehicle.
               last_known_distance_along_trip:,
+              # Timestamp of the last known real-time location update from the transit vehicle.
               last_location_update_time:,
+              # Timestamp of the last known real-time update from the transit vehicle.
               last_update_time:,
+              # Capacity of the transit vehicle in terms of occupancy.
               occupancy_capacity:,
+              # Current count of occupants in the transit vehicle.
               occupancy_count:,
+              # Current occupancy status of the transit vehicle.
               occupancy_status:,
+              # Current journey phase of the trip.
               phase:,
+              # Indicates if real-time arrival info is available for this trip.
               predicted:,
+              # Deviation from the schedule in seconds (positive for late, negative for early).
               schedule_deviation:,
+              # Time, in milliseconds since the Unix epoch, of midnight for the start of the
+              # service date for the trip.
               service_date:,
+              # Current status modifiers for the trip.
               status:,
+              # Total length of the trip, in meters.
               total_distance_along_trip:,
+              # Time offset from the closest stop to the current position of the transit vehicle
+              # (in seconds).
               closest_stop_time_offset: nil,
+              # Information about frequency-based scheduling, if applicable to the trip.
               frequency: nil,
+              # Last known location of the transit vehicle.
               last_known_location: nil,
+              # Last known orientation value received in real-time from the transit vehicle.
               last_known_orientation: nil,
+              # ID of the next stop the transit vehicle is scheduled to arrive at.
               next_stop: nil,
+              # Time offset from the next stop to the current position of the transit vehicle
+              # (in seconds).
               next_stop_time_offset: nil,
+              # Orientation of the transit vehicle, represented as an angle in degrees.
               orientation: nil,
+              # Current position of the transit vehicle.
               position: nil,
+              # Distance, in meters, the transit vehicle is scheduled to have progressed along
+              # the active trip.
               scheduled_distance_along_trip: nil,
+              # References to situation elements (if any) applicable to this trip.
               situation_ids: nil,
+              # ID of the transit vehicle currently serving the trip.
               vehicle_id: nil
             ); end
             sig do
@@ -549,8 +581,12 @@ module OnebusawaySDK
 
               # Last known location of the transit vehicle.
               sig { params(lat: Float, lon: Float).returns(T.attached_class) }
-              def self.new(lat: nil, lon: nil); end
-
+              def self.new(
+                # Latitude of the last known location of the transit vehicle.
+                lat: nil,
+                # Longitude of the last known location of the transit vehicle.
+                lon: nil
+              ); end
               sig { override.returns({lat: Float, lon: Float}) }
               def to_hash; end
             end
@@ -572,8 +608,12 @@ module OnebusawaySDK
 
               # Current position of the transit vehicle.
               sig { params(lat: Float, lon: Float).returns(T.attached_class) }
-              def self.new(lat: nil, lon: nil); end
-
+              def self.new(
+                # Latitude of the current position of the transit vehicle.
+                lat: nil,
+                # Longitude of the current position of the transit vehicle.
+                lon: nil
+              ); end
               sig { override.returns({lat: Float, lon: Float}) }
               def to_hash; end
             end

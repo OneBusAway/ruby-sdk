@@ -56,10 +56,18 @@ module OnebusawaySDK
           .returns(T.attached_class)
       end
       def self.new(
+        # Whether to include the full schedule element in the tripDetails section
+        # (defaults to true).
         include_schedule: nil,
+        # Whether to include the full status element in the tripDetails section (defaults
+        # to true).
         include_status: nil,
+        # Whether to include the full trip element in the references section (defaults to
+        # true).
         include_trip: nil,
+        # Service date for the trip as Unix time in milliseconds (optional).
         service_date: nil,
+        # Time parameter to query the system at a specific time (optional).
         time: nil,
         request_options: {}
       ); end

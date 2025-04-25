@@ -15,7 +15,12 @@ module OnebusawaySDK
       optional :date, Date
 
       # @!method initialize(date: nil, request_options: {})
-      #   @param date [Date]
+      #   Some parameter documentations has been truncated, see
+      #   {OnebusawaySDK::Models::ScheduleForRouteRetrieveParams} for more details.
+      #
+      #   @param date [Date] The date for which you want to request a schedule in the format YYYY-MM-DD (opti
+      #   ...
+      #
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end

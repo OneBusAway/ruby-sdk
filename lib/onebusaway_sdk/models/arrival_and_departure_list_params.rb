@@ -26,9 +26,12 @@ module OnebusawaySDK
       optional :time, Time
 
       # @!method initialize(minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
-      #   @param minutes_after [Integer]
-      #   @param minutes_before [Integer]
-      #   @param time [Time]
+      #   @param minutes_after [Integer] Include vehicles arriving or departing in the next n minutes.
+      #
+      #   @param minutes_before [Integer] Include vehicles having arrived or departed in the previous n minutes.
+      #
+      #   @param time [Time] The specific time for querying the system status.
+      #
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end
