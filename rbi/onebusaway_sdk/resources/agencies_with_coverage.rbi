@@ -6,14 +6,7 @@ module OnebusawaySDK
       # Returns a list of all transit agencies currently supported by OneBusAway along
       # with the center of their coverage area.
       sig do
-        params(
-          request_options: T.nilable(
-            T.any(
-              OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::AnyHash
-            )
-          )
-        )
+        params(request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::AgenciesWithCoverageListResponse)
       end
       def list(request_options: {}); end

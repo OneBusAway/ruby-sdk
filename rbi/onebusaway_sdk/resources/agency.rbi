@@ -5,10 +5,7 @@ module OnebusawaySDK
     class Agency
       # Retrieve information for a specific transit agency identified by its unique ID.
       sig do
-        params(
-          agency_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(agency_id: String, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::AgencyRetrieveResponse)
       end
       def retrieve(

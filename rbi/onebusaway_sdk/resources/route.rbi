@@ -5,10 +5,7 @@ module OnebusawaySDK
     class Route
       # Retrieve information for a specific route identified by its unique ID.
       sig do
-        params(
-          route_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(route_id: String, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::RouteRetrieveResponse)
       end
       def retrieve(

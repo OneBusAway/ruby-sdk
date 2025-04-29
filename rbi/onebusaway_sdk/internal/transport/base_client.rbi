@@ -35,7 +35,7 @@ module OnebusawaySDK
               page: T.nilable(T::Class[OnebusawaySDK::Internal::Type::BasePage[OnebusawaySDK::Internal::Type::BaseModel]]),
               stream: T.nilable(T::Class[T.anything]),
               model: T.nilable(OnebusawaySDK::Internal::Type::Converter::Input),
-              options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
+              options: T.nilable(OnebusawaySDK::RequestOpts)
             }
           end
 
@@ -188,7 +188,7 @@ module OnebusawaySDK
             page: T.nilable(T::Class[OnebusawaySDK::Internal::Type::BasePage[OnebusawaySDK::Internal::Type::BaseModel]]),
             stream: T.nilable(T::Class[T.anything]),
             model: T.nilable(OnebusawaySDK::Internal::Type::Converter::Input),
-            options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
+            options: T.nilable(OnebusawaySDK::RequestOpts)
           )
             .returns(T.anything)
         end

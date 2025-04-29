@@ -5,14 +5,7 @@ module OnebusawaySDK
     class CurrentTime
       # current-time
       sig do
-        params(
-          request_options: T.nilable(
-            T.any(
-              OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::AnyHash
-            )
-          )
-        )
+        params(request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::CurrentTimeRetrieveResponse)
       end
       def retrieve(request_options: {}); end

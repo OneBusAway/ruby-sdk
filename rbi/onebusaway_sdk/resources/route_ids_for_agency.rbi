@@ -5,10 +5,7 @@ module OnebusawaySDK
     class RouteIDsForAgency
       # Get route IDs for a specific agency
       sig do
-        params(
-          agency_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(agency_id: String, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::RouteIDsForAgencyListResponse)
       end
       def list(

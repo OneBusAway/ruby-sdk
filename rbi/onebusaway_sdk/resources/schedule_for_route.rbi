@@ -5,11 +5,7 @@ module OnebusawaySDK
     class ScheduleForRoute
       # Retrieve the full schedule for a route on a particular day
       sig do
-        params(
-          route_id: String,
-          date: Date,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(route_id: String, date: Date, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse)
       end
       def retrieve(

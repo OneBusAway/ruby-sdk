@@ -6,7 +6,7 @@ module OnebusawaySDK
       # @api private
       module RequestParameters
         # Options to specify HTTP behaviour for this request.
-        sig { returns(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)) }
+        sig { returns(OnebusawaySDK::RequestOpts) }
         attr_accessor :request_options
 
         # @api private
