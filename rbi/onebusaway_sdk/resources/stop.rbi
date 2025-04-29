@@ -5,10 +5,7 @@ module OnebusawaySDK
     class Stop
       # Get details of a specific stop
       sig do
-        params(
-          stop_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(stop_id: String, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::StopRetrieveResponse)
       end
       def retrieve(

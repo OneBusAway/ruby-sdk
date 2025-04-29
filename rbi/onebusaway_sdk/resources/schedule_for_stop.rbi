@@ -5,11 +5,7 @@ module OnebusawaySDK
     class ScheduleForStop
       # Get schedule for a specific stop
       sig do
-        params(
-          stop_id: String,
-          date: Date,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(stop_id: String, date: Date, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse)
       end
       def retrieve(

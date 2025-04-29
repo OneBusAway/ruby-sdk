@@ -4,17 +4,7 @@ module OnebusawaySDK
   module Resources
     class Config
       # config
-      sig do
-        params(
-          request_options: T.nilable(
-            T.any(
-              OnebusawaySDK::RequestOptions,
-              OnebusawaySDK::Internal::AnyHash
-            )
-          )
-        )
-          .returns(OnebusawaySDK::Models::ConfigRetrieveResponse)
-      end
+      sig { params(request_options: OnebusawaySDK::RequestOpts).returns(OnebusawaySDK::Models::ConfigRetrieveResponse) }
       def retrieve(request_options: {}); end
 
       # @api private

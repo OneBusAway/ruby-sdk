@@ -5,10 +5,7 @@ module OnebusawaySDK
     class Trip
       # Get details of a specific trip
       sig do
-        params(
-          trip_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(trip_id: String, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::TripRetrieveResponse)
       end
       def retrieve(

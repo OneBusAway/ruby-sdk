@@ -5,10 +5,7 @@ module OnebusawaySDK
     class Block
       # Get details of a specific block by ID
       sig do
-        params(
-          block_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(block_id: String, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::BlockRetrieveResponse)
       end
       def retrieve(

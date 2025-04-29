@@ -5,11 +5,7 @@ module OnebusawaySDK
     class SearchForRoute
       # Search for a route based on its name.
       sig do
-        params(
-          input: String,
-          max_count: Integer,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
-        )
+        params(input: String, max_count: Integer, request_options: OnebusawaySDK::RequestOpts)
           .returns(OnebusawaySDK::Models::SearchForRouteListResponse)
       end
       def list(

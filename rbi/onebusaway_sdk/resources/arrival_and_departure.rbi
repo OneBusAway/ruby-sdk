@@ -12,7 +12,7 @@ module OnebusawaySDK
           stop_sequence: Integer,
           time: Integer,
           vehicle_id: String,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
+          request_options: OnebusawaySDK::RequestOpts
         )
           .returns(OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse)
       end
@@ -34,7 +34,7 @@ module OnebusawaySDK
           minutes_after: Integer,
           minutes_before: Integer,
           time: Time,
-          request_options: T.nilable(T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash))
+          request_options: OnebusawaySDK::RequestOpts
         )
           .returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse)
       end
