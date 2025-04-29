@@ -3,9 +3,9 @@
 module OnebusawaySDK
   module Errors
     class Error < StandardError
-      # @!parse
-      #   # @return [StandardError, nil]
-      #   attr_accessor :cause
+      # @!attribute cause
+      #
+      #   @return [StandardError, nil]
     end
 
     class ConversionError < OnebusawaySDK::Errors::Error
@@ -40,13 +40,13 @@ module OnebusawaySDK
     end
 
     class APIConnectionError < OnebusawaySDK::Errors::APIError
-      # @!parse
-      #   # @return [nil]
-      #   attr_accessor :status
+      # @!attribute status
+      #
+      #   @return [nil]
 
-      # @!parse
-      #   # @return [nil]
-      #   attr_accessor :body
+      # @!attribute body
+      #
+      #   @return [nil]
 
       # @api private
       #
