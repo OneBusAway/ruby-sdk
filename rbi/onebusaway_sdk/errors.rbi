@@ -137,7 +137,7 @@ module OnebusawaySDK
     end
 
     class InternalServerError < OnebusawaySDK::Errors::APIStatusError
-      HTTP_STATUS = T.let((500..), T::Range[Integer])
+      HTTP_STATUS = T.let(500.., T::Range[Integer])
     end
   end
 end
