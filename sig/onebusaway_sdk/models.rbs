@@ -1,0 +1,63 @@
+module OnebusawaySDK
+  class AgenciesWithCoverageListParams = OnebusawaySDK::Models::AgenciesWithCoverageListParams
+
+  class AgencyRetrieveParams = OnebusawaySDK::Models::AgencyRetrieveParams
+
+  class ArrivalAndDepartureListParams = OnebusawaySDK::Models::ArrivalAndDepartureListParams
+
+  class ArrivalAndDepartureRetrieveParams = OnebusawaySDK::Models::ArrivalAndDepartureRetrieveParams
+
+  class BlockRetrieveParams = OnebusawaySDK::Models::BlockRetrieveParams
+
+  class ConfigRetrieveParams = OnebusawaySDK::Models::ConfigRetrieveParams
+
+  class CurrentTimeRetrieveParams = OnebusawaySDK::Models::CurrentTimeRetrieveParams
+
+  class References = OnebusawaySDK::Models::References
+
+  class ReportProblemWithStopRetrieveParams = OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams
+
+  class ReportProblemWithTripRetrieveParams = OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams
+
+  class ResponseWrapper = OnebusawaySDK::Models::ResponseWrapper
+
+  class RouteIDsForAgencyListParams = OnebusawaySDK::Models::RouteIDsForAgencyListParams
+
+  class RouteRetrieveParams = OnebusawaySDK::Models::RouteRetrieveParams
+
+  class RoutesForAgencyListParams = OnebusawaySDK::Models::RoutesForAgencyListParams
+
+  class RoutesForLocationListParams = OnebusawaySDK::Models::RoutesForLocationListParams
+
+  class ScheduleForRouteRetrieveParams = OnebusawaySDK::Models::ScheduleForRouteRetrieveParams
+
+  class ScheduleForStopRetrieveParams = OnebusawaySDK::Models::ScheduleForStopRetrieveParams
+
+  class SearchForRouteListParams = OnebusawaySDK::Models::SearchForRouteListParams
+
+  class SearchForStopListParams = OnebusawaySDK::Models::SearchForStopListParams
+
+  class ShapeRetrieveParams = OnebusawaySDK::Models::ShapeRetrieveParams
+
+  class StopIDsForAgencyListParams = OnebusawaySDK::Models::StopIDsForAgencyListParams
+
+  class StopRetrieveParams = OnebusawaySDK::Models::StopRetrieveParams
+
+  class StopsForAgencyListParams = OnebusawaySDK::Models::StopsForAgencyListParams
+
+  class StopsForLocationListParams = OnebusawaySDK::Models::StopsForLocationListParams
+
+  class StopsForRouteListParams = OnebusawaySDK::Models::StopsForRouteListParams
+
+  class TripDetailRetrieveParams = OnebusawaySDK::Models::TripDetailRetrieveParams
+
+  class TripForVehicleRetrieveParams = OnebusawaySDK::Models::TripForVehicleRetrieveParams
+
+  class TripRetrieveParams = OnebusawaySDK::Models::TripRetrieveParams
+
+  class TripsForLocationListParams = OnebusawaySDK::Models::TripsForLocationListParams
+
+  class TripsForRouteListParams = OnebusawaySDK::Models::TripsForRouteListParams
+
+  class VehiclesForAgencyListParams = OnebusawaySDK::Models::VehiclesForAgencyListParams
+end
