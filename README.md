@@ -29,7 +29,7 @@ require "bundler/setup"
 require "onebusaway_sdk"
 
 onebusaway_sdk = OnebusawaySDK::Client.new(
-  api_key: "My API Key" # defaults to ENV["ONEBUSAWAY_API_KEY"]
+  api_key: ENV["ONEBUSAWAY_API_KEY"] # This is the default and can be omitted
 )
 
 current_time = onebusaway_sdk.current_time.retrieve
