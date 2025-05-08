@@ -3,99 +3,139 @@
 module OnebusawaySDK
   module Models
     class BlockRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data) }
       attr_reader :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
-          .void
+        params(
+          data: OnebusawaySDK::Models::BlockRetrieveResponse::Data::OrHash
+        ).void
       end
       attr_writer :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
-          .returns(T.attached_class)
+        params(
+          data: OnebusawaySDK::Models::BlockRetrieveResponse::Data::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(data:); end
+      def self.new(data:)
+      end
 
-      sig { override.returns({data: OnebusawaySDK::Models::BlockRetrieveResponse::Data}) }
-      def to_hash; end
+      sig do
+        override.returns(
+          { data: OnebusawaySDK::Models::BlockRetrieveResponse::Data }
+        )
+      end
+      def to_hash
+      end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
-        sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry) }
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
+        sig do
+          returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry)
+        end
         attr_reader :entry
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash)
-          )
-            .void
+            entry:
+              OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::OrHash
+          ).void
         end
         attr_writer :entry
 
-        sig { returns(OnebusawaySDK::Models::References) }
+        sig { returns(OnebusawaySDK::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
+        sig { params(references: OnebusawaySDK::References::OrHash).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
-          )
-            .returns(T.attached_class)
+            entry:
+              OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::OrHash,
+            references: OnebusawaySDK::References::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(entry:, references:); end
+        def self.new(entry:, references:)
+        end
 
         sig do
-          override
-            .returns(
-              {
-                entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
-                references: OnebusawaySDK::Models::References
-              }
-            )
+          override.returns(
+            {
+              entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
+              references: OnebusawaySDK::References
+            }
+          )
         end
-        def to_hash; end
+        def to_hash
+        end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           sig { returns(String) }
           attr_accessor :id
 
-          sig { returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]) }
+          sig do
+            returns(
+              T::Array[
+                OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration
+              ]
+            )
+          end
           attr_accessor :configurations
 
           sig do
             params(
               id: String,
-              configurations: T::Array[
-                T.any(
-                  OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration,
-                  OnebusawaySDK::Internal::AnyHash
-                )
-              ]
-            )
-              .returns(T.attached_class)
+              configurations:
+                T::Array[
+                  OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::OrHash
+                ]
+            ).returns(T.attached_class)
           end
-          def self.new(id:, configurations:); end
+          def self.new(id:, configurations:)
+          end
 
           sig do
-            override
-              .returns(
-                {
-                  id: String,
-                  configurations: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
-                }
-              )
+            override.returns(
+              {
+                id: String,
+                configurations:
+                  T::Array[
+                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration
+                  ]
+              }
+            )
           end
-          def to_hash; end
+          def to_hash
+          end
 
           class Configuration < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             sig { returns(T::Array[String]) }
             attr_accessor :active_service_ids
 
-            sig { returns(T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip]) }
+            sig do
+              returns(
+                T::Array[
+                  OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip
+                ]
+              )
+            end
             attr_accessor :trips
 
             sig { returns(T.nilable(T::Array[String])) }
@@ -107,37 +147,45 @@ module OnebusawaySDK
             sig do
               params(
                 active_service_ids: T::Array[String],
-                trips: T::Array[
-                  T.any(
-                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip,
-                    OnebusawaySDK::Internal::AnyHash
-                  )
-                ],
+                trips:
+                  T::Array[
+                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::OrHash
+                  ],
                 inactive_service_ids: T::Array[String]
-              )
-                .returns(T.attached_class)
+              ).returns(T.attached_class)
             end
-            def self.new(active_service_ids:, trips:, inactive_service_ids: nil); end
+            def self.new(active_service_ids:, trips:, inactive_service_ids: nil)
+            end
 
             sig do
-              override
-                .returns(
-                  {
-                    active_service_ids: T::Array[String],
-                    trips: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
-                    inactive_service_ids: T::Array[String]
-                  }
-                )
+              override.returns(
+                {
+                  active_service_ids: T::Array[String],
+                  trips:
+                    T::Array[
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip
+                    ],
+                  inactive_service_ids: T::Array[String]
+                }
+              )
             end
-            def to_hash; end
+            def to_hash
+            end
 
             class Trip < OnebusawaySDK::Internal::Type::BaseModel
+              OrHash =
+                T.type_alias do
+                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                end
+
               sig { returns(Float) }
               attr_accessor :accumulated_slack_time
 
               sig do
                 returns(
-                  T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime]
+                  T::Array[
+                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime
+                  ]
                 )
               end
               attr_accessor :block_stop_times
@@ -151,33 +199,44 @@ module OnebusawaySDK
               sig do
                 params(
                   accumulated_slack_time: Float,
-                  block_stop_times: T::Array[
-                    T.any(
-                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime,
-                      OnebusawaySDK::Internal::AnyHash
-                    )
-                  ],
+                  block_stop_times:
+                    T::Array[
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::OrHash
+                    ],
                   distance_along_block: Float,
                   trip_id: String
-                )
-                  .returns(T.attached_class)
+                ).returns(T.attached_class)
               end
-              def self.new(accumulated_slack_time:, block_stop_times:, distance_along_block:, trip_id:); end
+              def self.new(
+                accumulated_slack_time:,
+                block_stop_times:,
+                distance_along_block:,
+                trip_id:
+              )
+              end
 
               sig do
-                override
-                  .returns(
-                    {
-                      accumulated_slack_time: Float,
-                      block_stop_times: T::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
-                      distance_along_block: Float,
-                      trip_id: String
-                    }
-                  )
+                override.returns(
+                  {
+                    accumulated_slack_time: Float,
+                    block_stop_times:
+                      T::Array[
+                        OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime
+                      ],
+                    distance_along_block: Float,
+                    trip_id: String
+                  }
+                )
               end
-              def to_hash; end
+              def to_hash
+              end
 
               class BlockStopTime < OnebusawaySDK::Internal::Type::BaseModel
+                OrHash =
+                  T.type_alias do
+                    T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  end
+
                 sig { returns(Float) }
                 attr_accessor :accumulated_slack_time
 
@@ -196,12 +255,9 @@ module OnebusawaySDK
 
                 sig do
                   params(
-                    stop_time: T.any(
-                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
-                      OnebusawaySDK::Internal::AnyHash
-                    )
-                  )
-                    .void
+                    stop_time:
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime::OrHash
+                  ).void
                 end
                 attr_writer :stop_time
 
@@ -210,29 +266,38 @@ module OnebusawaySDK
                     accumulated_slack_time: Float,
                     block_sequence: Integer,
                     distance_along_block: Float,
-                    stop_time: T.any(
-                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
-                      OnebusawaySDK::Internal::AnyHash
-                    )
-                  )
-                    .returns(T.attached_class)
+                    stop_time:
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime::OrHash
+                  ).returns(T.attached_class)
                 end
-                def self.new(accumulated_slack_time:, block_sequence:, distance_along_block:, stop_time:); end
+                def self.new(
+                  accumulated_slack_time:,
+                  block_sequence:,
+                  distance_along_block:,
+                  stop_time:
+                )
+                end
 
                 sig do
-                  override
-                    .returns(
-                      {
-                        accumulated_slack_time: Float,
-                        block_sequence: Integer,
-                        distance_along_block: Float,
-                        stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
-                      }
-                    )
+                  override.returns(
+                    {
+                      accumulated_slack_time: Float,
+                      block_sequence: Integer,
+                      distance_along_block: Float,
+                      stop_time:
+                        OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                    }
+                  )
                 end
-                def to_hash; end
+                def to_hash
+                end
 
                 class StopTime < OnebusawaySDK::Internal::Type::BaseModel
+                  OrHash =
+                    T.type_alias do
+                      T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                    end
+
                   sig { returns(Integer) }
                   attr_accessor :arrival_time
 
@@ -261,8 +326,7 @@ module OnebusawaySDK
                       stop_id: String,
                       drop_off_type: Integer,
                       pickup_type: Integer
-                    )
-                      .returns(T.attached_class)
+                    ).returns(T.attached_class)
                   end
                   def self.new(
                     arrival_time:,
@@ -274,18 +338,18 @@ module OnebusawaySDK
                   end
 
                   sig do
-                    override
-                      .returns(
-                        {
-                          arrival_time: Integer,
-                          departure_time: Integer,
-                          stop_id: String,
-                          drop_off_type: Integer,
-                          pickup_type: Integer
-                        }
-                      )
+                    override.returns(
+                      {
+                        arrival_time: Integer,
+                        departure_time: Integer,
+                        stop_id: String,
+                        drop_off_type: Integer,
+                        pickup_type: Integer
+                      }
+                    )
                   end
-                  def to_hash; end
+                  def to_hash
+                  end
                 end
               end
             end

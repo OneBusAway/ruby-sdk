@@ -7,14 +7,14 @@ module OnebusawaySDK
       sig do
         params(
           stop_id: String,
-          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
+          code:
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
           user_comment: String,
           user_lat: Float,
           user_location_accuracy: Float,
           user_lon: Float,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::ResponseWrapper)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::ResponseWrapper)
       end
       def retrieve(
         # The ID of the stop
@@ -30,10 +30,13 @@ module OnebusawaySDK
         # The reporting user’s current longitude
         user_lon: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

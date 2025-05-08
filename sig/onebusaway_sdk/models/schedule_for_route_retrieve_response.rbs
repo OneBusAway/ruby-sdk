@@ -14,8 +14,6 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::schedule_for_route_retrieve_response
-
       type data =
         {
           entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
@@ -27,8 +25,6 @@ module OnebusawaySDK
         def initialize: (
           entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::data
 
         type entry =
           {
@@ -61,8 +57,6 @@ module OnebusawaySDK
             stop_trip_groupings: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
             trips: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::entry
 
           type stop =
             {
@@ -123,8 +117,6 @@ module OnebusawaySDK
               ?location_type: Integer,
               ?wheelchair_boarding: String
             ) -> void
-
-            def to_hash: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop
           end
 
           type stop_trip_grouping =
@@ -159,8 +151,6 @@ module OnebusawaySDK
               ?trips_with_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
             ) -> void
 
-            def to_hash: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::stop_trip_grouping
-
             type trips_with_stop_time =
               {
                 stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
@@ -176,8 +166,6 @@ module OnebusawaySDK
                 stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
                 trip_id: String
               ) -> void
-
-              def to_hash: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::trips_with_stop_time
 
               type stop_time =
                 {
@@ -222,8 +210,6 @@ module OnebusawaySDK
                   ?service_id: String,
                   ?stop_headsign: String
                 ) -> void
-
-                def to_hash: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::stop_time
               end
             end
           end
@@ -295,8 +281,6 @@ module OnebusawaySDK
               ?trip_headsign: String,
               ?trip_short_name: String
             ) -> void
-
-            def to_hash: -> OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::trip
           end
         end
       end

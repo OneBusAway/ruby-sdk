@@ -9,7 +9,7 @@ module OnebusawaySDK
         ?user_location_accuracy: Float,
         ?user_lon: Float,
         ?request_options: OnebusawaySDK::request_opts
-      ) -> OnebusawaySDK::Models::ResponseWrapper
+      ) -> OnebusawaySDK::ResponseWrapper
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

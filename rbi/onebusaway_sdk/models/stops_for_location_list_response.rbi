@@ -3,39 +3,57 @@
 module OnebusawaySDK
   module Models
     class StopsForLocationListResponse < OnebusawaySDK::Models::ResponseWrapper
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       sig { returns(OnebusawaySDK::Models::StopsForLocationListResponse::Data) }
       attr_reader :data
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data, OnebusawaySDK::Internal::AnyHash)
-        )
-          .void
+          data:
+            OnebusawaySDK::Models::StopsForLocationListResponse::Data::OrHash
+        ).void
       end
       attr_writer :data
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          data:
+            OnebusawaySDK::Models::StopsForLocationListResponse::Data::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(data:); end
+      def self.new(data:)
+      end
 
-      sig { override.returns({data: OnebusawaySDK::Models::StopsForLocationListResponse::Data}) }
-      def to_hash; end
+      sig do
+        override.returns(
+          { data: OnebusawaySDK::Models::StopsForLocationListResponse::Data }
+        )
+      end
+      def to_hash
+      end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         sig { returns(T::Boolean) }
         attr_accessor :limit_exceeded
 
-        sig { returns(T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List]) }
+        sig do
+          returns(
+            T::Array[
+              OnebusawaySDK::Models::StopsForLocationListResponse::Data::List
+            ]
+          )
+        end
         attr_accessor :list
 
-        sig { returns(OnebusawaySDK::Models::References) }
+        sig { returns(OnebusawaySDK::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
+        sig { params(references: OnebusawaySDK::References::OrHash).void }
         attr_writer :references
 
         sig { returns(T.nilable(T::Boolean)) }
@@ -47,28 +65,39 @@ module OnebusawaySDK
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[T.any(OnebusawaySDK::Models::StopsForLocationListResponse::Data::List, OnebusawaySDK::Internal::AnyHash)],
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash),
+            list:
+              T::Array[
+                OnebusawaySDK::Models::StopsForLocationListResponse::Data::List::OrHash
+              ],
+            references: OnebusawaySDK::References::OrHash,
             out_of_range: T::Boolean
-          )
-            .returns(T.attached_class)
+          ).returns(T.attached_class)
         end
-        def self.new(limit_exceeded:, list:, references:, out_of_range: nil); end
+        def self.new(limit_exceeded:, list:, references:, out_of_range: nil)
+        end
 
         sig do
-          override
-            .returns(
-              {
-                limit_exceeded: T::Boolean,
-                list: T::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
-                references: OnebusawaySDK::Models::References,
-                out_of_range: T::Boolean
-              }
-            )
+          override.returns(
+            {
+              limit_exceeded: T::Boolean,
+              list:
+                T::Array[
+                  OnebusawaySDK::Models::StopsForLocationListResponse::Data::List
+                ],
+              references: OnebusawaySDK::References,
+              out_of_range: T::Boolean
+            }
+          )
         end
-        def to_hash; end
+        def to_hash
+        end
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           sig { returns(String) }
           attr_accessor :id
 
@@ -127,8 +156,7 @@ module OnebusawaySDK
               direction: String,
               location_type: Integer,
               wheelchair_boarding: String
-            )
-              .returns(T.attached_class)
+            ).returns(T.attached_class)
           end
           def self.new(
             id:,
@@ -142,26 +170,28 @@ module OnebusawaySDK
             direction: nil,
             location_type: nil,
             wheelchair_boarding: nil
-          ); end
-          sig do
-            override
-              .returns(
-                {
-                  id: String,
-                  lat: Float,
-                  lon: Float,
-                  name: String,
-                  parent: String,
-                  route_ids: T::Array[String],
-                  static_route_ids: T::Array[String],
-                  code: String,
-                  direction: String,
-                  location_type: Integer,
-                  wheelchair_boarding: String
-                }
-              )
+          )
           end
-          def to_hash; end
+
+          sig do
+            override.returns(
+              {
+                id: String,
+                lat: Float,
+                lon: Float,
+                name: String,
+                parent: String,
+                route_ids: T::Array[String],
+                static_route_ids: T::Array[String],
+                code: String,
+                direction: String,
+                location_type: Integer,
+                wheelchair_boarding: String
+              }
+            )
+          end
+          def to_hash
+          end
         end
       end
     end

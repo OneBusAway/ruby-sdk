@@ -14,25 +14,21 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::trip_detail_retrieve_response
-
       type data =
         {
           entry: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           entry: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::TripDetailRetrieveResponse::data
 
         type entry =
           {
@@ -78,8 +74,6 @@ module OnebusawaySDK
             ?status: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status
           ) -> void
 
-          def to_hash: -> OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::entry
-
           type schedule =
             {
               next_trip_id: String,
@@ -107,8 +101,6 @@ module OnebusawaySDK
               time_zone: String,
               ?frequency: String?
             ) -> void
-
-            def to_hash: -> OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::schedule
 
             type stop_time =
               {
@@ -153,8 +145,6 @@ module OnebusawaySDK
                 ?stop_headsign: String,
                 ?stop_id: String
               ) -> void
-
-              def to_hash: -> OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule::stop_time
             end
           end
 
@@ -300,8 +290,6 @@ module OnebusawaySDK
               ?vehicle_id: String
             ) -> void
 
-            def to_hash: -> OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::status
-
             type last_known_location = { lat: Float, lon: Float }
 
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
@@ -314,8 +302,6 @@ module OnebusawaySDK
               def lon=: (Float) -> Float
 
               def initialize: (?lat: Float, ?lon: Float) -> void
-
-              def to_hash: -> OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::last_known_location
             end
 
             type position = { lat: Float, lon: Float }
@@ -330,8 +316,6 @@ module OnebusawaySDK
               def lon=: (Float) -> Float
 
               def initialize: (?lat: Float, ?lon: Float) -> void
-
-              def to_hash: -> OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::position
             end
           end
         end

@@ -14,25 +14,21 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::RouteRetrieveResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::route_retrieve_response
-
       type data =
         {
           entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::RouteRetrieveResponse::data
 
         type entry =
           {
@@ -95,8 +91,6 @@ module OnebusawaySDK
             ?text_color: String,
             ?url: String
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::RouteRetrieveResponse::Data::entry
         end
       end
     end

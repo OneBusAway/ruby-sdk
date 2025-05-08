@@ -7,7 +7,7 @@ class OnebusawaySDK::Test::Resources::ReportProblemWithTripTest < OnebusawaySDK:
     response = @onebusaway_sdk.report_problem_with_trip.retrieve("tripID")
 
     assert_pattern do
-      response => OnebusawaySDK::Models::ResponseWrapper
+      response => OnebusawaySDK::ResponseWrapper
     end
 
     assert_pattern do

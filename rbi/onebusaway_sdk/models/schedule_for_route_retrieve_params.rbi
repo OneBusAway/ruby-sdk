@@ -6,6 +6,9 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       # The date for which you want to request a schedule in the format YYYY-MM-DD
       # (optional, defaults to current date)
       sig { returns(T.nilable(Date)) }
@@ -17,18 +20,24 @@ module OnebusawaySDK
       sig do
         params(
           date: Date,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         # The date for which you want to request a schedule in the format YYYY-MM-DD
         # (optional, defaults to current date)
         date: nil,
         request_options: {}
-      ); end
-      sig { override.returns({date: Date, request_options: OnebusawaySDK::RequestOptions}) }
-      def to_hash; end
+      )
+      end
+
+      sig do
+        override.returns(
+          { date: Date, request_options: OnebusawaySDK::RequestOptions }
+        )
+      end
+      def to_hash
+      end
     end
   end
 end

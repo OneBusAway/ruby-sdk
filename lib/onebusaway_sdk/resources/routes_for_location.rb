@@ -19,7 +19,7 @@ module OnebusawaySDK
       #
       # @see OnebusawaySDK::Models::RoutesForLocationListParams
       def list(params)
-        parsed, options = OnebusawaySDK::Models::RoutesForLocationListParams.dump_request(params)
+        parsed, options = OnebusawaySDK::RoutesForLocationListParams.dump_request(params)
         @client.request(
           method: :get,
           path: "api/where/routes-for-location.json",

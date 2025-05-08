@@ -45,8 +45,6 @@ module OnebusawaySDK
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::report_problem_with_stop_retrieve_params
-
       type code =
         :stop_name_wrong
         | :stop_number_wrong

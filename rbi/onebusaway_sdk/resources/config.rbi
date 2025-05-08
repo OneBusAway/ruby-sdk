@@ -4,12 +4,18 @@ module OnebusawaySDK
   module Resources
     class Config
       # config
-      sig { params(request_options: OnebusawaySDK::RequestOpts).returns(OnebusawaySDK::Models::ConfigRetrieveResponse) }
-      def retrieve(request_options: {}); end
+      sig do
+        params(request_options: OnebusawaySDK::RequestOptions::OrHash).returns(
+          OnebusawaySDK::Models::ConfigRetrieveResponse
+        )
+      end
+      def retrieve(request_options: {})
+      end
 
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

@@ -13,7 +13,6 @@ module OnebusawaySDK
       # @param route_id [String] The route id to request the schedule for
       #
       # @param date [Date] The date for which you want to request a schedule in the format YYYY-MM-DD (opti
-      # ...
       #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -21,7 +20,7 @@ module OnebusawaySDK
       #
       # @see OnebusawaySDK::Models::ScheduleForRouteRetrieveParams
       def retrieve(route_id, params = {})
-        parsed, options = OnebusawaySDK::Models::ScheduleForRouteRetrieveParams.dump_request(params)
+        parsed, options = OnebusawaySDK::ScheduleForRouteRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
           path: ["api/where/schedule-for-route/%1$s.json", route_id],

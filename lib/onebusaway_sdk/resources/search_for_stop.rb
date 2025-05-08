@@ -17,7 +17,7 @@ module OnebusawaySDK
       #
       # @see OnebusawaySDK::Models::SearchForStopListParams
       def list(params)
-        parsed, options = OnebusawaySDK::Models::SearchForStopListParams.dump_request(params)
+        parsed, options = OnebusawaySDK::SearchForStopListParams.dump_request(params)
         @client.request(
           method: :get,
           path: "api/where/search/stop.json",

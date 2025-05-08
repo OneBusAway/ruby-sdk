@@ -39,13 +39,10 @@ module OnebusawaySDK
       #   {OnebusawaySDK::Models::TripForVehicleRetrieveParams} for more details.
       #
       #   @param include_schedule [Boolean] Determines whether full <schedule/> element is included in the <tripDetails/> se
-      #   ...
       #
       #   @param include_status [Boolean] Determines whether the full <status/> element is included in the <tripDetails/>
-      #   ...
       #
       #   @param include_trip [Boolean] Determines whether full <trip/> element is included in the <references/> section
-      #   ...
       #
       #   @param time [Integer] Time parameter to query the system at a specific time (optional).
       #

@@ -5,8 +5,11 @@ module OnebusawaySDK
     class ScheduleForStop
       # Get schedule for a specific stop
       sig do
-        params(stop_id: String, date: Date, request_options: OnebusawaySDK::RequestOpts)
-          .returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse)
+        params(
+          stop_id: String,
+          date: Date,
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse)
       end
       def retrieve(
         # The stop id to request the schedule for, encoded directly in the URL
@@ -15,10 +18,13 @@ module OnebusawaySDK
         # (optional, defaults to the current date)
         date: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

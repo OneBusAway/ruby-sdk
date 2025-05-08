@@ -9,9 +9,8 @@ module OnebusawaySDK
           route_id: String,
           include_polylines: T::Boolean,
           time: String,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::StopsForRouteListResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::StopsForRouteListResponse)
       end
       def list(
         # ID of the route
@@ -21,10 +20,13 @@ module OnebusawaySDK
         # Specify service date (YYYY-MM-DD or epoch) (default today)
         time: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

@@ -12,9 +12,8 @@ module OnebusawaySDK
           stop_sequence: Integer,
           time: Integer,
           vehicle_id: String,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse)
       end
       def retrieve(
         stop_id,
@@ -34,9 +33,8 @@ module OnebusawaySDK
           minutes_after: Integer,
           minutes_before: Integer,
           time: Time,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::ArrivalAndDepartureListResponse)
       end
       def list(
         stop_id,
@@ -47,10 +45,13 @@ module OnebusawaySDK
         # The specific time for querying the system status.
         time: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

@@ -3,53 +3,59 @@
 module OnebusawaySDK
   module Models
     class References < OnebusawaySDK::Internal::Type::BaseModel
-      sig { returns(T::Array[OnebusawaySDK::Models::References::Agency]) }
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
+      sig { returns(T::Array[OnebusawaySDK::References::Agency]) }
       attr_accessor :agencies
 
-      sig { returns(T::Array[OnebusawaySDK::Models::References::Route]) }
+      sig { returns(T::Array[OnebusawaySDK::References::Route]) }
       attr_accessor :routes
 
-      sig { returns(T::Array[OnebusawaySDK::Models::References::Situation]) }
+      sig { returns(T::Array[OnebusawaySDK::References::Situation]) }
       attr_accessor :situations
 
-      sig { returns(T::Array[OnebusawaySDK::Models::References::Stop]) }
+      sig { returns(T::Array[OnebusawaySDK::References::Stop]) }
       attr_accessor :stops
 
-      sig { returns(T::Array[OnebusawaySDK::Models::References::StopTime]) }
+      sig { returns(T::Array[OnebusawaySDK::References::StopTime]) }
       attr_accessor :stop_times
 
-      sig { returns(T::Array[OnebusawaySDK::Models::References::Trip]) }
+      sig { returns(T::Array[OnebusawaySDK::References::Trip]) }
       attr_accessor :trips
 
       sig do
         params(
-          agencies: T::Array[T.any(OnebusawaySDK::Models::References::Agency, OnebusawaySDK::Internal::AnyHash)],
-          routes: T::Array[T.any(OnebusawaySDK::Models::References::Route, OnebusawaySDK::Internal::AnyHash)],
-          situations: T::Array[T.any(OnebusawaySDK::Models::References::Situation, OnebusawaySDK::Internal::AnyHash)],
-          stops: T::Array[T.any(OnebusawaySDK::Models::References::Stop, OnebusawaySDK::Internal::AnyHash)],
-          stop_times: T::Array[T.any(OnebusawaySDK::Models::References::StopTime, OnebusawaySDK::Internal::AnyHash)],
-          trips: T::Array[T.any(OnebusawaySDK::Models::References::Trip, OnebusawaySDK::Internal::AnyHash)]
-        )
-          .returns(T.attached_class)
+          agencies: T::Array[OnebusawaySDK::References::Agency::OrHash],
+          routes: T::Array[OnebusawaySDK::References::Route::OrHash],
+          situations: T::Array[OnebusawaySDK::References::Situation::OrHash],
+          stops: T::Array[OnebusawaySDK::References::Stop::OrHash],
+          stop_times: T::Array[OnebusawaySDK::References::StopTime::OrHash],
+          trips: T::Array[OnebusawaySDK::References::Trip::OrHash]
+        ).returns(T.attached_class)
       end
-      def self.new(agencies:, routes:, situations:, stops:, stop_times:, trips:); end
+      def self.new(agencies:, routes:, situations:, stops:, stop_times:, trips:)
+      end
 
       sig do
-        override
-          .returns(
-            {
-              agencies: T::Array[OnebusawaySDK::Models::References::Agency],
-              routes: T::Array[OnebusawaySDK::Models::References::Route],
-              situations: T::Array[OnebusawaySDK::Models::References::Situation],
-              stops: T::Array[OnebusawaySDK::Models::References::Stop],
-              stop_times: T::Array[OnebusawaySDK::Models::References::StopTime],
-              trips: T::Array[OnebusawaySDK::Models::References::Trip]
-            }
-          )
+        override.returns(
+          {
+            agencies: T::Array[OnebusawaySDK::References::Agency],
+            routes: T::Array[OnebusawaySDK::References::Route],
+            situations: T::Array[OnebusawaySDK::References::Situation],
+            stops: T::Array[OnebusawaySDK::References::Stop],
+            stop_times: T::Array[OnebusawaySDK::References::StopTime],
+            trips: T::Array[OnebusawaySDK::References::Trip]
+          }
+        )
       end
-      def to_hash; end
+      def to_hash
+      end
 
       class Agency < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         sig { returns(String) }
         attr_accessor :id
 
@@ -110,8 +116,7 @@ module OnebusawaySDK
             lang: String,
             phone: String,
             private_service: T::Boolean
-          )
-            .returns(T.attached_class)
+          ).returns(T.attached_class)
         end
         def self.new(
           id:,
@@ -124,28 +129,33 @@ module OnebusawaySDK
           lang: nil,
           phone: nil,
           private_service: nil
-        ); end
-        sig do
-          override
-            .returns(
-              {
-                id: String,
-                name: String,
-                timezone: String,
-                url: String,
-                disclaimer: String,
-                email: String,
-                fare_url: String,
-                lang: String,
-                phone: String,
-                private_service: T::Boolean
-              }
-            )
+        )
         end
-        def to_hash; end
+
+        sig do
+          override.returns(
+            {
+              id: String,
+              name: String,
+              timezone: String,
+              url: String,
+              disclaimer: String,
+              email: String,
+              fare_url: String,
+              lang: String,
+              phone: String,
+              private_service: T::Boolean
+            }
+          )
+        end
+        def to_hash
+        end
       end
 
       class Route < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         sig { returns(String) }
         attr_accessor :id
 
@@ -209,8 +219,7 @@ module OnebusawaySDK
             short_name: String,
             text_color: String,
             url: String
-          )
-            .returns(T.attached_class)
+          ).returns(T.attached_class)
         end
         def self.new(
           id:,
@@ -223,28 +232,33 @@ module OnebusawaySDK
           short_name: nil,
           text_color: nil,
           url: nil
-        ); end
-        sig do
-          override
-            .returns(
-              {
-                id: String,
-                agency_id: String,
-                type: Integer,
-                color: String,
-                description: String,
-                long_name: String,
-                null_safe_short_name: String,
-                short_name: String,
-                text_color: String,
-                url: String
-              }
-            )
+        )
         end
-        def to_hash; end
+
+        sig do
+          override.returns(
+            {
+              id: String,
+              agency_id: String,
+              type: Integer,
+              color: String,
+              description: String,
+              long_name: String,
+              null_safe_short_name: String,
+              short_name: String,
+              text_color: String,
+              url: String
+            }
+          )
+        end
+        def to_hash
+        end
       end
 
       class Situation < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         # Unique identifier for the situation.
         sig { returns(String) }
         attr_accessor :id
@@ -253,25 +267,37 @@ module OnebusawaySDK
         sig { returns(Integer) }
         attr_accessor :creation_time
 
-        sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow])) }
+        sig do
+          returns(
+            T.nilable(
+              T::Array[OnebusawaySDK::References::Situation::ActiveWindow]
+            )
+          )
+        end
         attr_reader :active_windows
 
         sig do
           params(
-            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Internal::AnyHash)]
-          )
-            .void
+            active_windows:
+              T::Array[
+                OnebusawaySDK::References::Situation::ActiveWindow::OrHash
+              ]
+          ).void
         end
         attr_writer :active_windows
 
-        sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::AllAffect])) }
+        sig do
+          returns(
+            T.nilable(T::Array[OnebusawaySDK::References::Situation::AllAffect])
+          )
+        end
         attr_reader :all_affects
 
         sig do
           params(
-            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Internal::AnyHash)]
-          )
-            .void
+            all_affects:
+              T::Array[OnebusawaySDK::References::Situation::AllAffect::OrHash]
+          ).void
         end
         attr_writer :all_affects
 
@@ -282,44 +308,72 @@ module OnebusawaySDK
         sig { params(consequence_message: String).void }
         attr_writer :consequence_message
 
-        sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::Consequence])) }
+        sig do
+          returns(
+            T.nilable(
+              T::Array[OnebusawaySDK::References::Situation::Consequence]
+            )
+          )
+        end
         attr_reader :consequences
 
         sig do
           params(
-            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Internal::AnyHash)]
-          )
-            .void
+            consequences:
+              T::Array[
+                OnebusawaySDK::References::Situation::Consequence::OrHash
+              ]
+          ).void
         end
         attr_writer :consequences
 
-        sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Description)) }
+        sig do
+          returns(T.nilable(OnebusawaySDK::References::Situation::Description))
+        end
         attr_reader :description
 
         sig do
           params(
-            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Internal::AnyHash)
-          )
-            .void
+            description:
+              OnebusawaySDK::References::Situation::Description::OrHash
+          ).void
         end
         attr_writer :description
 
-        sig { returns(T.nilable(T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow])) }
+        sig do
+          returns(
+            T.nilable(
+              T::Array[OnebusawaySDK::References::Situation::PublicationWindow]
+            )
+          )
+        end
         attr_reader :publication_windows
 
         sig do
           params(
-            publication_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Internal::AnyHash)]
-          )
-            .void
+            publication_windows:
+              T::Array[
+                OnebusawaySDK::References::Situation::PublicationWindow::OrHash
+              ]
+          ).void
         end
         attr_writer :publication_windows
 
         # Reason for the service alert, taken from TPEG codes.
-        sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)) }
+        sig do
+          returns(
+            T.nilable(
+              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
+            )
+          )
+        end
         attr_reader :reason
 
-        sig { params(reason: OnebusawaySDK::Models::References::Situation::Reason::OrSymbol).void }
+        sig do
+          params(
+            reason: OnebusawaySDK::References::Situation::Reason::OrSymbol
+          ).void
+        end
         attr_writer :reason
 
         # Severity of the situation.
@@ -329,23 +383,23 @@ module OnebusawaySDK
         sig { params(severity: String).void }
         attr_writer :severity
 
-        sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Summary)) }
+        sig do
+          returns(T.nilable(OnebusawaySDK::References::Situation::Summary))
+        end
         attr_reader :summary
 
         sig do
           params(
-            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Internal::AnyHash)
-          )
-            .void
+            summary: OnebusawaySDK::References::Situation::Summary::OrHash
+          ).void
         end
         attr_writer :summary
 
-        sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::URL)) }
+        sig { returns(T.nilable(OnebusawaySDK::References::Situation::URL)) }
         attr_reader :url
 
         sig do
-          params(url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Internal::AnyHash))
-            .void
+          params(url: OnebusawaySDK::References::Situation::URL::OrHash).void
         end
         attr_writer :url
 
@@ -353,18 +407,28 @@ module OnebusawaySDK
           params(
             id: String,
             creation_time: Integer,
-            active_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::ActiveWindow, OnebusawaySDK::Internal::AnyHash)],
-            all_affects: T::Array[T.any(OnebusawaySDK::Models::References::Situation::AllAffect, OnebusawaySDK::Internal::AnyHash)],
+            active_windows:
+              T::Array[
+                OnebusawaySDK::References::Situation::ActiveWindow::OrHash
+              ],
+            all_affects:
+              T::Array[OnebusawaySDK::References::Situation::AllAffect::OrHash],
             consequence_message: String,
-            consequences: T::Array[T.any(OnebusawaySDK::Models::References::Situation::Consequence, OnebusawaySDK::Internal::AnyHash)],
-            description: T.any(OnebusawaySDK::Models::References::Situation::Description, OnebusawaySDK::Internal::AnyHash),
-            publication_windows: T::Array[T.any(OnebusawaySDK::Models::References::Situation::PublicationWindow, OnebusawaySDK::Internal::AnyHash)],
-            reason: OnebusawaySDK::Models::References::Situation::Reason::OrSymbol,
+            consequences:
+              T::Array[
+                OnebusawaySDK::References::Situation::Consequence::OrHash
+              ],
+            description:
+              OnebusawaySDK::References::Situation::Description::OrHash,
+            publication_windows:
+              T::Array[
+                OnebusawaySDK::References::Situation::PublicationWindow::OrHash
+              ],
+            reason: OnebusawaySDK::References::Situation::Reason::OrSymbol,
             severity: String,
-            summary: T.any(OnebusawaySDK::Models::References::Situation::Summary, OnebusawaySDK::Internal::AnyHash),
-            url: T.any(OnebusawaySDK::Models::References::Situation::URL, OnebusawaySDK::Internal::AnyHash)
-          )
-            .returns(T.attached_class)
+            summary: OnebusawaySDK::References::Situation::Summary::OrHash,
+            url: OnebusawaySDK::References::Situation::URL::OrHash
+          ).returns(T.attached_class)
         end
         def self.new(
           # Unique identifier for the situation.
@@ -384,29 +448,43 @@ module OnebusawaySDK
           severity: nil,
           summary: nil,
           url: nil
-        ); end
-        sig do
-          override
-            .returns(
-              {
-                id: String,
-                creation_time: Integer,
-                active_windows: T::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
-                all_affects: T::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
-                consequence_message: String,
-                consequences: T::Array[OnebusawaySDK::Models::References::Situation::Consequence],
-                description: OnebusawaySDK::Models::References::Situation::Description,
-                publication_windows: T::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-                reason: OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol,
-                severity: String,
-                summary: OnebusawaySDK::Models::References::Situation::Summary,
-                url: OnebusawaySDK::Models::References::Situation::URL
-              }
-            )
+        )
         end
-        def to_hash; end
+
+        sig do
+          override.returns(
+            {
+              id: String,
+              creation_time: Integer,
+              active_windows:
+                T::Array[OnebusawaySDK::References::Situation::ActiveWindow],
+              all_affects:
+                T::Array[OnebusawaySDK::References::Situation::AllAffect],
+              consequence_message: String,
+              consequences:
+                T::Array[OnebusawaySDK::References::Situation::Consequence],
+              description: OnebusawaySDK::References::Situation::Description,
+              publication_windows:
+                T::Array[
+                  OnebusawaySDK::References::Situation::PublicationWindow
+                ],
+              reason:
+                OnebusawaySDK::References::Situation::Reason::TaggedSymbol,
+              severity: String,
+              summary: OnebusawaySDK::References::Situation::Summary,
+              url: OnebusawaySDK::References::Situation::URL
+            }
+          )
+        end
+        def to_hash
+        end
 
         class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           # Start time of the active window as a Unix timestamp.
           sig { returns(T.nilable(Integer)) }
           attr_reader :from
@@ -427,12 +505,20 @@ module OnebusawaySDK
             from: nil,
             # End time of the active window as a Unix timestamp.
             to: nil
-          ); end
-          sig { override.returns({from: Integer, to: Integer}) }
-          def to_hash; end
+          )
+          end
+
+          sig { override.returns({ from: Integer, to: Integer }) }
+          def to_hash
+          end
         end
 
         class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           # Identifier for the agency.
           sig { returns(T.nilable(String)) }
           attr_reader :agency_id
@@ -483,8 +569,7 @@ module OnebusawaySDK
               route_id: String,
               stop_id: String,
               trip_id: String
-            )
-              .returns(T.attached_class)
+            ).returns(T.attached_class)
           end
           def self.new(
             # Identifier for the agency.
@@ -499,24 +584,31 @@ module OnebusawaySDK
             stop_id: nil,
             # Identifier for the trip.
             trip_id: nil
-          ); end
-          sig do
-            override
-              .returns(
-                {
-                  agency_id: String,
-                  application_id: String,
-                  direction_id: String,
-                  route_id: String,
-                  stop_id: String,
-                  trip_id: String
-                }
-              )
+          )
           end
-          def to_hash; end
+
+          sig do
+            override.returns(
+              {
+                agency_id: String,
+                application_id: String,
+                direction_id: String,
+                route_id: String,
+                stop_id: String,
+                trip_id: String
+              }
+            )
+          end
+          def to_hash
+          end
         end
 
         class Consequence < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           # Condition of the consequence.
           sig { returns(T.nilable(String)) }
           attr_reader :condition
@@ -524,62 +616,69 @@ module OnebusawaySDK
           sig { params(condition: String).void }
           attr_writer :condition
 
-          sig { returns(T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails)) }
+          sig do
+            returns(
+              T.nilable(
+                OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+              )
+            )
+          end
           attr_reader :condition_details
 
           sig do
             params(
-              condition_details: T.any(
-                OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
-                OnebusawaySDK::Internal::AnyHash
-              )
-            )
-              .void
+              condition_details:
+                OnebusawaySDK::References::Situation::Consequence::ConditionDetails::OrHash
+            ).void
           end
           attr_writer :condition_details
 
           sig do
             params(
               condition: String,
-              condition_details: T.any(
-                OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails,
-                OnebusawaySDK::Internal::AnyHash
-              )
-            )
-              .returns(T.attached_class)
+              condition_details:
+                OnebusawaySDK::References::Situation::Consequence::ConditionDetails::OrHash
+            ).returns(T.attached_class)
           end
           def self.new(
             # Condition of the consequence.
             condition: nil,
             condition_details: nil
-          ); end
-          sig do
-            override
-              .returns(
-                {
-                  condition: String,
-                  condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
-                }
-              )
+          )
           end
-          def to_hash; end
+
+          sig do
+            override.returns(
+              {
+                condition: String,
+                condition_details:
+                  OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+              }
+            )
+          end
+          def to_hash
+          end
 
           class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             sig do
               returns(
-                T.nilable(OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath)
+                T.nilable(
+                  OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath
+                )
               )
             end
             attr_reader :diversion_path
 
             sig do
               params(
-                diversion_path: T.any(
-                  OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                  OnebusawaySDK::Internal::AnyHash
-                )
-              )
-                .void
+                diversion_path:
+                  OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath::OrHash
+              ).void
             end
             attr_writer :diversion_path
 
@@ -591,28 +690,32 @@ module OnebusawaySDK
 
             sig do
               params(
-                diversion_path: T.any(
-                  OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                  OnebusawaySDK::Internal::AnyHash
-                ),
+                diversion_path:
+                  OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath::OrHash,
                 diversion_stop_ids: T::Array[String]
-              )
-                .returns(T.attached_class)
+              ).returns(T.attached_class)
             end
-            def self.new(diversion_path: nil, diversion_stop_ids: nil); end
+            def self.new(diversion_path: nil, diversion_stop_ids: nil)
+            end
 
             sig do
-              override
-                .returns(
-                  {
-                    diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
-                    diversion_stop_ids: T::Array[String]
-                  }
-                )
+              override.returns(
+                {
+                  diversion_path:
+                    OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                  diversion_stop_ids: T::Array[String]
+                }
+              )
             end
-            def to_hash; end
+            def to_hash
+            end
 
             class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
+              OrHash =
+                T.type_alias do
+                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                end
+
               # Length of the diversion path.
               sig { returns(T.nilable(Integer)) }
               attr_reader :length
@@ -634,7 +737,11 @@ module OnebusawaySDK
               sig { params(points: String).void }
               attr_writer :points
 
-              sig { params(length: Integer, levels: String, points: String).returns(T.attached_class) }
+              sig do
+                params(length: Integer, levels: String, points: String).returns(
+                  T.attached_class
+                )
+              end
               def self.new(
                 # Length of the diversion path.
                 length: nil,
@@ -642,14 +749,26 @@ module OnebusawaySDK
                 levels: nil,
                 # Points of the diversion path.
                 points: nil
-              ); end
-              sig { override.returns({length: Integer, levels: String, points: String}) }
-              def to_hash; end
+              )
+              end
+
+              sig do
+                override.returns(
+                  { length: Integer, levels: String, points: String }
+                )
+              end
+              def to_hash
+              end
             end
           end
         end
 
         class Description < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           # Language of the description.
           sig { returns(T.nilable(String)) }
           attr_reader :lang
@@ -670,12 +789,20 @@ module OnebusawaySDK
             lang: nil,
             # Longer description of the situation.
             value: nil
-          ); end
-          sig { override.returns({lang: String, value: String}) }
-          def to_hash; end
+          )
+          end
+
+          sig { override.returns({ lang: String, value: String }) }
+          def to_hash
+          end
         end
 
         class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           # Start time of the time window as a Unix timestamp.
           sig { returns(Integer) }
           attr_accessor :from
@@ -690,34 +817,67 @@ module OnebusawaySDK
             from:,
             # End time of the time window as a Unix timestamp.
             to:
-          ); end
-          sig { override.returns({from: Integer, to: Integer}) }
-          def to_hash; end
+          )
+          end
+
+          sig { override.returns({ from: Integer, to: Integer }) }
+          def to_hash
+          end
         end
 
         # Reason for the service alert, taken from TPEG codes.
         module Reason
           extend OnebusawaySDK::Internal::Type::Enum
 
-          TaggedSymbol = T.type_alias { T.all(Symbol, OnebusawaySDK::Models::References::Situation::Reason) }
+          TaggedSymbol =
+            T.type_alias do
+              T.all(Symbol, OnebusawaySDK::References::Situation::Reason)
+            end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           EQUIPMENT_REASON =
-            T.let(:equipmentReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+            T.let(
+              :equipmentReason,
+              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
+            )
           ENVIRONMENT_REASON =
-            T.let(:environmentReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+            T.let(
+              :environmentReason,
+              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
+            )
           PERSONNEL_REASON =
-            T.let(:personnelReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+            T.let(
+              :personnelReason,
+              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
+            )
           MISCELLANEOUS_REASON =
-            T.let(:miscellaneousReason, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+            T.let(
+              :miscellaneousReason,
+              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
+            )
           SECURITY_ALERT =
-            T.let(:securityAlert, OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol)
+            T.let(
+              :securityAlert,
+              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
+            )
 
-          sig { override.returns(T::Array[OnebusawaySDK::Models::References::Situation::Reason::TaggedSymbol]) }
-          def self.values; end
+          sig do
+            override.returns(
+              T::Array[
+                OnebusawaySDK::References::Situation::Reason::TaggedSymbol
+              ]
+            )
+          end
+          def self.values
+          end
         end
 
         class Summary < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           # Language of the summary.
           sig { returns(T.nilable(String)) }
           attr_reader :lang
@@ -738,12 +898,20 @@ module OnebusawaySDK
             lang: nil,
             # Short summary of the situation.
             value: nil
-          ); end
-          sig { override.returns({lang: String, value: String}) }
-          def to_hash; end
+          )
+          end
+
+          sig { override.returns({ lang: String, value: String }) }
+          def to_hash
+          end
         end
 
         class URL < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           # Language of the URL.
           sig { returns(T.nilable(String)) }
           attr_reader :lang
@@ -764,13 +932,19 @@ module OnebusawaySDK
             lang: nil,
             # URL for more information about the situation.
             value: nil
-          ); end
-          sig { override.returns({lang: String, value: String}) }
-          def to_hash; end
+          )
+          end
+
+          sig { override.returns({ lang: String, value: String }) }
+          def to_hash
+          end
         end
       end
 
       class Stop < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         sig { returns(String) }
         attr_accessor :id
 
@@ -829,8 +1003,7 @@ module OnebusawaySDK
             direction: String,
             location_type: Integer,
             wheelchair_boarding: String
-          )
-            .returns(T.attached_class)
+          ).returns(T.attached_class)
         end
         def self.new(
           id:,
@@ -844,29 +1017,34 @@ module OnebusawaySDK
           direction: nil,
           location_type: nil,
           wheelchair_boarding: nil
-        ); end
-        sig do
-          override
-            .returns(
-              {
-                id: String,
-                lat: Float,
-                lon: Float,
-                name: String,
-                parent: String,
-                route_ids: T::Array[String],
-                static_route_ids: T::Array[String],
-                code: String,
-                direction: String,
-                location_type: Integer,
-                wheelchair_boarding: String
-              }
-            )
+        )
         end
-        def to_hash; end
+
+        sig do
+          override.returns(
+            {
+              id: String,
+              lat: Float,
+              lon: Float,
+              name: String,
+              parent: String,
+              route_ids: T::Array[String],
+              static_route_ids: T::Array[String],
+              code: String,
+              direction: String,
+              location_type: Integer,
+              wheelchair_boarding: String
+            }
+          )
+        end
+        def to_hash
+        end
       end
 
       class StopTime < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         sig { returns(T.nilable(Integer)) }
         attr_reader :arrival_time
 
@@ -911,8 +1089,7 @@ module OnebusawaySDK
             historical_occupancy: String,
             stop_headsign: String,
             stop_id: String
-          )
-            .returns(T.attached_class)
+          ).returns(T.attached_class)
         end
         def self.new(
           arrival_time: nil,
@@ -921,24 +1098,29 @@ module OnebusawaySDK
           historical_occupancy: nil,
           stop_headsign: nil,
           stop_id: nil
-        ); end
-        sig do
-          override
-            .returns(
-              {
-                arrival_time: Integer,
-                departure_time: Integer,
-                distance_along_trip: Float,
-                historical_occupancy: String,
-                stop_headsign: String,
-                stop_id: String
-              }
-            )
+        )
         end
-        def to_hash; end
+
+        sig do
+          override.returns(
+            {
+              arrival_time: Integer,
+              departure_time: Integer,
+              distance_along_trip: Float,
+              historical_occupancy: String,
+              stop_headsign: String,
+              stop_id: String
+            }
+          )
+        end
+        def to_hash
+        end
       end
 
       class Trip < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         sig { returns(String) }
         attr_accessor :id
 
@@ -1009,8 +1191,7 @@ module OnebusawaySDK
             time_zone: String,
             trip_headsign: String,
             trip_short_name: String
-          )
-            .returns(T.attached_class)
+          ).returns(T.attached_class)
         end
         def self.new(
           id:,
@@ -1024,26 +1205,28 @@ module OnebusawaySDK
           time_zone: nil,
           trip_headsign: nil,
           trip_short_name: nil
-        ); end
-        sig do
-          override
-            .returns(
-              {
-                id: String,
-                route_id: String,
-                service_id: String,
-                block_id: String,
-                direction_id: String,
-                peak_offpeak: Integer,
-                route_short_name: String,
-                shape_id: String,
-                time_zone: String,
-                trip_headsign: String,
-                trip_short_name: String
-              }
-            )
+        )
         end
-        def to_hash; end
+
+        sig do
+          override.returns(
+            {
+              id: String,
+              route_id: String,
+              service_id: String,
+              block_id: String,
+              direction_id: String,
+              peak_offpeak: Integer,
+              route_short_name: String,
+              shape_id: String,
+              time_zone: String,
+              trip_headsign: String,
+              trip_short_name: String
+            }
+          )
+        end
+        def to_hash
+        end
       end
     end
   end

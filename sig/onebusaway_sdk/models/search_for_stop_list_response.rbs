@@ -14,14 +14,12 @@ module OnebusawaySDK
         ?data: OnebusawaySDK::Models::SearchForStopListResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::search_for_stop_list_response
-
       type data =
         {
           limit_exceeded: bool,
           list: ::Array[OnebusawaySDK::Models::SearchForStopListResponse::Data::List],
           out_of_range: bool,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
@@ -31,16 +29,14 @@ module OnebusawaySDK
 
         attr_accessor out_of_range: bool
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           limit_exceeded: bool,
           list: ::Array[OnebusawaySDK::Models::SearchForStopListResponse::Data::List],
           out_of_range: bool,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::SearchForStopListResponse::data
 
         type list =
           {
@@ -101,8 +97,6 @@ module OnebusawaySDK
             ?location_type: Integer,
             ?wheelchair_boarding: String
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::SearchForStopListResponse::Data::list
         end
       end
     end

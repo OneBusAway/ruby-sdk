@@ -6,11 +6,25 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       # A string code identifying the nature of the problem
-      sig { returns(T.nilable(OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol)) }
+      sig do
+        returns(
+          T.nilable(
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::OrSymbol
+          )
+        )
+      end
       attr_reader :code
 
-      sig { params(code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol).void }
+      sig do
+        params(
+          code:
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::OrSymbol
+        ).void
+      end
       attr_writer :code
 
       # The service date of the trip
@@ -78,7 +92,8 @@ module OnebusawaySDK
 
       sig do
         params(
-          code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
+          code:
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
           service_date: Integer,
           stop_id: String,
           user_comment: String,
@@ -88,9 +103,8 @@ module OnebusawaySDK
           user_on_vehicle: T::Boolean,
           user_vehicle_number: String,
           vehicle_id: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         # A string code identifying the nature of the problem
@@ -114,52 +128,83 @@ module OnebusawaySDK
         # The vehicle actively serving the trip
         vehicle_id: nil,
         request_options: {}
-      ); end
-      sig do
-        override
-          .returns(
-            {
-              code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
-              service_date: Integer,
-              stop_id: String,
-              user_comment: String,
-              user_lat: Float,
-              user_location_accuracy: Float,
-              user_lon: Float,
-              user_on_vehicle: T::Boolean,
-              user_vehicle_number: String,
-              vehicle_id: String,
-              request_options: OnebusawaySDK::RequestOptions
-            }
-          )
+      )
       end
-      def to_hash; end
+
+      sig do
+        override.returns(
+          {
+            code:
+              OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
+            service_date: Integer,
+            stop_id: String,
+            user_comment: String,
+            user_lat: Float,
+            user_location_accuracy: Float,
+            user_lon: Float,
+            user_on_vehicle: T::Boolean,
+            user_vehicle_number: String,
+            vehicle_id: String,
+            request_options: OnebusawaySDK::RequestOptions
+          }
+        )
+      end
+      def to_hash
+      end
 
       # A string code identifying the nature of the problem
       module Code
         extend OnebusawaySDK::Internal::Type::Enum
 
         TaggedSymbol =
-          T.type_alias { T.all(Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code) }
+          T.type_alias do
+            T.all(
+              Symbol,
+              OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code
+            )
+          end
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         VEHICLE_NEVER_CAME =
-          T.let(:vehicle_never_came, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
+          T.let(
+            :vehicle_never_came,
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
+          )
         VEHICLE_CAME_EARLY =
-          T.let(:vehicle_came_early, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
+          T.let(
+            :vehicle_came_early,
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
+          )
         VEHICLE_CAME_LATE =
-          T.let(:vehicle_came_late, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
+          T.let(
+            :vehicle_came_late,
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
+          )
         WRONG_HEADSIGN =
-          T.let(:wrong_headsign, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
+          T.let(
+            :wrong_headsign,
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
+          )
         VEHICLE_DOES_NOT_STOP_HERE =
           T.let(
             :vehicle_does_not_stop_here,
-            OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
           )
-        OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol)
+        OTHER =
+          T.let(
+            :other,
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
+          )
 
-        sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol]) }
-        def self.values; end
+        sig do
+          override.returns(
+            T::Array[
+              OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::TaggedSymbol
+            ]
+          )
+        end
+        def self.values
+        end
       end
     end
   end

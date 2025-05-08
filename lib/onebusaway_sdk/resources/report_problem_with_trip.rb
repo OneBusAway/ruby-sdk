@@ -9,7 +9,7 @@ module OnebusawaySDK
       #
       # @param trip_id [String] The ID of the trip
       #
-      # @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code] A string code identifying the nature of the problem
+      # @param code [Symbol, OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code] A string code identifying the nature of the problem
       #
       # @param service_date [Integer] The service date of the trip
       #
@@ -31,11 +31,11 @@ module OnebusawaySDK
       #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [OnebusawaySDK::Models::ResponseWrapper]
+      # @return [OnebusawaySDK::ResponseWrapper]
       #
       # @see OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams
       def retrieve(trip_id, params = {})
-        parsed, options = OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams.dump_request(params)
+        parsed, options = OnebusawaySDK::ReportProblemWithTripRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
           path: ["api/where/report-problem-with-trip/%1$s.json", trip_id],
@@ -50,7 +50,7 @@ module OnebusawaySDK
             user_vehicle_number: "userVehicleNumber",
             vehicle_id: "vehicleID"
           ),
-          model: OnebusawaySDK::Models::ResponseWrapper,
+          model: OnebusawaySDK::ResponseWrapper,
           options: options
         )
       end

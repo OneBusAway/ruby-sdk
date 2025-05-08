@@ -5,17 +5,22 @@ module OnebusawaySDK
     class Stop
       # Get details of a specific stop
       sig do
-        params(stop_id: String, request_options: OnebusawaySDK::RequestOpts)
-          .returns(OnebusawaySDK::Models::StopRetrieveResponse)
+        params(
+          stop_id: String,
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::StopRetrieveResponse)
       end
       def retrieve(
         # ID of the stop
         stop_id,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

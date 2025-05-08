@@ -17,7 +17,7 @@ module OnebusawaySDK
       #
       # @see OnebusawaySDK::Models::SearchForRouteListParams
       def list(params)
-        parsed, options = OnebusawaySDK::Models::SearchForRouteListParams.dump_request(params)
+        parsed, options = OnebusawaySDK::SearchForRouteListParams.dump_request(params)
         @client.request(
           method: :get,
           path: "api/where/search/route.json",

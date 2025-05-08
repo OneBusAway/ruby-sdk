@@ -5,8 +5,11 @@ module OnebusawaySDK
     class SearchForStop
       # Search for a stop based on its name.
       sig do
-        params(input: String, max_count: Integer, request_options: OnebusawaySDK::RequestOpts)
-          .returns(OnebusawaySDK::Models::SearchForStopListResponse)
+        params(
+          input: String,
+          max_count: Integer,
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::SearchForStopListResponse)
       end
       def list(
         # The string to search for.
@@ -14,10 +17,13 @@ module OnebusawaySDK
         # The max number of results to return. Defaults to 20.
         max_count: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

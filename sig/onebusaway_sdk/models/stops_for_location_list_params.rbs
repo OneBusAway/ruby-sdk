@@ -44,8 +44,6 @@ module OnebusawaySDK
         ?radius: Float,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::stops_for_location_list_params
     end
   end
 end

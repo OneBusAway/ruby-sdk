@@ -6,6 +6,9 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       sig { returns(Float) }
       attr_accessor :lat
 
@@ -48,9 +51,8 @@ module OnebusawaySDK
           lon_span: Float,
           query: String,
           radius: Float,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         lat:,
@@ -64,22 +66,24 @@ module OnebusawaySDK
         # The radius in meters to search within
         radius: nil,
         request_options: {}
-      ); end
-      sig do
-        override
-          .returns(
-            {
-              lat: Float,
-              lon: Float,
-              lat_span: Float,
-              lon_span: Float,
-              query: String,
-              radius: Float,
-              request_options: OnebusawaySDK::RequestOptions
-            }
-          )
+      )
       end
-      def to_hash; end
+
+      sig do
+        override.returns(
+          {
+            lat: Float,
+            lon: Float,
+            lat_span: Float,
+            lon_span: Float,
+            query: String,
+            radius: Float,
+            request_options: OnebusawaySDK::RequestOptions
+          }
+        )
+      end
+      def to_hash
+      end
     end
   end
 end

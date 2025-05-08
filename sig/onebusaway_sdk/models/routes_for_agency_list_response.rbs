@@ -14,13 +14,11 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::RoutesForAgencyListResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::routes_for_agency_list_response
-
       type data =
         {
           limit_exceeded: bool,
           list: ::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List],
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
@@ -28,15 +26,13 @@ module OnebusawaySDK
 
         attr_accessor list: ::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List]
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           limit_exceeded: bool,
           list: ::Array[OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List],
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::RoutesForAgencyListResponse::data
 
         type list =
           {
@@ -99,8 +95,6 @@ module OnebusawaySDK
             ?text_color: String,
             ?url: String
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::list
         end
       end
     end

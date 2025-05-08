@@ -7,7 +7,8 @@ module OnebusawaySDK
       sig do
         params(
           trip_id: String,
-          code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
+          code:
+            OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
           service_date: Integer,
           stop_id: String,
           user_comment: String,
@@ -17,9 +18,8 @@ module OnebusawaySDK
           user_on_vehicle: T::Boolean,
           user_vehicle_number: String,
           vehicle_id: String,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::ResponseWrapper)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::ResponseWrapper)
       end
       def retrieve(
         # The ID of the trip
@@ -45,10 +45,13 @@ module OnebusawaySDK
         # The vehicle actively serving the trip
         vehicle_id: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

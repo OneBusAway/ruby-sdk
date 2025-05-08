@@ -6,6 +6,9 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       # Whether to include the full schedule element in the tripDetails section
       # (defaults to true).
       sig { returns(T.nilable(T::Boolean)) }
@@ -51,9 +54,8 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           service_date: Integer,
           time: Integer,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         # Whether to include the full schedule element in the tripDetails section
@@ -70,21 +72,23 @@ module OnebusawaySDK
         # Time parameter to query the system at a specific time (optional).
         time: nil,
         request_options: {}
-      ); end
-      sig do
-        override
-          .returns(
-            {
-              include_schedule: T::Boolean,
-              include_status: T::Boolean,
-              include_trip: T::Boolean,
-              service_date: Integer,
-              time: Integer,
-              request_options: OnebusawaySDK::RequestOptions
-            }
-          )
+      )
       end
-      def to_hash; end
+
+      sig do
+        override.returns(
+          {
+            include_schedule: T::Boolean,
+            include_status: T::Boolean,
+            include_trip: T::Boolean,
+            service_date: Integer,
+            time: Integer,
+            request_options: OnebusawaySDK::RequestOptions
+          }
+        )
+      end
+      def to_hash
+      end
     end
   end
 end

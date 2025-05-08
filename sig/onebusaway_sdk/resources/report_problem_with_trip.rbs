@@ -14,7 +14,7 @@ module OnebusawaySDK
         ?user_vehicle_number: String,
         ?vehicle_id: String,
         ?request_options: OnebusawaySDK::request_opts
-      ) -> OnebusawaySDK::Models::ResponseWrapper
+      ) -> OnebusawaySDK::ResponseWrapper
 
       def initialize: (client: OnebusawaySDK::Client) -> void
     end

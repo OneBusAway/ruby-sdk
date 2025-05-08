@@ -14,14 +14,12 @@ module OnebusawaySDK
         ?data: OnebusawaySDK::Models::SearchForRouteListResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::search_for_route_list_response
-
       type data =
         {
           limit_exceeded: bool,
           list: ::Array[OnebusawaySDK::Models::SearchForRouteListResponse::Data::List],
           out_of_range: bool,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
@@ -31,16 +29,14 @@ module OnebusawaySDK
 
         attr_accessor out_of_range: bool
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           limit_exceeded: bool,
           list: ::Array[OnebusawaySDK::Models::SearchForRouteListResponse::Data::List],
           out_of_range: bool,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::SearchForRouteListResponse::data
 
         type list =
           {
@@ -103,8 +99,6 @@ module OnebusawaySDK
             ?text_color: String,
             ?url: String
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::SearchForRouteListResponse::Data::list
         end
       end
     end

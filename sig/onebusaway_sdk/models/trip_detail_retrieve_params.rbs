@@ -42,8 +42,6 @@ module OnebusawaySDK
         ?time: Integer,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::trip_detail_retrieve_params
     end
   end
 end

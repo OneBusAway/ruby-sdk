@@ -3,89 +3,118 @@
 module OnebusawaySDK
   module Models
     class TripsForRouteListResponse < OnebusawaySDK::Models::ResponseWrapper
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       sig { returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data) }
       attr_reader :data
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::TripsForRouteListResponse::Data, OnebusawaySDK::Internal::AnyHash)
-        )
-          .void
+          data: OnebusawaySDK::Models::TripsForRouteListResponse::Data::OrHash
+        ).void
       end
       attr_writer :data
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::TripsForRouteListResponse::Data, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          data: OnebusawaySDK::Models::TripsForRouteListResponse::Data::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(data:); end
+      def self.new(data:)
+      end
 
-      sig { override.returns({data: OnebusawaySDK::Models::TripsForRouteListResponse::Data}) }
-      def to_hash; end
+      sig do
+        override.returns(
+          { data: OnebusawaySDK::Models::TripsForRouteListResponse::Data }
+        )
+      end
+      def to_hash
+      end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
         sig { returns(T::Boolean) }
         attr_accessor :limit_exceeded
 
-        sig { returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List]) }
+        sig do
+          returns(
+            T::Array[
+              OnebusawaySDK::Models::TripsForRouteListResponse::Data::List
+            ]
+          )
+        end
         attr_accessor :list
 
-        sig { returns(OnebusawaySDK::Models::References) }
+        sig { returns(OnebusawaySDK::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
+        sig { params(references: OnebusawaySDK::References::OrHash).void }
         attr_writer :references
 
         sig do
           params(
             limit_exceeded: T::Boolean,
-            list: T::Array[T.any(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List, OnebusawaySDK::Internal::AnyHash)],
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
-          )
-            .returns(T.attached_class)
+            list:
+              T::Array[
+                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::OrHash
+              ],
+            references: OnebusawaySDK::References::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(limit_exceeded:, list:, references:); end
+        def self.new(limit_exceeded:, list:, references:)
+        end
 
         sig do
-          override
-            .returns(
-              {
-                limit_exceeded: T::Boolean,
-                list: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
-                references: OnebusawaySDK::Models::References
-              }
-            )
+          override.returns(
+            {
+              limit_exceeded: T::Boolean,
+              list:
+                T::Array[
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List
+                ],
+              references: OnebusawaySDK::References
+            }
+          )
         end
-        def to_hash; end
+        def to_hash
+        end
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
-          sig { returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule) }
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
+          sig do
+            returns(
+              OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule
+            )
+          end
           attr_reader :schedule
 
           sig do
             params(
-              schedule: T.any(
-                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
-                OnebusawaySDK::Internal::AnyHash
-              )
-            )
-              .void
+              schedule:
+                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::OrHash
+            ).void
           end
           attr_writer :schedule
 
-          sig { returns(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status) }
+          sig do
+            returns(
+              OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status
+            )
+          end
           attr_reader :status
 
           sig do
             params(
-              status: T.any(
-                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
-                OnebusawaySDK::Internal::AnyHash
-              )
-            )
-              .void
+              status:
+                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::OrHash
+            ).void
           end
           attr_writer :status
 
@@ -109,47 +138,62 @@ module OnebusawaySDK
 
           sig do
             params(
-              schedule: T.any(
-                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
-                OnebusawaySDK::Internal::AnyHash
-              ),
-              status: T.any(
-                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
-                OnebusawaySDK::Internal::AnyHash
-              ),
+              schedule:
+                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::OrHash,
+              status:
+                OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::OrHash,
               trip_id: String,
               frequency: T.nilable(String),
               service_date: Integer,
               situation_ids: T::Array[String]
-            )
-              .returns(T.attached_class)
+            ).returns(T.attached_class)
           end
-          def self.new(schedule:, status:, trip_id:, frequency: nil, service_date: nil, situation_ids: nil)
+          def self.new(
+            schedule:,
+            status:,
+            trip_id:,
+            frequency: nil,
+            service_date: nil,
+            situation_ids: nil
+          )
           end
 
           sig do
-            override
-              .returns(
-                {
-                  schedule: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
-                  status: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
-                  trip_id: String,
-                  frequency: T.nilable(String),
-                  service_date: Integer,
-                  situation_ids: T::Array[String]
-                }
-              )
+            override.returns(
+              {
+                schedule:
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
+                status:
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
+                trip_id: String,
+                frequency: T.nilable(String),
+                service_date: Integer,
+                situation_ids: T::Array[String]
+              }
+            )
           end
-          def to_hash; end
+          def to_hash
+          end
 
           class Schedule < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             sig { returns(String) }
             attr_accessor :next_trip_id
 
             sig { returns(String) }
             attr_accessor :previous_trip_id
 
-            sig { returns(T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime]) }
+            sig do
+              returns(
+                T::Array[
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime
+                ]
+              )
+            end
             attr_accessor :stop_times
 
             sig { returns(String) }
@@ -162,34 +206,46 @@ module OnebusawaySDK
               params(
                 next_trip_id: String,
                 previous_trip_id: String,
-                stop_times: T::Array[
-                  T.any(
-                    OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime,
-                    OnebusawaySDK::Internal::AnyHash
-                  )
-                ],
+                stop_times:
+                  T::Array[
+                    OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime::OrHash
+                  ],
                 time_zone: String,
                 frequency: T.nilable(String)
-              )
-                .returns(T.attached_class)
+              ).returns(T.attached_class)
             end
-            def self.new(next_trip_id:, previous_trip_id:, stop_times:, time_zone:, frequency: nil); end
+            def self.new(
+              next_trip_id:,
+              previous_trip_id:,
+              stop_times:,
+              time_zone:,
+              frequency: nil
+            )
+            end
 
             sig do
-              override
-                .returns(
-                  {
-                    next_trip_id: String,
-                    previous_trip_id: String,
-                    stop_times: T::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
-                    time_zone: String,
-                    frequency: T.nilable(String)
-                  }
-                )
+              override.returns(
+                {
+                  next_trip_id: String,
+                  previous_trip_id: String,
+                  stop_times:
+                    T::Array[
+                      OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime
+                    ],
+                  time_zone: String,
+                  frequency: T.nilable(String)
+                }
+              )
             end
-            def to_hash; end
+            def to_hash
+            end
 
             class StopTime < OnebusawaySDK::Internal::Type::BaseModel
+              OrHash =
+                T.type_alias do
+                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                end
+
               sig { returns(T.nilable(Integer)) }
               attr_reader :arrival_time
 
@@ -234,8 +290,7 @@ module OnebusawaySDK
                   historical_occupancy: String,
                   stop_headsign: String,
                   stop_id: String
-                )
-                  .returns(T.attached_class)
+                ).returns(T.attached_class)
               end
               def self.new(
                 arrival_time: nil,
@@ -244,25 +299,32 @@ module OnebusawaySDK
                 historical_occupancy: nil,
                 stop_headsign: nil,
                 stop_id: nil
-              ); end
-              sig do
-                override
-                  .returns(
-                    {
-                      arrival_time: Integer,
-                      departure_time: Integer,
-                      distance_along_trip: Float,
-                      historical_occupancy: String,
-                      stop_headsign: String,
-                      stop_id: String
-                    }
-                  )
+              )
               end
-              def to_hash; end
+
+              sig do
+                override.returns(
+                  {
+                    arrival_time: Integer,
+                    departure_time: Integer,
+                    distance_along_trip: Float,
+                    historical_occupancy: String,
+                    stop_headsign: String,
+                    stop_id: String
+                  }
+                )
+              end
+              def to_hash
+              end
             end
           end
 
           class Status < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             # Trip ID of the trip the vehicle is actively serving.
             sig { returns(String) }
             attr_accessor :active_trip_id
@@ -347,19 +409,18 @@ module OnebusawaySDK
             # Last known location of the transit vehicle.
             sig do
               returns(
-                T.nilable(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation)
+                T.nilable(
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation
+                )
               )
             end
             attr_reader :last_known_location
 
             sig do
               params(
-                last_known_location: T.any(
-                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
-                  OnebusawaySDK::Internal::AnyHash
-                )
-              )
-                .void
+                last_known_location:
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation::OrHash
+              ).void
             end
             attr_writer :last_known_location
 
@@ -393,17 +454,20 @@ module OnebusawaySDK
             attr_writer :orientation
 
             # Current position of the transit vehicle.
-            sig { returns(T.nilable(OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position)) }
+            sig do
+              returns(
+                T.nilable(
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position
+                )
+              )
+            end
             attr_reader :position
 
             sig do
               params(
-                position: T.any(
-                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
-                  OnebusawaySDK::Internal::AnyHash
-                )
-              )
-                .void
+                position:
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position::OrHash
+              ).void
             end
             attr_writer :position
 
@@ -449,23 +513,18 @@ module OnebusawaySDK
                 total_distance_along_trip: Float,
                 closest_stop_time_offset: Integer,
                 frequency: String,
-                last_known_location: T.any(
-                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
-                  OnebusawaySDK::Internal::AnyHash
-                ),
+                last_known_location:
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation::OrHash,
                 last_known_orientation: Float,
                 next_stop: String,
                 next_stop_time_offset: Integer,
                 orientation: Float,
-                position: T.any(
-                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
-                  OnebusawaySDK::Internal::AnyHash
-                ),
+                position:
+                  OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position::OrHash,
                 scheduled_distance_along_trip: Float,
                 situation_ids: T::Array[String],
                 vehicle_id: String
-              )
-                .returns(T.attached_class)
+              ).returns(T.attached_class)
             end
             def self.new(
               # Trip ID of the trip the vehicle is actively serving.
@@ -527,44 +586,53 @@ module OnebusawaySDK
               situation_ids: nil,
               # ID of the transit vehicle currently serving the trip.
               vehicle_id: nil
-            ); end
-            sig do
-              override
-                .returns(
-                  {
-                    active_trip_id: String,
-                    block_trip_sequence: Integer,
-                    closest_stop: String,
-                    distance_along_trip: Float,
-                    last_known_distance_along_trip: Float,
-                    last_location_update_time: Integer,
-                    last_update_time: Integer,
-                    occupancy_capacity: Integer,
-                    occupancy_count: Integer,
-                    occupancy_status: String,
-                    phase: String,
-                    predicted: T::Boolean,
-                    schedule_deviation: Integer,
-                    service_date: Integer,
-                    status: String,
-                    total_distance_along_trip: Float,
-                    closest_stop_time_offset: Integer,
-                    frequency: String,
-                    last_known_location: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
-                    last_known_orientation: Float,
-                    next_stop: String,
-                    next_stop_time_offset: Integer,
-                    orientation: Float,
-                    position: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
-                    scheduled_distance_along_trip: Float,
-                    situation_ids: T::Array[String],
-                    vehicle_id: String
-                  }
-                )
+            )
             end
-            def to_hash; end
+
+            sig do
+              override.returns(
+                {
+                  active_trip_id: String,
+                  block_trip_sequence: Integer,
+                  closest_stop: String,
+                  distance_along_trip: Float,
+                  last_known_distance_along_trip: Float,
+                  last_location_update_time: Integer,
+                  last_update_time: Integer,
+                  occupancy_capacity: Integer,
+                  occupancy_count: Integer,
+                  occupancy_status: String,
+                  phase: String,
+                  predicted: T::Boolean,
+                  schedule_deviation: Integer,
+                  service_date: Integer,
+                  status: String,
+                  total_distance_along_trip: Float,
+                  closest_stop_time_offset: Integer,
+                  frequency: String,
+                  last_known_location:
+                    OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
+                  last_known_orientation: Float,
+                  next_stop: String,
+                  next_stop_time_offset: Integer,
+                  orientation: Float,
+                  position:
+                    OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
+                  scheduled_distance_along_trip: Float,
+                  situation_ids: T::Array[String],
+                  vehicle_id: String
+                }
+              )
+            end
+            def to_hash
+            end
 
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
+              OrHash =
+                T.type_alias do
+                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                end
+
               # Latitude of the last known location of the transit vehicle.
               sig { returns(T.nilable(Float)) }
               attr_reader :lat
@@ -586,12 +654,20 @@ module OnebusawaySDK
                 lat: nil,
                 # Longitude of the last known location of the transit vehicle.
                 lon: nil
-              ); end
-              sig { override.returns({lat: Float, lon: Float}) }
-              def to_hash; end
+              )
+              end
+
+              sig { override.returns({ lat: Float, lon: Float }) }
+              def to_hash
+              end
             end
 
             class Position < OnebusawaySDK::Internal::Type::BaseModel
+              OrHash =
+                T.type_alias do
+                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                end
+
               # Latitude of the current position of the transit vehicle.
               sig { returns(T.nilable(Float)) }
               attr_reader :lat
@@ -613,9 +689,12 @@ module OnebusawaySDK
                 lat: nil,
                 # Longitude of the current position of the transit vehicle.
                 lon: nil
-              ); end
-              sig { override.returns({lat: Float, lon: Float}) }
-              def to_hash; end
+              )
+              end
+
+              sig { override.returns({ lat: Float, lon: Float }) }
+              def to_hash
+              end
             end
           end
         end

@@ -9,7 +9,7 @@ module OnebusawaySDK
       #
       # @param stop_id [String] The ID of the stop
       #
-      # @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
+      # @param code [Symbol, OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
       #
       # @param user_comment [String] Additional comment text supplied by the user describing the problem
       #
@@ -21,11 +21,11 @@ module OnebusawaySDK
       #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [OnebusawaySDK::Models::ResponseWrapper]
+      # @return [OnebusawaySDK::ResponseWrapper]
       #
       # @see OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams
       def retrieve(stop_id, params = {})
-        parsed, options = OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams.dump_request(params)
+        parsed, options = OnebusawaySDK::ReportProblemWithStopRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
           path: ["api/where/report-problem-with-stop/%1$s.json", stop_id],
@@ -35,7 +35,7 @@ module OnebusawaySDK
             user_location_accuracy: "userLocationAccuracy",
             user_lon: "userLon"
           ),
-          model: OnebusawaySDK::Models::ResponseWrapper,
+          model: OnebusawaySDK::ResponseWrapper,
           options: options
         )
       end

@@ -14,13 +14,11 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::agency_retrieve_response
-
       type data =
         {
           entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
           limit_exceeded: bool,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
@@ -28,15 +26,13 @@ module OnebusawaySDK
 
         attr_accessor limit_exceeded: bool
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
           limit_exceeded: bool,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::AgencyRetrieveResponse::data
 
         type entry =
           {
@@ -97,8 +93,6 @@ module OnebusawaySDK
             ?phone: String,
             ?private_service: bool
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::AgencyRetrieveResponse::Data::entry
         end
       end
     end

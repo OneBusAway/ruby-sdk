@@ -17,8 +17,8 @@ module OnebusawaySDK
 
       # @!attribute references
       #
-      #   @return [OnebusawaySDK::Models::References]
-      required :references, -> { OnebusawaySDK::Models::References }
+      #   @return [OnebusawaySDK::References]
+      required :references, -> { OnebusawaySDK::References }
 
       # @!attribute out_of_range
       #
@@ -28,7 +28,7 @@ module OnebusawaySDK
       # @!method initialize(limit_exceeded:, list:, references:, out_of_range: nil)
       #   @param limit_exceeded [Boolean]
       #   @param list [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::List>]
-      #   @param references [OnebusawaySDK::Models::References]
+      #   @param references [OnebusawaySDK::References]
       #   @param out_of_range [Boolean]
 
       class List < OnebusawaySDK::Internal::Type::BaseModel

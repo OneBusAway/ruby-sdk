@@ -6,11 +6,25 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       # A string code identifying the nature of the problem
-      sig { returns(T.nilable(OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol)) }
+      sig do
+        returns(
+          T.nilable(
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::OrSymbol
+          )
+        )
+      end
       attr_reader :code
 
-      sig { params(code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol).void }
+      sig do
+        params(
+          code:
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::OrSymbol
+        ).void
+      end
       attr_writer :code
 
       # Additional comment text supplied by the user describing the problem
@@ -43,14 +57,14 @@ module OnebusawaySDK
 
       sig do
         params(
-          code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
+          code:
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
           user_comment: String,
           user_lat: Float,
           user_location_accuracy: Float,
           user_lon: Float,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         # A string code identifying the nature of the problem
@@ -64,48 +78,73 @@ module OnebusawaySDK
         # The reporting user’s current longitude
         user_lon: nil,
         request_options: {}
-      ); end
-      sig do
-        override
-          .returns(
-            {
-              code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
-              user_comment: String,
-              user_lat: Float,
-              user_location_accuracy: Float,
-              user_lon: Float,
-              request_options: OnebusawaySDK::RequestOptions
-            }
-          )
+      )
       end
-      def to_hash; end
+
+      sig do
+        override.returns(
+          {
+            code:
+              OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
+            user_comment: String,
+            user_lat: Float,
+            user_location_accuracy: Float,
+            user_lon: Float,
+            request_options: OnebusawaySDK::RequestOptions
+          }
+        )
+      end
+      def to_hash
+      end
 
       # A string code identifying the nature of the problem
       module Code
         extend OnebusawaySDK::Internal::Type::Enum
 
         TaggedSymbol =
-          T.type_alias { T.all(Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code) }
+          T.type_alias do
+            T.all(
+              Symbol,
+              OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code
+            )
+          end
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         STOP_NAME_WRONG =
-          T.let(:stop_name_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
+          T.let(
+            :stop_name_wrong,
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+          )
         STOP_NUMBER_WRONG =
-          T.let(:stop_number_wrong, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
+          T.let(
+            :stop_number_wrong,
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+          )
         STOP_LOCATION_WRONG =
           T.let(
             :stop_location_wrong,
-            OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
           )
         ROUTE_OR_TRIP_MISSING =
           T.let(
             :route_or_trip_missing,
-            OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
           )
-        OTHER = T.let(:other, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol)
+        OTHER =
+          T.let(
+            :other,
+            OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+          )
 
-        sig { override.returns(T::Array[OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol]) }
-        def self.values; end
+        sig do
+          override.returns(
+            T::Array[
+              OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::TaggedSymbol
+            ]
+          )
+        end
+        def self.values
+        end
       end
     end
   end
