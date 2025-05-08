@@ -19,7 +19,6 @@ module OnebusawaySDK
       #   {OnebusawaySDK::Models::ScheduleForStopRetrieveParams} for more details.
       #
       #   @param date [Date] The date for which you want to request a schedule in the format YYYY-MM-DD (opti
-      #   ...
       #
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end

@@ -64,10 +64,8 @@ module OnebusawaySDK
       #   @param lon_span [Float] Longitude span of the search bounding box
       #
       #   @param include_schedule [Boolean] Whether to include full schedule elements in the tripDetails section. Defaults t
-      #   ...
       #
       #   @param include_trip [Boolean] Whether to include full trip elements in the references section. Defaults to fal
-      #   ...
       #
       #   @param time [Integer] Specific time for the query. Defaults to the current time.
       #

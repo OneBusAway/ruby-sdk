@@ -25,13 +25,13 @@ module OnebusawaySDK
 
         # @!attribute references
         #
-        #   @return [OnebusawaySDK::Models::References]
-        required :references, -> { OnebusawaySDK::Models::References }
+        #   @return [OnebusawaySDK::References]
+        required :references, -> { OnebusawaySDK::References }
 
         # @!method initialize(entry:, limit_exceeded:, references:)
         #   @param entry [OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry]
         #   @param limit_exceeded [Boolean]
-        #   @param references [OnebusawaySDK::Models::References]
+        #   @param references [OnebusawaySDK::References]
 
         # @see OnebusawaySDK::Models::AgencyRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel

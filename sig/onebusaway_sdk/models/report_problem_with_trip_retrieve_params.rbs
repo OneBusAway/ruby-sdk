@@ -75,8 +75,6 @@ module OnebusawaySDK
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::report_problem_with_trip_retrieve_params
-
       type code =
         :vehicle_never_came
         | :vehicle_came_early

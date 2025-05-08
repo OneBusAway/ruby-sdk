@@ -18,8 +18,6 @@ module OnebusawaySDK
         text: String,
         version: Integer
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::response_wrapper
     end
   end
 end

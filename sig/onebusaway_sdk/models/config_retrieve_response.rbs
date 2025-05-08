@@ -14,25 +14,21 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::config_retrieve_response
-
       type data =
         {
           entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::ConfigRetrieveResponse::data
 
         type entry =
           {
@@ -73,8 +69,6 @@ module OnebusawaySDK
             ?service_date_from: String,
             ?service_date_to: String
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::ConfigRetrieveResponse::Data::entry
 
           type git_properties =
             {
@@ -203,8 +197,6 @@ module OnebusawaySDK
               ?git_remote_origin_url: String,
               ?git_tags: String
             ) -> void
-
-            def to_hash: -> OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::git_properties
           end
         end
       end

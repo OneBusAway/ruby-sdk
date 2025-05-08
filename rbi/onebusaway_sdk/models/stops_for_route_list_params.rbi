@@ -6,6 +6,9 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       # Include polyline elements in the response (default true)
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_polylines
@@ -24,9 +27,8 @@ module OnebusawaySDK
         params(
           include_polylines: T::Boolean,
           time: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         # Include polyline elements in the response (default true)
@@ -34,16 +36,20 @@ module OnebusawaySDK
         # Specify service date (YYYY-MM-DD or epoch) (default today)
         time: nil,
         request_options: {}
-      ); end
-      sig do
-        override
-          .returns({
-                     include_polylines: T::Boolean,
-                     time: String,
-                     request_options: OnebusawaySDK::RequestOptions
-                   })
+      )
       end
-      def to_hash; end
+
+      sig do
+        override.returns(
+          {
+            include_polylines: T::Boolean,
+            time: String,
+            request_options: OnebusawaySDK::RequestOptions
+          }
+        )
+      end
+      def to_hash
+      end
     end
   end
 end

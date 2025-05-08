@@ -4,7 +4,7 @@ module OnebusawaySDK
       {
         limit_exceeded: bool,
         list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
-        references: OnebusawaySDK::Models::References,
+        references: OnebusawaySDK::References,
         out_of_range: bool
       }
 
@@ -19,11 +19,11 @@ module OnebusawaySDK
         ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List] _
       ) -> ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List]
 
-      def references: -> OnebusawaySDK::Models::References
+      def references: -> OnebusawaySDK::References
 
       def references=: (
-        OnebusawaySDK::Models::References _
-      ) -> OnebusawaySDK::Models::References
+        OnebusawaySDK::References _
+      ) -> OnebusawaySDK::References
 
       def out_of_range: -> bool?
 
@@ -32,11 +32,9 @@ module OnebusawaySDK
       def initialize: (
         limit_exceeded: bool,
         list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
-        references: OnebusawaySDK::Models::References,
+        references: OnebusawaySDK::References,
         ?out_of_range: bool
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::stops_for_agency_list_response
 
       type list =
         {
@@ -97,8 +95,6 @@ module OnebusawaySDK
           ?location_type: Integer,
           ?wheelchair_boarding: String
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::StopsForAgencyListResponse::list
       end
     end
   end

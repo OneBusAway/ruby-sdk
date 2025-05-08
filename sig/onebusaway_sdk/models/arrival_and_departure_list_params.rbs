@@ -26,8 +26,6 @@ module OnebusawaySDK
         ?time: Time,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::arrival_and_departure_list_params
     end
   end
 end

@@ -11,9 +11,8 @@ module OnebusawaySDK
           include_status: T::Boolean,
           include_trip: T::Boolean,
           time: Integer,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::TripForVehicleRetrieveResponse)
       end
       def retrieve(
         # ID of the vehicle to retrieve trip details for.
@@ -30,10 +29,13 @@ module OnebusawaySDK
         # Time parameter to query the system at a specific time (optional).
         time: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

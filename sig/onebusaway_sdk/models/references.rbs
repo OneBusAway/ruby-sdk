@@ -2,37 +2,35 @@ module OnebusawaySDK
   module Models
     type references =
       {
-        agencies: ::Array[OnebusawaySDK::Models::References::Agency],
-        routes: ::Array[OnebusawaySDK::Models::References::Route],
-        situations: ::Array[OnebusawaySDK::Models::References::Situation],
-        stops: ::Array[OnebusawaySDK::Models::References::Stop],
-        stop_times: ::Array[OnebusawaySDK::Models::References::StopTime],
-        trips: ::Array[OnebusawaySDK::Models::References::Trip]
+        agencies: ::Array[OnebusawaySDK::References::Agency],
+        routes: ::Array[OnebusawaySDK::References::Route],
+        situations: ::Array[OnebusawaySDK::References::Situation],
+        stops: ::Array[OnebusawaySDK::References::Stop],
+        stop_times: ::Array[OnebusawaySDK::References::StopTime],
+        trips: ::Array[OnebusawaySDK::References::Trip]
       }
 
     class References < OnebusawaySDK::Internal::Type::BaseModel
-      attr_accessor agencies: ::Array[OnebusawaySDK::Models::References::Agency]
+      attr_accessor agencies: ::Array[OnebusawaySDK::References::Agency]
 
-      attr_accessor routes: ::Array[OnebusawaySDK::Models::References::Route]
+      attr_accessor routes: ::Array[OnebusawaySDK::References::Route]
 
-      attr_accessor situations: ::Array[OnebusawaySDK::Models::References::Situation]
+      attr_accessor situations: ::Array[OnebusawaySDK::References::Situation]
 
-      attr_accessor stops: ::Array[OnebusawaySDK::Models::References::Stop]
+      attr_accessor stops: ::Array[OnebusawaySDK::References::Stop]
 
-      attr_accessor stop_times: ::Array[OnebusawaySDK::Models::References::StopTime]
+      attr_accessor stop_times: ::Array[OnebusawaySDK::References::StopTime]
 
-      attr_accessor trips: ::Array[OnebusawaySDK::Models::References::Trip]
+      attr_accessor trips: ::Array[OnebusawaySDK::References::Trip]
 
       def initialize: (
-        agencies: ::Array[OnebusawaySDK::Models::References::Agency],
-        routes: ::Array[OnebusawaySDK::Models::References::Route],
-        situations: ::Array[OnebusawaySDK::Models::References::Situation],
-        stops: ::Array[OnebusawaySDK::Models::References::Stop],
-        stop_times: ::Array[OnebusawaySDK::Models::References::StopTime],
-        trips: ::Array[OnebusawaySDK::Models::References::Trip]
+        agencies: ::Array[OnebusawaySDK::References::Agency],
+        routes: ::Array[OnebusawaySDK::References::Route],
+        situations: ::Array[OnebusawaySDK::References::Situation],
+        stops: ::Array[OnebusawaySDK::References::Stop],
+        stop_times: ::Array[OnebusawaySDK::References::StopTime],
+        trips: ::Array[OnebusawaySDK::References::Trip]
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::references
 
       type agency =
         {
@@ -93,8 +91,6 @@ module OnebusawaySDK
           ?phone: String,
           ?private_service: bool
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::References::agency
       end
 
       type route =
@@ -158,24 +154,22 @@ module OnebusawaySDK
           ?text_color: String,
           ?url: String
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::References::route
       end
 
       type situation =
         {
           id: String,
           creation_time: Integer,
-          active_windows: ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
-          all_affects: ::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
+          active_windows: ::Array[OnebusawaySDK::References::Situation::ActiveWindow],
+          all_affects: ::Array[OnebusawaySDK::References::Situation::AllAffect],
           consequence_message: String,
-          consequences: ::Array[OnebusawaySDK::Models::References::Situation::Consequence],
-          description: OnebusawaySDK::Models::References::Situation::Description,
-          publication_windows: ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-          reason: OnebusawaySDK::Models::References::Situation::reason,
+          consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
+          description: OnebusawaySDK::References::Situation::Description,
+          publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
+          reason: OnebusawaySDK::References::Situation::reason,
           severity: String,
-          summary: OnebusawaySDK::Models::References::Situation::Summary,
-          url: OnebusawaySDK::Models::References::Situation::URL
+          summary: OnebusawaySDK::References::Situation::Summary,
+          url: OnebusawaySDK::References::Situation::URL
         }
 
       class Situation < OnebusawaySDK::Internal::Type::BaseModel
@@ -183,78 +177,76 @@ module OnebusawaySDK
 
         attr_accessor creation_time: Integer
 
-        attr_reader active_windows: ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow]?
+        attr_reader active_windows: ::Array[OnebusawaySDK::References::Situation::ActiveWindow]?
 
         def active_windows=: (
-          ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow]
-        ) -> ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow]
+          ::Array[OnebusawaySDK::References::Situation::ActiveWindow]
+        ) -> ::Array[OnebusawaySDK::References::Situation::ActiveWindow]
 
-        attr_reader all_affects: ::Array[OnebusawaySDK::Models::References::Situation::AllAffect]?
+        attr_reader all_affects: ::Array[OnebusawaySDK::References::Situation::AllAffect]?
 
         def all_affects=: (
-          ::Array[OnebusawaySDK::Models::References::Situation::AllAffect]
-        ) -> ::Array[OnebusawaySDK::Models::References::Situation::AllAffect]
+          ::Array[OnebusawaySDK::References::Situation::AllAffect]
+        ) -> ::Array[OnebusawaySDK::References::Situation::AllAffect]
 
         attr_reader consequence_message: String?
 
         def consequence_message=: (String) -> String
 
-        attr_reader consequences: ::Array[OnebusawaySDK::Models::References::Situation::Consequence]?
+        attr_reader consequences: ::Array[OnebusawaySDK::References::Situation::Consequence]?
 
         def consequences=: (
-          ::Array[OnebusawaySDK::Models::References::Situation::Consequence]
-        ) -> ::Array[OnebusawaySDK::Models::References::Situation::Consequence]
+          ::Array[OnebusawaySDK::References::Situation::Consequence]
+        ) -> ::Array[OnebusawaySDK::References::Situation::Consequence]
 
-        attr_reader description: OnebusawaySDK::Models::References::Situation::Description?
+        attr_reader description: OnebusawaySDK::References::Situation::Description?
 
         def description=: (
-          OnebusawaySDK::Models::References::Situation::Description
-        ) -> OnebusawaySDK::Models::References::Situation::Description
+          OnebusawaySDK::References::Situation::Description
+        ) -> OnebusawaySDK::References::Situation::Description
 
-        attr_reader publication_windows: ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow]?
+        attr_reader publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow]?
 
         def publication_windows=: (
-          ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow]
-        ) -> ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow]
+          ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
+        ) -> ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
 
-        attr_reader reason: OnebusawaySDK::Models::References::Situation::reason?
+        attr_reader reason: OnebusawaySDK::References::Situation::reason?
 
         def reason=: (
-          OnebusawaySDK::Models::References::Situation::reason
-        ) -> OnebusawaySDK::Models::References::Situation::reason
+          OnebusawaySDK::References::Situation::reason
+        ) -> OnebusawaySDK::References::Situation::reason
 
         attr_reader severity: String?
 
         def severity=: (String) -> String
 
-        attr_reader summary: OnebusawaySDK::Models::References::Situation::Summary?
+        attr_reader summary: OnebusawaySDK::References::Situation::Summary?
 
         def summary=: (
-          OnebusawaySDK::Models::References::Situation::Summary
-        ) -> OnebusawaySDK::Models::References::Situation::Summary
+          OnebusawaySDK::References::Situation::Summary
+        ) -> OnebusawaySDK::References::Situation::Summary
 
-        attr_reader url: OnebusawaySDK::Models::References::Situation::URL?
+        attr_reader url: OnebusawaySDK::References::Situation::URL?
 
         def url=: (
-          OnebusawaySDK::Models::References::Situation::URL
-        ) -> OnebusawaySDK::Models::References::Situation::URL
+          OnebusawaySDK::References::Situation::URL
+        ) -> OnebusawaySDK::References::Situation::URL
 
         def initialize: (
           id: String,
           creation_time: Integer,
-          ?active_windows: ::Array[OnebusawaySDK::Models::References::Situation::ActiveWindow],
-          ?all_affects: ::Array[OnebusawaySDK::Models::References::Situation::AllAffect],
+          ?active_windows: ::Array[OnebusawaySDK::References::Situation::ActiveWindow],
+          ?all_affects: ::Array[OnebusawaySDK::References::Situation::AllAffect],
           ?consequence_message: String,
-          ?consequences: ::Array[OnebusawaySDK::Models::References::Situation::Consequence],
-          ?description: OnebusawaySDK::Models::References::Situation::Description,
-          ?publication_windows: ::Array[OnebusawaySDK::Models::References::Situation::PublicationWindow],
-          ?reason: OnebusawaySDK::Models::References::Situation::reason,
+          ?consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
+          ?description: OnebusawaySDK::References::Situation::Description,
+          ?publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
+          ?reason: OnebusawaySDK::References::Situation::reason,
           ?severity: String,
-          ?summary: OnebusawaySDK::Models::References::Situation::Summary,
-          ?url: OnebusawaySDK::Models::References::Situation::URL
+          ?summary: OnebusawaySDK::References::Situation::Summary,
+          ?url: OnebusawaySDK::References::Situation::URL
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::References::situation
 
         type active_window = { from: Integer, to: Integer }
 
@@ -268,8 +260,6 @@ module OnebusawaySDK
           def to=: (Integer) -> Integer
 
           def initialize: (?from: Integer, ?to: Integer) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::References::Situation::active_window
         end
 
         type all_affect =
@@ -315,14 +305,12 @@ module OnebusawaySDK
             ?stop_id: String,
             ?trip_id: String
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::References::Situation::all_affect
         end
 
         type consequence =
           {
             condition: String,
-            condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
+            condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails
           }
 
         class Consequence < OnebusawaySDK::Internal::Type::BaseModel
@@ -330,42 +318,38 @@ module OnebusawaySDK
 
           def condition=: (String) -> String
 
-          attr_reader condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails?
+          attr_reader condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails?
 
           def condition_details=: (
-            OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
-          ) -> OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
+            OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+          ) -> OnebusawaySDK::References::Situation::Consequence::ConditionDetails
 
           def initialize: (
             ?condition: String,
-            ?condition_details: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails
+            ?condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::References::Situation::consequence
 
           type condition_details =
             {
-              diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+              diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
               diversion_stop_ids: ::Array[String]
             }
 
           class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
-            attr_reader diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath?
+            attr_reader diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath?
 
             def diversion_path=: (
-              OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath
-            ) -> OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath
+              OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath
+            ) -> OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath
 
             attr_reader diversion_stop_ids: ::Array[String]?
 
             def diversion_stop_ids=: (::Array[String]) -> ::Array[String]
 
             def initialize: (
-              ?diversion_path: OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath,
+              ?diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
               ?diversion_stop_ids: ::Array[String]
             ) -> void
-
-            def to_hash: -> OnebusawaySDK::Models::References::Situation::Consequence::condition_details
 
             type diversion_path =
               { length: Integer, levels: String, points: String }
@@ -388,8 +372,6 @@ module OnebusawaySDK
                 ?levels: String,
                 ?points: String
               ) -> void
-
-              def to_hash: -> OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::diversion_path
             end
           end
         end
@@ -406,8 +388,6 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize: (?lang: String, ?value: String) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::References::Situation::description
         end
 
         type publication_window = { from: Integer, to: Integer }
@@ -418,8 +398,6 @@ module OnebusawaySDK
           attr_accessor to: Integer
 
           def initialize: (from: Integer, to: Integer) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::References::Situation::publication_window
         end
 
         type reason =
@@ -438,7 +416,7 @@ module OnebusawaySDK
           MISCELLANEOUS_REASON: :miscellaneousReason
           SECURITY_ALERT: :securityAlert
 
-          def self?.values: -> ::Array[OnebusawaySDK::Models::References::Situation::reason]
+          def self?.values: -> ::Array[OnebusawaySDK::References::Situation::reason]
         end
 
         type summary = { lang: String, value: String }
@@ -453,8 +431,6 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize: (?lang: String, ?value: String) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::References::Situation::summary
         end
 
         type url = { lang: String, value: String }
@@ -469,8 +445,6 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize: (?lang: String, ?value: String) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::References::Situation::url
         end
       end
 
@@ -533,8 +507,6 @@ module OnebusawaySDK
           ?location_type: Integer,
           ?wheelchair_boarding: String
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::References::stop
       end
 
       type stop_time =
@@ -580,8 +552,6 @@ module OnebusawaySDK
           ?stop_headsign: String,
           ?stop_id: String
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::References::stop_time
       end
 
       type trip =
@@ -651,8 +621,6 @@ module OnebusawaySDK
           ?trip_headsign: String,
           ?trip_short_name: String
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::References::trip
       end
     end
   end

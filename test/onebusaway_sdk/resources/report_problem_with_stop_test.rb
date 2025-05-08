@@ -7,7 +7,7 @@ class OnebusawaySDK::Test::Resources::ReportProblemWithStopTest < OnebusawaySDK:
     response = @onebusaway_sdk.report_problem_with_stop.retrieve("stopID")
 
     assert_pattern do
-      response => OnebusawaySDK::Models::ResponseWrapper
+      response => OnebusawaySDK::ResponseWrapper
     end
 
     assert_pattern do

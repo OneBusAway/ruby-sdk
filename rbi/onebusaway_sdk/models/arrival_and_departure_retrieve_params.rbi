@@ -6,6 +6,9 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       sig { returns(Integer) }
       attr_accessor :service_date
 
@@ -37,9 +40,8 @@ module OnebusawaySDK
           stop_sequence: Integer,
           time: Integer,
           vehicle_id: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         service_date:,
@@ -52,19 +54,19 @@ module OnebusawaySDK
       end
 
       sig do
-        override
-          .returns(
-            {
-              service_date: Integer,
-              trip_id: String,
-              stop_sequence: Integer,
-              time: Integer,
-              vehicle_id: String,
-              request_options: OnebusawaySDK::RequestOptions
-            }
-          )
+        override.returns(
+          {
+            service_date: Integer,
+            trip_id: String,
+            stop_sequence: Integer,
+            time: Integer,
+            vehicle_id: String,
+            request_options: OnebusawaySDK::RequestOptions
+          }
+        )
       end
-      def to_hash; end
+      def to_hash
+      end
     end
   end
 end

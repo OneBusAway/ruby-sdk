@@ -12,9 +12,8 @@ module OnebusawaySDK
           lon_span: Float,
           query: String,
           radius: Float,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::StopsForLocationListResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::StopsForLocationListResponse)
       end
       def list(
         lat:,
@@ -28,10 +27,13 @@ module OnebusawaySDK
         # The radius in meters to search within
         radius: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

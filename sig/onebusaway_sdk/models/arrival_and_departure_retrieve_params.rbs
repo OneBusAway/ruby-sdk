@@ -38,8 +38,6 @@ module OnebusawaySDK
         ?vehicle_id: String,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::arrival_and_departure_retrieve_params
     end
   end
 end

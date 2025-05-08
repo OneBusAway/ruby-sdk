@@ -10,9 +10,8 @@ module OnebusawaySDK
           include_schedule: T::Boolean,
           include_status: T::Boolean,
           time: Integer,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::TripsForRouteListResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::TripsForRouteListResponse)
       end
       def list(
         # The ID of the route.
@@ -25,10 +24,13 @@ module OnebusawaySDK
         # Query the system at a specific time. Useful for testing.
         time: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

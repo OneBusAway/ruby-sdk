@@ -6,6 +6,9 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       # Include vehicles arriving or departing in the next n minutes.
       sig { returns(T.nilable(Integer)) }
       attr_reader :minutes_after
@@ -32,9 +35,8 @@ module OnebusawaySDK
           minutes_after: Integer,
           minutes_before: Integer,
           time: Time,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         # Include vehicles arriving or departing in the next n minutes.
@@ -44,19 +46,21 @@ module OnebusawaySDK
         # The specific time for querying the system status.
         time: nil,
         request_options: {}
-      ); end
-      sig do
-        override
-          .returns(
-            {
-              minutes_after: Integer,
-              minutes_before: Integer,
-              time: Time,
-              request_options: OnebusawaySDK::RequestOptions
-            }
-          )
+      )
       end
-      def to_hash; end
+
+      sig do
+        override.returns(
+          {
+            minutes_after: Integer,
+            minutes_before: Integer,
+            time: Time,
+            request_options: OnebusawaySDK::RequestOptions
+          }
+        )
+      end
+      def to_hash
+      end
     end
   end
 end

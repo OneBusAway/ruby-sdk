@@ -3,63 +3,85 @@
 module OnebusawaySDK
   module Models
     class RouteRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       sig { returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data) }
       attr_reader :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
-          .void
+        params(
+          data: OnebusawaySDK::Models::RouteRetrieveResponse::Data::OrHash
+        ).void
       end
       attr_writer :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
-          .returns(T.attached_class)
+        params(
+          data: OnebusawaySDK::Models::RouteRetrieveResponse::Data::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(data:); end
+      def self.new(data:)
+      end
 
-      sig { override.returns({data: OnebusawaySDK::Models::RouteRetrieveResponse::Data}) }
-      def to_hash; end
+      sig do
+        override.returns(
+          { data: OnebusawaySDK::Models::RouteRetrieveResponse::Data }
+        )
+      end
+      def to_hash
+      end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
-        sig { returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry) }
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
+        sig do
+          returns(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry)
+        end
         attr_reader :entry
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash)
-          )
-            .void
+            entry:
+              OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry::OrHash
+          ).void
         end
         attr_writer :entry
 
-        sig { returns(OnebusawaySDK::Models::References) }
+        sig { returns(OnebusawaySDK::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
+        sig { params(references: OnebusawaySDK::References::OrHash).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
-          )
-            .returns(T.attached_class)
+            entry:
+              OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry::OrHash,
+            references: OnebusawaySDK::References::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(entry:, references:); end
+        def self.new(entry:, references:)
+        end
 
         sig do
-          override
-            .returns(
-              {
-                entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
-                references: OnebusawaySDK::Models::References
-              }
-            )
+          override.returns(
+            {
+              entry: OnebusawaySDK::Models::RouteRetrieveResponse::Data::Entry,
+              references: OnebusawaySDK::References
+            }
+          )
         end
-        def to_hash; end
+        def to_hash
+        end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           sig { returns(String) }
           attr_accessor :id
 
@@ -123,8 +145,7 @@ module OnebusawaySDK
               short_name: String,
               text_color: String,
               url: String
-            )
-              .returns(T.attached_class)
+            ).returns(T.attached_class)
           end
           def self.new(
             id:,
@@ -137,25 +158,27 @@ module OnebusawaySDK
             short_name: nil,
             text_color: nil,
             url: nil
-          ); end
-          sig do
-            override
-              .returns(
-                {
-                  id: String,
-                  agency_id: String,
-                  type: Integer,
-                  color: String,
-                  description: String,
-                  long_name: String,
-                  null_safe_short_name: String,
-                  short_name: String,
-                  text_color: String,
-                  url: String
-                }
-              )
+          )
           end
-          def to_hash; end
+
+          sig do
+            override.returns(
+              {
+                id: String,
+                agency_id: String,
+                type: Integer,
+                color: String,
+                description: String,
+                long_name: String,
+                null_safe_short_name: String,
+                short_name: String,
+                text_color: String,
+                url: String
+              }
+            )
+          end
+          def to_hash
+          end
         end
       end
     end

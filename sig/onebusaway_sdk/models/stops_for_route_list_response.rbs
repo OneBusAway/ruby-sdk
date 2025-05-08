@@ -14,25 +14,21 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::StopsForRouteListResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::stops_for_route_list_response
-
       type data =
         {
           entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           entry: OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::data
 
         type entry =
           {
@@ -70,8 +66,6 @@ module OnebusawaySDK
             ?stop_ids: ::Array[String]
           ) -> void
 
-          def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::entry
-
           type polyline = { length: Integer, levels: String, points: String }
 
           class Polyline < OnebusawaySDK::Internal::Type::BaseModel
@@ -92,8 +86,6 @@ module OnebusawaySDK
               ?levels: String,
               ?points: String
             ) -> void
-
-            def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::polyline
           end
 
           type stop_grouping =
@@ -132,8 +124,6 @@ module OnebusawaySDK
               ?stop_ids: ::Array[String]
             ) -> void
 
-            def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::stop_grouping
-
             type name_ = { name: String, names: ::Array[String], type: String }
 
             class Name < OnebusawaySDK::Internal::Type::BaseModel
@@ -154,8 +144,6 @@ module OnebusawaySDK
                 ?names: ::Array[String],
                 ?type: String
               ) -> void
-
-              def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::name_
             end
 
             type polyline = { length: Integer, levels: String, points: String }
@@ -178,8 +166,6 @@ module OnebusawaySDK
                 ?levels: String,
                 ?points: String
               ) -> void
-
-              def to_hash: -> OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::polyline
             end
           end
         end

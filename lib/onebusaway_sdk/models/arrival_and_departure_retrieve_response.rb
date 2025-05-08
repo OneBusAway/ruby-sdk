@@ -20,12 +20,12 @@ module OnebusawaySDK
 
         # @!attribute references
         #
-        #   @return [OnebusawaySDK::Models::References]
-        required :references, -> { OnebusawaySDK::Models::References }
+        #   @return [OnebusawaySDK::References]
+        required :references, -> { OnebusawaySDK::References }
 
         # @!method initialize(entry:, references:)
         #   @param entry [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry]
-        #   @param references [OnebusawaySDK::Models::References]
+        #   @param references [OnebusawaySDK::References]
 
         # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -255,13 +255,10 @@ module OnebusawaySDK
           #   @param departure_enabled [Boolean] Indicates if riders can depart from this transit vehicle.
           #
           #   @param number_of_stops_away [Integer] Number of stops between the arriving transit vehicle and the current stop (exclu
-          #   ...
           #
           #   @param predicted_arrival_time [Integer] Predicted arrival time, in milliseconds since Unix epoch (zero if no real-time a
-          #   ...
           #
           #   @param predicted_departure_time [Integer] Predicted departure time, in milliseconds since Unix epoch (zero if no real-time
-          #   ...
           #
           #   @param route_id [String] The ID of the route for the arriving vehicle.
           #
@@ -270,17 +267,14 @@ module OnebusawaySDK
           #   @param scheduled_departure_time [Integer] Scheduled departure time, in milliseconds since Unix epoch.
           #
           #   @param service_date [Integer] Time, in milliseconds since the Unix epoch, of midnight for the start of the ser
-          #   ...
           #
           #   @param stop_id [String] The ID of the stop the vehicle is arriving at.
           #
           #   @param stop_sequence [Integer] Index of the stop into the sequence of stops that make up the trip for this arri
-          #   ...
           #
           #   @param total_stops_in_trip [Integer] Total number of stops visited on the trip for this arrival.
           #
           #   @param trip_headsign [String] Optional trip headsign that potentially overrides the trip headsign in the refer
-          #   ...
           #
           #   @param trip_id [String] The ID of the trip for the arriving vehicle.
           #
@@ -307,10 +301,8 @@ module OnebusawaySDK
           #   @param predicted_occupancy [String] Predicted occupancy status of the transit vehicle.
           #
           #   @param route_long_name [String] Optional route long name that potentially overrides the route long name in the r
-          #   ...
           #
           #   @param route_short_name [String] Optional route short name that potentially overrides the route short name in the
-          #   ...
           #
           #   @param scheduled_arrival_interval [String] Interval for scheduled arrival time.
           #
@@ -512,7 +504,6 @@ module OnebusawaySDK
             #   @param distance_along_trip [Float] Distance, in meters, the transit vehicle has progressed along the active trip.
             #
             #   @param last_known_distance_along_trip [Float] Last known distance along the trip received in real-time from the transit vehicl
-            #   ...
             #
             #   @param last_location_update_time [Integer] Timestamp of the last known real-time location update from the transit vehicle.
             #
@@ -531,14 +522,12 @@ module OnebusawaySDK
             #   @param schedule_deviation [Integer] Deviation from the schedule in seconds (positive for late, negative for early).
             #
             #   @param service_date [Integer] Time, in milliseconds since the Unix epoch, of midnight for the start of the ser
-            #   ...
             #
             #   @param status [String] Current status modifiers for the trip.
             #
             #   @param total_distance_along_trip [Float] Total length of the trip, in meters.
             #
             #   @param closest_stop_time_offset [Integer] Time offset from the closest stop to the current position of the transit vehicle
-            #   ...
             #
             #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
             #
@@ -549,14 +538,12 @@ module OnebusawaySDK
             #   @param next_stop [String] ID of the next stop the transit vehicle is scheduled to arrive at.
             #
             #   @param next_stop_time_offset [Integer] Time offset from the next stop to the current position of the transit vehicle (i
-            #   ...
             #
             #   @param orientation [Float] Orientation of the transit vehicle, represented as an angle in degrees.
             #
             #   @param position [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position] Current position of the transit vehicle.
             #
             #   @param scheduled_distance_along_trip [Float] Distance, in meters, the transit vehicle is scheduled to have progressed along t
-            #   ...
             #
             #   @param situation_ids [Array<String>] References to situation elements (if any) applicable to this trip.
             #

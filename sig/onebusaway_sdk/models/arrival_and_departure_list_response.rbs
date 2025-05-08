@@ -14,25 +14,21 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::arrival_and_departure_list_response
-
       type data =
         {
           entry: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           entry: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry,
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse::data
 
         type entry =
           {
@@ -45,8 +41,6 @@ module OnebusawaySDK
           def initialize: (
             arrivals_and_departures: ::Array[OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture]
           ) -> void
-
-          def to_hash: -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::entry
 
           type arrivals_and_departure =
             {
@@ -230,8 +224,6 @@ module OnebusawaySDK
               ?trip_status: OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus
             ) -> void
 
-            def to_hash: -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::arrivals_and_departure
-
             type trip_status =
               {
                 active_trip_id: String,
@@ -374,8 +366,6 @@ module OnebusawaySDK
                 ?vehicle_id: String
               ) -> void
 
-              def to_hash: -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::trip_status
-
               type last_known_location = { lat: Float, lon: Float }
 
               class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
@@ -388,8 +378,6 @@ module OnebusawaySDK
                 def lon=: (Float) -> Float
 
                 def initialize: (?lat: Float, ?lon: Float) -> void
-
-                def to_hash: -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::last_known_location
               end
 
               type position = { lat: Float, lon: Float }
@@ -404,8 +392,6 @@ module OnebusawaySDK
                 def lon=: (Float) -> Float
 
                 def initialize: (?lat: Float, ?lon: Float) -> void
-
-                def to_hash: -> OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::position
               end
             end
           end

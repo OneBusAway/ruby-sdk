@@ -13,9 +13,8 @@ module OnebusawaySDK
           include_schedule: T::Boolean,
           include_trip: T::Boolean,
           time: Integer,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::TripsForLocationListResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::TripsForLocationListResponse)
       end
       def list(
         # The latitude coordinate of the search center
@@ -35,10 +34,13 @@ module OnebusawaySDK
         # Specific time for the query. Defaults to the current time.
         time: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

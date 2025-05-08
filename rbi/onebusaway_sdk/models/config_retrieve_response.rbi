@@ -3,80 +3,105 @@
 module OnebusawaySDK
   module Models
     class ConfigRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       sig { returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data) }
       attr_reader :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
-          .void
+        params(
+          data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::OrHash
+        ).void
       end
       attr_writer :data
 
       sig do
-        params(data: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash))
-          .returns(T.attached_class)
+        params(
+          data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(data:); end
+      def self.new(data:)
+      end
 
-      sig { override.returns({data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data}) }
-      def to_hash; end
+      sig do
+        override.returns(
+          { data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data }
+        )
+      end
+      def to_hash
+      end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
-        sig { returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry) }
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
+        sig do
+          returns(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry)
+        end
         attr_reader :entry
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash)
-          )
-            .void
+            entry:
+              OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::OrHash
+          ).void
         end
         attr_writer :entry
 
-        sig { returns(OnebusawaySDK::Models::References) }
+        sig { returns(OnebusawaySDK::References) }
         attr_reader :references
 
-        sig { params(references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)).void }
+        sig { params(references: OnebusawaySDK::References::OrHash).void }
         attr_writer :references
 
         sig do
           params(
-            entry: T.any(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry, OnebusawaySDK::Internal::AnyHash),
-            references: T.any(OnebusawaySDK::Models::References, OnebusawaySDK::Internal::AnyHash)
-          )
-            .returns(T.attached_class)
+            entry:
+              OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::OrHash,
+            references: OnebusawaySDK::References::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(entry:, references:); end
+        def self.new(entry:, references:)
+        end
 
         sig do
-          override
-            .returns(
-              {
-                entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
-                references: OnebusawaySDK::Models::References
-              }
-            )
+          override.returns(
+            {
+              entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
+              references: OnebusawaySDK::References
+            }
+          )
         end
-        def to_hash; end
+        def to_hash
+        end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           sig { returns(T.nilable(String)) }
           attr_reader :id
 
           sig { params(id: String).void }
           attr_writer :id
 
-          sig { returns(T.nilable(OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties)) }
+          sig do
+            returns(
+              T.nilable(
+                OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties
+              )
+            )
+          end
           attr_reader :git_properties
 
           sig do
             params(
-              git_properties: T.any(
-                OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
-                OnebusawaySDK::Internal::AnyHash
-              )
-            )
-              .void
+              git_properties:
+                OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties::OrHash
+            ).void
           end
           attr_writer :git_properties
 
@@ -101,34 +126,43 @@ module OnebusawaySDK
           sig do
             params(
               id: String,
-              git_properties: T.any(
-                OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
-                OnebusawaySDK::Internal::AnyHash
-              ),
+              git_properties:
+                OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties::OrHash,
               name: String,
               service_date_from: String,
               service_date_to: String
-            )
-              .returns(T.attached_class)
+            ).returns(T.attached_class)
           end
-          def self.new(id: nil, git_properties: nil, name: nil, service_date_from: nil, service_date_to: nil)
+          def self.new(
+            id: nil,
+            git_properties: nil,
+            name: nil,
+            service_date_from: nil,
+            service_date_to: nil
+          )
           end
 
           sig do
-            override
-              .returns(
-                {
-                  id: String,
-                  git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
-                  name: String,
-                  service_date_from: String,
-                  service_date_to: String
-                }
-              )
+            override.returns(
+              {
+                id: String,
+                git_properties:
+                  OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+                name: String,
+                service_date_from: String,
+                service_date_to: String
+              }
+            )
           end
-          def to_hash; end
+          def to_hash
+          end
 
           class GitProperties < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             sig { returns(T.nilable(String)) }
             attr_reader :git_branch
 
@@ -271,8 +305,7 @@ module OnebusawaySDK
                 git_dirty: String,
                 git_remote_origin_url: String,
                 git_tags: String
-              )
-                .returns(T.attached_class)
+              ).returns(T.attached_class)
             end
             def self.new(
               git_branch: nil,
@@ -295,35 +328,37 @@ module OnebusawaySDK
               git_dirty: nil,
               git_remote_origin_url: nil,
               git_tags: nil
-            ); end
-            sig do
-              override
-                .returns(
-                  {
-                    git_branch: String,
-                    git_build_host: String,
-                    git_build_time: String,
-                    git_build_user_email: String,
-                    git_build_user_name: String,
-                    git_build_version: String,
-                    git_closest_tag_commit_count: String,
-                    git_closest_tag_name: String,
-                    git_commit_id: String,
-                    git_commit_id_abbrev: String,
-                    git_commit_id_describe: String,
-                    git_commit_id_describe_short: String,
-                    git_commit_message_full: String,
-                    git_commit_message_short: String,
-                    git_commit_time: String,
-                    git_commit_user_email: String,
-                    git_commit_user_name: String,
-                    git_dirty: String,
-                    git_remote_origin_url: String,
-                    git_tags: String
-                  }
-                )
+            )
             end
-            def to_hash; end
+
+            sig do
+              override.returns(
+                {
+                  git_branch: String,
+                  git_build_host: String,
+                  git_build_time: String,
+                  git_build_user_email: String,
+                  git_build_user_name: String,
+                  git_build_version: String,
+                  git_closest_tag_commit_count: String,
+                  git_closest_tag_name: String,
+                  git_commit_id: String,
+                  git_commit_id_abbrev: String,
+                  git_commit_id_describe: String,
+                  git_commit_id_describe_short: String,
+                  git_commit_message_full: String,
+                  git_commit_message_short: String,
+                  git_commit_time: String,
+                  git_commit_user_email: String,
+                  git_commit_user_name: String,
+                  git_dirty: String,
+                  git_remote_origin_url: String,
+                  git_tags: String
+                }
+              )
+            end
+            def to_hash
+            end
           end
         end
       end

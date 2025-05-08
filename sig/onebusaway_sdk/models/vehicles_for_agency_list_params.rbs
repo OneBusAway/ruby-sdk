@@ -15,8 +15,6 @@ module OnebusawaySDK
         ?time: String,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::vehicles_for_agency_list_params
     end
   end
 end

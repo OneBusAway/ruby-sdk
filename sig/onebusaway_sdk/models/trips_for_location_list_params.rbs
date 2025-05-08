@@ -46,8 +46,6 @@ module OnebusawaySDK
         ?time: Integer,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::trips_for_location_list_params
     end
   end
 end

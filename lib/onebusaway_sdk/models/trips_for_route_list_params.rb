@@ -33,7 +33,6 @@ module OnebusawaySDK
       #   @param include_schedule [Boolean] Determine whether full schedule elements are included. Defaults to false.
       #
       #   @param include_status [Boolean] Determine whether full tripStatus elements with real-time information are includ
-      #   ...
       #
       #   @param time [Integer] Query the system at a specific time. Useful for testing.
       #

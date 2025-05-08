@@ -14,13 +14,11 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
       ) -> void
 
-      def to_hash: -> OnebusawaySDK::Models::stop_ids_for_agency_list_response
-
       type data =
         {
           limit_exceeded: bool,
           list: ::Array[String],
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
@@ -28,15 +26,13 @@ module OnebusawaySDK
 
         attr_accessor list: ::Array[String]
 
-        attr_accessor references: OnebusawaySDK::Models::References
+        attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           limit_exceeded: bool,
           list: ::Array[String],
-          references: OnebusawaySDK::Models::References
+          references: OnebusawaySDK::References
         ) -> void
-
-        def to_hash: -> OnebusawaySDK::Models::StopIDsForAgencyListResponse::data
       end
     end
   end

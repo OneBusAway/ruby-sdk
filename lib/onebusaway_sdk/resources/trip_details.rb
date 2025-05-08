@@ -13,13 +13,10 @@ module OnebusawaySDK
       # @param trip_id [String] ID of the trip to retrieve details for.
       #
       # @param include_schedule [Boolean] Whether to include the full schedule element in the tripDetails section (default
-      # ...
       #
       # @param include_status [Boolean] Whether to include the full status element in the tripDetails section (defaults
-      # ...
       #
       # @param include_trip [Boolean] Whether to include the full trip element in the references section (defaults to
-      # ...
       #
       # @param service_date [Integer] Service date for the trip as Unix time in milliseconds (optional).
       #
@@ -31,7 +28,7 @@ module OnebusawaySDK
       #
       # @see OnebusawaySDK::Models::TripDetailRetrieveParams
       def retrieve(trip_id, params = {})
-        parsed, options = OnebusawaySDK::Models::TripDetailRetrieveParams.dump_request(params)
+        parsed, options = OnebusawaySDK::TripDetailRetrieveParams.dump_request(params)
         @client.request(
           method: :get,
           path: ["api/where/trip-details/%1$s.json", trip_id],

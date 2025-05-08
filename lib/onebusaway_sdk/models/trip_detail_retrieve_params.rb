@@ -45,13 +45,10 @@ module OnebusawaySDK
       #   {OnebusawaySDK::Models::TripDetailRetrieveParams} for more details.
       #
       #   @param include_schedule [Boolean] Whether to include the full schedule element in the tripDetails section (default
-      #   ...
       #
       #   @param include_status [Boolean] Whether to include the full status element in the tripDetails section (defaults
-      #   ...
       #
       #   @param include_trip [Boolean] Whether to include the full trip element in the references section (defaults to
-      #   ...
       #
       #   @param service_date [Integer] Service date for the trip as Unix time in milliseconds (optional).
       #

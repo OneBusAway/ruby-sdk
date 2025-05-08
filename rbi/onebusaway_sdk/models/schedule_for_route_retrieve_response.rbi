@@ -3,58 +3,86 @@
 module OnebusawaySDK
   module Models
     class ScheduleForRouteRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
-      sig { returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data) }
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
+      sig do
+        returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data)
+      end
       attr_reader :data
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash)
-        )
-          .void
+          data:
+            OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::OrHash
+        ).void
       end
       attr_writer :data
 
       sig do
         params(
-          data: T.any(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          data:
+            OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(data:); end
+      def self.new(data:)
+      end
 
-      sig { override.returns({data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data}) }
-      def to_hash; end
+      sig do
+        override.returns(
+          {
+            data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data
+          }
+        )
+      end
+      def to_hash
+      end
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
-        sig { returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry) }
+        OrHash =
+          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
+        sig do
+          returns(
+            OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
+          )
+        end
         attr_reader :entry
 
         sig do
           params(
-            entry: T.any(
-              OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry,
-              OnebusawaySDK::Internal::AnyHash
-            )
-          )
-            .void
+            entry:
+              OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::OrHash
+          ).void
         end
         attr_writer :entry
 
         sig do
           params(
-            entry: T.any(
-              OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry,
-              OnebusawaySDK::Internal::AnyHash
-            )
-          )
-            .returns(T.attached_class)
+            entry:
+              OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::OrHash
+          ).returns(T.attached_class)
         end
-        def self.new(entry:); end
+        def self.new(entry:)
+        end
 
-        sig { override.returns({entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry}) }
-        def to_hash; end
+        sig do
+          override.returns(
+            {
+              entry:
+                OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
+            }
+          )
+        end
+        def to_hash
+        end
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+            end
+
           sig { returns(String) }
           attr_accessor :route_id
 
@@ -64,13 +92,31 @@ module OnebusawaySDK
           sig { returns(T::Array[String]) }
           attr_accessor :service_ids
 
-          sig { returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop]) }
+          sig do
+            returns(
+              T::Array[
+                OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop
+              ]
+            )
+          end
           attr_accessor :stops
 
-          sig { returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping]) }
+          sig do
+            returns(
+              T::Array[
+                OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping
+              ]
+            )
+          end
           attr_accessor :stop_trip_groupings
 
-          sig { returns(T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]) }
+          sig do
+            returns(
+              T::Array[
+                OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip
+              ]
+            )
+          end
           attr_accessor :trips
 
           sig do
@@ -78,45 +124,60 @@ module OnebusawaySDK
               route_id: String,
               schedule_date: Integer,
               service_ids: T::Array[String],
-              stops: T::Array[
-                T.any(
-                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop,
-                  OnebusawaySDK::Internal::AnyHash
-                )
-              ],
-              stop_trip_groupings: T::Array[
-                T.any(
-                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping,
-                  OnebusawaySDK::Internal::AnyHash
-                )
-              ],
-              trips: T::Array[
-                T.any(
-                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip,
-                  OnebusawaySDK::Internal::AnyHash
-                )
-              ]
-            )
-              .returns(T.attached_class)
+              stops:
+                T::Array[
+                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop::OrHash
+                ],
+              stop_trip_groupings:
+                T::Array[
+                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::OrHash
+                ],
+              trips:
+                T::Array[
+                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip::OrHash
+                ]
+            ).returns(T.attached_class)
           end
-          def self.new(route_id:, schedule_date:, service_ids:, stops:, stop_trip_groupings:, trips:); end
+          def self.new(
+            route_id:,
+            schedule_date:,
+            service_ids:,
+            stops:,
+            stop_trip_groupings:,
+            trips:
+          )
+          end
 
           sig do
-            override
-              .returns(
-                {
-                  route_id: String,
-                  schedule_date: Integer,
-                  service_ids: T::Array[String],
-                  stops: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
-                  stop_trip_groupings: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
-                  trips: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
-                }
-              )
+            override.returns(
+              {
+                route_id: String,
+                schedule_date: Integer,
+                service_ids: T::Array[String],
+                stops:
+                  T::Array[
+                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop
+                  ],
+                stop_trip_groupings:
+                  T::Array[
+                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping
+                  ],
+                trips:
+                  T::Array[
+                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip
+                  ]
+              }
+            )
           end
-          def to_hash; end
+          def to_hash
+          end
 
           class Stop < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             sig { returns(String) }
             attr_accessor :id
 
@@ -175,8 +236,7 @@ module OnebusawaySDK
                 direction: String,
                 location_type: Integer,
                 wheelchair_boarding: String
-              )
-                .returns(T.attached_class)
+              ).returns(T.attached_class)
             end
             def self.new(
               id:,
@@ -190,29 +250,36 @@ module OnebusawaySDK
               direction: nil,
               location_type: nil,
               wheelchair_boarding: nil
-            ); end
-            sig do
-              override
-                .returns(
-                  {
-                    id: String,
-                    lat: Float,
-                    lon: Float,
-                    name: String,
-                    parent: String,
-                    route_ids: T::Array[String],
-                    static_route_ids: T::Array[String],
-                    code: String,
-                    direction: String,
-                    location_type: Integer,
-                    wheelchair_boarding: String
-                  }
-                )
+            )
             end
-            def to_hash; end
+
+            sig do
+              override.returns(
+                {
+                  id: String,
+                  lat: Float,
+                  lon: Float,
+                  name: String,
+                  parent: String,
+                  route_ids: T::Array[String],
+                  static_route_ids: T::Array[String],
+                  code: String,
+                  direction: String,
+                  location_type: Integer,
+                  wheelchair_boarding: String
+                }
+              )
+            end
+            def to_hash
+            end
           end
 
           class StopTripGrouping < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             sig { returns(String) }
             attr_accessor :direction_id
 
@@ -228,7 +295,9 @@ module OnebusawaySDK
             sig do
               returns(
                 T.nilable(
-                  T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+                  T::Array[
+                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime
+                  ]
                 )
               )
             end
@@ -236,14 +305,11 @@ module OnebusawaySDK
 
             sig do
               params(
-                trips_with_stop_times: T::Array[
-                  T.any(
-                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime,
-                    OnebusawaySDK::Internal::AnyHash
-                  )
-                ]
-              )
-                .void
+                trips_with_stop_times:
+                  T::Array[
+                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::OrHash
+                  ]
+              ).void
             end
             attr_writer :trips_with_stop_times
 
@@ -253,33 +319,44 @@ module OnebusawaySDK
                 stop_ids: T::Array[String],
                 trip_headsigns: T::Array[String],
                 trip_ids: T::Array[String],
-                trips_with_stop_times: T::Array[
-                  T.any(
-                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime,
-                    OnebusawaySDK::Internal::AnyHash
-                  )
-                ]
-              )
-                .returns(T.attached_class)
+                trips_with_stop_times:
+                  T::Array[
+                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::OrHash
+                  ]
+              ).returns(T.attached_class)
             end
-            def self.new(direction_id:, stop_ids:, trip_headsigns:, trip_ids:, trips_with_stop_times: nil)
+            def self.new(
+              direction_id:,
+              stop_ids:,
+              trip_headsigns:,
+              trip_ids:,
+              trips_with_stop_times: nil
+            )
             end
 
             sig do
-              override
-                .returns(
-                  {
-                    direction_id: String,
-                    stop_ids: T::Array[String],
-                    trip_headsigns: T::Array[String],
-                    trip_ids: T::Array[String],
-                    trips_with_stop_times: T::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
-                  }
-                )
+              override.returns(
+                {
+                  direction_id: String,
+                  stop_ids: T::Array[String],
+                  trip_headsigns: T::Array[String],
+                  trip_ids: T::Array[String],
+                  trips_with_stop_times:
+                    T::Array[
+                      OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime
+                    ]
+                }
+              )
             end
-            def to_hash; end
+            def to_hash
+            end
 
             class TripsWithStopTime < OnebusawaySDK::Internal::Type::BaseModel
+              OrHash =
+                T.type_alias do
+                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                end
+
               sig do
                 returns(
                   T::Array[
@@ -294,32 +371,36 @@ module OnebusawaySDK
 
               sig do
                 params(
-                  stop_times: T::Array[
-                    T.any(
-                      OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime,
-                      OnebusawaySDK::Internal::AnyHash
-                    )
-                  ],
+                  stop_times:
+                    T::Array[
+                      OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime::OrHash
+                    ],
                   trip_id: String
-                )
-                  .returns(T.attached_class)
+                ).returns(T.attached_class)
               end
-              def self.new(stop_times:, trip_id:); end
+              def self.new(stop_times:, trip_id:)
+              end
 
               sig do
-                override
-                  .returns(
-                    {
-                      stop_times: T::Array[
+                override.returns(
+                  {
+                    stop_times:
+                      T::Array[
                         OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime
                       ],
-                      trip_id: String
-                    }
-                  )
+                    trip_id: String
+                  }
+                )
               end
-              def to_hash; end
+              def to_hash
+              end
 
               class StopTime < OnebusawaySDK::Internal::Type::BaseModel
+                OrHash =
+                  T.type_alias do
+                    T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  end
+
                 sig { returns(T::Boolean) }
                 attr_accessor :arrival_enabled
 
@@ -360,8 +441,7 @@ module OnebusawaySDK
                     trip_id: String,
                     service_id: String,
                     stop_headsign: String
-                  )
-                    .returns(T.attached_class)
+                  ).returns(T.attached_class)
                 end
                 def self.new(
                   arrival_enabled:,
@@ -372,28 +452,35 @@ module OnebusawaySDK
                   trip_id:,
                   service_id: nil,
                   stop_headsign: nil
-                ); end
-                sig do
-                  override
-                    .returns(
-                      {
-                        arrival_enabled: T::Boolean,
-                        arrival_time: Integer,
-                        departure_enabled: T::Boolean,
-                        departure_time: Integer,
-                        stop_id: String,
-                        trip_id: String,
-                        service_id: String,
-                        stop_headsign: String
-                      }
-                    )
+                )
                 end
-                def to_hash; end
+
+                sig do
+                  override.returns(
+                    {
+                      arrival_enabled: T::Boolean,
+                      arrival_time: Integer,
+                      departure_enabled: T::Boolean,
+                      departure_time: Integer,
+                      stop_id: String,
+                      trip_id: String,
+                      service_id: String,
+                      stop_headsign: String
+                    }
+                  )
+                end
+                def to_hash
+                end
               end
             end
           end
 
           class Trip < OnebusawaySDK::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              end
+
             sig { returns(String) }
             attr_accessor :id
 
@@ -464,8 +551,7 @@ module OnebusawaySDK
                 time_zone: String,
                 trip_headsign: String,
                 trip_short_name: String
-              )
-                .returns(T.attached_class)
+              ).returns(T.attached_class)
             end
             def self.new(
               id:,
@@ -479,26 +565,28 @@ module OnebusawaySDK
               time_zone: nil,
               trip_headsign: nil,
               trip_short_name: nil
-            ); end
-            sig do
-              override
-                .returns(
-                  {
-                    id: String,
-                    route_id: String,
-                    service_id: String,
-                    block_id: String,
-                    direction_id: String,
-                    peak_offpeak: Integer,
-                    route_short_name: String,
-                    shape_id: String,
-                    time_zone: String,
-                    trip_headsign: String,
-                    trip_short_name: String
-                  }
-                )
+            )
             end
-            def to_hash; end
+
+            sig do
+              override.returns(
+                {
+                  id: String,
+                  route_id: String,
+                  service_id: String,
+                  block_id: String,
+                  direction_id: String,
+                  peak_offpeak: Integer,
+                  route_short_name: String,
+                  shape_id: String,
+                  time_zone: String,
+                  trip_headsign: String,
+                  trip_short_name: String
+                }
+              )
+            end
+            def to_hash
+            end
           end
         end
       end

@@ -6,6 +6,9 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      OrHash =
+        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+
       # Specific time for querying the status (timestamp format)
       sig { returns(T.nilable(String)) }
       attr_reader :time
@@ -16,17 +19,23 @@ module OnebusawaySDK
       sig do
         params(
           time: String,
-          request_options: T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
-        )
-          .returns(T.attached_class)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
       def self.new(
         # Specific time for querying the status (timestamp format)
         time: nil,
         request_options: {}
-      ); end
-      sig { override.returns({time: String, request_options: OnebusawaySDK::RequestOptions}) }
-      def to_hash; end
+      )
+      end
+
+      sig do
+        override.returns(
+          { time: String, request_options: OnebusawaySDK::RequestOptions }
+        )
+      end
+      def to_hash
+      end
     end
   end
 end

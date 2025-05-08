@@ -5,17 +5,22 @@ module OnebusawaySDK
     class StopIDsForAgency
       # Get stop IDs for a specific agency
       sig do
-        params(agency_id: String, request_options: OnebusawaySDK::RequestOpts)
-          .returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse)
+        params(
+          agency_id: String,
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::StopIDsForAgencyListResponse)
       end
       def list(
         # ID of the agency
         agency_id,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

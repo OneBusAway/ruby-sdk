@@ -12,9 +12,8 @@ module OnebusawaySDK
           include_trip: T::Boolean,
           service_date: Integer,
           time: Integer,
-          request_options: OnebusawaySDK::RequestOpts
-        )
-          .returns(OnebusawaySDK::Models::TripDetailRetrieveResponse)
+          request_options: OnebusawaySDK::RequestOptions::OrHash
+        ).returns(OnebusawaySDK::Models::TripDetailRetrieveResponse)
       end
       def retrieve(
         # ID of the trip to retrieve details for.
@@ -33,10 +32,13 @@ module OnebusawaySDK
         # Time parameter to query the system at a specific time (optional).
         time: nil,
         request_options: {}
-      ); end
+      )
+      end
+
       # @api private
       sig { params(client: OnebusawaySDK::Client).returns(T.attached_class) }
-      def self.new(client:); end
+      def self.new(client:)
+      end
     end
   end
 end

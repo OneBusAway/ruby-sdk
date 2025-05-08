@@ -8,8 +8,6 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       def initialize: (?request_options: OnebusawaySDK::request_opts) -> void
-
-      def to_hash: -> OnebusawaySDK::Models::current_time_retrieve_params
     end
   end
 end
