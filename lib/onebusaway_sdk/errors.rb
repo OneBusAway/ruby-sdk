@@ -99,7 +99,7 @@ module OnebusawaySDK
       # @param response [nil]
       # @param message [String, nil]
       #
-      # @return [OnebusawaySDK::Errors::APIStatusError]
+      # @return [self]
       def self.for(url:, status:, body:, request:, response:, message: nil)
         kwargs = {
           url: url,
