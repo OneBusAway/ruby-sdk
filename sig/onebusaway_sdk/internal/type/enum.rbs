@@ -3,6 +3,7 @@ module OnebusawaySDK
     module Type
       module Enum
         include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         def self.values: -> ::Array[(nil | bool | Integer | Float | Symbol)]
 

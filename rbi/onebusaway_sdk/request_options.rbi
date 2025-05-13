@@ -8,7 +8,9 @@ module OnebusawaySDK
   # simply pass a Hash with symbol keys matching the attributes on this class.
   class RequestOptions < OnebusawaySDK::Internal::Type::BaseModel
     OrHash =
-      T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+      T.type_alias do
+        T.any(OnebusawaySDK::RequestOptions, OnebusawaySDK::Internal::AnyHash)
+      end
 
     # @api private
     sig { params(opts: OnebusawaySDK::RequestOptions::OrHash).void }

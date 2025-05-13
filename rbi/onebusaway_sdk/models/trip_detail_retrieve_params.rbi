@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::TripDetailRetrieveParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       # Whether to include the full schedule element in the tripDetails section
       # (defaults to true).

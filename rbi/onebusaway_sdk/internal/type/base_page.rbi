@@ -30,7 +30,7 @@ module OnebusawaySDK
           params(
             client: OnebusawaySDK::Internal::Transport::BaseClient,
             req:
-              OnebusawaySDK::Internal::Transport::BaseClient::RequestComponentsShape,
+              OnebusawaySDK::Internal::Transport::BaseClient::RequestComponents,
             headers: T.any(T::Hash[String, String], Net::HTTPHeader),
             page_data: T.anything
           ).void

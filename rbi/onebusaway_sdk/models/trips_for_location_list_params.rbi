@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::TripsForLocationListParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       # The latitude coordinate of the search center
       sig { returns(Float) }

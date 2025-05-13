@@ -5,6 +5,8 @@ module OnebusawaySDK
     module Type
       # @api private
       module Converter
+        extend OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
+
         Input =
           T.type_alias do
             T.any(

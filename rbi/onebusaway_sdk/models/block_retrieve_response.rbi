@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class BlockRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::BlockRetrieveResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig { returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data) }
       attr_reader :data
@@ -34,7 +39,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::BlockRetrieveResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig do
           returns(OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry)
@@ -79,7 +89,10 @@ module OnebusawaySDK
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig { returns(String) }
@@ -123,7 +136,10 @@ module OnebusawaySDK
           class Configuration < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(T::Array[String]) }
@@ -175,7 +191,10 @@ module OnebusawaySDK
             class Trip < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               sig { returns(Float) }
@@ -234,7 +253,10 @@ module OnebusawaySDK
               class BlockStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 OrHash =
                   T.type_alias do
-                    T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                    T.any(
+                      OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime,
+                      OnebusawaySDK::Internal::AnyHash
+                    )
                   end
 
                 sig { returns(Float) }
@@ -295,7 +317,10 @@ module OnebusawaySDK
                 class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                   OrHash =
                     T.type_alias do
-                      T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                      T.any(
+                        OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime,
+                        OnebusawaySDK::Internal::AnyHash
+                      )
                     end
 
                   sig { returns(Integer) }

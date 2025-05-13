@@ -29,7 +29,7 @@ module OnebusawaySDK
         #
         #   @option spec [Boolean] :"nil?"
         #
-        # @return [OnebusawaySDK::Internal::Type::HashOf]
+        # @return [self]
         def self.[](...) = new(...)
 
         # @api public

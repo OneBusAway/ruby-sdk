@@ -4,7 +4,9 @@ module OnebusawaySDK
   module Models
     class References < OnebusawaySDK::Internal::Type::BaseModel
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(OnebusawaySDK::References, OnebusawaySDK::Internal::AnyHash)
+        end
 
       sig { returns(T::Array[OnebusawaySDK::References::Agency]) }
       attr_accessor :agencies
@@ -54,7 +56,12 @@ module OnebusawaySDK
 
       class Agency < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::References::Agency,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(String) }
         attr_accessor :id
@@ -154,7 +161,12 @@ module OnebusawaySDK
 
       class Route < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::References::Route,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(String) }
         attr_accessor :id
@@ -257,7 +269,12 @@ module OnebusawaySDK
 
       class Situation < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::References::Situation,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         # Unique identifier for the situation.
         sig { returns(String) }
@@ -482,7 +499,10 @@ module OnebusawaySDK
         class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::References::Situation::ActiveWindow,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Start time of the active window as a Unix timestamp.
@@ -516,7 +536,10 @@ module OnebusawaySDK
         class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::References::Situation::AllAffect,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Identifier for the agency.
@@ -606,7 +629,10 @@ module OnebusawaySDK
         class Consequence < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::References::Situation::Consequence,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Condition of the consequence.
@@ -662,7 +688,10 @@ module OnebusawaySDK
           class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::References::Situation::Consequence::ConditionDetails,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig do
@@ -713,7 +742,10 @@ module OnebusawaySDK
             class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               # Length of the diversion path.
@@ -766,7 +798,10 @@ module OnebusawaySDK
         class Description < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::References::Situation::Description,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Language of the description.
@@ -800,7 +835,10 @@ module OnebusawaySDK
         class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::References::Situation::PublicationWindow,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Start time of the time window as a Unix timestamp.
@@ -875,7 +913,10 @@ module OnebusawaySDK
         class Summary < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::References::Situation::Summary,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Language of the summary.
@@ -909,7 +950,10 @@ module OnebusawaySDK
         class URL < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::References::Situation::URL,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Language of the URL.
@@ -943,7 +987,12 @@ module OnebusawaySDK
 
       class Stop < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::References::Stop,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(String) }
         attr_accessor :id
@@ -1043,7 +1092,12 @@ module OnebusawaySDK
 
       class StopTime < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::References::StopTime,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(T.nilable(Integer)) }
         attr_reader :arrival_time
@@ -1119,7 +1173,12 @@ module OnebusawaySDK
 
       class Trip < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::References::Trip,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(String) }
         attr_accessor :id

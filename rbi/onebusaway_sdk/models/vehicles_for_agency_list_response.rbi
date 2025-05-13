@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class VehiclesForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::VehiclesForAgencyListResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig do
         returns(OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data)
@@ -38,7 +43,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(T::Boolean) }
         attr_accessor :limit_exceeded
@@ -89,7 +99,10 @@ module OnebusawaySDK
         class List < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig { returns(Integer) }
@@ -221,7 +234,10 @@ module OnebusawaySDK
           class Location < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(T.nilable(Float)) }
@@ -248,7 +264,10 @@ module OnebusawaySDK
           class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             # Trip ID of the trip the vehicle is actively serving.
@@ -556,7 +575,10 @@ module OnebusawaySDK
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               # Latitude of the last known location of the transit vehicle.
@@ -591,7 +613,10 @@ module OnebusawaySDK
             class Position < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::Position,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               # Latitude of the current position of the transit vehicle.

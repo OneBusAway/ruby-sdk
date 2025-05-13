@@ -6,6 +6,7 @@ module OnebusawaySDK
       # @api private
       module Union
         include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         # @api private
         #

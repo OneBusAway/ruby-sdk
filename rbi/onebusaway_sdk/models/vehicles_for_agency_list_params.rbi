@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::VehiclesForAgencyListParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       # Specific time for querying the status (timestamp format)
       sig { returns(T.nilable(String)) }

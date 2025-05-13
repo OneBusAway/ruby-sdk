@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::ArrivalAndDepartureListParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       # Include vehicles arriving or departing in the next n minutes.
       sig { returns(T.nilable(Integer)) }

@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class AgenciesWithCoverageListResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::AgenciesWithCoverageListResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig do
         returns(OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data)
@@ -40,7 +45,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(T::Boolean) }
         attr_accessor :limit_exceeded
@@ -91,7 +101,10 @@ module OnebusawaySDK
         class List < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig { returns(String) }

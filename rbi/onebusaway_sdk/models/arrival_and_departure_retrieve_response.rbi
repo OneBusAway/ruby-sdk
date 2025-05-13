@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class ArrivalAndDepartureRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig do
         returns(
@@ -43,7 +48,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig do
           returns(
@@ -91,7 +101,10 @@ module OnebusawaySDK
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           # Indicates if riders can arrive on this transit vehicle.
@@ -469,7 +482,10 @@ module OnebusawaySDK
           class TripStatus < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             # Trip ID of the trip the vehicle is actively serving.
@@ -778,7 +794,10 @@ module OnebusawaySDK
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               # Latitude of the last known location of the transit vehicle.
@@ -813,7 +832,10 @@ module OnebusawaySDK
             class Position < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               # Latitude of the current position of the transit vehicle.

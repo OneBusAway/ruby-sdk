@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::StopsForRouteListParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       # Include polyline elements in the response (default true)
       sig { returns(T.nilable(T::Boolean)) }

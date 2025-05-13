@@ -4,6 +4,8 @@ module OnebusawaySDK
   module Internal
     # @api private
     module Util
+      extend OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
+
       # @api private
       sig { returns(Float) }
       def self.monotonic_secs
@@ -172,7 +174,7 @@ module OnebusawaySDK
         end
       end
 
-      ParsedUriShape =
+      ParsedUri =
         T.type_alias do
           {
             scheme: T.nilable(String),
@@ -187,7 +189,7 @@ module OnebusawaySDK
         # @api private
         sig do
           params(url: T.any(URI::Generic, String)).returns(
-            OnebusawaySDK::Internal::Util::ParsedUriShape
+            OnebusawaySDK::Internal::Util::ParsedUri
           )
         end
         def parse_uri(url)
@@ -195,7 +197,7 @@ module OnebusawaySDK
 
         # @api private
         sig do
-          params(parsed: OnebusawaySDK::Internal::Util::ParsedUriShape).returns(
+          params(parsed: OnebusawaySDK::Internal::Util::ParsedUri).returns(
             URI::Generic
           )
         end
@@ -205,8 +207,8 @@ module OnebusawaySDK
         # @api private
         sig do
           params(
-            lhs: OnebusawaySDK::Internal::Util::ParsedUriShape,
-            rhs: OnebusawaySDK::Internal::Util::ParsedUriShape
+            lhs: OnebusawaySDK::Internal::Util::ParsedUri,
+            rhs: OnebusawaySDK::Internal::Util::ParsedUri
           ).returns(URI::Generic)
         end
         def join_parsed_uri(lhs, rhs)
@@ -421,6 +423,27 @@ module OnebusawaySDK
           )
         end
         def decode_sse(lines)
+        end
+      end
+
+      # @api private
+      module SorbetRuntimeSupport
+        class MissingSorbetRuntimeError < ::RuntimeError
+        end
+
+        # @api private
+        sig { returns(T::Hash[Symbol, T.anything]) }
+        private def sorbet_runtime_constants
+        end
+
+        # @api private
+        sig { params(name: Symbol).void }
+        def const_missing(name)
+        end
+
+        # @api private
+        sig { params(name: Symbol, blk: T.proc.returns(T.anything)).void }
+        def define_sorbet_constant!(name, &blk)
         end
       end
     end

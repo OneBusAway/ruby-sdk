@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class ScheduleForRouteRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig do
         returns(OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data)
@@ -40,7 +45,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig do
           returns(
@@ -80,7 +90,10 @@ module OnebusawaySDK
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig { returns(String) }
@@ -175,7 +188,10 @@ module OnebusawaySDK
           class Stop < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(String) }
@@ -277,7 +293,10 @@ module OnebusawaySDK
           class StopTripGrouping < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(String) }
@@ -354,7 +373,10 @@ module OnebusawaySDK
             class TripsWithStopTime < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               sig do
@@ -398,7 +420,10 @@ module OnebusawaySDK
               class StopTime < OnebusawaySDK::Internal::Type::BaseModel
                 OrHash =
                   T.type_alias do
-                    T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                    T.any(
+                      OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime,
+                      OnebusawaySDK::Internal::AnyHash
+                    )
                   end
 
                 sig { returns(T::Boolean) }
@@ -478,7 +503,10 @@ module OnebusawaySDK
           class Trip < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(String) }
