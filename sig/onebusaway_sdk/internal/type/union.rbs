@@ -3,6 +3,7 @@ module OnebusawaySDK
     module Type
       module Union
         include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         private def self.known_variants: -> ::Array[[Symbol?, (^-> OnebusawaySDK::Internal::Type::Converter::input)]]
 

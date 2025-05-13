@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class StopsForRouteListResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::StopsForRouteListResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig { returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data) }
       attr_reader :data
@@ -34,7 +39,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::StopsForRouteListResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig do
           returns(OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry)
@@ -80,7 +90,10 @@ module OnebusawaySDK
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig do
@@ -181,7 +194,10 @@ module OnebusawaySDK
           class Polyline < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::Polyline,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(T.nilable(Integer)) }
@@ -222,7 +238,10 @@ module OnebusawaySDK
           class StopGrouping < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(T.nilable(String)) }
@@ -310,7 +329,10 @@ module OnebusawaySDK
             class Name < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               sig { returns(T.nilable(String)) }
@@ -353,7 +375,10 @@ module OnebusawaySDK
             class Polyline < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               sig { returns(T.nilable(Integer)) }

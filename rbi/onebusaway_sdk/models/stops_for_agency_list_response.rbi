@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class StopsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::StopsForAgencyListResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig { returns(T::Boolean) }
       attr_accessor :limit_exceeded
@@ -58,7 +63,12 @@ module OnebusawaySDK
 
       class List < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::StopsForAgencyListResponse::List,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig { returns(String) }
         attr_accessor :id

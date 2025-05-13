@@ -3,9 +3,12 @@ module OnebusawaySDK
     module Type
       class BaseModel
         extend OnebusawaySDK::Internal::Type::Converter
+        extend OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         type known_field =
           { mode: (:coerce | :dump)?, required: bool, nilable: bool }
+
+        def self.inherited: (self child) -> void
 
         def self.known_fields: -> ::Hash[Symbol, (OnebusawaySDK::Internal::Type::BaseModel::known_field
         & { type_fn: (^-> OnebusawaySDK::Internal::Type::Converter::input) })]
@@ -60,10 +63,10 @@ module OnebusawaySDK
           | ::Hash[top, top]
           | top value,
           state: OnebusawaySDK::Internal::Type::Converter::coerce_state
-        ) -> (instance | top)
+        ) -> (self | top)
 
         def self.dump: (
-          instance | top value,
+          self | top value,
           state: OnebusawaySDK::Internal::Type::Converter::dump_state
         ) -> (::Hash[top, top] | top)
 

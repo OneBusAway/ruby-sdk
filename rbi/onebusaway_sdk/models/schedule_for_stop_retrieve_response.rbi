@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class ScheduleForStopRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::ScheduleForStopRetrieveResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig do
         returns(OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data)
@@ -38,7 +43,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig do
           returns(
@@ -86,7 +96,10 @@ module OnebusawaySDK
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig { returns(Integer) }
@@ -135,7 +148,10 @@ module OnebusawaySDK
           class StopRouteSchedule < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(String) }
@@ -179,7 +195,10 @@ module OnebusawaySDK
             class StopRouteDirectionSchedule < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               sig do
@@ -256,7 +275,10 @@ module OnebusawaySDK
               class ScheduleStopTime < OnebusawaySDK::Internal::Type::BaseModel
                 OrHash =
                   T.type_alias do
-                    T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                    T.any(
+                      OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime,
+                      OnebusawaySDK::Internal::AnyHash
+                    )
                   end
 
                 sig { returns(T::Boolean) }
@@ -325,7 +347,10 @@ module OnebusawaySDK
               class ScheduleFrequency < OnebusawaySDK::Internal::Type::BaseModel
                 OrHash =
                   T.type_alias do
-                    T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                    T.any(
+                      OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency,
+                      OnebusawaySDK::Internal::AnyHash
+                    )
                   end
 
                 sig { returns(Integer) }

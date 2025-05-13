@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class ResponseWrapper < OnebusawaySDK::Internal::Type::BaseModel
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::ResponseWrapper,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig { returns(Integer) }
       attr_accessor :code

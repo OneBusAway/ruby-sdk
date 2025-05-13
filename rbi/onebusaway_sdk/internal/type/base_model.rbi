@@ -5,10 +5,11 @@ module OnebusawaySDK
     module Type
       class BaseModel
         extend OnebusawaySDK::Internal::Type::Converter
+        extend OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         abstract!
 
-        KnownFieldShape =
+        KnownField =
           T.type_alias do
             {
               mode: T.nilable(Symbol),
@@ -18,19 +19,29 @@ module OnebusawaySDK
           end
 
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Internal::Type::BaseModel,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         class << self
           # @api private
           #
           # Assumes superclass fields are totally defined before fields are accessed /
           # defined on subclasses.
+          sig { params(child: T.self_type).void }
+          def inherited(child)
+          end
+
+          # @api private
           sig do
             returns(
               T::Hash[
                 Symbol,
                 T.all(
-                  OnebusawaySDK::Internal::Type::BaseModel::KnownFieldShape,
+                  OnebusawaySDK::Internal::Type::BaseModel::KnownField,
                   {
                     type_fn:
                       T.proc.returns(
@@ -50,7 +61,7 @@ module OnebusawaySDK
               T::Hash[
                 Symbol,
                 T.all(
-                  OnebusawaySDK::Internal::Type::BaseModel::KnownFieldShape,
+                  OnebusawaySDK::Internal::Type::BaseModel::KnownField,
                   { type: OnebusawaySDK::Internal::Type::Converter::Input }
                 )
               ]

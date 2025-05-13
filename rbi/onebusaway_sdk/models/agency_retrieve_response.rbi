@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class AgencyRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::AgencyRetrieveResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig { returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data) }
       attr_reader :data
@@ -34,7 +39,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::AgencyRetrieveResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         sig do
           returns(OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry)
@@ -84,7 +94,10 @@ module OnebusawaySDK
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig { returns(String) }

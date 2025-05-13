@@ -4,7 +4,12 @@ module OnebusawaySDK
   module Models
     class TripsForLocationListResponse < OnebusawaySDK::Models::ResponseWrapper
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::Models::TripsForLocationListResponse,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig { returns(OnebusawaySDK::Models::TripsForLocationListResponse::Data) }
       attr_reader :data
@@ -36,7 +41,12 @@ module OnebusawaySDK
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         OrHash =
-          T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+          T.type_alias do
+            T.any(
+              OnebusawaySDK::Models::TripsForLocationListResponse::Data,
+              OnebusawaySDK::Internal::AnyHash
+            )
+          end
 
         # Indicates if the limit of trips has been exceeded
         sig { returns(T::Boolean) }
@@ -104,7 +114,10 @@ module OnebusawaySDK
         class List < OnebusawaySDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
-              T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+              T.any(
+                OnebusawaySDK::Models::TripsForLocationListResponse::Data::List,
+                OnebusawaySDK::Internal::AnyHash
+              )
             end
 
           sig do
@@ -197,7 +210,10 @@ module OnebusawaySDK
           class Schedule < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             sig { returns(String) }
@@ -262,7 +278,10 @@ module OnebusawaySDK
             class StopTime < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule::StopTime,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               sig { returns(T.nilable(Integer)) }
@@ -341,7 +360,10 @@ module OnebusawaySDK
           class Status < OnebusawaySDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
-                T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                T.any(
+                  OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status,
+                  OnebusawaySDK::Internal::AnyHash
+                )
               end
 
             # Trip ID of the trip the vehicle is actively serving.
@@ -649,7 +671,10 @@ module OnebusawaySDK
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               # Latitude of the last known location of the transit vehicle.
@@ -684,7 +709,10 @@ module OnebusawaySDK
             class Position < OnebusawaySDK::Internal::Type::BaseModel
               OrHash =
                 T.type_alias do
-                  T.any(T.self_type, OnebusawaySDK::Internal::AnyHash)
+                  T.any(
+                    OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::Position,
+                    OnebusawaySDK::Internal::AnyHash
+                  )
                 end
 
               # Latitude of the current position of the transit vehicle.

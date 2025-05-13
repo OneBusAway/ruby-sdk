@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::RouteIDsForAgencyListParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       sig do
         params(request_options: OnebusawaySDK::RequestOptions::OrHash).returns(

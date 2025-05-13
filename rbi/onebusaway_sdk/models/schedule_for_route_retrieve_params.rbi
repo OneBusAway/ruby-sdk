@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::ScheduleForRouteRetrieveParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       # The date for which you want to request a schedule in the format YYYY-MM-DD
       # (optional, defaults to current date)

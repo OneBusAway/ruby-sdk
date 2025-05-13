@@ -17,6 +17,7 @@ module OnebusawaySDK
       # values safely.
       module Enum
         include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         # All of the valid Symbol values for this enum.
         sig do

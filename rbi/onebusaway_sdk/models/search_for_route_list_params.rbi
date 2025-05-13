@@ -7,7 +7,12 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       OrHash =
-        T.type_alias { T.any(T.self_type, OnebusawaySDK::Internal::AnyHash) }
+        T.type_alias do
+          T.any(
+            OnebusawaySDK::SearchForRouteListParams,
+            OnebusawaySDK::Internal::AnyHash
+          )
+        end
 
       # The string to search for.
       sig { returns(String) }
