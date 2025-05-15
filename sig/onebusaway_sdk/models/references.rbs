@@ -1,0 +1,627 @@
+module OnebusawaySDK
+  module Models
+    type references =
+      {
+        agencies: ::Array[OnebusawaySDK::References::Agency],
+        routes: ::Array[OnebusawaySDK::References::Route],
+        situations: ::Array[OnebusawaySDK::References::Situation],
+        stops: ::Array[OnebusawaySDK::References::Stop],
+        stop_times: ::Array[OnebusawaySDK::References::StopTime],
+        trips: ::Array[OnebusawaySDK::References::Trip]
+      }
+
+    class References < OnebusawaySDK::Internal::Type::BaseModel
+      attr_accessor agencies: ::Array[OnebusawaySDK::References::Agency]
+
+      attr_accessor routes: ::Array[OnebusawaySDK::References::Route]
+
+      attr_accessor situations: ::Array[OnebusawaySDK::References::Situation]
+
+      attr_accessor stops: ::Array[OnebusawaySDK::References::Stop]
+
+      attr_accessor stop_times: ::Array[OnebusawaySDK::References::StopTime]
+
+      attr_accessor trips: ::Array[OnebusawaySDK::References::Trip]
+
+      def initialize: (
+        agencies: ::Array[OnebusawaySDK::References::Agency],
+        routes: ::Array[OnebusawaySDK::References::Route],
+        situations: ::Array[OnebusawaySDK::References::Situation],
+        stops: ::Array[OnebusawaySDK::References::Stop],
+        stop_times: ::Array[OnebusawaySDK::References::StopTime],
+        trips: ::Array[OnebusawaySDK::References::Trip]
+      ) -> void
+
+      type agency =
+        {
+          id: String,
+          name: String,
+          timezone: String,
+          url: String,
+          disclaimer: String,
+          email: String,
+          fare_url: String,
+          lang: String,
+          phone: String,
+          private_service: bool
+        }
+
+      class Agency < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor name: String
+
+        attr_accessor timezone: String
+
+        attr_accessor url: String
+
+        attr_reader disclaimer: String?
+
+        def disclaimer=: (String) -> String
+
+        attr_reader email: String?
+
+        def email=: (String) -> String
+
+        attr_reader fare_url: String?
+
+        def fare_url=: (String) -> String
+
+        attr_reader lang: String?
+
+        def lang=: (String) -> String
+
+        attr_reader phone: String?
+
+        def phone=: (String) -> String
+
+        attr_reader private_service: bool?
+
+        def private_service=: (bool) -> bool
+
+        def initialize: (
+          id: String,
+          name: String,
+          timezone: String,
+          url: String,
+          ?disclaimer: String,
+          ?email: String,
+          ?fare_url: String,
+          ?lang: String,
+          ?phone: String,
+          ?private_service: bool
+        ) -> void
+      end
+
+      type route =
+        {
+          id: String,
+          agency_id: String,
+          type: Integer,
+          color: String,
+          description: String,
+          long_name: String,
+          null_safe_short_name: String,
+          short_name: String,
+          text_color: String,
+          url: String
+        }
+
+      class Route < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor agency_id: String
+
+        attr_accessor type: Integer
+
+        attr_reader color: String?
+
+        def color=: (String) -> String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader long_name: String?
+
+        def long_name=: (String) -> String
+
+        attr_reader null_safe_short_name: String?
+
+        def null_safe_short_name=: (String) -> String
+
+        attr_reader short_name: String?
+
+        def short_name=: (String) -> String
+
+        attr_reader text_color: String?
+
+        def text_color=: (String) -> String
+
+        attr_reader url: String?
+
+        def url=: (String) -> String
+
+        def initialize: (
+          id: String,
+          agency_id: String,
+          type: Integer,
+          ?color: String,
+          ?description: String,
+          ?long_name: String,
+          ?null_safe_short_name: String,
+          ?short_name: String,
+          ?text_color: String,
+          ?url: String
+        ) -> void
+      end
+
+      type situation =
+        {
+          id: String,
+          creation_time: Integer,
+          active_windows: ::Array[OnebusawaySDK::References::Situation::ActiveWindow],
+          all_affects: ::Array[OnebusawaySDK::References::Situation::AllAffect],
+          consequence_message: String,
+          consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
+          description: OnebusawaySDK::References::Situation::Description,
+          publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
+          reason: OnebusawaySDK::References::Situation::reason,
+          severity: String,
+          summary: OnebusawaySDK::References::Situation::Summary,
+          url: OnebusawaySDK::References::Situation::URL
+        }
+
+      class Situation < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor creation_time: Integer
+
+        attr_reader active_windows: ::Array[OnebusawaySDK::References::Situation::ActiveWindow]?
+
+        def active_windows=: (
+          ::Array[OnebusawaySDK::References::Situation::ActiveWindow]
+        ) -> ::Array[OnebusawaySDK::References::Situation::ActiveWindow]
+
+        attr_reader all_affects: ::Array[OnebusawaySDK::References::Situation::AllAffect]?
+
+        def all_affects=: (
+          ::Array[OnebusawaySDK::References::Situation::AllAffect]
+        ) -> ::Array[OnebusawaySDK::References::Situation::AllAffect]
+
+        attr_reader consequence_message: String?
+
+        def consequence_message=: (String) -> String
+
+        attr_reader consequences: ::Array[OnebusawaySDK::References::Situation::Consequence]?
+
+        def consequences=: (
+          ::Array[OnebusawaySDK::References::Situation::Consequence]
+        ) -> ::Array[OnebusawaySDK::References::Situation::Consequence]
+
+        attr_reader description: OnebusawaySDK::References::Situation::Description?
+
+        def description=: (
+          OnebusawaySDK::References::Situation::Description
+        ) -> OnebusawaySDK::References::Situation::Description
+
+        attr_reader publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow]?
+
+        def publication_windows=: (
+          ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
+        ) -> ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
+
+        attr_reader reason: OnebusawaySDK::References::Situation::reason?
+
+        def reason=: (
+          OnebusawaySDK::References::Situation::reason
+        ) -> OnebusawaySDK::References::Situation::reason
+
+        attr_reader severity: String?
+
+        def severity=: (String) -> String
+
+        attr_reader summary: OnebusawaySDK::References::Situation::Summary?
+
+        def summary=: (
+          OnebusawaySDK::References::Situation::Summary
+        ) -> OnebusawaySDK::References::Situation::Summary
+
+        attr_reader url: OnebusawaySDK::References::Situation::URL?
+
+        def url=: (
+          OnebusawaySDK::References::Situation::URL
+        ) -> OnebusawaySDK::References::Situation::URL
+
+        def initialize: (
+          id: String,
+          creation_time: Integer,
+          ?active_windows: ::Array[OnebusawaySDK::References::Situation::ActiveWindow],
+          ?all_affects: ::Array[OnebusawaySDK::References::Situation::AllAffect],
+          ?consequence_message: String,
+          ?consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
+          ?description: OnebusawaySDK::References::Situation::Description,
+          ?publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
+          ?reason: OnebusawaySDK::References::Situation::reason,
+          ?severity: String,
+          ?summary: OnebusawaySDK::References::Situation::Summary,
+          ?url: OnebusawaySDK::References::Situation::URL
+        ) -> void
+
+        type active_window = { from: Integer, to: Integer }
+
+        class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
+          attr_reader from: Integer?
+
+          def from=: (Integer) -> Integer
+
+          attr_reader to: Integer?
+
+          def to=: (Integer) -> Integer
+
+          def initialize: (?from: Integer, ?to: Integer) -> void
+        end
+
+        type all_affect =
+          {
+            agency_id: String,
+            application_id: String,
+            direction_id: String,
+            route_id: String,
+            stop_id: String,
+            trip_id: String
+          }
+
+        class AllAffect < OnebusawaySDK::Internal::Type::BaseModel
+          attr_reader agency_id: String?
+
+          def agency_id=: (String) -> String
+
+          attr_reader application_id: String?
+
+          def application_id=: (String) -> String
+
+          attr_reader direction_id: String?
+
+          def direction_id=: (String) -> String
+
+          attr_reader route_id: String?
+
+          def route_id=: (String) -> String
+
+          attr_reader stop_id: String?
+
+          def stop_id=: (String) -> String
+
+          attr_reader trip_id: String?
+
+          def trip_id=: (String) -> String
+
+          def initialize: (
+            ?agency_id: String,
+            ?application_id: String,
+            ?direction_id: String,
+            ?route_id: String,
+            ?stop_id: String,
+            ?trip_id: String
+          ) -> void
+        end
+
+        type consequence =
+          {
+            condition: String,
+            condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+          }
+
+        class Consequence < OnebusawaySDK::Internal::Type::BaseModel
+          attr_reader condition: String?
+
+          def condition=: (String) -> String
+
+          attr_reader condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails?
+
+          def condition_details=: (
+            OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+          ) -> OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+
+          def initialize: (
+            ?condition: String,
+            ?condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+          ) -> void
+
+          type condition_details =
+            {
+              diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
+              diversion_stop_ids: ::Array[String]
+            }
+
+          class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
+            attr_reader diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath?
+
+            def diversion_path=: (
+              OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath
+            ) -> OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath
+
+            attr_reader diversion_stop_ids: ::Array[String]?
+
+            def diversion_stop_ids=: (::Array[String]) -> ::Array[String]
+
+            def initialize: (
+              ?diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
+              ?diversion_stop_ids: ::Array[String]
+            ) -> void
+
+            type diversion_path =
+              { length: Integer, levels: String, points: String }
+
+            class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
+              attr_reader length: Integer?
+
+              def length=: (Integer) -> Integer
+
+              attr_reader levels: String?
+
+              def levels=: (String) -> String
+
+              attr_reader points: String?
+
+              def points=: (String) -> String
+
+              def initialize: (
+                ?length: Integer,
+                ?levels: String,
+                ?points: String
+              ) -> void
+            end
+          end
+        end
+
+        type description = { lang: String, value: String }
+
+        class Description < OnebusawaySDK::Internal::Type::BaseModel
+          attr_reader lang: String?
+
+          def lang=: (String) -> String
+
+          attr_reader value: String?
+
+          def value=: (String) -> String
+
+          def initialize: (?lang: String, ?value: String) -> void
+        end
+
+        type publication_window = { from: Integer, to: Integer }
+
+        class PublicationWindow < OnebusawaySDK::Internal::Type::BaseModel
+          attr_accessor from: Integer
+
+          attr_accessor to: Integer
+
+          def initialize: (from: Integer, to: Integer) -> void
+        end
+
+        type reason =
+          :equipmentReason
+          | :environmentReason
+          | :personnelReason
+          | :miscellaneousReason
+          | :securityAlert
+
+        module Reason
+          extend OnebusawaySDK::Internal::Type::Enum
+
+          EQUIPMENT_REASON: :equipmentReason
+          ENVIRONMENT_REASON: :environmentReason
+          PERSONNEL_REASON: :personnelReason
+          MISCELLANEOUS_REASON: :miscellaneousReason
+          SECURITY_ALERT: :securityAlert
+
+          def self?.values: -> ::Array[OnebusawaySDK::References::Situation::reason]
+        end
+
+        type summary = { lang: String, value: String }
+
+        class Summary < OnebusawaySDK::Internal::Type::BaseModel
+          attr_reader lang: String?
+
+          def lang=: (String) -> String
+
+          attr_reader value: String?
+
+          def value=: (String) -> String
+
+          def initialize: (?lang: String, ?value: String) -> void
+        end
+
+        type url = { lang: String, value: String }
+
+        class URL < OnebusawaySDK::Internal::Type::BaseModel
+          attr_reader lang: String?
+
+          def lang=: (String) -> String
+
+          attr_reader value: String?
+
+          def value=: (String) -> String
+
+          def initialize: (?lang: String, ?value: String) -> void
+        end
+      end
+
+      type stop =
+        {
+          id: String,
+          lat: Float,
+          lon: Float,
+          name: String,
+          parent: String,
+          route_ids: ::Array[String],
+          static_route_ids: ::Array[String],
+          code: String,
+          direction: String,
+          location_type: Integer,
+          wheelchair_boarding: String
+        }
+
+      class Stop < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor lat: Float
+
+        attr_accessor lon: Float
+
+        attr_accessor name: String
+
+        attr_accessor parent: String
+
+        attr_accessor route_ids: ::Array[String]
+
+        attr_accessor static_route_ids: ::Array[String]
+
+        attr_reader code: String?
+
+        def code=: (String) -> String
+
+        attr_reader direction: String?
+
+        def direction=: (String) -> String
+
+        attr_reader location_type: Integer?
+
+        def location_type=: (Integer) -> Integer
+
+        attr_reader wheelchair_boarding: String?
+
+        def wheelchair_boarding=: (String) -> String
+
+        def initialize: (
+          id: String,
+          lat: Float,
+          lon: Float,
+          name: String,
+          parent: String,
+          route_ids: ::Array[String],
+          static_route_ids: ::Array[String],
+          ?code: String,
+          ?direction: String,
+          ?location_type: Integer,
+          ?wheelchair_boarding: String
+        ) -> void
+      end
+
+      type stop_time =
+        {
+          arrival_time: Integer,
+          departure_time: Integer,
+          distance_along_trip: Float,
+          historical_occupancy: String,
+          stop_headsign: String,
+          stop_id: String
+        }
+
+      class StopTime < OnebusawaySDK::Internal::Type::BaseModel
+        attr_reader arrival_time: Integer?
+
+        def arrival_time=: (Integer) -> Integer
+
+        attr_reader departure_time: Integer?
+
+        def departure_time=: (Integer) -> Integer
+
+        attr_reader distance_along_trip: Float?
+
+        def distance_along_trip=: (Float) -> Float
+
+        attr_reader historical_occupancy: String?
+
+        def historical_occupancy=: (String) -> String
+
+        attr_reader stop_headsign: String?
+
+        def stop_headsign=: (String) -> String
+
+        attr_reader stop_id: String?
+
+        def stop_id=: (String) -> String
+
+        def initialize: (
+          ?arrival_time: Integer,
+          ?departure_time: Integer,
+          ?distance_along_trip: Float,
+          ?historical_occupancy: String,
+          ?stop_headsign: String,
+          ?stop_id: String
+        ) -> void
+      end
+
+      type trip =
+        {
+          id: String,
+          route_id: String,
+          service_id: String,
+          block_id: String,
+          direction_id: String,
+          peak_offpeak: Integer,
+          route_short_name: String,
+          shape_id: String,
+          time_zone: String,
+          trip_headsign: String,
+          trip_short_name: String
+        }
+
+      class Trip < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor route_id: String
+
+        attr_accessor service_id: String
+
+        attr_reader block_id: String?
+
+        def block_id=: (String) -> String
+
+        attr_reader direction_id: String?
+
+        def direction_id=: (String) -> String
+
+        attr_reader peak_offpeak: Integer?
+
+        def peak_offpeak=: (Integer) -> Integer
+
+        attr_reader route_short_name: String?
+
+        def route_short_name=: (String) -> String
+
+        attr_reader shape_id: String?
+
+        def shape_id=: (String) -> String
+
+        attr_reader time_zone: String?
+
+        def time_zone=: (String) -> String
+
+        attr_reader trip_headsign: String?
+
+        def trip_headsign=: (String) -> String
+
+        attr_reader trip_short_name: String?
+
+        def trip_short_name=: (String) -> String
+
+        def initialize: (
+          id: String,
+          route_id: String,
+          service_id: String,
+          ?block_id: String,
+          ?direction_id: String,
+          ?peak_offpeak: Integer,
+          ?route_short_name: String,
+          ?shape_id: String,
+          ?time_zone: String,
+          ?trip_headsign: String,
+          ?trip_short_name: String
+        ) -> void
+      end
+    end
+  end
+end

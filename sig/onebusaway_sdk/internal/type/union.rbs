@@ -1,0 +1,50 @@
+module OnebusawaySDK
+  module Internal
+    module Type
+      module Union
+        include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
+
+        private def self.known_variants: -> ::Array[[Symbol?, (^-> OnebusawaySDK::Internal::Type::Converter::input)]]
+
+        def self.derefed_variants: -> ::Array[[Symbol?, top]]
+
+        def self.variants: -> ::Array[top]
+
+        private def self.discriminator: (Symbol property) -> void
+
+        private def self.variant: (
+          Symbol
+          | ::Hash[Symbol, top]
+          | ^-> OnebusawaySDK::Internal::Type::Converter::input
+          | OnebusawaySDK::Internal::Type::Converter::input key,
+          ?::Hash[Symbol, top]
+          | ^-> OnebusawaySDK::Internal::Type::Converter::input
+          | OnebusawaySDK::Internal::Type::Converter::input spec
+        ) -> void
+
+        private def self.resolve_variant: (
+          top value
+        ) -> OnebusawaySDK::Internal::Type::Converter::input?
+
+        def ===: (top other) -> bool
+
+        def ==: (top other) -> bool
+
+        def hash: -> Integer
+
+        def coerce: (
+          top value,
+          state: OnebusawaySDK::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def dump: (
+          top value,
+          state: OnebusawaySDK::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def inspect: (?depth: Integer) -> String
+      end
+    end
+  end
+end

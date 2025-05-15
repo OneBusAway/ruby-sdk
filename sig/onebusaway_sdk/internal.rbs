@@ -1,0 +1,7 @@
+module OnebusawaySDK
+  module Internal
+    extend OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
+
+    OMIT: Object
+  end
+end

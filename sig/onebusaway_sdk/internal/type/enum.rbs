@@ -1,0 +1,30 @@
+module OnebusawaySDK
+  module Internal
+    module Type
+      module Enum
+        include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
+
+        def self.values: -> ::Array[(nil | bool | Integer | Float | Symbol)]
+
+        def ===: (top other) -> bool
+
+        def ==: (top other) -> bool
+
+        def hash: -> Integer
+
+        def coerce: (
+          String | Symbol | top value,
+          state: OnebusawaySDK::Internal::Type::Converter::coerce_state
+        ) -> (Symbol | top)
+
+        def dump: (
+          Symbol | top value,
+          state: OnebusawaySDK::Internal::Type::Converter::dump_state
+        ) -> (Symbol | top)
+
+        def inspect: (?depth: Integer) -> String
+      end
+    end
+  end
+end

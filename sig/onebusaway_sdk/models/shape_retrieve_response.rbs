@@ -1,0 +1,53 @@
+module OnebusawaySDK
+  module Models
+    type shape_retrieve_response =
+      { data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data }
+
+    class ShapeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      def data: -> OnebusawaySDK::Models::ShapeRetrieveResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::ShapeRetrieveResponse::Data _
+      ) -> OnebusawaySDK::Models::ShapeRetrieveResponse::Data
+
+      def initialize: (
+        data: OnebusawaySDK::Models::ShapeRetrieveResponse::Data
+      ) -> void
+
+      type data =
+        {
+          entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
+
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry
+
+        attr_accessor references: OnebusawaySDK::References
+
+        def initialize: (
+          entry: OnebusawaySDK::Models::ShapeRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        ) -> void
+
+        type entry = { length: Integer, points: String, levels: String }
+
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          attr_accessor length: Integer
+
+          attr_accessor points: String
+
+          attr_reader levels: String?
+
+          def levels=: (String) -> String
+
+          def initialize: (
+            length: Integer,
+            points: String,
+            ?levels: String
+          ) -> void
+        end
+      end
+    end
+  end
+end

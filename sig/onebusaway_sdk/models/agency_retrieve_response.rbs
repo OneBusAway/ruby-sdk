@@ -1,0 +1,100 @@
+module OnebusawaySDK
+  module Models
+    type agency_retrieve_response =
+      { data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data }
+
+    class AgencyRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      def data: -> OnebusawaySDK::Models::AgencyRetrieveResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::AgencyRetrieveResponse::Data _
+      ) -> OnebusawaySDK::Models::AgencyRetrieveResponse::Data
+
+      def initialize: (
+        data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data
+      ) -> void
+
+      type data =
+        {
+          entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
+          limit_exceeded: bool,
+          references: OnebusawaySDK::References
+        }
+
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry
+
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor references: OnebusawaySDK::References
+
+        def initialize: (
+          entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
+          limit_exceeded: bool,
+          references: OnebusawaySDK::References
+        ) -> void
+
+        type entry =
+          {
+            id: String,
+            name: String,
+            timezone: String,
+            url: String,
+            disclaimer: String,
+            email: String,
+            fare_url: String,
+            lang: String,
+            phone: String,
+            private_service: bool
+          }
+
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor name: String
+
+          attr_accessor timezone: String
+
+          attr_accessor url: String
+
+          attr_reader disclaimer: String?
+
+          def disclaimer=: (String) -> String
+
+          attr_reader email: String?
+
+          def email=: (String) -> String
+
+          attr_reader fare_url: String?
+
+          def fare_url=: (String) -> String
+
+          attr_reader lang: String?
+
+          def lang=: (String) -> String
+
+          attr_reader phone: String?
+
+          def phone=: (String) -> String
+
+          attr_reader private_service: bool?
+
+          def private_service=: (bool) -> bool
+
+          def initialize: (
+            id: String,
+            name: String,
+            timezone: String,
+            url: String,
+            ?disclaimer: String,
+            ?email: String,
+            ?fare_url: String,
+            ?lang: String,
+            ?phone: String,
+            ?private_service: bool
+          ) -> void
+        end
+      end
+    end
+  end
+end
