@@ -394,6 +394,14 @@ module OnebusawaySDK
         # @param keys [Array<Symbol>, nil]
         #
         # @return [Hash{Symbol=>Object}]
+        #
+        # @example
+        #   # `references` is a `OnebusawaySDK::References`
+        #   references => {
+        #     agencies: agencies,
+        #     routes: routes,
+        #     situations: situations
+        #   }
         def deconstruct_keys(keys)
           (keys || self.class.known_fields.keys)
             .filter_map do |k|
