@@ -35,7 +35,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_default_request_default_retry_attempts
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       body: {}
     )
@@ -50,7 +50,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_given_request_default_retry_attempts
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       body: {}
     )
@@ -66,7 +66,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_default_request_given_retry_attempts
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       body: {}
     )
@@ -81,7 +81,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_given_request_given_retry_attempts
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       body: {}
     )
@@ -97,7 +97,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_retry_after_seconds
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       headers: {"retry-after" => "1.3"},
       body: {}
@@ -115,7 +115,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_retry_after_date
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       headers: {"retry-after" => (Time.now + 10).httpdate},
       body: {}
@@ -135,7 +135,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_retry_after_ms
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       headers: {"retry-after-ms" => "1300"},
       body: {}
@@ -153,7 +153,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_retry_count_header
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       body: {}
     )
@@ -170,7 +170,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_omit_retry_count_header
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       body: {}
     )
@@ -187,7 +187,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_overwrite_retry_count_header
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 500,
       body: {}
     )
@@ -204,7 +204,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_redirect_307
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 307,
       headers: {"location" => "/redirected"},
       body: {}
@@ -233,7 +233,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_redirect_303
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 303,
       headers: {"location" => "/redirected"},
       body: {}
@@ -257,7 +257,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_redirect_auth_keep_same_origin
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 307,
       headers: {"location" => "/redirected"},
       body: {}
@@ -284,7 +284,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_client_redirect_auth_strip_cross_origin
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 307,
       headers: {"location" => "https://example.com/redirected"},
       body: {}
@@ -307,7 +307,7 @@ class OnebusawaySDKTest < Minitest::Test
   end
 
   def test_default_headers
-    stub_request(:get, "http://localhost/api/where/current-time.json?key").to_return_json(
+    stub_request(:get, "http://localhost/api/where/current-time.json?key=My%20API%20Key").to_return_json(
       status: 200,
       body: {}
     )
