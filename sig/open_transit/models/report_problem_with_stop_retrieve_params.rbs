@@ -1,0 +1,68 @@
+module OpenTransit
+  module Models
+    type report_problem_with_stop_retrieve_params =
+      {
+        code: OpenTransit::Models::ReportProblemWithStopRetrieveParams::code,
+        user_comment: String,
+        user_lat: Float,
+        user_location_accuracy: Float,
+        user_lon: Float
+      }
+      & OpenTransit::Internal::Type::request_parameters
+
+    class ReportProblemWithStopRetrieveParams < OpenTransit::Internal::Type::BaseModel
+      extend OpenTransit::Internal::Type::RequestParameters::Converter
+      include OpenTransit::Internal::Type::RequestParameters
+
+      attr_reader code: OpenTransit::Models::ReportProblemWithStopRetrieveParams::code?
+
+      def code=: (
+        OpenTransit::Models::ReportProblemWithStopRetrieveParams::code
+      ) -> OpenTransit::Models::ReportProblemWithStopRetrieveParams::code
+
+      attr_reader user_comment: String?
+
+      def user_comment=: (String) -> String
+
+      attr_reader user_lat: Float?
+
+      def user_lat=: (Float) -> Float
+
+      attr_reader user_location_accuracy: Float?
+
+      def user_location_accuracy=: (Float) -> Float
+
+      attr_reader user_lon: Float?
+
+      def user_lon=: (Float) -> Float
+
+      def initialize: (
+        ?code: OpenTransit::Models::ReportProblemWithStopRetrieveParams::code,
+        ?user_comment: String,
+        ?user_lat: Float,
+        ?user_location_accuracy: Float,
+        ?user_lon: Float,
+        ?request_options: OpenTransit::request_opts
+      ) -> void
+
+      type code =
+        :stop_name_wrong
+        | :stop_number_wrong
+        | :stop_location_wrong
+        | :route_or_trip_missing
+        | :other
+
+      module Code
+        extend OpenTransit::Internal::Type::Enum
+
+        STOP_NAME_WRONG: :stop_name_wrong
+        STOP_NUMBER_WRONG: :stop_number_wrong
+        STOP_LOCATION_WRONG: :stop_location_wrong
+        ROUTE_OR_TRIP_MISSING: :route_or_trip_missing
+        OTHER: :other
+
+        def self?.values: -> ::Array[OpenTransit::Models::ReportProblemWithStopRetrieveParams::code]
+      end
+    end
+  end
+end

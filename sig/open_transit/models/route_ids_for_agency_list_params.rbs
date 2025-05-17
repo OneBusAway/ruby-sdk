@@ -1,0 +1,13 @@
+module OpenTransit
+  module Models
+    type route_ids_for_agency_list_params =
+      {  } & OpenTransit::Internal::Type::request_parameters
+
+    class RouteIDsForAgencyListParams < OpenTransit::Internal::Type::BaseModel
+      extend OpenTransit::Internal::Type::RequestParameters::Converter
+      include OpenTransit::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: OpenTransit::request_opts) -> void
+    end
+  end
+end

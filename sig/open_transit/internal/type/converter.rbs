@@ -1,0 +1,56 @@
+module OpenTransit
+  module Internal
+    module Type
+      module Converter
+        extend OpenTransit::Internal::Util::SorbetRuntimeSupport
+
+        type input = OpenTransit::Internal::Type::Converter | Class
+
+        type coerce_state =
+          {
+            strictness: bool | :strong,
+            exactness: { yes: Integer, no: Integer, maybe: Integer },
+            branched: Integer
+          }
+
+        type dump_state = { can_retry: bool }
+
+        def coerce: (
+          top value,
+          state: OpenTransit::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def dump: (
+          top value,
+          state: OpenTransit::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def inspect: (?depth: Integer) -> String
+
+        def self.type_info: (
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> OpenTransit::Internal::Type::Converter::input?,
+            union: ^-> OpenTransit::Internal::Type::Converter::input?
+          }
+          | ^-> OpenTransit::Internal::Type::Converter::input
+          | OpenTransit::Internal::Type::Converter::input spec
+        ) -> (^-> top)
+
+        def self.coerce: (
+          OpenTransit::Internal::Type::Converter::input target,
+          top value,
+          ?state: OpenTransit::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def self.dump: (
+          OpenTransit::Internal::Type::Converter::input target,
+          top value,
+          ?state: OpenTransit::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def self.inspect: (top target, depth: Integer) -> String
+      end
+    end
+  end
+end

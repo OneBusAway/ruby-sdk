@@ -1,0 +1,38 @@
+# frozen_string_literal: true
+
+module OpenTransit
+  module Models
+    # @see OpenTransit::Resources::ArrivalAndDeparture#list
+    class ArrivalAndDepartureListParams < OpenTransit::Internal::Type::BaseModel
+      extend OpenTransit::Internal::Type::RequestParameters::Converter
+      include OpenTransit::Internal::Type::RequestParameters
+
+      # @!attribute minutes_after
+      #   Include vehicles arriving or departing in the next n minutes.
+      #
+      #   @return [Integer, nil]
+      optional :minutes_after, Integer
+
+      # @!attribute minutes_before
+      #   Include vehicles having arrived or departed in the previous n minutes.
+      #
+      #   @return [Integer, nil]
+      optional :minutes_before, Integer
+
+      # @!attribute time
+      #   The specific time for querying the system status.
+      #
+      #   @return [Time, nil]
+      optional :time, Time
+
+      # @!method initialize(minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
+      #   @param minutes_after [Integer] Include vehicles arriving or departing in the next n minutes.
+      #
+      #   @param minutes_before [Integer] Include vehicles having arrived or departed in the previous n minutes.
+      #
+      #   @param time [Time] The specific time for querying the system status.
+      #
+      #   @param request_options [OpenTransit::RequestOptions, Hash{Symbol=>Object}]
+    end
+  end
+end

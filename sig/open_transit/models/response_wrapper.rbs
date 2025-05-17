@@ -1,0 +1,23 @@
+module OpenTransit
+  module Models
+    type response_wrapper =
+      { code: Integer, current_time: Integer, text: String, version: Integer }
+
+    class ResponseWrapper < OpenTransit::Internal::Type::BaseModel
+      attr_accessor code: Integer
+
+      attr_accessor current_time: Integer
+
+      attr_accessor text: String
+
+      attr_accessor version: Integer
+
+      def initialize: (
+        code: Integer,
+        current_time: Integer,
+        text: String,
+        version: Integer
+      ) -> void
+    end
+  end
+end

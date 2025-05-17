@@ -1,0 +1,13 @@
+module OpenTransit
+  module Models
+    type current_time_retrieve_params =
+      {  } & OpenTransit::Internal::Type::request_parameters
+
+    class CurrentTimeRetrieveParams < OpenTransit::Internal::Type::BaseModel
+      extend OpenTransit::Internal::Type::RequestParameters::Converter
+      include OpenTransit::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: OpenTransit::request_opts) -> void
+    end
+  end
+end

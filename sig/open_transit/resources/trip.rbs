@@ -1,0 +1,12 @@
+module OpenTransit
+  module Resources
+    class Trip
+      def retrieve: (
+        String trip_id,
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::Models::TripRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

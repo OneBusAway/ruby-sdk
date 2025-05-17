@@ -1,0 +1,68 @@
+module OpenTransit
+  module Models
+    type agencies_with_coverage_list_response =
+      { data: OpenTransit::Models::AgenciesWithCoverageListResponse::Data }
+
+    class AgenciesWithCoverageListResponse < OpenTransit::Models::ResponseWrapper
+      def data: -> OpenTransit::Models::AgenciesWithCoverageListResponse::Data
+
+      def data=: (
+        OpenTransit::Models::AgenciesWithCoverageListResponse::Data _
+      ) -> OpenTransit::Models::AgenciesWithCoverageListResponse::Data
+
+      def initialize: (
+        data: OpenTransit::Models::AgenciesWithCoverageListResponse::Data
+      ) -> void
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: ::Array[OpenTransit::Models::AgenciesWithCoverageListResponse::Data::List],
+          references: OpenTransit::References
+        }
+
+      class Data < OpenTransit::Internal::Type::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: ::Array[OpenTransit::Models::AgenciesWithCoverageListResponse::Data::List]
+
+        attr_accessor references: OpenTransit::References
+
+        def initialize: (
+          limit_exceeded: bool,
+          list: ::Array[OpenTransit::Models::AgenciesWithCoverageListResponse::Data::List],
+          references: OpenTransit::References
+        ) -> void
+
+        type list =
+          {
+            agency_id: String,
+            lat: Float,
+            lat_span: Float,
+            lon: Float,
+            lon_span: Float
+          }
+
+        class List < OpenTransit::Internal::Type::BaseModel
+          attr_accessor agency_id: String
+
+          attr_accessor lat: Float
+
+          attr_accessor lat_span: Float
+
+          attr_accessor lon: Float
+
+          attr_accessor lon_span: Float
+
+          def initialize: (
+            agency_id: String,
+            lat: Float,
+            lat_span: Float,
+            lon: Float,
+            lon_span: Float
+          ) -> void
+        end
+      end
+    end
+  end
+end

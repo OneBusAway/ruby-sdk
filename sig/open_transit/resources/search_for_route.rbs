@@ -1,0 +1,13 @@
+module OpenTransit
+  module Resources
+    class SearchForRoute
+      def list: (
+        input: String,
+        ?max_count: Integer,
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::Models::SearchForRouteListResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end
