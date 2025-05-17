@@ -1,0 +1,63 @@
+module OpenTransit
+  class AgenciesWithCoverageListParams = OpenTransit::Models::AgenciesWithCoverageListParams
+
+  class AgencyRetrieveParams = OpenTransit::Models::AgencyRetrieveParams
+
+  class ArrivalAndDepartureListParams = OpenTransit::Models::ArrivalAndDepartureListParams
+
+  class ArrivalAndDepartureRetrieveParams = OpenTransit::Models::ArrivalAndDepartureRetrieveParams
+
+  class BlockRetrieveParams = OpenTransit::Models::BlockRetrieveParams
+
+  class ConfigRetrieveParams = OpenTransit::Models::ConfigRetrieveParams
+
+  class CurrentTimeRetrieveParams = OpenTransit::Models::CurrentTimeRetrieveParams
+
+  class References = OpenTransit::Models::References
+
+  class ReportProblemWithStopRetrieveParams = OpenTransit::Models::ReportProblemWithStopRetrieveParams
+
+  class ReportProblemWithTripRetrieveParams = OpenTransit::Models::ReportProblemWithTripRetrieveParams
+
+  class ResponseWrapper = OpenTransit::Models::ResponseWrapper
+
+  class RouteIDsForAgencyListParams = OpenTransit::Models::RouteIDsForAgencyListParams
+
+  class RouteRetrieveParams = OpenTransit::Models::RouteRetrieveParams
+
+  class RoutesForAgencyListParams = OpenTransit::Models::RoutesForAgencyListParams
+
+  class RoutesForLocationListParams = OpenTransit::Models::RoutesForLocationListParams
+
+  class ScheduleForRouteRetrieveParams = OpenTransit::Models::ScheduleForRouteRetrieveParams
+
+  class ScheduleForStopRetrieveParams = OpenTransit::Models::ScheduleForStopRetrieveParams
+
+  class SearchForRouteListParams = OpenTransit::Models::SearchForRouteListParams
+
+  class SearchForStopListParams = OpenTransit::Models::SearchForStopListParams
+
+  class ShapeRetrieveParams = OpenTransit::Models::ShapeRetrieveParams
+
+  class StopIDsForAgencyListParams = OpenTransit::Models::StopIDsForAgencyListParams
+
+  class StopRetrieveParams = OpenTransit::Models::StopRetrieveParams
+
+  class StopsForAgencyListParams = OpenTransit::Models::StopsForAgencyListParams
+
+  class StopsForLocationListParams = OpenTransit::Models::StopsForLocationListParams
+
+  class StopsForRouteListParams = OpenTransit::Models::StopsForRouteListParams
+
+  class TripDetailRetrieveParams = OpenTransit::Models::TripDetailRetrieveParams
+
+  class TripForVehicleRetrieveParams = OpenTransit::Models::TripForVehicleRetrieveParams
+
+  class TripRetrieveParams = OpenTransit::Models::TripRetrieveParams
+
+  class TripsForLocationListParams = OpenTransit::Models::TripsForLocationListParams
+
+  class TripsForRouteListParams = OpenTransit::Models::TripsForRouteListParams
+
+  class VehiclesForAgencyListParams = OpenTransit::Models::VehiclesForAgencyListParams
+end

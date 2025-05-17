@@ -1,0 +1,13 @@
+module OpenTransit
+  module Resources
+    class ScheduleForStop
+      def retrieve: (
+        String stop_id,
+        ?date: Date,
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::Models::ScheduleForStopRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

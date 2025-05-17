@@ -1,0 +1,80 @@
+module OpenTransit
+  class Client < OpenTransit::Internal::Transport::BaseClient
+    DEFAULT_MAX_RETRIES: 2
+
+    DEFAULT_TIMEOUT_IN_SECONDS: Float
+
+    DEFAULT_INITIAL_RETRY_DELAY: Float
+
+    DEFAULT_MAX_RETRY_DELAY: Float
+
+    attr_reader api_key: String
+
+    attr_reader agencies_with_coverage: OpenTransit::Resources::AgenciesWithCoverage
+
+    attr_reader agency: OpenTransit::Resources::Agency
+
+    attr_reader vehicles_for_agency: OpenTransit::Resources::VehiclesForAgency
+
+    attr_reader config: OpenTransit::Resources::Config
+
+    attr_reader current_time: OpenTransit::Resources::CurrentTime
+
+    attr_reader stops_for_location: OpenTransit::Resources::StopsForLocation
+
+    attr_reader stops_for_route: OpenTransit::Resources::StopsForRoute
+
+    attr_reader stops_for_agency: OpenTransit::Resources::StopsForAgency
+
+    attr_reader stop: OpenTransit::Resources::Stop
+
+    attr_reader stop_ids_for_agency: OpenTransit::Resources::StopIDsForAgency
+
+    attr_reader schedule_for_stop: OpenTransit::Resources::ScheduleForStop
+
+    attr_reader route: OpenTransit::Resources::Route
+
+    attr_reader route_ids_for_agency: OpenTransit::Resources::RouteIDsForAgency
+
+    attr_reader routes_for_location: OpenTransit::Resources::RoutesForLocation
+
+    attr_reader routes_for_agency: OpenTransit::Resources::RoutesForAgency
+
+    attr_reader schedule_for_route: OpenTransit::Resources::ScheduleForRoute
+
+    attr_reader arrival_and_departure: OpenTransit::Resources::ArrivalAndDeparture
+
+    attr_reader trip: OpenTransit::Resources::Trip
+
+    attr_reader trips_for_location: OpenTransit::Resources::TripsForLocation
+
+    attr_reader trip_details: OpenTransit::Resources::TripDetails
+
+    attr_reader trip_for_vehicle: OpenTransit::Resources::TripForVehicle
+
+    attr_reader trips_for_route: OpenTransit::Resources::TripsForRoute
+
+    attr_reader report_problem_with_stop: OpenTransit::Resources::ReportProblemWithStop
+
+    attr_reader report_problem_with_trip: OpenTransit::Resources::ReportProblemWithTrip
+
+    attr_reader search_for_stop: OpenTransit::Resources::SearchForStop
+
+    attr_reader search_for_route: OpenTransit::Resources::SearchForRoute
+
+    attr_reader block: OpenTransit::Resources::Block
+
+    attr_reader shape: OpenTransit::Resources::Shape
+
+    private def auth_query: -> ::Hash[String, String]
+
+    def initialize: (
+      ?api_key: String?,
+      ?base_url: String?,
+      ?max_retries: Integer,
+      ?timeout: Float,
+      ?initial_retry_delay: Float,
+      ?max_retry_delay: Float
+    ) -> void
+  end
+end

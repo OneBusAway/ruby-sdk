@@ -1,0 +1,13 @@
+module OpenTransit
+  module Resources
+    class ScheduleForRoute
+      def retrieve: (
+        String route_id,
+        ?date: Date,
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::Models::ScheduleForRouteRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

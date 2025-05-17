@@ -1,0 +1,11 @@
+module OpenTransit
+  module Resources
+    class Config
+      def retrieve: (
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::Models::ConfigRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

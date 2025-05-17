@@ -1,0 +1,17 @@
+module OpenTransit
+  module Resources
+    class ReportProblemWithStop
+      def retrieve: (
+        String stop_id,
+        ?code: OpenTransit::Models::ReportProblemWithStopRetrieveParams::code,
+        ?user_comment: String,
+        ?user_lat: Float,
+        ?user_location_accuracy: Float,
+        ?user_lon: Float,
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::ResponseWrapper
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,7 @@
+module OpenTransit
+  module Internal
+    extend OpenTransit::Internal::Util::SorbetRuntimeSupport
+
+    OMIT: Object
+  end
+end

@@ -1,0 +1,104 @@
+module OpenTransit
+  module Models
+    type trip_retrieve_response =
+      { data: OpenTransit::Models::TripRetrieveResponse::Data }
+
+    class TripRetrieveResponse < OpenTransit::Models::ResponseWrapper
+      def data: -> OpenTransit::Models::TripRetrieveResponse::Data
+
+      def data=: (
+        OpenTransit::Models::TripRetrieveResponse::Data _
+      ) -> OpenTransit::Models::TripRetrieveResponse::Data
+
+      def initialize: (
+        data: OpenTransit::Models::TripRetrieveResponse::Data
+      ) -> void
+
+      type data =
+        {
+          entry: OpenTransit::Models::TripRetrieveResponse::Data::Entry,
+          references: OpenTransit::References
+        }
+
+      class Data < OpenTransit::Internal::Type::BaseModel
+        attr_accessor entry: OpenTransit::Models::TripRetrieveResponse::Data::Entry
+
+        attr_accessor references: OpenTransit::References
+
+        def initialize: (
+          entry: OpenTransit::Models::TripRetrieveResponse::Data::Entry,
+          references: OpenTransit::References
+        ) -> void
+
+        type entry =
+          {
+            id: String,
+            route_id: String,
+            service_id: String,
+            block_id: String,
+            direction_id: String,
+            peak_offpeak: Integer,
+            route_short_name: String,
+            shape_id: String,
+            time_zone: String,
+            trip_headsign: String,
+            trip_short_name: String
+          }
+
+        class Entry < OpenTransit::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor route_id: String
+
+          attr_accessor service_id: String
+
+          attr_reader block_id: String?
+
+          def block_id=: (String) -> String
+
+          attr_reader direction_id: String?
+
+          def direction_id=: (String) -> String
+
+          attr_reader peak_offpeak: Integer?
+
+          def peak_offpeak=: (Integer) -> Integer
+
+          attr_reader route_short_name: String?
+
+          def route_short_name=: (String) -> String
+
+          attr_reader shape_id: String?
+
+          def shape_id=: (String) -> String
+
+          attr_reader time_zone: String?
+
+          def time_zone=: (String) -> String
+
+          attr_reader trip_headsign: String?
+
+          def trip_headsign=: (String) -> String
+
+          attr_reader trip_short_name: String?
+
+          def trip_short_name=: (String) -> String
+
+          def initialize: (
+            id: String,
+            route_id: String,
+            service_id: String,
+            ?block_id: String,
+            ?direction_id: String,
+            ?peak_offpeak: Integer,
+            ?route_short_name: String,
+            ?shape_id: String,
+            ?time_zone: String,
+            ?trip_headsign: String,
+            ?trip_short_name: String
+          ) -> void
+        end
+      end
+    end
+  end
+end

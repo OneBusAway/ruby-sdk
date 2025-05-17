@@ -1,0 +1,102 @@
+module OpenTransit
+  module Models
+    type routes_for_agency_list_response =
+      { data: OpenTransit::Models::RoutesForAgencyListResponse::Data }
+
+    class RoutesForAgencyListResponse < OpenTransit::Models::ResponseWrapper
+      def data: -> OpenTransit::Models::RoutesForAgencyListResponse::Data
+
+      def data=: (
+        OpenTransit::Models::RoutesForAgencyListResponse::Data _
+      ) -> OpenTransit::Models::RoutesForAgencyListResponse::Data
+
+      def initialize: (
+        data: OpenTransit::Models::RoutesForAgencyListResponse::Data
+      ) -> void
+
+      type data =
+        {
+          limit_exceeded: bool,
+          list: ::Array[OpenTransit::Models::RoutesForAgencyListResponse::Data::List],
+          references: OpenTransit::References
+        }
+
+      class Data < OpenTransit::Internal::Type::BaseModel
+        attr_accessor limit_exceeded: bool
+
+        attr_accessor list: ::Array[OpenTransit::Models::RoutesForAgencyListResponse::Data::List]
+
+        attr_accessor references: OpenTransit::References
+
+        def initialize: (
+          limit_exceeded: bool,
+          list: ::Array[OpenTransit::Models::RoutesForAgencyListResponse::Data::List],
+          references: OpenTransit::References
+        ) -> void
+
+        type list =
+          {
+            id: String,
+            agency_id: String,
+            type: Integer,
+            color: String,
+            description: String,
+            long_name: String,
+            null_safe_short_name: String,
+            short_name: String,
+            text_color: String,
+            url: String
+          }
+
+        class List < OpenTransit::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor agency_id: String
+
+          attr_accessor type: Integer
+
+          attr_reader color: String?
+
+          def color=: (String) -> String
+
+          attr_reader description: String?
+
+          def description=: (String) -> String
+
+          attr_reader long_name: String?
+
+          def long_name=: (String) -> String
+
+          attr_reader null_safe_short_name: String?
+
+          def null_safe_short_name=: (String) -> String
+
+          attr_reader short_name: String?
+
+          def short_name=: (String) -> String
+
+          attr_reader text_color: String?
+
+          def text_color=: (String) -> String
+
+          attr_reader url: String?
+
+          def url=: (String) -> String
+
+          def initialize: (
+            id: String,
+            agency_id: String,
+            type: Integer,
+            ?color: String,
+            ?description: String,
+            ?long_name: String,
+            ?null_safe_short_name: String,
+            ?short_name: String,
+            ?text_color: String,
+            ?url: String
+          ) -> void
+        end
+      end
+    end
+  end
+end

@@ -39,9 +39,9 @@ Layout/LineLength:
   AllowedPatterns:
     - "^\\s*#.*$"
     - ^require(_relative)?
-    - "OnebusawaySDK::Internal::Type::BaseModel$"
+    - "OpenTransit::Internal::Type::BaseModel$"
     - "^\\s*[A-Z0-9_]+ = :"
-    - "OnebusawaySDK::(Models|Resources|Test)::"
+    - "OpenTransit::(Models|Resources|Test)::"
   Max: 110
 
 Layout/MultilineArrayLineBreaks:

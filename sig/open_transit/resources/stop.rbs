@@ -1,0 +1,12 @@
+module OpenTransit
+  module Resources
+    class Stop
+      def retrieve: (
+        String stop_id,
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::Models::StopRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end

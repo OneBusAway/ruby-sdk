@@ -1,0 +1,97 @@
+module OpenTransit
+  module Models
+    type stops_for_agency_list_response =
+      {
+        limit_exceeded: bool,
+        list: ::Array[OpenTransit::Models::StopsForAgencyListResponse::List],
+        references: OpenTransit::References,
+        out_of_range: bool
+      }
+
+    class StopsForAgencyListResponse < OpenTransit::Models::ResponseWrapper
+      def limit_exceeded: -> bool
+
+      def limit_exceeded=: (bool _) -> bool
+
+      def list: -> ::Array[OpenTransit::Models::StopsForAgencyListResponse::List]
+
+      def list=: (
+        ::Array[OpenTransit::Models::StopsForAgencyListResponse::List] _
+      ) -> ::Array[OpenTransit::Models::StopsForAgencyListResponse::List]
+
+      def references: -> OpenTransit::References
+
+      def references=: (OpenTransit::References _) -> OpenTransit::References
+
+      def out_of_range: -> bool?
+
+      def out_of_range=: (bool _) -> bool
+
+      def initialize: (
+        limit_exceeded: bool,
+        list: ::Array[OpenTransit::Models::StopsForAgencyListResponse::List],
+        references: OpenTransit::References,
+        ?out_of_range: bool
+      ) -> void
+
+      type list =
+        {
+          id: String,
+          lat: Float,
+          location_type: Integer,
+          lon: Float,
+          name: String,
+          parent: String,
+          route_ids: ::Array[String],
+          static_route_ids: ::Array[String],
+          code: String,
+          direction: String,
+          wheelchair_boarding: String
+        }
+
+      class List < OpenTransit::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor lat: Float
+
+        attr_accessor location_type: Integer
+
+        attr_accessor lon: Float
+
+        attr_accessor name: String
+
+        attr_accessor parent: String
+
+        attr_accessor route_ids: ::Array[String]
+
+        attr_accessor static_route_ids: ::Array[String]
+
+        attr_reader code: String?
+
+        def code=: (String) -> String
+
+        attr_reader direction: String?
+
+        def direction=: (String) -> String
+
+        attr_reader wheelchair_boarding: String?
+
+        def wheelchair_boarding=: (String) -> String
+
+        def initialize: (
+          id: String,
+          lat: Float,
+          location_type: Integer,
+          lon: Float,
+          name: String,
+          parent: String,
+          route_ids: ::Array[String],
+          static_route_ids: ::Array[String],
+          ?code: String,
+          ?direction: String,
+          ?wheelchair_boarding: String
+        ) -> void
+      end
+    end
+  end
+end

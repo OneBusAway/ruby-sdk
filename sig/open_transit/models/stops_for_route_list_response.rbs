@@ -1,0 +1,175 @@
+module OpenTransit
+  module Models
+    type stops_for_route_list_response =
+      { data: OpenTransit::Models::StopsForRouteListResponse::Data }
+
+    class StopsForRouteListResponse < OpenTransit::Models::ResponseWrapper
+      def data: -> OpenTransit::Models::StopsForRouteListResponse::Data
+
+      def data=: (
+        OpenTransit::Models::StopsForRouteListResponse::Data _
+      ) -> OpenTransit::Models::StopsForRouteListResponse::Data
+
+      def initialize: (
+        data: OpenTransit::Models::StopsForRouteListResponse::Data
+      ) -> void
+
+      type data =
+        {
+          entry: OpenTransit::Models::StopsForRouteListResponse::Data::Entry,
+          references: OpenTransit::References
+        }
+
+      class Data < OpenTransit::Internal::Type::BaseModel
+        attr_accessor entry: OpenTransit::Models::StopsForRouteListResponse::Data::Entry
+
+        attr_accessor references: OpenTransit::References
+
+        def initialize: (
+          entry: OpenTransit::Models::StopsForRouteListResponse::Data::Entry,
+          references: OpenTransit::References
+        ) -> void
+
+        type entry =
+          {
+            polylines: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+            route_id: String,
+            stop_groupings: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+            stop_ids: ::Array[String]
+          }
+
+        class Entry < OpenTransit::Internal::Type::BaseModel
+          attr_reader polylines: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline]?
+
+          def polylines=: (
+            ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline]
+          ) -> ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline]
+
+          attr_reader route_id: String?
+
+          def route_id=: (String) -> String
+
+          attr_reader stop_groupings: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]?
+
+          def stop_groupings=: (
+            ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
+          ) -> ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping]
+
+          attr_reader stop_ids: ::Array[String]?
+
+          def stop_ids=: (::Array[String]) -> ::Array[String]
+
+          def initialize: (
+            ?polylines: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::Polyline],
+            ?route_id: String,
+            ?stop_groupings: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping],
+            ?stop_ids: ::Array[String]
+          ) -> void
+
+          type polyline = { length: Integer, levels: String, points: String }
+
+          class Polyline < OpenTransit::Internal::Type::BaseModel
+            attr_reader length: Integer?
+
+            def length=: (Integer) -> Integer
+
+            attr_reader levels: String?
+
+            def levels=: (String) -> String
+
+            attr_reader points: String?
+
+            def points=: (String) -> String
+
+            def initialize: (
+              ?length: Integer,
+              ?levels: String,
+              ?points: String
+            ) -> void
+          end
+
+          type stop_grouping =
+            {
+              id: String,
+              name: OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+              polylines: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+              stop_ids: ::Array[String]
+            }
+
+          class StopGrouping < OpenTransit::Internal::Type::BaseModel
+            attr_reader id: String?
+
+            def id=: (String) -> String
+
+            attr_reader name: OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name?
+
+            def name=: (
+              OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
+            ) -> OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name
+
+            attr_reader polylines: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]?
+
+            def polylines=: (
+              ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
+            ) -> ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline]
+
+            attr_reader stop_ids: ::Array[String]?
+
+            def stop_ids=: (::Array[String]) -> ::Array[String]
+
+            def initialize: (
+              ?id: String,
+              ?name: OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Name,
+              ?polylines: ::Array[OpenTransit::Models::StopsForRouteListResponse::Data::Entry::StopGrouping::Polyline],
+              ?stop_ids: ::Array[String]
+            ) -> void
+
+            type name_ = { name: String, names: ::Array[String], type: String }
+
+            class Name < OpenTransit::Internal::Type::BaseModel
+              attr_reader name: String?
+
+              def name=: (String) -> String
+
+              attr_reader names: ::Array[String]?
+
+              def names=: (::Array[String]) -> ::Array[String]
+
+              attr_reader type: String?
+
+              def type=: (String) -> String
+
+              def initialize: (
+                ?name: String,
+                ?names: ::Array[String],
+                ?type: String
+              ) -> void
+            end
+
+            type polyline = { length: Integer, levels: String, points: String }
+
+            class Polyline < OpenTransit::Internal::Type::BaseModel
+              attr_reader length: Integer?
+
+              def length=: (Integer) -> Integer
+
+              attr_reader levels: String?
+
+              def levels=: (String) -> String
+
+              attr_reader points: String?
+
+              def points=: (String) -> String
+
+              def initialize: (
+                ?length: Integer,
+                ?levels: String,
+                ?points: String
+              ) -> void
+            end
+          end
+        end
+      end
+    end
+  end
+end

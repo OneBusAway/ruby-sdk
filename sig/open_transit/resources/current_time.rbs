@@ -1,0 +1,11 @@
+module OpenTransit
+  module Resources
+    class CurrentTime
+      def retrieve: (
+        ?request_options: OpenTransit::request_opts
+      ) -> OpenTransit::Models::CurrentTimeRetrieveResponse
+
+      def initialize: (client: OpenTransit::Client) -> void
+    end
+  end
+end
