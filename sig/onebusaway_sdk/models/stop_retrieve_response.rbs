@@ -1,0 +1,94 @@
+module OnebusawaySDK
+  module Models
+    type stop_retrieve_response =
+      { data: OnebusawaySDK::Models::StopRetrieveResponse::Data }
+
+    class StopRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      def data: -> OnebusawaySDK::Models::StopRetrieveResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::StopRetrieveResponse::Data _
+      ) -> OnebusawaySDK::Models::StopRetrieveResponse::Data
+
+      def initialize: (
+        data: OnebusawaySDK::Models::StopRetrieveResponse::Data
+      ) -> void
+
+      type data =
+        {
+          entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
+
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry
+
+        attr_accessor references: OnebusawaySDK::References
+
+        def initialize: (
+          entry: OnebusawaySDK::Models::StopRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        ) -> void
+
+        type entry =
+          {
+            id: String,
+            lat: Float,
+            location_type: Integer,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            code: String,
+            direction: String,
+            wheelchair_boarding: String
+          }
+
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor lat: Float
+
+          attr_accessor location_type: Integer
+
+          attr_accessor lon: Float
+
+          attr_accessor name: String
+
+          attr_accessor parent: String
+
+          attr_accessor route_ids: ::Array[String]
+
+          attr_accessor static_route_ids: ::Array[String]
+
+          attr_reader code: String?
+
+          def code=: (String) -> String
+
+          attr_reader direction: String?
+
+          def direction=: (String) -> String
+
+          attr_reader wheelchair_boarding: String?
+
+          def wheelchair_boarding=: (String) -> String
+
+          def initialize: (
+            id: String,
+            lat: Float,
+            location_type: Integer,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            ?code: String,
+            ?direction: String,
+            ?wheelchair_boarding: String
+          ) -> void
+        end
+      end
+    end
+  end
+end

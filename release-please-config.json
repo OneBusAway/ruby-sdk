@@ -60,7 +60,7 @@
     }
   ],
   "release-type": "ruby",
-  "version-file": "lib/open_transit/version.rb",
+  "version-file": "lib/onebusaway_sdk/version.rb",
   "extra-files": [
     {
       "type": "ruby-readme",

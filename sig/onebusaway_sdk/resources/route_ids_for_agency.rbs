@@ -1,0 +1,12 @@
+module OnebusawaySDK
+  module Resources
+    class RouteIDsForAgency
+      def list: (
+        String agency_id,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::RouteIDsForAgencyListResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

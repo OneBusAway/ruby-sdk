@@ -6,7 +6,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ## Documentation
 
-Documentation for releases of this gem can be found [on RubyDoc](https://gemdocs.org/gems/open-transit).
+Documentation for releases of this gem can be found [on RubyDoc](https://gemdocs.org/gems/onebusaway-sdk).
 
 The REST API documentation can be found on [developer.onebusaway.org](https://developer.onebusaway.org).
 
@@ -17,7 +17,7 @@ To use this gem, install via Bundler by adding the following to your application
 <!-- x-release-please-start-version -->
 
 ```ruby
-gem "open-transit", "~> 0.1.0.pre.alpha.208"
+gem "onebusaway-sdk", "~> 0.1.0.pre.alpha.208"
 ```
 
 <!-- x-release-please-end -->
@@ -26,9 +26,9 @@ gem "open-transit", "~> 0.1.0.pre.alpha.208"
 
 ```ruby
 require "bundler/setup"
-require "open_transit"
+require "onebusaway_sdk"
 
-onebusaway_sdk = OpenTransit::Client.new(
+onebusaway_sdk = OnebusawaySDK::Client.new(
   api_key: ENV["ONEBUSAWAY_API_KEY"] # This is the default and can be omitted
 )
 
@@ -39,17 +39,17 @@ puts(current_time)
 
 ### Handling errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `OpenTransit::Errors::APIError` will be thrown:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `OnebusawaySDK::Errors::APIError` will be thrown:
 
 ```ruby
 begin
   current_time = onebusaway_sdk.current_time.retrieve
-rescue OpenTransit::Errors::APIConnectionError => e
+rescue OnebusawaySDK::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
-rescue OpenTransit::Errors::RateLimitError => e
+rescue OnebusawaySDK::Errors::RateLimitError => e
   puts("A 429 status code was received; we should back off a bit.")
-rescue OpenTransit::Errors::APIStatusError => e
+rescue OnebusawaySDK::Errors::APIStatusError => e
   puts("Another non-200-range status code was received")
   puts(e.status)
 end
@@ -81,7 +81,7 @@ You can use the `max_retries` option to configure or disable this:
 
 ```ruby
 # Configure the default for all requests:
-onebusaway_sdk = OpenTransit::Client.new(
+onebusaway_sdk = OnebusawaySDK::Client.new(
   max_retries: 0 # default is 2
 )
 
@@ -95,7 +95,7 @@ By default, requests will time out after 60 seconds. You can use the timeout opt
 
 ```ruby
 # Configure the default for all requests:
-onebusaway_sdk = OpenTransit::Client.new(
+onebusaway_sdk = OnebusawaySDK::Client.new(
   timeout: nil # default is 60
 )
 
@@ -103,7 +103,7 @@ onebusaway_sdk = OpenTransit::Client.new(
 onebusaway_sdk.current_time.retrieve(request_options: {timeout: 5})
 ```
 
-On timeout, `OpenTransit::Errors::APITimeoutError` is raised.
+On timeout, `OnebusawaySDK::Errors::APITimeoutError` is raised.
 
 Note that requests that time out are retried by default.
 
@@ -111,7 +111,7 @@ Note that requests that time out are retried by default.
 
 ### BaseModel
 
-All parameter and response objects inherit from `OpenTransit::Internal::Type::BaseModel`, which provides several conveniences, including:
+All parameter and response objects inherit from `OnebusawaySDK::Internal::Type::BaseModel`, which provides several conveniences, including:
 
 1. All fields, including unknown ones, are accessible with `obj[:prop]` syntax, and can be destructured with `obj => {prop: prop}` or pattern-matching syntax.
 
@@ -162,9 +162,9 @@ response = client.request(
 
 ### Concurrency & connection pooling
 
-The `OpenTransit::Client` instances are threadsafe, but only are fork-safe when there are no in-flight HTTP requests.
+The `OnebusawaySDK::Client` instances are threadsafe, but only are fork-safe when there are no in-flight HTTP requests.
 
-Each instance of `OpenTransit::Client` has its own HTTP connection pool with a default size of 99. As such, we recommend instantiating the client once per application in most settings.
+Each instance of `OnebusawaySDK::Client` has its own HTTP connection pool with a default size of 99. As such, we recommend instantiating the client once per application in most settings.
 
 When all available connections from the pool are checked out, requests wait for a new connection to become available, with queue time counting towards the request timeout.
 
@@ -187,7 +187,7 @@ Or, equivalently:
 onebusaway_sdk.current_time.retrieve
 
 # You can also splat a full Params class:
-params = OpenTransit::CurrentTimeRetrieveParams.new
+params = OnebusawaySDK::CurrentTimeRetrieveParams.new
 onebusaway_sdk.current_time.retrieve(**params)
 ```
 
@@ -197,10 +197,10 @@ Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::E
 
 ```ruby
 # :stop_name_wrong
-puts(OpenTransit::ReportProblemWithStopRetrieveParams::Code::STOP_NAME_WRONG)
+puts(OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::STOP_NAME_WRONG)
 
-# Revealed type: `T.all(OpenTransit::ReportProblemWithStopRetrieveParams::Code, Symbol)`
-T.reveal_type(OpenTransit::ReportProblemWithStopRetrieveParams::Code::STOP_NAME_WRONG)
+# Revealed type: `T.all(OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code, Symbol)`
+T.reveal_type(OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::STOP_NAME_WRONG)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
@@ -208,7 +208,7 @@ Enum parameters have a "relaxed" type, so you can either pass in enum constants 
 ```ruby
 # Using the enum constants preserves the tagged type information:
 onebusaway_sdk.report_problem_with_stop.retrieve(
-  code: OpenTransit::ReportProblemWithStopRetrieveParams::Code::STOP_NAME_WRONG,
+  code: OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::STOP_NAME_WRONG,
   # …
 )
 

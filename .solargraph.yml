@@ -5,7 +5,7 @@ include:
   - 'Rakefile'
   - 'examples/**/*.rb'
   - 'lib/**/*.rb'
-  - 'test/open_transit/resource_namespaces.rb'
-  - 'test/open_transit/test_helper.rb'
+  - 'test/onebusaway_sdk/resource_namespaces.rb'
+  - 'test/onebusaway_sdk/test_helper.rb'
 exclude:
   - 'rbi/**/*'

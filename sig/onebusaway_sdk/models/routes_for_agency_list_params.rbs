@@ -1,0 +1,13 @@
+module OnebusawaySDK
+  module Models
+    type routes_for_agency_list_params =
+      {  } & OnebusawaySDK::Internal::Type::request_parameters
+
+    class RoutesForAgencyListParams < OnebusawaySDK::Internal::Type::BaseModel
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: OnebusawaySDK::request_opts) -> void
+    end
+  end
+end

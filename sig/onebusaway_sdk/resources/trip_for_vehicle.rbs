@@ -1,0 +1,16 @@
+module OnebusawaySDK
+  module Resources
+    class TripForVehicle
+      def retrieve: (
+        String vehicle_id,
+        ?include_schedule: bool,
+        ?include_status: bool,
+        ?include_trip: bool,
+        ?time: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::TripForVehicleRetrieveResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

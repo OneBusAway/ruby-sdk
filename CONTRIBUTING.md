@@ -14,7 +14,7 @@ This will install all the required dependencies.
 
 ## Modifying/Adding code
 
-Most of the SDK is generated code. Modifications to code will be persisted between generations, but may result in merge conflicts between manual patches and changes from the generator. The generator will never modify the contents of `lib/open_transit/helpers/` and `examples/` directory.
+Most of the SDK is generated code. Modifications to code will be persisted between generations, but may result in merge conflicts between manual patches and changes from the generator. The generator will never modify the contents of `lib/onebusaway_sdk/helpers/` and `examples/` directory.
 
 ## Adding and running examples
 
@@ -24,7 +24,7 @@ All files in the `examples/` directory are not modified by the generator and can
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative "../lib/open_transit"
+require_relative "../lib/onebusaway_sdk"
 
 # ...
 ```
@@ -43,7 +43,7 @@ If you’d like to use the repository from source, you can either install from g
 To install via git in your `Gemfile`:
 
 ```ruby
-gem "open-transit", git: "https://www.github.com/OneBusAway/ruby-sdk"
+gem "onebusaway-sdk", git: "https://www.github.com/OneBusAway/ruby-sdk"
 ```
 
 Alternatively, reference local copy of the repo:
@@ -53,7 +53,7 @@ $ git clone -- 'https://www.github.com/OneBusAway/ruby-sdk' '<path-to-repo>'
 ```
 
 ```ruby
-gem "open-transit", path: "<path-to-repo>"
+gem "onebusaway-sdk", path: "<path-to-repo>"
 ```
 
 ## Running commands

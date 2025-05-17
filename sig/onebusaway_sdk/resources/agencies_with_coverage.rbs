@@ -1,0 +1,11 @@
+module OnebusawaySDK
+  module Resources
+    class AgenciesWithCoverage
+      def list: (
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::AgenciesWithCoverageListResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

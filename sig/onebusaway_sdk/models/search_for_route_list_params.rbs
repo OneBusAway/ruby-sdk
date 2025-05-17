@@ -1,0 +1,24 @@
+module OnebusawaySDK
+  module Models
+    type search_for_route_list_params =
+      { input: String, max_count: Integer }
+      & OnebusawaySDK::Internal::Type::request_parameters
+
+    class SearchForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor input: String
+
+      attr_reader max_count: Integer?
+
+      def max_count=: (Integer) -> Integer
+
+      def initialize: (
+        input: String,
+        ?max_count: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
+    end
+  end
+end
