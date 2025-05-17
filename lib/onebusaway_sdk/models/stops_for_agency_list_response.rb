@@ -42,6 +42,11 @@ module OnebusawaySDK
         #   @return [Float]
         required :lat, Float
 
+        # @!attribute location_type
+        #
+        #   @return [Integer]
+        required :location_type, Integer, api_name: :locationType
+
         # @!attribute lon
         #
         #   @return [Float]
@@ -77,19 +82,15 @@ module OnebusawaySDK
         #   @return [String, nil]
         optional :direction, String
 
-        # @!attribute location_type
-        #
-        #   @return [Integer, nil]
-        optional :location_type, Integer, api_name: :locationType
-
         # @!attribute wheelchair_boarding
         #
         #   @return [String, nil]
         optional :wheelchair_boarding, String, api_name: :wheelchairBoarding
 
-        # @!method initialize(id:, lat:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, location_type: nil, wheelchair_boarding: nil)
+        # @!method initialize(id:, lat:, location_type:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, wheelchair_boarding: nil)
         #   @param id [String]
         #   @param lat [Float]
+        #   @param location_type [Integer]
         #   @param lon [Float]
         #   @param name [String]
         #   @param parent [String]
@@ -97,7 +98,6 @@ module OnebusawaySDK
         #   @param static_route_ids [Array<String>]
         #   @param code [String]
         #   @param direction [String]
-        #   @param location_type [Integer]
         #   @param wheelchair_boarding [String]
       end
     end

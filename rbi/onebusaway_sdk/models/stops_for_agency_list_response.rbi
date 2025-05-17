@@ -76,6 +76,9 @@ module OnebusawaySDK
         sig { returns(Float) }
         attr_accessor :lat
 
+        sig { returns(Integer) }
+        attr_accessor :location_type
+
         sig { returns(Float) }
         attr_accessor :lon
 
@@ -103,12 +106,6 @@ module OnebusawaySDK
         sig { params(direction: String).void }
         attr_writer :direction
 
-        sig { returns(T.nilable(Integer)) }
-        attr_reader :location_type
-
-        sig { params(location_type: Integer).void }
-        attr_writer :location_type
-
         sig { returns(T.nilable(String)) }
         attr_reader :wheelchair_boarding
 
@@ -119,6 +116,7 @@ module OnebusawaySDK
           params(
             id: String,
             lat: Float,
+            location_type: Integer,
             lon: Float,
             name: String,
             parent: String,
@@ -126,13 +124,13 @@ module OnebusawaySDK
             static_route_ids: T::Array[String],
             code: String,
             direction: String,
-            location_type: Integer,
             wheelchair_boarding: String
           ).returns(T.attached_class)
         end
         def self.new(
           id:,
           lat:,
+          location_type:,
           lon:,
           name:,
           parent:,
@@ -140,7 +138,6 @@ module OnebusawaySDK
           static_route_ids:,
           code: nil,
           direction: nil,
-          location_type: nil,
           wheelchair_boarding: nil
         )
         end
@@ -150,6 +147,7 @@ module OnebusawaySDK
             {
               id: String,
               lat: Float,
+              location_type: Integer,
               lon: Float,
               name: String,
               parent: String,
@@ -157,7 +155,6 @@ module OnebusawaySDK
               static_route_ids: T::Array[String],
               code: String,
               direction: String,
-              location_type: Integer,
               wheelchair_boarding: String
             }
           )

@@ -62,6 +62,7 @@ module OnebusawaySDK
             {
               id: String,
               lat: Float,
+              location_type: Integer,
               lon: Float,
               name: String,
               parent: String,
@@ -69,7 +70,6 @@ module OnebusawaySDK
               static_route_ids: ::Array[String],
               code: String,
               direction: String,
-              location_type: Integer,
               wheelchair_boarding: String
             }
 
@@ -77,6 +77,8 @@ module OnebusawaySDK
             attr_accessor id: String
 
             attr_accessor lat: Float
+
+            attr_accessor location_type: Integer
 
             attr_accessor lon: Float
 
@@ -96,10 +98,6 @@ module OnebusawaySDK
 
             def direction=: (String) -> String
 
-            attr_reader location_type: Integer?
-
-            def location_type=: (Integer) -> Integer
-
             attr_reader wheelchair_boarding: String?
 
             def wheelchair_boarding=: (String) -> String
@@ -107,6 +105,7 @@ module OnebusawaySDK
             def initialize: (
               id: String,
               lat: Float,
+              location_type: Integer,
               lon: Float,
               name: String,
               parent: String,
@@ -114,7 +113,6 @@ module OnebusawaySDK
               static_route_ids: ::Array[String],
               ?code: String,
               ?direction: String,
-              ?location_type: Integer,
               ?wheelchair_boarding: String
             ) -> void
           end
