@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = "info@onebusaway.org"
   s.homepage = "https://gemdocs.org/gems/open-transit"
   s.metadata["homepage_uri"] = s.homepage
-  s.metadata["source_code_uri"] = "https://github.com/stainless-sdks/open-transit-ruby"
+  s.metadata["source_code_uri"] = "https://github.com/OneBusAway/ruby-sdk"
   s.metadata["rubygems_mfa_required"] = false.to_s
   s.required_ruby_version = ">= 3.2.0"
 
