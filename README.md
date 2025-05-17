@@ -17,7 +17,7 @@ To use this gem, install via Bundler by adding the following to your application
 <!-- x-release-please-start-version -->
 
 ```ruby
-gem "open-transit", "~> 0.1.0.pre.alpha.208"
+gem "open-transit", "~> 0.1.0.pre.alpha.209"
 ```
 
 <!-- x-release-please-end -->

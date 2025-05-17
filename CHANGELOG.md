@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-alpha.209 (2025-05-17)
+
+Full Changelog: [v0.1.0-alpha.208...v0.1.0-alpha.209](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.208...v0.1.0-alpha.209)
+
+### Chores
+
+* configure new SDK language ([f00a06e](https://github.com/OneBusAway/ruby-sdk/commit/f00a06e0c296b6d168019b43a1e55f1375ee52b1))
+* trigger release ([5d40578](https://github.com/OneBusAway/ruby-sdk/commit/5d405785499dedaaa8aaba077563c254b6077fe6))
+* update SDK settings ([c0b720f](https://github.com/OneBusAway/ruby-sdk/commit/c0b720fa25631fb6456d19516f216f24e0ebde9e))
+
 ## 0.1.0-alpha.208 (2025-05-15)
 
 Full Changelog: [v0.1.0-alpha.207...v0.1.0-alpha.208](https://github.com/OneBusAway/ruby-sdk/compare/v0.1.0-alpha.207...v0.1.0-alpha.208)
