@@ -1,0 +1,12 @@
+module OnebusawaySDK
+  module Resources
+    class Stop
+      def retrieve: (
+        String stop_id,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::StopRetrieveResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,13 @@
+module OnebusawaySDK
+  module Resources
+    class VehiclesForAgency
+      def list: (
+        String agency_id,
+        ?time: String,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::VehiclesForAgencyListResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,12 @@
+module OnebusawaySDK
+  module Resources
+    class Block
+      def retrieve: (
+        String block_id,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::BlockRetrieveResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

@@ -147,7 +147,7 @@ multitask(:"build:gem") do
     sig/*
   GLOB
 
-  sh(*%w[gem build -- open_transit.gemspec])
+  sh(*%w[gem build -- onebusaway_sdk.gemspec])
   rm_rf(ignore_file)
 end
 

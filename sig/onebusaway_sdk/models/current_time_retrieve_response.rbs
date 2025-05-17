@@ -1,0 +1,49 @@
+module OnebusawaySDK
+  module Models
+    type current_time_retrieve_response =
+      { data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data }
+
+    class CurrentTimeRetrieveResponse < OnebusawaySDK::Models::ResponseWrapper
+      def data: -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data
+
+      def data=: (
+        OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data _
+      ) -> OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data
+
+      def initialize: (
+        data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data
+      ) -> void
+
+      type data =
+        {
+          entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
+
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry
+
+        attr_accessor references: OnebusawaySDK::References
+
+        def initialize: (
+          entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        ) -> void
+
+        type entry = { readable_time: String, time: Integer }
+
+        class Entry < OnebusawaySDK::Internal::Type::BaseModel
+          attr_reader readable_time: String?
+
+          def readable_time=: (String) -> String
+
+          attr_reader time: Integer?
+
+          def time=: (Integer) -> Integer
+
+          def initialize: (?readable_time: String, ?time: Integer) -> void
+        end
+      end
+    end
+  end
+end
