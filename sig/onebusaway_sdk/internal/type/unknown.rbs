@@ -3,6 +3,7 @@ module OnebusawaySDK
     module Type
       class Unknown
         extend OnebusawaySDK::Internal::Type::Converter
+        extend OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         def self.===: (top other) -> bool
 
@@ -17,6 +18,8 @@ module OnebusawaySDK
           top value,
           state: OnebusawaySDK::Internal::Type::Converter::dump_state
         ) -> top
+
+        def self.to_sorbet_type: -> top
       end
     end
   end

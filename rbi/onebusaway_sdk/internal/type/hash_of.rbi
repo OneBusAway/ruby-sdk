@@ -8,6 +8,7 @@ module OnebusawaySDK
       # Hash of items of a given type.
       class HashOf
         include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         abstract!
 
@@ -61,6 +62,11 @@ module OnebusawaySDK
             .returns(T.any(OnebusawaySDK::Internal::AnyHash, T.anything))
         end
         def dump(value, state:)
+        end
+
+        # @api private
+        sig { returns(T.anything) }
+        def to_sorbet_type
         end
 
         # @api private
