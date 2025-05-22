@@ -5,17 +5,17 @@ module OnebusawaySDK
     class References < OnebusawaySDK::Internal::Type::BaseModel
       # @!attribute agencies
       #
-      #   @return [Array<OnebusawaySDK::References::Agency>]
+      #   @return [Array<OnebusawaySDK::Models::References::Agency>]
       required :agencies, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Agency] }
 
       # @!attribute routes
       #
-      #   @return [Array<OnebusawaySDK::References::Route>]
+      #   @return [Array<OnebusawaySDK::Models::References::Route>]
       required :routes, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Route] }
 
       # @!attribute situations
       #
-      #   @return [Array<OnebusawaySDK::References::Situation>]
+      #   @return [Array<OnebusawaySDK::Models::References::Situation>]
       required :situations,
                -> {
                  OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation]
@@ -23,28 +23,28 @@ module OnebusawaySDK
 
       # @!attribute stops
       #
-      #   @return [Array<OnebusawaySDK::References::Stop>]
+      #   @return [Array<OnebusawaySDK::Models::References::Stop>]
       required :stops, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Stop] }
 
       # @!attribute stop_times
       #
-      #   @return [Array<OnebusawaySDK::References::StopTime>]
+      #   @return [Array<OnebusawaySDK::Models::References::StopTime>]
       required :stop_times,
                -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::StopTime] },
                api_name: :stopTimes
 
       # @!attribute trips
       #
-      #   @return [Array<OnebusawaySDK::References::Trip>]
+      #   @return [Array<OnebusawaySDK::Models::References::Trip>]
       required :trips, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Trip] }
 
       # @!method initialize(agencies:, routes:, situations:, stops:, stop_times:, trips:)
-      #   @param agencies [Array<OnebusawaySDK::References::Agency>]
-      #   @param routes [Array<OnebusawaySDK::References::Route>]
-      #   @param situations [Array<OnebusawaySDK::References::Situation>]
-      #   @param stops [Array<OnebusawaySDK::References::Stop>]
-      #   @param stop_times [Array<OnebusawaySDK::References::StopTime>]
-      #   @param trips [Array<OnebusawaySDK::References::Trip>]
+      #   @param agencies [Array<OnebusawaySDK::Models::References::Agency>]
+      #   @param routes [Array<OnebusawaySDK::Models::References::Route>]
+      #   @param situations [Array<OnebusawaySDK::Models::References::Situation>]
+      #   @param stops [Array<OnebusawaySDK::Models::References::Stop>]
+      #   @param stop_times [Array<OnebusawaySDK::Models::References::StopTime>]
+      #   @param trips [Array<OnebusawaySDK::Models::References::Trip>]
 
       class Agency < OnebusawaySDK::Internal::Type::BaseModel
         # @!attribute id
@@ -189,7 +189,7 @@ module OnebusawaySDK
 
         # @!attribute active_windows
         #
-        #   @return [Array<OnebusawaySDK::References::Situation::ActiveWindow>, nil]
+        #   @return [Array<OnebusawaySDK::Models::References::Situation::ActiveWindow>, nil]
         optional :active_windows,
                  -> {
                    OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation::ActiveWindow]
@@ -198,7 +198,7 @@ module OnebusawaySDK
 
         # @!attribute all_affects
         #
-        #   @return [Array<OnebusawaySDK::References::Situation::AllAffect>, nil]
+        #   @return [Array<OnebusawaySDK::Models::References::Situation::AllAffect>, nil]
         optional :all_affects,
                  -> {
                    OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation::AllAffect]
@@ -213,7 +213,7 @@ module OnebusawaySDK
 
         # @!attribute consequences
         #
-        #   @return [Array<OnebusawaySDK::References::Situation::Consequence>, nil]
+        #   @return [Array<OnebusawaySDK::Models::References::Situation::Consequence>, nil]
         optional :consequences,
                  -> {
                    OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation::Consequence]
@@ -221,12 +221,12 @@ module OnebusawaySDK
 
         # @!attribute description
         #
-        #   @return [OnebusawaySDK::References::Situation::Description, nil]
+        #   @return [OnebusawaySDK::Models::References::Situation::Description, nil]
         optional :description, -> { OnebusawaySDK::References::Situation::Description }
 
         # @!attribute publication_windows
         #
-        #   @return [Array<OnebusawaySDK::References::Situation::PublicationWindow>, nil]
+        #   @return [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>, nil]
         optional :publication_windows,
                  -> {
                    OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation::PublicationWindow]
@@ -236,7 +236,7 @@ module OnebusawaySDK
         # @!attribute reason
         #   Reason for the service alert, taken from TPEG codes.
         #
-        #   @return [Symbol, OnebusawaySDK::References::Situation::Reason, nil]
+        #   @return [Symbol, OnebusawaySDK::Models::References::Situation::Reason, nil]
         optional :reason, enum: -> { OnebusawaySDK::References::Situation::Reason }
 
         # @!attribute severity
@@ -247,12 +247,12 @@ module OnebusawaySDK
 
         # @!attribute summary
         #
-        #   @return [OnebusawaySDK::References::Situation::Summary, nil]
+        #   @return [OnebusawaySDK::Models::References::Situation::Summary, nil]
         optional :summary, -> { OnebusawaySDK::References::Situation::Summary }
 
         # @!attribute url
         #
-        #   @return [OnebusawaySDK::References::Situation::URL, nil]
+        #   @return [OnebusawaySDK::Models::References::Situation::URL, nil]
         optional :url, -> { OnebusawaySDK::References::Situation::URL }
 
         # @!method initialize(id:, creation_time:, active_windows: nil, all_affects: nil, consequence_message: nil, consequences: nil, description: nil, publication_windows: nil, reason: nil, severity: nil, summary: nil, url: nil)
@@ -260,25 +260,25 @@ module OnebusawaySDK
         #
         #   @param creation_time [Integer] Unix timestamp of when this situation was created.
         #
-        #   @param active_windows [Array<OnebusawaySDK::References::Situation::ActiveWindow>]
+        #   @param active_windows [Array<OnebusawaySDK::Models::References::Situation::ActiveWindow>]
         #
-        #   @param all_affects [Array<OnebusawaySDK::References::Situation::AllAffect>]
+        #   @param all_affects [Array<OnebusawaySDK::Models::References::Situation::AllAffect>]
         #
         #   @param consequence_message [String] Message regarding the consequence of the situation.
         #
-        #   @param consequences [Array<OnebusawaySDK::References::Situation::Consequence>]
+        #   @param consequences [Array<OnebusawaySDK::Models::References::Situation::Consequence>]
         #
-        #   @param description [OnebusawaySDK::References::Situation::Description]
+        #   @param description [OnebusawaySDK::Models::References::Situation::Description]
         #
-        #   @param publication_windows [Array<OnebusawaySDK::References::Situation::PublicationWindow>]
+        #   @param publication_windows [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>]
         #
-        #   @param reason [Symbol, OnebusawaySDK::References::Situation::Reason] Reason for the service alert, taken from TPEG codes.
+        #   @param reason [Symbol, OnebusawaySDK::Models::References::Situation::Reason] Reason for the service alert, taken from TPEG codes.
         #
         #   @param severity [String] Severity of the situation.
         #
-        #   @param summary [OnebusawaySDK::References::Situation::Summary]
+        #   @param summary [OnebusawaySDK::Models::References::Situation::Summary]
         #
-        #   @param url [OnebusawaySDK::References::Situation::URL]
+        #   @param url [OnebusawaySDK::Models::References::Situation::URL]
 
         class ActiveWindow < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute from
@@ -359,7 +359,7 @@ module OnebusawaySDK
 
           # @!attribute condition_details
           #
-          #   @return [OnebusawaySDK::References::Situation::Consequence::ConditionDetails, nil]
+          #   @return [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails, nil]
           optional :condition_details,
                    -> { OnebusawaySDK::References::Situation::Consequence::ConditionDetails },
                    api_name: :conditionDetails
@@ -367,13 +367,13 @@ module OnebusawaySDK
           # @!method initialize(condition: nil, condition_details: nil)
           #   @param condition [String] Condition of the consequence.
           #
-          #   @param condition_details [OnebusawaySDK::References::Situation::Consequence::ConditionDetails]
+          #   @param condition_details [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails]
 
-          # @see OnebusawaySDK::References::Situation::Consequence#condition_details
+          # @see OnebusawaySDK::Models::References::Situation::Consequence#condition_details
           class ConditionDetails < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute diversion_path
             #
-            #   @return [OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath, nil]
+            #   @return [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath, nil]
             optional :diversion_path,
                      -> {
                        OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath
@@ -388,10 +388,10 @@ module OnebusawaySDK
                      api_name: :diversionStopIds
 
             # @!method initialize(diversion_path: nil, diversion_stop_ids: nil)
-            #   @param diversion_path [OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath]
+            #   @param diversion_path [OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails::DiversionPath]
             #   @param diversion_stop_ids [Array<String>]
 
-            # @see OnebusawaySDK::References::Situation::Consequence::ConditionDetails#diversion_path
+            # @see OnebusawaySDK::Models::References::Situation::Consequence::ConditionDetails#diversion_path
             class DiversionPath < OnebusawaySDK::Internal::Type::BaseModel
               # @!attribute length
               #   Length of the diversion path.
@@ -421,7 +421,7 @@ module OnebusawaySDK
           end
         end
 
-        # @see OnebusawaySDK::References::Situation#description
+        # @see OnebusawaySDK::Models::References::Situation#description
         class Description < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute lang
           #   Language of the description.
@@ -462,7 +462,7 @@ module OnebusawaySDK
 
         # Reason for the service alert, taken from TPEG codes.
         #
-        # @see OnebusawaySDK::References::Situation#reason
+        # @see OnebusawaySDK::Models::References::Situation#reason
         module Reason
           extend OnebusawaySDK::Internal::Type::Enum
 
@@ -476,7 +476,7 @@ module OnebusawaySDK
           #   @return [Array<Symbol>]
         end
 
-        # @see OnebusawaySDK::References::Situation#summary
+        # @see OnebusawaySDK::Models::References::Situation#summary
         class Summary < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute lang
           #   Language of the summary.
@@ -496,7 +496,7 @@ module OnebusawaySDK
           #   @param value [String] Short summary of the situation.
         end
 
-        # @see OnebusawaySDK::References::Situation#url
+        # @see OnebusawaySDK::Models::References::Situation#url
         class URL < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute lang
           #   Language of the URL.

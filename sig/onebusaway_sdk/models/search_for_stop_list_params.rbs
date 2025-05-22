@@ -19,6 +19,12 @@ module OnebusawaySDK
         ?max_count: Integer,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
+
+      def to_hash: -> {
+        input: String,
+        max_count: Integer,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end

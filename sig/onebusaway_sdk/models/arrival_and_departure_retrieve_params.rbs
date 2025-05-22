@@ -38,6 +38,15 @@ module OnebusawaySDK
         ?vehicle_id: String,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
+
+      def to_hash: -> {
+        service_date: Integer,
+        trip_id: String,
+        stop_sequence: Integer,
+        time: Integer,
+        vehicle_id: String,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end

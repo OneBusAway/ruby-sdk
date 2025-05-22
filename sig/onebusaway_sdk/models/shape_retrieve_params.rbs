@@ -8,6 +8,8 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       def initialize: (?request_options: OnebusawaySDK::request_opts) -> void
+
+      def to_hash: -> { request_options: OnebusawaySDK::RequestOptions }
     end
   end
 end

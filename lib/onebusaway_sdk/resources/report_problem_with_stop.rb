@@ -9,7 +9,7 @@ module OnebusawaySDK
       #
       # @param stop_id [String] The ID of the stop
       #
-      # @param code [Symbol, OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
+      # @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
       #
       # @param user_comment [String] Additional comment text supplied by the user describing the problem
       #
@@ -21,7 +21,7 @@ module OnebusawaySDK
       #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [OnebusawaySDK::ResponseWrapper]
+      # @return [OnebusawaySDK::Models::ResponseWrapper]
       #
       # @see OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams
       def retrieve(stop_id, params = {})

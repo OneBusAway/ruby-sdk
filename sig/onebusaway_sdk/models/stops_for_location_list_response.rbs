@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::StopsForLocationListResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::StopsForLocationListResponse::Data
+      }
+
       type data =
         {
           limit_exceeded: bool,
@@ -39,6 +43,13 @@ module OnebusawaySDK
           references: OnebusawaySDK::References,
           ?out_of_range: bool
         ) -> void
+
+        def to_hash: -> {
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::StopsForLocationListResponse::Data::List],
+          references: OnebusawaySDK::References,
+          out_of_range: bool
+        }
 
         type list =
           {
@@ -97,6 +108,20 @@ module OnebusawaySDK
             ?direction: String,
             ?wheelchair_boarding: String
           ) -> void
+
+          def to_hash: -> {
+            id: String,
+            lat: Float,
+            location_type: Integer,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            code: String,
+            direction: String,
+            wheelchair_boarding: String
+          }
         end
       end
     end
