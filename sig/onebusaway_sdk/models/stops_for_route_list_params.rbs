@@ -21,6 +21,12 @@ module OnebusawaySDK
         ?time: String,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
+
+      def to_hash: -> {
+        include_polylines: bool,
+        time: String,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end

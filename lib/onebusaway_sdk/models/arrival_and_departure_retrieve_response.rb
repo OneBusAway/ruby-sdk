@@ -20,12 +20,12 @@ module OnebusawaySDK
 
         # @!attribute references
         #
-        #   @return [OnebusawaySDK::References]
+        #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
         # @!method initialize(entry:, references:)
         #   @param entry [OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry]
-        #   @param references [OnebusawaySDK::References]
+        #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data#entry
         class Entry < OnebusawaySDK::Internal::Type::BaseModel

@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data
+      }
+
       type data =
         {
           limit_exceeded: bool,
@@ -33,6 +37,12 @@ module OnebusawaySDK
           list: ::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
           references: OnebusawaySDK::References
         ) -> void
+
+        def to_hash: -> {
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::AgenciesWithCoverageListResponse::Data::List],
+          references: OnebusawaySDK::References
+        }
 
         type list =
           {
@@ -61,6 +71,14 @@ module OnebusawaySDK
             lon: Float,
             lon_span: Float
           ) -> void
+
+          def to_hash: -> {
+            agency_id: String,
+            lat: Float,
+            lat_span: Float,
+            lon: Float,
+            lon_span: Float
+          }
         end
       end
     end

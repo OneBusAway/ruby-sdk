@@ -45,6 +45,15 @@ module OnebusawaySDK
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
 
+      def to_hash: -> {
+        code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
+        user_comment: String,
+        user_lat: Float,
+        user_location_accuracy: Float,
+        user_lon: Float,
+        request_options: OnebusawaySDK::RequestOptions
+      }
+
       type code =
         :stop_name_wrong
         | :stop_number_wrong

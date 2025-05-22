@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::ConfigRetrieveResponse::Data
+      }
+
       type data =
         {
           entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
@@ -29,6 +33,11 @@ module OnebusawaySDK
           entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
           references: OnebusawaySDK::References
         ) -> void
+
+        def to_hash: -> {
+          entry: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
 
         type entry =
           {
@@ -69,6 +78,14 @@ module OnebusawaySDK
             ?service_date_from: String,
             ?service_date_to: String
           ) -> void
+
+          def to_hash: -> {
+            id: String,
+            git_properties: OnebusawaySDK::Models::ConfigRetrieveResponse::Data::Entry::GitProperties,
+            name: String,
+            service_date_from: String,
+            service_date_to: String
+          }
 
           type git_properties =
             {
@@ -197,6 +214,29 @@ module OnebusawaySDK
               ?git_remote_origin_url: String,
               ?git_tags: String
             ) -> void
+
+            def to_hash: -> {
+              git_branch: String,
+              git_build_host: String,
+              git_build_time: String,
+              git_build_user_email: String,
+              git_build_user_name: String,
+              git_build_version: String,
+              git_closest_tag_commit_count: String,
+              git_closest_tag_name: String,
+              git_commit_id: String,
+              git_commit_id_abbrev: String,
+              git_commit_id_describe: String,
+              git_commit_id_describe_short: String,
+              git_commit_message_full: String,
+              git_commit_message_short: String,
+              git_commit_time: String,
+              git_commit_user_email: String,
+              git_commit_user_name: String,
+              git_dirty: String,
+              git_remote_origin_url: String,
+              git_tags: String
+            }
           end
         end
       end

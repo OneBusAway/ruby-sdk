@@ -15,6 +15,11 @@ module OnebusawaySDK
         ?date: Date,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
+
+      def to_hash: -> {
+        date: Date,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end

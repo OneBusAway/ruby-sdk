@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::BlockRetrieveResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::BlockRetrieveResponse::Data
+      }
+
       type data =
         {
           entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
@@ -30,6 +34,11 @@ module OnebusawaySDK
           references: OnebusawaySDK::References
         ) -> void
 
+        def to_hash: -> {
+          entry: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
+
         type entry =
           {
             id: String,
@@ -45,6 +54,11 @@ module OnebusawaySDK
             id: String,
             configurations: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
           ) -> void
+
+          def to_hash: -> {
+            id: String,
+            configurations: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration]
+          }
 
           type configuration =
             {
@@ -67,6 +81,12 @@ module OnebusawaySDK
               trips: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
               ?inactive_service_ids: ::Array[String]
             ) -> void
+
+            def to_hash: -> {
+              active_service_ids: ::Array[String],
+              trips: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip],
+              inactive_service_ids: ::Array[String]
+            }
 
             type trip =
               {
@@ -92,6 +112,13 @@ module OnebusawaySDK
                 trip_id: String
               ) -> void
 
+              def to_hash: -> {
+                accumulated_slack_time: Float,
+                block_stop_times: ::Array[OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime],
+                distance_along_block: Float,
+                trip_id: String
+              }
+
               type block_stop_time =
                 {
                   accumulated_slack_time: Float,
@@ -115,6 +142,13 @@ module OnebusawaySDK
                   distance_along_block: Float,
                   stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
                 ) -> void
+
+                def to_hash: -> {
+                  accumulated_slack_time: Float,
+                  block_sequence: Integer,
+                  distance_along_block: Float,
+                  stop_time: OnebusawaySDK::Models::BlockRetrieveResponse::Data::Entry::Configuration::Trip::BlockStopTime::StopTime
+                }
 
                 type stop_time =
                   {
@@ -147,6 +181,14 @@ module OnebusawaySDK
                     ?drop_off_type: Integer,
                     ?pickup_type: Integer
                   ) -> void
+
+                  def to_hash: -> {
+                    arrival_time: Integer,
+                    departure_time: Integer,
+                    stop_id: String,
+                    drop_off_type: Integer,
+                    pickup_type: Integer
+                  }
                 end
               end
             end

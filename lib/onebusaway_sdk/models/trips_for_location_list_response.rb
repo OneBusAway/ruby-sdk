@@ -27,7 +27,7 @@ module OnebusawaySDK
 
         # @!attribute references
         #
-        #   @return [OnebusawaySDK::References]
+        #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
         # @!attribute out_of_range
@@ -41,7 +41,7 @@ module OnebusawaySDK
         #
         #   @param list [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List>]
         #
-        #   @param references [OnebusawaySDK::References]
+        #   @param references [OnebusawaySDK::Models::References]
         #
         #   @param out_of_range [Boolean] Indicates if the search location is out of range
 

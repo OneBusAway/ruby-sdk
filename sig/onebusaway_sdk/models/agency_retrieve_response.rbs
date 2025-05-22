@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::AgencyRetrieveResponse::Data
+      }
+
       type data =
         {
           entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
@@ -33,6 +37,12 @@ module OnebusawaySDK
           limit_exceeded: bool,
           references: OnebusawaySDK::References
         ) -> void
+
+        def to_hash: -> {
+          entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
+          limit_exceeded: bool,
+          references: OnebusawaySDK::References
+        }
 
         type entry =
           {
@@ -93,6 +103,19 @@ module OnebusawaySDK
             ?phone: String,
             ?private_service: bool
           ) -> void
+
+          def to_hash: -> {
+            id: String,
+            name: String,
+            timezone: String,
+            url: String,
+            disclaimer: String,
+            email: String,
+            fare_url: String,
+            lang: String,
+            phone: String,
+            private_service: bool
+          }
         end
       end
     end
