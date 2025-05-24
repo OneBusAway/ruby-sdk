@@ -25,6 +25,7 @@ class OnebusawaySDK::Test::SorbetRuntimeSupportTest < Minitest::Test
     err = OnebusawaySDK::Internal::Util::SorbetRuntimeSupport::MissingSorbetRuntimeError
 
     assert_raises(err) { OnebusawaySDK::Internal::AnyHash }
+    assert_raises(err) { OnebusawaySDK::Internal::FileInput }
     assert_raises(err) { OnebusawaySDK::Internal::Type::Converter::Input }
     assert_raises(err) { OnebusawaySDK::Internal::Type::Converter::CoerceState }
     assert_raises(err) { OnebusawaySDK::Internal::Type::Converter::DumpState }

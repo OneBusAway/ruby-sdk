@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::TripsForRouteListResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::TripsForRouteListResponse::Data
+      }
+
       type data =
         {
           limit_exceeded: bool,
@@ -33,6 +37,12 @@ module OnebusawaySDK
           list: ::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
           references: OnebusawaySDK::References
         ) -> void
+
+        def to_hash: -> {
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List],
+          references: OnebusawaySDK::References
+        }
 
         type list =
           {
@@ -70,6 +80,15 @@ module OnebusawaySDK
             ?situation_ids: ::Array[String]
           ) -> void
 
+          def to_hash: -> {
+            schedule: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule,
+            status: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status,
+            trip_id: String,
+            frequency: String?,
+            service_date: Integer,
+            situation_ids: ::Array[String]
+          }
+
           type schedule =
             {
               next_trip_id: String,
@@ -97,6 +116,14 @@ module OnebusawaySDK
               time_zone: String,
               ?frequency: String?
             ) -> void
+
+            def to_hash: -> {
+              next_trip_id: String,
+              previous_trip_id: String,
+              stop_times: ::Array[OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Schedule::StopTime],
+              time_zone: String,
+              frequency: String?
+            }
 
             type stop_time =
               {
@@ -141,6 +168,15 @@ module OnebusawaySDK
                 ?stop_headsign: String,
                 ?stop_id: String
               ) -> void
+
+              def to_hash: -> {
+                arrival_time: Integer,
+                departure_time: Integer,
+                distance_along_trip: Float,
+                historical_occupancy: String,
+                stop_headsign: String,
+                stop_id: String
+              }
             end
           end
 
@@ -286,6 +322,36 @@ module OnebusawaySDK
               ?vehicle_id: String
             ) -> void
 
+            def to_hash: -> {
+              active_trip_id: String,
+              block_trip_sequence: Integer,
+              closest_stop: String,
+              distance_along_trip: Float,
+              last_known_distance_along_trip: Float,
+              last_location_update_time: Integer,
+              last_update_time: Integer,
+              occupancy_capacity: Integer,
+              occupancy_count: Integer,
+              occupancy_status: String,
+              phase: String,
+              predicted: bool,
+              schedule_deviation: Integer,
+              service_date: Integer,
+              status: String,
+              total_distance_along_trip: Float,
+              closest_stop_time_offset: Integer,
+              frequency: String,
+              last_known_location: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::LastKnownLocation,
+              last_known_orientation: Float,
+              next_stop: String,
+              next_stop_time_offset: Integer,
+              orientation: Float,
+              position: OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status::Position,
+              scheduled_distance_along_trip: Float,
+              situation_ids: ::Array[String],
+              vehicle_id: String
+            }
+
             type last_known_location = { lat: Float, lon: Float }
 
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
@@ -298,6 +364,8 @@ module OnebusawaySDK
               def lon=: (Float) -> Float
 
               def initialize: (?lat: Float, ?lon: Float) -> void
+
+              def to_hash: -> { lat: Float, lon: Float }
             end
 
             type position = { lat: Float, lon: Float }
@@ -312,6 +380,8 @@ module OnebusawaySDK
               def lon=: (Float) -> Float
 
               def initialize: (?lat: Float, ?lon: Float) -> void
+
+              def to_hash: -> { lat: Float, lon: Float }
             end
           end
         end

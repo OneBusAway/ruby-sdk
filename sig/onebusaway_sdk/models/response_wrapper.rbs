@@ -18,6 +18,13 @@ module OnebusawaySDK
         text: String,
         version: Integer
       ) -> void
+
+      def to_hash: -> {
+        code: Integer,
+        current_time: Integer,
+        text: String,
+        version: Integer
+      }
     end
   end
 end

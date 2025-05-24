@@ -25,13 +25,13 @@ module OnebusawaySDK
 
         # @!attribute references
         #
-        #   @return [OnebusawaySDK::References]
+        #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
         # @!method initialize(limit_exceeded:, list:, references:)
         #   @param limit_exceeded [Boolean]
         #   @param list [Array<String>]
-        #   @param references [OnebusawaySDK::References]
+        #   @param references [OnebusawaySDK::Models::References]
       end
     end
   end

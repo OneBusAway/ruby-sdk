@@ -44,6 +44,16 @@ module OnebusawaySDK
         ?radius: Float,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
+
+      def to_hash: -> {
+        lat: Float,
+        lon: Float,
+        lat_span: Float,
+        lon_span: Float,
+        query: String,
+        radius: Float,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end

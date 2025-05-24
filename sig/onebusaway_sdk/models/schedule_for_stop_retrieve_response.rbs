@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data
+      }
+
       type data =
         {
           entry: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
@@ -29,6 +33,11 @@ module OnebusawaySDK
           entry: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
           references: OnebusawaySDK::References
         ) -> void
+
+        def to_hash: -> {
+          entry: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
 
         type entry =
           {
@@ -50,6 +59,12 @@ module OnebusawaySDK
             stop_route_schedules: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
           ) -> void
 
+          def to_hash: -> {
+            date: Integer,
+            stop_id: String,
+            stop_route_schedules: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule]
+          }
+
           type stop_route_schedule =
             {
               route_id: String,
@@ -65,6 +80,11 @@ module OnebusawaySDK
               route_id: String,
               stop_route_direction_schedules: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
             ) -> void
+
+            def to_hash: -> {
+              route_id: String,
+              stop_route_direction_schedules: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule]
+            }
 
             type stop_route_direction_schedule =
               {
@@ -89,6 +109,12 @@ module OnebusawaySDK
                 trip_headsign: String,
                 ?schedule_frequencies: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
               ) -> void
+
+              def to_hash: -> {
+                schedule_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleStopTime],
+                trip_headsign: String,
+                schedule_frequencies: ::Array[OnebusawaySDK::Models::ScheduleForStopRetrieveResponse::Data::Entry::StopRouteSchedule::StopRouteDirectionSchedule::ScheduleFrequency]
+              }
 
               type schedule_stop_time =
                 {
@@ -127,6 +153,16 @@ module OnebusawaySDK
                   trip_id: String,
                   ?stop_headsign: String
                 ) -> void
+
+                def to_hash: -> {
+                  arrival_enabled: bool,
+                  arrival_time: Integer,
+                  departure_enabled: bool,
+                  departure_time: Integer,
+                  service_id: String,
+                  trip_id: String,
+                  stop_headsign: String
+                }
               end
 
               type schedule_frequency =
@@ -160,6 +196,15 @@ module OnebusawaySDK
                   start_time: Integer,
                   trip_id: String
                 ) -> void
+
+                def to_hash: -> {
+                  end_time: Integer,
+                  headway: Integer,
+                  service_date: Integer,
+                  service_id: String,
+                  start_time: Integer,
+                  trip_id: String
+                }
               end
             end
           end

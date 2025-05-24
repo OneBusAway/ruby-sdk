@@ -10,7 +10,7 @@ module OnebusawaySDK
       # @!attribute code
       #   A string code identifying the nature of the problem
       #
-      #   @return [Symbol, OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code, nil]
+      #   @return [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code, nil]
       optional :code, enum: -> { OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code }
 
       # @!attribute user_comment
@@ -38,7 +38,7 @@ module OnebusawaySDK
       optional :user_lon, Float
 
       # @!method initialize(code: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, request_options: {})
-      #   @param code [Symbol, OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
+      #   @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
       #
       #   @param user_comment [String] Additional comment text supplied by the user describing the problem
       #

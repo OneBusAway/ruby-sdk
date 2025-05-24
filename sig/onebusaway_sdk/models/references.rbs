@@ -32,6 +32,15 @@ module OnebusawaySDK
         trips: ::Array[OnebusawaySDK::References::Trip]
       ) -> void
 
+      def to_hash: -> {
+        agencies: ::Array[OnebusawaySDK::References::Agency],
+        routes: ::Array[OnebusawaySDK::References::Route],
+        situations: ::Array[OnebusawaySDK::References::Situation],
+        stops: ::Array[OnebusawaySDK::References::Stop],
+        stop_times: ::Array[OnebusawaySDK::References::StopTime],
+        trips: ::Array[OnebusawaySDK::References::Trip]
+      }
+
       type agency =
         {
           id: String,
@@ -91,6 +100,19 @@ module OnebusawaySDK
           ?phone: String,
           ?private_service: bool
         ) -> void
+
+        def to_hash: -> {
+          id: String,
+          name: String,
+          timezone: String,
+          url: String,
+          disclaimer: String,
+          email: String,
+          fare_url: String,
+          lang: String,
+          phone: String,
+          private_service: bool
+        }
       end
 
       type route =
@@ -154,6 +176,19 @@ module OnebusawaySDK
           ?text_color: String,
           ?url: String
         ) -> void
+
+        def to_hash: -> {
+          id: String,
+          agency_id: String,
+          type: Integer,
+          color: String,
+          description: String,
+          long_name: String,
+          null_safe_short_name: String,
+          short_name: String,
+          text_color: String,
+          url: String
+        }
       end
 
       type situation =
@@ -166,7 +201,7 @@ module OnebusawaySDK
           consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
           description: OnebusawaySDK::References::Situation::Description,
           publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
-          reason: OnebusawaySDK::References::Situation::reason,
+          reason: OnebusawaySDK::Models::References::Situation::reason,
           severity: String,
           summary: OnebusawaySDK::References::Situation::Summary,
           url: OnebusawaySDK::References::Situation::URL
@@ -211,11 +246,11 @@ module OnebusawaySDK
           ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
         ) -> ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
 
-        attr_reader reason: OnebusawaySDK::References::Situation::reason?
+        attr_reader reason: OnebusawaySDK::Models::References::Situation::reason?
 
         def reason=: (
-          OnebusawaySDK::References::Situation::reason
-        ) -> OnebusawaySDK::References::Situation::reason
+          OnebusawaySDK::Models::References::Situation::reason
+        ) -> OnebusawaySDK::Models::References::Situation::reason
 
         attr_reader severity: String?
 
@@ -242,11 +277,26 @@ module OnebusawaySDK
           ?consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
           ?description: OnebusawaySDK::References::Situation::Description,
           ?publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
-          ?reason: OnebusawaySDK::References::Situation::reason,
+          ?reason: OnebusawaySDK::Models::References::Situation::reason,
           ?severity: String,
           ?summary: OnebusawaySDK::References::Situation::Summary,
           ?url: OnebusawaySDK::References::Situation::URL
         ) -> void
+
+        def to_hash: -> {
+          id: String,
+          creation_time: Integer,
+          active_windows: ::Array[OnebusawaySDK::References::Situation::ActiveWindow],
+          all_affects: ::Array[OnebusawaySDK::References::Situation::AllAffect],
+          consequence_message: String,
+          consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
+          description: OnebusawaySDK::References::Situation::Description,
+          publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
+          reason: OnebusawaySDK::Models::References::Situation::reason,
+          severity: String,
+          summary: OnebusawaySDK::References::Situation::Summary,
+          url: OnebusawaySDK::References::Situation::URL
+        }
 
         type active_window = { from: Integer, to: Integer }
 
@@ -260,6 +310,8 @@ module OnebusawaySDK
           def to=: (Integer) -> Integer
 
           def initialize: (?from: Integer, ?to: Integer) -> void
+
+          def to_hash: -> { from: Integer, to: Integer }
         end
 
         type all_affect =
@@ -305,6 +357,15 @@ module OnebusawaySDK
             ?stop_id: String,
             ?trip_id: String
           ) -> void
+
+          def to_hash: -> {
+            agency_id: String,
+            application_id: String,
+            direction_id: String,
+            route_id: String,
+            stop_id: String,
+            trip_id: String
+          }
         end
 
         type consequence =
@@ -329,6 +390,11 @@ module OnebusawaySDK
             ?condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails
           ) -> void
 
+          def to_hash: -> {
+            condition: String,
+            condition_details: OnebusawaySDK::References::Situation::Consequence::ConditionDetails
+          }
+
           type condition_details =
             {
               diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
@@ -351,6 +417,11 @@ module OnebusawaySDK
               ?diversion_stop_ids: ::Array[String]
             ) -> void
 
+            def to_hash: -> {
+              diversion_path: OnebusawaySDK::References::Situation::Consequence::ConditionDetails::DiversionPath,
+              diversion_stop_ids: ::Array[String]
+            }
+
             type diversion_path =
               { length: Integer, levels: String, points: String }
 
@@ -372,6 +443,12 @@ module OnebusawaySDK
                 ?levels: String,
                 ?points: String
               ) -> void
+
+              def to_hash: -> {
+                length: Integer,
+                levels: String,
+                points: String
+              }
             end
           end
         end
@@ -388,6 +465,8 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize: (?lang: String, ?value: String) -> void
+
+          def to_hash: -> { lang: String, value: String }
         end
 
         type publication_window = { from: Integer, to: Integer }
@@ -398,6 +477,8 @@ module OnebusawaySDK
           attr_accessor to: Integer
 
           def initialize: (from: Integer, to: Integer) -> void
+
+          def to_hash: -> { from: Integer, to: Integer }
         end
 
         type reason =
@@ -416,7 +497,7 @@ module OnebusawaySDK
           MISCELLANEOUS_REASON: :miscellaneousReason
           SECURITY_ALERT: :securityAlert
 
-          def self?.values: -> ::Array[OnebusawaySDK::References::Situation::reason]
+          def self?.values: -> ::Array[OnebusawaySDK::Models::References::Situation::reason]
         end
 
         type summary = { lang: String, value: String }
@@ -431,6 +512,8 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize: (?lang: String, ?value: String) -> void
+
+          def to_hash: -> { lang: String, value: String }
         end
 
         type url = { lang: String, value: String }
@@ -445,6 +528,8 @@ module OnebusawaySDK
           def value=: (String) -> String
 
           def initialize: (?lang: String, ?value: String) -> void
+
+          def to_hash: -> { lang: String, value: String }
         end
       end
 
@@ -505,6 +590,20 @@ module OnebusawaySDK
           ?direction: String,
           ?wheelchair_boarding: String
         ) -> void
+
+        def to_hash: -> {
+          id: String,
+          lat: Float,
+          location_type: Integer,
+          lon: Float,
+          name: String,
+          parent: String,
+          route_ids: ::Array[String],
+          static_route_ids: ::Array[String],
+          code: String,
+          direction: String,
+          wheelchair_boarding: String
+        }
       end
 
       type stop_time =
@@ -550,6 +649,15 @@ module OnebusawaySDK
           ?stop_headsign: String,
           ?stop_id: String
         ) -> void
+
+        def to_hash: -> {
+          arrival_time: Integer,
+          departure_time: Integer,
+          distance_along_trip: Float,
+          historical_occupancy: String,
+          stop_headsign: String,
+          stop_id: String
+        }
       end
 
       type trip =
@@ -619,6 +727,20 @@ module OnebusawaySDK
           ?trip_headsign: String,
           ?trip_short_name: String
         ) -> void
+
+        def to_hash: -> {
+          id: String,
+          route_id: String,
+          service_id: String,
+          block_id: String,
+          direction_id: String,
+          peak_offpeak: Integer,
+          route_short_name: String,
+          shape_id: String,
+          time_zone: String,
+          trip_headsign: String,
+          trip_short_name: String
+        }
       end
     end
   end

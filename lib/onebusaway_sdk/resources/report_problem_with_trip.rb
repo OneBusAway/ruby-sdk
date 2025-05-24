@@ -9,7 +9,7 @@ module OnebusawaySDK
       #
       # @param trip_id [String] The ID of the trip
       #
-      # @param code [Symbol, OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code] A string code identifying the nature of the problem
+      # @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code] A string code identifying the nature of the problem
       #
       # @param service_date [Integer] The service date of the trip
       #
@@ -31,7 +31,7 @@ module OnebusawaySDK
       #
       # @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [OnebusawaySDK::ResponseWrapper]
+      # @return [OnebusawaySDK::Models::ResponseWrapper]
       #
       # @see OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams
       def retrieve(trip_id, params = {})

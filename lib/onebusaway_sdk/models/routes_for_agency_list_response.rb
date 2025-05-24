@@ -26,13 +26,13 @@ module OnebusawaySDK
 
         # @!attribute references
         #
-        #   @return [OnebusawaySDK::References]
+        #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
         # @!method initialize(limit_exceeded:, list:, references:)
         #   @param limit_exceeded [Boolean]
         #   @param list [Array<OnebusawaySDK::Models::RoutesForAgencyListResponse::Data::List>]
-        #   @param references [OnebusawaySDK::References]
+        #   @param references [OnebusawaySDK::Models::References]
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute id

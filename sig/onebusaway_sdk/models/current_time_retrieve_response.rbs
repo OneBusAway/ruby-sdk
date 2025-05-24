@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data
+      }
+
       type data =
         {
           entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
@@ -30,6 +34,11 @@ module OnebusawaySDK
           references: OnebusawaySDK::References
         ) -> void
 
+        def to_hash: -> {
+          entry: OnebusawaySDK::Models::CurrentTimeRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
+
         type entry = { readable_time: String, time: Integer }
 
         class Entry < OnebusawaySDK::Internal::Type::BaseModel
@@ -42,6 +51,8 @@ module OnebusawaySDK
           def time=: (Integer) -> Integer
 
           def initialize: (?readable_time: String, ?time: Integer) -> void
+
+          def to_hash: -> { readable_time: String, time: Integer }
         end
       end
     end

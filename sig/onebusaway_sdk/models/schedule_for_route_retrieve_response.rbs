@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data
+      }
+
       type data =
         {
           entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
@@ -25,6 +29,10 @@ module OnebusawaySDK
         def initialize: (
           entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
         ) -> void
+
+        def to_hash: -> {
+          entry: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry
+        }
 
         type entry =
           {
@@ -57,6 +65,15 @@ module OnebusawaySDK
             stop_trip_groupings: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
             trips: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
           ) -> void
+
+          def to_hash: -> {
+            route_id: String,
+            schedule_date: Integer,
+            service_ids: ::Array[String],
+            stops: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop],
+            stop_trip_groupings: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping],
+            trips: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip]
+          }
 
           type stop =
             {
@@ -115,6 +132,20 @@ module OnebusawaySDK
               ?direction: String,
               ?wheelchair_boarding: String
             ) -> void
+
+            def to_hash: -> {
+              id: String,
+              lat: Float,
+              location_type: Integer,
+              lon: Float,
+              name: String,
+              parent: String,
+              route_ids: ::Array[String],
+              static_route_ids: ::Array[String],
+              code: String,
+              direction: String,
+              wheelchair_boarding: String
+            }
           end
 
           type stop_trip_grouping =
@@ -149,6 +180,14 @@ module OnebusawaySDK
               ?trips_with_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
             ) -> void
 
+            def to_hash: -> {
+              direction_id: String,
+              stop_ids: ::Array[String],
+              trip_headsigns: ::Array[String],
+              trip_ids: ::Array[String],
+              trips_with_stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime]
+            }
+
             type trips_with_stop_time =
               {
                 stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
@@ -164,6 +203,11 @@ module OnebusawaySDK
                 stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
                 trip_id: String
               ) -> void
+
+              def to_hash: -> {
+                stop_times: ::Array[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping::TripsWithStopTime::StopTime],
+                trip_id: String
+              }
 
               type stop_time =
                 {
@@ -208,6 +252,17 @@ module OnebusawaySDK
                   ?service_id: String,
                   ?stop_headsign: String
                 ) -> void
+
+                def to_hash: -> {
+                  arrival_enabled: bool,
+                  arrival_time: Integer,
+                  departure_enabled: bool,
+                  departure_time: Integer,
+                  stop_id: String,
+                  trip_id: String,
+                  service_id: String,
+                  stop_headsign: String
+                }
               end
             end
           end
@@ -279,6 +334,20 @@ module OnebusawaySDK
               ?trip_headsign: String,
               ?trip_short_name: String
             ) -> void
+
+            def to_hash: -> {
+              id: String,
+              route_id: String,
+              service_id: String,
+              block_id: String,
+              direction_id: String,
+              peak_offpeak: Integer,
+              route_short_name: String,
+              shape_id: String,
+              time_zone: String,
+              trip_headsign: String,
+              trip_short_name: String
+            }
           end
         end
       end

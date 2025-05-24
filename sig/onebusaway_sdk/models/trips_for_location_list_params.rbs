@@ -46,6 +46,17 @@ module OnebusawaySDK
         ?time: Integer,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
+
+      def to_hash: -> {
+        lat: Float,
+        lat_span: Float,
+        lon: Float,
+        lon_span: Float,
+        include_schedule: bool,
+        include_trip: bool,
+        time: Integer,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end

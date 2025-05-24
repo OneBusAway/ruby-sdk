@@ -2,6 +2,9 @@ module OnebusawaySDK
   module Internal
     extend OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
+    type file_input =
+      Pathname | StringIO | IO | String | OnebusawaySDK::FilePart
+
     OMIT: Object
   end
 end

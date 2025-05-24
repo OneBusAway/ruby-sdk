@@ -10,7 +10,7 @@ module OnebusawaySDK
       # @!attribute code
       #   A string code identifying the nature of the problem
       #
-      #   @return [Symbol, OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code, nil]
+      #   @return [Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code, nil]
       optional :code, enum: -> { OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code }
 
       # @!attribute service_date
@@ -68,7 +68,7 @@ module OnebusawaySDK
       optional :vehicle_id, String
 
       # @!method initialize(code: nil, service_date: nil, stop_id: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, user_on_vehicle: nil, user_vehicle_number: nil, vehicle_id: nil, request_options: {})
-      #   @param code [Symbol, OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code] A string code identifying the nature of the problem
+      #   @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::Code] A string code identifying the nature of the problem
       #
       #   @param service_date [Integer] The service date of the trip
       #

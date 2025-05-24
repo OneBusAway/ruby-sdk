@@ -3,6 +3,7 @@ module OnebusawaySDK
     module Type
       class ArrayOf[Elem]
         include OnebusawaySDK::Internal::Type::Converter
+        include OnebusawaySDK::Internal::Util::SorbetRuntimeSupport
 
         def self.[]: (
           ::Hash[Symbol, top]
@@ -26,6 +27,8 @@ module OnebusawaySDK
           ::Array[top] | top value,
           state: OnebusawaySDK::Internal::Type::Converter::dump_state
         ) -> (::Array[top] | top)
+
+        def to_sorbet_type: -> top
 
         def item_type: -> Elem
 

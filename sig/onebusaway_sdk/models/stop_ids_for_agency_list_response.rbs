@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::StopIDsForAgencyListResponse::Data
+      }
+
       type data =
         {
           limit_exceeded: bool,
@@ -33,6 +37,12 @@ module OnebusawaySDK
           list: ::Array[String],
           references: OnebusawaySDK::References
         ) -> void
+
+        def to_hash: -> {
+          limit_exceeded: bool,
+          list: ::Array[String],
+          references: OnebusawaySDK::References
+        }
       end
     end
   end
