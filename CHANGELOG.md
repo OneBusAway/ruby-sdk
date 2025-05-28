@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.0.3 (2025-05-28)
+
+Full Changelog: [v1.0.2...v1.0.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.2...v1.0.3)
+
+### Bug Fixes
+
+* correctly instantiate sorbet type aliases for enums and unions ([c3220da](https://github.com/OneBusAway/ruby-sdk/commit/c3220da9c8dd308037e8713b34a9925c3b2305c9))
+* prevent rubocop from mangling `===` to `is_a?` check ([4cc7c41](https://github.com/OneBusAway/ruby-sdk/commit/4cc7c41e75e9bc5589998af5b40398632242bd08))
+* sorbet types for enums, and make tapioca detection ignore `tapioca dsl` ([457b3f7](https://github.com/OneBusAway/ruby-sdk/commit/457b3f74152c42720d9daa4d2050a3a93bd8a6ce))
+
+
+### Chores
+
+* **docs:** grammar improvements ([fb664c1](https://github.com/OneBusAway/ruby-sdk/commit/fb664c14ed7536ceb8f8e0a3981466572b9924b3))
+* force utf-8 locale via `RUBYOPT` when formatting ([40072fa](https://github.com/OneBusAway/ruby-sdk/commit/40072fa08f936bb71c630cbab264def3d5f68fca))
+* **internal:** version bump ([736a6f9](https://github.com/OneBusAway/ruby-sdk/commit/736a6f9a6f1536797d992536102ec93ff1c80984))
+* refine Yard and Sorbet types and ensure linting is turned on for examples ([4491574](https://github.com/OneBusAway/ruby-sdk/commit/44915748e1ed515f15805d3f7a2f5e73d9d4e8f7))
+* use fully qualified names for yard annotations and rbs aliases ([836f0a6](https://github.com/OneBusAway/ruby-sdk/commit/836f0a68ded83ff27a8dcf0c28e07bd1f29f8cba))
+* whitespaces ([6588d9a](https://github.com/OneBusAway/ruby-sdk/commit/6588d9a87f890cdedbe288172f074332e34a48ff))
+
 ## 1.0.2 (2025-05-20)
 
 Full Changelog: [v1.0.1...v1.0.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.1...v1.0.2)
