@@ -31,14 +31,14 @@ module OnebusawaySDK
 
         # @!attribute references
         #
-        #   @return [OnebusawaySDK::References]
+        #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
         # @!method initialize(limit_exceeded:, list:, out_of_range:, references:)
         #   @param limit_exceeded [Boolean]
         #   @param list [Array<OnebusawaySDK::Models::SearchForStopListResponse::Data::List>]
         #   @param out_of_range [Boolean]
-        #   @param references [OnebusawaySDK::References]
+        #   @param references [OnebusawaySDK::Models::References]
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute id

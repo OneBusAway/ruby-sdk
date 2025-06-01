@@ -26,6 +26,13 @@ module OnebusawaySDK
         ?time: Time,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
+
+      def to_hash: -> {
+        minutes_after: Integer,
+        minutes_before: Integer,
+        time: Time,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end

@@ -14,6 +14,10 @@ module OnebusawaySDK
         data: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data
       ) -> void
 
+      def to_hash: -> {
+        data: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data
+      }
+
       type data =
         {
           entry: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry,
@@ -29,6 +33,11 @@ module OnebusawaySDK
           entry: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry,
           references: OnebusawaySDK::References
         ) -> void
+
+        def to_hash: -> {
+          entry: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry,
+          references: OnebusawaySDK::References
+        }
 
         type entry =
           {
@@ -212,6 +221,43 @@ module OnebusawaySDK
             ?trip_status: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus
           ) -> void
 
+          def to_hash: -> {
+            arrival_enabled: bool,
+            block_trip_sequence: Integer,
+            departure_enabled: bool,
+            number_of_stops_away: Integer,
+            predicted_arrival_time: Integer,
+            predicted_departure_time: Integer,
+            route_id: String,
+            scheduled_arrival_time: Integer,
+            scheduled_departure_time: Integer,
+            service_date: Integer,
+            stop_id: String,
+            stop_sequence: Integer,
+            total_stops_in_trip: Integer,
+            trip_headsign: String,
+            trip_id: String,
+            vehicle_id: String,
+            actual_track: String,
+            distance_from_stop: Float,
+            frequency: String,
+            historical_occupancy: String,
+            last_update_time: Integer,
+            occupancy_status: String,
+            predicted: bool,
+            predicted_arrival_interval: String,
+            predicted_departure_interval: String,
+            predicted_occupancy: String,
+            route_long_name: String,
+            route_short_name: String,
+            scheduled_arrival_interval: String,
+            scheduled_departure_interval: String,
+            scheduled_track: String,
+            situation_ids: ::Array[String],
+            status: String,
+            trip_status: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus
+          }
+
           type trip_status =
             {
               active_trip_id: String,
@@ -354,6 +400,36 @@ module OnebusawaySDK
               ?vehicle_id: String
             ) -> void
 
+            def to_hash: -> {
+              active_trip_id: String,
+              block_trip_sequence: Integer,
+              closest_stop: String,
+              distance_along_trip: Float,
+              last_known_distance_along_trip: Float,
+              last_location_update_time: Integer,
+              last_update_time: Integer,
+              occupancy_capacity: Integer,
+              occupancy_count: Integer,
+              occupancy_status: String,
+              phase: String,
+              predicted: bool,
+              schedule_deviation: Integer,
+              service_date: Integer,
+              status: String,
+              total_distance_along_trip: Float,
+              closest_stop_time_offset: Integer,
+              frequency: String,
+              last_known_location: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::LastKnownLocation,
+              last_known_orientation: Float,
+              next_stop: String,
+              next_stop_time_offset: Integer,
+              orientation: Float,
+              position: OnebusawaySDK::Models::ArrivalAndDepartureRetrieveResponse::Data::Entry::TripStatus::Position,
+              scheduled_distance_along_trip: Float,
+              situation_ids: ::Array[String],
+              vehicle_id: String
+            }
+
             type last_known_location = { lat: Float, lon: Float }
 
             class LastKnownLocation < OnebusawaySDK::Internal::Type::BaseModel
@@ -366,6 +442,8 @@ module OnebusawaySDK
               def lon=: (Float) -> Float
 
               def initialize: (?lat: Float, ?lon: Float) -> void
+
+              def to_hash: -> { lat: Float, lon: Float }
             end
 
             type position = { lat: Float, lon: Float }
@@ -380,6 +458,8 @@ module OnebusawaySDK
               def lon=: (Float) -> Float
 
               def initialize: (?lat: Float, ?lon: Float) -> void
+
+              def to_hash: -> { lat: Float, lon: Float }
             end
           end
         end
