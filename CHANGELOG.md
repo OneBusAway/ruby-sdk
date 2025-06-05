@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.0.4 (2025-06-05)
+
+Full Changelog: [v1.0.3...v1.0.4](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.3...v1.0.4)
+
+### Bug Fixes
+
+* `to_sorbet_type` should not return branded types ([62260a5](https://github.com/OneBusAway/ruby-sdk/commit/62260a5beb28f955e636a8d8ae5054e81f0ddd1c))
+* default content-type for text in multi-part formdata uploads should be text/plain ([642d274](https://github.com/OneBusAway/ruby-sdk/commit/642d274c1f710e6ec592ee5aab241f322c8d1d4a))
+
+
+### Chores
+
+* **internal:** version bump ([993b8ac](https://github.com/OneBusAway/ruby-sdk/commit/993b8ac7c60193de4157b5773da48ad76249564f))
+
 ## 1.0.3 (2025-05-28)
 
 Full Changelog: [v1.0.2...v1.0.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.2...v1.0.3)
