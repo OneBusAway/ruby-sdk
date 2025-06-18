@@ -5,6 +5,15 @@ module OnebusawaySDK
     end
 
     class ConversionError < OnebusawaySDK::Errors::Error
+      def cause: -> StandardError?
+
+      def initialize: (
+        on: Class,
+        method: Symbol,
+        target: top,
+        value: top,
+        ?cause: StandardError?
+      ) -> void
     end
 
     class APIError < OnebusawaySDK::Errors::Error
