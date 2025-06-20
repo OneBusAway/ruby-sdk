@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.0.8 (2025-06-18)
+
+Full Changelog: [v1.0.7...v1.0.8](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.7...v1.0.8)
+
+### Bug Fixes
+
+* issue where we cannot mutate arrays on base model derivatives ([55a5d96](https://github.com/OneBusAway/ruby-sdk/commit/55a5d9660d81a48dc9cdc1ea3e7c46a6c6471d95))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([91ac3d1](https://github.com/OneBusAway/ruby-sdk/commit/91ac3d152af0a13e43890803903fe9f02af838f5))
+* **internal:** version bump ([64cc3cb](https://github.com/OneBusAway/ruby-sdk/commit/64cc3cb430a2dbacf7ba7e2463281d84100103e8))
+
 ## 1.0.7 (2025-06-12)
 
 Full Changelog: [v1.0.6...v1.0.7](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.6...v1.0.7)
