@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.9 (2025-06-27)
+
+Full Changelog: [v1.0.8...v1.0.9](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.8...v1.0.9)
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([9c550bf](https://github.com/OneBusAway/ruby-sdk/commit/9c550bf5cff1eee21ffa66565ee5245e099f6a28))
+
+
+### Chores
+
+* **internal:** version bump ([0249814](https://github.com/OneBusAway/ruby-sdk/commit/02498140d38148e79738af88f5794f19949127ad))
+
 ## 1.0.8 (2025-06-18)
 
 Full Changelog: [v1.0.7...v1.0.8](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.7...v1.0.8)
