@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.10 (2025-07-01)
+
+Full Changelog: [v1.0.9...v1.0.10](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.9...v1.0.10)
+
+### Chores
+
+* **ci:** only run for pushes and fork pull requests ([64a0591](https://github.com/OneBusAway/ruby-sdk/commit/64a0591f91cc98b55b583d81727ae067c0c1d1c2))
+* **internal:** allow streams to also be unwrapped on a per-row basis ([2710480](https://github.com/OneBusAway/ruby-sdk/commit/27104809a931e4c3e99cb3cc5949c531816e5b87))
+* **internal:** version bump ([a8f4163](https://github.com/OneBusAway/ruby-sdk/commit/a8f416393445b3b824740a5159b5c35aa455048e))
+
 ## 1.0.9 (2025-06-27)
 
 Full Changelog: [v1.0.8...v1.0.9](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.8...v1.0.9)
