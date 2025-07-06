@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.14 (2025-07-06)
+
+Full Changelog: [v1.0.13...v1.0.14](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.13...v1.0.14)
+
+### Chores
+
+* **internal:** version bump ([bff7c05](https://github.com/OneBusAway/ruby-sdk/commit/bff7c053379593d18a30ac93b3d97434cdedf008))
+
 ## 1.0.13 (2025-07-06)
 
 Full Changelog: [v1.0.12...v1.0.13](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.12...v1.0.13)
