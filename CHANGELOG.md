@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.22 (2025-07-29)
+
+Full Changelog: [v1.0.21...v1.0.22](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.21...v1.0.22)
+
+### Bug Fixes
+
+* **internal:** ensure sorbet test always runs serially ([0bf462c](https://github.com/OneBusAway/ruby-sdk/commit/0bf462c257533fbb7557ce6bcc22c5ebcc55f7ad))
+
 ## 1.0.21 (2025-07-26)
 
 Full Changelog: [v1.0.20...v1.0.21](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.20...v1.0.21)
