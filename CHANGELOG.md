@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.23 (2025-08-01)
+
+Full Changelog: [v1.0.22...v1.0.23](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.22...v1.0.23)
+
+### Chores
+
+* **internal:** increase visibility of internal helper method ([98f8363](https://github.com/OneBusAway/ruby-sdk/commit/98f8363689bcfcd57d81ad5047da08ae578c8f2d))
+
 ## 1.0.22 (2025-07-29)
 
 Full Changelog: [v1.0.21...v1.0.22](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.21...v1.0.22)
