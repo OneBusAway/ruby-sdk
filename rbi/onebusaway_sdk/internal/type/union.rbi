@@ -16,7 +16,8 @@ module OnebusawaySDK
             T::Array[
               [
                 T.nilable(Symbol),
-                T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input)
+                T.proc.returns(OnebusawaySDK::Internal::Type::Converter::Input),
+                OnebusawaySDK::Internal::AnyHash
               ]
             ]
           )
@@ -25,7 +26,13 @@ module OnebusawaySDK
         end
 
         # @api private
-        sig { returns(T::Array[[T.nilable(Symbol), T.anything]]) }
+        sig do
+          returns(
+            T::Array[
+              [T.nilable(Symbol), T.anything, OnebusawaySDK::Internal::AnyHash]
+            ]
+          )
+        end
         protected def derefed_variants
         end
 
