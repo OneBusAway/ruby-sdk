@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.24 (2025-08-10)
+
+Full Changelog: [v1.0.23...v1.0.24](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.23...v1.0.24)
+
+### Chores
+
+* collect metadata from type DSL ([8c6ebea](https://github.com/OneBusAway/ruby-sdk/commit/8c6ebea6b7370965b7809e6747599dda37628a93))
+* **internal:** update comment in script ([008e80f](https://github.com/OneBusAway/ruby-sdk/commit/008e80fd1d7f13cfe7c09f8cca1da9b11072388d))
+* update @stainless-api/prism-cli to v5.15.0 ([2849a58](https://github.com/OneBusAway/ruby-sdk/commit/2849a582e1b7446b830f9e882575b9d5ba9e629c))
+
 ## 1.0.23 (2025-08-01)
 
 Full Changelog: [v1.0.22...v1.0.23](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.22...v1.0.23)
