@@ -16,10 +16,7 @@ module OnebusawaySDK
       # @!attribute situations
       #
       #   @return [Array<OnebusawaySDK::Models::References::Situation>]
-      required :situations,
-               -> {
-                 OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation]
-               }
+      required :situations, -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation] }
 
       # @!attribute stops
       #
@@ -215,9 +212,7 @@ module OnebusawaySDK
         #
         #   @return [Array<OnebusawaySDK::Models::References::Situation::Consequence>, nil]
         optional :consequences,
-                 -> {
-                   OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation::Consequence]
-                 }
+                 -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::References::Situation::Consequence] }
 
         # @!attribute description
         #
