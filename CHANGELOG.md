@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.25 (2025-08-20)
+
+Full Changelog: [v1.0.24...v1.0.25](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.24...v1.0.25)
+
+### Bug Fixes
+
+* bump sorbet version and fix new type errors from the breaking change ([c072aac](https://github.com/OneBusAway/ruby-sdk/commit/c072aac4d761e83878e4cb6a1ef9d66f277d5269))
+
 ## 1.0.24 (2025-08-10)
 
 Full Changelog: [v1.0.23...v1.0.24](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.23...v1.0.24)
