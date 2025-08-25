@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.26 (2025-08-25)
+
+Full Changelog: [v1.0.25...v1.0.26](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.25...v1.0.26)
+
+### Chores
+
+* add json schema comment for rubocop.yml ([30b36f9](https://github.com/OneBusAway/ruby-sdk/commit/30b36f9aa3a25a536adb207097f2088f96f6d899))
+
 ## 1.0.25 (2025-08-20)
 
 Full Changelog: [v1.0.24...v1.0.25](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.24...v1.0.25)
