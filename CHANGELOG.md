@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.0 (2025-09-18)
+
+Full Changelog: [v1.0.26...v1.1.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.26...v1.1.0)
+
+### Features
+
+* expose response headers for both streams and errors ([f90702c](https://github.com/OneBusAway/ruby-sdk/commit/f90702cb380ac938d665758b110f7d89490db021))
+
 ## 1.0.26 (2025-08-25)
 
 Full Changelog: [v1.0.25...v1.0.26](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.25...v1.0.26)
