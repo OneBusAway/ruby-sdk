@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.1 (2025-09-20)
+
+Full Changelog: [v1.1.0...v1.1.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.0...v1.1.1)
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([97dbf93](https://github.com/OneBusAway/ruby-sdk/commit/97dbf93c14d3064070ecb77394ced604dcadd46a))
+
 ## 1.1.0 (2025-09-18)
 
 Full Changelog: [v1.0.26...v1.1.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.0.26...v1.1.0)
