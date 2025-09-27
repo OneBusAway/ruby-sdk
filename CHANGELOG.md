@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.1.2 (2025-09-27)
+
+Full Changelog: [v1.1.1...v1.1.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.1...v1.1.2)
+
+### Bug Fixes
+
+* shorten multipart boundary sep to less than RFC specificed max length ([eee0939](https://github.com/OneBusAway/ruby-sdk/commit/eee0939d23255dbd6b3de367bbba02ea0a346425))
+
+
+### Performance Improvements
+
+* faster code formatting ([95c9921](https://github.com/OneBusAway/ruby-sdk/commit/95c99210f84f729076f9c6494a98729946bcb7d9))
+
+
+### Chores
+
+* allow fast-format to use bsd sed as well ([ac285dc](https://github.com/OneBusAway/ruby-sdk/commit/ac285dcaff516a5d8755da3534f83dfa588bcb6d))
+* improve example values ([c2ea3c6](https://github.com/OneBusAway/ruby-sdk/commit/c2ea3c65ba37c82b323cffafad37b17b10d04c3b))
+* **internal:** codegen related update ([2a3af55](https://github.com/OneBusAway/ruby-sdk/commit/2a3af55696978980ca69da2e42caecf15c72ba2d))
+
 ## 1.1.1 (2025-09-20)
 
 Full Changelog: [v1.1.0...v1.1.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.0...v1.1.1)
