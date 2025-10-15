@@ -473,10 +473,9 @@ module OnebusawaySDK
         # @return [Enumerable<String>]
         def writable_enum(&blk)
           Enumerator.new do |y|
-            buf = String.new
             y.define_singleton_method(:write) do
-              self << buf.replace(_1)
-              buf.bytesize
+              self << _1.dup
+              _1.bytesize
             end
 
             blk.call(y)
@@ -566,7 +565,8 @@ module OnebusawaySDK
         #
         # @return [Array(String, Enumerable<String>)]
         private def encode_multipart_streaming(body)
-          boundary = SecureRandom.urlsafe_base64(60)
+          # RFC 1521 Section 7.2.1 says we should have 70 char maximum for boundary length
+          boundary = SecureRandom.urlsafe_base64(46)
 
           closing = []
           strio = writable_enum do |y|
