@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.3 (2025-10-16)
+
+Full Changelog: [v1.1.2...v1.1.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.2...v1.1.3)
+
+### Bug Fixes
+
+* absolutely qualified uris should always override the default ([a1e088f](https://github.com/OneBusAway/ruby-sdk/commit/a1e088fd89b1155765ca359d6dc3a2e9ae2fb67e))
+
 ## 1.1.2 (2025-10-15)
 
 Full Changelog: [v1.1.1...v1.1.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.1...v1.1.2)
