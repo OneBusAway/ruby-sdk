@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 (2025-10-24)
+
+Full Changelog: [v1.1.3...v1.2.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.3...v1.2.0)
+
+### Features
+
+* handle thread interrupts in the core HTTP client ([53092d4](https://github.com/OneBusAway/ruby-sdk/commit/53092d4d8a2665c63273a4190c192ba3382bacb9))
+
 ## 1.1.3 (2025-10-16)
 
 Full Changelog: [v1.1.2...v1.1.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.2...v1.1.3)
