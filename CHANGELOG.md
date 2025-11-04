@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.1 (2025-11-04)
+
+Full Changelog: [v1.2.0...v1.2.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.0...v1.2.1)
+
+### Chores
+
+* bump dependency version and update sorbet types ([316d259](https://github.com/OneBusAway/ruby-sdk/commit/316d25916d82a7b0c65190ba1b7d25285a766910))
+
 ## 1.2.0 (2025-10-24)
 
 Full Changelog: [v1.1.3...v1.2.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.1.3...v1.2.0)
