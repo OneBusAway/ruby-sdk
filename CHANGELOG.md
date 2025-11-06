@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.2 (2025-11-05)
+
+Full Changelog: [v1.2.1...v1.2.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.1...v1.2.2)
+
+### Bug Fixes
+
+* better thread safety via early initializing SSL store during HTTP client creation ([ca9ceed](https://github.com/OneBusAway/ruby-sdk/commit/ca9ceed410e516f1487afb30f84d80eb897cf66f))
+
 ## 1.2.1 (2025-11-04)
 
 Full Changelog: [v1.2.0...v1.2.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.0...v1.2.1)
