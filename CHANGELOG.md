@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.3 (2025-11-21)
+
+Full Changelog: [v1.2.2...v1.2.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.2...v1.2.3)
+
+### Chores
+
+* explicitly require "base64" gem ([9a4b451](https://github.com/OneBusAway/ruby-sdk/commit/9a4b4511aeba5c3b272b4d2f70154c87583c3a5e))
+
 ## 1.2.2 (2025-11-05)
 
 Full Changelog: [v1.2.1...v1.2.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.1...v1.2.2)
