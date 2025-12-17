@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.4 (2025-12-17)
+
+Full Changelog: [v1.2.3...v1.2.4](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.3...v1.2.4)
+
+### Bug Fixes
+
+* calling `break` out of streams should be instantaneous ([649a4ca](https://github.com/OneBusAway/ruby-sdk/commit/649a4ca8c13aa15c28e5e41a9b1ae33cf63562b6))
+
 ## 1.2.3 (2025-11-21)
 
 Full Changelog: [v1.2.2...v1.2.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.2...v1.2.3)
