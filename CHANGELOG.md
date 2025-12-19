@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.5 (2025-12-19)
+
+Full Changelog: [v1.2.4...v1.2.5](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.4...v1.2.5)
+
+### Bug Fixes
+
+* issue where json.parse errors when receiving HTTP 204 with nobody ([862df13](https://github.com/OneBusAway/ruby-sdk/commit/862df13cf5d8d75baa25299a1ca160f4e3c436a5))
+
 ## 1.2.4 (2025-12-17)
 
 Full Changelog: [v1.2.3...v1.2.4](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.3...v1.2.4)
