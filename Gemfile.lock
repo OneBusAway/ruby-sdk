@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    onebusaway-sdk (1.2.5)
+    onebusaway-sdk (1.2.6)
       connection_pool
 
 GEM
