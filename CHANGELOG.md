@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.6 (2026-01-06)
+
+Full Changelog: [v1.2.5...v1.2.6](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.5...v1.2.6)
+
+### Chores
+
+* **internal:** codegen related update ([f602c6f](https://github.com/OneBusAway/ruby-sdk/commit/f602c6fb44fab9a8c62de9bc6252b79a96245b61))
+
 ## 1.2.5 (2025-12-19)
 
 Full Changelog: [v1.2.4...v1.2.5](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.4...v1.2.5)
