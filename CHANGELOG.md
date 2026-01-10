@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.7 (2026-01-10)
+
+Full Changelog: [v1.2.6...v1.2.7](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.6...v1.2.7)
+
+### Chores
+
+* move `cgi` into dependencies for ruby 4 ([2e10f48](https://github.com/OneBusAway/ruby-sdk/commit/2e10f483af68afb8e78611cedbefcbf2ebe9dc6a))
+
 ## 1.2.6 (2026-01-06)
 
 Full Changelog: [v1.2.5...v1.2.6](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.5...v1.2.6)
