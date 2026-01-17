@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.8 (2026-01-17)
+
+Full Changelog: [v1.2.7...v1.2.8](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.7...v1.2.8)
+
+### Chores
+
+* **internal:** update `actions/checkout` version ([b0a6a3c](https://github.com/OneBusAway/ruby-sdk/commit/b0a6a3c0f4dffa7f78b61bfdbc29f2ac2f42ef8d))
+
 ## 1.2.7 (2026-01-10)
 
 Full Changelog: [v1.2.6...v1.2.7](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.6...v1.2.7)
