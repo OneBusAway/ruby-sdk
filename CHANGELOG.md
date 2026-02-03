@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.9 (2026-02-03)
+
+Full Changelog: [v1.2.8...v1.2.9](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.8...v1.2.9)
+
+### Bug Fixes
+
+* **client:** always add content-length to post body, even when empty ([2803594](https://github.com/OneBusAway/ruby-sdk/commit/2803594141f295c07c381fdadb67ed2e422fe7c7))
+
 ## 1.2.8 (2026-01-17)
 
 Full Changelog: [v1.2.7...v1.2.8](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.7...v1.2.8)
