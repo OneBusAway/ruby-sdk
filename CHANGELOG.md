@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.10 (2026-02-04)
+
+Full Changelog: [v1.2.9...v1.2.10](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.9...v1.2.10)
+
+### Chores
+
+* **docs:** remove www prefix ([841bc2a](https://github.com/OneBusAway/ruby-sdk/commit/841bc2a4d51efcbf4c1860ecf0a2a4ae194730a9))
+
 ## 1.2.9 (2026-02-03)
 
 Full Changelog: [v1.2.8...v1.2.9](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.8...v1.2.9)

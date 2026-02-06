@@ -43,13 +43,13 @@ If you’d like to use the repository from source, you can either install from g
 To install via git in your `Gemfile`:
 
 ```ruby
-gem "onebusaway-sdk", git: "https://www.github.com/OneBusAway/ruby-sdk"
+gem "onebusaway-sdk", git: "https://github.com/OneBusAway/ruby-sdk"
 ```
 
 Alternatively, reference local copy of the repo:
 
 ```bash
-$ git clone -- 'https://www.github.com/OneBusAway/ruby-sdk' '<path-to-repo>'
+$ git clone -- 'https://github.com/OneBusAway/ruby-sdk' '<path-to-repo>'
 ```
 
 ```ruby
