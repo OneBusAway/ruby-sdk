@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.11 (2026-02-07)
+
+Full Changelog: [v1.2.10...v1.2.11](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.10...v1.2.11)
+
+### Bug Fixes
+
+* **client:** loosen json header parsing ([f9c8d4a](https://github.com/OneBusAway/ruby-sdk/commit/f9c8d4a6cd534a2f49e6503a17bfae7f9f68bb4c))
+
 ## 1.2.10 (2026-02-04)
 
 Full Changelog: [v1.2.9...v1.2.10](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.9...v1.2.10)
