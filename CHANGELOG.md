@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.12 (2026-02-20)
+
+Full Changelog: [v1.2.11...v1.2.12](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.11...v1.2.12)
+
+### Chores
+
+* update mock server docs ([d7d0b50](https://github.com/OneBusAway/ruby-sdk/commit/d7d0b50d03fb6b85a6a42ea696b57414799c6e32))
+
 ## 1.2.11 (2026-02-07)
 
 Full Changelog: [v1.2.10...v1.2.11](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.10...v1.2.11)
