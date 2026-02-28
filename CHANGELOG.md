@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.13 (2026-02-27)
+
+Full Changelog: [v1.2.12...v1.2.13](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.12...v1.2.13)
+
+### Bug Fixes
+
+* properly mock time in ruby ci tests ([3d6a138](https://github.com/OneBusAway/ruby-sdk/commit/3d6a138596d478ac8f78aa4cca239c16d71262ef))
+
 ## 1.2.12 (2026-02-20)
 
 Full Changelog: [v1.2.11...v1.2.12](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.11...v1.2.12)
