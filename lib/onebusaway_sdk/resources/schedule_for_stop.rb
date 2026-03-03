@@ -21,10 +21,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::ScheduleForStopRetrieveParams
       def retrieve(stop_id, params = {})
         parsed, options = OnebusawaySDK::ScheduleForStopRetrieveParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/schedule-for-stop/%1$s.json", stop_id],
-          query: parsed,
+          query: query,
           model: OnebusawaySDK::Models::ScheduleForStopRetrieveResponse,
           options: options
         )

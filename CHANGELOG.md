@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.14 (2026-03-03)
+
+Full Changelog: [v1.2.13...v1.2.14](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.13...v1.2.14)
+
+### Chores
+
+* **ci:** add build step ([771df9f](https://github.com/OneBusAway/ruby-sdk/commit/771df9fb799886cb3eea3355c30e91909d325bc1))
+* **internal:** codegen related update ([b698023](https://github.com/OneBusAway/ruby-sdk/commit/b6980231e2ac24fd5313a21a18a59c6f37c1d0de))
+
 ## 1.2.13 (2026-02-27)
 
 Full Changelog: [v1.2.12...v1.2.13](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.12...v1.2.13)

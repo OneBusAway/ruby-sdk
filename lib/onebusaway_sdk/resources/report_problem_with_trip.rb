@@ -36,10 +36,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams
       def retrieve(trip_id, params = {})
         parsed, options = OnebusawaySDK::ReportProblemWithTripRetrieveParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/report-problem-with-trip/%1$s.json", trip_id],
-          query: parsed.transform_keys(
+          query: query.transform_keys(
             service_date: "serviceDate",
             stop_id: "stopID",
             user_comment: "userComment",

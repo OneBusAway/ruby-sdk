@@ -21,10 +21,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::ScheduleForRouteRetrieveParams
       def retrieve(route_id, params = {})
         parsed, options = OnebusawaySDK::ScheduleForRouteRetrieveParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/schedule-for-route/%1$s.json", route_id],
-          query: parsed,
+          query: query,
           model: OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse,
           options: options
         )
