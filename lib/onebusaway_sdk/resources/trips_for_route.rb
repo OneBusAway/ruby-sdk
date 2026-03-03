@@ -25,10 +25,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::TripsForRouteListParams
       def list(route_id, params = {})
         parsed, options = OnebusawaySDK::TripsForRouteListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/trips-for-route/%1$s.json", route_id],
-          query: parsed.transform_keys(include_schedule: "includeSchedule", include_status: "includeStatus"),
+          query: query.transform_keys(include_schedule: "includeSchedule", include_status: "includeStatus"),
           model: OnebusawaySDK::Models::TripsForRouteListResponse,
           options: options
         )

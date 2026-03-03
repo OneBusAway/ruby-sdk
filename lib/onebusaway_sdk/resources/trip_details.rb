@@ -29,10 +29,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::TripDetailRetrieveParams
       def retrieve(trip_id, params = {})
         parsed, options = OnebusawaySDK::TripDetailRetrieveParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/trip-details/%1$s.json", trip_id],
-          query: parsed.transform_keys(
+          query: query.transform_keys(
             include_schedule: "includeSchedule",
             include_status: "includeStatus",
             include_trip: "includeTrip",

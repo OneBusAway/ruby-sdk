@@ -26,10 +26,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::StopsForLocationListParams
       def list(params)
         parsed, options = OnebusawaySDK::StopsForLocationListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/where/stops-for-location.json",
-          query: parsed.transform_keys(lat_span: "latSpan", lon_span: "lonSpan"),
+          query: query.transform_keys(lat_span: "latSpan", lon_span: "lonSpan"),
           model: OnebusawaySDK::Models::StopsForLocationListResponse,
           options: options
         )

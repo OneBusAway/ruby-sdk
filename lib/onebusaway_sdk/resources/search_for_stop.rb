@@ -18,10 +18,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::SearchForStopListParams
       def list(params)
         parsed, options = OnebusawaySDK::SearchForStopListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/where/search/stop.json",
-          query: parsed.transform_keys(max_count: "maxCount"),
+          query: query.transform_keys(max_count: "maxCount"),
           model: OnebusawaySDK::Models::SearchForStopListResponse,
           options: options
         )

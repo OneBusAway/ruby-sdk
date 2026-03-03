@@ -20,10 +20,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::ArrivalAndDepartureRetrieveParams
       def retrieve(stop_id, params)
         parsed, options = OnebusawaySDK::ArrivalAndDepartureRetrieveParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/arrival-and-departure-for-stop/%1$s.json", stop_id],
-          query: parsed.transform_keys(
+          query: query.transform_keys(
             service_date: "serviceDate",
             trip_id: "tripId",
             stop_sequence: "stopSequence",
@@ -53,10 +54,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::ArrivalAndDepartureListParams
       def list(stop_id, params = {})
         parsed, options = OnebusawaySDK::ArrivalAndDepartureListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/arrivals-and-departures-for-stop/%1$s.json", stop_id],
-          query: parsed.transform_keys(minutes_after: "minutesAfter", minutes_before: "minutesBefore"),
+          query: query.transform_keys(minutes_after: "minutesAfter", minutes_before: "minutesBefore"),
           model: OnebusawaySDK::Models::ArrivalAndDepartureListResponse,
           options: options
         )
