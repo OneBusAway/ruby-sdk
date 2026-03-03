@@ -18,10 +18,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::SearchForRouteListParams
       def list(params)
         parsed, options = OnebusawaySDK::SearchForRouteListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/where/search/route.json",
-          query: parsed.transform_keys(max_count: "maxCount"),
+          query: query.transform_keys(max_count: "maxCount"),
           model: OnebusawaySDK::Models::SearchForRouteListResponse,
           options: options
         )

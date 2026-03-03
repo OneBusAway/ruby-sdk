@@ -26,10 +26,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams
       def retrieve(stop_id, params = {})
         parsed, options = OnebusawaySDK::ReportProblemWithStopRetrieveParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/report-problem-with-stop/%1$s.json", stop_id],
-          query: parsed.transform_keys(
+          query: query.transform_keys(
             user_comment: "userComment",
             user_lat: "userLat",
             user_location_accuracy: "userLocationAccuracy",

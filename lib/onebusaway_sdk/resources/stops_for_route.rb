@@ -20,10 +20,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::StopsForRouteListParams
       def list(route_id, params = {})
         parsed, options = OnebusawaySDK::StopsForRouteListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/stops-for-route/%1$s.json", route_id],
-          query: parsed.transform_keys(include_polylines: "includePolylines"),
+          query: query.transform_keys(include_polylines: "includePolylines"),
           model: OnebusawaySDK::Models::StopsForRouteListResponse,
           options: options
         )

@@ -31,10 +31,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::TripsForLocationListParams
       def list(params)
         parsed, options = OnebusawaySDK::TripsForLocationListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/where/trips-for-location.json",
-          query: parsed.transform_keys(
+          query: query.transform_keys(
             lat_span: "latSpan",
             lon_span: "lonSpan",
             include_schedule: "includeSchedule",

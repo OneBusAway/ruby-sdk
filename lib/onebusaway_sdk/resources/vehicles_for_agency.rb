@@ -18,10 +18,11 @@ module OnebusawaySDK
       # @see OnebusawaySDK::Models::VehiclesForAgencyListParams
       def list(agency_id, params = {})
         parsed, options = OnebusawaySDK::VehiclesForAgencyListParams.dump_request(params)
+        query = OnebusawaySDK::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/where/vehicles-for-agency/%1$s.json", agency_id],
-          query: parsed,
+          query: query,
           model: OnebusawaySDK::Models::VehiclesForAgencyListResponse,
           options: options
         )
