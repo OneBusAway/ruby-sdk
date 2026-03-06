@@ -2,6 +2,7 @@ module OnebusawaySDK
   module Models
     type report_problem_with_trip_retrieve_params =
       {
+        trip_id: String,
         code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code,
         service_date: Integer,
         stop_id: String,
@@ -18,6 +19,8 @@ module OnebusawaySDK
     class ReportProblemWithTripRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor trip_id: String
 
       attr_reader code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code?
 
@@ -62,6 +65,7 @@ module OnebusawaySDK
       def vehicle_id=: (String) -> String
 
       def initialize: (
+        trip_id: String,
         ?code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code,
         ?service_date: Integer,
         ?stop_id: String,
@@ -76,6 +80,7 @@ module OnebusawaySDK
       ) -> void
 
       def to_hash: -> {
+        trip_id: String,
         code: OnebusawaySDK::Models::ReportProblemWithTripRetrieveParams::code,
         service_date: Integer,
         stop_id: String,

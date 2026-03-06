@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :stop_id
+
       # Include vehicles arriving or departing in the next n minutes.
       sig { returns(T.nilable(Integer)) }
       attr_reader :minutes_after
@@ -37,6 +40,7 @@ module OnebusawaySDK
 
       sig do
         params(
+          stop_id: String,
           minutes_after: Integer,
           minutes_before: Integer,
           time: Time,
@@ -44,6 +48,7 @@ module OnebusawaySDK
         ).returns(T.attached_class)
       end
       def self.new(
+        stop_id:,
         # Include vehicles arriving or departing in the next n minutes.
         minutes_after: nil,
         # Include vehicles having arrived or departed in the previous n minutes.
@@ -57,6 +62,7 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
+            stop_id: String,
             minutes_after: Integer,
             minutes_before: Integer,
             time: Time,

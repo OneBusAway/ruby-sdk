@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :route_id
+
       # Determine whether full schedule elements are included. Defaults to false.
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_schedule
@@ -38,6 +41,7 @@ module OnebusawaySDK
 
       sig do
         params(
+          route_id: String,
           include_schedule: T::Boolean,
           include_status: T::Boolean,
           time: Integer,
@@ -45,6 +49,7 @@ module OnebusawaySDK
         ).returns(T.attached_class)
       end
       def self.new(
+        route_id:,
         # Determine whether full schedule elements are included. Defaults to false.
         include_schedule: nil,
         # Determine whether full tripStatus elements with real-time information are
@@ -59,6 +64,7 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
+            route_id: String,
             include_schedule: T::Boolean,
             include_status: T::Boolean,
             time: Integer,

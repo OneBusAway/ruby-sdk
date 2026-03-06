@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :route_id
+
       # Include polyline elements in the response (default true)
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_polylines
@@ -30,12 +33,14 @@ module OnebusawaySDK
 
       sig do
         params(
+          route_id: String,
           include_polylines: T::Boolean,
           time: String,
           request_options: OnebusawaySDK::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        route_id:,
         # Include polyline elements in the response (default true)
         include_polylines: nil,
         # Specify service date (YYYY-MM-DD or epoch) (default today)
@@ -47,6 +52,7 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
+            route_id: String,
             include_polylines: T::Boolean,
             time: String,
             request_options: OnebusawaySDK::RequestOptions

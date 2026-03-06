@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :stop_id
+
       # A string code identifying the nature of the problem
       sig do
         returns(
@@ -62,6 +65,7 @@ module OnebusawaySDK
 
       sig do
         params(
+          stop_id: String,
           code:
             OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
           user_comment: String,
@@ -72,6 +76,7 @@ module OnebusawaySDK
         ).returns(T.attached_class)
       end
       def self.new(
+        stop_id:,
         # A string code identifying the nature of the problem
         code: nil,
         # Additional comment text supplied by the user describing the problem
@@ -89,6 +94,7 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
+            stop_id: String,
             code:
               OnebusawaySDK::ReportProblemWithStopRetrieveParams::Code::OrSymbol,
             user_comment: String,

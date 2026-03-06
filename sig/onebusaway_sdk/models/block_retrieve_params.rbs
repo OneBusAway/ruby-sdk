@@ -1,15 +1,23 @@
 module OnebusawaySDK
   module Models
     type block_retrieve_params =
-      {  } & OnebusawaySDK::Internal::Type::request_parameters
+      { block_id: String } & OnebusawaySDK::Internal::Type::request_parameters
 
     class BlockRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      def initialize: (?request_options: OnebusawaySDK::request_opts) -> void
+      attr_accessor block_id: String
 
-      def to_hash: -> { request_options: OnebusawaySDK::RequestOptions }
+      def initialize: (
+        block_id: String,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        block_id: String,
+        request_options: OnebusawaySDK::RequestOptions
+      }
     end
   end
 end
