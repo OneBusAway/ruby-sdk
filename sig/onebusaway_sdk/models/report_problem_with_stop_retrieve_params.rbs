@@ -2,6 +2,7 @@ module OnebusawaySDK
   module Models
     type report_problem_with_stop_retrieve_params =
       {
+        stop_id: String,
         code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
         user_comment: String,
         user_lat: Float,
@@ -13,6 +14,8 @@ module OnebusawaySDK
     class ReportProblemWithStopRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor stop_id: String
 
       attr_reader code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code?
 
@@ -37,6 +40,7 @@ module OnebusawaySDK
       def user_lon=: (Float) -> Float
 
       def initialize: (
+        stop_id: String,
         ?code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
         ?user_comment: String,
         ?user_lat: Float,
@@ -46,6 +50,7 @@ module OnebusawaySDK
       ) -> void
 
       def to_hash: -> {
+        stop_id: String,
         code: OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::code,
         user_comment: String,
         user_lat: Float,

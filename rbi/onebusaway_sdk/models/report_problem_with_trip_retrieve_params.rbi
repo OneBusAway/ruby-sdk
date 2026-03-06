@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :trip_id
+
       # A string code identifying the nature of the problem
       sig do
         returns(
@@ -97,6 +100,7 @@ module OnebusawaySDK
 
       sig do
         params(
+          trip_id: String,
           code:
             OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
           service_date: Integer,
@@ -112,6 +116,7 @@ module OnebusawaySDK
         ).returns(T.attached_class)
       end
       def self.new(
+        trip_id:,
         # A string code identifying the nature of the problem
         code: nil,
         # The service date of the trip
@@ -139,6 +144,7 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
+            trip_id: String,
             code:
               OnebusawaySDK::ReportProblemWithTripRetrieveParams::Code::OrSymbol,
             service_date: Integer,

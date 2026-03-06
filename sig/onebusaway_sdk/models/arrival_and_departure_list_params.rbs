@@ -1,12 +1,19 @@
 module OnebusawaySDK
   module Models
     type arrival_and_departure_list_params =
-      { minutes_after: Integer, minutes_before: Integer, time: Time }
+      {
+        stop_id: String,
+        minutes_after: Integer,
+        minutes_before: Integer,
+        time: Time
+      }
       & OnebusawaySDK::Internal::Type::request_parameters
 
     class ArrivalAndDepartureListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor stop_id: String
 
       attr_reader minutes_after: Integer?
 
@@ -21,6 +28,7 @@ module OnebusawaySDK
       def time=: (Time) -> Time
 
       def initialize: (
+        stop_id: String,
         ?minutes_after: Integer,
         ?minutes_before: Integer,
         ?time: Time,
@@ -28,6 +36,7 @@ module OnebusawaySDK
       ) -> void
 
       def to_hash: -> {
+        stop_id: String,
         minutes_after: Integer,
         minutes_before: Integer,
         time: Time,

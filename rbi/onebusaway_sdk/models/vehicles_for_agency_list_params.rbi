@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :agency_id
+
       # Specific time for querying the status (timestamp format)
       sig { returns(T.nilable(String)) }
       attr_reader :time
@@ -23,11 +26,13 @@ module OnebusawaySDK
 
       sig do
         params(
+          agency_id: String,
           time: String,
           request_options: OnebusawaySDK::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        agency_id:,
         # Specific time for querying the status (timestamp format)
         time: nil,
         request_options: {}
@@ -36,7 +41,11 @@ module OnebusawaySDK
 
       sig do
         override.returns(
-          { time: String, request_options: OnebusawaySDK::RequestOptions }
+          {
+            agency_id: String,
+            time: String,
+            request_options: OnebusawaySDK::RequestOptions
+          }
         )
       end
       def to_hash

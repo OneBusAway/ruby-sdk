@@ -1,12 +1,14 @@
 module OnebusawaySDK
   module Models
     type stops_for_route_list_params =
-      { include_polylines: bool, time: String }
+      { route_id: String, include_polylines: bool, time: String }
       & OnebusawaySDK::Internal::Type::request_parameters
 
     class StopsForRouteListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor route_id: String
 
       attr_reader include_polylines: bool?
 
@@ -17,12 +19,14 @@ module OnebusawaySDK
       def time=: (String) -> String
 
       def initialize: (
+        route_id: String,
         ?include_polylines: bool,
         ?time: String,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
 
       def to_hash: -> {
+        route_id: String,
         include_polylines: bool,
         time: String,
         request_options: OnebusawaySDK::RequestOptions
