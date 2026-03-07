@@ -1,22 +1,27 @@
 module OnebusawaySDK
   module Models
     type vehicles_for_agency_list_params =
-      { time: String } & OnebusawaySDK::Internal::Type::request_parameters
+      { agency_id: String, time: String }
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class VehiclesForAgencyListParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor agency_id: String
 
       attr_reader time: String?
 
       def time=: (String) -> String
 
       def initialize: (
+        agency_id: String,
         ?time: String,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
 
       def to_hash: -> {
+        agency_id: String,
         time: String,
         request_options: OnebusawaySDK::RequestOptions
       }

@@ -7,6 +7,11 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      # @!attribute stop_id
+      #
+      #   @return [String]
+      required :stop_id, String
+
       # @!attribute code
       #   A string code identifying the nature of the problem
       #
@@ -37,7 +42,9 @@ module OnebusawaySDK
       #   @return [Float, nil]
       optional :user_lon, Float
 
-      # @!method initialize(code: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, request_options: {})
+      # @!method initialize(stop_id:, code: nil, user_comment: nil, user_lat: nil, user_location_accuracy: nil, user_lon: nil, request_options: {})
+      #   @param stop_id [String]
+      #
       #   @param code [Symbol, OnebusawaySDK::Models::ReportProblemWithStopRetrieveParams::Code] A string code identifying the nature of the problem
       #
       #   @param user_comment [String] Additional comment text supplied by the user describing the problem

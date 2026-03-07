@@ -7,6 +7,11 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      # @!attribute stop_id
+      #
+      #   @return [String]
+      required :stop_id, String
+
       # @!attribute service_date
       #
       #   @return [Integer]
@@ -32,7 +37,8 @@ module OnebusawaySDK
       #   @return [String, nil]
       optional :vehicle_id, String
 
-      # @!method initialize(service_date:, trip_id:, stop_sequence: nil, time: nil, vehicle_id: nil, request_options: {})
+      # @!method initialize(stop_id:, service_date:, trip_id:, stop_sequence: nil, time: nil, vehicle_id: nil, request_options: {})
+      #   @param stop_id [String]
       #   @param service_date [Integer]
       #   @param trip_id [String]
       #   @param stop_sequence [Integer]

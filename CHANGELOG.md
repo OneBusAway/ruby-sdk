@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.15 (2026-03-06)
+
+Full Changelog: [v1.2.14...v1.2.15](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.14...v1.2.15)
+
+### Chores
+
+* **internal:** codegen related update ([e41d091](https://github.com/OneBusAway/ruby-sdk/commit/e41d091a63095508a1bb99077e3168b9a747d022))
+* **test:** do not count install time for mock server timeout ([83aab1c](https://github.com/OneBusAway/ruby-sdk/commit/83aab1ce7fee8a59cacfaaed30148305ac67c7bb))
+
 ## 1.2.14 (2026-03-03)
 
 Full Changelog: [v1.2.13...v1.2.14](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.13...v1.2.14)

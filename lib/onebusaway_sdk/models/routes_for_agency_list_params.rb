@@ -7,7 +7,13 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!method initialize(request_options: {})
+      # @!attribute agency_id
+      #
+      #   @return [String]
+      required :agency_id, String
+
+      # @!method initialize(agency_id:, request_options: {})
+      #   @param agency_id [String]
       #   @param request_options [OnebusawaySDK::RequestOptions, Hash{Symbol=>Object}]
     end
   end

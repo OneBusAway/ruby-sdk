@@ -7,6 +7,11 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      # @!attribute route_id
+      #
+      #   @return [String]
+      required :route_id, String
+
       # @!attribute date
       #   The date for which you want to request a schedule in the format YYYY-MM-DD
       #   (optional, defaults to current date)
@@ -14,9 +19,11 @@ module OnebusawaySDK
       #   @return [Date, nil]
       optional :date, Date
 
-      # @!method initialize(date: nil, request_options: {})
+      # @!method initialize(route_id:, date: nil, request_options: {})
       #   Some parameter documentations has been truncated, see
       #   {OnebusawaySDK::Models::ScheduleForRouteRetrieveParams} for more details.
+      #
+      #   @param route_id [String]
       #
       #   @param date [Date] The date for which you want to request a schedule in the format YYYY-MM-DD (opti
       #

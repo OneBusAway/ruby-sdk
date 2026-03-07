@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :stop_id
+
       sig { returns(Integer) }
       attr_accessor :service_date
 
@@ -40,6 +43,7 @@ module OnebusawaySDK
 
       sig do
         params(
+          stop_id: String,
           service_date: Integer,
           trip_id: String,
           stop_sequence: Integer,
@@ -49,6 +53,7 @@ module OnebusawaySDK
         ).returns(T.attached_class)
       end
       def self.new(
+        stop_id:,
         service_date:,
         trip_id:,
         stop_sequence: nil,
@@ -61,6 +66,7 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
+            stop_id: String,
             service_date: Integer,
             trip_id: String,
             stop_sequence: Integer,

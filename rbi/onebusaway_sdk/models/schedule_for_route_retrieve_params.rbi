@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :route_id
+
       # The date for which you want to request a schedule in the format YYYY-MM-DD
       # (optional, defaults to current date)
       sig { returns(T.nilable(Date)) }
@@ -24,11 +27,13 @@ module OnebusawaySDK
 
       sig do
         params(
+          route_id: String,
           date: Date,
           request_options: OnebusawaySDK::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        route_id:,
         # The date for which you want to request a schedule in the format YYYY-MM-DD
         # (optional, defaults to current date)
         date: nil,
@@ -38,7 +43,11 @@ module OnebusawaySDK
 
       sig do
         override.returns(
-          { date: Date, request_options: OnebusawaySDK::RequestOptions }
+          {
+            route_id: String,
+            date: Date,
+            request_options: OnebusawaySDK::RequestOptions
+          }
         )
       end
       def to_hash

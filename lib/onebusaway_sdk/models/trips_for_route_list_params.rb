@@ -7,6 +7,11 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      # @!attribute route_id
+      #
+      #   @return [String]
+      required :route_id, String
+
       # @!attribute include_schedule
       #   Determine whether full schedule elements are included. Defaults to false.
       #
@@ -26,9 +31,11 @@ module OnebusawaySDK
       #   @return [Integer, nil]
       optional :time, Integer
 
-      # @!method initialize(include_schedule: nil, include_status: nil, time: nil, request_options: {})
+      # @!method initialize(route_id:, include_schedule: nil, include_status: nil, time: nil, request_options: {})
       #   Some parameter documentations has been truncated, see
       #   {OnebusawaySDK::Models::TripsForRouteListParams} for more details.
+      #
+      #   @param route_id [String]
       #
       #   @param include_schedule [Boolean] Determine whether full schedule elements are included. Defaults to false.
       #

@@ -7,6 +7,11 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
+      # @!attribute stop_id
+      #
+      #   @return [String]
+      required :stop_id, String
+
       # @!attribute minutes_after
       #   Include vehicles arriving or departing in the next n minutes.
       #
@@ -25,7 +30,9 @@ module OnebusawaySDK
       #   @return [Time, nil]
       optional :time, Time
 
-      # @!method initialize(minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
+      # @!method initialize(stop_id:, minutes_after: nil, minutes_before: nil, time: nil, request_options: {})
+      #   @param stop_id [String]
+      #
       #   @param minutes_after [Integer] Include vehicles arriving or departing in the next n minutes.
       #
       #   @param minutes_before [Integer] Include vehicles having arrived or departed in the previous n minutes.

@@ -14,6 +14,9 @@ module OnebusawaySDK
           )
         end
 
+      sig { returns(String) }
+      attr_accessor :trip_id
+
       # Whether to include the full schedule element in the tripDetails section
       # (defaults to true).
       sig { returns(T.nilable(T::Boolean)) }
@@ -54,6 +57,7 @@ module OnebusawaySDK
 
       sig do
         params(
+          trip_id: String,
           include_schedule: T::Boolean,
           include_status: T::Boolean,
           include_trip: T::Boolean,
@@ -63,6 +67,7 @@ module OnebusawaySDK
         ).returns(T.attached_class)
       end
       def self.new(
+        trip_id:,
         # Whether to include the full schedule element in the tripDetails section
         # (defaults to true).
         include_schedule: nil,
@@ -83,6 +88,7 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
+            trip_id: String,
             include_schedule: T::Boolean,
             include_status: T::Boolean,
             include_trip: T::Boolean,

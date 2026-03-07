@@ -1,22 +1,27 @@
 module OnebusawaySDK
   module Models
     type schedule_for_route_retrieve_params =
-      { date: Date } & OnebusawaySDK::Internal::Type::request_parameters
+      { route_id: String, date: Date }
+      & OnebusawaySDK::Internal::Type::request_parameters
 
     class ScheduleForRouteRetrieveParams < OnebusawaySDK::Internal::Type::BaseModel
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor route_id: String
 
       attr_reader date: Date?
 
       def date=: (Date) -> Date
 
       def initialize: (
+        route_id: String,
         ?date: Date,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
 
       def to_hash: -> {
+        route_id: String,
         date: Date,
         request_options: OnebusawaySDK::RequestOptions
       }
