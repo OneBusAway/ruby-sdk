@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.16 (2026-03-07)
+
+Full Changelog: [v1.2.15...v1.2.16](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.15...v1.2.16)
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([6a368f2](https://github.com/OneBusAway/ruby-sdk/commit/6a368f220bf5e5767bb06f80312e2dc2bae28e57))
+
 ## 1.2.15 (2026-03-06)
 
 Full Changelog: [v1.2.14...v1.2.15](https://github.com/OneBusAway/ruby-sdk/compare/v1.2.14...v1.2.15)

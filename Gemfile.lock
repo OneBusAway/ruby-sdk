@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    onebusaway-sdk (1.2.15)
+    onebusaway-sdk (1.2.16)
       cgi
       connection_pool
 
