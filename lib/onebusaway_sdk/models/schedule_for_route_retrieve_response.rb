@@ -38,12 +38,6 @@ module OnebusawaySDK
           #   @return [Array<String>]
           required :service_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :serviceIds
 
-          # @!attribute stops
-          #
-          #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop>]
-          required :stops,
-                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop] }
-
           # @!attribute stop_trip_groupings
           #
           #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping>]
@@ -51,91 +45,11 @@ module OnebusawaySDK
                    -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping] },
                    api_name: :stopTripGroupings
 
-          # @!attribute trips
-          #
-          #   @return [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip>]
-          required :trips,
-                   -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip] }
-
-          # @!method initialize(route_id:, schedule_date:, service_ids:, stops:, stop_trip_groupings:, trips:)
+          # @!method initialize(route_id:, schedule_date:, service_ids:, stop_trip_groupings:)
           #   @param route_id [String]
           #   @param schedule_date [Integer]
           #   @param service_ids [Array<String>]
-          #   @param stops [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Stop>]
           #   @param stop_trip_groupings [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::StopTripGrouping>]
-          #   @param trips [Array<OnebusawaySDK::Models::ScheduleForRouteRetrieveResponse::Data::Entry::Trip>]
-
-          class Stop < OnebusawaySDK::Internal::Type::BaseModel
-            # @!attribute id
-            #
-            #   @return [String]
-            required :id, String
-
-            # @!attribute lat
-            #
-            #   @return [Float]
-            required :lat, Float
-
-            # @!attribute location_type
-            #
-            #   @return [Integer]
-            required :location_type, Integer, api_name: :locationType
-
-            # @!attribute lon
-            #
-            #   @return [Float]
-            required :lon, Float
-
-            # @!attribute name
-            #
-            #   @return [String]
-            required :name, String
-
-            # @!attribute parent
-            #
-            #   @return [String]
-            required :parent, String
-
-            # @!attribute route_ids
-            #
-            #   @return [Array<String>]
-            required :route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :routeIds
-
-            # @!attribute static_route_ids
-            #
-            #   @return [Array<String>]
-            required :static_route_ids,
-                     OnebusawaySDK::Internal::Type::ArrayOf[String],
-                     api_name: :staticRouteIds
-
-            # @!attribute code
-            #
-            #   @return [String, nil]
-            optional :code, String
-
-            # @!attribute direction
-            #
-            #   @return [String, nil]
-            optional :direction, String
-
-            # @!attribute wheelchair_boarding
-            #
-            #   @return [String, nil]
-            optional :wheelchair_boarding, String, api_name: :wheelchairBoarding
-
-            # @!method initialize(id:, lat:, location_type:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, wheelchair_boarding: nil)
-            #   @param id [String]
-            #   @param lat [Float]
-            #   @param location_type [Integer]
-            #   @param lon [Float]
-            #   @param name [String]
-            #   @param parent [String]
-            #   @param route_ids [Array<String>]
-            #   @param static_route_ids [Array<String>]
-            #   @param code [String]
-            #   @param direction [String]
-            #   @param wheelchair_boarding [String]
-          end
 
           class StopTripGrouping < OnebusawaySDK::Internal::Type::BaseModel
             # @!attribute direction_id
@@ -247,76 +161,6 @@ module OnebusawaySDK
                 #   @param stop_headsign [String]
               end
             end
-          end
-
-          class Trip < OnebusawaySDK::Internal::Type::BaseModel
-            # @!attribute id
-            #
-            #   @return [String]
-            required :id, String
-
-            # @!attribute route_id
-            #
-            #   @return [String]
-            required :route_id, String, api_name: :routeId
-
-            # @!attribute service_id
-            #
-            #   @return [String]
-            required :service_id, String, api_name: :serviceId
-
-            # @!attribute block_id
-            #
-            #   @return [String, nil]
-            optional :block_id, String, api_name: :blockId
-
-            # @!attribute direction_id
-            #
-            #   @return [String, nil]
-            optional :direction_id, String, api_name: :directionId
-
-            # @!attribute peak_offpeak
-            #
-            #   @return [Integer, nil]
-            optional :peak_offpeak, Integer, api_name: :peakOffpeak
-
-            # @!attribute route_short_name
-            #
-            #   @return [String, nil]
-            optional :route_short_name, String, api_name: :routeShortName
-
-            # @!attribute shape_id
-            #
-            #   @return [String, nil]
-            optional :shape_id, String, api_name: :shapeId
-
-            # @!attribute time_zone
-            #
-            #   @return [String, nil]
-            optional :time_zone, String, api_name: :timeZone
-
-            # @!attribute trip_headsign
-            #
-            #   @return [String, nil]
-            optional :trip_headsign, String, api_name: :tripHeadsign
-
-            # @!attribute trip_short_name
-            #
-            #   @return [String, nil]
-            optional :trip_short_name, String, api_name: :tripShortName
-
-            # @!method initialize(id:, route_id:, service_id:, block_id: nil, direction_id: nil, peak_offpeak: nil, route_short_name: nil, shape_id: nil, time_zone: nil, trip_headsign: nil, trip_short_name: nil)
-            #   @param id [String]
-            #   @param route_id [String]
-            #   @param service_id [String]
-            #   @param block_id [String]
-            #   @param direction_id [String]
-            #   @param peak_offpeak [Integer]
-            #   @param route_short_name [String]
-            #   @param shape_id [String]
-            #   @param time_zone [String]
-            #   @param trip_headsign [String]
-            #   @param trip_short_name [String]
           end
         end
       end

@@ -45,27 +45,15 @@ module OnebusawaySDK
           #   @return [Integer]
           required :last_update_time, Integer, api_name: :lastUpdateTime
 
-          # @!attribute location
-          #
-          #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location]
-          required :location, -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location }
-
-          # @!attribute trip_id
-          #
-          #   @return [String]
-          required :trip_id, String, api_name: :tripId
-
-          # @!attribute trip_status
-          #
-          #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus]
-          required :trip_status,
-                   -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus },
-                   api_name: :tripStatus
-
           # @!attribute vehicle_id
           #
           #   @return [String]
           required :vehicle_id, String, api_name: :vehicleId
+
+          # @!attribute location
+          #
+          #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location, nil]
+          optional :location, -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location }
 
           # @!attribute occupancy_capacity
           #
@@ -92,18 +80,30 @@ module OnebusawaySDK
           #   @return [String, nil]
           optional :status, String
 
-          # @!method initialize(last_location_update_time:, last_update_time:, location:, trip_id:, trip_status:, vehicle_id:, occupancy_capacity: nil, occupancy_count: nil, occupancy_status: nil, phase: nil, status: nil)
+          # @!attribute trip_id
+          #
+          #   @return [String, nil]
+          optional :trip_id, String, api_name: :tripId
+
+          # @!attribute trip_status
+          #
+          #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus, nil]
+          optional :trip_status,
+                   -> { OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus },
+                   api_name: :tripStatus
+
+          # @!method initialize(last_location_update_time:, last_update_time:, vehicle_id:, location: nil, occupancy_capacity: nil, occupancy_count: nil, occupancy_status: nil, phase: nil, status: nil, trip_id: nil, trip_status: nil)
           #   @param last_location_update_time [Integer]
           #   @param last_update_time [Integer]
-          #   @param location [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location]
-          #   @param trip_id [String]
-          #   @param trip_status [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus]
           #   @param vehicle_id [String]
+          #   @param location [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location]
           #   @param occupancy_capacity [Integer]
           #   @param occupancy_count [Integer]
           #   @param occupancy_status [String]
           #   @param phase [String]
           #   @param status [String]
+          #   @param trip_id [String]
+          #   @param trip_status [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus]
 
           # @see OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List#location
           class Location < OnebusawaySDK::Internal::Type::BaseModel

@@ -1,119 +1,128 @@
 module OnebusawaySDK
   module Models
     type stops_for_agency_list_response =
-      {
-        limit_exceeded: bool,
-        list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
-        references: OnebusawaySDK::References,
-        out_of_range: bool
-      }
+      { data: OnebusawaySDK::Models::StopsForAgencyListResponse::Data }
 
     class StopsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
-      def limit_exceeded: -> bool
+      def data: -> OnebusawaySDK::Models::StopsForAgencyListResponse::Data
 
-      def limit_exceeded=: (bool _) -> bool
-
-      def list: -> ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List]
-
-      def list=: (
-        ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List] _
-      ) -> ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List]
-
-      def references: -> OnebusawaySDK::References
-
-      def references=: (
-        OnebusawaySDK::References _
-      ) -> OnebusawaySDK::References
-
-      def out_of_range: -> bool?
-
-      def out_of_range=: (bool _) -> bool
+      def data=: (
+        OnebusawaySDK::Models::StopsForAgencyListResponse::Data _
+      ) -> OnebusawaySDK::Models::StopsForAgencyListResponse::Data
 
       def initialize: (
-        limit_exceeded: bool,
-        list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
-        references: OnebusawaySDK::References,
-        ?out_of_range: bool
+        data: OnebusawaySDK::Models::StopsForAgencyListResponse::Data
       ) -> void
 
       def to_hash: -> {
-        limit_exceeded: bool,
-        list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::List],
-        references: OnebusawaySDK::References,
-        out_of_range: bool
+        data: OnebusawaySDK::Models::StopsForAgencyListResponse::Data
       }
 
-      type list =
+      type data =
         {
-          id: String,
-          lat: Float,
-          location_type: Integer,
-          lon: Float,
-          name: String,
-          parent: String,
-          route_ids: ::Array[String],
-          static_route_ids: ::Array[String],
-          code: String,
-          direction: String,
-          wheelchair_boarding: String
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::Data::List],
+          references: OnebusawaySDK::References,
+          out_of_range: bool
         }
 
-      class List < OnebusawaySDK::Internal::Type::BaseModel
-        attr_accessor id: String
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
+        attr_accessor limit_exceeded: bool
 
-        attr_accessor lat: Float
+        attr_accessor list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::Data::List]
 
-        attr_accessor location_type: Integer
+        attr_accessor references: OnebusawaySDK::References
 
-        attr_accessor lon: Float
+        attr_reader out_of_range: bool?
 
-        attr_accessor name: String
-
-        attr_accessor parent: String
-
-        attr_accessor route_ids: ::Array[String]
-
-        attr_accessor static_route_ids: ::Array[String]
-
-        attr_reader code: String?
-
-        def code=: (String) -> String
-
-        attr_reader direction: String?
-
-        def direction=: (String) -> String
-
-        attr_reader wheelchair_boarding: String?
-
-        def wheelchair_boarding=: (String) -> String
+        def out_of_range=: (bool) -> bool
 
         def initialize: (
-          id: String,
-          lat: Float,
-          location_type: Integer,
-          lon: Float,
-          name: String,
-          parent: String,
-          route_ids: ::Array[String],
-          static_route_ids: ::Array[String],
-          ?code: String,
-          ?direction: String,
-          ?wheelchair_boarding: String
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::Data::List],
+          references: OnebusawaySDK::References,
+          ?out_of_range: bool
         ) -> void
 
         def to_hash: -> {
-          id: String,
-          lat: Float,
-          location_type: Integer,
-          lon: Float,
-          name: String,
-          parent: String,
-          route_ids: ::Array[String],
-          static_route_ids: ::Array[String],
-          code: String,
-          direction: String,
-          wheelchair_boarding: String
+          limit_exceeded: bool,
+          list: ::Array[OnebusawaySDK::Models::StopsForAgencyListResponse::Data::List],
+          references: OnebusawaySDK::References,
+          out_of_range: bool
         }
+
+        type list =
+          {
+            id: String,
+            lat: Float,
+            location_type: Integer,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            code: String,
+            direction: String,
+            wheelchair_boarding: String
+          }
+
+        class List < OnebusawaySDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor lat: Float
+
+          attr_accessor location_type: Integer
+
+          attr_accessor lon: Float
+
+          attr_accessor name: String
+
+          attr_accessor parent: String
+
+          attr_accessor route_ids: ::Array[String]
+
+          attr_accessor static_route_ids: ::Array[String]
+
+          attr_reader code: String?
+
+          def code=: (String) -> String
+
+          attr_reader direction: String?
+
+          def direction=: (String) -> String
+
+          attr_reader wheelchair_boarding: String?
+
+          def wheelchair_boarding=: (String) -> String
+
+          def initialize: (
+            id: String,
+            lat: Float,
+            location_type: Integer,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            ?code: String,
+            ?direction: String,
+            ?wheelchair_boarding: String
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            lat: Float,
+            location_type: Integer,
+            lon: Float,
+            name: String,
+            parent: String,
+            route_ids: ::Array[String],
+            static_route_ids: ::Array[String],
+            code: String,
+            direction: String,
+            wheelchair_boarding: String
+          }
+        end
       end
     end
   end
