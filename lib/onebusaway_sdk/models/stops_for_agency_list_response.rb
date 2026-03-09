@@ -4,101 +4,113 @@ module OnebusawaySDK
   module Models
     # @see OnebusawaySDK::Resources::StopsForAgency#list
     class StopsForAgencyListResponse < OnebusawaySDK::Models::ResponseWrapper
-      # @!attribute limit_exceeded
+      # @!attribute data
       #
-      #   @return [Boolean]
-      required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
+      #   @return [OnebusawaySDK::Models::StopsForAgencyListResponse::Data]
+      required :data, -> { OnebusawaySDK::Models::StopsForAgencyListResponse::Data }
 
-      # @!attribute list
-      #
-      #   @return [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::List>]
-      required :list,
-               -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForAgencyListResponse::List] }
+      # @!method initialize(data:)
+      #   @param data [OnebusawaySDK::Models::StopsForAgencyListResponse::Data]
 
-      # @!attribute references
-      #
-      #   @return [OnebusawaySDK::Models::References]
-      required :references, -> { OnebusawaySDK::References }
-
-      # @!attribute out_of_range
-      #
-      #   @return [Boolean, nil]
-      optional :out_of_range, OnebusawaySDK::Internal::Type::Boolean, api_name: :outOfRange
-
-      # @!method initialize(limit_exceeded:, list:, references:, out_of_range: nil)
-      #   @param limit_exceeded [Boolean]
-      #   @param list [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::List>]
-      #   @param references [OnebusawaySDK::Models::References]
-      #   @param out_of_range [Boolean]
-
-      class List < OnebusawaySDK::Internal::Type::BaseModel
-        # @!attribute id
+      class Data < OnebusawaySDK::Internal::Type::BaseModel
+        # @!attribute limit_exceeded
         #
-        #   @return [String]
-        required :id, String
+        #   @return [Boolean]
+        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
 
-        # @!attribute lat
+        # @!attribute list
         #
-        #   @return [Float]
-        required :lat, Float
+        #   @return [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::Data::List>]
+        required :list,
+                 -> { OnebusawaySDK::Internal::Type::ArrayOf[OnebusawaySDK::Models::StopsForAgencyListResponse::Data::List] }
 
-        # @!attribute location_type
+        # @!attribute references
         #
-        #   @return [Integer]
-        required :location_type, Integer, api_name: :locationType
+        #   @return [OnebusawaySDK::Models::References]
+        required :references, -> { OnebusawaySDK::References }
 
-        # @!attribute lon
+        # @!attribute out_of_range
         #
-        #   @return [Float]
-        required :lon, Float
+        #   @return [Boolean, nil]
+        optional :out_of_range, OnebusawaySDK::Internal::Type::Boolean, api_name: :outOfRange
 
-        # @!attribute name
-        #
-        #   @return [String]
-        required :name, String
+        # @!method initialize(limit_exceeded:, list:, references:, out_of_range: nil)
+        #   @param limit_exceeded [Boolean]
+        #   @param list [Array<OnebusawaySDK::Models::StopsForAgencyListResponse::Data::List>]
+        #   @param references [OnebusawaySDK::Models::References]
+        #   @param out_of_range [Boolean]
 
-        # @!attribute parent
-        #
-        #   @return [String]
-        required :parent, String
+        class List < OnebusawaySDK::Internal::Type::BaseModel
+          # @!attribute id
+          #
+          #   @return [String]
+          required :id, String
 
-        # @!attribute route_ids
-        #
-        #   @return [Array<String>]
-        required :route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :routeIds
+          # @!attribute lat
+          #
+          #   @return [Float]
+          required :lat, Float
 
-        # @!attribute static_route_ids
-        #
-        #   @return [Array<String>]
-        required :static_route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :staticRouteIds
+          # @!attribute location_type
+          #
+          #   @return [Integer]
+          required :location_type, Integer, api_name: :locationType
 
-        # @!attribute code
-        #
-        #   @return [String, nil]
-        optional :code, String
+          # @!attribute lon
+          #
+          #   @return [Float]
+          required :lon, Float
 
-        # @!attribute direction
-        #
-        #   @return [String, nil]
-        optional :direction, String
+          # @!attribute name
+          #
+          #   @return [String]
+          required :name, String
 
-        # @!attribute wheelchair_boarding
-        #
-        #   @return [String, nil]
-        optional :wheelchair_boarding, String, api_name: :wheelchairBoarding
+          # @!attribute parent
+          #
+          #   @return [String]
+          required :parent, String
 
-        # @!method initialize(id:, lat:, location_type:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, wheelchair_boarding: nil)
-        #   @param id [String]
-        #   @param lat [Float]
-        #   @param location_type [Integer]
-        #   @param lon [Float]
-        #   @param name [String]
-        #   @param parent [String]
-        #   @param route_ids [Array<String>]
-        #   @param static_route_ids [Array<String>]
-        #   @param code [String]
-        #   @param direction [String]
-        #   @param wheelchair_boarding [String]
+          # @!attribute route_ids
+          #
+          #   @return [Array<String>]
+          required :route_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :routeIds
+
+          # @!attribute static_route_ids
+          #
+          #   @return [Array<String>]
+          required :static_route_ids,
+                   OnebusawaySDK::Internal::Type::ArrayOf[String],
+                   api_name: :staticRouteIds
+
+          # @!attribute code
+          #
+          #   @return [String, nil]
+          optional :code, String
+
+          # @!attribute direction
+          #
+          #   @return [String, nil]
+          optional :direction, String
+
+          # @!attribute wheelchair_boarding
+          #
+          #   @return [String, nil]
+          optional :wheelchair_boarding, String, api_name: :wheelchairBoarding
+
+          # @!method initialize(id:, lat:, location_type:, lon:, name:, parent:, route_ids:, static_route_ids:, code: nil, direction: nil, wheelchair_boarding: nil)
+          #   @param id [String]
+          #   @param lat [Float]
+          #   @param location_type [Integer]
+          #   @param lon [Float]
+          #   @param name [String]
+          #   @param parent [String]
+          #   @param route_ids [Array<String>]
+          #   @param static_route_ids [Array<String>]
+          #   @param code [String]
+          #   @param direction [String]
+          #   @param wheelchair_boarding [String]
+        end
       end
     end
   end
