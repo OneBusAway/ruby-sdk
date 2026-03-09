@@ -111,9 +111,14 @@ module OnebusawaySDK
           sig { returns(Integer) }
           attr_accessor :last_update_time
 
+          sig { returns(String) }
+          attr_accessor :vehicle_id
+
           sig do
             returns(
-              OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location
+              T.nilable(
+                OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location
+              )
             )
           end
           attr_reader :location
@@ -125,27 +130,6 @@ module OnebusawaySDK
             ).void
           end
           attr_writer :location
-
-          sig { returns(String) }
-          attr_accessor :trip_id
-
-          sig do
-            returns(
-              OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
-            )
-          end
-          attr_reader :trip_status
-
-          sig do
-            params(
-              trip_status:
-                OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::OrHash
-            ).void
-          end
-          attr_writer :trip_status
-
-          sig { returns(String) }
-          attr_accessor :vehicle_id
 
           sig { returns(T.nilable(Integer)) }
           attr_reader :occupancy_capacity
@@ -177,35 +161,58 @@ module OnebusawaySDK
           sig { params(status: String).void }
           attr_writer :status
 
+          sig { returns(T.nilable(String)) }
+          attr_reader :trip_id
+
+          sig { params(trip_id: String).void }
+          attr_writer :trip_id
+
+          sig do
+            returns(
+              T.nilable(
+                OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
+              )
+            )
+          end
+          attr_reader :trip_status
+
+          sig do
+            params(
+              trip_status:
+                OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::OrHash
+            ).void
+          end
+          attr_writer :trip_status
+
           sig do
             params(
               last_location_update_time: Integer,
               last_update_time: Integer,
+              vehicle_id: String,
               location:
                 OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location::OrHash,
-              trip_id: String,
-              trip_status:
-                OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::OrHash,
-              vehicle_id: String,
               occupancy_capacity: Integer,
               occupancy_count: Integer,
               occupancy_status: String,
               phase: String,
-              status: String
+              status: String,
+              trip_id: String,
+              trip_status:
+                OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
             last_location_update_time:,
             last_update_time:,
-            location:,
-            trip_id:,
-            trip_status:,
             vehicle_id:,
+            location: nil,
             occupancy_capacity: nil,
             occupancy_count: nil,
             occupancy_status: nil,
             phase: nil,
-            status: nil
+            status: nil,
+            trip_id: nil,
+            trip_status: nil
           )
           end
 
@@ -214,17 +221,17 @@ module OnebusawaySDK
               {
                 last_location_update_time: Integer,
                 last_update_time: Integer,
+                vehicle_id: String,
                 location:
                   OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
-                trip_id: String,
-                trip_status:
-                  OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus,
-                vehicle_id: String,
                 occupancy_capacity: Integer,
                 occupancy_count: Integer,
                 occupancy_status: String,
                 phase: String,
-                status: String
+                status: String,
+                trip_id: String,
+                trip_status:
+                  OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
               }
             )
           end

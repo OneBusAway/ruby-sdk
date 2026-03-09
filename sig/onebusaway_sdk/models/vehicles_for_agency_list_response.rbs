@@ -48,15 +48,15 @@ module OnebusawaySDK
           {
             last_location_update_time: Integer,
             last_update_time: Integer,
-            location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
-            trip_id: String,
-            trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus,
             vehicle_id: String,
+            location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
             occupancy_capacity: Integer,
             occupancy_count: Integer,
             occupancy_status: String,
             phase: String,
-            status: String
+            status: String,
+            trip_id: String,
+            trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
           }
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
@@ -64,13 +64,13 @@ module OnebusawaySDK
 
           attr_accessor last_update_time: Integer
 
-          attr_accessor location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location
-
-          attr_accessor trip_id: String
-
-          attr_accessor trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
-
           attr_accessor vehicle_id: String
+
+          attr_reader location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location?
+
+          def location=: (
+            OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location
+          ) -> OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location
 
           attr_reader occupancy_capacity: Integer?
 
@@ -92,32 +92,42 @@ module OnebusawaySDK
 
           def status=: (String) -> String
 
+          attr_reader trip_id: String?
+
+          def trip_id=: (String) -> String
+
+          attr_reader trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus?
+
+          def trip_status=: (
+            OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
+          ) -> OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
+
           def initialize: (
             last_location_update_time: Integer,
             last_update_time: Integer,
-            location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
-            trip_id: String,
-            trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus,
             vehicle_id: String,
+            ?location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
             ?occupancy_capacity: Integer,
             ?occupancy_count: Integer,
             ?occupancy_status: String,
             ?phase: String,
-            ?status: String
+            ?status: String,
+            ?trip_id: String,
+            ?trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
           ) -> void
 
           def to_hash: -> {
             last_location_update_time: Integer,
             last_update_time: Integer,
-            location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
-            trip_id: String,
-            trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus,
             vehicle_id: String,
+            location: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location,
             occupancy_capacity: Integer,
             occupancy_count: Integer,
             occupancy_status: String,
             phase: String,
-            status: String
+            status: String,
+            trip_id: String,
+            trip_status: OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus
           }
 
           type location = { lat: Float, lon: Float }
