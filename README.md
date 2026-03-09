@@ -17,7 +17,7 @@ To use this gem, install via Bundler by adding the following to your application
 <!-- x-release-please-start-version -->
 
 ```ruby
-gem "onebusaway-sdk", "~> 1.2.15"
+gem "onebusaway-sdk", "~> 1.2.16"
 ```
 
 <!-- x-release-please-end -->
