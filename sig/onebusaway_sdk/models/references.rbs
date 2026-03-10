@@ -201,7 +201,7 @@ module OnebusawaySDK
           consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
           description: OnebusawaySDK::References::Situation::Description,
           publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
-          reason: OnebusawaySDK::Models::References::Situation::reason,
+          reason: String,
           severity: String,
           summary: OnebusawaySDK::References::Situation::Summary,
           url: OnebusawaySDK::References::Situation::URL
@@ -246,11 +246,9 @@ module OnebusawaySDK
           ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
         ) -> ::Array[OnebusawaySDK::References::Situation::PublicationWindow]
 
-        attr_reader reason: OnebusawaySDK::Models::References::Situation::reason?
+        attr_reader reason: String?
 
-        def reason=: (
-          OnebusawaySDK::Models::References::Situation::reason
-        ) -> OnebusawaySDK::Models::References::Situation::reason
+        def reason=: (String) -> String
 
         attr_reader severity: String?
 
@@ -277,7 +275,7 @@ module OnebusawaySDK
           ?consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
           ?description: OnebusawaySDK::References::Situation::Description,
           ?publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
-          ?reason: OnebusawaySDK::Models::References::Situation::reason,
+          ?reason: String,
           ?severity: String,
           ?summary: OnebusawaySDK::References::Situation::Summary,
           ?url: OnebusawaySDK::References::Situation::URL
@@ -292,7 +290,7 @@ module OnebusawaySDK
           consequences: ::Array[OnebusawaySDK::References::Situation::Consequence],
           description: OnebusawaySDK::References::Situation::Description,
           publication_windows: ::Array[OnebusawaySDK::References::Situation::PublicationWindow],
-          reason: OnebusawaySDK::Models::References::Situation::reason,
+          reason: String,
           severity: String,
           summary: OnebusawaySDK::References::Situation::Summary,
           url: OnebusawaySDK::References::Situation::URL
@@ -479,25 +477,6 @@ module OnebusawaySDK
           def initialize: (from: Integer, to: Integer) -> void
 
           def to_hash: -> { from: Integer, to: Integer }
-        end
-
-        type reason =
-          :equipmentReason
-          | :environmentReason
-          | :personnelReason
-          | :miscellaneousReason
-          | :securityAlert
-
-        module Reason
-          extend OnebusawaySDK::Internal::Type::Enum
-
-          EQUIPMENT_REASON: :equipmentReason
-          ENVIRONMENT_REASON: :environmentReason
-          PERSONNEL_REASON: :personnelReason
-          MISCELLANEOUS_REASON: :miscellaneousReason
-          SECURITY_ALERT: :securityAlert
-
-          def self?.values: -> ::Array[OnebusawaySDK::Models::References::Situation::reason]
         end
 
         type summary = { lang: String, value: String }
