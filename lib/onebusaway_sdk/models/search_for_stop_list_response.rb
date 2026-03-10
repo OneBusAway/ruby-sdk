@@ -13,11 +13,6 @@ module OnebusawaySDK
       #   @param data [OnebusawaySDK::Models::SearchForStopListResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
-        # @!attribute limit_exceeded
-        #
-        #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
-
         # @!attribute list
         #
         #   @return [Array<OnebusawaySDK::Models::SearchForStopListResponse::Data::List>]
@@ -34,11 +29,16 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
-        # @!method initialize(limit_exceeded:, list:, out_of_range:, references:)
-        #   @param limit_exceeded [Boolean]
+        # @!attribute limit_exceeded
+        #
+        #   @return [Boolean, nil]
+        optional :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
+
+        # @!method initialize(list:, out_of_range:, references:, limit_exceeded: nil)
         #   @param list [Array<OnebusawaySDK::Models::SearchForStopListResponse::Data::List>]
         #   @param out_of_range [Boolean]
         #   @param references [OnebusawaySDK::Models::References]
+        #   @param limit_exceeded [Boolean]
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute id

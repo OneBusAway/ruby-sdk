@@ -231,8 +231,8 @@ module OnebusawaySDK
         # @!attribute reason
         #   Reason for the service alert, taken from TPEG codes.
         #
-        #   @return [Symbol, OnebusawaySDK::Models::References::Situation::Reason, nil]
-        optional :reason, enum: -> { OnebusawaySDK::References::Situation::Reason }
+        #   @return [String, nil]
+        optional :reason, String
 
         # @!attribute severity
         #   Severity of the situation.
@@ -267,7 +267,7 @@ module OnebusawaySDK
         #
         #   @param publication_windows [Array<OnebusawaySDK::Models::References::Situation::PublicationWindow>]
         #
-        #   @param reason [Symbol, OnebusawaySDK::Models::References::Situation::Reason] Reason for the service alert, taken from TPEG codes.
+        #   @param reason [String] Reason for the service alert, taken from TPEG codes.
         #
         #   @param severity [String] Severity of the situation.
         #
@@ -453,22 +453,6 @@ module OnebusawaySDK
           #   @param from [Integer] Start time of the time window as a Unix timestamp.
           #
           #   @param to [Integer] End time of the time window as a Unix timestamp.
-        end
-
-        # Reason for the service alert, taken from TPEG codes.
-        #
-        # @see OnebusawaySDK::Models::References::Situation#reason
-        module Reason
-          extend OnebusawaySDK::Internal::Type::Enum
-
-          EQUIPMENT_REASON = :equipmentReason
-          ENVIRONMENT_REASON = :environmentReason
-          PERSONNEL_REASON = :personnelReason
-          MISCELLANEOUS_REASON = :miscellaneousReason
-          SECURITY_ALERT = :securityAlert
-
-          # @!method self.values
-          #   @return [Array<Symbol>]
         end
 
         # @see OnebusawaySDK::Models::References::Situation#summary

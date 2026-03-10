@@ -18,19 +18,13 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry]
         required :entry, -> { OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry }
 
-        # @!attribute limit_exceeded
-        #
-        #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
-
         # @!attribute references
         #
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
-        # @!method initialize(entry:, limit_exceeded:, references:)
+        # @!method initialize(entry:, references:)
         #   @param entry [OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry]
-        #   @param limit_exceeded [Boolean]
         #   @param references [OnebusawaySDK::Models::References]
 
         # @see OnebusawaySDK::Models::AgencyRetrieveResponse::Data#entry

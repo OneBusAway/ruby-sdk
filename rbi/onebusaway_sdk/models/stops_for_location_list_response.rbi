@@ -48,9 +48,6 @@ module OnebusawaySDK
             )
           end
 
-        sig { returns(T::Boolean) }
-        attr_accessor :limit_exceeded
-
         sig do
           returns(
             T::Array[
@@ -67,6 +64,12 @@ module OnebusawaySDK
         attr_writer :references
 
         sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :limit_exceeded
+
+        sig { params(limit_exceeded: T::Boolean).void }
+        attr_writer :limit_exceeded
+
+        sig { returns(T.nilable(T::Boolean)) }
         attr_reader :out_of_range
 
         sig { params(out_of_range: T::Boolean).void }
@@ -74,27 +77,27 @@ module OnebusawaySDK
 
         sig do
           params(
-            limit_exceeded: T::Boolean,
             list:
               T::Array[
                 OnebusawaySDK::Models::StopsForLocationListResponse::Data::List::OrHash
               ],
             references: OnebusawaySDK::References::OrHash,
+            limit_exceeded: T::Boolean,
             out_of_range: T::Boolean
           ).returns(T.attached_class)
         end
-        def self.new(limit_exceeded:, list:, references:, out_of_range: nil)
+        def self.new(list:, references:, limit_exceeded: nil, out_of_range: nil)
         end
 
         sig do
           override.returns(
             {
-              limit_exceeded: T::Boolean,
               list:
                 T::Array[
                   OnebusawaySDK::Models::StopsForLocationListResponse::Data::List
                 ],
               references: OnebusawaySDK::References,
+              limit_exceeded: T::Boolean,
               out_of_range: T::Boolean
             }
           )
