@@ -377,20 +377,10 @@ module OnebusawaySDK
         attr_writer :publication_windows
 
         # Reason for the service alert, taken from TPEG codes.
-        sig do
-          returns(
-            T.nilable(
-              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
-            )
-          )
-        end
+        sig { returns(T.nilable(String)) }
         attr_reader :reason
 
-        sig do
-          params(
-            reason: OnebusawaySDK::References::Situation::Reason::OrSymbol
-          ).void
-        end
+        sig { params(reason: String).void }
         attr_writer :reason
 
         # Severity of the situation.
@@ -441,7 +431,7 @@ module OnebusawaySDK
               T::Array[
                 OnebusawaySDK::References::Situation::PublicationWindow::OrHash
               ],
-            reason: OnebusawaySDK::References::Situation::Reason::OrSymbol,
+            reason: String,
             severity: String,
             summary: OnebusawaySDK::References::Situation::Summary::OrHash,
             url: OnebusawaySDK::References::Situation::URL::OrHash
@@ -485,8 +475,7 @@ module OnebusawaySDK
                 T::Array[
                   OnebusawaySDK::References::Situation::PublicationWindow
                 ],
-              reason:
-                OnebusawaySDK::References::Situation::Reason::TaggedSymbol,
+              reason: String,
               severity: String,
               summary: OnebusawaySDK::References::Situation::Summary,
               url: OnebusawaySDK::References::Situation::URL
@@ -860,53 +849,6 @@ module OnebusawaySDK
 
           sig { override.returns({ from: Integer, to: Integer }) }
           def to_hash
-          end
-        end
-
-        # Reason for the service alert, taken from TPEG codes.
-        module Reason
-          extend OnebusawaySDK::Internal::Type::Enum
-
-          TaggedSymbol =
-            T.type_alias do
-              T.all(Symbol, OnebusawaySDK::References::Situation::Reason)
-            end
-          OrSymbol = T.type_alias { T.any(Symbol, String) }
-
-          EQUIPMENT_REASON =
-            T.let(
-              :equipmentReason,
-              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
-            )
-          ENVIRONMENT_REASON =
-            T.let(
-              :environmentReason,
-              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
-            )
-          PERSONNEL_REASON =
-            T.let(
-              :personnelReason,
-              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
-            )
-          MISCELLANEOUS_REASON =
-            T.let(
-              :miscellaneousReason,
-              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
-            )
-          SECURITY_ALERT =
-            T.let(
-              :securityAlert,
-              OnebusawaySDK::References::Situation::Reason::TaggedSymbol
-            )
-
-          sig do
-            override.returns(
-              T::Array[
-                OnebusawaySDK::References::Situation::Reason::TaggedSymbol
-              ]
-            )
-          end
-          def self.values
           end
         end
 

@@ -59,9 +59,6 @@ module OnebusawaySDK
         end
         attr_writer :entry
 
-        sig { returns(T::Boolean) }
-        attr_accessor :limit_exceeded
-
         sig { returns(OnebusawaySDK::References) }
         attr_reader :references
 
@@ -72,18 +69,16 @@ module OnebusawaySDK
           params(
             entry:
               OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry::OrHash,
-            limit_exceeded: T::Boolean,
             references: OnebusawaySDK::References::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(entry:, limit_exceeded:, references:)
+        def self.new(entry:, references:)
         end
 
         sig do
           override.returns(
             {
               entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
-              limit_exceeded: T::Boolean,
               references: OnebusawaySDK::References
             }
           )

@@ -20,28 +20,30 @@ module OnebusawaySDK
 
       type data =
         {
-          limit_exceeded: bool,
           list: ::Array[String],
-          references: OnebusawaySDK::References
+          references: OnebusawaySDK::References,
+          limit_exceeded: bool
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
-        attr_accessor limit_exceeded: bool
-
         attr_accessor list: ::Array[String]
 
         attr_accessor references: OnebusawaySDK::References
 
+        attr_reader limit_exceeded: bool?
+
+        def limit_exceeded=: (bool) -> bool
+
         def initialize: (
-          limit_exceeded: bool,
           list: ::Array[String],
-          references: OnebusawaySDK::References
+          references: OnebusawaySDK::References,
+          ?limit_exceeded: bool
         ) -> void
 
         def to_hash: -> {
-          limit_exceeded: bool,
           list: ::Array[String],
-          references: OnebusawaySDK::References
+          references: OnebusawaySDK::References,
+          limit_exceeded: bool
         }
       end
     end

@@ -21,26 +21,21 @@ module OnebusawaySDK
       type data =
         {
           entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
-          limit_exceeded: bool,
           references: OnebusawaySDK::References
         }
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
         attr_accessor entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry
 
-        attr_accessor limit_exceeded: bool
-
         attr_accessor references: OnebusawaySDK::References
 
         def initialize: (
           entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
-          limit_exceeded: bool,
           references: OnebusawaySDK::References
         ) -> void
 
         def to_hash: -> {
           entry: OnebusawaySDK::Models::AgencyRetrieveResponse::Data::Entry,
-          limit_exceeded: bool,
           references: OnebusawaySDK::References
         }
 

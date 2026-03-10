@@ -48,10 +48,6 @@ module OnebusawaySDK
             )
           end
 
-        # Indicates if the limit of trips has been exceeded
-        sig { returns(T::Boolean) }
-        attr_accessor :limit_exceeded
-
         sig do
           returns(
             T::Array[
@@ -67,6 +63,13 @@ module OnebusawaySDK
         sig { params(references: OnebusawaySDK::References::OrHash).void }
         attr_writer :references
 
+        # Indicates if the limit of trips has been exceeded
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :limit_exceeded
+
+        sig { params(limit_exceeded: T::Boolean).void }
+        attr_writer :limit_exceeded
+
         # Indicates if the search location is out of range
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :out_of_range
@@ -76,20 +79,20 @@ module OnebusawaySDK
 
         sig do
           params(
-            limit_exceeded: T::Boolean,
             list:
               T::Array[
                 OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::OrHash
               ],
             references: OnebusawaySDK::References::OrHash,
+            limit_exceeded: T::Boolean,
             out_of_range: T::Boolean
           ).returns(T.attached_class)
         end
         def self.new(
-          # Indicates if the limit of trips has been exceeded
-          limit_exceeded:,
           list:,
           references:,
+          # Indicates if the limit of trips has been exceeded
+          limit_exceeded: nil,
           # Indicates if the search location is out of range
           out_of_range: nil
         )
@@ -98,12 +101,12 @@ module OnebusawaySDK
         sig do
           override.returns(
             {
-              limit_exceeded: T::Boolean,
               list:
                 T::Array[
                   OnebusawaySDK::Models::TripsForLocationListResponse::Data::List
                 ],
               references: OnebusawaySDK::References,
+              limit_exceeded: T::Boolean,
               out_of_range: T::Boolean
             }
           )

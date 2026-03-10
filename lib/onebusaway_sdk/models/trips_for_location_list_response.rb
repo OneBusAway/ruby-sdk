@@ -13,12 +13,6 @@ module OnebusawaySDK
       #   @param data [OnebusawaySDK::Models::TripsForLocationListResponse::Data]
 
       class Data < OnebusawaySDK::Internal::Type::BaseModel
-        # @!attribute limit_exceeded
-        #   Indicates if the limit of trips has been exceeded
-        #
-        #   @return [Boolean]
-        required :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
-
         # @!attribute list
         #
         #   @return [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List>]
@@ -30,18 +24,24 @@ module OnebusawaySDK
         #   @return [OnebusawaySDK::Models::References]
         required :references, -> { OnebusawaySDK::References }
 
+        # @!attribute limit_exceeded
+        #   Indicates if the limit of trips has been exceeded
+        #
+        #   @return [Boolean, nil]
+        optional :limit_exceeded, OnebusawaySDK::Internal::Type::Boolean, api_name: :limitExceeded
+
         # @!attribute out_of_range
         #   Indicates if the search location is out of range
         #
         #   @return [Boolean, nil]
         optional :out_of_range, OnebusawaySDK::Internal::Type::Boolean, api_name: :outOfRange
 
-        # @!method initialize(limit_exceeded:, list:, references:, out_of_range: nil)
-        #   @param limit_exceeded [Boolean] Indicates if the limit of trips has been exceeded
-        #
+        # @!method initialize(list:, references:, limit_exceeded: nil, out_of_range: nil)
         #   @param list [Array<OnebusawaySDK::Models::TripsForLocationListResponse::Data::List>]
         #
         #   @param references [OnebusawaySDK::Models::References]
+        #
+        #   @param limit_exceeded [Boolean] Indicates if the limit of trips has been exceeded
         #
         #   @param out_of_range [Boolean] Indicates if the search location is out of range
 
