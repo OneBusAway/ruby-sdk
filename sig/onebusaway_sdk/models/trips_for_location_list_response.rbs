@@ -209,7 +209,7 @@ module OnebusawaySDK
               total_distance_along_trip: Float,
               closest_stop_time_offset: Integer,
               frequency: String,
-              last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation,
+              last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?,
               last_known_orientation: Float,
               next_stop: String,
               next_stop_time_offset: Integer,
@@ -261,11 +261,7 @@ module OnebusawaySDK
 
             def frequency=: (String) -> String
 
-            attr_reader last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?
-
-            def last_known_location=: (
-              OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation
-            ) -> OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation
+            attr_accessor last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?
 
             attr_reader last_known_orientation: Float?
 
@@ -320,7 +316,7 @@ module OnebusawaySDK
               total_distance_along_trip: Float,
               ?closest_stop_time_offset: Integer,
               ?frequency: String,
-              ?last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation,
+              ?last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?,
               ?last_known_orientation: Float,
               ?next_stop: String,
               ?next_stop_time_offset: Integer,
@@ -350,7 +346,7 @@ module OnebusawaySDK
               total_distance_along_trip: Float,
               closest_stop_time_offset: Integer,
               frequency: String,
-              last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation,
+              last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?,
               last_known_orientation: Float,
               next_stop: String,
               next_stop_time_offset: Integer,

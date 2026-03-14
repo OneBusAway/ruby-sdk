@@ -258,12 +258,13 @@ module OnebusawaySDK
             optional :frequency, String
 
             # @!attribute last_known_location
-            #   Last known location of the transit vehicle.
+            #   Last known location of the transit vehicle (optional).
             #
             #   @return [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation, nil]
             optional :last_known_location,
                      -> { OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation },
-                     api_name: :lastKnownLocation
+                     api_name: :lastKnownLocation,
+                     nil?: true
 
             # @!attribute last_known_orientation
             #   Last known orientation value received in real-time from the transit vehicle.
@@ -357,7 +358,7 @@ module OnebusawaySDK
             #
             #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
             #
-            #   @param last_known_location [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation] Last known location of the transit vehicle.
+            #   @param last_known_location [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation, nil] Last known location of the transit vehicle (optional).
             #
             #   @param last_known_orientation [Float] Last known orientation value received in real-time from the transit vehicle.
             #
@@ -390,7 +391,7 @@ module OnebusawaySDK
               optional :lon, Float
 
               # @!method initialize(lat: nil, lon: nil)
-              #   Last known location of the transit vehicle.
+              #   Last known location of the transit vehicle (optional).
               #
               #   @param lat [Float] Latitude of the last known location of the transit vehicle.
               #
