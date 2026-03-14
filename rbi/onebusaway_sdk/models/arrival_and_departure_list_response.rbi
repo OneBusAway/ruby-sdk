@@ -606,7 +606,7 @@ module OnebusawaySDK
               sig { params(frequency: String).void }
               attr_writer :frequency
 
-              # Last known location of the transit vehicle.
+              # Last known location of the transit vehicle (optional).
               sig do
                 returns(
                   T.nilable(
@@ -619,7 +619,9 @@ module OnebusawaySDK
               sig do
                 params(
                   last_known_location:
-                    OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation::OrHash
+                    T.nilable(
+                      OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation::OrHash
+                    )
                 ).void
               end
               attr_writer :last_known_location
@@ -715,7 +717,9 @@ module OnebusawaySDK
                   closest_stop_time_offset: Integer,
                   frequency: String,
                   last_known_location:
-                    OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation::OrHash,
+                    T.nilable(
+                      OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation::OrHash
+                    ),
                   last_known_orientation: Float,
                   next_stop: String,
                   next_stop_time_offset: Integer,
@@ -767,7 +771,7 @@ module OnebusawaySDK
                 closest_stop_time_offset: nil,
                 # Information about frequency-based scheduling, if applicable to the trip.
                 frequency: nil,
-                # Last known location of the transit vehicle.
+                # Last known location of the transit vehicle (optional).
                 last_known_location: nil,
                 # Last known orientation value received in real-time from the transit vehicle.
                 last_known_orientation: nil,
@@ -812,7 +816,9 @@ module OnebusawaySDK
                     closest_stop_time_offset: Integer,
                     frequency: String,
                     last_known_location:
-                      OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation,
+                      T.nilable(
+                        OnebusawaySDK::Models::ArrivalAndDepartureListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation
+                      ),
                     last_known_orientation: Float,
                     next_stop: String,
                     next_stop_time_offset: Integer,
@@ -851,7 +857,7 @@ module OnebusawaySDK
                 sig { params(lon: Float).void }
                 attr_writer :lon
 
-                # Last known location of the transit vehicle.
+                # Last known location of the transit vehicle (optional).
                 sig { params(lat: Float, lon: Float).returns(T.attached_class) }
                 def self.new(
                   # Latitude of the last known location of the transit vehicle.
