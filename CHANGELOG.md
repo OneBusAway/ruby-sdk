@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.1 (2026-03-17)
+
+Full Changelog: [v1.5.0...v1.5.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.0...v1.5.1)
+
+### Chores
+
+* **internal:** tweak CI branches ([4b21600](https://github.com/OneBusAway/ruby-sdk/commit/4b21600347dd5edeaa1de4234b9cfe49a78ee705))
+
 ## 1.5.0 (2026-03-14)
 
 Full Changelog: [v1.4.0...v1.5.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.4.0...v1.5.0)
