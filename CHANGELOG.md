@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.2 (2026-03-20)
+
+Full Changelog: [v1.5.1...v1.5.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.1...v1.5.2)
+
+### Refactors
+
+* **tests:** switch from prism to steady ([c507ea5](https://github.com/OneBusAway/ruby-sdk/commit/c507ea51f0a3261fa28021a17d47b130921ace97))
+
 ## 1.5.1 (2026-03-17)
 
 Full Changelog: [v1.5.0...v1.5.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.0...v1.5.1)
