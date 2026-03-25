@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.5.4 (2026-03-25)
+
+Full Changelog: [v1.5.3...v1.5.4](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.3...v1.5.4)
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([b741b9e](https://github.com/OneBusAway/ruby-sdk/commit/b741b9e76b7eb12391f93dbd877e5703cb014038))
+* **internal:** update gitignore ([2e3018f](https://github.com/OneBusAway/ruby-sdk/commit/2e3018f4a3a693e49154bdf5bc11f6c82403ee1d))
+* **tests:** bump steady to v0.19.6 ([65843e1](https://github.com/OneBusAway/ruby-sdk/commit/65843e143eab64de407e9c36b845fc0fe98bd6a7))
+* **tests:** bump steady to v0.19.7 ([9d70f13](https://github.com/OneBusAway/ruby-sdk/commit/9d70f131c5d5e951944faa28ee468ec68b3e9b61))
+
 ## 1.5.3 (2026-03-21)
 
 Full Changelog: [v1.5.2...v1.5.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.2...v1.5.3)
