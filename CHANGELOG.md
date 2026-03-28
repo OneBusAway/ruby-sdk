@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.6 (2026-03-28)
+
+Full Changelog: [v1.5.5...v1.5.6](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.5...v1.5.6)
+
+### Chores
+
+* **ci:** support opting out of skipping builds on metadata-only commits ([bde17ae](https://github.com/OneBusAway/ruby-sdk/commit/bde17ae92a008a0bb594ccdfc2c9d0f97e15ef24))
+
 ## 1.5.5 (2026-03-27)
 
 Full Changelog: [v1.5.4...v1.5.5](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.4...v1.5.5)
