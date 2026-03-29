@@ -42,6 +42,8 @@ module OnebusawaySDK
 
     attr_reader schedule_for_route: OnebusawaySDK::Resources::ScheduleForRoute
 
+    attr_reader arrivals_and_departures_for_location: OnebusawaySDK::Resources::ArrivalsAndDeparturesForLocation
+
     attr_reader arrival_and_departure: OnebusawaySDK::Resources::ArrivalAndDeparture
 
     attr_reader trip: OnebusawaySDK::Resources::Trip
