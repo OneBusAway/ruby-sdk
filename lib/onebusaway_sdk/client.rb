@@ -66,6 +66,9 @@ module OnebusawaySDK
     # @return [OnebusawaySDK::Resources::ScheduleForRoute]
     attr_reader :schedule_for_route
 
+    # @return [OnebusawaySDK::Resources::ArrivalsAndDeparturesForLocation]
+    attr_reader :arrivals_and_departures_for_location
+
     # @return [OnebusawaySDK::Resources::ArrivalAndDeparture]
     attr_reader :arrival_and_departure
 
@@ -163,6 +166,8 @@ module OnebusawaySDK
       @routes_for_location = OnebusawaySDK::Resources::RoutesForLocation.new(client: self)
       @routes_for_agency = OnebusawaySDK::Resources::RoutesForAgency.new(client: self)
       @schedule_for_route = OnebusawaySDK::Resources::ScheduleForRoute.new(client: self)
+      @arrivals_and_departures_for_location =
+        OnebusawaySDK::Resources::ArrivalsAndDeparturesForLocation.new(client: self)
       @arrival_and_departure = OnebusawaySDK::Resources::ArrivalAndDeparture.new(client: self)
       @trip = OnebusawaySDK::Resources::Trip.new(client: self)
       @trips_for_location = OnebusawaySDK::Resources::TripsForLocation.new(client: self)

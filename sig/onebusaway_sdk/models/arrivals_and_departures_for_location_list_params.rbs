@@ -1,0 +1,94 @@
+module OnebusawaySDK
+  module Models
+    type arrivals_and_departures_for_location_list_params =
+      {
+        lat: Float,
+        lon: Float,
+        empty_returns_not_found: bool,
+        lat_span: Float,
+        lon_span: Float,
+        max_count: Integer,
+        minutes_after: Integer,
+        minutes_before: Integer,
+        radius: Float,
+        route_type: String,
+        time: Integer
+      }
+      & OnebusawaySDK::Internal::Type::request_parameters
+
+    class ArrivalsAndDeparturesForLocationListParams < OnebusawaySDK::Internal::Type::BaseModel
+      extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
+      include OnebusawaySDK::Internal::Type::RequestParameters
+
+      attr_accessor lat: Float
+
+      attr_accessor lon: Float
+
+      attr_reader empty_returns_not_found: bool?
+
+      def empty_returns_not_found=: (bool) -> bool
+
+      attr_reader lat_span: Float?
+
+      def lat_span=: (Float) -> Float
+
+      attr_reader lon_span: Float?
+
+      def lon_span=: (Float) -> Float
+
+      attr_reader max_count: Integer?
+
+      def max_count=: (Integer) -> Integer
+
+      attr_reader minutes_after: Integer?
+
+      def minutes_after=: (Integer) -> Integer
+
+      attr_reader minutes_before: Integer?
+
+      def minutes_before=: (Integer) -> Integer
+
+      attr_reader radius: Float?
+
+      def radius=: (Float) -> Float
+
+      attr_reader route_type: String?
+
+      def route_type=: (String) -> String
+
+      attr_reader time: Integer?
+
+      def time=: (Integer) -> Integer
+
+      def initialize: (
+        lat: Float,
+        lon: Float,
+        ?empty_returns_not_found: bool,
+        ?lat_span: Float,
+        ?lon_span: Float,
+        ?max_count: Integer,
+        ?minutes_after: Integer,
+        ?minutes_before: Integer,
+        ?radius: Float,
+        ?route_type: String,
+        ?time: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        lat: Float,
+        lon: Float,
+        empty_returns_not_found: bool,
+        lat_span: Float,
+        lon_span: Float,
+        max_count: Integer,
+        minutes_after: Integer,
+        minutes_before: Integer,
+        radius: Float,
+        route_type: String,
+        time: Integer,
+        request_options: OnebusawaySDK::RequestOptions
+      }
+    end
+  end
+end

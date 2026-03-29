@@ -1,0 +1,22 @@
+module OnebusawaySDK
+  module Resources
+    class ArrivalsAndDeparturesForLocation
+      def list: (
+        lat: Float,
+        lon: Float,
+        ?empty_returns_not_found: bool,
+        ?lat_span: Float,
+        ?lon_span: Float,
+        ?max_count: Integer,
+        ?minutes_after: Integer,
+        ?minutes_before: Integer,
+        ?radius: Float,
+        ?route_type: String,
+        ?time: Integer,
+        ?request_options: OnebusawaySDK::request_opts
+      ) -> OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse
+
+      def initialize: (client: OnebusawaySDK::Client) -> void
+    end
+  end
+end

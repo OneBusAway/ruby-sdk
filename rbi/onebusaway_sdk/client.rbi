@@ -61,6 +61,9 @@ module OnebusawaySDK
     sig { returns(OnebusawaySDK::Resources::ScheduleForRoute) }
     attr_reader :schedule_for_route
 
+    sig { returns(OnebusawaySDK::Resources::ArrivalsAndDeparturesForLocation) }
+    attr_reader :arrivals_and_departures_for_location
+
     sig { returns(OnebusawaySDK::Resources::ArrivalAndDeparture) }
     attr_reader :arrival_and_departure
 

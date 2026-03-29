@@ -12,6 +12,9 @@ module OnebusawaySDK
   ArrivalAndDepartureRetrieveParams =
     OnebusawaySDK::Models::ArrivalAndDepartureRetrieveParams
 
+  ArrivalsAndDeparturesForLocationListParams =
+    OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListParams
+
   BlockRetrieveParams = OnebusawaySDK::Models::BlockRetrieveParams
 
   ConfigRetrieveParams = OnebusawaySDK::Models::ConfigRetrieveParams
