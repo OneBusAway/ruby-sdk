@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.6.1 (2026-04-01)
+
+Full Changelog: [v1.6.0...v1.6.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.0...v1.6.1)
+
+### Bug Fixes
+
+* align path encoding with RFC 3986 section 3.3 ([73f0f2d](https://github.com/OneBusAway/ruby-sdk/commit/73f0f2dde7c4d13aab4cf681aa68ecc022dca33b))
+* variable name typo ([0bb2581](https://github.com/OneBusAway/ruby-sdk/commit/0bb2581f24d20b6ffff39e630aea058bebb6e668))
+
+
+### Chores
+
+* **tests:** bump steady to v0.20.1 ([c40fb01](https://github.com/OneBusAway/ruby-sdk/commit/c40fb01c82c735d6ed0a97ea9e9521a83e820199))
+* **tests:** bump steady to v0.20.2 ([5e538f6](https://github.com/OneBusAway/ruby-sdk/commit/5e538f6d606d5d01f11e3c1cdec4402b81b02034))
+
 ## 1.6.0 (2026-03-29)
 
 Full Changelog: [v1.5.6...v1.6.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.5.6...v1.6.0)
