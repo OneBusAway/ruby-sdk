@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.3 (2026-04-18)
+
+Full Changelog: [v1.6.2...v1.6.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.2...v1.6.3)
+
+### Chores
+
+* **tests:** bump steady to v0.22.1 ([e3c086c](https://github.com/OneBusAway/ruby-sdk/commit/e3c086ce0a390298cc737e8fa0eb819fb3c0d191))
+
 ## 1.6.2 (2026-04-09)
 
 Full Changelog: [v1.6.1...v1.6.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.1...v1.6.2)
