@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.4 (2026-04-23)
+
+Full Changelog: [v1.6.3...v1.6.4](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.3...v1.6.4)
+
+### Chores
+
+* **internal:** more robust bootstrap script ([56b8c52](https://github.com/OneBusAway/ruby-sdk/commit/56b8c5202f166658c5e0ab69d83d674d426906be))
+
 ## 1.6.3 (2026-04-18)
 
 Full Changelog: [v1.6.2...v1.6.3](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.2...v1.6.3)
