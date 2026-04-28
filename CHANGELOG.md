@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.0 (2026-04-28)
+
+Full Changelog: [v1.6.4...v1.7.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.4...v1.7.0)
+
+### Features
+
+* support setting headers via env ([ade7a56](https://github.com/OneBusAway/ruby-sdk/commit/ade7a5671cc7801360dfb7fed8bd63a18f350945))
+
 ## 1.6.4 (2026-04-23)
 
 Full Changelog: [v1.6.3...v1.6.4](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.3...v1.6.4)
