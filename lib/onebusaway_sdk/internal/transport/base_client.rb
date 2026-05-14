@@ -309,6 +309,8 @@ module OnebusawaySDK
               OnebusawaySDK::Internal::Util.deep_merge(*[req[:body], opts[:extra_body]].compact)
             end
 
+          headers.delete("content-type") if body.nil?
+
           url = OnebusawaySDK::Internal::Util.join_parsed_uri(
             @base_url_components,
             {**req, path: path, query: query}
