@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.1 (2026-05-14)
+
+Full Changelog: [v1.7.0...v1.7.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.7.0...v1.7.1)
+
+### Bug Fixes
+
+* **client:** elide content type header on requests without body ([c8163aa](https://github.com/OneBusAway/ruby-sdk/commit/c8163aac1892c0bc83dce876b959451a5f63b031))
+
 ## 1.7.0 (2026-04-28)
 
 Full Changelog: [v1.6.4...v1.7.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.6.4...v1.7.0)
