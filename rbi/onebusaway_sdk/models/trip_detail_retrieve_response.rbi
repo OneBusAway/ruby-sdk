@@ -133,6 +133,7 @@ module OnebusawaySDK
           sig { params(situation_ids: T::Array[String]).void }
           attr_writer :situation_ids
 
+          # Trip-specific status for the arriving transit vehicle.
           sig do
             returns(
               T.nilable(
@@ -168,6 +169,7 @@ module OnebusawaySDK
             schedule: nil,
             service_date: nil,
             situation_ids: nil,
+            # Trip-specific status for the arriving transit vehicle.
             status: nil
           )
           end
@@ -518,6 +520,7 @@ module OnebusawaySDK
             sig { params(vehicle_id: String).void }
             attr_writer :vehicle_id
 
+            # Trip-specific status for the arriving transit vehicle.
             sig do
               params(
                 active_trip_id: String,

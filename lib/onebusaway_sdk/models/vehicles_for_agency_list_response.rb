@@ -86,6 +86,7 @@ module OnebusawaySDK
           optional :trip_id, String, api_name: :tripId
 
           # @!attribute trip_status
+          #   Trip-specific status for the arriving transit vehicle.
           #
           #   @return [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus, nil]
           optional :trip_status,
@@ -94,16 +95,26 @@ module OnebusawaySDK
 
           # @!method initialize(last_location_update_time:, last_update_time:, vehicle_id:, location: nil, occupancy_capacity: nil, occupancy_count: nil, occupancy_status: nil, phase: nil, status: nil, trip_id: nil, trip_status: nil)
           #   @param last_location_update_time [Integer]
+          #
           #   @param last_update_time [Integer]
+          #
           #   @param vehicle_id [String]
+          #
           #   @param location [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::Location]
+          #
           #   @param occupancy_capacity [Integer]
+          #
           #   @param occupancy_count [Integer]
+          #
           #   @param occupancy_status [String]
+          #
           #   @param phase [String]
+          #
           #   @param status [String]
+          #
           #   @param trip_id [String]
-          #   @param trip_status [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus]
+          #
+          #   @param trip_status [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus] Trip-specific status for the arriving transit vehicle.
 
           # @see OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List#location
           class Location < OnebusawaySDK::Internal::Type::BaseModel
@@ -299,6 +310,8 @@ module OnebusawaySDK
             #   Some parameter documentations has been truncated, see
             #   {OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus}
             #   for more details.
+            #
+            #   Trip-specific status for the arriving transit vehicle.
             #
             #   @param active_trip_id [String] Trip ID of the trip the vehicle is actively serving.
             #

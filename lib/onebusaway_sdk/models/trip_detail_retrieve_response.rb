@@ -55,17 +55,23 @@ module OnebusawaySDK
           optional :situation_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :situationIds
 
           # @!attribute status
+          #   Trip-specific status for the arriving transit vehicle.
           #
           #   @return [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status, nil]
           optional :status, -> { OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status }
 
           # @!method initialize(trip_id:, frequency: nil, schedule: nil, service_date: nil, situation_ids: nil, status: nil)
           #   @param trip_id [String]
+          #
           #   @param frequency [String, nil]
+          #
           #   @param schedule [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule]
+          #
           #   @param service_date [Integer]
+          #
           #   @param situation_ids [Array<String>]
-          #   @param status [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status]
+          #
+          #   @param status [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status] Trip-specific status for the arriving transit vehicle.
 
           # @see OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry#schedule
           class Schedule < OnebusawaySDK::Internal::Type::BaseModel
@@ -321,6 +327,8 @@ module OnebusawaySDK
             #   Some parameter documentations has been truncated, see
             #   {OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status} for
             #   more details.
+            #
+            #   Trip-specific status for the arriving transit vehicle.
             #
             #   @param active_trip_id [String] Trip ID of the trip the vehicle is actively serving.
             #
