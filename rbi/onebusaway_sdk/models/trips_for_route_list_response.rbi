@@ -119,6 +119,7 @@ module OnebusawaySDK
           end
           attr_writer :schedule
 
+          # Trip-specific status for the arriving transit vehicle.
           sig do
             returns(
               OnebusawaySDK::Models::TripsForRouteListResponse::Data::List::Status
@@ -166,6 +167,7 @@ module OnebusawaySDK
           end
           def self.new(
             schedule:,
+            # Trip-specific status for the arriving transit vehicle.
             status:,
             trip_id:,
             frequency: nil,
@@ -520,6 +522,7 @@ module OnebusawaySDK
             sig { params(vehicle_id: String).void }
             attr_writer :vehicle_id
 
+            # Trip-specific status for the arriving transit vehicle.
             sig do
               params(
                 active_trip_id: String,
