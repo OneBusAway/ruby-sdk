@@ -42,7 +42,9 @@ module OnebusawaySDK
           # @!attribute schedule
           #
           #   @return [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule, nil]
-          optional :schedule, -> { OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule }
+          optional :schedule,
+                   -> { OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule },
+                   nil?: true
 
           # @!attribute service_date
           #
@@ -65,7 +67,7 @@ module OnebusawaySDK
           #
           #   @param frequency [String, nil]
           #
-          #   @param schedule [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule]
+          #   @param schedule [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule, nil]
           #
           #   @param service_date [Integer]
           #
@@ -261,7 +263,7 @@ module OnebusawaySDK
             #   Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @return [String, nil]
-            optional :frequency, String
+            optional :frequency, String, nil?: true
 
             # @!attribute last_known_location
             #   Last known location of the transit vehicle (optional).
@@ -364,7 +366,7 @@ module OnebusawaySDK
             #
             #   @param closest_stop_time_offset [Integer] Time offset from the closest stop to the current position of the transit vehicle
             #
-            #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+            #   @param frequency [String, nil] Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @param last_known_location [OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation, nil] Last known location of the transit vehicle (optional).
             #

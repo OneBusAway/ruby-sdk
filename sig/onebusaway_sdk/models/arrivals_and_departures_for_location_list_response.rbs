@@ -99,18 +99,18 @@ module OnebusawaySDK
               vehicle_id: String,
               actual_track: String,
               distance_from_stop: Float,
-              frequency: String,
+              frequency: String?,
               historical_occupancy: String,
               last_update_time: Integer,
               occupancy_status: String,
               predicted: bool,
-              predicted_arrival_interval: String,
-              predicted_departure_interval: String,
+              predicted_arrival_interval: String?,
+              predicted_departure_interval: String?,
               predicted_occupancy: String,
               route_long_name: String,
               route_short_name: String,
-              scheduled_arrival_interval: String,
-              scheduled_departure_interval: String,
+              scheduled_arrival_interval: String?,
+              scheduled_departure_interval: String?,
               scheduled_track: String,
               situation_ids: ::Array[String],
               status: String,
@@ -158,9 +158,7 @@ module OnebusawaySDK
 
             def distance_from_stop=: (Float) -> Float
 
-            attr_reader frequency: String?
-
-            def frequency=: (String) -> String
+            attr_accessor frequency: String?
 
             attr_reader historical_occupancy: String?
 
@@ -178,13 +176,9 @@ module OnebusawaySDK
 
             def predicted=: (bool) -> bool
 
-            attr_reader predicted_arrival_interval: String?
+            attr_accessor predicted_arrival_interval: String?
 
-            def predicted_arrival_interval=: (String) -> String
-
-            attr_reader predicted_departure_interval: String?
-
-            def predicted_departure_interval=: (String) -> String
+            attr_accessor predicted_departure_interval: String?
 
             attr_reader predicted_occupancy: String?
 
@@ -198,13 +192,9 @@ module OnebusawaySDK
 
             def route_short_name=: (String) -> String
 
-            attr_reader scheduled_arrival_interval: String?
+            attr_accessor scheduled_arrival_interval: String?
 
-            def scheduled_arrival_interval=: (String) -> String
-
-            attr_reader scheduled_departure_interval: String?
-
-            def scheduled_departure_interval=: (String) -> String
+            attr_accessor scheduled_departure_interval: String?
 
             attr_reader scheduled_track: String?
 
@@ -243,18 +233,18 @@ module OnebusawaySDK
               vehicle_id: String,
               ?actual_track: String,
               ?distance_from_stop: Float,
-              ?frequency: String,
+              ?frequency: String?,
               ?historical_occupancy: String,
               ?last_update_time: Integer,
               ?occupancy_status: String,
               ?predicted: bool,
-              ?predicted_arrival_interval: String,
-              ?predicted_departure_interval: String,
+              ?predicted_arrival_interval: String?,
+              ?predicted_departure_interval: String?,
               ?predicted_occupancy: String,
               ?route_long_name: String,
               ?route_short_name: String,
-              ?scheduled_arrival_interval: String,
-              ?scheduled_departure_interval: String,
+              ?scheduled_arrival_interval: String?,
+              ?scheduled_departure_interval: String?,
               ?scheduled_track: String,
               ?situation_ids: ::Array[String],
               ?status: String,
@@ -280,18 +270,18 @@ module OnebusawaySDK
               vehicle_id: String,
               actual_track: String,
               distance_from_stop: Float,
-              frequency: String,
+              frequency: String?,
               historical_occupancy: String,
               last_update_time: Integer,
               occupancy_status: String,
               predicted: bool,
-              predicted_arrival_interval: String,
-              predicted_departure_interval: String,
+              predicted_arrival_interval: String?,
+              predicted_departure_interval: String?,
               predicted_occupancy: String,
               route_long_name: String,
               route_short_name: String,
-              scheduled_arrival_interval: String,
-              scheduled_departure_interval: String,
+              scheduled_arrival_interval: String?,
+              scheduled_departure_interval: String?,
               scheduled_track: String,
               situation_ids: ::Array[String],
               status: String,
@@ -317,7 +307,7 @@ module OnebusawaySDK
                 status: String,
                 total_distance_along_trip: Float,
                 closest_stop_time_offset: Integer,
-                frequency: String,
+                frequency: String?,
                 last_known_location: OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation?,
                 last_known_orientation: Float,
                 next_stop: String,
@@ -366,9 +356,7 @@ module OnebusawaySDK
 
               def closest_stop_time_offset=: (Integer) -> Integer
 
-              attr_reader frequency: String?
-
-              def frequency=: (String) -> String
+              attr_accessor frequency: String?
 
               attr_accessor last_known_location: OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation?
 
@@ -424,7 +412,7 @@ module OnebusawaySDK
                 status: String,
                 total_distance_along_trip: Float,
                 ?closest_stop_time_offset: Integer,
-                ?frequency: String,
+                ?frequency: String?,
                 ?last_known_location: OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation?,
                 ?last_known_orientation: Float,
                 ?next_stop: String,
@@ -454,7 +442,7 @@ module OnebusawaySDK
                 status: String,
                 total_distance_along_trip: Float,
                 closest_stop_time_offset: Integer,
-                frequency: String,
+                frequency: String?,
                 last_known_location: OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation?,
                 last_known_orientation: Float,
                 next_stop: String,

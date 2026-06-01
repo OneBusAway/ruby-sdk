@@ -120,7 +120,9 @@ module OnebusawaySDK
           sig do
             params(
               schedule:
-                OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::OrHash
+                T.nilable(
+                  OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::OrHash
+                )
             ).void
           end
           attr_writer :schedule
@@ -160,7 +162,9 @@ module OnebusawaySDK
               trip_id: String,
               frequency: T.nilable(String),
               schedule:
-                OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::OrHash,
+                T.nilable(
+                  OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule::OrHash
+                ),
               service_date: Integer,
               situation_ids: T::Array[String],
               status:
@@ -184,7 +188,9 @@ module OnebusawaySDK
                 trip_id: String,
                 frequency: T.nilable(String),
                 schedule:
-                  OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule,
+                  T.nilable(
+                    OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Schedule
+                  ),
                 service_date: Integer,
                 situation_ids: T::Array[String],
                 status:
@@ -430,10 +436,7 @@ module OnebusawaySDK
 
             # Information about frequency-based scheduling, if applicable to the trip.
             sig { returns(T.nilable(String)) }
-            attr_reader :frequency
-
-            sig { params(frequency: String).void }
-            attr_writer :frequency
+            attr_accessor :frequency
 
             # Last known location of the transit vehicle (optional).
             sig do
@@ -544,7 +547,7 @@ module OnebusawaySDK
                 status: String,
                 total_distance_along_trip: Float,
                 closest_stop_time_offset: Integer,
-                frequency: String,
+                frequency: T.nilable(String),
                 last_known_location:
                   T.nilable(
                     OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation::OrHash
@@ -643,7 +646,7 @@ module OnebusawaySDK
                   status: String,
                   total_distance_along_trip: Float,
                   closest_stop_time_offset: Integer,
-                  frequency: String,
+                  frequency: T.nilable(String),
                   last_known_location:
                     T.nilable(
                       OnebusawaySDK::Models::TripForVehicleRetrieveResponse::Data::Entry::Status::LastKnownLocation

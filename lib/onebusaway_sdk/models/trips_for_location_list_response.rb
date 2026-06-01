@@ -48,8 +48,10 @@ module OnebusawaySDK
         class List < OnebusawaySDK::Internal::Type::BaseModel
           # @!attribute schedule
           #
-          #   @return [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule]
-          required :schedule, -> { OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule }
+          #   @return [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule, nil]
+          required :schedule,
+                   -> { OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule },
+                   nil?: true
 
           # @!attribute status
           #   Trip-specific status for the arriving transit vehicle.
@@ -78,7 +80,7 @@ module OnebusawaySDK
           optional :situation_ids, OnebusawaySDK::Internal::Type::ArrayOf[String], api_name: :situationIds
 
           # @!method initialize(schedule:, status:, trip_id:, frequency: nil, service_date: nil, situation_ids: nil)
-          #   @param schedule [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule]
+          #   @param schedule [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule, nil]
           #
           #   @param status [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status] Trip-specific status for the arriving transit vehicle.
           #
@@ -278,7 +280,7 @@ module OnebusawaySDK
             #   Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @return [String, nil]
-            optional :frequency, String
+            optional :frequency, String, nil?: true
 
             # @!attribute last_known_location
             #   Last known location of the transit vehicle (optional).
@@ -381,7 +383,7 @@ module OnebusawaySDK
             #
             #   @param closest_stop_time_offset [Integer] Time offset from the closest stop to the current position of the transit vehicle
             #
-            #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+            #   @param frequency [String, nil] Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @param last_known_location [OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation, nil] Last known location of the transit vehicle (optional).
             #

@@ -55,7 +55,7 @@ module OnebusawaySDK
 
         type list =
           {
-            schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule,
+            schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule?,
             status: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status,
             trip_id: String,
             frequency: String?,
@@ -64,7 +64,7 @@ module OnebusawaySDK
           }
 
         class List < OnebusawaySDK::Internal::Type::BaseModel
-          attr_accessor schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule
+          attr_accessor schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule?
 
           attr_accessor status: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status
 
@@ -81,7 +81,7 @@ module OnebusawaySDK
           def situation_ids=: (::Array[String]) -> ::Array[String]
 
           def initialize: (
-            schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule,
+            schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule?,
             status: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status,
             trip_id: String,
             ?frequency: String?,
@@ -90,7 +90,7 @@ module OnebusawaySDK
           ) -> void
 
           def to_hash: -> {
-            schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule,
+            schedule: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Schedule?,
             status: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status,
             trip_id: String,
             frequency: String?,
@@ -208,7 +208,7 @@ module OnebusawaySDK
               status: String,
               total_distance_along_trip: Float,
               closest_stop_time_offset: Integer,
-              frequency: String,
+              frequency: String?,
               last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?,
               last_known_orientation: Float,
               next_stop: String,
@@ -257,9 +257,7 @@ module OnebusawaySDK
 
             def closest_stop_time_offset=: (Integer) -> Integer
 
-            attr_reader frequency: String?
-
-            def frequency=: (String) -> String
+            attr_accessor frequency: String?
 
             attr_accessor last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?
 
@@ -315,7 +313,7 @@ module OnebusawaySDK
               status: String,
               total_distance_along_trip: Float,
               ?closest_stop_time_offset: Integer,
-              ?frequency: String,
+              ?frequency: String?,
               ?last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?,
               ?last_known_orientation: Float,
               ?next_stop: String,
@@ -345,7 +343,7 @@ module OnebusawaySDK
               status: String,
               total_distance_along_trip: Float,
               closest_stop_time_offset: Integer,
-              frequency: String,
+              frequency: String?,
               last_known_location: OnebusawaySDK::Models::TripsForLocationListResponse::Data::List::Status::LastKnownLocation?,
               last_known_orientation: Float,
               next_stop: String,
