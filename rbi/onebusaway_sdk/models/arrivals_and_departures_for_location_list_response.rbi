@@ -276,10 +276,7 @@ module OnebusawaySDK
 
             # Information about frequency-based scheduling, if applicable to the trip.
             sig { returns(T.nilable(String)) }
-            attr_reader :frequency
-
-            sig { params(frequency: String).void }
-            attr_writer :frequency
+            attr_accessor :frequency
 
             # Historical occupancy information of the transit vehicle.
             sig { returns(T.nilable(String)) }
@@ -311,17 +308,11 @@ module OnebusawaySDK
 
             # Interval for predicted arrival time, if available.
             sig { returns(T.nilable(String)) }
-            attr_reader :predicted_arrival_interval
-
-            sig { params(predicted_arrival_interval: String).void }
-            attr_writer :predicted_arrival_interval
+            attr_accessor :predicted_arrival_interval
 
             # Interval for predicted departure time, if available.
             sig { returns(T.nilable(String)) }
-            attr_reader :predicted_departure_interval
-
-            sig { params(predicted_departure_interval: String).void }
-            attr_writer :predicted_departure_interval
+            attr_accessor :predicted_departure_interval
 
             # Predicted occupancy status of the transit vehicle.
             sig { returns(T.nilable(String)) }
@@ -348,17 +339,11 @@ module OnebusawaySDK
 
             # Interval for scheduled arrival time.
             sig { returns(T.nilable(String)) }
-            attr_reader :scheduled_arrival_interval
-
-            sig { params(scheduled_arrival_interval: String).void }
-            attr_writer :scheduled_arrival_interval
+            attr_accessor :scheduled_arrival_interval
 
             # Interval for scheduled departure time.
             sig { returns(T.nilable(String)) }
-            attr_reader :scheduled_departure_interval
-
-            sig { params(scheduled_departure_interval: String).void }
-            attr_writer :scheduled_departure_interval
+            attr_accessor :scheduled_departure_interval
 
             # Scheduled track information of the arriving transit vehicle.
             sig { returns(T.nilable(String)) }
@@ -419,18 +404,18 @@ module OnebusawaySDK
                 vehicle_id: String,
                 actual_track: String,
                 distance_from_stop: Float,
-                frequency: String,
+                frequency: T.nilable(String),
                 historical_occupancy: String,
                 last_update_time: Integer,
                 occupancy_status: String,
                 predicted: T::Boolean,
-                predicted_arrival_interval: String,
-                predicted_departure_interval: String,
+                predicted_arrival_interval: T.nilable(String),
+                predicted_departure_interval: T.nilable(String),
                 predicted_occupancy: String,
                 route_long_name: String,
                 route_short_name: String,
-                scheduled_arrival_interval: String,
-                scheduled_departure_interval: String,
+                scheduled_arrival_interval: T.nilable(String),
+                scheduled_departure_interval: T.nilable(String),
                 scheduled_track: String,
                 situation_ids: T::Array[String],
                 status: String,
@@ -539,18 +524,18 @@ module OnebusawaySDK
                   vehicle_id: String,
                   actual_track: String,
                   distance_from_stop: Float,
-                  frequency: String,
+                  frequency: T.nilable(String),
                   historical_occupancy: String,
                   last_update_time: Integer,
                   occupancy_status: String,
                   predicted: T::Boolean,
-                  predicted_arrival_interval: String,
-                  predicted_departure_interval: String,
+                  predicted_arrival_interval: T.nilable(String),
+                  predicted_departure_interval: T.nilable(String),
                   predicted_occupancy: String,
                   route_long_name: String,
                   route_short_name: String,
-                  scheduled_arrival_interval: String,
-                  scheduled_departure_interval: String,
+                  scheduled_arrival_interval: T.nilable(String),
+                  scheduled_departure_interval: T.nilable(String),
                   scheduled_track: String,
                   situation_ids: T::Array[String],
                   status: String,
@@ -647,10 +632,7 @@ module OnebusawaySDK
 
               # Information about frequency-based scheduling, if applicable to the trip.
               sig { returns(T.nilable(String)) }
-              attr_reader :frequency
-
-              sig { params(frequency: String).void }
-              attr_writer :frequency
+              attr_accessor :frequency
 
               # Last known location of the transit vehicle (optional).
               sig do
@@ -761,7 +743,7 @@ module OnebusawaySDK
                   status: String,
                   total_distance_along_trip: Float,
                   closest_stop_time_offset: Integer,
-                  frequency: String,
+                  frequency: T.nilable(String),
                   last_known_location:
                     T.nilable(
                       OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation::OrHash
@@ -860,7 +842,7 @@ module OnebusawaySDK
                     status: String,
                     total_distance_along_trip: Float,
                     closest_stop_time_offset: Integer,
-                    frequency: String,
+                    frequency: T.nilable(String),
                     last_known_location:
                       T.nilable(
                         OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation

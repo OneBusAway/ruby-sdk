@@ -244,7 +244,7 @@ module OnebusawaySDK
             #   Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @return [String, nil]
-            optional :frequency, String
+            optional :frequency, String, nil?: true
 
             # @!attribute last_known_location
             #   Last known location of the transit vehicle (optional).
@@ -347,7 +347,7 @@ module OnebusawaySDK
             #
             #   @param closest_stop_time_offset [Integer] Time offset from the closest stop to the current position of the transit vehicle
             #
-            #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+            #   @param frequency [String, nil] Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @param last_known_location [OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation, nil] Last known location of the transit vehicle (optional).
             #

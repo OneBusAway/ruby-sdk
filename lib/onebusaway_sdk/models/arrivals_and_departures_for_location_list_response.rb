@@ -184,7 +184,7 @@ module OnebusawaySDK
             #   Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @return [String, nil]
-            optional :frequency, String
+            optional :frequency, String, nil?: true
 
             # @!attribute historical_occupancy
             #   Historical occupancy information of the transit vehicle.
@@ -214,13 +214,13 @@ module OnebusawaySDK
             #   Interval for predicted arrival time, if available.
             #
             #   @return [String, nil]
-            optional :predicted_arrival_interval, String, api_name: :predictedArrivalInterval
+            optional :predicted_arrival_interval, String, api_name: :predictedArrivalInterval, nil?: true
 
             # @!attribute predicted_departure_interval
             #   Interval for predicted departure time, if available.
             #
             #   @return [String, nil]
-            optional :predicted_departure_interval, String, api_name: :predictedDepartureInterval
+            optional :predicted_departure_interval, String, api_name: :predictedDepartureInterval, nil?: true
 
             # @!attribute predicted_occupancy
             #   Predicted occupancy status of the transit vehicle.
@@ -246,13 +246,13 @@ module OnebusawaySDK
             #   Interval for scheduled arrival time.
             #
             #   @return [String, nil]
-            optional :scheduled_arrival_interval, String, api_name: :scheduledArrivalInterval
+            optional :scheduled_arrival_interval, String, api_name: :scheduledArrivalInterval, nil?: true
 
             # @!attribute scheduled_departure_interval
             #   Interval for scheduled departure time.
             #
             #   @return [String, nil]
-            optional :scheduled_departure_interval, String, api_name: :scheduledDepartureInterval
+            optional :scheduled_departure_interval, String, api_name: :scheduledDepartureInterval, nil?: true
 
             # @!attribute scheduled_track
             #   Scheduled track information of the arriving transit vehicle.
@@ -321,7 +321,7 @@ module OnebusawaySDK
             #
             #   @param distance_from_stop [Float] Distance of the arriving transit vehicle from the stop, in meters.
             #
-            #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+            #   @param frequency [String, nil] Information about frequency-based scheduling, if applicable to the trip.
             #
             #   @param historical_occupancy [String] Historical occupancy information of the transit vehicle.
             #
@@ -331,9 +331,9 @@ module OnebusawaySDK
             #
             #   @param predicted [Boolean] Indicates if real-time arrival info is available for this trip.
             #
-            #   @param predicted_arrival_interval [String] Interval for predicted arrival time, if available.
+            #   @param predicted_arrival_interval [String, nil] Interval for predicted arrival time, if available.
             #
-            #   @param predicted_departure_interval [String] Interval for predicted departure time, if available.
+            #   @param predicted_departure_interval [String, nil] Interval for predicted departure time, if available.
             #
             #   @param predicted_occupancy [String] Predicted occupancy status of the transit vehicle.
             #
@@ -341,9 +341,9 @@ module OnebusawaySDK
             #
             #   @param route_short_name [String] Optional route short name that potentially overrides the route short name in the
             #
-            #   @param scheduled_arrival_interval [String] Interval for scheduled arrival time.
+            #   @param scheduled_arrival_interval [String, nil] Interval for scheduled arrival time.
             #
-            #   @param scheduled_departure_interval [String] Interval for scheduled departure time.
+            #   @param scheduled_departure_interval [String, nil] Interval for scheduled departure time.
             #
             #   @param scheduled_track [String] Scheduled track information of the arriving transit vehicle.
             #
@@ -464,7 +464,7 @@ module OnebusawaySDK
               #   Information about frequency-based scheduling, if applicable to the trip.
               #
               #   @return [String, nil]
-              optional :frequency, String
+              optional :frequency, String, nil?: true
 
               # @!attribute last_known_location
               #   Last known location of the transit vehicle (optional).
@@ -567,7 +567,7 @@ module OnebusawaySDK
               #
               #   @param closest_stop_time_offset [Integer] Time offset from the closest stop to the current position of the transit vehicle
               #
-              #   @param frequency [String] Information about frequency-based scheduling, if applicable to the trip.
+              #   @param frequency [String, nil] Information about frequency-based scheduling, if applicable to the trip.
               #
               #   @param last_known_location [OnebusawaySDK::Models::ArrivalsAndDeparturesForLocationListResponse::Data::Entry::ArrivalsAndDeparture::TripStatus::LastKnownLocation, nil] Last known location of the transit vehicle (optional).
               #
