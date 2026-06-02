@@ -43,7 +43,7 @@ module OnebusawaySDK
           {
             trip_id: String,
             frequency: String?,
-            schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule,
+            schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule?,
             service_date: Integer,
             situation_ids: ::Array[String],
             status: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status
@@ -54,11 +54,7 @@ module OnebusawaySDK
 
           attr_accessor frequency: String?
 
-          attr_reader schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule?
-
-          def schedule=: (
-            OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule
-          ) -> OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule
+          attr_accessor schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule?
 
           attr_reader service_date: Integer?
 
@@ -77,7 +73,7 @@ module OnebusawaySDK
           def initialize: (
             trip_id: String,
             ?frequency: String?,
-            ?schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule,
+            ?schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule?,
             ?service_date: Integer,
             ?situation_ids: ::Array[String],
             ?status: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status
@@ -86,7 +82,7 @@ module OnebusawaySDK
           def to_hash: -> {
             trip_id: String,
             frequency: String?,
-            schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule,
+            schedule: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Schedule?,
             service_date: Integer,
             situation_ids: ::Array[String],
             status: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status
@@ -202,7 +198,7 @@ module OnebusawaySDK
               status: String,
               total_distance_along_trip: Float,
               closest_stop_time_offset: Integer,
-              frequency: String,
+              frequency: String?,
               last_known_location: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation?,
               last_known_orientation: Float,
               next_stop: String,
@@ -251,9 +247,7 @@ module OnebusawaySDK
 
             def closest_stop_time_offset=: (Integer) -> Integer
 
-            attr_reader frequency: String?
-
-            def frequency=: (String) -> String
+            attr_accessor frequency: String?
 
             attr_accessor last_known_location: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation?
 
@@ -309,7 +303,7 @@ module OnebusawaySDK
               status: String,
               total_distance_along_trip: Float,
               ?closest_stop_time_offset: Integer,
-              ?frequency: String,
+              ?frequency: String?,
               ?last_known_location: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation?,
               ?last_known_orientation: Float,
               ?next_stop: String,
@@ -339,7 +333,7 @@ module OnebusawaySDK
               status: String,
               total_distance_along_trip: Float,
               closest_stop_time_offset: Integer,
-              frequency: String,
+              frequency: String?,
               last_known_location: OnebusawaySDK::Models::TripDetailRetrieveResponse::Data::Entry::Status::LastKnownLocation?,
               last_known_orientation: Float,
               next_stop: String,

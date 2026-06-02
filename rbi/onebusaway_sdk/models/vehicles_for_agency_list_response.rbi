@@ -358,10 +358,7 @@ module OnebusawaySDK
 
             # Information about frequency-based scheduling, if applicable to the trip.
             sig { returns(T.nilable(String)) }
-            attr_reader :frequency
-
-            sig { params(frequency: String).void }
-            attr_writer :frequency
+            attr_accessor :frequency
 
             # Last known location of the transit vehicle (optional).
             sig do
@@ -472,7 +469,7 @@ module OnebusawaySDK
                 status: String,
                 total_distance_along_trip: Float,
                 closest_stop_time_offset: Integer,
-                frequency: String,
+                frequency: T.nilable(String),
                 last_known_location:
                   T.nilable(
                     OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation::OrHash
@@ -571,7 +568,7 @@ module OnebusawaySDK
                   status: String,
                   total_distance_along_trip: Float,
                   closest_stop_time_offset: Integer,
-                  frequency: String,
+                  frequency: T.nilable(String),
                   last_known_location:
                     T.nilable(
                       OnebusawaySDK::Models::VehiclesForAgencyListResponse::Data::List::TripStatus::LastKnownLocation
