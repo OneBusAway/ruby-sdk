@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.1 (2026-06-17)
+
+Full Changelog: [v1.9.0...v1.9.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.9.0...v1.9.1)
+
+### Bug Fixes
+
+* **client:** send content-type header for requests with an omitted optional body ([cda4fbd](https://github.com/OneBusAway/ruby-sdk/commit/cda4fbdc4803761c42392d3d270645943de81560))
+
 ## 1.9.0 (2026-06-01)
 
 Full Changelog: [v1.8.0...v1.9.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.8.0...v1.9.0)
