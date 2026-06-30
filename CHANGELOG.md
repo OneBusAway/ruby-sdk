@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.2 (2026-06-30)
+
+Full Changelog: [v1.9.1...v1.9.2](https://github.com/OneBusAway/ruby-sdk/compare/v1.9.1...v1.9.2)
+
+### Chores
+
+* **internal:** bound formatter parallelism to CPU count ([e875e4e](https://github.com/OneBusAway/ruby-sdk/commit/e875e4ec89dd550cac93a99ef43251bb10515d24))
+
 ## 1.9.1 (2026-06-17)
 
 Full Changelog: [v1.9.0...v1.9.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.9.0...v1.9.1)
