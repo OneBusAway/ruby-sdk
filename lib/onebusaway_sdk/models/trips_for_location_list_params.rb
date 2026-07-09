@@ -40,7 +40,7 @@ module OnebusawaySDK
 
       # @!attribute include_trip
       #   Whether to include full trip elements in the references section. Defaults to
-      #   false.
+      #   true.
       #
       #   @return [Boolean, nil]
       optional :include_trip, OnebusawaySDK::Internal::Type::Boolean
@@ -65,7 +65,7 @@ module OnebusawaySDK
       #
       #   @param include_schedule [Boolean] Whether to include full schedule elements in the tripDetails section. Defaults t
       #
-      #   @param include_trip [Boolean] Whether to include full trip elements in the references section. Defaults to fal
+      #   @param include_trip [Boolean] Whether to include full trip elements in the references section. Defaults to tru
       #
       #   @param time [Integer] Specific time for the query. Defaults to the current time.
       #
