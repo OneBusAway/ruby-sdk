@@ -39,7 +39,7 @@ module OnebusawaySDK
       attr_writer :include_schedule
 
       # Whether to include full trip elements in the references section. Defaults to
-      # false.
+      # true.
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :include_trip
 
@@ -78,7 +78,7 @@ module OnebusawaySDK
         # to false.
         include_schedule: nil,
         # Whether to include full trip elements in the references section. Defaults to
-        # false.
+        # true.
         include_trip: nil,
         # Specific time for the query. Defaults to the current time.
         time: nil,
