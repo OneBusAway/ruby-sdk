@@ -3,8 +3,8 @@ module OnebusawaySDK
     type stops_for_location_list_params =
       {
         lat: Float,
-        lon: Float,
         lat_span: Float,
+        lon: Float,
         lon_span: Float,
         query: String,
         radius: Float
@@ -15,13 +15,17 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      attr_accessor lat: Float
+      attr_reader lat: Float?
 
-      attr_accessor lon: Float
+      def lat=: (Float) -> Float
 
       attr_reader lat_span: Float?
 
       def lat_span=: (Float) -> Float
+
+      attr_reader lon: Float?
+
+      def lon=: (Float) -> Float
 
       attr_reader lon_span: Float?
 
@@ -36,9 +40,9 @@ module OnebusawaySDK
       def radius=: (Float) -> Float
 
       def initialize: (
-        lat: Float,
-        lon: Float,
+        ?lat: Float,
         ?lat_span: Float,
+        ?lon: Float,
         ?lon_span: Float,
         ?query: String,
         ?radius: Float,
@@ -47,8 +51,8 @@ module OnebusawaySDK
 
       def to_hash: -> {
         lat: Float,
-        lon: Float,
         lat_span: Float,
+        lon: Float,
         lon_span: Float,
         query: String,
         radius: Float,

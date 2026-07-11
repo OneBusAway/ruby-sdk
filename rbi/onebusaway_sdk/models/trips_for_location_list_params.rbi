@@ -14,17 +14,9 @@ module OnebusawaySDK
           )
         end
 
-      # The latitude coordinate of the search center
-      sig { returns(Float) }
-      attr_accessor :lat
-
       # Latitude span of the search bounding box
       sig { returns(Float) }
       attr_accessor :lat_span
-
-      # The longitude coordinate of the search center
-      sig { returns(Float) }
-      attr_accessor :lon
 
       # Longitude span of the search bounding box
       sig { returns(Float) }
@@ -46,6 +38,20 @@ module OnebusawaySDK
       sig { params(include_trip: T::Boolean).void }
       attr_writer :include_trip
 
+      # The latitude coordinate of the search center. If omitted, defaults to 0.0.
+      sig { returns(T.nilable(Float)) }
+      attr_reader :lat
+
+      sig { params(lat: Float).void }
+      attr_writer :lat
+
+      # The longitude coordinate of the search center. If omitted, defaults to 0.0.
+      sig { returns(T.nilable(Float)) }
+      attr_reader :lon
+
+      sig { params(lon: Float).void }
+      attr_writer :lon
+
       # Specific time for the query. Defaults to the current time.
       sig { returns(T.nilable(Integer)) }
       attr_reader :time
@@ -55,23 +61,19 @@ module OnebusawaySDK
 
       sig do
         params(
-          lat: Float,
           lat_span: Float,
-          lon: Float,
           lon_span: Float,
           include_schedule: T::Boolean,
           include_trip: T::Boolean,
+          lat: Float,
+          lon: Float,
           time: Integer,
           request_options: OnebusawaySDK::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
-        # The latitude coordinate of the search center
-        lat:,
         # Latitude span of the search bounding box
         lat_span:,
-        # The longitude coordinate of the search center
-        lon:,
         # Longitude span of the search bounding box
         lon_span:,
         # Whether to include full schedule elements in the tripDetails section. Defaults
@@ -80,6 +82,10 @@ module OnebusawaySDK
         # Whether to include full trip elements in the references section. Defaults to
         # true.
         include_trip: nil,
+        # The latitude coordinate of the search center. If omitted, defaults to 0.0.
+        lat: nil,
+        # The longitude coordinate of the search center. If omitted, defaults to 0.0.
+        lon: nil,
         # Specific time for the query. Defaults to the current time.
         time: nil,
         request_options: {}
@@ -89,12 +95,12 @@ module OnebusawaySDK
       sig do
         override.returns(
           {
-            lat: Float,
             lat_span: Float,
-            lon: Float,
             lon_span: Float,
             include_schedule: T::Boolean,
             include_trip: T::Boolean,
+            lat: Float,
+            lon: Float,
             time: Integer,
             request_options: OnebusawaySDK::RequestOptions
           }

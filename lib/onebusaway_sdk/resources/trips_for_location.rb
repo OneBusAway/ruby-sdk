@@ -8,19 +8,19 @@ module OnebusawaySDK
       #
       # Retrieve trips for a given location
       #
-      # @overload list(lat:, lat_span:, lon:, lon_span:, include_schedule: nil, include_trip: nil, time: nil, request_options: {})
-      #
-      # @param lat [Float] The latitude coordinate of the search center
+      # @overload list(lat_span:, lon_span:, include_schedule: nil, include_trip: nil, lat: nil, lon: nil, time: nil, request_options: {})
       #
       # @param lat_span [Float] Latitude span of the search bounding box
-      #
-      # @param lon [Float] The longitude coordinate of the search center
       #
       # @param lon_span [Float] Longitude span of the search bounding box
       #
       # @param include_schedule [Boolean] Whether to include full schedule elements in the tripDetails section. Defaults t
       #
       # @param include_trip [Boolean] Whether to include full trip elements in the references section. Defaults to tru
+      #
+      # @param lat [Float] The latitude coordinate of the search center. If omitted, defaults to 0.0.
+      #
+      # @param lon [Float] The longitude coordinate of the search center. If omitted, defaults to 0.0.
       #
       # @param time [Integer] Specific time for the query. Defaults to the current time.
       #

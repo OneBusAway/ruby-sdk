@@ -7,23 +7,11 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      # @!attribute lat
-      #   The latitude coordinate of the search center
-      #
-      #   @return [Float]
-      required :lat, Float
-
       # @!attribute lat_span
       #   Latitude span of the search bounding box
       #
       #   @return [Float]
       required :lat_span, Float
-
-      # @!attribute lon
-      #   The longitude coordinate of the search center
-      #
-      #   @return [Float]
-      required :lon, Float
 
       # @!attribute lon_span
       #   Longitude span of the search bounding box
@@ -45,27 +33,39 @@ module OnebusawaySDK
       #   @return [Boolean, nil]
       optional :include_trip, OnebusawaySDK::Internal::Type::Boolean
 
+      # @!attribute lat
+      #   The latitude coordinate of the search center. If omitted, defaults to 0.0.
+      #
+      #   @return [Float, nil]
+      optional :lat, Float
+
+      # @!attribute lon
+      #   The longitude coordinate of the search center. If omitted, defaults to 0.0.
+      #
+      #   @return [Float, nil]
+      optional :lon, Float
+
       # @!attribute time
       #   Specific time for the query. Defaults to the current time.
       #
       #   @return [Integer, nil]
       optional :time, Integer
 
-      # @!method initialize(lat:, lat_span:, lon:, lon_span:, include_schedule: nil, include_trip: nil, time: nil, request_options: {})
+      # @!method initialize(lat_span:, lon_span:, include_schedule: nil, include_trip: nil, lat: nil, lon: nil, time: nil, request_options: {})
       #   Some parameter documentations has been truncated, see
       #   {OnebusawaySDK::Models::TripsForLocationListParams} for more details.
       #
-      #   @param lat [Float] The latitude coordinate of the search center
-      #
       #   @param lat_span [Float] Latitude span of the search bounding box
-      #
-      #   @param lon [Float] The longitude coordinate of the search center
       #
       #   @param lon_span [Float] Longitude span of the search bounding box
       #
       #   @param include_schedule [Boolean] Whether to include full schedule elements in the tripDetails section. Defaults t
       #
       #   @param include_trip [Boolean] Whether to include full trip elements in the references section. Defaults to tru
+      #
+      #   @param lat [Float] The latitude coordinate of the search center. If omitted, defaults to 0.0.
+      #
+      #   @param lon [Float] The longitude coordinate of the search center. If omitted, defaults to 0.0.
       #
       #   @param time [Integer] Specific time for the query. Defaults to the current time.
       #

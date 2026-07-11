@@ -2,12 +2,12 @@ module OnebusawaySDK
   module Models
     type trips_for_location_list_params =
       {
-        lat: Float,
         lat_span: Float,
-        lon: Float,
         lon_span: Float,
         include_schedule: bool,
         include_trip: bool,
+        lat: Float,
+        lon: Float,
         time: Integer
       }
       & OnebusawaySDK::Internal::Type::request_parameters
@@ -16,11 +16,7 @@ module OnebusawaySDK
       extend OnebusawaySDK::Internal::Type::RequestParameters::Converter
       include OnebusawaySDK::Internal::Type::RequestParameters
 
-      attr_accessor lat: Float
-
       attr_accessor lat_span: Float
-
-      attr_accessor lon: Float
 
       attr_accessor lon_span: Float
 
@@ -32,28 +28,36 @@ module OnebusawaySDK
 
       def include_trip=: (bool) -> bool
 
+      attr_reader lat: Float?
+
+      def lat=: (Float) -> Float
+
+      attr_reader lon: Float?
+
+      def lon=: (Float) -> Float
+
       attr_reader time: Integer?
 
       def time=: (Integer) -> Integer
 
       def initialize: (
-        lat: Float,
         lat_span: Float,
-        lon: Float,
         lon_span: Float,
         ?include_schedule: bool,
         ?include_trip: bool,
+        ?lat: Float,
+        ?lon: Float,
         ?time: Integer,
         ?request_options: OnebusawaySDK::request_opts
       ) -> void
 
       def to_hash: -> {
-        lat: Float,
         lat_span: Float,
-        lon: Float,
         lon_span: Float,
         include_schedule: bool,
         include_trip: bool,
+        lat: Float,
+        lon: Float,
         time: Integer,
         request_options: OnebusawaySDK::RequestOptions
       }

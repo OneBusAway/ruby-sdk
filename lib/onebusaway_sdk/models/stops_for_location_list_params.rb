@@ -8,20 +8,22 @@ module OnebusawaySDK
       include OnebusawaySDK::Internal::Type::RequestParameters
 
       # @!attribute lat
+      #   If omitted, defaults to 0.0.
       #
-      #   @return [Float]
-      required :lat, Float
-
-      # @!attribute lon
-      #
-      #   @return [Float]
-      required :lon, Float
+      #   @return [Float, nil]
+      optional :lat, Float
 
       # @!attribute lat_span
       #   An alternative to radius to set the search bounding box (optional)
       #
       #   @return [Float, nil]
       optional :lat_span, Float
+
+      # @!attribute lon
+      #   If omitted, defaults to 0.0.
+      #
+      #   @return [Float, nil]
+      optional :lon, Float
 
       # @!attribute lon_span
       #   An alternative to radius to set the search bounding box (optional)
@@ -41,12 +43,12 @@ module OnebusawaySDK
       #   @return [Float, nil]
       optional :radius, Float
 
-      # @!method initialize(lat:, lon:, lat_span: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
-      #   @param lat [Float]
-      #
-      #   @param lon [Float]
+      # @!method initialize(lat: nil, lat_span: nil, lon: nil, lon_span: nil, query: nil, radius: nil, request_options: {})
+      #   @param lat [Float] If omitted, defaults to 0.0.
       #
       #   @param lat_span [Float] An alternative to radius to set the search bounding box (optional)
+      #
+      #   @param lon [Float] If omitted, defaults to 0.0.
       #
       #   @param lon_span [Float] An alternative to radius to set the search bounding box (optional)
       #

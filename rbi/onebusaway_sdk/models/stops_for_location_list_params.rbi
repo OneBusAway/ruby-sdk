@@ -14,11 +14,12 @@ module OnebusawaySDK
           )
         end
 
-      sig { returns(Float) }
-      attr_accessor :lat
+      # If omitted, defaults to 0.0.
+      sig { returns(T.nilable(Float)) }
+      attr_reader :lat
 
-      sig { returns(Float) }
-      attr_accessor :lon
+      sig { params(lat: Float).void }
+      attr_writer :lat
 
       # An alternative to radius to set the search bounding box (optional)
       sig { returns(T.nilable(Float)) }
@@ -26,6 +27,13 @@ module OnebusawaySDK
 
       sig { params(lat_span: Float).void }
       attr_writer :lat_span
+
+      # If omitted, defaults to 0.0.
+      sig { returns(T.nilable(Float)) }
+      attr_reader :lon
+
+      sig { params(lon: Float).void }
+      attr_writer :lon
 
       # An alternative to radius to set the search bounding box (optional)
       sig { returns(T.nilable(Float)) }
@@ -51,8 +59,8 @@ module OnebusawaySDK
       sig do
         params(
           lat: Float,
-          lon: Float,
           lat_span: Float,
+          lon: Float,
           lon_span: Float,
           query: String,
           radius: Float,
@@ -60,10 +68,12 @@ module OnebusawaySDK
         ).returns(T.attached_class)
       end
       def self.new(
-        lat:,
-        lon:,
+        # If omitted, defaults to 0.0.
+        lat: nil,
         # An alternative to radius to set the search bounding box (optional)
         lat_span: nil,
+        # If omitted, defaults to 0.0.
+        lon: nil,
         # An alternative to radius to set the search bounding box (optional)
         lon_span: nil,
         # A search query string to filter the results
@@ -78,8 +88,8 @@ module OnebusawaySDK
         override.returns(
           {
             lat: Float,
-            lon: Float,
             lat_span: Float,
+            lon: Float,
             lon_span: Float,
             query: String,
             radius: Float,
