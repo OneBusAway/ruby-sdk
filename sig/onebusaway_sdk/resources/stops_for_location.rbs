@@ -2,9 +2,9 @@ module OnebusawaySDK
   module Resources
     class StopsForLocation
       def list: (
-        lat: Float,
-        lon: Float,
+        ?lat: Float,
         ?lat_span: Float,
+        ?lon: Float,
         ?lon_span: Float,
         ?query: String,
         ?radius: Float,

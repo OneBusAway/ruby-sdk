@@ -7,8 +7,8 @@ module OnebusawaySDK
       sig do
         params(
           lat: Float,
-          lon: Float,
           lat_span: Float,
+          lon: Float,
           lon_span: Float,
           query: String,
           radius: Float,
@@ -16,10 +16,12 @@ module OnebusawaySDK
         ).returns(OnebusawaySDK::Models::StopsForLocationListResponse)
       end
       def list(
-        lat:,
-        lon:,
+        # If omitted, defaults to 0.0.
+        lat: nil,
         # An alternative to radius to set the search bounding box (optional)
         lat_span: nil,
+        # If omitted, defaults to 0.0.
+        lon: nil,
         # An alternative to radius to set the search bounding box (optional)
         lon_span: nil,
         # A search query string to filter the results

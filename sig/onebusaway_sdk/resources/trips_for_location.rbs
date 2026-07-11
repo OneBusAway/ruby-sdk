@@ -2,12 +2,12 @@ module OnebusawaySDK
   module Resources
     class TripsForLocation
       def list: (
-        lat: Float,
         lat_span: Float,
-        lon: Float,
         lon_span: Float,
         ?include_schedule: bool,
         ?include_trip: bool,
+        ?lat: Float,
+        ?lon: Float,
         ?time: Integer,
         ?request_options: OnebusawaySDK::request_opts
       ) -> OnebusawaySDK::Models::TripsForLocationListResponse
