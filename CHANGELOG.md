@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.11.0 (2026-07-11)
+
+Full Changelog: [v1.10.0...v1.11.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.10.0...v1.11.0)
+
+### Features
+
+* **api:** api update ([f00c9a8](https://github.com/OneBusAway/ruby-sdk/commit/f00c9a8e96966ace3221cb12601a56c202506a9c))
+
 ## 1.10.0 (2026-07-09)
 
 Full Changelog: [v1.9.2...v1.10.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.9.2...v1.10.0)
