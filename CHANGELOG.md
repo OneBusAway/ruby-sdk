@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.12.0 (2026-07-18)
+
+Full Changelog: [v1.11.0...v1.12.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.11.0...v1.12.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([15ec32b](https://github.com/OneBusAway/ruby-sdk/commit/15ec32b09563016ea484095a99d1f9d99cf22249))
+
 ## 1.11.0 (2026-07-11)
 
 Full Changelog: [v1.10.0...v1.11.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.10.0...v1.11.0)
