@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.12.1 (2026-08-20)
+
+Full Changelog: [v1.12.0...v1.12.1](https://github.com/OneBusAway/ruby-sdk/compare/v1.12.0...v1.12.1)
+
+### Chores
+
+* **internal:** allow the mock server port to be set with STAINLESS_MOCK_PORT ([688db1a](https://github.com/OneBusAway/ruby-sdk/commit/688db1a3124620cdf2bc6637ac485171eebe8fc7))
+
 ## 1.12.0 (2026-07-18)
 
 Full Changelog: [v1.11.0...v1.12.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.11.0...v1.12.0)
