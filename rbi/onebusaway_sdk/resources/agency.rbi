@@ -3,7 +3,7 @@
 module OnebusawaySDK
   module Resources
     class Agency
-      # Retrieve information for a specific transit agency identified by its unique ID.
+      # Retrieve information for a specific transit agency identified by its ID.
       sig do
         params(
           agency_id: String,
