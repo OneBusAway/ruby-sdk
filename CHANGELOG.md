@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.13.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.12.0...v1.13.0) (2026-08-23)
+
+
+### Features
+
+* initial stlc build ([98cc256](https://github.com/OneBusAway/ruby-sdk/commit/98cc25681f39cd4da9916c3996b465fb3ba186cf))
+
+
+### Bug Fixes
+
+* add release-please config to all targets ([3b6da9a](https://github.com/OneBusAway/ruby-sdk/commit/3b6da9aec58d815e1fb8734785effe636f1fd239))
+* update agency endpoint description ([7a4c8ba](https://github.com/OneBusAway/ruby-sdk/commit/7a4c8ba96152f9b5c1ff1b7bf39bb8f22658bbed))
+
+
+### Chores
+
+* add stlc promote and sync workflows ([1e524b5](https://github.com/OneBusAway/ruby-sdk/commit/1e524b5e086580f468e1a53d66a1b56e307f0f4a))
+
 ## 1.12.0 (2026-07-18)
 
 Full Changelog: [v1.11.0...v1.12.0](https://github.com/OneBusAway/ruby-sdk/compare/v1.11.0...v1.12.0)
